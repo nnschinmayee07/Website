@@ -2,6 +2,9 @@
 purdue-home.html
 purdue-theme/
 
+# Dependencies
+node_modules/
+
 # Hero videos (large files — add manually after cloning)
 hero1.mp4
 hero2.mp4
