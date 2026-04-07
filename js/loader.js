@@ -88,28 +88,50 @@ function initEvents() {
     if (evRole)  evRole.textContent  = ev.role;
     miniThumbs.forEach(function(t, i) {
       t.classList.toggle('is-active', i === current);
-      var v = t.querySelector('video');
-      if (v) { if (i === current) v.play().catch(function(){}); else v.pause(); }
     });
   }
 
-  if (mainThumb) {
-    mainThumb.addEventListener('mouseenter', function() {
-      bgVideo.style.filter = 'blur(0px) brightness(0.85)';
-      if (bgScrim) bgScrim.style.opacity = '0.2';
-      if (evText)  evText.classList.add('is-hidden');
-    });
-    mainThumb.addEventListener('mouseleave', function() {
-      bgVideo.style.filter = '';
-      if (bgScrim) bgScrim.style.opacity = '';
-      if (evText)  evText.classList.remove('is-hidden');
-    });
+  // Fallback src — assign first mini-thumb video src if bgVideo has none
+  var firstThumbVid = miniThumbs[0] ? miniThumbs[0].querySelector('video') : null;
+  if (firstThumbVid && !bgVideo.getAttribute('src')) {
+    var fallbackSrc = firstThumbVid.getAttribute('src') || firstThumbVid.currentSrc;
+    if (fallbackSrc) { bgVideo.src = fallbackSrc; bgVideo.muted = true; bgVideo.load(); bgVideo.play().catch(function(){}); }
   }
 
   miniThumbs.forEach(function(t, i) {
-    var v = t.querySelector('video');
-    t.addEventListener('mouseenter', function() { if (v) v.play().catch(function(){}); });
-    t.addEventListener('mouseleave', function() { if (v && i !== current) v.pause(); });
+    t.addEventListener('mouseenter', function() {
+      // 1. Stop ALL mini-thumb videos — never let preview play
+      document.querySelectorAll('.ev-mini-thumb video').forEach(function(v) {
+        v.pause();
+        v.currentTime = 0;
+      });
+
+      // 2. Switch background video using attribute src (reliable, avoids absolute vs relative mismatch)
+      var vid = t.querySelector('video');
+      var newSrc = vid ? vid.getAttribute('src') : null;
+      if (!newSrc) return;
+
+      bgVideo.pause();
+      bgVideo.src = newSrc;
+      bgVideo.muted = isMuted;
+      bgVideo.load();
+
+      // 3. Play background video
+      bgVideo.play().catch(function() {});
+
+      // 4. Remove blur
+      bgVideo.style.filter = 'blur(0px)';
+      bgVideo.style.opacity = '1';
+      if (evText) evText.classList.add('is-hidden');
+    });
+
+    t.addEventListener('mouseleave', function() {
+      bgVideo.pause();
+      bgVideo.style.filter = '';        /* restores CSS default: blur(12px) */
+      bgVideo.style.opacity = '1';
+      if (evText) evText.classList.remove('is-hidden');
+    });
+
     t.addEventListener('click', function() { goTo(i); });
   });
 
@@ -131,6 +153,7 @@ function initEvents() {
       isMuted = !isMuted;
       bgVideo.muted = isMuted;
       if (thumbVid) thumbVid.muted = isMuted;
+      document.querySelectorAll('.alumni-video').forEach(function(v) { v.muted = isMuted; });
       var off = muteBtn.querySelector('.ev-mute-btn__off');
       var on  = muteBtn.querySelector('.ev-mute-btn__on');
       if (off) off.style.display = isMuted ? '' : 'none';
@@ -152,6 +175,10 @@ function initEvents() {
 
   function runIntro() {
     section.classList.add('is-visible');
+    // Start bg video playing (blurred) from intro start
+    bgVideo.muted = isMuted;
+    bgVideo.play().catch(function(){});
+    console.log('[Events] runIntro — bgVideo src:', bgVideo.src);
     introTimers.push(setTimeout(function() {
       if (tagline) {
         tagline.classList.add('is-hero');
@@ -178,21 +205,6 @@ function initEvents() {
   }, { threshold: 0.4 });
   io.observe(section);
 
-  // Blackout mini thumbs when main player is hovered
-  if (mainThumb) {
-    mainThumb.addEventListener('mouseenter', function() {
-      miniThumbs.forEach(function(t) {
-        var v = t.querySelector('video');
-        if (v) { v.pause(); v.currentTime = 0; }
-        t.classList.add('is-disabled');
-      });
-    });
-    mainThumb.addEventListener('mouseleave', function() {
-      miniThumbs.forEach(function(t) { t.classList.remove('is-disabled'); });
-      var active = document.querySelector('.ev-mini-thumb.is-active video');
-      if (active) active.play().catch(function(){});
-    });
-  }
 }
 
 // ── Boot ────────────────────────────────────────────────────────

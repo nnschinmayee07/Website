@@ -47,26 +47,12 @@
   background: linear-gradient(to left, #f7f7f5, transparent);
 }
 
-/* ── Track — two groups side by side, animates left ── */
+/* ── Track — two groups side by side, JS-driven step scroll ── */
 .ss-track {
   display: flex;
   width: max-content;
   gap: 24px;
-  animation: ss-scroll 50s linear infinite;
   will-change: transform;
-}
-
-/* Pause entire belt on hover */
-.ss-track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes ss-scroll {
-  0%,  5%  { transform: translateX(0);       }  /* pause at start ~2.5s */
-  30%, 35% { transform: translateX(-25%);    }  /* pause mid ~2.5s */
-  60%, 65% { transform: translateX(-50%);    }  /* pause at end ~2.5s — loop point */
-  90%, 95% { transform: translateX(-25%);    }  /* pause mid return */
-  100%     { transform: translateX(0);       }  /* back to start */
 }
 
 /* ── Group — one set of cards ── */

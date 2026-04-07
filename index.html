@@ -273,19 +273,19 @@
       <div class="section-wrap">
         <div class="stats-strip__inner">
           <div class="stat-item">
-            <div class="stat-item__number">20<span>+</span></div>
+            <div class="stat-item__number" data-target="20" data-suffix="+">0<span>+</span></div>
             <div class="stat-item__label">Years of Excellence</div>
           </div>
           <div class="stat-item">
-            <div class="stat-item__number">11<span>K+</span></div>
+            <div class="stat-item__number" data-target="11" data-suffix="K+">0<span>K+</span></div>
             <div class="stat-item__label">Students Enrolled</div>
           </div>
           <div class="stat-item">
-            <div class="stat-item__number">98<span>%</span></div>
+            <div class="stat-item__number" data-target="98" data-suffix="%">0<span>%</span></div>
             <div class="stat-item__label">Placement Rate</div>
           </div>
           <div class="stat-item">
-            <div class="stat-item__number">200<span>+</span></div>
+            <div class="stat-item__number" data-target="200" data-suffix="+">0<span>+</span></div>
             <div class="stat-item__label">Recruiting Companies</div>
           </div>
         </div>
@@ -379,89 +379,34 @@
         <div class="alumni-grid">
 
           <div class="alumni-card">
-            <div class="alumni-avatar" style="background:#18453B">S</div>
             <div class="alumni-info">
               <h3>Sathvika</h3>
               <p class="alumni-role">Software Engineer</p>
               <p class="alumni-company">Microsoft</p>
             </div>
-            <div class="alumni-meta">
-              <span>2023</span>
-              <span>CSIT</span>
-            </div>
+            <video class="alumni-video" src="events/e1.mp4" muted loop playsinline></video>
           </div>
 
           <div class="alumni-card">
-            <div class="alumni-avatar" style="background:#E85D1F">DP</div>
             <div class="alumni-info">
               <h3>Dasam Pranay</h3>
               <p class="alumni-role">Aerospace Engineer</p>
               <p class="alumni-company">HAL</p>
             </div>
-            <div class="alumni-meta">
-              <span>2022</span>
-              <span>Aeronautical</span>
-            </div>
+            <video class="alumni-video" src="events/e2.mp4" muted loop playsinline></video>
           </div>
 
           <div class="alumni-card">
-            <div class="alumni-avatar" style="background:#18453B">GP</div>
             <div class="alumni-info">
               <h3>Gopi Pavani</h3>
               <p class="alumni-role">Systems Engineer</p>
               <p class="alumni-company">Safran</p>
             </div>
-            <div class="alumni-meta">
-              <span>2022</span>
-              <span>Aeronautical</span>
-            </div>
+            <video class="alumni-video" src="events/e3.mp4" muted loop playsinline></video>
           </div>
 
-          <div class="alumni-card">
-            <div class="alumni-avatar" style="background:#E85D1F">RK</div>
-            <div class="alumni-info">
-              <h3>Rahul Kumar</h3>
-              <p class="alumni-role">Cloud Architect</p>
-              <p class="alumni-company">Amazon</p>
-            </div>
-            <div class="alumni-meta">
-              <span>2021</span>
-              <span>CSE</span>
-            </div>
-          </div>
-
-          <div class="alumni-card">
-            <div class="alumni-avatar" style="background:#18453B">PS</div>
-            <div class="alumni-info">
-              <h3>Priya Sharma</h3>
-              <p class="alumni-role">Product Manager</p>
-              <p class="alumni-company">Google</p>
-            </div>
-            <div class="alumni-meta">
-              <span>2020</span>
-              <span>CSE</span>
-            </div>
-          </div>
-
-          <div class="alumni-card">
-            <div class="alumni-avatar" style="background:#E85D1F">AP</div>
-            <div class="alumni-info">
-              <h3>Arjun Patel</h3>
-              <p class="alumni-role">Data Scientist</p>
-              <p class="alumni-company">Infosys</p>
-            </div>
-            <div class="alumni-meta">
-              <span>2021</span>
-              <span>IT</span>
-            </div>
-          </div>
 
         </div>
-
-        <div style="text-align:center; margin-top:40px;">
-          <a href="#" class="alumni-view-all">View Full Network</a>
-        </div>
-
       </div>
     </section>
 
@@ -602,7 +547,6 @@
   <script src="js/navbar.js"></script>
   <script src="js/rankings.js"></script>
   <script src="js/placements.js"></script>
-  <script src="js/success-stories.js"></script>
   <script src="js/footer.js"></script>
   <script>
     // Hero video — single loop
@@ -622,39 +566,21 @@
       });
     })();
 
-    // Universal mute wiring — Alumni cards + Events
+    // Alumni hover — video play/pause + sweep (250ms delay matches orange+blue sequence)
     (function () {
-      function wireMute(btn, vid) {
-        if (!btn || !vid) return;
-        const off = btn.querySelector('.vid-mute-btn__off');
-        const on  = btn.querySelector('.vid-mute-btn__on');
-        btn.addEventListener('click', e => {
-          e.stopPropagation();
-          vid.muted = !vid.muted;
-          if (off) off.style.display = vid.muted ? '' : 'none';
-          if (on)  on.style.display  = vid.muted ? 'none' : '';
+      document.querySelectorAll('.alumni-card').forEach(function(card) {
+        var vid = card.querySelector('.alumni-video');
+        var playTimer = null;
+        if (!vid) return;
+        card.addEventListener('mouseenter', function() {
+          playTimer = setTimeout(function() { vid.play().catch(function(){}); }, 250);
         });
-      }
-
-      // Alumni cards
-      document.querySelectorAll('.testimonial-card').forEach(card => {
-        wireMute(card.querySelector('.vid-mute-btn--card'), card.querySelector('.testimonial-card__video'));
+        card.addEventListener('mouseleave', function() {
+          clearTimeout(playTimer);
+          vid.pause();
+          vid.currentTime = 0;
+        });
       });
-
-      // Events — mutes all bg videos together
-      const evBtn = document.getElementById('evMuteBtn');
-      if (evBtn) {
-        const off = evBtn.querySelector('.vid-mute-btn__off');
-        const on  = evBtn.querySelector('.vid-mute-btn__on');
-        let muted = true;
-        evBtn.addEventListener('click', e => {
-          e.stopPropagation();
-          muted = !muted;
-          document.querySelectorAll('.ev-bg__video, .ev-item__video').forEach(v => { v.muted = muted; });
-          if (off) off.style.display = muted ? '' : 'none';
-          if (on)  on.style.display  = muted ? 'none' : '';
-        });
-      }
     })();
 
     // Why MLRIT — fade-in on scroll + video autoplay
@@ -687,234 +613,8 @@
       io.observe(rows[0].closest('.achievements') || rows[0]);
     })();
 
-    // Stats strip — count-up animation
-    (function () {
-      const section  = document.getElementById('events');
-      const beam     = document.getElementById('evBeam');
-      const tagline  = document.getElementById('evTagline');
-      const carousel = document.getElementById('evCarousel');
-      const items    = document.querySelectorAll('.ev-item');
-      const dots     = document.querySelectorAll('.ev-dot');
-      const bgVideos = document.querySelectorAll('.ev-bg__video');
-      const btnPrev  = document.getElementById('evPrev');
-      const btnNext  = document.getElementById('evNext');
-      if (!section || !items.length) return;
-
-      // Cinematic bg — single reusable video
-      const cinematicVid = document.getElementById('evCinematicVid');
-      const eventSrcs    = ['events/e1.mp4','events/e2.mp4','events/e3.mp4','events/e4.mp4'];
-      let cinematicTimer = null;
-
-      // ── Layout helper ──
-      function layout(active) {
-        items.forEach((item, i) => {
-          item.classList.remove('is-active', 'is-prev', 'is-next', 'is-far');
-          const rel = ((i - active) % COUNT + COUNT) % COUNT;
-          if      (rel === 0)         item.classList.add('is-active');
-          else if (rel === 1)         item.classList.add('is-next');
-          else if (rel === COUNT - 1) item.classList.add('is-prev');
-          else                        item.classList.add('is-far');
-        });
-        dots.forEach((d, i) => d.classList.toggle('is-active', i === active));
-        bgVideos.forEach((v, i) => {
-          const on = i === active;
-          v.classList.toggle('is-active', on);
-          if (on) { v.currentTime = 0; v.play().catch(() => {}); }
-          else    { v.pause(); }
-        });
-        items.forEach((item, i) => {
-          const vid = item.querySelector('.ev-item__video');
-          if (!vid) return;
-          if (i === active) { vid.currentTime = 0; vid.play().catch(() => {}); }
-          else              { vid.pause(); }
-        });
-
-        // Cinematic bg — swap to active event's video
-        setCinematicBg(active);
-      }     const progress = Math.min((now - start) / duration, 1);
-            const current  = Math.round(easeOut(progress) * stat.num);
-            stat.el.childNodes[0].textContent = current;
-            if (progress < 1) requestAnimationFrame(tick);
-          }
-          requestAnimationFrame(tick);
-        }, delay);
-      }
-
-      const io = new IntersectionObserver(entries => {
-        if (!entries[0].isIntersecting) return;
-        io.disconnect();
-        stats.forEach((stat, i) => {
-          stat.el.childNodes[0].textContent = '0';
-          animateStat(stat, i * 120);
-        });
-      }, { threshold: 0.5 });
-
-      io.observe(strip);
-    })();
-
-    // ── Events Section — cinematic carousel ──────────────────────────────
-    (function () {
-      const section  = document.getElementById('events');
-      const beam     = document.getElementById('evBeam');
-      const tagline  = document.getElementById('evTagline');
-      const carousel = document.getElementById('evCarousel');
-      const items    = document.querySelectorAll('.ev-item');
-      const dots     = document.querySelectorAll('.ev-dot');
-      const bgVideos = document.querySelectorAll('.ev-bg__video');
-      const btnPrev  = document.getElementById('evPrev');
-      const btnNext  = document.getElementById('evNext');
-      if (!section || !items.length) return;
-
-      const COUNT = items.length;
-      let current = 0;
-      let animating = false;
-      let introTimers = [];
-
-      // ── Layout helper ──
-      function layout(active) {
-        items.forEach((item, i) => {
-        bgVideos.forEach((v, i) => {
-          v.classList.toggle('is-active', i === 0);
-          v.pause();
-        });
-
-        // Reset cinematic bg
-        if (cinematicVid) {
-          clearTimeout(cinematicTimer);
-          cinematicVid.classList.remove('is-active');
-          cinematicVid.pause();
-        }
-        section.classList.remove('has-cinematic-bg');lse if (rel === 1)         item.classList.add('is-next');
-          else if (rel === COUNT - 1) item.classList.add('is-prev');
-          else                        item.classList.add('is-far');
-        });
-        dots.forEach((d, i) => d.classList.toggle('is-active', i === active));
-        bgVideos.forEach((v, i) => {
-          const on = i === active;
-          v.classList.toggle('is-active', on);
-          if (on) { v.currentTime = 0; v.play().catch(() => {}); }
-          else    { v.pause(); }
-        });
-        items.forEach((item, i) => {
-          const vid = item.querySelector('.ev-item__video');
-          if (!vid) return;
-          if (i === active) { vid.currentTime = 0; vid.play().catch(() => {}); }
-          else              { vid.pause(); }
-        });
-      }
-
-      function goTo(idx) {
-        if (animating || idx === current) return;
-        animating = true;
-        current = idx;
-        layout(current);
-        setTimeout(() => { animating = false; }, 700);
-      }
-
-      function next() { goTo((current + 1) % COUNT); }
-      function prev() { goTo((current - 1 + COUNT) % COUNT); }
-
-      btnNext && btnNext.addEventListener('click', next);
-      btnPrev && btnPrev.addEventListener('click', prev);
-      dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
-
-      let touchX = 0;
-      section.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
-      section.addEventListener('touchend',   e => {
-        const dx = e.changedTouches[0].clientX - touchX;
-        if (Math.abs(dx) > 50) dx < 0 ? next() : prev();
-      });
-
-      // ── Reset all state for replay ──
-      function resetIntro() {
-        introTimers.forEach(clearTimeout);
-        introTimers = [];
-
-        section.classList.remove('is-visible');
-
-        if (beam) {
-          beam.classList.remove('is-firing');
-          void beam.offsetWidth;
-        }
-
-        if (tagline) {
-          tagline.classList.remove('is-hero', 'is-visible', 'is-settled');
-          void tagline.offsetWidth;
-        }
-
-        if (carousel) carousel.classList.remove('is-ready');
-
-        items.forEach(item => item.classList.remove('is-active','is-prev','is-next','is-far'));
-        dots.forEach((d, i) => d.classList.toggle('is-active', i === 0));
-        bgVideos.forEach((v, i) => {
-          v.classList.toggle('is-active', i === 0);
-          v.pause();
-        });
-
-        current = 0;
-        animating = false;
-      }
-
-      // ── Cinematic intro sequence ──
-      // Timeline:
-      //  0ms   — section fades in, bg video plays
-      //  100ms — tagline appears large at center (hero state)
-      //  500ms — tagline appears large at center
-      //  900ms — beam fires
-      // 1600ms — tagline transforms to header
-      // 2800ms — carousel reveals
-      function runIntro() {
-        section.classList.add('is-visible');
-
-        // Start bg video
-        bgVideos[0] && bgVideos[0].play().catch(() => {});
-
-        // Step 1: tagline appears large at center
-        introTimers.push(setTimeout(() => {
-          if (tagline) {
-            tagline.classList.add('is-hero');
-            requestAnimationFrame(() => {
-              requestAnimationFrame(() => {
-                if (tagline) tagline.classList.add('is-visible');
-              });
-            });
-          }
-        }, 500));
-
-        // Step 2: beam fires
-        introTimers.push(setTimeout(() => {
-          if (beam) {
-            void beam.offsetWidth;
-            beam.classList.add('is-firing');
-          }
-        }, 900));
-
-        // Step 3: tagline transforms to header position
-        introTimers.push(setTimeout(() => {
-          if (tagline) tagline.classList.add('is-settled');
-        }, 1600));
-
-        // Step 4: carousel reveals
-        introTimers.push(setTimeout(() => {
-          layout(0);
-          if (carousel) carousel.classList.add('is-ready');
-        }, 2800));
-      }
-
-      // ── IntersectionObserver — replay on every entry ──
-      const io = new IntersectionObserver(entries => {
-        if (entries[0].isIntersecting) {
-          resetIntro();
-          requestAnimationFrame(() => requestAnimationFrame(runIntro));
-        }
-      }, { threshold: 0.5 });
-
-      io.observe(section);
-    })();
 
 
-
-    
 
         // ── Recruiter Band ──────────────────────────────
     (function () {
@@ -1038,6 +738,86 @@
         document.querySelectorAll('.tile.caption-visible').forEach(t => t.classList.remove('caption-visible'));
       }
     });
+
+    // ── Stats Count-up ──────────────────────────────────────────
+    (function () {
+      var strip = document.getElementById('stats');
+      if (!strip) return;
+      var animated = false;
+
+      function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+      function animateCounters() {
+        if (animated) return;
+        animated = true;
+        var duration = 1200;
+        var start = null;
+        var nums = strip.querySelectorAll('[data-target]');
+
+        function tick(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var ease = easeOutCubic(progress);
+          nums.forEach(function(el) {
+            var target = parseInt(el.getAttribute('data-target'), 10);
+            var suffix = el.getAttribute('data-suffix');
+            var current = Math.floor(ease * target);
+            el.innerHTML = current + '<span>' + suffix + '</span>';
+          });
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      var io = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) { animateCounters(); io.disconnect(); }
+      }, { threshold: 0.4 });
+      io.observe(strip);
+    })();
+
+    // ── Success Stories — per-card step scroll ──────────────────
+    (function () {
+      var track = document.querySelector('.ss-track');
+      var cards = document.querySelectorAll('.ss-card');
+      if (!track || !cards.length) return;
+
+      var index = 0;
+      var stepTimer = null;
+      var paused = false;
+
+      function stepScroll() {
+        if (paused) return;
+        var cardWidth = cards[0].offsetWidth + 24;
+
+        track.style.transition = 'transform 0.6s ease';
+        track.style.transform = 'translateX(-' + (index * cardWidth) + 'px)';
+
+        index++;
+
+        if (index >= cards.length) {
+          setTimeout(function () {
+            track.style.transition = 'none';
+            track.style.transform = 'translateX(0)';
+            index = 0;
+          }, 600);
+        }
+
+        stepTimer = setTimeout(stepScroll, 1200);
+      }
+
+      track.addEventListener('mouseenter', function () {
+        paused = true;
+        clearTimeout(stepTimer);
+        track.style.transition = 'none';
+      });
+
+      track.addEventListener('mouseleave', function () {
+        paused = false;
+        stepScroll();
+      });
+
+      stepTimer = setTimeout(stepScroll, 400);
+    })();
   </script>
 </body>
 </html>
