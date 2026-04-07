@@ -289,7 +289,12 @@
   object-fit: cover;
   display: block;
   pointer-events: none;
+  transition: opacity 0.2s linear;
 }
+
+/* Blackout when main player is hovered */
+.ev-mini-thumb.is-disabled { background: #000; }
+.ev-mini-thumb.is-disabled video { opacity: 0; }
 
 /* ── Mute button ── */
 .ev-mute-btn {

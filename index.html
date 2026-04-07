@@ -891,6 +891,13 @@
 
 
 
+        // ── Success Stories — delayed cinematic start ──────────────────────────────
+    (function () {
+      var track = document.querySelector('.ss-track');
+      if (!track) return;
+      setTimeout(function() { track.classList.add('is-active'); }, 700);
+    })();
+
         // ── Recruiter Band ──────────────────────────────
     (function () {
       const track = document.getElementById('recruiterTrack');

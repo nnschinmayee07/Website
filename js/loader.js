@@ -177,6 +177,22 @@ function initEvents() {
     }
   }, { threshold: 0.4 });
   io.observe(section);
+
+  // Blackout mini thumbs when main player is hovered
+  if (mainThumb) {
+    mainThumb.addEventListener('mouseenter', function() {
+      miniThumbs.forEach(function(t) {
+        var v = t.querySelector('video');
+        if (v) { v.pause(); v.currentTime = 0; }
+        t.classList.add('is-disabled');
+      });
+    });
+    mainThumb.addEventListener('mouseleave', function() {
+      miniThumbs.forEach(function(t) { t.classList.remove('is-disabled'); });
+      var active = document.querySelector('.ev-mini-thumb.is-active video');
+      if (active) active.play().catch(function(){});
+    });
+  }
 }
 
 // ── Boot ────────────────────────────────────────────────────────
