@@ -43,8 +43,8 @@
 
 /* Big "Why MLRIT" label */
 .why-section__left .section-label {
-  font-size: 2.8rem;
-  font-weight: 800;
+  font-size: 0.72rem;
+  font-weight: 700;
   letter-spacing: 0.18em;
   color: #E85D1F;
   text-transform: uppercase;
@@ -52,32 +52,31 @@
 
 .why-section__heading {
   font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
-  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
   font-weight: 700;
   color: #fff;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: -0.02em;
   margin: 0;
 }
 
-/* Drop cap — Playfair Display */
+/* Drop cap — removed, inline with heading */
 .why-section__dropcap {
-  float: left;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 4.8em;
-  font-weight: 700;
-  line-height: 0.72;
-  color: #E85D1F;
-  margin-right: 10px;
-  margin-top: 10px;
+  float: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
 }
 
 .why-section__body {
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  font-size: 1rem;
+  font-size: 0.925rem;
   font-weight: 400;
-  color: rgba(255,255,255,0.58);
-  line-height: 1.9;
+  color: rgba(255,255,255,0.52);
+  line-height: 1.85;
   max-width: 460px;
   margin: 0;
 }

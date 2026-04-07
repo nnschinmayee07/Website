@@ -2,14 +2,14 @@
 // RANKINGS SECTION — Count-up animations + hover effects
 // ═══════════════════════════════════════════════════════════════
 
-(function () {
+function initRankings() {
   'use strict';
 
-  const section = document.querySelector('.mlrit-rankings');
+  const section = document.querySelector('.achievements');
   if (!section) return;
 
   // Parse rank numbers
-  const rankItems = section.querySelectorAll('.rank-number');
+  const rankItems = section.querySelectorAll('.rank-row__num');
   const ranks = Array.from(rankItems).map(el => {
     const raw = el.textContent.trim();
     // Handle numeric (201) or alphanumeric (AAAA, #6)
@@ -66,4 +66,4 @@
   );
 
   observer.observe(section);
-})();
+}

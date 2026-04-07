@@ -101,4 +101,5 @@
 .placement-card__img-wrap {
   width: 100%;
   aspect-ratio: 16/9;
-  overflow: hidden
+  overflow: hidden;
+}

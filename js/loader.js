@@ -65,13 +65,29 @@ function initEvents() {
 
   if (!section || !bgVideo) return;
 
-  // ── Explore prompt: settle to top-left when section enters viewport ──
+  // ── Explore prompt: settle to top-left on any scroll within section ──
   if (evExplore) {
-    var exploreIO = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting) {
+    var settled = false;
+    section.addEventListener('wheel', function () {
+      if (!settled) {
+        settled = true;
         evExplore.classList.add('is-settled');
       }
-    }, { threshold: 0.4 });
+    }, { passive: true });
+    section.addEventListener('touchmove', function () {
+      if (!settled) {
+        settled = true;
+        evExplore.classList.add('is-settled');
+      }
+    }, { passive: true });
+
+    // Also trigger when user scrolls page and section enters viewport
+    var exploreIO = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting && entries[0].intersectionRatio >= 0.35) {
+        settled = true;
+        evExplore.classList.add('is-settled');
+      }
+    }, { threshold: 0.35 });
     exploreIO.observe(section);
   }
 
@@ -201,9 +217,13 @@ function initEvents() {
 
 // ?????? Boot ????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
 const init = () => {
-  loadSection('accreditations-slot', 'sections/accreditations.html');
-  loadSection('why-mlrit-slot',      'sections/why-mlrit.html',      initWhyMLRIT);
-  loadSection('events-slot',         'sections/events.html',         initEvents);
+  initRankings();
+  initWhyMLRIT();
+  initEvents();
 };
 
-document.addEventListener('DOMContentLoaded', init);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
