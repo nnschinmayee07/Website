@@ -3,7 +3,13 @@
    =========================== */
 
 .ss-section {
-  background: #f7f7f5;
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(24,69,59,0.16) 0%, transparent 50%),
+    radial-gradient(ellipse 70% 60% at 90% 100%, rgba(200,150,12,0.12) 0%, transparent 50%),
+    linear-gradient(90deg, transparent 49%, rgba(24,69,59,0.07) 49%, rgba(24,69,59,0.07) 51%, transparent 51%),
+    linear-gradient(0deg, transparent 49%, rgba(24,69,59,0.07) 49%, rgba(24,69,59,0.07) 51%, transparent 51%);
+  background-color: #efede8;
+  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
   padding: 64px 0 72px;
   border-bottom: 1px solid #e8e8e8;
   overflow: hidden;
