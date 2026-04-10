@@ -109,6 +109,69 @@
     0 0 0 1px rgba(232,93,31,0.25);
 }
 
+/* ── Phase 1: Section reveal from nothing ── */
+.why-section {
+  opacity: 0;
+  transform: scaleY(0.6) translateY(40px);
+  transform-origin: top center;
+  will-change: transform, opacity;
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.why-section.is-revealed {
+  opacity: 1;
+  transform: scaleY(1) translateY(0);
+}
+
+/* Background bleeds in after section shell appears */
+.why-section__bg {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+}
+
+.why-section.is-revealed .why-section__bg {
+  opacity: 0.08;
+}
+
+/* ── Phase 2: Content pull-in (staggered after reveal) ── */
+.why-section__left,
+.why-section__right {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.why-section__left {
+  transform: translateX(-100px);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
+              opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+}
+
+.why-section__right {
+  transform: translateX(100px);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.53s,
+              opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.53s;
+}
+
+.why-section__left.is-visible,
+.why-section__right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .why-section,
+  .why-section__left,
+  .why-section__right,
+  .why-section__bg {
+    opacity: unset;
+    transform: none;
+    transition: none;
+  }
+  .why-section__bg { opacity: 0.08; }
+}
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .why-section__inner {
