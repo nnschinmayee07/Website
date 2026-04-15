@@ -1,0 +1,53 @@
+achireddy.jpg|Dr. Ch Achi Reddy|HOD, Professor|Physics, Material Science
+radhika-devi.jpg|Dr. V. Radhika Devi|Director, Professor|Mathematics, Statistics
+raghunath-rao.jpg|Dr. Y. Raghunath Rao|Professor|Chemistry, Materials
+ramgopal.jpg|Dr. N Ch Ramgopal|Professor|Physics, Electronics
+ravindranath.jpg|Dr. G. Ravindranath Reddy|Professor|Mathematics
+krishna-prasad.jpg|Dr. JSVR. Krishna Prasad|Professor|English, Communication
+umamaheswara.jpg|Dr. Umamaheswara Rao Bontha|Professor|Physics, Optics
+anantha-lakshmi.jpg|Dr. Y. Anantha Lakshmi|Professor|Chemistry
+yuganand.jpg|Dr. N. Yuganand|Professor|Mathematics
+vijaya-bhaskar.jpg|Dr. Mopur Vijaya Bhaskar Reddy|Professor|Physics
+sailaja.jpg|Dr. Sailaja Peesapati|Professor|Chemistry
+harika.jpg|Dr. Harika Patnala|Professor|English, Soft Skills
+deepthi-sista.jpg|Dr. Deepthi Sista|Associate Professor|Mathematics
+lakshmi-rajesh.jpg|Dr. CH. Lakshmi Rajesh|Associate Professor|Physics
+brahmayya.jpg|Dr. Manuri Brahmayya|Associate Professor|Chemistry
+nirmala-kumari.jpg|Dr. V Nirmala Kumari|Associate Professor|Mathematics
+aravind-mudhiraj.jpg|Dr. Kola Aravind Mudhiraj|Associate Professor|Physics
+haripriya.jpg|Dr. V. Haripriya|Associate Professor|English
+parsharamulu.jpg|Parsharamulu Medichelmi|Assistant Professor|Mathematics
+divya.jpg|Madhuraveni Divya|Assistant Professor|Chemistry
+sumalatha.jpg|Dr. Sumalatha Manne|Assistant Professor|Mathematics
+amalendu.jpg|Dr. Amalendu Rana|Assistant Professor|Physics
+harsha-vincent.jpg|Dr. Harsha Vincent|Assistant Professor|English
+abdullah.jpg|Mr. Abdullah Nouman|Assistant Professor|Mathematics
+pratyusha.jpg|Dr. N. Pratyusha|Assistant Professor|Chemistry
+ratna-priya.jpg|Mrs. L Ratna Priya|Assistant Professor|Physics
+eranna.jpg|Mr. S Eranna|Assistant Professor|Mathematics
+momin-ali.jpg|Mr. Momin Ali|Assistant Professor|Physics
+subhadeep.jpg|Dr. Subhadeep Kumar|Assistant Professor|Chemistry
+inzamul.jpg|Dr. Inzamul Sarkar|Assistant Professor|Physics
+ekramul.jpg|Mr. Ekramul Haque|Assistant Professor|Mathematics
+shubhra.jpg|Dr. Shubhra Dash|Assistant Professor|Chemistry
+atasi.jpg|Dr. Atasi Ray|Assistant Professor|Physics
+srimanta.jpg|Dr. Srimanta Pal|Assistant Professor|Mathematics
+monaj.jpg|Dr. Monaj Karar|Assistant Professor|Chemistry
+srinivas-indla.jpg|Dr. Srinivas Indla|Assistant Professor|English
+subhasish.jpg|Dr. Subhasish Saha|Assistant Professor|Physics
+shiva-kumar.jpg|Sri Ram Shiva Kumar|Assistant Professor|Mathematics
+arif.jpg|Mr. Arif Ahammed|Assistant Professor|Physics
+sujatha.jpg|M. Sujatha|Assistant Professor|Chemistry
+janga-anil.jpg|Janga Anil Reddy|Assistant Professor|English
+shilpa.jpg|A. Shilpa|Assistant Professor|Mathematics
+amritha.jpg|Dr. Amritha Saha|Assistant Professor|Chemistry
+noel.jpg|Mr. Noel Nalli|Assistant Professor|English
+lavanya.jpg|Dr. Y. Lavanya|Assistant Professor|Mathematics
+vishal.jpg|Mr. Vishal Nakka|Assistant Professor|Physics
+hymavathi.jpg|M. Hymavathi|Assistant Professor|Chemistry
+praveen-kumar.jpg|N. Praveen Kumar|Assistant Professor|Mathematics
+veera-raghavulu.jpg|Mr. T Veera Raghavulu|Assistant Professor|Physics
+sudheer.jpg|Dr. M. Sudheer Kumar|Assistant Professor|English
+amar-nath.jpg|Neela Amar Nath|Assistant Professor|Mathematics
+krishnudu.jpg|Mr. K. Krishnudu|Assistant Professor|Physics
+laxman-rao.jpg|Mr. A Venkata Laxman Rao|Assistant Professor|Chemistry

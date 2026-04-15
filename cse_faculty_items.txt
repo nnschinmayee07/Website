@@ -1,0 +1,316 @@
+<div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/k-srinivas-rao.jpg" alt="Dr. K. Srinivas Rao" onerror="this.style.display='none';this.parentElement.textContent='KR'" /></div>
+              <div class="faculty-item__name">Dr. K. Srinivas Rao</div>
+              <div class="faculty-item__role">Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/n-sirisha.jpg" alt="Dr. N. Sirisha" onerror="this.style.display='none';this.parentElement.textContent='NS'" /></div>
+              <div class="faculty-item__name">Dr. N. Sirisha</div>
+              <div class="faculty-item__role">Professor, Associate Dean</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/a-balaram.jpg" alt="Dr. A. Balaram" onerror="this.style.display='none';this.parentElement.textContent='AB'" /></div>
+              <div class="faculty-item__name">Dr. A. Balaram</div>
+              <div class="faculty-item__role">Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/v-thrimurthulu.jpg" alt="Dr. V. Thrimurthulu" onerror="this.style.display='none';this.parentElement.textContent='VT'" /></div>
+              <div class="faculty-item__name">Dr. V. Thrimurthulu</div>
+              <div class="faculty-item__role">Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/k-venkata-subbaiah.jpg" alt="Dr. K. Venkata Subbaiah" onerror="this.style.display='none';this.parentElement.textContent='KS'" /></div>
+              <div class="faculty-item__name">Dr. K. Venkata Subbaiah</div>
+              <div class="faculty-item__role">Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/kandrakunta-chinnaiah.jpg" alt="Dr. Kandrakunta Chinnaiah" onerror="this.style.display='none';this.parentElement.textContent='KC'" /></div>
+              <div class="faculty-item__name">Dr. Kandrakunta Chinnaiah</div>
+              <div class="faculty-item__role">Associate Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/j-mahalakshmi.jpeg" alt="Dr. J. Mahalakshmi" onerror="this.style.display='none';this.parentElement.textContent='JM'" /></div>
+              <div class="faculty-item__name">Dr. J. Mahalakshmi</div>
+              <div class="faculty-item__role">Associate Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/john-samuel-babu.jpg" alt="Dr. G. John Samuel Babu" onerror="this.style.display='none';this.parentElement.textContent='GB'" /></div>
+              <div class="faculty-item__name">Dr. G. John Samuel Babu</div>
+              <div class="faculty-item__role">Associate Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/k-gagan-kumar.jpg" alt="Dr. K. Gagan Kumar" onerror="this.style.display='none';this.parentElement.textContent='KK'" /></div>
+              <div class="faculty-item__name">Dr. K. Gagan Kumar</div>
+              <div class="faculty-item__role">Associate Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/sai-krishna.jpg" alt="Mr. Sai Krishna" onerror="this.style.display='none';this.parentElement.textContent='SK'" /></div>
+              <div class="faculty-item__name">Mr. Sai Krishna</div>
+              <div class="faculty-item__role">Associate Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/nagarjuna-tandra.jpg" alt="Mr. Nagarjuna Tandra" onerror="this.style.display='none';this.parentElement.textContent='NT'" /></div>
+              <div class="faculty-item__name">Mr. Nagarjuna Tandra</div>
+              <div class="faculty-item__role">Associate Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/b-sanjai-prasad.jpg" alt="Dr. B. Sanjai Prasada Rao" onerror="this.style.display='none';this.parentElement.textContent='BR'" /></div>
+              <div class="faculty-item__name">Dr. B. Sanjai Prasada Rao</div>
+              <div class="faculty-item__role">Associate Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/michael-preetam.jpg" alt="Dr. P. Michael Preetam Raj" onerror="this.style.display='none';this.parentElement.textContent='PR'" /></div>
+              <div class="faculty-item__name">Dr. P. Michael Preetam Raj</div>
+              <div class="faculty-item__role">Associate Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/t-venkata-nagaraju.jpeg" alt="Dr. T. Venkata Nagaraju" onerror="this.style.display='none';this.parentElement.textContent='TN'" /></div>
+              <div class="faculty-item__name">Dr. T. Venkata Nagaraju</div>
+              <div class="faculty-item__role">Associate Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/m-kalpana-chowdary.jpg" alt="Dr. M. Kalpana Chowdary" onerror="this.style.display='none';this.parentElement.textContent='MC'" /></div>
+              <div class="faculty-item__name">Dr. M. Kalpana Chowdary</div>
+              <div class="faculty-item__role">Associate Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/b-devananda-rao.jpg" alt="Mr. B. Devananda Rao" onerror="this.style.display='none';this.parentElement.textContent='BR'" /></div>
+              <div class="faculty-item__name">Mr. B. Devananda Rao</div>
+              <div class="faculty-item__role">Associate Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/k-pushpa-rani.jpg" alt="Dr. K. Pushpa Rani" onerror="this.style.display='none';this.parentElement.textContent='KR'" /></div>
+              <div class="faculty-item__name">Dr. K. Pushpa Rani</div>
+              <div class="faculty-item__role">Associate Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/g-prabhakara-reddy.jpg" alt="G. Prabhakara Reddy" onerror="this.style.display='none';this.parentElement.textContent='GR'" /></div>
+              <div class="faculty-item__name">G. Prabhakara Reddy</div>
+              <div class="faculty-item__role">Associate Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/m-srinivasa-rao.jpg" alt="Mr. M. Srinivasa Rao" onerror="this.style.display='none';this.parentElement.textContent='MR'" /></div>
+              <div class="faculty-item__name">Mr. M. Srinivasa Rao</div>
+              <div class="faculty-item__role">Associate Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/allam-sangeetha.jpg" alt="Allam Sangeetha" onerror="this.style.display='none';this.parentElement.textContent='AS'" /></div>
+              <div class="faculty-item__name">Allam Sangeetha</div>
+              <div class="faculty-item__role">Associate Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/guduru-durga-bhavani.jpeg" alt="Miss Guduru Durga Bhavani" onerror="this.style.display='none';this.parentElement.textContent='GB'" /></div>
+              <div class="faculty-item__name">Miss Guduru Durga Bhavani</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/shaik-mohammed-ilias.jpeg" alt="Dr. Shaik Mohammed Ilias" onerror="this.style.display='none';this.parentElement.textContent='SI'" /></div>
+              <div class="faculty-item__name">Dr. Shaik Mohammed Ilias</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/sasmita-pradhan.png" alt="Mrs. Sasmita Kumari Pradhan" onerror="this.style.display='none';this.parentElement.textContent='SP'" /></div>
+              <div class="faculty-item__name">Mrs. Sasmita Kumari Pradhan</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/b-muralikrishna.jpeg" alt="Mr. Boligarla Muralikrishna" onerror="this.style.display='none';this.parentElement.textContent='BM'" /></div>
+              <div class="faculty-item__name">Mr. Boligarla Muralikrishna</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/b-ratnamala.jpeg" alt="Mrs. B. Ratnamala" onerror="this.style.display='none';this.parentElement.textContent='BR'" /></div>
+              <div class="faculty-item__name">Mrs. B. Ratnamala</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/j-chaitanya.jpeg" alt="Jonnalagadda Chaitanya" onerror="this.style.display='none';this.parentElement.textContent='JC'" /></div>
+              <div class="faculty-item__name">Jonnalagadda Chaitanya</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/d-jeevitha.jpeg" alt="Dubasi Jeevitha" onerror="this.style.display='none';this.parentElement.textContent='DJ'" /></div>
+              <div class="faculty-item__name">Dubasi Jeevitha</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/d-tejaswini.jpg" alt="D. Tejaswini" onerror="this.style.display='none';this.parentElement.textContent='DT'" /></div>
+              <div class="faculty-item__name">D. Tejaswini</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/hareesh-pesala.jpg" alt="Mr. Hareesh Pesala" onerror="this.style.display='none';this.parentElement.textContent='HP'" /></div>
+              <div class="faculty-item__name">Mr. Hareesh Pesala</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/ramya-s-pure.jpg" alt="Ramya S Pure" onerror="this.style.display='none';this.parentElement.textContent='RP'" /></div>
+              <div class="faculty-item__name">Ramya S Pure</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/p-santhosh-kumar.jpeg" alt="P. Santhosh Kumar" onerror="this.style.display='none';this.parentElement.textContent='PK'" /></div>
+              <div class="faculty-item__name">P. Santhosh Kumar</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/jetti-sri-lakshmi.jpg" alt="Jetti Sri Lakshmi" onerror="this.style.display='none';this.parentElement.textContent='JL'" /></div>
+              <div class="faculty-item__name">Jetti Sri Lakshmi</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/ms-sabitha.jpg" alt="M. S. Sabitha" onerror="this.style.display='none';this.parentElement.textContent='MS'" /></div>
+              <div class="faculty-item__name">M. S. Sabitha</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/a-laxmi-prasanna.jpg" alt="Anishetty Laxmi Prasanna" onerror="this.style.display='none';this.parentElement.textContent='AP'" /></div>
+              <div class="faculty-item__name">Anishetty Laxmi Prasanna</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/kshitiza-vasudeva.jpg" alt="Mrs. Kshitiza Vasudeva" onerror="this.style.display='none';this.parentElement.textContent='KV'" /></div>
+              <div class="faculty-item__name">Mrs. Kshitiza Vasudeva</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/boddu-srilatha.jpg" alt="Mrs. Boddu Srilatha" onerror="this.style.display='none';this.parentElement.textContent='BS'" /></div>
+              <div class="faculty-item__name">Mrs. Boddu Srilatha</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/v-balakrishna-reddy.jpg" alt="Mr. V. Balakrishna Reddy" onerror="this.style.display='none';this.parentElement.textContent='VR'" /></div>
+              <div class="faculty-item__name">Mr. V. Balakrishna Reddy</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/p-victor-emmanuel.jpg" alt="Mr. P. Victor Emmanuel" onerror="this.style.display='none';this.parentElement.textContent='PE'" /></div>
+              <div class="faculty-item__name">Mr. P. Victor Emmanuel</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/m-vineesha.jpg" alt="Mrs. M. Vineesha" onerror="this.style.display='none';this.parentElement.textContent='MV'" /></div>
+              <div class="faculty-item__name">Mrs. M. Vineesha</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/b-manjusha.jpg" alt="Mrs. B. Manjusha" onerror="this.style.display='none';this.parentElement.textContent='BM'" /></div>
+              <div class="faculty-item__name">Mrs. B. Manjusha</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/m-srinivasulu.jpg" alt="Mr. M. Srinivasulu" onerror="this.style.display='none';this.parentElement.textContent='MS'" /></div>
+              <div class="faculty-item__name">Mr. M. Srinivasulu</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/nagarjuna-rao-gudelli.jpg" alt="Mr. Nagarjuna Rao Gudelli" onerror="this.style.display='none';this.parentElement.textContent='NG'" /></div>
+              <div class="faculty-item__name">Mr. Nagarjuna Rao Gudelli</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/swathi.jpeg" alt="Mrs. Swathi" onerror="this.style.display='none';this.parentElement.textContent='SW'" /></div>
+              <div class="faculty-item__name">Mrs. Swathi</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/k-samatha.jpeg" alt="Mrs. K. Samatha" onerror="this.style.display='none';this.parentElement.textContent='KS'" /></div>
+              <div class="faculty-item__name">Mrs. K. Samatha</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/a-nagamani.jpg" alt="Mrs. A. Nagamani" onerror="this.style.display='none';this.parentElement.textContent='AN'" /></div>
+              <div class="faculty-item__name">Mrs. A. Nagamani</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/kranthi-kumari.jpg" alt="Ms. Kranthi Kumari" onerror="this.style.display='none';this.parentElement.textContent='KK'" /></div>
+              <div class="faculty-item__name">Ms. Kranthi Kumari</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/ragini-patil.jpg" alt="Ragini Patil" onerror="this.style.display='none';this.parentElement.textContent='RP'" /></div>
+              <div class="faculty-item__name">Ragini Patil</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/lingaiah-suramsetti.png" alt="Lingaiah Suramsetti" onerror="this.style.display='none';this.parentElement.textContent='LS'" /></div>
+              <div class="faculty-item__name">Lingaiah Suramsetti</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/i-sapthami.jpg" alt="I. Sapthami" onerror="this.style.display='none';this.parentElement.textContent='IS'" /></div>
+              <div class="faculty-item__name">I. Sapthami</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/p-deepak.jpg" alt="Mr. P. Deepak" onerror="this.style.display='none';this.parentElement.textContent='PD'" /></div>
+              <div class="faculty-item__name">Mr. P. Deepak</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/jeethu-philip.jpg" alt="Mrs. Jeethu Philip" onerror="this.style.display='none';this.parentElement.textContent='JP'" /></div>
+              <div class="faculty-item__name">Mrs. Jeethu Philip</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/j-pradeep-kumar.jpg" alt="J. Pradeep Kumar" onerror="this.style.display='none';this.parentElement.textContent='JK'" /></div>
+              <div class="faculty-item__name">J. Pradeep Kumar</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/telise-vinod.jpg" alt="Telise Vinod" onerror="this.style.display='none';this.parentElement.textContent='TV'" /></div>
+              <div class="faculty-item__name">Telise Vinod</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/kukunoor-shekar.jpg" alt="Mr. Kukunoor Shekar" onerror="this.style.display='none';this.parentElement.textContent='KS'" /></div>
+              <div class="faculty-item__name">Mr. Kukunoor Shekar</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/g-praveen.jpg" alt="Mr. G. Praveen" onerror="this.style.display='none';this.parentElement.textContent='GP'" /></div>
+              <div class="faculty-item__name">Mr. G. Praveen</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/sk-lokesh-naik.jpg" alt="S K Lokesh Naik" onerror="this.style.display='none';this.parentElement.textContent='SN'" /></div>
+              <div class="faculty-item__name">S K Lokesh Naik</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/oruganti-ramesh.jpg" alt="Oruganti Ramesh" onerror="this.style.display='none';this.parentElement.textContent='OR'" /></div>
+              <div class="faculty-item__name">Oruganti Ramesh</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/divya-priya-degala.jpg" alt="Mrs. Divya Priya Degala" onerror="this.style.display='none';this.parentElement.textContent='DD'" /></div>
+              <div class="faculty-item__name">Mrs. Divya Priya Degala</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/palelli-purushotham.jpeg" alt="Palelli Purushotham" onerror="this.style.display='none';this.parentElement.textContent='PP'" /></div>
+              <div class="faculty-item__name">Palelli Purushotham</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/bashetty-suman.jpg" alt="Bashetty Suman" onerror="this.style.display='none';this.parentElement.textContent='BS'" /></div>
+              <div class="faculty-item__name">Bashetty Suman</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/b-veda-vidhya.jpg" alt="B. Veda Vidhya" onerror="this.style.display='none';this.parentElement.textContent='BV'" /></div>
+              <div class="faculty-item__name">B. Veda Vidhya</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/k-swetha.jpg" alt="K. Swetha" onerror="this.style.display='none';this.parentElement.textContent='KS'" /></div>
+              <div class="faculty-item__name">K. Swetha</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+            <div class="faculty-item">
+              <div class="faculty-item__photo"><img src="images/cse/en-vijaya-kumari.jpg" alt="E. N. Vijaya Kumari" onerror="this.style.display='none';this.parentElement.textContent='EK'" /></div>
+              <div class="faculty-item__name">E. N. Vijaya Kumari</div>
+              <div class="faculty-item__role">Assistant Professor</div>
+            </div>
+          </div>

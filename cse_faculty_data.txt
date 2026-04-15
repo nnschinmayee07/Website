@@ -1,0 +1,63 @@
+images/cse/k-srinivas-rao.jpg|Dr. K. Srinivas Rao|Professor
+images/cse/n-sirisha.jpg|Dr. N. Sirisha|Professor, Associate Dean
+images/cse/a-balaram.jpg|Dr. A. Balaram|Professor
+images/cse/v-thrimurthulu.jpg|Dr. V. Thrimurthulu|Professor
+images/cse/k-venkata-subbaiah.jpg|Dr. K. Venkata Subbaiah|Professor
+images/cse/kandrakunta-chinnaiah.jpg|Dr. Kandrakunta Chinnaiah|Associate Professor
+images/cse/j-mahalakshmi.jpeg|Dr. J. Mahalakshmi|Associate Professor
+images/cse/john-samuel-babu.jpg|Dr. G. John Samuel Babu|Associate Professor
+images/cse/k-gagan-kumar.jpg|Dr. K. Gagan Kumar|Associate Professor
+images/cse/sai-krishna.jpg|Mr. Sai Krishna|Associate Professor
+images/cse/nagarjuna-tandra.jpg|Mr. Nagarjuna Tandra|Associate Professor
+images/cse/b-sanjai-prasad.jpg|Dr. B. Sanjai Prasada Rao|Associate Professor
+images/cse/michael-preetam.jpg|Dr. P. Michael Preetam Raj|Associate Professor
+images/cse/t-venkata-nagaraju.jpeg|Dr. T. Venkata Nagaraju|Associate Professor
+images/cse/m-kalpana-chowdary.jpg|Dr. M. Kalpana Chowdary|Associate Professor
+images/cse/b-devananda-rao.jpg|Mr. B. Devananda Rao|Associate Professor
+images/cse/k-pushpa-rani.jpg|Dr. K. Pushpa Rani|Associate Professor
+images/cse/g-prabhakara-reddy.jpg|G. Prabhakara Reddy|Associate Professor
+images/cse/m-srinivasa-rao.jpg|Mr. M. Srinivasa Rao|Associate Professor
+images/cse/allam-sangeetha.jpg|Allam Sangeetha|Associate Professor
+images/cse/guduru-durga-bhavani.jpeg|Miss Guduru Durga Bhavani|Assistant Professor
+images/cse/shaik-mohammed-ilias.jpeg|Dr. Shaik Mohammed Ilias|Assistant Professor
+images/cse/sasmita-pradhan.png|Mrs. Sasmita Kumari Pradhan|Assistant Professor
+images/cse/b-muralikrishna.jpeg|Mr. Boligarla Muralikrishna|Assistant Professor
+images/cse/b-ratnamala.jpeg|Mrs. B. Ratnamala|Assistant Professor
+images/cse/j-chaitanya.jpeg|Jonnalagadda Chaitanya|Assistant Professor
+images/cse/d-jeevitha.jpeg|Dubasi Jeevitha|Assistant Professor
+images/cse/d-tejaswini.jpg|D. Tejaswini|Assistant Professor
+images/cse/hareesh-pesala.jpg|Mr. Hareesh Pesala|Assistant Professor
+images/cse/ramya-s-pure.jpg|Ramya S Pure|Assistant Professor
+images/cse/p-santhosh-kumar.jpeg|P. Santhosh Kumar|Assistant Professor
+images/cse/jetti-sri-lakshmi.jpg|Jetti Sri Lakshmi|Assistant Professor
+images/cse/ms-sabitha.jpg|M. S. Sabitha|Assistant Professor
+images/cse/a-laxmi-prasanna.jpg|Anishetty Laxmi Prasanna|Assistant Professor
+images/cse/kshitiza-vasudeva.jpg|Mrs. Kshitiza Vasudeva|Assistant Professor
+images/cse/boddu-srilatha.jpg|Mrs. Boddu Srilatha|Assistant Professor
+images/cse/v-balakrishna-reddy.jpg|Mr. V. Balakrishna Reddy|Assistant Professor
+images/cse/p-victor-emmanuel.jpg|Mr. P. Victor Emmanuel|Assistant Professor
+images/cse/m-vineesha.jpg|Mrs. M. Vineesha|Assistant Professor
+images/cse/b-manjusha.jpg|Mrs. B. Manjusha|Assistant Professor
+images/cse/m-srinivasulu.jpg|Mr. M. Srinivasulu|Assistant Professor
+images/cse/nagarjuna-rao-gudelli.jpg|Mr. Nagarjuna Rao Gudelli|Assistant Professor
+images/cse/swathi.jpeg|Mrs. Swathi|Assistant Professor
+images/cse/k-samatha.jpeg|Mrs. K. Samatha|Assistant Professor
+images/cse/a-nagamani.jpg|Mrs. A. Nagamani|Assistant Professor
+images/cse/kranthi-kumari.jpg|Ms. Kranthi Kumari|Assistant Professor
+images/cse/ragini-patil.jpg|Ragini Patil|Assistant Professor
+images/cse/lingaiah-suramsetti.png|Lingaiah Suramsetti|Assistant Professor
+images/cse/i-sapthami.jpg|I. Sapthami|Assistant Professor
+images/cse/p-deepak.jpg|Mr. P. Deepak|Assistant Professor
+images/cse/jeethu-philip.jpg|Mrs. Jeethu Philip|Assistant Professor
+images/cse/j-pradeep-kumar.jpg|J. Pradeep Kumar|Assistant Professor
+images/cse/telise-vinod.jpg|Telise Vinod|Assistant Professor
+images/cse/kukunoor-shekar.jpg|Mr. Kukunoor Shekar|Assistant Professor
+images/cse/g-praveen.jpg|Mr. G. Praveen|Assistant Professor
+images/cse/sk-lokesh-naik.jpg|S K Lokesh Naik|Assistant Professor
+images/cse/oruganti-ramesh.jpg|Oruganti Ramesh|Assistant Professor
+images/cse/divya-priya-degala.jpg|Mrs. Divya Priya Degala|Assistant Professor
+images/cse/palelli-purushotham.jpeg|Palelli Purushotham|Assistant Professor
+images/cse/bashetty-suman.jpg|Bashetty Suman|Assistant Professor
+images/cse/b-veda-vidhya.jpg|B. Veda Vidhya|Assistant Professor
+images/cse/k-swetha.jpg|K. Swetha|Assistant Professor
+images/cse/en-vijaya-kumari.jpg|E. N. Vijaya Kumari|Assistant Professor

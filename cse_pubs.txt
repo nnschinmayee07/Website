@@ -1,0 +1,69 @@
+<div class="pub-filters" id="pubFilters">
+          <button class="pub-filter is-active" data-year="all">All</button>
+          <button class="pub-filter" data-year="2024">2024</button>
+          <button class="pub-filter" data-year="2023">2023</button>
+          <button class="pub-filter" data-year="2022">2022</button>
+          <button class="pub-filter" data-year="2021">2021</button>
+        </div>
+
+        <div class="pub-list" id="pubList">
+          <div class="pub-card" data-pub-year="2024">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Deep Learning-based Intrusion Detection System for IoT Networks</div>
+              <div class="pub-card__authors">Dr. K. Srinivas Rao, A. Naveen Kumar, P. Ravi Teja</div>
+              <div class="pub-card__journal">IEEE Internet of Things Journal, Vol. 11, Issue 4</div>
+              <span class="pub-tag">Published</span>
+            </div>
+            <span class="pub-card__year">2024</span>
+          </div>
+
+          <div class="pub-card" data-pub-year="2024">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Optimised Feature Selection for Medical Image Classification using CNN</div>
+              <div class="pub-card__authors">Dr. N. Sirisha, M. Lavanya, S. Preethi</div>
+              <div class="pub-card__journal">Journal of Biomedical Informatics, Elsevier, Vol. 148</div>
+              <span class="pub-tag">Published</span>
+            </div>
+            <span class="pub-card__year">2024</span>
+          </div>
+
+          <div class="pub-card" data-pub-year="2023">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Blockchain-enabled Secure Data Sharing in Cloud Environments</div>
+              <div class="pub-card__authors">Dr. Ajmeera Kiran, Allam Sangeetha, B. Venkat Reddy</div>
+              <div class="pub-card__journal">Cluster Computing, Springer, Vol. 26, pp. 2145–2160</div>
+              <span class="pub-tag">Published</span>
+            </div>
+            <span class="pub-card__year">2023</span>
+          </div>
+
+          <div class="pub-card" data-pub-year="2023">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Sentiment Analysis of Social Media Data using Transformer Models</div>
+              <div class="pub-card__authors">Dr. K. Srinivas Rao, G. Mounika, R. Sai Kiran</div>
+              <div class="pub-card__journal">International Conference on NLP and Text Mining (NLPTM 2023), ACM</div>
+              <span class="pub-tag">Published</span>
+            </div>
+            <span class="pub-card__year">2023</span>
+          </div>
+
+          <div class="pub-card" data-pub-year="2022">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Energy-Efficient Routing Protocol for Wireless Sensor Networks using Fuzzy Logic</div>
+              <div class="pub-card__authors">Dr. N. Sirisha, K. Rajesh, T. Anuradha</div>
+              <div class="pub-card__journal">Wireless Personal Communications, Springer, Vol. 124, pp. 987–1003</div>
+              <span class="pub-tag">Published</span>
+            </div>
+            <span class="pub-card__year">2022</span>
+          </div>
+
+          <div class="pub-card" data-pub-year="2021">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Hybrid Machine Learning Approach for Crop Yield Prediction using Satellite Imagery</div>
+              <div class="pub-card__authors">Allam Sangeetha, Dr. Ajmeera Kiran, V. Srinath</div>
+              <div class="pub-card__journal">Computers and Electronics in Agriculture, Elsevier, Vol. 189</div>
+              <span class="pub-tag">Published</span>
+            </div>
+            <span class="pub-card__year">2021</span>
+          </div>
+        </div>

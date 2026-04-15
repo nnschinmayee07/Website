@@ -1,0 +1,91 @@
+<div class="intern-stats">
+          <div class="stat-card">
+            <div class="stat-card__num">120+</div>
+            <div class="stat-card__label">Students Placed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__num">45+</div>
+            <div class="stat-card__label">Partner Companies</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__num">6 Mo.</div>
+            <div class="stat-card__label">Avg. Duration</div>
+          </div>
+        </div>
+
+        <div class="intern-grid">
+          <div class="intern-card">
+            <div class="intern-card__inner">
+              <div class="intern-card__front">
+                <div class="intern-card__name">TCS</div>
+                <div class="intern-card__type">Summer Internship</div>
+              </div>
+              <div class="intern-card__back">
+                <div class="intern-card__back-num">28</div>
+                <div class="intern-card__back-label">Students — 2024</div>
+              </div>
+            </div>
+          </div>
+          <div class="intern-card">
+            <div class="intern-card__inner">
+              <div class="intern-card__front">
+                <div class="intern-card__name">Infosys</div>
+                <div class="intern-card__type">Summer Internship</div>
+              </div>
+              <div class="intern-card__back">
+                <div class="intern-card__back-num">22</div>
+                <div class="intern-card__back-label">Students — 2024</div>
+              </div>
+            </div>
+          </div>
+          <div class="intern-card">
+            <div class="intern-card__inner">
+              <div class="intern-card__front">
+                <div class="intern-card__name">Wipro</div>
+                <div class="intern-card__type">Winter Internship</div>
+              </div>
+              <div class="intern-card__back">
+                <div class="intern-card__back-num">18</div>
+                <div class="intern-card__back-label">Students — 2023</div>
+              </div>
+            </div>
+          </div>
+          <div class="intern-card">
+            <div class="intern-card__inner">
+              <div class="intern-card__front">
+                <div class="intern-card__name">Microsoft</div>
+                <div class="intern-card__type">Summer Internship</div>
+              </div>
+              <div class="intern-card__back">
+                <div class="intern-card__back-num">6</div>
+                <div class="intern-card__back-label">Students — 2024</div>
+              </div>
+            </div>
+          </div>
+          <div class="intern-card">
+            <div class="intern-card__inner">
+              <div class="intern-card__front">
+                <div class="intern-card__name">Amazon</div>
+                <div class="intern-card__type">Summer Internship</div>
+              </div>
+              <div class="intern-card__back">
+                <div class="intern-card__back-num">8</div>
+                <div class="intern-card__back-label">Students — 2024</div>
+              </div>
+            </div>
+          </div>
+          <div class="intern-card">
+            <div class="intern-card__inner">
+              <div class="intern-card__front">
+                <div class="intern-card__name">Cognizant</div>
+                <div class="intern-card__type">Winter Internship</div>
+              </div>
+              <div class="intern-card__back">
+                <div class="intern-card__back-num">15</div>
+                <div class="intern-card__back-label">Students — 2023</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="intern-note">Internship opportunities are facilitated through the Training and Placement Cell in collaboration with the CSE department.</p>

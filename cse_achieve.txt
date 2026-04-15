@@ -1,0 +1,213 @@
+<div class="achieve-grid">
+          <div class="card achieve-card" data-achieve>
+            <h4>Engineering Project Expo</h4>
+            <p>Organised by IEEE student branch, showcasing innovative final-year projects across AI, IoT, and embedded systems domains with participation from 15+ colleges.</p>
+            <span class="achieve-toggle">Read More</span>
+          </div>
+          <div class="card achieve-card" data-achieve>
+            <h4>Technical Quiz, EPICS / Micro Projects</h4>
+            <p>Inter-departmental technical quiz and EPICS-based micro project competitions held annually, encouraging hands-on problem solving and rapid prototyping skills.</p>
+            <span class="achieve-toggle">Read More</span>
+          </div>
+          <div class="card achieve-card" data-achieve>
+            <h4>Student Mini Projects Expo / Technical Seminars</h4>
+            <p>Department-level expo for 2nd and 3rd year students presenting mini projects, complemented by technical seminars from industry professionals and alumni.</p>
+            <span class="achieve-toggle">Read More</span>
+          </div>
+          <div class="card achieve-card" data-achieve>
+            <h4>CSI Student Chapter Activities</h4>
+            <p>Active CSI student chapter conducts workshops, coding competitions, and tech talks throughout the academic year.</p>
+            <span class="achieve-toggle">Read More</span>
+          </div>
+          <div class="card achieve-card" data-achieve>
+            <h4>SWAYAM / NPTEL Certifications</h4>
+            <p>Department recognised as NPTEL Discipline Star with 140+ faculty and student certifications in a single semester.</p>
+            <span class="achieve-toggle">Read More</span>
+          </div>
+        </div>
+
+
+    <div class="panel-sub">Roll of Honour</div>
+    <table class="honour-table">
+      <thead><tr><th>Year</th><th>Name</th><th>Achievement</th><th>Score</th></tr></thead>
+      <tbody>
+            <tr><td>2013</td><td>Sheekha Singh</td><td>University Topper</td><td>86%</td></tr>
+            <tr><td>2015</td><td>V. Bhavana</td><td>University Rank Holder</td><td>84%</td></tr>
+            <tr><td>2011</td><td>Pankaj Agarwal</td><td>University Rank Holder</td><td>84%</td></tr>
+            <tr><td>2012</td><td>S. Geetha Veera Lakshmi</td><td>Department Topper</td><td>81%</td></tr>
+            <tr><td>2014</td><td>M. Mounika</td><td>Department Topper</td><td>81%</td></tr>
+            <tr><td>2016</td><td>Hari Priya D S</td><td>Department Topper</td><td>80.82%</td></tr>
+            <tr><td>2018</td><td>Nallagari Sravani</td><td>Department Topper</td><td>79.12%</td></tr>
+      </tbody>
+    </table>
+
+    <div class="panel-sub">Student Achievements</div>
+    <ul class="achieve-list">
+          <li>Smart India Hackathon — National Finalists (Team CodeCraft, 2024)</li>
+          <li>140+ NPTEL certifications in a single semester — NPTEL Discipline Star</li>
+          <li>IEEE Student Branch — Engineering Project Expo with 15+ college participation</li>
+          <li>CSI Student Chapter — Annual workshops, coding competitions, tech talks</li>
+          <li>Amazon ML Summer School — 8 students selected (2024)</li>
+    </ul>
+
+    <div class="panel-sub">Publications</div>
+    <div class="pub-filters" id="pubFilters">
+          <button class="pub-filter is-active" data-year="all">All</button>
+          <button class="pub-filter" data-year="2024">2024</button>
+          <button class="pub-filter" data-year="2023">2023</button>
+          <button class="pub-filter" data-year="2022">2022</button>
+          <button class="pub-filter" data-year="2021">2021</button>
+        </div>
+
+        <div class="pub-list" id="pubList">
+          <div class="pub-card" data-pub-year="2024">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Deep Learning-based Intrusion Detection System for IoT Networks</div>
+              <div class="pub-card__authors">Dr. K. Srinivas Rao, A. Naveen Kumar, P. Ravi Teja</div>
+              <div class="pub-card__journal">IEEE Internet of Things Journal, Vol. 11, Issue 4</div>
+              <span class="pub-tag">Published</span>
+            </div>
+            <span class="pub-card__year">2024</span>
+          </div>
+
+          <div class="pub-card" data-pub-year="2024">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Optimised Feature Selection for Medical Image Classification using CNN</div>
+              <div class="pub-card__authors">Dr. N. Sirisha, M. Lavanya, S. Preethi</div>
+              <div class="pub-card__journal">Journal of Biomedical Informatics, Elsevier, Vol. 148</div>
+              <span class="pub-tag">Published</span>
+            </div>
+            <span class="pub-card__year">2024</span>
+          </div>
+
+          <div class="pub-card" data-pub-year="2023">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Blockchain-enabled Secure Data Sharing in Cloud Environments</div>
+              <div class="pub-card__authors">Dr. Ajmeera Kiran, Allam Sangeetha, B. Venkat Reddy</div>
+              <div class="pub-card__journal">Cluster Computing, Springer, Vol. 26, pp. 2145–2160</div>
+              <span class="pub-tag">Published</span>
+            </div>
+            <span class="pub-card__year">2023</span>
+          </div>
+
+          <div class="pub-card" data-pub-year="2023">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Sentiment Analysis of Social Media Data using Transformer Models</div>
+              <div class="pub-card__authors">Dr. K. Srinivas Rao, G. Mounika, R. Sai Kiran</div>
+              <div class="pub-card__journal">International Conference on NLP and Text Mining (NLPTM 2023), ACM</div>
+              <span class="pub-tag">Published</span>
+            </div>
+            <span class="pub-card__year">2023</span>
+          </div>
+
+          <div class="pub-card" data-pub-year="2022">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Energy-Efficient Routing Protocol for Wireless Sensor Networks using Fuzzy Logic</div>
+              <div class="pub-card__authors">Dr. N. Sirisha, K. Rajesh, T. Anuradha</div>
+              <div class="pub-card__journal">Wireless Personal Communications, Springer, Vol. 124, pp. 987–1003</div>
+              <span class="pub-tag">Published</span>
+            </div>
+            <span class="pub-card__year">2022</span>
+          </div>
+
+          <div class="pub-card" data-pub-year="2021">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Hybrid Machine Learning Approach for Crop Yield Prediction using Satellite Imagery</div>
+              <div class="pub-card__authors">Allam Sangeetha, Dr. Ajmeera Kiran, V. Srinath</div>
+              <div class="pub-card__journal">Computers and Electronics in Agriculture, Elsevier, Vol. 189</div>
+              <span class="pub-tag">Published</span>
+            </div>
+            <span class="pub-card__year">2021</span>
+          </div>
+        </div>
+
+    <div class="panel-sub">Internships and Placements</div>
+    <div class="intern-stats">
+          <div class="stat-card">
+            <div class="stat-card__num">120+</div>
+            <div class="stat-card__label">Students Placed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__num">45+</div>
+            <div class="stat-card__label">Partner Companies</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__num">6 Mo.</div>
+            <div class="stat-card__label">Avg. Duration</div>
+          </div>
+        </div>
+
+        <div class="intern-grid">
+          <div class="intern-card">
+            <div class="intern-card__inner">
+              <div class="intern-card__front">
+                <div class="intern-card__name">TCS</div>
+                <div class="intern-card__type">Summer Internship</div>
+              </div>
+              <div class="intern-card__back">
+                <div class="intern-card__back-num">28</div>
+                <div class="intern-card__back-label">Students — 2024</div>
+              </div>
+            </div>
+          </div>
+          <div class="intern-card">
+            <div class="intern-card__inner">
+              <div class="intern-card__front">
+                <div class="intern-card__name">Infosys</div>
+                <div class="intern-card__type">Summer Internship</div>
+              </div>
+              <div class="intern-card__back">
+                <div class="intern-card__back-num">22</div>
+                <div class="intern-card__back-label">Students — 2024</div>
+              </div>
+            </div>
+          </div>
+          <div class="intern-card">
+            <div class="intern-card__inner">
+              <div class="intern-card__front">
+                <div class="intern-card__name">Wipro</div>
+                <div class="intern-card__type">Winter Internship</div>
+              </div>
+              <div class="intern-card__back">
+                <div class="intern-card__back-num">18</div>
+                <div class="intern-card__back-label">Students — 2023</div>
+              </div>
+            </div>
+          </div>
+          <div class="intern-card">
+            <div class="intern-card__inner">
+              <div class="intern-card__front">
+                <div class="intern-card__name">Microsoft</div>
+                <div class="intern-card__type">Summer Internship</div>
+              </div>
+              <div class="intern-card__back">
+                <div class="intern-card__back-num">6</div>
+                <div class="intern-card__back-label">Students — 2024</div>
+              </div>
+            </div>
+          </div>
+          <div class="intern-card">
+            <div class="intern-card__inner">
+              <div class="intern-card__front">
+                <div class="intern-card__name">Amazon</div>
+                <div class="intern-card__type">Summer Internship</div>
+              </div>
+              <div class="intern-card__back">
+                <div class="intern-card__back-num">8</div>
+                <div class="intern-card__back-label">Students — 2024</div>
+              </div>
+            </div>
+          </div>
+          <div class="intern-card">
+            <div class="intern-card__inner">
+              <div class="intern-card__front">
+                <div class="intern-card__name">Cognizant</div>
+                <div class="intern-card__type">Winter Internship</div>
+              </div>
+              <div class="intern-card__back">
+                <div class="intern-card__back-num">15</div>
+                <div class="intern-card__back-label">Students — 2023</div>
+              </div>
+            </div>
+          </div>
+        </div>
