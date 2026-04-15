@@ -1,7 +1,23 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep -n \"is-revealed\\\\|is-playing\\\\|interactions-ready\" c:/mlr/css/*.css)"
+      "Bash(file /c/mlr/departments/images/cse/*.jpg)",
+      "Bash(curl -sL --max-time 15 \"https://mlrit.ac.in/electronics-communication-engineering/\")",
+      "Bash(curl -sL --max-time 15 \"https://mlrit.ac.in/electrical-electronics-engineering/\")",
+      "Bash(curl -sL --max-time 15 \"https://mlrit.ac.in/mechanical-engineering/\")",
+      "Bash(curl -sL --max-time 15 \"https://mlrit.ac.in/aeronautical-engineering/\")",
+      "Bash(curl -sL --max-time 15 \"https://mlrit.ac.in/mba/\")",
+      "Bash(curl -sL --max-time 15 \"https://mlrit.ac.in/cse-aiml/\")",
+      "Bash(curl -sL --max-time 15 \"https://mlrit.ac.in/cse-data-science/\")",
+      "Bash(curl -sL --max-time 15 \"https://mlrit.ac.in/ece/\")",
+      "Bash(curl -sL --max-time 15 \"https://mlrit.ac.in/eee/\")",
+      "Bash(curl -sL --max-time 15 \"https://mlrit.ac.in/faculty_categories/mechanical/\")",
+      "Bash(curl -sL --max-time 15 \"https://mlrit.ac.in/faculty_categories/aeronautical/\")",
+      "Bash(curl -sL --max-time 15 \"https://mlrit.ac.in/faculty_categories/mba/\")",
+      "Bash(ls -d /c/mlr/*/)",
+      "Bash(ls /c/mlr/departments/*.html)",
+      "Bash(python3 download_faculty.py)",
+      "WebFetch(domain:www.iare.ac.in)"
     ]
   }
 }
