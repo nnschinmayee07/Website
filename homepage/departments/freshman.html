@@ -289,11 +289,10 @@
     .ds-item:hover .ds-item__label { color: rgba(255,255,255,0.65); }
     .ds-item.is-active .ds-item__label { color: rgba(255,255,255,0.9); }
 
-    /* Push all content right to make room */
-    .site-header, .dept-nav, .dept-hero, .dept-tabs, .dept-panel, .qbar, .streak {
-      margin-left: 200px;
-    }
-    .qbar { right: 0; }
+    /* Push all content right to make room for sidebar */
+    body { padding-left: 200px; }
+    .dark-sidebar { position: fixed; left: 0; top: 0; }
+    .dept-panel { max-width: none; }
 
     @media (max-width: 768px) {
       .dept-panel { padding: 32px 20px; }
@@ -301,7 +300,8 @@
       .hod-msg { flex-direction: column; align-items: center; text-align: center; }
       .qbar { display: none; }
       .dark-sidebar { display: none; }
-      .site-header, .dept-nav, .dept-hero, .dept-tabs, .dept-panel, .qbar, .streak { margin-left: 0; }
+      body { padding-left: 0; }
+      .dept-panel { max-width: 1100px; }
       .fcard-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
       .fcard { height: 240px; }
     }
@@ -311,24 +311,24 @@
   <!-- Dark left sidebar -->
   <aside class="dark-sidebar" id="darkSidebar">
     <div class="dark-sidebar__title">Quick Nav</div>
-    <a class="ds-item" data-ds-tab="overview" data-ds-label="HOD Message"><span class="ds-item__dot"></span><span class="ds-item__label">HOD Message</span></a>
-    <a class="ds-item" data-ds-tab="overview" data-ds-label="Vision, Mission"><span class="ds-item__dot"></span><span class="ds-item__label">Vision, Mission</span></a>
-    <a class="ds-item" data-ds-tab="overview" data-ds-label="Teaching"><span class="ds-item__dot"></span><span class="ds-item__label">Teaching</span></a>
-    <a class="ds-item" data-ds-tab="overview" data-ds-label="History"><span class="ds-item__dot"></span><span class="ds-item__label">History</span></a>
-    <a class="ds-item" data-ds-tab="overview" data-ds-label="Labs"><span class="ds-item__dot"></span><span class="ds-item__label">Labs</span></a>
-    <a class="ds-item" data-ds-tab="objectives" data-ds-label="PEOs"><span class="ds-item__dot"></span><span class="ds-item__label">PEOs</span></a>
-    <a class="ds-item" data-ds-tab="objectives" data-ds-label="Outcomes (POs)"><span class="ds-item__dot"></span><span class="ds-item__label">Outcomes (POs)</span></a>
-    <a class="ds-item" data-ds-tab="objectives" data-ds-label="OBE"><span class="ds-item__dot"></span><span class="ds-item__label">OBE</span></a>
-    <a class="ds-item" data-ds-tab="objectives" data-ds-label="Handbook"><span class="ds-item__dot"></span><span class="ds-item__label">Handbook</span></a>
-    <a class="ds-item" data-ds-tab="faculty" data-ds-label="All Faculty"><span class="ds-item__dot"></span><span class="ds-item__label">All Faculty</span></a>
-    <a class="ds-item" data-ds-tab="academics" data-ds-label="Syllabus PDFs"><span class="ds-item__dot"></span><span class="ds-item__label">Syllabus PDFs</span></a>
-    <a class="ds-item" data-ds-tab="academics" data-ds-label="Course Catalog"><span class="ds-item__dot"></span><span class="ds-item__label">Course Catalog</span></a>
-    <a class="ds-item" data-ds-tab="academics" data-ds-label="Syllabus Explorer"><span class="ds-item__dot"></span><span class="ds-item__label">Syllabus Explorer</span></a>
-    <a class="ds-item" data-ds-tab="achievements" data-ds-label="Achievements"><span class="ds-item__dot"></span><span class="ds-item__label">Achievements</span></a>
-    <a class="ds-item" data-ds-tab="achievements" data-ds-label="Placements"><span class="ds-item__dot"></span><span class="ds-item__label">Placements</span></a>
-    <a class="ds-item" data-ds-tab="achievements" data-ds-label="Honours"><span class="ds-item__dot"></span><span class="ds-item__label">Honours</span></a>
-    <a class="ds-item" data-ds-tab="achievements" data-ds-label="Publications"><span class="ds-item__dot"></span><span class="ds-item__label">Publications</span></a>
-    <a class="ds-item" data-ds-tab="achievements" data-ds-label="Internships"><span class="ds-item__dot"></span><span class="ds-item__label">Internships</span></a>
+    <a class="ds-item" data-ds-tab="overview" data-ds-target="hod-msg"><span class="ds-item__dot"></span><span class="ds-item__label">HOD Message</span></a>
+    <a class="ds-item" data-ds-tab="overview" data-ds-target="vm-section"><span class="ds-item__dot"></span><span class="ds-item__label">Vision, Mission</span></a>
+    <a class="ds-item" data-ds-tab="overview" data-ds-target="teaching-method"><span class="ds-item__dot"></span><span class="ds-item__label">Teaching</span></a>
+    <a class="ds-item" data-ds-tab="overview" data-ds-target="about-dept"><span class="ds-item__dot"></span><span class="ds-item__label">History</span></a>
+    <a class="ds-item" data-ds-tab="overview" data-ds-target="labs-section"><span class="ds-item__dot"></span><span class="ds-item__label">Labs</span></a>
+    <a class="ds-item" data-ds-tab="objectives" data-ds-target="peo-section"><span class="ds-item__dot"></span><span class="ds-item__label">PEOs</span></a>
+    <a class="ds-item" data-ds-tab="objectives" data-ds-target="po-section"><span class="ds-item__dot"></span><span class="ds-item__label">Outcomes (POs)</span></a>
+    <a class="ds-item" data-ds-tab="objectives" data-ds-target="obe-section"><span class="ds-item__dot"></span><span class="ds-item__label">OBE</span></a>
+    <a class="ds-item" data-ds-tab="objectives" data-ds-target="handbook-section"><span class="ds-item__dot"></span><span class="ds-item__label">Handbook</span></a>
+    <a class="ds-item" data-ds-tab="faculty" data-ds-target="panel-faculty"><span class="ds-item__dot"></span><span class="ds-item__label">All Faculty</span></a>
+    <a class="ds-item" data-ds-tab="academics" data-ds-target="syll-pdfs"><span class="ds-item__dot"></span><span class="ds-item__label">Syllabus PDFs</span></a>
+    <a class="ds-item" data-ds-tab="academics" data-ds-target="catalog-section"><span class="ds-item__dot"></span><span class="ds-item__label">Course Catalog</span></a>
+    <a class="ds-item" data-ds-tab="academics" data-ds-target="syll-explorer"><span class="ds-item__dot"></span><span class="ds-item__label">Syllabus Explorer</span></a>
+    <a class="ds-item" data-ds-tab="achievements" data-ds-target="honour-section"><span class="ds-item__dot"></span><span class="ds-item__label">Achievements</span></a>
+    <a class="ds-item" data-ds-tab="achievements" data-ds-target="placement-section"><span class="ds-item__dot"></span><span class="ds-item__label">Placements</span></a>
+    <a class="ds-item" data-ds-tab="achievements" data-ds-target="honour-section"><span class="ds-item__dot"></span><span class="ds-item__label">Honours</span></a>
+    <a class="ds-item" data-ds-tab="achievements" data-ds-target="pub-section"><span class="ds-item__dot"></span><span class="ds-item__label">Publications</span></a>
+    <a class="ds-item" data-ds-tab="achievements" data-ds-target="intern-section"><span class="ds-item__dot"></span><span class="ds-item__label">Internships</span></a>
   </aside>
 
 
@@ -1334,6 +1334,13 @@
         // Activate first visible item
         var first = document.querySelector('.ds-item[data-ds-tab="' + activeTab + '"]');
         if (first) first.classList.add('is-active');
+        // Switch the active tab panel
+        document.querySelectorAll('.dept-panel').forEach(function(p){ p.classList.remove('is-active'); });
+        document.querySelectorAll('.dept-tab').forEach(function(t){ t.classList.remove('is-active'); });
+        var panel = document.getElementById('panel-' + activeTab);
+        if (panel) panel.classList.add('is-active');
+        var tab = document.querySelector('.dept-tab[data-tab="' + activeTab + '"]');
+        if (tab) tab.classList.add('is-active');
       }
 
       // Hook into tab clicks
@@ -1352,13 +1359,22 @@
         });
       });
 
-      // Sidebar item click — mark active + fire streak
+      // Sidebar item click — switch tab, mark active, scroll to section, fire streak
       dsItems.forEach(function (item) {
         item.addEventListener('click', function () {
-          var siblings = document.querySelectorAll('.ds-item[data-ds-tab="' + item.getAttribute('data-ds-tab') + '"]');
+          var tab = item.getAttribute('data-ds-tab');
+          var target = item.getAttribute('data-ds-target');
+          updateSidebar(tab);
+          var siblings = document.querySelectorAll('.ds-item[data-ds-tab="' + tab + '"]');
           siblings.forEach(function (s) { s.classList.remove('is-active'); });
           item.classList.add('is-active');
           fireStreak();
+          if (target) {
+            setTimeout(function () {
+              var el = document.getElementById(target);
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
+          }
         });
       });
 
