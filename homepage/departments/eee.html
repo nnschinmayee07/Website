@@ -12,10 +12,10 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: #F4F1EA; color: #3A3A3A; line-height: 1.7; }
+    body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #3A3A3A; line-height: 1.7; }
 
     /* ── Dept Nav ── */
-    .dept-nav { background: #0B0F1A; display: flex; align-items: stretch; padding: 0 16px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .dept-nav { background: #0B0F1A; display: flex; align-items: stretch; padding: 0 16px; border-bottom: 1px solid rgba(0,0,0,0.06); }
     .dept-nav__link { display: flex; align-items: center; padding: 0 20px; height: 44px; font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.5); text-decoration: none; position: relative; transition: color 0.2s, background 0.2s; }
     .dept-nav__link:hover { color: rgba(255,255,255,0.85); background: rgba(232,93,31,0.08); }
     .dept-nav__link:active { background: rgba(232,93,31,0.18); }
@@ -45,7 +45,7 @@
     .dept-tab:active::after { transform: translateX(-50%) scaleX(1); background: #E85D1F; }
 
     /* ── Panels ── */
-    .dept-panel { display: none; padding: 48px; max-width: 1100px; margin: 0 auto; }
+    .dept-panel { display: none; padding: 40px 48px; max-width: none; margin: 0; }
     .dept-panel.is-active { display: block; animation: fadeIn 0.35s ease; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -55,11 +55,13 @@
     p { font-size: 0.95rem; color: #3A3A3A; max-width: 780px; margin-bottom: 14px; line-height: 1.8; }
 
     /* ── Cards ── */
-    .card { background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .card { background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
     .card h3 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.15rem; color: #0B0F1A; margin-bottom: 10px; }
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .card--accent { border-top: 3px solid #18453B; }
+    .card--accent { border-top: 3px solid #18453B; transition: transform 0.25s ease, box-shadow 0.25s ease, border-top-color 0.25s ease; }
+    .card--accent:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-top-color: #E85D1F; }
     .peo-num { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #18453B; margin-bottom: 10px; }
 
     /* ── HOD Message ── */
@@ -72,15 +74,17 @@
 
     /* ── Accordion ── */
     .sub-accordion { margin-bottom: 16px; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 1px 8px rgba(0,0,0,0.05); }
-    .sub-accordion__header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; cursor: pointer; font-family: 'Raleway', sans-serif; font-size: 0.88rem; font-weight: 700; color: #0B0F1A; border-left: 3px solid #18453B; transition: background 0.2s; }
-    .sub-accordion__header:hover { background: rgba(24,69,59,0.04); }
+    .sub-accordion__header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; cursor: pointer; font-family: 'Raleway', sans-serif; font-size: 0.88rem; font-weight: 700; color: #0B0F1A; border-left: 3px solid #18453B; transition: background 0.2s, border-left-color 0.25s, transform 0.2s; }
+    .sub-accordion__header:hover { background: rgba(24,69,59,0.04); border-left-color: #E85D1F; transform: translateX(4px); }
     .sub-accordion__chevron { font-size: 0.7rem; color: #888; transition: transform 0.3s; }
     .sub-accordion.is-open .sub-accordion__chevron { transform: rotate(180deg); color: #E85D1F; }
+    .sub-accordion.is-open .sub-accordion__header { border-left-color: #E85D1F; color: #E85D1F; }
     .sub-accordion__body { max-height: 0; overflow: hidden; transition: max-height 0.4s; }
     .sub-accordion.is-open .sub-accordion__body { max-height: 2000px; }
     .sub-accordion__content { padding: 0 20px 20px; }
     .lab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
-    .lab-card { background: #f9f8f5; border-radius: 8px; padding: 16px 18px; border-left: 3px solid #18453B; }
+    .lab-card { background: #f9f8f5; border-radius: 8px; padding: 16px 18px; border-left: 3px solid #18453B; transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease; cursor: default; }
+    .lab-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); border-left-color: #E85D1F; }
     .lab-card__name { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.85rem; color: #0B0F1A; margin-bottom: 4px; }
     .lab-card__desc { font-size: 0.78rem; color: #666; }
 
@@ -88,8 +92,12 @@
     .obe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 20px; }
     .obe-col h4 { font-family: 'Raleway', sans-serif; font-size: 0.82rem; font-weight: 800; color: #18453B; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
     .obe-list { list-style: none; padding: 0; }
-    .obe-list li { font-size: 0.88rem; color: #444; padding: 8px 0 8px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); position: relative; }
-    .obe-list li::before { content: ''; position: absolute; left: 0; top: 14px; width: 6px; height: 6px; border-radius: 50%; background: #E85D1F; }
+    .obe-list li { font-size: 0.88rem; color: #444; padding: 8px 0 8px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); position: relative; transition: transform 0.2s ease, color 0.2s ease; cursor: default; }
+    .obe-list li:hover { transform: translateX(6px); color: #0B0F1A; }
+    .obe-list li::before { content: ''; position: absolute; left: 0; top: 14px; width: 6px; height: 6px; border-radius: 50%; background: #E85D1F; transition: transform 0.2s ease, background 0.2s ease; }
+    .obe-list li:hover::before { transform: scale(1.5); background: #E85D1F; }
+    .obe-list li a { color: inherit; text-decoration: none; display: block; }
+    .obe-list li a:hover { color: #E85D1F; }
     .obe-list-numbered p { font-size: 0.88rem; color: #444; line-height: 1.6; margin-bottom: 10px; max-width: none; }
     .obe-list-numbered p strong { color: #18453B; font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.78rem; }
 
@@ -121,8 +129,9 @@
     .syll-btn--view:hover { background: #E85D1F; color: #fff; }
     .full-syllabus-btn { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.85rem; font-weight: 700; color: #fff; background: #18453B; padding: 10px 24px; border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.2s; }
     .full-syllabus-btn:hover { background: #0D3320; transform: translateY(-1px); }
-    .subject-pdf { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 700; color: #E85D1F; text-decoration: none; padding: 4px 12px; border: 1px solid rgba(232,93,31,0.3); border-radius: 6px; transition: all 0.2s; }
+    .subject-pdf { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 700; color: #E85D1F; text-decoration: none; padding: 4px 12px; border: 1px solid rgba(232,93,31,0.3); border-radius: 6px; transition: all 0.2s; white-space: nowrap; }
     .subject-pdf:hover { background: #E85D1F; color: #fff; }
+    .subject-pdf--disabled { color: #aaa; border-color: #ddd; pointer-events: none; background: #f5f5f5; }
     .subject-units { max-height: 0; overflow: hidden; transition: max-height 0.4s; padding: 0 0 0 44px; }
     .subject-row.is-expanded + .subject-units { max-height: 300px; }
     .subject-units ol { list-style: none; padding: 8px 0 12px; counter-reset: unit; }
@@ -161,23 +170,29 @@
     .qbar__btn:hover .qbar__label { opacity: 1; }
 
     /* ══ FEATURE 3: Faculty flip cards ══ */
-    .fcard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
-    .fcard { width: 100%; height: 280px; perspective: 800px; cursor: pointer; }
-    .fcard__inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
-    .fcard:hover .fcard__inner { transform: rotateY(180deg); }
-    .fcard__front, .fcard__back { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 10px; overflow: hidden; }
-    .fcard__front { background: linear-gradient(135deg, #2A2F40, #3A4050); }
-    .fcard__front img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-    .fcard__ini { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 2rem; color: rgba(255,255,255,0.3); }
-    .fcard__overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); }
-    .fcard__name { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.82rem; color: #fff; }
+    .fcard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+    .fcard { width: 100%; aspect-ratio: 3/4; border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; background: linear-gradient(135deg, #2A2F40, #3A4050); }
+    .fcard img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.4s ease; }
+    .fcard:hover img { transform: scale(1.05); }
+    .fcard__ini { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 2rem; color: rgba(255,255,255,0.3); position: absolute; inset: 0; }
+    .fcard__overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 18px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); z-index: 2; transition: opacity 0.3s; }
+    .fcard__name { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.85rem; color: #fff; }
     .fcard__role { font-size: 0.68rem; color: rgba(255,255,255,0.6); }
-    .fcard__back { background: #0B0F1A; transform: rotateY(180deg); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; text-align: center; }
-    .fcard__back-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; color: #fff; margin-bottom: 4px; }
-    .fcard__back-role { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
-    .fcard__back-spec { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 600; color: #E85D1F; margin-bottom: 20px; letter-spacing: 0.04em; }
-    .fcard__back-btn { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 700; color: #E85D1F; text-decoration: none; padding: 8px 20px; border: 1px solid #E85D1F; border-radius: 6px; transition: all 0.2s; }
-    .fcard__back-btn:hover { background: #E85D1F; color: #fff; }
+
+    .fcard::before { content: ''; position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: #E85D1F; clip-path: circle(0% at 100% 0%); transition: clip-path 0.5s cubic-bezier(0.25,0.46,0.45,0.94); z-index: 3; }
+    .fcard:hover::before { clip-path: circle(150% at 100% 0%); }
+
+    .fcard::after { content: ''; position: absolute; inset: 0; background: rgba(11,15,26,0.85); opacity: 0; transition: opacity 0.3s ease 0.15s; z-index: 4; }
+    .fcard:hover::after { opacity: 1; }
+    .fcard:hover .fcard__overlay { opacity: 0; }
+
+    .fcard__hover-info { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; text-align: center; z-index: 5; opacity: 0; transform: translateY(10px); transition: opacity 0.35s ease 0.2s, transform 0.35s ease 0.2s; }
+    .fcard:hover .fcard__hover-info { opacity: 1; transform: translateY(0); }
+    .fcard__hover-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: #fff; margin-bottom: 4px; }
+    .fcard__hover-role { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
+    .fcard__hover-spec { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 600; color: #E85D1F; margin-bottom: 20px; letter-spacing: 0.04em; }
+    .fcard__hover-btn { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 700; color: #fff; text-decoration: none; padding: 8px 20px; border: 1px solid #fff; border-radius: 6px; transition: all 0.2s; }
+    .fcard__hover-btn:hover { background: #fff; color: #0B0F1A; }
 
     /* ══ FEATURE 4: Pub filter by faculty ══ */
     .pub-card { transition: opacity 0.4s ease; }
@@ -224,19 +239,31 @@
     .intern-note { font-size: 0.88rem; color: #666; font-style: italic; max-width: 700px; }
 
     /* ── Honour / Achievement list ── */
-    .honour-table { width: 100%; max-width: 700px; border-collapse: collapse; }
+    .honour-table { width: 100%; max-width: 700px; border-collapse: separate; border-spacing: 0 6px; }
     .honour-table th { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; text-align: left; padding: 12px 16px; border-bottom: 2px solid rgba(0,0,0,0.08); }
-    .honour-table td { font-size: 0.88rem; color: #333; padding: 12px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .honour-table td { font-size: 0.88rem; color: #333; padding: 14px 16px; background: #fff; transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+    .honour-table tr { transition: transform 0.2s ease; }
+    .honour-table tbody tr:hover { transform: translateX(6px); }
+    .honour-table tbody tr:hover td { background: rgba(232,93,31,0.06); box-shadow: 0 2px 12px rgba(232,93,31,0.1); }
+    .honour-table tbody tr:hover td:first-child { border-left: 3px solid #E85D1F; }
+    .honour-table td:first-child { border-radius: 8px 0 0 8px; border-left: 3px solid transparent; }
+    .honour-table td:last-child { border-radius: 0 8px 8px 0; }
+    .honour-table .honour-name { font-family: 'Raleway', sans-serif; font-weight: 700; color: #0B0F1A; }
+    .honour-table .honour-badge { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 10px; letter-spacing: 0.04em; }
+    .honour-badge--topper { background: rgba(232,93,31,0.12); color: #E85D1F; }
+    .honour-badge--rank { background: rgba(24,69,59,0.1); color: #18453B; }
+    .honour-table .honour-score { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: #18453B; }
     .achieve-list { list-style: none; padding: 0; max-width: 700px; }
-    .achieve-list li { position: relative; padding: 10px 0 10px 20px; border-bottom: 1px solid rgba(0,0,0,0.05); font-size: 0.88rem; color: #444; }
-    .achieve-list li::before { content: ''; position: absolute; left: 0; top: 16px; width: 8px; height: 8px; border-radius: 50%; background: #E85D1F; }
+    .achieve-list li { position: relative; padding: 14px 16px 14px 28px; margin-bottom: 8px; border-radius: 8px; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,0.04); font-size: 0.88rem; color: #444; border-left: 3px solid transparent; transition: transform 0.2s ease, border-left-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; cursor: default; }
+    .achieve-list li:hover { transform: translateX(6px); border-left-color: #E85D1F; box-shadow: 0 4px 16px rgba(232,93,31,0.1); background: rgba(232,93,31,0.02); }
+    .achieve-list li::before { content: ''; position: absolute; left: 10px; top: 20px; width: 8px; height: 8px; border-radius: 50%; background: #E85D1F; transition: transform 0.2s ease; }
+    .achieve-list li:hover::before { transform: scale(1.4); }
 
     /* ── Placement stats ── */
     .placement-stats { display: flex; gap: 16px; flex-wrap: wrap; margin: 16px 0; }
     .placement-stat { background: #fff; border-radius: 10px; padding: 20px 28px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; flex: 1; min-width: 130px; border-top: 3px solid #E85D1F; }
     .placement-stat__num { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.6rem; color: #E85D1F; }
     .placement-stat__label { font-size: 0.72rem; color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
-
 
 
     /* ── Orange streak ── */
@@ -254,20 +281,23 @@
     .streak.is-firing { animation: orange-streak 0.55s cubic-bezier(0.25,0.46,0.45,0.94) forwards; }
 
 
+    /* ── Body flex layout ── */
+    .dept-body { display: flex; flex: 1; }
+    .dept-body__panels { flex: 1; min-width: 0; }
 
-
-    /* ── Dark left sidebar ── */
+    /* ── Left sidebar ── */
     .dark-sidebar {
-      position: fixed; left: 0; top: 0; bottom: 0; width: 200px;
-      background: #0B0F1A; z-index: 35; padding-top: 120px;
-      overflow-y: auto; border-right: 1px solid rgba(255,255,255,0.06);
+      width: 220px; flex-shrink: 0; position: sticky; top: 0; height: 100vh;
+      background: #FAFAF8; z-index: 35; padding-top: 24px;
+      border-right: 1px solid rgba(0,0,0,0.05);
+      overflow-y: auto; align-self: flex-start;
     }
     .dark-sidebar::-webkit-scrollbar { width: 4px; }
-    .dark-sidebar::-webkit-scrollbar-thumb { background: rgba(232,93,31,0.2); border-radius: 2px; }
+    .dark-sidebar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 2px; }
     .dark-sidebar__title {
       font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 800;
-      text-transform: uppercase; letter-spacing: 0.14em; color: rgba(255,255,255,0.2);
-      padding: 0 20px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 8px;
+      text-transform: uppercase; letter-spacing: 0.14em; color: #1A3A2E;
+      padding: 0 20px 14px; border-bottom: 1px solid rgba(0,0,0,0.06); margin-bottom: 8px;
     }
     .ds-item {
       display: flex; align-items: center; padding: 8px 20px; cursor: pointer;
@@ -276,22 +306,19 @@
     .ds-item:hover { background: rgba(232,93,31,0.06); }
     .ds-item.is-active { border-left-color: #E85D1F; background: rgba(232,93,31,0.08); }
     .ds-item__dot {
-      width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.15);
+      width: 5px; height: 5px; border-radius: 50%; background: rgba(0,0,0,0.1);
       flex-shrink: 0; margin-right: 12px; transition: all 0.2s;
     }
     .ds-item.is-active .ds-item__dot { background: #E85D1F; box-shadow: 0 0 6px rgba(232,93,31,0.4); }
     .ds-item__label {
       font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 600;
-      color: rgba(255,255,255,0.35); transition: color 0.2s; white-space: nowrap;
+      color: rgba(26,58,46,0.5); transition: color 0.2s; white-space: nowrap;
       overflow: hidden; text-overflow: ellipsis;
     }
-    .ds-item:hover .ds-item__label { color: rgba(255,255,255,0.65); }
-    .ds-item.is-active .ds-item__label { color: rgba(255,255,255,0.9); }
+    .ds-item:hover .ds-item__label { color: rgba(232,93,31,0.8); }
+    .ds-item.is-active .ds-item__label { color: #E85D1F; }
 
     /* Push all content right to make room for sidebar */
-    body { padding-left: 200px; }
-    .dark-sidebar { position: fixed; left: 0; top: 0; }
-    .dept-panel { max-width: none; }
 
     @media (max-width: 768px) {
       .dept-panel { padding: 32px 20px; }
@@ -299,8 +326,7 @@
       .hod-msg { flex-direction: column; align-items: center; text-align: center; }
       .qbar { display: none; }
       .dark-sidebar { display: none; }
-      body { padding-left: 0; }
-      .dept-panel { max-width: 1100px; }
+      .dept-body { display: block; }
       .fcard-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
       .fcard { height: 240px; }
     }
@@ -310,28 +336,6 @@
   </style>
 </head>
 <body>
-  <!-- Dark left sidebar -->
-  <aside class="dark-sidebar" id="darkSidebar">
-    <div class="dark-sidebar__title">Quick Nav</div>
-    <a class="ds-item" data-ds-tab="overview" data-ds-target="hod-msg"><span class="ds-item__dot"></span><span class="ds-item__label">HOD Message</span></a>
-    <a class="ds-item" data-ds-tab="overview" data-ds-target="vm-section"><span class="ds-item__dot"></span><span class="ds-item__label">Vision, Mission</span></a>
-    <a class="ds-item" data-ds-tab="overview" data-ds-target="teaching-method"><span class="ds-item__dot"></span><span class="ds-item__label">Teaching</span></a>
-    <a class="ds-item" data-ds-tab="overview" data-ds-target="about-dept"><span class="ds-item__dot"></span><span class="ds-item__label">History</span></a>
-    <a class="ds-item" data-ds-tab="overview" data-ds-target="labs-section"><span class="ds-item__dot"></span><span class="ds-item__label">Labs</span></a>
-    <a class="ds-item" data-ds-tab="objectives" data-ds-target="peo-section"><span class="ds-item__dot"></span><span class="ds-item__label">PEOs</span></a>
-    <a class="ds-item" data-ds-tab="objectives" data-ds-target="po-section"><span class="ds-item__dot"></span><span class="ds-item__label">Outcomes (POs)</span></a>
-    <a class="ds-item" data-ds-tab="objectives" data-ds-target="obe-section"><span class="ds-item__dot"></span><span class="ds-item__label">OBE</span></a>
-    <a class="ds-item" data-ds-tab="objectives" data-ds-target="handbook-section"><span class="ds-item__dot"></span><span class="ds-item__label">Handbook</span></a>
-    <a class="ds-item" data-ds-tab="faculty" data-ds-target="panel-faculty"><span class="ds-item__dot"></span><span class="ds-item__label">All Faculty</span></a>
-    <a class="ds-item" data-ds-tab="academics" data-ds-target="syll-pdfs"><span class="ds-item__dot"></span><span class="ds-item__label">Syllabus PDFs</span></a>
-    <a class="ds-item" data-ds-tab="academics" data-ds-target="catalog-section"><span class="ds-item__dot"></span><span class="ds-item__label">Course Catalog</span></a>
-    <a class="ds-item" data-ds-tab="academics" data-ds-target="syll-explorer"><span class="ds-item__dot"></span><span class="ds-item__label">Syllabus Explorer</span></a>
-    <a class="ds-item" data-ds-tab="achievements" data-ds-target="honour-section"><span class="ds-item__dot"></span><span class="ds-item__label">Achievements</span></a>
-    <a class="ds-item" data-ds-tab="achievements" data-ds-target="placement-section"><span class="ds-item__dot"></span><span class="ds-item__label">Placements</span></a>
-    <a class="ds-item" data-ds-tab="achievements" data-ds-target="honour-section"><span class="ds-item__dot"></span><span class="ds-item__label">Honours</span></a>
-    <a class="ds-item" data-ds-tab="achievements" data-ds-target="pub-section"><span class="ds-item__dot"></span><span class="ds-item__label">Publications</span></a>
-    <a class="ds-item" data-ds-tab="achievements" data-ds-target="intern-section"><span class="ds-item__dot"></span><span class="ds-item__label">Internships</span></a>
-  </aside>
 
 
   <header class="site-header">
@@ -353,7 +357,7 @@
     <span class="dept-nav__link dept-nav__link--dept">EEE Department</span>
   </nav>
 
-  <div class="dept-hero">
+  <div class="dept-hero" id="page-top">
     <div class="dept-hero__eyebrow">B.Tech — Electrical and Electronics Engineering</div>
     <div class="dept-hero__title">Department of Electrical and Electronics Engineering</div>
   </div>
@@ -367,6 +371,33 @@
   </nav>
 <div class="streak" id="navStreak"></div>
   <!-- TAB 1: Overview -->
+
+  <div class="dept-body">
+  <!-- Dark left sidebar -->
+  <aside class="dark-sidebar" id="darkSidebar">
+    <div class="dark-sidebar__title">Quick Nav</div>
+    <a class="ds-item" data-ds-tab="overview" data-ds-target="hod-msg"><span class="ds-item__dot"></span><span class="ds-item__label">HOD Message</span></a>
+    <a class="ds-item" data-ds-tab="overview" data-ds-target="vm-section"><span class="ds-item__dot"></span><span class="ds-item__label">Vision, Mission</span></a>
+    <a class="ds-item" data-ds-tab="overview" data-ds-target="teaching-method"><span class="ds-item__dot"></span><span class="ds-item__label">Teaching</span></a>
+    <a class="ds-item" data-ds-tab="overview" data-ds-target="about-dept"><span class="ds-item__dot"></span><span class="ds-item__label">History</span></a>
+    <a class="ds-item" data-ds-tab="overview" data-ds-target="history-section"><span class="ds-item__dot"></span><span class="ds-item__label">History</span></a>
+    <a class="ds-item" data-ds-tab="overview" data-ds-target="labs-section"><span class="ds-item__dot"></span><span class="ds-item__label">Labs</span></a>
+    <a class="ds-item" data-ds-tab="objectives" data-ds-target="peo-section"><span class="ds-item__dot"></span><span class="ds-item__label">PEOs</span></a>
+    <a class="ds-item" data-ds-tab="objectives" data-ds-target="po-section"><span class="ds-item__dot"></span><span class="ds-item__label">Outcomes (POs)</span></a>
+    <a class="ds-item" data-ds-tab="objectives" data-ds-target="obe-section"><span class="ds-item__dot"></span><span class="ds-item__label">OBE</span></a>
+    <a class="ds-item" data-ds-tab="objectives" data-ds-target="handbook-section"><span class="ds-item__dot"></span><span class="ds-item__label">Handbook</span></a>
+    <a class="ds-item" data-ds-tab="faculty" data-ds-target="panel-faculty"><span class="ds-item__dot"></span><span class="ds-item__label">All Faculty</span></a>
+    <a class="ds-item" data-ds-tab="academics" data-ds-target="syll-pdfs"><span class="ds-item__dot"></span><span class="ds-item__label">Syllabus PDFs</span></a>
+    <a class="ds-item" data-ds-tab="academics" data-ds-target="catalog-section"><span class="ds-item__dot"></span><span class="ds-item__label">Course Catalog</span></a>
+    <a class="ds-item" data-ds-tab="academics" data-ds-target="syll-explorer"><span class="ds-item__dot"></span><span class="ds-item__label">Syllabus Explorer</span></a>
+    <a class="ds-item" data-ds-tab="achievements" data-ds-target="achieve-section"><span class="ds-item__dot"></span><span class="ds-item__label">Achievements</span></a>
+    <a class="ds-item" data-ds-tab="achievements" data-ds-target="placement-section"><span class="ds-item__dot"></span><span class="ds-item__label">Placements</span></a>
+    <a class="ds-item" data-ds-tab="achievements" data-ds-target="honour-section"><span class="ds-item__dot"></span><span class="ds-item__label">Roll of Honour</span></a>
+    <a class="ds-item" data-ds-tab="achievements" data-ds-target="pub-section"><span class="ds-item__dot"></span><span class="ds-item__label">Publications</span></a>
+    <a class="ds-item" data-ds-tab="achievements" data-ds-target="intern-section"><span class="ds-item__dot"></span><span class="ds-item__label">Internships</span></a>
+  </aside>
+
+  <div class="dept-body__panels">
   <div class="dept-panel is-active" id="panel-overview">
     <h2 id="about-dept" class="panel-heading">About the Department</h2>
 <div id="hod-msg" class="hod-msg">
@@ -386,16 +417,16 @@
     <div class="panel-sub"id="teaching-method">Innovative Teaching Methodology</div>
     <p>The department follows active learning pedagogy integrating project-based learning, flipped classrooms, and industry-mentored sessions. Regular guest lectures from industry professionals complement the curriculum.</p>
     <div style="margin-top:32px;">
-      <div class="sub-accordion" onclick="this.classList.toggle('is-open')">
+      <div id="history-section" class="sub-accordion">
         <div class="sub-accordion__header">History of the Department <span class="sub-accordion__chevron">&#9660;</span></div>
         <div class="sub-accordion__body"><div class="sub-accordion__content"><p>The EEE Department offers state-of-the-art facilities with acoustically-designed classrooms and modern instruments. The department hosts a 260 kWp rooftop solar plant connected to the campus grid.</p></div></div>
       </div>
-      <div class="sub-accordion" onclick="this.classList.toggle('is-open')">
+      <div class="sub-accordion">
         <div class="sub-accordion__header">NBA Accreditation <span class="sub-accordion__chevron">&#9660;</span></div>
         <div class="sub-accordion__body"><div class="sub-accordion__content"><p>The department maintains high academic standards aligned with NBA outcome-based education framework.</p></div></div>
       </div>
-      <div class="sub-accordion" onclick="this.classList.toggle('is-open')">
-        <div class="sub-accordion__header"id="labs-section">Academic Laboratories (6 Labs) <span class="sub-accordion__chevron">&#9660;</span></div>
+      <div id="labs-section" class="sub-accordion">
+        <div class="sub-accordion__header">Academic Laboratories (6 Labs) <span class="sub-accordion__chevron">&#9660;</span></div>
         <div class="sub-accordion__body"><div class="sub-accordion__content"><div class="lab-grid">
             <div class="lab-card"><div class="lab-card__name">Electrical Machines Lab</div><div class="lab-card__desc">DC/AC machines, transformers</div></div>
             <div class="lab-card"><div class="lab-card__name">Power Electronics Lab</div><div class="lab-card__desc">Converters, inverters, PWM</div></div>
@@ -436,9 +467,9 @@
     </div>
     <div class="panel-sub"id="obe-section">Outcome Based Education (OBE)</div>
     <div class="obe-grid">
-      <div class="obe-col"><h4>B.Tech</h4><ul class="obe-list"><li>Educational Objectives and Outcomes</li><li>OBE Process Manual</li><li>Course Outcomes Description Booklets</li><li>Course Outcomes (COs) Attainment</li><li>Program Outcomes (POs) Attainment</li></ul></div>
+      <div class="obe-col"><h4>B.Tech</h4><ul class="obe-list"><li><a href="obe/educational-objectives.html">Educational Objectives and Outcomes</a></li><li><a href="obe/obe-process-manual.html">OBE Process Manual</a></li><li><a href="obe/course-outcomes.html">Course Outcomes Description Booklets</a></li><li><a href="obe/co-attainment.html">Course Outcomes (COs) Attainment</a></li><li><a href="obe/co-attainment.html#po-attainment">Program Outcomes (POs) Attainment</a></li></ul></div>
       
-      <div class="obe-col"><h4>M.Tech</h4><ul class="obe-list"><li>Educational Objectives and Outcomes</li><li>OBE Process Manual</li><li>Course Outcomes Description Booklets</li><li>Course Outcomes (COs) Attainment</li><li>Program Outcomes (POs) Attainment</li></ul></div>
+      <div class="obe-col"><h4>M.Tech</h4><ul class="obe-list"><li><a href="obe/educational-objectives.html">Educational Objectives and Outcomes</a></li><li><a href="obe/obe-process-manual.html">OBE Process Manual</a></li><li><a href="obe/course-outcomes.html">Course Outcomes Description Booklets</a></li><li><a href="obe/co-attainment.html">Course Outcomes (COs) Attainment</a></li><li><a href="obe/co-attainment.html#po-attainment">Program Outcomes (POs) Attainment</a></li></ul></div>
     </div>
     <div class="panel-sub">OBE Portal</div>
     <div class="card" style="max-width:500px;"><h3>OBE Assessment System</h3><p>Access the OBE portal for CO/PO attainment data.</p><a href="http://103.15.62.235/ioncudos_mlrit_tier1/" target="_blank" style="font-family:Raleway;font-size:0.78rem;font-weight:700;color:#E85D1F;text-decoration:none;">Open OBE Portal &rarr;</a></div>
@@ -452,295 +483,231 @@
   <!-- TAB 3: Faculty -->
   <div class="dept-panel" id="panel-faculty">
     <h2 class="panel-heading">Faculty Profiles</h2>
-<p>Hover to flip. Click "View Publications" for the full research profile.</p>
+<p>Hover for details. Click "View Research" for full profile.</p>
     <div id="faculty-grid-section" class="fcard-grid">
           <div class="fcard" data-author="M. Dileep Kumar">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/eee/dileep-kumar.jpg" alt="Dr. M. Dileep Kumar" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">MK</div>
-                <div class="fcard__overlay">
-                  <div class="fcard__name">Dr. M. Dileep Kumar</div>
-                  <div class="fcard__role">Associate Professor</div>
-                </div>
+              <img src="images/eee/dileep-kumar.jpg" alt="Dr. M. Dileep Kumar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MK</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. M. Dileep Kumar</div>
+                <div class="fcard__role">Associate Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. M. Dileep Kumar</div>
-                <div class="fcard__back-role">Associate Professor</div>
-                <div class="fcard__back-spec">Power Electronics, Drives</div>
-                <a href="faculty-profile.html?name=Dr.%20M.%20Dileep%20Kumar&role=Associate%20Professor&photo=images/eee/dileep-kumar.jpg" class="fcard__back-btn">View Publications</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. M. Dileep Kumar</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">Power Electronics, Drives</div>
+                <a href="faculty-profile.html?name=Dr.%20M.%20Dileep%20Kumar&role=Associate%20Professor&photo=images/eee/dileep-kumar.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Ashok Reddy Kanna">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/eee/placeholder.jpg" alt="Ashok Reddy Kanna" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">AK</div>
-                <div class="fcard__overlay">
-                  <div class="fcard__name">Ashok Reddy Kanna</div>
-                  <div class="fcard__role">Associate Professor</div>
-                </div>
+              <img src="images/eee/placeholder.jpg" alt="Ashok Reddy Kanna" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">AK</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Ashok Reddy Kanna</div>
+                <div class="fcard__role">Associate Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Ashok Reddy Kanna</div>
-                <div class="fcard__back-role">Associate Professor</div>
-                <div class="fcard__back-spec">EEE</div>
-                <a href="faculty-profile.html?name=Ashok%20Reddy%20Kanna&role=Associate%20Professor&photo=images/eee/placeholder.jpg" class="fcard__back-btn">View Publications</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Ashok Reddy Kanna</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">EEE</div>
+                <a href="faculty-profile.html?name=Ashok%20Reddy%20Kanna&role=Associate%20Professor&photo=images/eee/placeholder.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="K. Usha Rani">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/eee/placeholder.jpg" alt="K. Usha Rani" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">KR</div>
-                <div class="fcard__overlay">
-                  <div class="fcard__name">K. Usha Rani</div>
-                  <div class="fcard__role">Associate Professor</div>
-                </div>
+              <img src="images/eee/placeholder.jpg" alt="K. Usha Rani" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">KR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">K. Usha Rani</div>
+                <div class="fcard__role">Associate Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">K. Usha Rani</div>
-                <div class="fcard__back-role">Associate Professor</div>
-                <div class="fcard__back-spec">EEE</div>
-                <a href="faculty-profile.html?name=K.%20Usha%20Rani&role=Associate%20Professor&photo=images/eee/placeholder.jpg" class="fcard__back-btn">View Publications</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">K. Usha Rani</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">EEE</div>
+                <a href="faculty-profile.html?name=K.%20Usha%20Rani&role=Associate%20Professor&photo=images/eee/placeholder.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Sumana Das">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/eee/sumana-das.jpeg" alt="Dr. Sumana Das" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">SD</div>
-                <div class="fcard__overlay">
-                  <div class="fcard__name">Dr. Sumana Das</div>
-                  <div class="fcard__role">Associate Professor</div>
-                </div>
+              <img src="images/eee/sumana-das.jpeg" alt="Dr. Sumana Das" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">SD</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Sumana Das</div>
+                <div class="fcard__role">Associate Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Sumana Das</div>
-                <div class="fcard__back-role">Associate Professor</div>
-                <div class="fcard__back-spec">EEE</div>
-                <a href="faculty-profile.html?name=Dr.%20Sumana%20Das&role=Associate%20Professor&photo=images/eee/sumana-das.jpeg" class="fcard__back-btn">View Publications</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Sumana Das</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">EEE</div>
+                <a href="faculty-profile.html?name=Dr.%20Sumana%20Das&role=&photo=images/eee/sumana-das.jpeg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="B. V. Rajanna">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/eee/bv-rajanna.jpg" alt="Dr. B. V. Rajanna" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">BR</div>
-                <div class="fcard__overlay">
-                  <div class="fcard__name">Dr. B. V. Rajanna</div>
-                  <div class="fcard__role">Associate Professor</div>
-                </div>
+              <img src="images/eee/bv-rajanna.jpg" alt="Dr. B. V. Rajanna" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">BR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. B. V. Rajanna</div>
+                <div class="fcard__role">Associate Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. B. V. Rajanna</div>
-                <div class="fcard__back-role">Associate Professor</div>
-                <div class="fcard__back-spec">EEE</div>
-                <a href="faculty-profile.html?name=Dr.%20B.%20V.%20Rajanna&role=Associate%20Professor&photo=images/eee/bv-rajanna.jpg" class="fcard__back-btn">View Publications</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. B. V. Rajanna</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">EEE</div>
+                <a href="faculty-profile.html?name=Dr.%20B.%20V.%20Rajanna&role=&photo=images/eee/bv-rajanna.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="T. Bhargava Ramu">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/eee/t-bhargava-ramu.jpg" alt="Dr. T. Bhargava Ramu" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">TR</div>
-                <div class="fcard__overlay">
-                  <div class="fcard__name">Dr. T. Bhargava Ramu</div>
-                  <div class="fcard__role">Associate Professor</div>
-                </div>
+              <img src="images/eee/t-bhargava-ramu.jpg" alt="Dr. T. Bhargava Ramu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">TR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. T. Bhargava Ramu</div>
+                <div class="fcard__role">Associate Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. T. Bhargava Ramu</div>
-                <div class="fcard__back-role">Associate Professor</div>
-                <div class="fcard__back-spec">EEE</div>
-                <a href="faculty-profile.html?name=Dr.%20T.%20Bhargava%20Ramu&role=Associate%20Professor&photo=images/eee/t-bhargava-ramu.jpg" class="fcard__back-btn">View Publications</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. T. Bhargava Ramu</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">EEE</div>
+                <a href="faculty-profile.html?name=Dr.%20T.%20Bhargava%20Ramu&role=Associate%20Professor&photo=images/eee/t-bhargava-ramu.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Sonu Kumar">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/eee/sonu-kumar.jpeg" alt="Dr. Sonu Kumar" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">SK</div>
-                <div class="fcard__overlay">
-                  <div class="fcard__name">Dr. Sonu Kumar</div>
-                  <div class="fcard__role">Assistant Professor</div>
-                </div>
+              <img src="images/eee/sonu-kumar.jpeg" alt="Dr. Sonu Kumar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">SK</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Sonu Kumar</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Sonu Kumar</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">EEE</div>
-                <a href="faculty-profile.html?name=Dr.%20Sonu%20Kumar&role=Assistant%20Professor&photo=images/eee/sonu-kumar.jpeg" class="fcard__back-btn">View Publications</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Sonu Kumar</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">EEE</div>
+                <a href="faculty-profile.html?name=Dr.%20Sonu%20Kumar&role=Assistant%20Professor&photo=images/eee/sonu-kumar.jpeg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Y. Lalitha Kameswari">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/eee/y-lalitha-kameswari.jpeg" alt="Dr. Y. Lalitha Kameswari" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">YK</div>
-                <div class="fcard__overlay">
-                  <div class="fcard__name">Dr. Y. Lalitha Kameswari</div>
-                  <div class="fcard__role">Assistant Professor</div>
-                </div>
+              <img src="images/eee/y-lalitha-kameswari.jpeg" alt="Dr. Y. Lalitha Kameswari" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">YK</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Y. Lalitha Kameswari</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Y. Lalitha Kameswari</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">EEE</div>
-                <a href="faculty-profile.html?name=Dr.%20Y.%20Lalitha%20Kameswari&role=Assistant%20Professor&photo=images/eee/y-lalitha-kameswari.jpeg" class="fcard__back-btn">View Publications</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Y. Lalitha Kameswari</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">EEE</div>
+                <a href="faculty-profile.html?name=Dr.%20Y.%20Lalitha%20Kameswari&role=Assistant%20Professor&photo=images/eee/y-lalitha-kameswari.jpeg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="T. Mrudula">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/eee/t-mrudula.jpg" alt="T. Mrudula" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">TM</div>
-                <div class="fcard__overlay">
-                  <div class="fcard__name">T. Mrudula</div>
-                  <div class="fcard__role">Assistant Professor</div>
-                </div>
+              <img src="images/eee/t-mrudula.jpg" alt="T. Mrudula" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">TM</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">T. Mrudula</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">T. Mrudula</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">EEE</div>
-                <a href="faculty-profile.html?name=T.%20Mrudula&role=Assistant%20Professor&photo=images/eee/t-mrudula.jpg" class="fcard__back-btn">View Publications</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">T. Mrudula</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">EEE</div>
+                <a href="faculty-profile.html?name=T.%20Mrudula&role=Assistant%20Professor&photo=images/eee/t-mrudula.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="N. Karthik">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/eee/n-karthik.jpg" alt="N. Karthik" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">NK</div>
-                <div class="fcard__overlay">
-                  <div class="fcard__name">N. Karthik</div>
-                  <div class="fcard__role">Assistant Professor</div>
-                </div>
+              <img src="images/eee/n-karthik.jpg" alt="N. Karthik" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">NK</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">N. Karthik</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">N. Karthik</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">EEE</div>
-                <a href="faculty-profile.html?name=N.%20Karthik&role=Assistant%20Professor&photo=images/eee/n-karthik.jpg" class="fcard__back-btn">View Publications</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">N. Karthik</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">EEE</div>
+                <a href="faculty-profile.html?name=T.%20Mrudula&role=Assistant%20Professor&photo=images/eee/n-karthik.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="P. Jithendar">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/eee/p-jithendar.jpg" alt="P. Jithendar" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">PJ</div>
-                <div class="fcard__overlay">
-                  <div class="fcard__name">P. Jithendar</div>
-                  <div class="fcard__role">Assistant Professor</div>
-                </div>
+              <img src="images/eee/p-jithendar.jpg" alt="P. Jithendar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">PJ</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">P. Jithendar</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">P. Jithendar</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">EEE</div>
-                <a href="faculty-profile.html?name=P.%20Jithendar&role=Assistant%20Professor&photo=images/eee/p-jithendar.jpg" class="fcard__back-btn">View Publications</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">P. Jithendar</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">EEE</div>
+                <a href="faculty-profile.html?name=N.%20Karthik&role=Assistant%20Professor&photo=images/eee/p-jithendar.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="A. Yadagiri">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/eee/a-yadagiri.jpg" alt="A. Yadagiri" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">AY</div>
-                <div class="fcard__overlay">
-                  <div class="fcard__name">A. Yadagiri</div>
-                  <div class="fcard__role">Assistant Professor</div>
-                </div>
+              <img src="images/eee/a-yadagiri.jpg" alt="A. Yadagiri" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">AY</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">A. Yadagiri</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">A. Yadagiri</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">EEE</div>
-                <a href="faculty-profile.html?name=A.%20Yadagiri&role=Assistant%20Professor&photo=images/eee/a-yadagiri.jpg" class="fcard__back-btn">View Publications</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">A. Yadagiri</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">EEE</div>
+                <a href="faculty-profile.html?name=P.%20Jithendar&role=Assistant%20Professor&photo=images/eee/a-yadagiri.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="K. Rajasri">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/eee/k-rajasri.jpg" alt="K. Rajasri" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">KR</div>
-                <div class="fcard__overlay">
-                  <div class="fcard__name">K. Rajasri</div>
-                  <div class="fcard__role">Assistant Professor</div>
-                </div>
+              <img src="images/eee/k-rajasri.jpg" alt="K. Rajasri" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">KR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">K. Rajasri</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">K. Rajasri</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">EEE</div>
-                <a href="faculty-profile.html?name=K.%20Rajasri&role=Assistant%20Professor&photo=images/eee/k-rajasri.jpg" class="fcard__back-btn">View Publications</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">K. Rajasri</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">EEE</div>
+                <a href="faculty-profile.html?name=A.%20Yadagiri&role=Assistant%20Professor&photo=images/eee/k-rajasri.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="A. Shubhangi Rao">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/eee/a-shubhangi-rao.jpg" alt="A. Shubhangi Rao" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">AR</div>
-                <div class="fcard__overlay">
-                  <div class="fcard__name">A. Shubhangi Rao</div>
-                  <div class="fcard__role">Assistant Professor</div>
-                </div>
+              <img src="images/eee/a-shubhangi-rao.jpg" alt="A. Shubhangi Rao" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">AR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">A. Shubhangi Rao</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">A. Shubhangi Rao</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">EEE</div>
-                <a href="faculty-profile.html?name=A.%20Shubhangi%20Rao&role=Assistant%20Professor&photo=images/eee/a-shubhangi-rao.jpg" class="fcard__back-btn">View Publications</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">A. Shubhangi Rao</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">EEE</div>
+                <a href="faculty-profile.html?name=K.%20Rajasri&role=Assistant%20Professor&photo=images/eee/a-shubhangi-rao.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="CH. Srivardhan Kumar">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/eee/ch-srivardhan-kumar.jpg" alt="Dr. CH. Srivardhan Kumar" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">CK</div>
-                <div class="fcard__overlay">
-                  <div class="fcard__name">Dr. CH. Srivardhan Kumar</div>
-                  <div class="fcard__role">Assistant Professor</div>
-                </div>
+              <img src="images/eee/ch-srivardhan-kumar.jpg" alt="Dr. CH. Srivardhan Kumar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">CK</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. CH. Srivardhan Kumar</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. CH. Srivardhan Kumar</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">EEE</div>
-                <a href="faculty-profile.html?name=Dr.%20CH.%20Srivardhan%20Kumar&role=Assistant%20Professor&photo=images/eee/ch-srivardhan-kumar.jpg" class="fcard__back-btn">View Publications</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. CH. Srivardhan Kumar</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">EEE</div>
+                <a href="faculty-profile.html?name=A.%20Shubhangi%20Rao&role=Assistant%20Professor&photo=images/eee/ch-srivardhan-kumar.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="M. Sreenivasa Reddy">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/eee/m-sreenivasa-reddy.jpg" alt="M. Sreenivasa Reddy" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">MR</div>
-                <div class="fcard__overlay">
-                  <div class="fcard__name">M. Sreenivasa Reddy</div>
-                  <div class="fcard__role">Associate Professor</div>
-                </div>
+              <img src="images/eee/m-sreenivasa-reddy.jpg" alt="M. Sreenivasa Reddy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">M. Sreenivasa Reddy</div>
+                <div class="fcard__role">Associate Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">M. Sreenivasa Reddy</div>
-                <div class="fcard__back-role">Associate Professor</div>
-                <div class="fcard__back-spec">EEE</div>
-                <a href="faculty-profile.html?name=M.%20Sreenivasa%20Reddy&role=Associate%20Professor&photo=images/eee/m-sreenivasa-reddy.jpg" class="fcard__back-btn">View Publications</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">M. Sreenivasa Reddy</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">EEE</div>
+                <a href="faculty-profile.html?name=Dr.%20CH.%20Srivardhan%20Kumar&role=Assistant%20Professor&photo=images/eee/m-sreenivasa-reddy.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
     </div>
     </div>
@@ -751,10 +718,10 @@
   <!-- TAB 4: Academics -->
   <div class="dept-panel" id="panel-academics">
     <h2 class="panel-heading">Academics</h2>
-<div class="panel-sub">Course Catalog</div>
+<div class="panel-sub" id="catalog-section">Course Catalog</div>
     <div class="catalog-grid">
-      <a href="https://files.mlrit.ac.in/syllabus/EEE/22/EEE-R22.pdf" target="_blank" class="catalog-item"><div><span class="catalog-item__text">B.Tech Course Catalog — R22</span><span class="catalog-item__sub">2022 regulation</span></div></a>
-      <a href="https://mlrit.ac.in/curriculum/eee-mlr20-syllabus/" target="_blank" class="catalog-item"><div><span class="catalog-item__text">B.Tech Course Catalog — MLR20</span><span class="catalog-item__sub">2020 regulation</span></div></a>
+      <a href="syllabus/pdfs/eee-r22-syllabus.pdf" target="_blank" class="catalog-item"><div><span class="catalog-item__text">B.Tech Course Catalog — R22</span><span class="catalog-item__sub">2022 regulation</span></div></a>
+      <a href="syllabus/pdfs/eee-mlr20-syllabus.pdf" target="_blank" class="catalog-item"><div><span class="catalog-item__text">B.Tech Course Catalog — MLR20</span><span class="catalog-item__sub">2020 regulation</span></div></a>
     </div>
 <div class="panel-sub"id="syll-explorer">Semester-wise Syllabus Explorer</div>
     <p style="font-style:italic;color:#666;">Select programme, year and semester to browse subjects.</p>
@@ -764,16 +731,16 @@
       <div class="catalog-item" style="justify-content:space-between;">
         <div><span class="catalog-item__text">R22 Complete Syllabus</span><span class="catalog-item__sub">Place PDF at: departments/syllabus/eee/r22.pdf</span></div>
         <div class="syll-actions">
-          <a href="syllabus/eee/r22.pdf" target="_blank" class="syll-btn syll-btn--view">View</a>
-          <a href="syllabus/eee/r22.pdf" download class="syll-btn syll-btn--download">Download</a>
+          <a href="syllabus/pdfs/eee-r22-syllabus.pdf" target="_blank" class="syll-btn syll-btn--view">View</a>
+          <a href="syllabus/pdfs/eee-r22-syllabus.pdf" download class="syll-btn syll-btn--download">Download</a>
         </div>
       </div>
 </div>
       <div class="catalog-item" style="justify-content:space-between;">
         <div><span class="catalog-item__text">MLR18 Complete Syllabus</span><span class="catalog-item__sub">2.0 MB</span></div>
         <div class="syll-actions">
-          <a href="syllabus/eee-mlr18-syllabus.pdf" target="_blank" class="syll-btn syll-btn--view">View</a>
-          <a href="syllabus/eee-mlr18-syllabus.pdf" download class="syll-btn syll-btn--download">Download</a>
+          <a href="syllabus/pdfs/eee-mlr18-syllabus.pdf" target="_blank" class="syll-btn syll-btn--view">View</a>
+          <a href="syllabus/pdfs/eee-mlr18-syllabus.pdf" download class="syll-btn syll-btn--download">Download</a>
         </div>
       </div>
     </div>
@@ -826,8 +793,8 @@
     </div>
     <div class="panel-sub" id="honour-section">Roll of Honour</div>
     <table class="honour-table"><thead><tr><th>Year</th><th>Name</th><th>Achievement</th><th>Score</th></tr></thead><tbody>
-        <tr><td>2016</td><td>P. Srinivas</td><td>Department Topper</td><td>79%</td></tr>
-        <tr><td>2018</td><td>K. Anitha</td><td>Department Topper</td><td>77%</td></tr>
+        <tr><td>2016</td><td><span class="honour-name">P. Srinivas</span></td><td><span class="honour-badge honour-badge--topper">Department Topper</span></td><td><span class="honour-score">79%</span></td></tr>
+        <tr><td>2018</td><td><span class="honour-name">K. Anitha</span></td><td><span class="honour-badge honour-badge--topper">Department Topper</span></td><td><span class="honour-score">77%</span></td></tr>
     </tbody></table>
     <div class="panel-sub">Student Achievements</div>
     <ul class="achieve-list">
@@ -1000,6 +967,9 @@
         <p class="intern-note">Internship opportunities are facilitated through the Training and Placement Cell in collaboration with the EEE department.</p>
   </div>
 
+  </div><!-- .dept-body__panels -->
+  </div><!-- .dept-body -->
+
   <script>
     // ── STANDALONE TAB SWITCHER (runs first, always works) ──
     (function () {
@@ -1018,7 +988,6 @@
         });
       });
     })();
-
 
 
     // Syllabus selector
@@ -1196,7 +1165,6 @@
           fireStreak();
         });
       });
-      });
 
       // Sidebar item click — mark active + fire streak + scroll to section
       dsItems.forEach(function (item) {
@@ -1210,18 +1178,91 @@
           siblings.forEach(function (s) { s.classList.remove('is-active'); });
           item.classList.add('is-active');
           fireStreak();
-          // Scroll to target after a brief delay to let panel show
+          // Scroll to target — close other accordions, open the right one
           if (target) {
             setTimeout(function () {
               var el = document.getElementById(target);
-              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 50);
+              if (!el) return;
+              // Close all open accordions first
+              document.querySelectorAll('.sub-accordion.is-open').forEach(function(a) {
+                a.classList.remove('is-open');
+              });
+              // Open accordion if target is inside one or is the header
+              var accordion = el.closest ? el.closest('.sub-accordion') : null;
+              if (!accordion && el.parentElement && el.parentElement.classList && el.parentElement.classList.contains('sub-accordion')) {
+                accordion = el.parentElement;
+              }
+              if (accordion) accordion.classList.add('is-open');
+              el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 120);
           }
         });
       });
 
       // Initialize
       updateSidebar('overview');
+      window.scrollTo(0, 0);
+    })();
+    // Scroll-spy — highlights sidebar only, does NOT touch accordion state
+    (function () {
+      var targets = [];
+      document.querySelectorAll('.ds-item[data-ds-target]').forEach(function(item) {
+        var id = item.getAttribute('data-ds-target');
+        var el = document.getElementById(id);
+        if (el) targets.push({ el: el, item: item });
+      });
+      if (!targets.length) return;
+      var spyReady = false;
+      setTimeout(function () { spyReady = true; }, 600);
+      var observer = new IntersectionObserver(function(entries) {
+        if (!spyReady) return;
+        entries.forEach(function(entry) {
+          if (!entry.isIntersecting) return;
+          var matched = targets.find(function(t) { return t.el === entry.target; });
+          if (!matched) return;
+          if (matched.item.style.display === 'none') return;
+          document.querySelectorAll('.ds-item').forEach(function(i) { i.classList.remove('is-active'); });
+          matched.item.classList.add('is-active');
+        });
+      }, { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' });
+      targets.forEach(function(t) { observer.observe(t.el); });
+    })();
+
+
+    // Auto-open accordions when scrolled into view (open only, never force-close)
+    (function () {
+      var accords = document.querySelectorAll('.sub-accordion');
+      if (!accords.length) return;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !entry.target.classList.contains('is-open')) {
+            entry.target.classList.add('is-open');
+          }
+        });
+      }, { threshold: 0.2 });
+      accords.forEach(function (acc) { observer.observe(acc); });
+    })();
+
+    // Accordion toggle — header clicks only
+    (function () {
+      document.querySelectorAll('.sub-accordion__header').forEach(function (header) {
+        header.style.cursor = 'pointer';
+        header.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var accordion = header.closest('.sub-accordion');
+          if (!accordion) accordion = header.parentElement;
+          if (accordion) {
+            var wasOpen = accordion.classList.contains('is-open');
+            accordion.classList.toggle('is-open');
+            if (!wasOpen) {
+              setTimeout(function () {
+                accordion.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              }, 50);
+            }
+          }
+        });
+      });
     })();
   </script>
 </body>

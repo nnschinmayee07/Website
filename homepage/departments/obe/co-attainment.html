@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CO &amp; PO Attainment — CSE, MLRIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/navbar.css" />
+  <link rel="stylesheet" href="../../css/main.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #F4F1EA; color: #3A3A3A; line-height: 1.7; }
+    .obe-page { max-width: 960px; margin: 0 auto; padding: 40px 32px 80px; }
+    .obe-back { font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 700; color: #18453B; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 32px; transition: color 0.2s; }
+    .obe-back:hover { color: #E85D1F; }
+    .obe-hero { background: linear-gradient(135deg, #0B0F1A 0%, #18453B 100%); border-radius: 16px; padding: 40px 48px; margin-bottom: 40px; color: #fff; }
+    .obe-hero__tag { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #E85D1F; margin-bottom: 12px; }
+    .obe-hero__title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+    .obe-hero__sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); }
+    .obe-section { background: #fff; border-radius: 12px; padding: 32px 36px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+    .obe-section__label { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #E85D1F; margin-bottom: 6px; }
+    .obe-section__title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #0B0F1A; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid rgba(24,69,59,0.12); }
+    .stat-row { display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
+    .stat-box { flex: 1; min-width: 140px; background: #fff; border-radius: 12px; padding: 24px 20px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-top: 3px solid #18453B; }
+    .stat-box.orange { border-top-color: #E85D1F; }
+    .stat-box__num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: #18453B; }
+    .stat-box.orange .stat-box__num { color: #E85D1F; }
+    .stat-box__label { font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+    .attain-table { width: 100%; border-collapse: separate; border-spacing: 0 6px; }
+    .attain-table thead th { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #888; padding: 8px 12px; text-align: left; }
+    .attain-table tbody tr { background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,0.04); }
+    .attain-table tbody tr:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.08); transform: translateX(4px); transition: all 0.2s; }
+    .attain-table td { padding: 12px 14px; font-size: 0.85rem; color: #444; }
+    .attain-table td:first-child { font-family: 'Raleway', sans-serif; font-weight: 700; color: #0B0F1A; border-radius: 8px 0 0 8px; }
+    .attain-table td:last-child { border-radius: 0 8px 8px 0; }
+    .bar-wrap { display: flex; align-items: center; gap: 10px; }
+    .bar { height: 8px; border-radius: 4px; background: linear-gradient(90deg, #18453B, #2a6b58); }
+    .bar.orange { background: linear-gradient(90deg, #E85D1F, #f07a46); }
+    .bar-val { font-family: 'Raleway', sans-serif; font-size: 0.75rem; font-weight: 700; color: #18453B; white-space: nowrap; }
+    .bar-val.orange { color: #E85D1F; }
+    .note-box { background: rgba(24,69,59,0.06); border-left: 3px solid #18453B; border-radius: 0 8px 8px 0; padding: 14px 18px; font-size: 0.83rem; color: #444; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <div class="obe-page">
+    <a class="obe-back" href="../cse.html">← Back to CSE Department</a>
+
+    <div class="obe-hero">
+      <div class="obe-hero__tag">Outcome Based Education</div>
+      <div class="obe-hero__title">CO &amp; PO Attainment</div>
+      <div class="obe-hero__sub">Course Outcomes and Program Outcomes Attainment Data — CSE, MLRIT</div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-box__num">87.23%</div><div class="stat-box__label">Overall Pass %</div></div>
+      <div class="stat-box"><div class="stat-box__num">936</div><div class="stat-box__label">Final Year Students Passed</div></div>
+      <div class="stat-box orange"><div class="stat-box__num">80%</div><div class="stat-box__label">Direct Assessment Weight</div></div>
+      <div class="stat-box orange"><div class="stat-box__num">20%</div><div class="stat-box__label">Indirect Assessment Weight</div></div>
+    </div>
+
+    <div class="obe-section">
+      <div class="obe-section__label">Attainment Methodology</div>
+      <div class="obe-section__title">How CO &amp; PO Attainment is Computed</div>
+      <p style="font-size:0.88rem;color:#444;line-height:1.7;margin-bottom:16px;">CO attainment is calculated at the end of each semester using a weighted combination of direct and indirect assessment scores. PO attainment is derived from CO attainment using the CO–PO mapping matrix.</p>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:0.85rem;color:#444;padding:8px 0 8px 16px;border-bottom:1px solid rgba(0,0,0,0.05);position:relative;"><span style="position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:#18453B;display:block;"></span><strong>CO Attainment</strong> = (80% × Direct Score) + (20% × Indirect Score)</li>
+        <li style="font-size:0.85rem;color:#444;padding:8px 0 8px 16px;border-bottom:1px solid rgba(0,0,0,0.05);position:relative;"><span style="position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:#18453B;display:block;"></span><strong>PO Attainment</strong> = Σ (CO Attainment × CO–PO Mapping Strength) / Σ Mapping Strengths</li>
+        <li style="font-size:0.85rem;color:#444;padding:8px 0 8px 16px;border-bottom:1px solid rgba(0,0,0,0.05);position:relative;"><span style="position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:#18453B;display:block;"></span><strong>Target:</strong> At least 60% of students must achieve ≥60% marks in each CO</li>
+        <li style="font-size:0.85rem;color:#444;padding:8px 0 8px 16px;position:relative;"><span style="position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:#18453B;display:block;"></span><strong>Mapping Scale:</strong> 1 = Low correlation, 2 = Medium correlation, 3 = High correlation</li>
+      </ul>
+    </div>
+
+    <div class="obe-section">
+      <div class="obe-section__label">Programme Outcomes Attainment</div>
+      <div class="obe-section__title">PO Attainment Levels — B.Tech CSE (Latest Cycle)</div>
+      <table class="attain-table">
+        <thead>
+          <tr><th>PO</th><th>Description</th><th>Attainment</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>PO1</td><td>Engineering Knowledge</td><td><div class="bar-wrap"><div class="bar" style="width:78%"></div><span class="bar-val">78%</span></div></td></tr>
+          <tr><td>PO2</td><td>Problem Analysis</td><td><div class="bar-wrap"><div class="bar" style="width:74%"></div><span class="bar-val">74%</span></div></td></tr>
+          <tr><td>PO3</td><td>Design / Development of Solutions</td><td><div class="bar-wrap"><div class="bar" style="width:71%"></div><span class="bar-val">71%</span></div></td></tr>
+          <tr><td>PO4</td><td>Conduct Investigations</td><td><div class="bar-wrap"><div class="bar" style="width:69%"></div><span class="bar-val">69%</span></div></td></tr>
+          <tr><td>PO5</td><td>Modern Tool Usage</td><td><div class="bar-wrap"><div class="bar" style="width:76%"></div><span class="bar-val">76%</span></div></td></tr>
+          <tr><td>PO6</td><td>Engineer and Society</td><td><div class="bar-wrap"><div class="bar orange" style="width:68%"></div><span class="bar-val orange">68%</span></div></td></tr>
+          <tr><td>PO7</td><td>Environment and Sustainability</td><td><div class="bar-wrap"><div class="bar orange" style="width:65%"></div><span class="bar-val orange">65%</span></div></td></tr>
+          <tr><td>PO8</td><td>Ethics</td><td><div class="bar-wrap"><div class="bar" style="width:80%"></div><span class="bar-val">80%</span></div></td></tr>
+          <tr><td>PO9</td><td>Individual and Team Work</td><td><div class="bar-wrap"><div class="bar" style="width:82%"></div><span class="bar-val">82%</span></div></td></tr>
+          <tr><td>PO10</td><td>Communication</td><td><div class="bar-wrap"><div class="bar" style="width:77%"></div><span class="bar-val">77%</span></div></td></tr>
+          <tr><td>PO11</td><td>Project Management &amp; Finance</td><td><div class="bar-wrap"><div class="bar orange" style="width:67%"></div><span class="bar-val orange">67%</span></div></td></tr>
+          <tr><td>PO12</td><td>Life-long Learning</td><td><div class="bar-wrap"><div class="bar" style="width:75%"></div><span class="bar-val">75%</span></div></td></tr>
+        </tbody>
+      </table>
+      <div class="note-box">Target attainment level: ≥60%. POs marked in orange are areas identified for improvement in the next academic cycle.</div>
+    </div>
+
+    <div class="obe-section">
+      <div class="obe-section__label">Programme Specific Outcomes</div>
+      <div class="obe-section__title">PSO Attainment — B.Tech CSE</div>
+      <table class="attain-table">
+        <thead>
+          <tr><th>PSO</th><th>Description</th><th>Attainment</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>PSO1</td><td>Software Systems and Development Methodologies</td><td><div class="bar-wrap"><div class="bar" style="width:79%"></div><span class="bar-val">79%</span></div></td></tr>
+          <tr><td>PSO2</td><td>Intelligent Systems for Societal Needs</td><td><div class="bar-wrap"><div class="bar" style="width:73%"></div><span class="bar-val">73%</span></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="obe-section" style="text-align:center;">
+      <div class="obe-section__label">Detailed Data</div>
+      <div class="obe-section__title" style="border:none;margin-bottom:8px;">Access Complete CO/PO Reports</div>
+      <p style="font-size:0.86rem;color:#666;margin-bottom:20px;">Login to the OBE portal to view course-wise CO attainment, mapping matrices, and semester-wise reports.</p>
+      <a href="http://103.15.62.235/ioncudos_mlrit_tier1/" target="_blank" style="display:inline-block;background:#18453B;color:#fff;font-family:Raleway,sans-serif;font-size:0.82rem;font-weight:700;padding:12px 28px;border-radius:6px;text-decoration:none;" onmouseover="this.style.background='#E85D1F'" onmouseout="this.style.background='#18453B'">Open OBE Portal →</a>
+    </div>
+  </div>
+</body>
+</html>

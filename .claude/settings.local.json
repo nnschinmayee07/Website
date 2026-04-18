@@ -17,7 +17,9 @@
       "Bash(ls -d /c/mlr/*/)",
       "Bash(ls /c/mlr/departments/*.html)",
       "Bash(python3 download_faculty.py)",
-      "WebFetch(domain:www.iare.ac.in)"
+      "WebFetch(domain:www.iare.ac.in)",
+      "Bash(sed '1d;$d')",
+      "Bash(node --check c:/mlr/test_js.js)"
     ]
   }
 }

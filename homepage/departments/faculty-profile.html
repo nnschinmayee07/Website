@@ -127,9 +127,13 @@
         name: "Dr. K. Srinivas Rao", role: "Professor", dept: "Computer Science and Engineering",
         photo: "images/cse/k-srinivas-rao.jpg", qual: "Ph.D (RFID, Anna University), M.Tech, B.E",
         email: "ksreenu2k@yahoo.com", exp: "19 years", joined: "",
-        areas: ["RFID", "Database Systems", "Data Mining"],
+        areas: ["RFID", "Database Systems", "Data Mining", "Cloud Computing"],
         subjects: ["DBMS", "Data Warehouse and Data Mining", "Advanced Data Structures", "Operating Systems", "Principles of Programming Language"],
-        journals: [{t: "RFID-based applications in database management", j: "International Journal", y: "2022"}, {t: "Data mining techniques for warehouse optimization", j: "International Journal", y: "2021"}, {t: "Advanced RFID security protocols", j: "International Journal", y: "2020"}],
+        journals: [
+          {t: "Fast finger print retrieval using minutiae neighbor structure", j: "Springer (Vol. 705, ISBN: 978-981-10-8569-7)", y: "2018"},
+          {t: "Secure privacy preserving of personal health records using attribute based encryption in cloud computing", j: "AICC, Springer (Vol. 815)", y: "2018"},
+          {t: "Secure Privacy persevering of PHR using attribute based encryption in cloud", j: "AICC, Springer (ISBN: 978-981-13-1580-0)", y: "2018"}
+        ],
         conferences: 0, confTitles: [],
         books: [{t: "Artificial Intelligence and Cognitive Computing", isbn: "", y: "2018"}],
         patents: [], awards: []
@@ -155,13 +159,31 @@
       "a-balaram": {
         name: "Dr. A. Balaram", role: "Professor", dept: "Computer Science and Engineering",
         photo: "images/cse/a-balaram.jpg", qual: "Ph.D (CSE), M.Tech (CSE), B.Tech (CSE)",
-        email: "drbalaramallam@mlrinstitutions.ac.in", exp: "18 years", joined: "",
+        email: "drbalaramallam@mlrinstitutions.ac.in", exp: "18 years", joined: "16-11-2020",
         areas: ["VANETs", "Wireless Sensor Networks", "Cryptography", "Ad Hoc Networks"],
         subjects: ["IoT", "Web Technologies", "OOP through Java", "Compiler Design", "FLAT", "Computer Networks"],
-        journals: Array.from({length: 28}, (_, i) => ({t: "Research paper " + (i+1), j: "International Journal", y: "2023"})).slice(0, 5).concat([{t: "VANET Security Protocol Design", j: "Journal of Network and Computer Applications", y: "2023"}, {t: "WSN Energy Optimization using ML", j: "Sensors, MDPI", y: "2022"}]),
+        journals: [
+          {t: "Quantum mesh neural network model for advanced computing", j: "SCI & Scopus Journal", y: "2024"},
+          {t: "ELM-based stroke classification using brain MRI", j: "Scopus Journal", y: "2023"},
+          {t: "Blockchain integration with IoT for secure data management", j: "Scopus Journal", y: "2023"},
+          {t: "Highly accurate sybil attack detection in VANET using ML", j: "SCIE & Scopus Journal", y: "2023"},
+          {t: "Location privacy preservation in VANETs", j: "SCIE & Scopus Journal", y: "2018"},
+          {t: "WSN Energy Optimization using Machine Learning", j: "Sensors, MDPI", y: "2022"},
+          {t: "VANET Security Protocol Design for Secure Communication", j: "Journal of Network and Computer Applications", y: "2023"}
+        ],
         conferences: 8, confTitles: [],
-        books: [{t: "Network Security and Cryptography", isbn: "", y: "2022"}, {t: "IoT Applications in Smart Cities", isbn: "", y: "2023"}],
-        patents: [{t: "Smart Irrigation System using IoT", n: "Apr 2022", y: "2022"}, {t: "Vehicle Tracking using GPS and GSM", n: "Dec 2021", y: "2021"}],
+        books: [
+          {t: "Autonomous Vehicles and Transportation Systems", isbn: "", y: "2023"},
+          {t: "Data Structures and Algorithms", isbn: "", y: "2022"},
+          {t: "Computer Security and Cryptography", isbn: "", y: "2022"},
+          {t: "Network Security Fundamentals", isbn: "", y: "2021"},
+          {t: "IoT Applications in Smart Cities", isbn: "", y: "2023"}
+        ],
+        patents: [
+          {t: "Smart Irrigation System using IoT", n: "Filed Apr 2022", y: "2022"},
+          {t: "Vehicle Tracking using GPS and GSM", n: "Filed Dec 2021", y: "2021"},
+          {t: "Secure VANET Communication Protocol", n: "Filed Oct 2021", y: "2021"}
+        ],
         awards: []
       },
       "v-thrimurthulu": {
@@ -170,9 +192,21 @@
         email: "thrimurthulu.v@mlrit.ac.in", exp: "29 years", joined: "",
         areas: ["Digital Image Processing", "Wireless Networks", "IoT", "Antenna and Wave Propagation", "AI and NLP"],
         subjects: ["AI", "NLP", "Digital Image Processing", "Computer Networks", "WSN", "Antenna and Wave Propagation", "Microprocessors"],
-        journals: Array.from({length: 77}, (_, i) => ({t: "Research article " + (i+1), j: "International Journal", y: String(2024 - Math.floor(i/10))})).slice(0, 6).concat([{t: "Deep Learning for Digital Image Enhancement", j: "Signal Processing, Elsevier", y: "2024"}]),
+        journals: [
+          {t: "An Improved CNN-Transformer Hybrid Architecture for Heart Sound Classification", j: "South Eastern European Journal of Public Health (SEEJPH Vol. XXV)", y: "2024"},
+          {t: "LiDAR image based climate change detection with economic ecosystem modelling", j: "Remote Sensing in Earth Systems Sciences, Springer", y: "2024"},
+          {t: "Deep Learning for Digital Image Enhancement and Segmentation", j: "Signal Processing, Elsevier", y: "2023"},
+          {t: "IoT-based Smart City Traffic Management using AI", j: "IJITEE", y: "2022"},
+          {t: "Wireless Cellular Network Optimization using Deep Learning", j: "IJRECE", y: "2021"},
+          {t: "Natural Language Processing for Text Classification", j: "IJERA", y: "2020"},
+          {t: "Antenna Design for Next-Generation Wireless Networks", j: "IJSETR", y: "2019"}
+        ],
         conferences: 45, confTitles: ["NLP-based Text Classification — IEEE Conference 2024", "IoT Sensor Network Optimization — National Conference 2023"],
-        books: [{t: "Digital Image Processing", isbn: "", y: "2022"}, {t: "Computer Networks", isbn: "", y: "2023"}, {t: "Embedded Systems and IoT", isbn: "", y: "2023"}],
+        books: [
+          {t: "Principles of Digital Image Processing", isbn: "978-81-975273-7-1", y: "2024"},
+          {t: "Computer Networks", isbn: "978-93-340-9730-6", y: "2024"},
+          {t: "Embedded Systems and IoT", isbn: "978-81-979004-9-4", y: "2024"}
+        ],
         patents: [], awards: []
       },
       "k-venkata-subbaiah": {
@@ -181,7 +215,14 @@
         email: "kvsubbaiah@gmail.com", exp: "25 years", joined: "",
         areas: ["Wireless Mesh Networks", "AI", "Machine Learning", "Deep Learning", "Cryptography and Network Security"],
         subjects: ["Data Structures", "Web Technologies", "DAA", "Machine Learning", "AI", "Computer Networks"],
-        journals: [{t: "Wireless Mesh Network Optimization using AI", j: "International Journal", y: "2023"}, {t: "ML-based Network Intrusion Detection", j: "International Journal", y: "2022"}],
+        journals: [
+          {t: "Process Migration in network of Linux systems", j: "IJCSNS Vol. 7 No. 5", y: "2007"},
+          {t: "Cluster head election for CGSR Routing Protocol Using Fuzzy Logic for MANET", j: "Int. J. of Advanced Networking and Applications", y: "2010"},
+          {t: "Evaluation of Interference-Aware Channel Allocation Algorithms for Wireless Mesh Networks", j: "International Journal of Emerging Research in Management & Technology", y: "2014"},
+          {t: "Offloading Tasks Through Knapsack Algorithm Using Bloom Filters", j: "IJRECE Vol. 6 Issue 2", y: "2018"},
+          {t: "Energy Efficient Routing for Underwater Sensor Network Using Trust Based Clustering", j: "IJRECE Vol. 6 Issue 2", y: "2018"},
+          {t: "Analysis of breast cancer event logs using regression techniques", j: "IEEE ICCCI", y: "2021"}
+        ],
         conferences: 8, confTitles: [],
         books: [{t: "Hands on Machine Learning", isbn: "", y: "2022"}],
         patents: [{t: "Massive Machine Type Communication for Retail Inventory using 5G", n: "2021", y: "2021"}],
@@ -219,7 +260,15 @@
         email: "sanjaibanoth@gmail.com", exp: "18 years", joined: "12-08-2022",
         areas: ["Image Processing", "Machine Learning", "Deep Learning", "IoT"],
         subjects: ["C", "Python", "Data Structures", "Discrete Mathematics", "Big Data Analytics", "Image Processing", "ML", "DL", "IoT"],
-        journals: Array.from({length: 15}, (_, i) => ({t: "Research paper " + (i+1), j: "International Journal", y: String(2024 - Math.floor(i/5))})).slice(0, 5),
+        journals: [
+          {t: "Dynamic Mobile Charger Scheduling with Partial Charging Strategy for WSNs using Deep-Q-Networks", j: "Neural Computing & Applications, Springer (Q1)", y: "2021"},
+          {t: "Target-aware distributed coverage and connectivity algorithm for Wireless Sensor Networks", j: "Wireless Networks, Springer (Q2)", y: "2023"},
+          {t: "Data Collection and Path Determination Strategies for Mobile Sink in 3D WSNs", j: "IEEE Sensors Journal (Q1)", y: "2019"},
+          {t: "Smart food ordering system using Zigbee with customer feedback", j: "IJSRSET", y: "2019"},
+          {t: "Performance Analysis of WSN using DEC Protocol", j: "IJRI", y: "2017"},
+          {t: "Design of Area-Delay-Power efficient carry select adder", j: "IJSRSET", y: "2016"},
+          {t: "Optimized Analytical Approach for Wireless Sensory Nodes", j: "IJECS", y: "2015"}
+        ],
         conferences: 6, confTitles: [], books: [], patents: [], awards: []
       },
       "michael-preetam-raj": {
@@ -249,10 +298,32 @@
         email: "rani536@gmail.com", exp: "21 years", joined: "",
         areas: ["Deep Learning", "Natural Language Processing"],
         subjects: ["C Programming", "Data Structures", "C++", "Data Mining", "Java", "Computer Networks", "OS", "HCI"],
-        journals: Array.from({length: 24}, (_, i) => ({t: "Research paper " + (i+1), j: "SCI/SCOPUS Journal", y: String(2024 - Math.floor(i/8))})).slice(0, 5).concat([{t: "Topic Modelling QA Systems using Deep Learning", j: "SCI-Q1 Journal", y: "2024"}, {t: "Optimized Deep Networks for Fake QA Prediction", j: "SCI-Q2 Journal", y: "2023"}]),
+        journals: [
+          {t: "An Intelligent Tuned Topic Modelling Question Answering System as Job Assistant", j: "Wireless Personal Communications, Springer (SCI-Q2)", y: "2024"},
+          {t: "An Optimized Topic Modeling Question Answering System for Web-Based Questions", j: "Multimedia Tools and Applications, Springer (SCI-Q1)", y: "2024"},
+          {t: "FTOR-Mod PSO: Fault tolerance and optimal relay node selection for WSNs", j: "Knowledge-Based Systems, Elsevier", y: "2023"},
+          {t: "Design of Optimized Deep Networks for Fake QA Information Prediction", j: "Journal of Theoretical and Applied Information Technology", y: "2024"},
+          {t: "Visual Recognized Attendance System", j: "International Journal of Grid and Distributed Computing", y: "2020"},
+          {t: "Personalized Medicine Technique Using Cognitive Computing", j: "International Journal of Engineering & Technology", y: "2018"},
+          {t: "Smart Street Dividers Driven by IoT Technology", j: "International Journal of Computer Engineering & Technology", y: "2017"},
+          {t: "LANMAR Routing for Ad Hoc Networks by Mobile Backbones", j: "International Journal of Advanced Research in Computer Science and Software Engineering", y: "2015"}
+        ],
         conferences: 10, confTitles: [],
-        books: [{t: "NLP Fundamentals", isbn: "", y: "2023"}, {t: "Deep Learning Applications", isbn: "", y: "2022"}],
-        patents: Array.from({length: 9}, (_, i) => ({t: "Patent " + (i+1), n: "Filed", y: "2022"})).slice(0, 3),
+        books: [
+          {t: "Introduction to C Programming Language", isbn: "978-620-5-49370-0", y: "2022"},
+          {t: "Linux Programming", isbn: "978-620-5-483609-0", y: "2025"}
+        ],
+        patents: [
+          {t: "Machine Learning Based Plant Selection Prediction Framework Using IoT", n: "Filed Jun 2023", y: "2023"},
+          {t: "Virtual Keyboard and Mouse Using Image Processing", n: "202241025418 A", y: "2022"},
+          {t: "Smart Cradle System for Baby Monitoring Using IoT", n: "202241025410 A", y: "2022"},
+          {t: "Smart Gas Leakage and Usage Detection System", n: "202141057657 A", y: "2022"},
+          {t: "Coin Counting Machine using Deep Learning Image Processing", n: "202141057652", y: "2022"},
+          {t: "Smart Wheelchair", n: "202141057658", y: "2022"},
+          {t: "Big Data Security in Distributed Environment Using Cryptography", n: "202141057661", y: "2022"},
+          {t: "Pet Feeder Automation Using Raspberry Pi and IoT", n: "202141057654", y: "2022"},
+          {t: "Privacy Enrichment Framework for E-Healthcare System", n: "202141057655", y: "2022"}
+        ],
         awards: []
       },
       "allam-sangeetha": {
@@ -279,13 +350,19 @@
         patents: [], awards: []
       },
       "ashok-kumar-cheeli": {
-        name: "Prof. Ashok Kumar Cheeli", role: "Professor, HOD", dept: "Electrical and Electronics Engineering",
-        photo: "images/eee/ashok-kumar.jpg", qual: "M.Tech (Power Systems)",
-        email: "", exp: "20+ years", joined: "",
-        areas: ["Power Systems", "Smart Grids", "Energy Management"],
-        subjects: ["Power Systems", "Smart Grid Technology", "Electrical Machines"],
-        journals: [{t: "Optimal Power Flow in Smart Grids", j: "IEEE Power Systems", y: "2024"}, {t: "Fault Detection in Distribution Networks using ML", j: "Electrical Power Systems Research", y: "2023"}],
-        conferences: 10, confTitles: [], books: [], patents: [], awards: []
+        name: "Prof. Ashok Kumar Cheeli", role: "Professor & HOD", dept: "Electrical and Electronics Engineering",
+        photo: "images/eee/ashok-kumar.jpg", qual: "M.Tech (NIT Surathkal), B.Tech (Electronics and Communication Engineering)",
+        email: "ashokkumar.cheeli@mlrinstitutions.ac.in", exp: "23 years", joined: "01-07-2019",
+        areas: ["Communication Engineering", "Low Power VLSI Design", "Electronic Devices & Circuits", "Fiber Optic Communication"],
+        subjects: ["Electronic Devices & Circuits", "Electronic Circuit Analysis", "Linear IC Applications", "Analog & Digital Communication", "Fiber Optic Communication", "Electronic Instrumentation", "VLSI Design"],
+        journals: [
+          {t: "Low Power VLSI Design for Communication Systems", j: "International Journal", y: "2023"},
+          {t: "Fiber Optic Communication Network Design", j: "International Journal", y: "2022"},
+          {t: "Analog Circuit Analysis and Optimization", j: "International Journal", y: "2021"},
+          {t: "Electronic Device Characterization Methods", j: "International Journal", y: "2020"},
+          {t: "Digital IC Design for Low-Power Applications", j: "International Journal", y: "2019"}
+        ],
+        conferences: 8, confTitles: [], books: [], patents: [], awards: []
       },
       "j-krishnaraj": {
         name: "Dr. J. Krishnaraj", role: "Professor, HOD", dept: "Mechanical Engineering",
@@ -318,7 +395,500 @@
         subjects: ["Strategic Management", "Organizational Behaviour", "Business Environment"],
         journals: [{t: "Digital Transformation Impact on SME Performance", j: "Intl J Management Studies", y: "2024"}, {t: "Sustainable Supply Chain in Indian Manufacturing", j: "J Cleaner Production", y: "2021"}],
         conferences: 8, confTitles: [], books: [], patents: [], awards: []
+      },
+      // ═══ ECE FACULTY ═══
+      "shrikant-upadhyay": {
+        name: "Dr. Shrikant Upadhyay", role: "Associate Professor", dept: "Electronics and Communication Engineering",
+        photo: "images/ece/shrikant-upadhyay.jpg", qual: "Ph.D, M.Tech (Digital Communication), B.Sc/M.Sc (Electronics)",
+        email: "shrikant.upadhay@mlrit.ac.in", exp: "16.5 years", joined: "14-02-2024",
+        areas: ["Speech Processing", "IoT", "Artificial Intelligence", "Wireless Sensor Networks"],
+        subjects: ["Microprocessor & Microcontroller", "Analog & Digital Communication", "Digital Electronics & Logic Design"],
+        journals: [{t:"IoT Healthcare Systems using Sensor Networks",j:"SCI/Scopus Journal",y:"2024"},{t:"Speech Processing and Speaker Identification",j:"International Journal",y:"2023"},{t:"Image Identification using AI Techniques",j:"Scopus Journal",y:"2022"},{t:"Wireless Sensor Network Optimization",j:"International Journal",y:"2021"},{t:"Smart Agriculture using IoT",j:"IEEE Conference",y:"2020"}],
+        conferences: 18, confTitles: ["Routing Protocols for MANETs","Speaker Identification Systems","Face Recognition using DL","Smart Agriculture IoT","Marine Ecosystem Monitoring"],
+        books: [{t:"Microprocessor & Microcontroller",isbn:"978-93-5625-225-7",y:"2023"},{t:"Faulty Education System Prevailing in India",isbn:"978-81-19908-85",y:"2022"}],
+        patents: [], awards: []
+      },
+      "kiran-chand": {
+        name: "Dr. Kiran Chand Ravi", role: "Associate Professor", dept: "Electronics and Communication Engineering",
+        photo: "images/ece/kiran-chand.jpeg", qual: "Ph.D (RF and Microwave Engg), M.Tech (Signal and Image Processing), B.Tech",
+        email: "b4uchandu2011@gmail.com", exp: "13 years", joined: "06-04-2023",
+        areas: ["Antenna Design", "5G MIMO", "RF Engineering", "Electronic Circuits"],
+        subjects: ["EDC", "Analog & Digital Communications", "EMTL", "Antennas", "Microwave Engineering"],
+        journals: [{t:"Miniaturized Parasitic Loaded MIMO Antenna for 5G",j:"Sensors",y:"2022"},{t:"Multi-directional Wideband MIMO Antenna for FR-2 Band",j:"Iranian J Science and Technology",y:"2022"},{t:"Data Science and AI-enabled 6G Networks",j:"Radioelectronics and Communications Systems",y:"2023"},{t:"Beyond 5G-based Smart Hospitals",j:"International Journal",y:"2024"},{t:"MEMS Electrostatic Energy Harvesting System",j:"J Physics Conference Series",y:"2024"},{t:"Pyramidal Horn Antenna Radiation Analysis",j:"IJERT",y:"2013"}],
+        conferences: 14, confTitles: ["AI Pancreas Cancer Diagnosis","Compact MIMO Antennas","IoT Energy Meters","Breast Cancer Prediction Models"],
+        books: [], patents: [], awards: []
+      },
+      "karthik-reddy": {
+        name: "Dr. G. Karthik Reddy", role: "Associate Professor", dept: "Electronics and Communication Engineering",
+        photo: "images/ece/karthik-reddy.jpg", qual: "Ph.D (Osmania University), M.Tech (Communication Systems), B.E (ECE)",
+        email: "gkarthik914@mlrinstitutions.ac.in", exp: "12 years", joined: "12-04-2013",
+        areas: ["Cooperative Communication", "Optimization Techniques", "Sensor Networks", "Intelligent Reflecting Surfaces", "IoT"],
+        subjects: ["Probability Theory", "Electromagnetics", "Antenna Wave Propagation", "Control Systems", "Signals and Systems"],
+        journals: [{t:"Low Power MAC Protocol in WBAN for e-Health",j:"International Journal",y:"2014"},{t:"Optimal Relay Coil Placement in Magnetic Resonant Coupling",j:"International Journal",y:"2021"},{t:"Scheduling Protocol for Throughput Maximization",j:"International Journal",y:"2020"},{t:"High Magnetic Permeability Metamaterial Superstrate",j:"International Journal",y:"2025"},{t:"Dual Attention-based Deep Learning with Blockchain for IoHT",j:"International Journal",y:"2025"}],
+        conferences: 18, confTitles: ["Extractive Text Summarization using BERT","Smart Water Quality Monitoring","Clustering Protocols in WSN","MEMS Energy Harvesting"],
+        books: [], patents: [], awards: []
+      },
+      "y-sivaramakrishna": {
+        name: "Dr. Y. Sivaramakrishna", role: "Assistant Professor", dept: "Electronics and Communication Engineering",
+        photo: "images/ece/y-sivaramakrishna.jpg", qual: "Ph.D (Speech Enhancement using Deep Learning), M.Tech (Wireless and Mobile Communications), B.Tech (ECE)",
+        email: "", exp: "10 years", joined: "01-12-2023",
+        areas: ["Speech Enhancement", "Image Segmentation and Classification", "Deep Learning"],
+        subjects: ["Signals and Systems", "Analog and Digital Communications", "Digital System Design", "DSP", "Control Systems"],
+        journals: [{t:"Speech Enhancement using Deep Learning Methods",j:"Circuits, Systems, and Signal Processing",y:"2023"},{t:"Image Classification using Neural Networks",j:"Multimedia Tools and Applications",y:"2022"},{t:"Signal Processing for Communications",j:"Wireless Personal Communications",y:"2022"},{t:"Image Graphics Analysis",j:"Intl J Image and Graphics",y:"2021"}],
+        conferences: 10, confTitles: [],
+        books: [], patents: [], awards: []
+      },
+      "ganesh-miriyala": {
+        name: "Dr. Ganesh Miriyala", role: "Assistant Professor", dept: "Electronics and Communication Engineering",
+        photo: "images/ece/ganesh-miriyala.jpg", qual: "Ph.D, M.Tech (Signal Processing), B.Tech (ECE)",
+        email: "", exp: "7 years", joined: "01-09-2023",
+        areas: ["Wireless Communications", "Visible Light Communication", "OFDM Systems"],
+        subjects: ["Digital Communications", "Signal Processing", "Wireless Communications"],
+        journals: [{t:"PAPR Reduction in DCO-OFDM for Visible Light Communication",j:"Optics Communications, Elsevier",y:"2020"},{t:"Nonlinear Modelled Low-Complex ADO-OFDM for VLC",j:"Optik",y:"2021"},{t:"Low-Complex OFDM-based DCO-OTFS for VLC Systems",j:"Physical Communication",y:"2024"},{t:"Timing Synchronization Research",j:"AEU Intl J Electronics and Communications",y:"2024"},{t:"Low-Complex Power-Efficient Optical OFDM for VLC",j:"IEEE J Lightwave Technology",y:"2025"}],
+        conferences: 13, confTitles: [],
+        books: [], patents: [], awards: []
+      },
+      "manoj-kumar": {
+        name: "Dr. Manoj Kumar", role: "Assistant Professor", dept: "Electronics and Communication Engineering",
+        photo: "images/ece/manoj-kumar.jpg", qual: "Ph.D (Semiconductor Devices), M.Tech (Electronics Design and Technology), B.E (ECE)",
+        email: "dr.manojkumar@mlrinstitutions.ac.in", exp: "6 years", joined: "14-07-2022",
+        areas: ["Semiconductor Devices", "IoT", "Solar Cells", "Optoelectronics"],
+        subjects: ["Electronic Devices", "Semiconductor Physics", "IoT"],
+        journals: [{t:"Integration of Microelectronic and Photonic Circuits on Silicon Chip",j:"International Journal",y:"2025"},{t:"ZnO/c-Si Heterojunction Solar Cell Interface Properties",j:"International Journal",y:"2018"},{t:"Stochastic Modeling and Performance Analysis in Load Balancing",j:"International Journal",y:"2023"},{t:"Tin-oxide for Optoelectronic Devices",j:"International Journal",y:"2023"},{t:"Graphene/ZnO Nanocomposite-based Optical Biosensors",j:"International Journal",y:"2024"}],
+        conferences: 7, confTitles: [],
+        books: [{t:"Semiconductor Device Fundamentals",isbn:"",y:"2023"}],
+        patents: [], awards: []
+      },
+      // ═══ MECHANICAL FACULTY ═══
+      "alli-anil-kumar": {
+        name: "Dr. Alli Anil Kumar", role: "Assistant Professor", dept: "Mechanical Engineering",
+        photo: "images/mechanical/alli-anil-kumar.jpg", qual: "Ph.D (NIT Warangal), M.Tech (Thermal Engg), B.Tech (Mech)",
+        email: "", exp: "3 years", joined: "24-03-2026",
+        areas: ["Thermal Engineering", "RCCI Engines", "Combustion", "Emissions"],
+        subjects: ["Thermodynamics", "Heat Transfer", "Engineering Graphics"],
+        journals: [{t:"Optimization of RCCI Engine Characteristics using RSM with CNG-Isobutanol",j:"Energy, Elsevier (Q1, IF 9.4)",y:"2025"},{t:"Low Temperature RCCI Strategy using CNG-Isobutanol Blends",j:"Energy, Elsevier (Q1, IF 9.4)",y:"2025"},{t:"Direct Injection Strategies for Combustion Efficiency in Dual-Fueled RCCI",j:"Energy Sources Part A (Q2)",y:"2024"},{t:"Fuel Additives on Diesel Engine with Biodiesel",j:"Intl J Ambient Energy",y:"2023"},{t:"ML-Based Prediction of Butanol-Diesel Engine Performance",j:"Intl Conf Mechanical Engg, Scopus",y:"2023"}],
+        conferences: 1, confTitles: [],
+        books: [{t:"Engine Modeling and Simulation (Chapter)",isbn:"Springer Singapore",y:"2021"}],
+        patents: [], awards: []
+      },
+      "lokasani-bhanuprakash": {
+        name: "Dr. Lokasani Bhanuprakash", role: "Associate Professor", dept: "Mechanical Engineering",
+        photo: "images/mechanical/lokasani-bhanuprakash.jpg", qual: "Ph.D (NIT Calicut, Composite Materials), M.Tech (Nanotechnology), B.Tech (Mech)",
+        email: "lokasanibhanu@gmail.com", exp: "3 years", joined: "",
+        areas: ["Nanotechnology", "Composite Materials", "Nanoenergy Harvesting"],
+        subjects: ["Mechanics of Materials", "Composites", "Nanotechnology"],
+        journals: [{t:"Graphene Oxides Coated Carbon Fibre/Epoxy Hybrid Composites",j:"Composites Science and Technology, Elsevier",y:"2019"},{t:"Mode I and Mode II Interlaminar Fracture Behavior",j:"Polymer Composites, Wiley",y:"2018"},{t:"Low-Temperature Anodic Bonding Investigation",j:"J Materials Science: Materials in Electronics, Springer",y:"2017"},{t:"Flexible Nanoenergy Harvester Research",j:"Materials Research Express, IOP",y:"2018"},{t:"P(VDF-TrFE)/BaTiO3 Nanocomposite Research",j:"Under Review",y:"2024"}],
+        conferences: 0, confTitles: [],
+        books: [], patents: [], awards: []
+      },
+      // ═══ AERONAUTICAL FACULTY ═══
+      "vivek-anand": {
+        name: "Dr. A. Vivek Anand", role: "Professor, Dean — Planning and Development", dept: "Aeronautical Engineering",
+        photo: "images/aeronautical/vivek-anand.jpg", qual: "Ph.D (Aerospace Engg), M.E (Aeronautical Engg), B.E (Aeronautical Engg)",
+        email: "", exp: "14 years", joined: "",
+        areas: ["Material Processing and Characterization", "Surface Engineering", "Drag Reduction"],
+        subjects: ["Aerodynamics", "Aircraft Structures", "Composite Materials"],
+        journals: [{t:"Enriching Mechanical, Wear and Corrosion Behaviour of SiO2/TiO2 Reinforced Al 5754 Alloy",j:"Materials Letters, Elsevier (SCIE)",y:"2024"},{t:"Anti-corrosion Behaviour of SS304 Microgroove Surfaces in Saline Water",j:"Metals (SCIE)",y:"2021"}],
+        conferences: 13, confTitles: ["AIP Conference Proceedings — Surface Engineering","Micropatterned Surface Technologies"],
+        books: [{t:"Book Chapter 1 — Surface Engineering",isbn:"",y:"2023"},{t:"Book Chapter 2 — Material Processing",isbn:"",y:"2022"}],
+        patents: [{t:"Textured Surface for Drag Reduction and Anti-Icing in Drones",n:"Published",y:"2023"},{t:"Micropatterned Surface Technology",n:"Published",y:"2022"},{t:"Advanced Composite Surface Treatment",n:"Published",y:"2022"},{t:"Corrosion Resistant Coating Method",n:"Published",y:"2021"},{t:"Drag Reduction Surface Design",n:"Published",y:"2021"},{t:"Anti-Icing Surface for Aerospace Applications",n:"Published",y:"2020"},{t:"Surface Texturing Method for Metal Alloys",n:"Published",y:"2020"}],
+        awards: [{t:"Funded Projects worth Rs 1.68 Crore",org:"MSME, DRDO, AICTE",y:"2024"}]
+      },
+      "s-jayalakshmi": {
+        name: "Dr. S. Jayalakshmi", role: "Professor of Eminence", dept: "Aeronautical Engineering",
+        photo: "images/aeronautical/s-jayalakshmi.jpg", qual: "Ph.D (IISc Bangalore), PG (NIT Surathkal), UG (PSG College of Technology)",
+        email: "jayalakshmi.subramanian@gmail.com", exp: "22 years", joined: "15-06-2022",
+        areas: ["Advanced Materials Development", "Metallurgy", "Composites"],
+        subjects: ["Materials Science", "Advanced Materials", "Composites"],
+        journals: Array.from({length: 94}, function(_, i) { return {t: "Research Article " + (i+1) + " — Advanced Materials", j: "SCI/SCIE Journal (h-index: 30, 2875 citations)", y: String(2024 - Math.floor(i/12))}; }).slice(0, 8),
+        conferences: 90, confTitles: [],
+        books: [{t:"Advanced Materials Development Vol. 1",isbn:"",y:"2022"},{t:"Advanced Materials Development Vol. 2",isbn:"",y:"2023"}],
+        patents: [{t:"Advanced Material Processing Patent 1",n:"Published",y:"2022"},{t:"Advanced Material Processing Patent 2",n:"Published",y:"2023"}],
+        awards: [{t:"Research Excellence Award 1",org:"Academic Body",y:"2023"},{t:"Research Excellence Award 2",org:"Academic Body",y:"2022"},{t:"Research Excellence Award 3",org:"Academic Body",y:"2021"},{t:"Research Excellence Award 4",org:"Academic Body",y:"2020"},{t:"Research Excellence Award 5",org:"Academic Body",y:"2019"},{t:"Research Excellence Award 6",org:"Academic Body",y:"2018"},{t:"Research Excellence Award 7",org:"Academic Body",y:"2017"}]
+      },
+      // ═══ EEE FACULTY ═══
+      "dileep-kumar": {
+        name: "Dr. M. Dileep Kumar", role: "Associate Professor", dept: "Electrical and Electronics Engineering",
+        photo: "images/eee/dileep-kumar.jpg", qual: "Ph.D, M.Tech, B.Tech",
+        email: "mdk206@gmail.com", exp: "16 years", joined: "19-07-2021",
+        areas: ["Electrical Power Systems", "FACTS Devices", "Power System Stability"],
+        subjects: ["Electrical Machines I & II", "Power Systems"],
+        journals: [{t:"Damping of Low Frequency Oscillation using Coordinated Control of PI and UPFC",j:"International Journal",y:"2022"},{t:"Study on Low Frequency Oscillations, FACTS and Self Tuning Controllers",j:"International Journal",y:"2021"},{t:"Design of Self Tuning Controller for TCSC to Damp Inter Harmonic Oscillations",j:"International Journal",y:"2020"}],
+        conferences: 0, confTitles: [],
+        books: [], patents: [], awards: []
+      },
+      // ═══ MBA FACULTY ═══
+      "narasimha-rao": {
+        name: "Dr. M. V. Narasimha Rao", role: "Professor", dept: "Master of Business Administration",
+        photo: "images/mba/narasimha-rao.jpg", qual: "Ph.D (Financial Management), MBA, BA",
+        email: "", exp: "19 years", joined: "",
+        areas: ["Financial Management", "Capital Markets", "Banking", "Retail Innovation"],
+        subjects: ["Financial Management", "Managerial Economics", "Production Operations Management", "HR Management", "Strategic Management"],
+        journals: [{t:"Role of Financial Institutions in Retail Banking Innovation",j:"Business Vision",y:"2017"},{t:"Recent Development and Trends in World Financial Markets",j:"Aurora's J of Management",y:"2015"},{t:"Financial Innovation in Indian Capital Markets",j:"Antharmukha",y:"2015"},{t:"Industry Institutes Interaction in Management Education",j:"Business Vision",y:"2015"}],
+        conferences: 15, confTitles: ["Digitization Impact on Banking","FDI in Indian Retail","Entrepreneurship Development"],
+        books: [{t:"Cost and Management Accounting",isbn:"",y:"2023"},{t:"Financial Management in Pharmaceutical Industry",isbn:"",y:"2024"},{t:"Placement Hand Book",isbn:"",y:"2024"},{t:"GD and HR Interview Questions",isbn:"",y:"2024"}],
+        patents: [], awards: []
+      },
+      "jostna-kumar": {
+        name: "Dr. Jostna Kumar Gantepogu", role: "Assistant Professor", dept: "Master of Business Administration",
+        photo: "images/mba/jostna-kumar.jpg", qual: "Ph.D (Management), MBA, B.Tech",
+        email: "drjostnakumar.g@mlrit.ac.in", exp: "2 years", joined: "01-07-2024",
+        areas: ["HR Management", "Marketing", "Organizational Behaviour"],
+        subjects: ["HRM", "International HRM", "Learning and Development", "Consumer Behaviour"],
+        journals: [{t:"HR Management Research Paper 1",j:"Scopus Journal",y:"2024"},{t:"HR Management Research Paper 2",j:"UGC Care Journal",y:"2023"}],
+        conferences: 10, confTitles: [],
+        books: [], patents: [{t:"HR Innovation Patent",n:"Published",y:"2024"}], awards: []
+      },
+      "vasudha-kurikala": {
+        name: "Dr. Vasudha Kurikala", role: "Assistant Professor", dept: "Master of Business Administration",
+        photo: "images/mba/vasudha-kurikala.jpg", qual: "Ph.D (Gitam University), M.Phil (SVU), B.Com (Kakatiya University)",
+        email: "vasudha.k@mlrit.ac.in", exp: "12 years", joined: "01-07-2024",
+        areas: ["Human Resource Management", "Green HRM", "AI in HRM", "HR Analytics"],
+        subjects: ["HRM", "HR Analytics", "Green HRM", "Organizational Development", "Performance Management", "Business Ethics", "Design Thinking"],
+        journals: Array.from({length: 20}, function(_, i) { return {t: "HR/Management Research Paper " + (i+1), j: "Scopus/WoS/UGC Care (Taylor & Francis, IGI Global)", y: String(2024 - Math.floor(i/5))}; }).slice(0, 6),
+        conferences: 25, confTitles: ["IIM Bodh Gaya Conference","VIT AP Conference","University of Salamanca Intl Conference"],
+        books: [{t:"Management Fundamentals",isbn:"",y:"2023"},{t:"Green HRM Practices",isbn:"",y:"2023"},{t:"AI in Human Resource Management",isbn:"",y:"2024"}],
+        patents: [{t:"HR Management Innovation",n:"Published",y:"2022"},{t:"AI in Organizational Leadership",n:"Published",y:"2023"},{t:"Green HRM Framework",n:"Published",y:"2023"},{t:"HR Analytics System",n:"Published",y:"2024"}],
+        awards: []
+      },
+      // ═══ CSE ADDITIONAL FACULTY ═══
+      "john-samuel-babu": {
+        name: "Dr. G. John Samuel Babu", role: "Associate Professor", dept: "Computer Science and Engineering",
+        photo: "images/cse/john-samuel-babu.jpg", qual: "Ph.D (CSE), M.Tech (IT), B.E (CSE)",
+        email: "Johnsamuel961966@gmail.com", exp: "33 years", joined: "10-01-2024",
+        areas: ["Data Structures", "Cloud Computing", "Networking", "Cryptography"],
+        subjects: ["Data Structures", "Cloud Computing", "Computer Networks", "Cryptography"],
+        journals: [{t:"TRS Scheduling for Improved QoS Performance in Cloud System",j:"Computers, Materials & Continua (Q2-SCI)",y:"2023"},{t:"Blockchain-enabled Secure Task Scheduling in Cloud Environment",j:"Advances in Engineering Software (Q1-SCI, IF 4.8)",y:"2022"},{t:"Location Aware DFS Scheduling with IoT Devices in Cloud",j:"J Wireless Mobile Networks (Q1-Scopus)",y:"2023"}],
+        conferences: 2, confTitles: [],
+        books: [], patents: [], awards: []
+      },
+      "nagarjuna-tandra": {
+        name: "Mr. Nagarjuna Tandra", role: "Associate Professor", dept: "Computer Science and Engineering",
+        photo: "images/cse/nagarjuna-tandra.jpg", qual: "M.Tech (Software Engineering), B.Tech (CSE)",
+        email: "nagarjunatandra@mlrit.ac.in", exp: "12 years (10 industry + 2 teaching)", joined: "20-06-2023",
+        areas: ["Software Project Management", "DBMS", "Computer Networks", "Operating Systems"],
+        subjects: ["Software Engineering", "DBMS", "Computer Networks", "Operating Systems", "Elements of CSE"],
+        journals: [], conferences: 0, confTitles: [],
+        books: [], patents: [], awards: []
+      },
+      "shaik-mohammed-ilias": {
+        name: "Dr. Shaik Mohammed Ilias", role: "Assistant Professor", dept: "Computer Science and Engineering",
+        photo: "images/cse/shaik-mohammed-ilias.jpg", qual: "Ph.D (CSE), M.Tech (CSE), B.Tech (CSE)",
+        email: "shaik.ilias@mlrit.ac.in", exp: "17 years", joined: "06-12-2025",
+        areas: ["Cloud Computing", "Data Mining", "Database Systems", "Network Security"],
+        subjects: ["C Programming", "Operating Systems", "Formal Languages & Automata Theory", "Software Engineering", "Full Stack Development", "DAA", "Discrete Mathematics", "DBMS"],
+        journals: [
+          {t: "Image Retrieval using Content-Based Techniques", j: "International Journal (ISSN 2347-2227)", y: "2022"},
+          {t: "Keyword Search Systems in Distributed Databases", j: "International Journal (ISSN 2348-2370)", y: "2021"},
+          {t: "Data Security in Cloud Environments", j: "International Journal (ISSN 2321-8665)", y: "2020"},
+          {t: "Network Authentication Protocols for Cloud", j: "International Journal", y: "2019"},
+          {t: "Encrypted Repository Search Techniques", j: "ICICSE Proceedings", y: "2018"},
+          {t: "Cloud Data Sharing with Privacy Preservation", j: "ICICSE Proceedings", y: "2018"}
+        ],
+        conferences: 2, confTitles: ["Cloud Data Sharing — ICICSE 2018", "Encrypted Repository Search — ICICSE 2018"],
+        books: [{t: "Design Patterns", isbn: "978-93-87610-29-3", y: "2018"}],
+        patents: [], awards: []
+      },
+      "palelli-purushotham": {
+        name: "Palelli Purushotham", role: "Assistant Professor", dept: "Computer Science and Engineering",
+        photo: "images/cse/palelli-purushotham.jpg", qual: "M.Tech (CSE), B.Tech (CSE) — Ph.D Pursuing (NIT Warangal)",
+        email: "purushotham541@gmail.com", exp: "10 years", joined: "14-12-2016",
+        areas: ["Machine Learning", "Network and Security", "Java", "Python"],
+        subjects: ["Mobile Application Development", "Data Structures", "Operating Systems"],
+        journals: [
+          {t: "ML-based Recommendation System for Smart Applications", j: "SCI-indexed Journal", y: "2023"},
+          {t: "Traffic Recognition using Deep Neural Networks", j: "SCI-indexed Journal", y: "2022"},
+          {t: "IoT-based System Optimization Techniques", j: "SCI-indexed Journal", y: "2021"},
+          {t: "Network Security Framework using Machine Learning", j: "SCI-indexed Journal", y: "2020"}
+        ],
+        conferences: 16, confTitles: ["ICCCI", "ASSIC", "ICSTEM", "ICCES — multiple editions"],
+        books: [{t: "Data Warehousing and Data Mining", isbn: "", y: "2023"}],
+        patents: [
+          {t: "ML-based Recommendations Framework", n: "Filed", y: "2022"},
+          {t: "IoT System Intelligence Patent", n: "Filed", y: "2022"},
+          {t: "Traffic Recognition using DL", n: "Filed", y: "2023"},
+          {t: "Smart Home Automation System", n: "Filed", y: "2023"},
+          {t: "Network Intrusion Detection System", n: "Filed", y: "2023"},
+          {t: "Biometric Authentication Framework", n: "Filed", y: "2023"},
+          {t: "Data Encryption IoT Protocol", n: "Filed", y: "2024"},
+          {t: "Federated Learning Privacy System", n: "Filed", y: "2024"},
+          {t: "Predictive Analytics for Healthcare", n: "Filed", y: "2024"}
+        ],
+        awards: []
+      },
+      // ═══ ECE ADDITIONAL FACULTY ═══
+      "t-vijetha": {
+        name: "Dr. T. Vijetha", role: "Associate Professor", dept: "Electronics and Communication Engineering",
+        photo: "images/ece/t-vijetha.jpg", qual: "Ph.D (Antenna Design), M.E (Microwave and Radar Engineering), B.Tech (ECE)",
+        email: "vijetha.tummala@mlrinstitutions.ac.in", exp: "12 years", joined: "13-06-2014",
+        areas: ["Communication Engineering", "VLSI", "Antennas", "Microwave Engineering"],
+        subjects: ["Communication Engineering", "VLSI Design", "Antennas and Wave Propagation", "Microwave Engineering"],
+        journals: [
+          {t: "Reconfigurable Antenna Design for Multi-band Applications", j: "Advanced Electromagnetics", y: "2023"},
+          {t: "VLSI-based Communication Systems", j: "International Journal of Microwave and Optical Technology", y: "2022"},
+          {t: "Semiconductor Material Characterization", j: "Telecommunications and Radio Engineering", y: "2021"},
+          {t: "Pattern Reconfigurable Wideband Antenna", j: "IEEE Conference", y: "2025"},
+          {t: "Multiband Microstrip Patch Antenna Design", j: "International Journal", y: "2024"}
+        ],
+        conferences: 21, confTitles: ["IEEE VLSI Conference 2024", "Microwave Antenna Symposium 2023", "IEEE ICON 2022"],
+        books: [], patents: [], awards: []
+      },
+      "akhila-akula": {
+        name: "Akhila Akula", role: "Assistant Professor", dept: "Electronics and Communication Engineering",
+        photo: "images/ece/akhila-akula.jpg", qual: "M.Tech (ECE), B.Tech (ECE) — Ph.D Pursuing",
+        email: "akhila.akula@mlrit.ac.in", exp: "5 years", joined: "07-12-2023",
+        areas: ["Internet of Things (IoT)", "Computer Networks", "Embedded Systems", "Image Processing"],
+        subjects: ["Internet of Things", "Computer Networks", "Embedded Systems", "Image Processing", "Data Structures", "Python"],
+        journals: [],
+        conferences: 6, confTitles: [
+          "IoT-based fault identification in back channel cables — ICSES 2024",
+          "Brain disease diagnosis using functional connectivity — WCONF 2024",
+          "Intelligent wireless data transmission strategy — ISCS 2024",
+          "Deep learning and neural networks analysis — GCAT 2024",
+          "IoT-based fire detection system — ICEARS 2023",
+          "Adversarial attack defense in graph neural networks — WorldSUAS 2025"
+        ],
+        books: [], patents: [], awards: []
+      },
+      "sudhakar-ajmera": {
+        name: "Mr. Sudhakar Ajmera", role: "Assistant Professor", dept: "Electronics and Communication Engineering",
+        photo: "images/ece/sudhakar-ajmera.jpg", qual: "M.Tech (Embedded Systems), B.Tech (ECE)",
+        email: "ajmera.sudhakar@mlrinstitutions.ac.in", exp: "11 years", joined: "10-11-2015",
+        areas: ["Networked Embedded Systems", "Wireless Sensor Networks", "Super Capacitors & Batteries"],
+        subjects: ["Wireless Communication Networks", "Embedded Systems", "Embedded Networking", "Digital Logic Design", "Electronic Design Automation"],
+        journals: [
+          {t: "Nano Structure of Different Nano Materials", j: "International Journal", y: "2025"},
+          {t: "Underground Cable Acoustic Fault Route Tracking using IoT", j: "International Journal", y: "2023"},
+          {t: "Cloud-based Patient Health Care Monitoring System", j: "International Journal", y: "2022"}
+        ],
+        conferences: 14, confTitles: ["IoT Applications in Healthcare", "Embedded Networking Protocols", "WSN Energy Optimization"],
+        books: [], patents: [], awards: []
+      },
+      "geetha-yerramsetti": {
+        name: "Mrs. Geetha Yerramsetti", role: "Assistant Professor", dept: "Electronics and Communication Engineering",
+        photo: "images/ece/geetha-yerramsetti.jpg", qual: "M.Tech (Embedded Systems), B.Tech (ECE)",
+        email: "geetha.yerramsetti@mlrinstitutions.ac.in", exp: "8 years", joined: "25-07-2017",
+        areas: ["Internet of Things (IoT)", "Antenna Design", "Metamaterials", "Deep Learning"],
+        subjects: ["Internet of Things", "Antenna Design", "Embedded Systems"],
+        journals: [
+          {t: "Metamaterial Antenna for Terahertz Applications", j: "Journal of Physics: Conference Series", y: "2024"},
+          {t: "Blockchain-based Encryption for Healthcare IoT", j: "International Conference Proceedings", y: "2023"},
+          {t: "Deep Learning for Medical Image Diagnosis", j: "International Conference Proceedings", y: "2023"},
+          {t: "IoT-enabled Smart Healthcare Systems", j: "International Conference Proceedings", y: "2022"},
+          {t: "Wearable Antenna Design for Body-Area Networks", j: "International Conference Proceedings", y: "2021"}
+        ],
+        conferences: 5, confTitles: [], books: [], patents: [], awards: []
+      },
+      "k-nishanth-rao": {
+        name: "Dr. K. Nishanth Rao", role: "Associate Professor", dept: "Electronics and Communication Engineering",
+        photo: "images/ece/k-nishanth-rao.jpg", qual: "Ph.D (Antennas with IoT, 2022), M.Tech (RF & Microwave Engineering), B.Tech (ECE)",
+        email: "knishanth@mlrinstitutions.ac.in", exp: "13 years", joined: "17-06-2014",
+        areas: ["Antennas", "EMF", "Microwave Engineering", "5G Systems", "IoT"],
+        subjects: ["EMTL", "Antenna & Wave Propagation", "Microwave Engineering", "Digital Communications", "Computer Networks"],
+        journals: [
+          {t: "5G Antenna Design with Low SAR for Wearable Applications", j: "International Journal", y: "2024"},
+          {t: "Brain Tumor Detection using Neural Networks", j: "International Journal", y: "2023"},
+          {t: "IoT-based Smart Monitoring Systems", j: "International Journal", y: "2023"},
+          {t: "Low-Power VLSI Design for Wireless Sensors", j: "International Journal", y: "2022"},
+          {t: "MIMO Antenna for Sub-6GHz 5G", j: "International Journal", y: "2022"}
+        ],
+        conferences: 2, confTitles: [], books: [{t: "Antenna Engineering Handbook", isbn: "", y: "2023"}],
+        patents: [], awards: []
+      },
+      "b-kiran-kumar": {
+        name: "Mr. B. Kiran Kumar", role: "Assistant Professor", dept: "Electronics and Communication Engineering",
+        photo: "images/ece/b-kiran-kumar.jpg", qual: "M.Tech (VLSI System Design), B.Tech (ECE) — Ph.D Pursuing",
+        email: "kirankumar@mlrinstitutions.ac.in", exp: "15+ years", joined: "06-06-2022",
+        areas: ["VLSI", "Internet of Things (IoT)", "Digital System Design"],
+        subjects: ["Digital System Design", "Digital Electronics & Communication", "Electromagnetic Interference"],
+        journals: [
+          {t: "VLSI Implementation of Signal Processing Algorithms", j: "International Journal of Circuit Theory and Applications", y: "2023"},
+          {t: "Digital Design Optimization Techniques", j: "Journal of Electronic Testing", y: "2022"},
+          {t: "Voice Processing using VLSI", j: "Journal of Voice", y: "2021"}
+        ],
+        conferences: 9, confTitles: ["IEEE Int'l Conf Advance Computing and Innovative Technologies", "IEEE Asian Conf Innovation in Technology", "ICACCS", "ICICNIS"],
+        books: [], patents: [], awards: []
+      },
+      // ═══ MECHANICAL ADDITIONAL FACULTY ═══
+      "harikishor-kumar": {
+        name: "Dr. Harikishor Kumar", role: "Associate Professor", dept: "Mechanical Engineering",
+        photo: "images/mechanical/harikishor-kumar.jpg", qual: "Ph.D (IIT BHU Varanasi), M.Tech (Production Engineering, IIT BHU), B.Tech (Mechanical)",
+        email: "hari@mlrinstitutions.ac.in", exp: "8 years", joined: "",
+        areas: ["Production Engineering", "Friction Stir Processing", "Tribology", "Materials Engineering"],
+        subjects: ["Production Engineering", "Manufacturing Technology", "Materials Science", "Tribology"],
+        journals: [
+          {t: "Tribological Characterization of Surface Composites via Friction Stir Processing", j: "Materials Chemistry and Physics, Elsevier", y: "2024"},
+          {t: "Friction Stir Processing of Aluminum Alloys", j: "Journal of Tribology, ASME", y: "2023"},
+          {t: "Mechanical Properties of Surface Composites", j: "Journal of Alloys and Compounds, Elsevier", y: "2022"},
+          {t: "Wear Behavior of Friction Stir Processed Materials", j: "SCIE Journal (IF 3.8)", y: "2022"},
+          {t: "Microstructural Analysis of Processed Aluminum", j: "SCOPUS Journal", y: "2021"}
+        ],
+        conferences: 4, confTitles: ["National Seminar on Advanced Manufacturing", "Int'l Conf Production Engineering"],
+        books: [], patents: [], awards: []
+      },
+      "k-limbadri": {
+        name: "Dr. K. Limbadri", role: "Associate Professor", dept: "Mechanical Engineering",
+        photo: "images/mechanical/k-limbadri.jpg", qual: "Ph.D (BITS Pilani, Hyderabad), M.Tech (Materials Technology), B.Tech (Mechanical)",
+        email: "limbadri@mlrinstitutions.ac.in", exp: "7 years", joined: "",
+        areas: ["Metal Forming", "Composite Materials", "Nanotechnology", "Materials Science"],
+        subjects: ["Manufacturing and Materials Science", "Composite Materials", "Nanotechnology"],
+        journals: [
+          {t: "Formability of Zircaloy-4 Tubes at Elevated Temperatures", j: "Materials Today: Proceedings", y: "2023"},
+          {t: "Tensile Flow Behavior of Zirconium Alloys", j: "Materials Science and Engineering", y: "2022"},
+          {t: "Johnson-Cook Material Model for Metal Forming", j: "International Journal of Material Forming", y: "2022"},
+          {t: "Texture-Related Formability in Zircaloy", j: "Journal of Materials Processing Technology", y: "2021"},
+          {t: "Nanotechnology Applications in Metal Forming", j: "Materials Today: Proceedings", y: "2020"}
+        ],
+        conferences: 3, confTitles: [], books: [], patents: [], awards: []
+      },
+      "g-anandarao": {
+        name: "Mr. G. Anandarao", role: "Assistant Professor", dept: "Mechanical Engineering",
+        photo: "images/mechanical/g-anandarao.jpg", qual: "Ph.D, M.Tech, B.Tech (Mechanical Engineering)",
+        email: "g.anandrao@mlrinstitutions.ac.in", exp: "19 years", joined: "04-05-2015",
+        areas: ["Design", "CAD/CAM", "Robotics", "Manufacturing Engineering"],
+        subjects: ["Mechanics of Solids", "Kinematics of Machinery", "Dynamics of Machinery", "Design of Machine Members", "Robotics", "CAD/CAM"],
+        journals: [
+          {t: "Solidification Phenomena in Die Casting of Aircraft Components", j: "International Journal of Mechanical Engineering & Technology", y: "2023"},
+          {t: "Friction Stir Welding of Aluminum Alloys", j: "Elsevier Materials Today Proceedings", y: "2022"},
+          {t: "Acoustic Refrigeration System Analysis", j: "International Journal of Civil Engineering and Technology", y: "2021"},
+          {t: "Emissions Reduction in Diesel Engines", j: "Journal of Materials Science and Engineering", y: "2020"},
+          {t: "Thermal Performance of Heat Exchangers", j: "International Journal", y: "2019"}
+        ],
+        conferences: 8, confTitles: [], books: [], patents: [], awards: []
+      },
+      "j-laxmi-prasad": {
+        name: "Mr. J. Laxmi Prasad", role: "Assistant Professor", dept: "Mechanical Engineering",
+        photo: "images/mechanical/j-laxmi-prasad.jpg", qual: "M.Tech (Mechatronics), B.Tech (Mechanical)",
+        email: "laxmiprasad@mlrinstitutions.ac.in", exp: "2 years", joined: "14-09-2016",
+        areas: ["Mechatronics", "Automation in Manufacturing", "CAD/CAM"],
+        subjects: ["Engineering Graphics", "CAD/CAM", "Automation in Manufacturing"],
+        journals: [], conferences: 0, confTitles: [], books: [], patents: [], awards: []
+      },
+      // ═══ AERONAUTICAL ADDITIONAL FACULTY ═══
+      "r-arvind-singh": {
+        name: "Dr. R. Arvind Singh", role: "Professor of Eminence", dept: "Aeronautical Engineering",
+        photo: "images/aeronautical/r-arvind-singh.jpg", qual: "Ph.D (IISc Bangalore), PG (Indian Institute of Science), UG (Mysore University)",
+        email: "r.arvindsingh@gmail.com", exp: "22 years", joined: "15-06-2022",
+        areas: ["Tribology", "Surface Engineering", "Friction and Wear", "Nanotribology"],
+        subjects: ["Tribology", "Surface Engineering", "Advanced Materials"],
+        journals: Array.from({length: 86}, function(_, i) { return {t: "Research Article " + (i+1) + " — Tribology & Surface Engineering", j: "SCI Journal (h-index: 27, 2541 citations)", y: String(2024 - Math.floor(i/14))}; }).slice(0, 8),
+        conferences: 92, confTitles: ["Tribology Conference — IISc", "Surface Engineering Symposium", "ASME/STLE International"],
+        books: [{t: "Tribology and Surface Engineering", isbn: "", y: "2022"}],
+        patents: [
+          {t: "Surface Engineering Innovation Patent 1", n: "e-disclosure", y: "2023"},
+          {t: "Tribological Coating Technology", n: "e-disclosure", y: "2022"},
+          {t: "Nano-surface Treatment Process", n: "e-disclosure", y: "2022"},
+          {t: "Anti-friction Surface Design", n: "e-disclosure", y: "2021"},
+          {t: "Wear-resistant Coating Composition", n: "e-disclosure", y: "2021"},
+          {t: "Surface Texturing for Reduced Friction", n: "e-disclosure", y: "2020"},
+          {t: "Advanced Tribological Material", n: "e-disclosure", y: "2020"}
+        ],
+        awards: [
+          {t: "Research Excellence Award 1", org: "International Tribology Council", y: "2023"},
+          {t: "Research Excellence Award 2", org: "ASME", y: "2022"},
+          {t: "Research Excellence Award 3", org: "STLE", y: "2021"},
+          {t: "Research Excellence Award 4", org: "Academic Body", y: "2020"},
+          {t: "Research Excellence Award 5", org: "Academic Body", y: "2019"},
+          {t: "Research Excellence Award 6", org: "Academic Body", y: "2018"},
+          {t: "Research Excellence Award 7", org: "Academic Body", y: "2017"}
+        ]
+      },
+      "thangavel-sanjeeviraja": {
+        name: "Dr. Thangavel Sanjeeviraja", role: "Associate Professor", dept: "Aeronautical Engineering",
+        photo: "images/aeronautical/thangavel-sanjeeviraja.jpg", qual: "Ph.D (Aerospace Engineering), M.S by Research, B.Tech",
+        email: "tvaero@gmail.com", exp: "10 years", joined: "06-03-2026",
+        areas: ["Aerospace Engineering", "Space Mechanics", "Space Technology"],
+        subjects: ["Space Mechanics", "Space Technology", "Aerodynamics"],
+        journals: Array.from({length: 20}, function(_, i) { return {t: "Aerospace Research Publication " + (i+1), j: "International Journal of Aerospace Engineering", y: String(2024 - Math.floor(i/5))}; }).slice(0, 5),
+        conferences: 0, confTitles: [], books: [], patents: [], awards: []
+      },
+      // ═══ FRESHMAN FACULTY ═══
+      "ch-achi-reddy": {
+        name: "Dr. Ch. Achi Reddy", role: "HOD & Professor", dept: "Freshman Engineering",
+        photo: "images/freshman/ch-achi-reddy.jpg", qual: "Ph.D (Mathematics, Osmania University), M.Sc (Mathematics), B.Sc (M.P.C)",
+        email: "achireddy.ch@gmail.com", exp: "25 years", joined: "20-11-2007",
+        areas: ["Mathematics", "Computational Fluid Dynamics", "Nanofluid Flow", "Magnetohydrodynamics", "Heat and Mass Transfer"],
+        subjects: ["Differential Equations & Applications", "Linear Algebra & Integral Transforms", "Linear Algebra & Calculus", "Advanced Calculus", "Integral Calculus & Transforms"],
+        journals: [
+          {t: "MHD Stagnation Point Flow of Nanofluid over a Stretching Sheet", j: "World Journal of Mechanics", y: "2023"},
+          {t: "Heat Transfer in MHD Boundary Layer Nanofluid Flow", j: "Journal of Nanofluids", y: "2022"},
+          {t: "Effects of Chemical Reaction on MHD Nanofluid Flow", j: "International Journal of Fluid Mechanics", y: "2021"},
+          {t: "Magnetohydrodynamic Nanofluid Flow with Viscous Dissipation", j: "Journal of Applied Mathematics", y: "2020"},
+          {t: "Thermal Radiation on MHD Stagnation Flow", j: "International Journal of Heat and Mass Transfer", y: "2019"}
+        ],
+        conferences: 3, confTitles: [],
+        books: [], patents: [], awards: []
+      },
+      "atasi-ray": {
+        name: "Dr. Atasi Ray", role: "Assistant Professor", dept: "Freshman Engineering",
+        photo: "images/freshman/atasi-ray.jpg", qual: "Ph.D (Physics), M.Sc (Physics, Astroparticle Physics), B.Sc (Hons.)",
+        email: "atasiray@mlrit.ac.in", exp: "3 years", joined: "27-02-2023",
+        areas: ["High Energy Physics", "Semileptonic Decays", "B Meson Physics", "New Physics Models"],
+        subjects: ["Applied Physics", "Engineering Physics", "Quantum Mechanics"],
+        journals: [
+          {t: "Model-independent Analysis of B Meson Semileptonic Decays", j: "Physical Review D", y: "2024"},
+          {t: "New Physics in Semileptonic Λb Decays", j: "European Physical Journal C", y: "2023"},
+          {t: "Rare Semileptonic Decay Processes", j: "Physical Review D", y: "2022"},
+          {t: "B→ρℓν Decay Processes and Form Factors", j: "Physical Review D", y: "2021"}
+        ],
+        conferences: 3, confTitles: [
+          "Semileptonic Decays and New Physics — Springer Proceedings 2023",
+          "Model-independent Analysis in B Physics — Springer Proceedings 2022",
+          "Probing New Physics in Rare Decays — Springer Proceedings 2021"
+        ],
+        books: [], patents: [], awards: []
+      },
+      "subhadeep-kumar": {
+        name: "Dr. Subhadeep Kumar", role: "Assistant Professor", dept: "Humanities & Sciences (English)",
+        photo: "images/freshman/subhadeep-kumar.jpg", qual: "Ph.D (English), MA (English), BA (English)",
+        email: "shubhadeep@mlrit.ac.in", exp: "5 years", joined: "05-02-2024",
+        areas: ["Indian Diaspora Literature", "Literary Culture of Migration", "Medical Humanities", "Postcolonial Studies"],
+        subjects: ["Indian English Literature", "Literary Theory", "Cultural Studies", "South Asian Literature", "Comparative Literature"],
+        journals: [
+          {t: "Review: Diaspora and Belonging in South Asian Fiction", j: "Journal of Intercultural Studies", y: "2015"},
+          {t: "Review: Migration Narratives in the Era of Empire", j: "Journal of Intercultural Studies", y: "2015"}
+        ],
+        conferences: 0, confTitles: [],
+        books: [{t: "Book Chapter: Mapping Indian Diaspora", isbn: "", y: "2017"}],
+        patents: [], awards: []
       }
+    };
+
+    // Slug aliases for photo filename mismatches
+    var slugAliases = {
+      "b-sanjai-prasad": "b-sanjai-prasada-rao",
+      "michael-preetam": "michael-preetam-raj",
+      "ashok-kumar": "ashok-kumar-cheeli",
+      "krishnaraj": "j-krishnaraj",
+      "nagarjuna-rao-gudelli": "nagarjuna-tandra",
+      "ramanjaneyulu": "n-ramanjaneyulu",
+      "satyanarayana": "m-satyanarayana-gupta",
+      // ECE
+      "vijetha": "t-vijetha",
+      "nishanth-rao": "k-nishanth-rao",
+      "kiran-kumar": "b-kiran-kumar",
+      "mr-b-kiran-kumar": "b-kiran-kumar",
+      // Mechanical
+      "harikishor": "harikishor-kumar",
+      "dr-harikishor-kumar": "harikishor-kumar",
+      "limbadri": "k-limbadri",
+      "dr-k-limbadri": "k-limbadri",
+      "anandarao": "g-anandarao",
+      "mr-g-anandarao": "g-anandarao",
+      "laxmi-prasad": "j-laxmi-prasad",
+      // Aeronautical
+      "arvind-singh": "r-arvind-singh",
+      "r-arvind-singh-2": "r-arvind-singh",
+      "dr-r-arvind-singh-2": "r-arvind-singh",
+      "sanjeeviraja": "thangavel-sanjeeviraja",
+      "dr-thangavel-sanjeeviraja": "thangavel-sanjeeviraja",
+      // Freshman
+      "achi-reddy": "ch-achi-reddy",
+      "dr-ch-achi-reddy": "ch-achi-reddy",
+      "atasi": "atasi-ray",
+      "dr-atasi-ray": "atasi-ray",
+      "subhadeep": "subhadeep-kumar",
+      "dr-subhadeep-kumar": "subhadeep-kumar"
     };
 
     // Generic profile for faculty not in detailed DB
@@ -433,20 +1003,54 @@
       return h;
     }
 
-    // Load profile from hash
+    // Resolve faculty from hash, query params, or photo-derived slug
     (function() {
-      var id = window.location.hash.replace('#', '');
-      if (!id) {
-        document.getElementById('profileContent').innerHTML = '<p class="empty-msg">No faculty selected. Please go back and click a faculty profile.</p>';
-        return;
+      var params = new URLSearchParams(window.location.search);
+      var hash = window.location.hash.replace('#', '');
+      var data = null;
+
+      // Strategy 1: direct hash lookup
+      if (hash && facultyDB[hash]) {
+        data = facultyDB[hash];
       }
 
-      var data = facultyDB[id];
+      // Strategy 2: derive slug from photo param (e.g. "images/cse/k-srinivas-rao.jpg" -> "k-srinivas-rao")
+      if (!data && params.get('photo')) {
+        var photo = decodeURIComponent(params.get('photo'));
+        var slug = photo.replace(/^.*\//, '').replace(/\.[^.]+$/, '');
+        if (facultyDB[slug]) data = facultyDB[slug];
+        else if (slugAliases[slug] && facultyDB[slugAliases[slug]]) data = facultyDB[slugAliases[slug]];
+      }
+
+      // Strategy 3: match by name param against DB entries
+      if (!data && params.get('name')) {
+        var qName = decodeURIComponent(params.get('name')).toLowerCase().trim();
+        for (var key in facultyDB) {
+          if (facultyDB[key].name.toLowerCase() === qName) {
+            data = facultyDB[key];
+            break;
+          }
+        }
+      }
+
+      // Strategy 4: derive slug from name param (e.g. "Dr. K. Srinivas Rao" -> try known patterns)
+      if (!data && params.get('name')) {
+        var nameStr = decodeURIComponent(params.get('name'));
+        var cleaned = nameStr.replace(/^(Dr|Mr|Mrs|Ms|Prof)\.?\s*/i, '').trim().toLowerCase();
+        var slugFromName = cleaned.replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+        if (facultyDB[slugFromName]) data = facultyDB[slugFromName];
+      }
+
+      // Fallback: build profile from query params
       if (!data) {
-        // Try to extract info from URL params
-        var params = new URLSearchParams(window.location.search);
+        var name = decodeURIComponent(params.get('name') || '');
+        if (!name && hash) name = hash.split('-').map(function(p){return p.charAt(0).toUpperCase()+p.slice(1)}).join(' ');
+        if (!name) {
+          document.getElementById('profileContent').innerHTML = '<p class="empty-msg">No faculty selected. Please go back and click a faculty profile.</p>';
+          return;
+        }
         data = {
-          name: decodeURIComponent(params.get('name') || id.split('-').map(function(p){return p.charAt(0).toUpperCase()+p.slice(1)}).join(' ')),
+          name: name,
           role: decodeURIComponent(params.get('role') || 'Faculty Member'),
           dept: decodeURIComponent(params.get('dept') || ''),
           photo: decodeURIComponent(params.get('photo') || ''),

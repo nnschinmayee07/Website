@@ -12,10 +12,10 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: #F4F1EA; color: #3A3A3A; line-height: 1.7; }
+    body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #3A3A3A; line-height: 1.7; }
 
     /* ── Dept Nav ── */
-    .dept-nav { background: #0B0F1A; display: flex; align-items: stretch; padding: 0 16px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .dept-nav { background: #0B0F1A; display: flex; align-items: stretch; padding: 0 16px; border-bottom: 1px solid rgba(0,0,0,0.06); }
     .dept-nav__link { display: flex; align-items: center; padding: 0 20px; height: 44px; font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.5); text-decoration: none; position: relative; transition: color 0.2s, background 0.2s; }
     .dept-nav__link:hover { color: rgba(255,255,255,0.85); background: rgba(232,93,31,0.08); }
     .dept-nav__link:active { background: rgba(232,93,31,0.18); }
@@ -45,7 +45,7 @@
     .dept-tab:active::after { transform: translateX(-50%) scaleX(1); background: #E85D1F; }
 
     /* ── Panels ── */
-    .dept-panel { display: none; padding: 48px; max-width: 1100px; margin: 0 auto; }
+    .dept-panel { display: none; padding: 40px 48px; max-width: none; margin: 0; }
     .dept-panel.is-active { display: block; animation: fadeIn 0.35s ease; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -55,11 +55,13 @@
     p { font-size: 0.95rem; color: #3A3A3A; max-width: 780px; margin-bottom: 14px; line-height: 1.8; }
 
     /* ── Cards ── */
-    .card { background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .card { background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
     .card h3 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.15rem; color: #0B0F1A; margin-bottom: 10px; }
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .card--accent { border-top: 3px solid #18453B; }
+    .card--accent { border-top: 3px solid #18453B; transition: transform 0.25s ease, box-shadow 0.25s ease, border-top-color 0.25s ease; }
+    .card--accent:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-top-color: #E85D1F; }
     .peo-num { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #18453B; margin-bottom: 10px; }
 
     /* ── HOD Message ── */
@@ -72,15 +74,17 @@
 
     /* ── Accordion ── */
     .sub-accordion { margin-bottom: 16px; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 1px 8px rgba(0,0,0,0.05); }
-    .sub-accordion__header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; cursor: pointer; font-family: 'Raleway', sans-serif; font-size: 0.88rem; font-weight: 700; color: #0B0F1A; border-left: 3px solid #18453B; transition: background 0.2s; }
-    .sub-accordion__header:hover { background: rgba(24,69,59,0.04); }
+    .sub-accordion__header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; cursor: pointer; font-family: 'Raleway', sans-serif; font-size: 0.88rem; font-weight: 700; color: #0B0F1A; border-left: 3px solid #18453B; transition: background 0.2s, border-left-color 0.25s, transform 0.2s; }
+    .sub-accordion__header:hover { background: rgba(24,69,59,0.04); border-left-color: #E85D1F; transform: translateX(4px); }
     .sub-accordion__chevron { font-size: 0.7rem; color: #888; transition: transform 0.3s; }
     .sub-accordion.is-open .sub-accordion__chevron { transform: rotate(180deg); color: #E85D1F; }
+    .sub-accordion.is-open .sub-accordion__header { border-left-color: #E85D1F; color: #E85D1F; }
     .sub-accordion__body { max-height: 0; overflow: hidden; transition: max-height 0.4s; }
     .sub-accordion.is-open .sub-accordion__body { max-height: 2000px; }
     .sub-accordion__content { padding: 0 20px 20px; }
     .lab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
-    .lab-card { background: #f9f8f5; border-radius: 8px; padding: 16px 18px; border-left: 3px solid #18453B; }
+    .lab-card { background: #f9f8f5; border-radius: 8px; padding: 16px 18px; border-left: 3px solid #18453B; transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease; cursor: default; }
+    .lab-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); border-left-color: #E85D1F; }
     .lab-card__name { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.85rem; color: #0B0F1A; margin-bottom: 4px; }
     .lab-card__desc { font-size: 0.78rem; color: #666; }
 
@@ -88,8 +92,12 @@
     .obe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 20px; }
     .obe-col h4 { font-family: 'Raleway', sans-serif; font-size: 0.82rem; font-weight: 800; color: #18453B; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
     .obe-list { list-style: none; padding: 0; }
-    .obe-list li { font-size: 0.88rem; color: #444; padding: 8px 0 8px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); position: relative; }
-    .obe-list li::before { content: ''; position: absolute; left: 0; top: 14px; width: 6px; height: 6px; border-radius: 50%; background: #E85D1F; }
+    .obe-list li { font-size: 0.88rem; color: #444; padding: 8px 0 8px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); position: relative; transition: transform 0.2s ease, color 0.2s ease; cursor: default; }
+    .obe-list li:hover { transform: translateX(6px); color: #0B0F1A; }
+    .obe-list li::before { content: ''; position: absolute; left: 0; top: 14px; width: 6px; height: 6px; border-radius: 50%; background: #E85D1F; transition: transform 0.2s ease, background 0.2s ease; }
+    .obe-list li:hover::before { transform: scale(1.5); background: #E85D1F; }
+    .obe-list li a { color: inherit; text-decoration: none; display: block; }
+    .obe-list li a:hover { color: #E85D1F; }
     .obe-list-numbered p { font-size: 0.88rem; color: #444; line-height: 1.6; margin-bottom: 10px; max-width: none; }
     .obe-list-numbered p strong { color: #18453B; font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.78rem; }
 
@@ -162,23 +170,29 @@
     .qbar__btn:hover .qbar__label { opacity: 1; }
 
     /* ══ FEATURE 3: Faculty flip cards ══ */
-    .fcard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
-    .fcard { width: 100%; height: 280px; perspective: 800px; cursor: pointer; }
-    .fcard__inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
-    .fcard:hover .fcard__inner { transform: rotateY(180deg); }
-    .fcard__front, .fcard__back { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 10px; overflow: hidden; }
-    .fcard__front { background: linear-gradient(135deg, #2A2F40, #3A4050); }
-    .fcard__front img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-    .fcard__ini { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 2rem; color: rgba(255,255,255,0.3); }
-    .fcard__overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); }
-    .fcard__name { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.82rem; color: #fff; }
+    .fcard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+    .fcard { width: 100%; aspect-ratio: 3/4; border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; background: linear-gradient(135deg, #2A2F40, #3A4050); }
+    .fcard img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.4s ease; }
+    .fcard:hover img { transform: scale(1.05); }
+    .fcard__ini { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 2rem; color: rgba(255,255,255,0.3); position: absolute; inset: 0; }
+    .fcard__overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 18px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); z-index: 2; transition: opacity 0.3s; }
+    .fcard__name { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.85rem; color: #fff; }
     .fcard__role { font-size: 0.68rem; color: rgba(255,255,255,0.6); }
-    .fcard__back { background: #0B0F1A; transform: rotateY(180deg); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; text-align: center; }
-    .fcard__back-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; color: #fff; margin-bottom: 4px; }
-    .fcard__back-role { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
-    .fcard__back-spec { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 600; color: #E85D1F; margin-bottom: 20px; letter-spacing: 0.04em; }
-    .fcard__back-btn { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 700; color: #E85D1F; text-decoration: none; padding: 8px 20px; border: 1px solid #E85D1F; border-radius: 6px; transition: all 0.2s; }
-    .fcard__back-btn:hover { background: #E85D1F; color: #fff; }
+
+    .fcard::before { content: ''; position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: #E85D1F; clip-path: circle(0% at 100% 0%); transition: clip-path 0.5s cubic-bezier(0.25,0.46,0.45,0.94); z-index: 3; }
+    .fcard:hover::before { clip-path: circle(150% at 100% 0%); }
+
+    .fcard::after { content: ''; position: absolute; inset: 0; background: rgba(11,15,26,0.85); opacity: 0; transition: opacity 0.3s ease 0.15s; z-index: 4; }
+    .fcard:hover::after { opacity: 1; }
+    .fcard:hover .fcard__overlay { opacity: 0; }
+
+    .fcard__hover-info { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; text-align: center; z-index: 5; opacity: 0; transform: translateY(10px); transition: opacity 0.35s ease 0.2s, transform 0.35s ease 0.2s; }
+    .fcard:hover .fcard__hover-info { opacity: 1; transform: translateY(0); }
+    .fcard__hover-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: #fff; margin-bottom: 4px; }
+    .fcard__hover-role { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
+    .fcard__hover-spec { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 600; color: #E85D1F; margin-bottom: 20px; letter-spacing: 0.04em; }
+    .fcard__hover-btn { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 700; color: #fff; text-decoration: none; padding: 8px 20px; border: 1px solid #fff; border-radius: 6px; transition: all 0.2s; }
+    .fcard__hover-btn:hover { background: #fff; color: #0B0F1A; }
 
     /* ══ FEATURE 4: Pub filter by faculty ══ */
     .pub-card { transition: opacity 0.4s ease; }
@@ -225,19 +239,31 @@
     .intern-note { font-size: 0.88rem; color: #666; font-style: italic; max-width: 700px; }
 
     /* ── Honour / Achievement list ── */
-    .honour-table { width: 100%; max-width: 700px; border-collapse: collapse; }
+    .honour-table { width: 100%; max-width: 700px; border-collapse: separate; border-spacing: 0 6px; }
     .honour-table th { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; text-align: left; padding: 12px 16px; border-bottom: 2px solid rgba(0,0,0,0.08); }
-    .honour-table td { font-size: 0.88rem; color: #333; padding: 12px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .honour-table td { font-size: 0.88rem; color: #333; padding: 14px 16px; background: #fff; transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+    .honour-table tr { transition: transform 0.2s ease; }
+    .honour-table tbody tr:hover { transform: translateX(6px); }
+    .honour-table tbody tr:hover td { background: rgba(232,93,31,0.06); box-shadow: 0 2px 12px rgba(232,93,31,0.1); }
+    .honour-table tbody tr:hover td:first-child { border-left: 3px solid #E85D1F; }
+    .honour-table td:first-child { border-radius: 8px 0 0 8px; border-left: 3px solid transparent; }
+    .honour-table td:last-child { border-radius: 0 8px 8px 0; }
+    .honour-table .honour-name { font-family: 'Raleway', sans-serif; font-weight: 700; color: #0B0F1A; }
+    .honour-table .honour-badge { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 10px; letter-spacing: 0.04em; }
+    .honour-badge--topper { background: rgba(232,93,31,0.12); color: #E85D1F; }
+    .honour-badge--rank { background: rgba(24,69,59,0.1); color: #18453B; }
+    .honour-table .honour-score { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: #18453B; }
     .achieve-list { list-style: none; padding: 0; max-width: 700px; }
-    .achieve-list li { position: relative; padding: 10px 0 10px 20px; border-bottom: 1px solid rgba(0,0,0,0.05); font-size: 0.88rem; color: #444; }
-    .achieve-list li::before { content: ''; position: absolute; left: 0; top: 16px; width: 8px; height: 8px; border-radius: 50%; background: #E85D1F; }
+    .achieve-list li { position: relative; padding: 14px 16px 14px 28px; margin-bottom: 8px; border-radius: 8px; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,0.04); font-size: 0.88rem; color: #444; border-left: 3px solid transparent; transition: transform 0.2s ease, border-left-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; cursor: default; }
+    .achieve-list li:hover { transform: translateX(6px); border-left-color: #E85D1F; box-shadow: 0 4px 16px rgba(232,93,31,0.1); background: rgba(232,93,31,0.02); }
+    .achieve-list li::before { content: ''; position: absolute; left: 10px; top: 20px; width: 8px; height: 8px; border-radius: 50%; background: #E85D1F; transition: transform 0.2s ease; }
+    .achieve-list li:hover::before { transform: scale(1.4); }
 
     /* ── Placement stats ── */
     .placement-stats { display: flex; gap: 16px; flex-wrap: wrap; margin: 16px 0; }
     .placement-stat { background: #fff; border-radius: 10px; padding: 20px 28px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; flex: 1; min-width: 130px; border-top: 3px solid #E85D1F; }
     .placement-stat__num { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.6rem; color: #E85D1F; }
     .placement-stat__label { font-size: 0.72rem; color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
-
 
 
     /* ── Orange streak ── */
@@ -255,20 +281,23 @@
     .streak.is-firing { animation: orange-streak 0.55s cubic-bezier(0.25,0.46,0.45,0.94) forwards; }
 
 
+    /* ── Body flex layout ── */
+    .dept-body { display: flex; flex: 1; }
+    .dept-body__panels { flex: 1; min-width: 0; }
 
-
-    /* ── Dark left sidebar ── */
+    /* ── Left sidebar ── */
     .dark-sidebar {
-      position: fixed; left: 0; top: 0; bottom: 0; width: 200px;
-      background: #0B0F1A; z-index: 35; padding-top: 120px;
-      overflow-y: auto; border-right: 1px solid rgba(255,255,255,0.06);
+      width: 220px; flex-shrink: 0; position: sticky; top: 0; height: 100vh;
+      background: #FAFAF8; z-index: 35; padding-top: 24px;
+      border-right: 1px solid rgba(0,0,0,0.05);
+      overflow-y: auto; align-self: flex-start;
     }
     .dark-sidebar::-webkit-scrollbar { width: 4px; }
-    .dark-sidebar::-webkit-scrollbar-thumb { background: rgba(232,93,31,0.2); border-radius: 2px; }
+    .dark-sidebar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 2px; }
     .dark-sidebar__title {
       font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 800;
-      text-transform: uppercase; letter-spacing: 0.14em; color: rgba(255,255,255,0.2);
-      padding: 0 20px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 8px;
+      text-transform: uppercase; letter-spacing: 0.14em; color: #1A3A2E;
+      padding: 0 20px 14px; border-bottom: 1px solid rgba(0,0,0,0.06); margin-bottom: 8px;
     }
     .ds-item {
       display: flex; align-items: center; padding: 8px 20px; cursor: pointer;
@@ -277,22 +306,19 @@
     .ds-item:hover { background: rgba(232,93,31,0.06); }
     .ds-item.is-active { border-left-color: #E85D1F; background: rgba(232,93,31,0.08); }
     .ds-item__dot {
-      width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.15);
+      width: 5px; height: 5px; border-radius: 50%; background: rgba(0,0,0,0.1);
       flex-shrink: 0; margin-right: 12px; transition: all 0.2s;
     }
     .ds-item.is-active .ds-item__dot { background: #E85D1F; box-shadow: 0 0 6px rgba(232,93,31,0.4); }
     .ds-item__label {
       font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 600;
-      color: rgba(255,255,255,0.35); transition: color 0.2s; white-space: nowrap;
+      color: rgba(26,58,46,0.5); transition: color 0.2s; white-space: nowrap;
       overflow: hidden; text-overflow: ellipsis;
     }
-    .ds-item:hover .ds-item__label { color: rgba(255,255,255,0.65); }
-    .ds-item.is-active .ds-item__label { color: rgba(255,255,255,0.9); }
+    .ds-item:hover .ds-item__label { color: rgba(232,93,31,0.8); }
+    .ds-item.is-active .ds-item__label { color: #E85D1F; }
 
     /* Push all content right to make room for sidebar */
-    body { padding-left: 200px; }
-    .dark-sidebar { position: fixed; left: 0; top: 0; }
-    .dept-panel { max-width: none; }
 
     @media (max-width: 768px) {
       .dept-panel { padding: 32px 20px; }
@@ -300,8 +326,7 @@
       .hod-msg { flex-direction: column; align-items: center; text-align: center; }
       .qbar { display: none; }
       .dark-sidebar { display: none; }
-      body { padding-left: 0; }
-      .dept-panel { max-width: 1100px; }
+      .dept-body { display: block; }
       .fcard-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
       .fcard { height: 240px; }
     }
@@ -311,28 +336,6 @@
   </style>
 </head>
 <body>
-  <!-- Dark left sidebar -->
-  <aside class="dark-sidebar" id="darkSidebar">
-    <div class="dark-sidebar__title">Quick Nav</div>
-    <a class="ds-item" data-ds-tab="overview" data-ds-target="hod-msg"><span class="ds-item__dot"></span><span class="ds-item__label">HOD Message</span></a>
-    <a class="ds-item" data-ds-tab="overview" data-ds-target="vm-section"><span class="ds-item__dot"></span><span class="ds-item__label">Vision, Mission</span></a>
-    <a class="ds-item" data-ds-tab="overview" data-ds-target="teaching-method"><span class="ds-item__dot"></span><span class="ds-item__label">Teaching</span></a>
-    <a class="ds-item" data-ds-tab="overview" data-ds-target="about-dept"><span class="ds-item__dot"></span><span class="ds-item__label">History</span></a>
-    <a class="ds-item" data-ds-tab="overview" data-ds-target="labs-section"><span class="ds-item__dot"></span><span class="ds-item__label">Labs</span></a>
-    <a class="ds-item" data-ds-tab="objectives" data-ds-target="peo-section"><span class="ds-item__dot"></span><span class="ds-item__label">PEOs</span></a>
-    <a class="ds-item" data-ds-tab="objectives" data-ds-target="po-section"><span class="ds-item__dot"></span><span class="ds-item__label">Outcomes (POs)</span></a>
-    <a class="ds-item" data-ds-tab="objectives" data-ds-target="obe-section"><span class="ds-item__dot"></span><span class="ds-item__label">OBE</span></a>
-    <a class="ds-item" data-ds-tab="objectives" data-ds-target="handbook-section"><span class="ds-item__dot"></span><span class="ds-item__label">Handbook</span></a>
-    <a class="ds-item" data-ds-tab="faculty" data-ds-target="panel-faculty"><span class="ds-item__dot"></span><span class="ds-item__label">All Faculty</span></a>
-    <a class="ds-item" data-ds-tab="academics" data-ds-target="syll-pdfs"><span class="ds-item__dot"></span><span class="ds-item__label">Syllabus PDFs</span></a>
-    <a class="ds-item" data-ds-tab="academics" data-ds-target="catalog-section"><span class="ds-item__dot"></span><span class="ds-item__label">Course Catalog</span></a>
-    <a class="ds-item" data-ds-tab="academics" data-ds-target="syll-explorer"><span class="ds-item__dot"></span><span class="ds-item__label">Syllabus Explorer</span></a>
-    <a class="ds-item" data-ds-tab="achievements" data-ds-target="honour-section"><span class="ds-item__dot"></span><span class="ds-item__label">Achievements</span></a>
-    <a class="ds-item" data-ds-tab="achievements" data-ds-target="placement-section"><span class="ds-item__dot"></span><span class="ds-item__label">Placements</span></a>
-    <a class="ds-item" data-ds-tab="achievements" data-ds-target="honour-section"><span class="ds-item__dot"></span><span class="ds-item__label">Honours</span></a>
-    <a class="ds-item" data-ds-tab="achievements" data-ds-target="pub-section"><span class="ds-item__dot"></span><span class="ds-item__label">Publications</span></a>
-    <a class="ds-item" data-ds-tab="achievements" data-ds-target="intern-section"><span class="ds-item__dot"></span><span class="ds-item__label">Internships</span></a>
-  </aside>
 
 
   <header class="site-header">
@@ -354,7 +357,7 @@
     <span class="dept-nav__link dept-nav__link--dept">Freshman Engineering</span>
   </nav>
 
-  <div class="dept-hero">
+  <div class="dept-hero" id="page-top">
     <div class="dept-hero__eyebrow">First Year — All Branches</div>
     <div class="dept-hero__title">Freshman Engineering Department</div>
   </div>
@@ -367,7 +370,25 @@
     <a class="dept-tab" data-tab="achievements">Achievements</a>
   </nav>
 <div class="streak" id="navStreak"></div>
-    <div class="dept-panel is-active" id="panel-overview">
+  
+  <div class="dept-body">
+  <!-- Dark left sidebar -->
+  <aside class="dark-sidebar" id="darkSidebar">
+    <div class="dark-sidebar__title">Quick Nav</div>
+    <a class="ds-item" data-ds-tab="overview" data-ds-target="hod-msg"><span class="ds-item__dot"></span><span class="ds-item__label">HOD Message</span></a>
+    <a class="ds-item" data-ds-tab="overview" data-ds-target="vm-section"><span class="ds-item__dot"></span><span class="ds-item__label">Vision, Mission</span></a>
+    <a class="ds-item" data-ds-tab="overview" data-ds-target="teaching-method"><span class="ds-item__dot"></span><span class="ds-item__label">Teaching</span></a>
+    <a class="ds-item" data-ds-tab="overview" data-ds-target="about-dept"><span class="ds-item__dot"></span><span class="ds-item__label">History</span></a>
+    <a class="ds-item" data-ds-tab="overview" data-ds-target="labs-section"><span class="ds-item__dot"></span><span class="ds-item__label">Labs</span></a>
+    <a class="ds-item" data-ds-tab="objectives" data-ds-target="peo-section"><span class="ds-item__dot"></span><span class="ds-item__label">PEOs</span></a>
+    <a class="ds-item" data-ds-tab="objectives" data-ds-target="po-section"><span class="ds-item__dot"></span><span class="ds-item__label">Outcomes (POs)</span></a>
+    <a class="ds-item" data-ds-tab="faculty" data-ds-target="panel-faculty"><span class="ds-item__dot"></span><span class="ds-item__label">All Faculty</span></a>
+    <a class="ds-item" data-ds-tab="academics" data-ds-target="syll-pdfs"><span class="ds-item__dot"></span><span class="ds-item__label">Syllabus PDFs</span></a>
+    <a class="ds-item" data-ds-tab="achievements" data-ds-target="achieve-section"><span class="ds-item__dot"></span><span class="ds-item__label">Achievements</span></a>
+  </aside>
+
+  <div class="dept-body__panels">
+  <div class="dept-panel is-active" id="panel-overview">
     <h2 id="about-dept" class="panel-heading">About the Department</h2>
 <div id="hod-msg" class="hod-msg">
       <div class="hod-msg__photo"><img src="images/freshman/achireddy.jpg" alt="Dr. Ch Achi Reddy" /></div>
@@ -386,8 +407,8 @@
     <div class="panel-sub"id="teaching-method">Innovative Teaching Methodology</div>
     <p>First-Year Micro Projects, Concept Oriented Tutorials (COTS), Engineering Projects in Community Service (EPICS), Student Platform for Engineering Education Development (SPEED), active learning methodologies, and seminars on communication skills.</p>
     <div style="margin-top:32px;">
-      <div class="sub-accordion" onclick="this.classList.toggle('is-open')">
-        <div class="sub-accordion__header"id="labs-section">Academic Laboratories (10 Labs) <span class="sub-accordion__chevron">&#9660;</span></div>
+      <div id="labs-section" class="sub-accordion">
+        <div class="sub-accordion__header">Academic Laboratories (10 Labs) <span class="sub-accordion__chevron">&#9660;</span></div>
         <div class="sub-accordion__body"><div class="sub-accordion__content"><div class="lab-grid">
           <div class="lab-card"><div class="lab-card__name">Advanced Engineering Physics Lab</div><div class="lab-card__desc">Optics, mechanics, modern physics</div></div>
           <div class="lab-card"><div class="lab-card__name">Computer Aided Engineering Drawing Lab</div><div class="lab-card__desc">AutoCAD, projections, technical drawing</div></div>
@@ -441,799 +462,746 @@
 <p>57 faculty across Physics, Chemistry, Mathematics, English, and Engineering Sciences.</p>
     <div id="faculty-grid-section" class="fcard-grid">
           <div class="fcard" data-author="Ch Achi Reddy">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/achireddy.jpg" alt="Dr. Ch Achi Reddy" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">CR</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Ch Achi Reddy</div><div class="fcard__role">HOD, Professor</div></div>
+              <img src="images/freshman/achireddy.jpg" alt="Dr. Ch Achi Reddy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">CR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Ch Achi Reddy</div>
+                <div class="fcard__role">HOD, Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Ch Achi Reddy</div>
-                <div class="fcard__back-role">HOD, Professor</div>
-                <div class="fcard__back-spec">Physics, Material Science</div>
-                <a href="faculty-profile.html?name=Dr.%20Ch%20Achi%20Reddy&role=HOD%2C%20Professor&photo=images/freshman/achireddy.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Ch Achi Reddy</div>
+                <div class="fcard__hover-role">HOD, Professor</div>
+                <div class="fcard__hover-spec">Physics, Material Science</div>
+                <a href="faculty-profile.html?name=Dr.%20Ch%20Achi%20Reddy&role=HOD%2C%20Professor&photo=images/freshman/achireddy.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="V. Radhika Devi">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/radhika-devi.jpg" alt="Dr. V. Radhika Devi" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">VD</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. V. Radhika Devi</div><div class="fcard__role">Director, Professor</div></div>
+              <img src="images/freshman/radhika-devi.jpg" alt="Dr. V. Radhika Devi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">VD</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. V. Radhika Devi</div>
+                <div class="fcard__role">Director, Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. V. Radhika Devi</div>
-                <div class="fcard__back-role">Director, Professor</div>
-                <div class="fcard__back-spec">Mathematics, Statistics</div>
-                <a href="faculty-profile.html?name=Dr.%20V.%20Radhika%20Devi&role=Director%2C%20Professor&photo=images/freshman/radhika-devi.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. V. Radhika Devi</div>
+                <div class="fcard__hover-role">Director, Professor</div>
+                <div class="fcard__hover-spec">Mathematics, Statistics</div>
+                <a href="faculty-profile.html?name=Dr.%20V.%20Radhika%20Devi&role=Director%2C%20Professor&photo=images/freshman/radhika-devi.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Y. Raghunath Rao">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/raghunath-rao.jpg" alt="Dr. Y. Raghunath Rao" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">YR</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Y. Raghunath Rao</div><div class="fcard__role">Professor</div></div>
+              <img src="images/freshman/raghunath-rao.jpg" alt="Dr. Y. Raghunath Rao" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">YR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Y. Raghunath Rao</div>
+                <div class="fcard__role">Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Y. Raghunath Rao</div>
-                <div class="fcard__back-role">Professor</div>
-                <div class="fcard__back-spec">Chemistry, Materials</div>
-                <a href="faculty-profile.html?name=Dr.%20Y.%20Raghunath%20Rao&role=Professor&photo=images/freshman/raghunath-rao.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Y. Raghunath Rao</div>
+                <div class="fcard__hover-role">Professor</div>
+                <div class="fcard__hover-spec">Chemistry, Materials</div>
+                <a href="faculty-profile.html?name=Dr.%20Y.%20Raghunath%20Rao&role=Professor&photo=images/freshman/raghunath-rao.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="N Ch Ramgopal">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/ramgopal.jpg" alt="Dr. N Ch Ramgopal" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">NR</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. N Ch Ramgopal</div><div class="fcard__role">Professor</div></div>
+              <img src="images/freshman/ramgopal.jpg" alt="Dr. N Ch Ramgopal" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">NR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. N Ch Ramgopal</div>
+                <div class="fcard__role">Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. N Ch Ramgopal</div>
-                <div class="fcard__back-role">Professor</div>
-                <div class="fcard__back-spec">Physics, Electronics</div>
-                <a href="faculty-profile.html?name=Dr.%20N%20Ch%20Ramgopal&role=Professor&photo=images/freshman/ramgopal.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. N Ch Ramgopal</div>
+                <div class="fcard__hover-role">Professor</div>
+                <div class="fcard__hover-spec">Physics, Electronics</div>
+                <a href="faculty-profile.html?name=Dr.%20N%20Ch%20Ramgopal&role=&photo=images/freshman/ramgopal.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="G. Ravindranath Reddy">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/ravindranath.jpg" alt="Dr. G. Ravindranath Reddy" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">GR</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. G. Ravindranath Reddy</div><div class="fcard__role">Professor</div></div>
+              <img src="images/freshman/ravindranath.jpg" alt="Dr. G. Ravindranath Reddy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">GR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. G. Ravindranath Reddy</div>
+                <div class="fcard__role">Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. G. Ravindranath Reddy</div>
-                <div class="fcard__back-role">Professor</div>
-                <div class="fcard__back-spec">Mathematics</div>
-                <a href="faculty-profile.html?name=Dr.%20G.%20Ravindranath%20Reddy&role=Professor&photo=images/freshman/ravindranath.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. G. Ravindranath Reddy</div>
+                <div class="fcard__hover-role">Professor</div>
+                <div class="fcard__hover-spec">Mathematics</div>
+                <a href="faculty-profile.html?name=Dr.%20G.%20Ravindranath%20Reddy&role=&photo=images/freshman/ravindranath.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="JSVR. Krishna Prasad">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/krishna-prasad.jpg" alt="Dr. JSVR. Krishna Prasad" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">JP</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. JSVR. Krishna Prasad</div><div class="fcard__role">Professor</div></div>
+              <img src="images/freshman/krishna-prasad.jpg" alt="Dr. JSVR. Krishna Prasad" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">JP</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. JSVR. Krishna Prasad</div>
+                <div class="fcard__role">Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. JSVR. Krishna Prasad</div>
-                <div class="fcard__back-role">Professor</div>
-                <div class="fcard__back-spec">English, Communication</div>
-                <a href="faculty-profile.html?name=Dr.%20JSVR.%20Krishna%20Prasad&role=Professor&photo=images/freshman/krishna-prasad.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. JSVR. Krishna Prasad</div>
+                <div class="fcard__hover-role">Professor</div>
+                <div class="fcard__hover-spec">English, Communication</div>
+                <a href="faculty-profile.html?name=Dr.%20JSVR.%20Krishna%20Prasad&role=Professor&photo=images/freshman/krishna-prasad.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Umamaheswara Rao Bontha">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/umamaheswara.jpg" alt="Dr. Umamaheswara Rao Bontha" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">UB</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Umamaheswara Rao Bontha</div><div class="fcard__role">Professor</div></div>
+              <img src="images/freshman/umamaheswara.jpg" alt="Dr. Umamaheswara Rao Bontha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">UB</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Umamaheswara Rao Bontha</div>
+                <div class="fcard__role">Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Umamaheswara Rao Bontha</div>
-                <div class="fcard__back-role">Professor</div>
-                <div class="fcard__back-spec">Physics, Optics</div>
-                <a href="faculty-profile.html?name=Dr.%20Umamaheswara%20Rao%20Bontha&role=Professor&photo=images/freshman/umamaheswara.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Umamaheswara Rao Bontha</div>
+                <div class="fcard__hover-role">Professor</div>
+                <div class="fcard__hover-spec">Physics, Optics</div>
+                <a href="faculty-profile.html?name=Dr.%20Umamaheswara%20Rao%20Bontha&role=Professor&photo=images/freshman/umamaheswara.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Y. Anantha Lakshmi">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/anantha-lakshmi.jpg" alt="Dr. Y. Anantha Lakshmi" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">YL</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Y. Anantha Lakshmi</div><div class="fcard__role">Professor</div></div>
+              <img src="images/freshman/anantha-lakshmi.jpg" alt="Dr. Y. Anantha Lakshmi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">YL</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Y. Anantha Lakshmi</div>
+                <div class="fcard__role">Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Y. Anantha Lakshmi</div>
-                <div class="fcard__back-role">Professor</div>
-                <div class="fcard__back-spec">Chemistry</div>
-                <a href="faculty-profile.html?name=Dr.%20Y.%20Anantha%20Lakshmi&role=Professor&photo=images/freshman/anantha-lakshmi.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Y. Anantha Lakshmi</div>
+                <div class="fcard__hover-role">Professor</div>
+                <div class="fcard__hover-spec">Chemistry</div>
+                <a href="faculty-profile.html?name=Dr.%20Y.%20Anantha%20Lakshmi&role=Professor&photo=images/freshman/anantha-lakshmi.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="N. Yuganand">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/yuganand.jpg" alt="Dr. N. Yuganand" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">NY</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. N. Yuganand</div><div class="fcard__role">Professor</div></div>
+              <img src="images/freshman/yuganand.jpg" alt="Dr. N. Yuganand" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">NY</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. N. Yuganand</div>
+                <div class="fcard__role">Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. N. Yuganand</div>
-                <div class="fcard__back-role">Professor</div>
-                <div class="fcard__back-spec">Mathematics</div>
-                <a href="faculty-profile.html?name=Dr.%20N.%20Yuganand&role=Professor&photo=images/freshman/yuganand.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. N. Yuganand</div>
+                <div class="fcard__hover-role">Professor</div>
+                <div class="fcard__hover-spec">Mathematics</div>
+                <a href="faculty-profile.html?name=Dr.%20Y.%20Anantha%20Lakshmi&role=Professor&photo=images/freshman/yuganand.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Mopur Vijaya Bhaskar Reddy">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/vijaya-bhaskar.jpg" alt="Dr. Mopur Vijaya Bhaskar Reddy" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">MR</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Mopur Vijaya Bhaskar Reddy</div><div class="fcard__role">Professor</div></div>
+              <img src="images/freshman/vijaya-bhaskar.jpg" alt="Dr. Mopur Vijaya Bhaskar Reddy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Mopur Vijaya Bhaskar Reddy</div>
+                <div class="fcard__role">Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Mopur Vijaya Bhaskar Reddy</div>
-                <div class="fcard__back-role">Professor</div>
-                <div class="fcard__back-spec">Physics</div>
-                <a href="faculty-profile.html?name=Dr.%20Mopur%20Vijaya%20Bhaskar%20Reddy&role=Professor&photo=images/freshman/vijaya-bhaskar.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Mopur Vijaya Bhaskar Reddy</div>
+                <div class="fcard__hover-role">Professor</div>
+                <div class="fcard__hover-spec">Physics</div>
+                <a href="faculty-profile.html?name=Dr.%20Mopur%20Vijaya%20Bhaskar%20Reddy&role=Professor&photo=images/freshman/vijaya-bhaskar.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Sailaja Peesapati">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/sailaja.jpg" alt="Dr. Sailaja Peesapati" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">SP</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Sailaja Peesapati</div><div class="fcard__role">Professor</div></div>
+              <img src="images/freshman/sailaja.jpg" alt="Dr. Sailaja Peesapati" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">SP</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Sailaja Peesapati</div>
+                <div class="fcard__role">Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Sailaja Peesapati</div>
-                <div class="fcard__back-role">Professor</div>
-                <div class="fcard__back-spec">Chemistry</div>
-                <a href="faculty-profile.html?name=Dr.%20Sailaja%20Peesapati&role=Professor&photo=images/freshman/sailaja.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Sailaja Peesapati</div>
+                <div class="fcard__hover-role">Professor</div>
+                <div class="fcard__hover-spec">Chemistry</div>
+                <a href="faculty-profile.html?name=Dr.%20Mopur%20Vijaya%20Bhaskar%20Reddy&role=Professor&photo=images/freshman/sailaja.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Harika Patnala">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/harika.jpg" alt="Dr. Harika Patnala" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">HP</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Harika Patnala</div><div class="fcard__role">Professor</div></div>
+              <img src="images/freshman/harika.jpg" alt="Dr. Harika Patnala" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">HP</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Harika Patnala</div>
+                <div class="fcard__role">Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Harika Patnala</div>
-                <div class="fcard__back-role">Professor</div>
-                <div class="fcard__back-spec">English, Soft Skills</div>
-                <a href="faculty-profile.html?name=Dr.%20Harika%20Patnala&role=Professor&photo=images/freshman/harika.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Harika Patnala</div>
+                <div class="fcard__hover-role">Professor</div>
+                <div class="fcard__hover-spec">English, Soft Skills</div>
+                <a href="faculty-profile.html?name=Dr.%20Sailaja%20Peesapati&role=Professor&photo=images/freshman/harika.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Deepthi Sista">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/deepthi-sista.jpg" alt="Dr. Deepthi Sista" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">DS</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Deepthi Sista</div><div class="fcard__role">Associate Professor</div></div>
+              <img src="images/freshman/deepthi-sista.jpg" alt="Dr. Deepthi Sista" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">DS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Deepthi Sista</div>
+                <div class="fcard__role">Associate Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Deepthi Sista</div>
-                <div class="fcard__back-role">Associate Professor</div>
-                <div class="fcard__back-spec">Mathematics</div>
-                <a href="faculty-profile.html?name=Dr.%20Deepthi%20Sista&role=Associate%20Professor&photo=images/freshman/deepthi-sista.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Deepthi Sista</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">Mathematics</div>
+                <a href="faculty-profile.html?name=Dr.%20Harika%20Patnala&role=Professor&photo=images/freshman/deepthi-sista.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="CH. Lakshmi Rajesh">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/lakshmi-rajesh.jpg" alt="Dr. CH. Lakshmi Rajesh" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">CR</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. CH. Lakshmi Rajesh</div><div class="fcard__role">Associate Professor</div></div>
+              <img src="images/freshman/lakshmi-rajesh.jpg" alt="Dr. CH. Lakshmi Rajesh" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">CR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. CH. Lakshmi Rajesh</div>
+                <div class="fcard__role">Associate Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. CH. Lakshmi Rajesh</div>
-                <div class="fcard__back-role">Associate Professor</div>
-                <div class="fcard__back-spec">Physics</div>
-                <a href="faculty-profile.html?name=Dr.%20CH.%20Lakshmi%20Rajesh&role=Associate%20Professor&photo=images/freshman/lakshmi-rajesh.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. CH. Lakshmi Rajesh</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">Physics</div>
+                <a href="faculty-profile.html?name=Dr.%20Deepthi%20Sista&role=Associate%20Professor&photo=images/freshman/lakshmi-rajesh.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Manuri Brahmayya">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/brahmayya.jpg" alt="Dr. Manuri Brahmayya" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">MB</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Manuri Brahmayya</div><div class="fcard__role">Associate Professor</div></div>
+              <img src="images/freshman/brahmayya.jpg" alt="Dr. Manuri Brahmayya" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MB</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Manuri Brahmayya</div>
+                <div class="fcard__role">Associate Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Manuri Brahmayya</div>
-                <div class="fcard__back-role">Associate Professor</div>
-                <div class="fcard__back-spec">Chemistry</div>
-                <a href="faculty-profile.html?name=Dr.%20Manuri%20Brahmayya&role=Associate%20Professor&photo=images/freshman/brahmayya.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Manuri Brahmayya</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">Chemistry</div>
+                <a href="faculty-profile.html?name=Dr.%20CH.%20Lakshmi%20Rajesh&role=Associate%20Professor&photo=images/freshman/brahmayya.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="V Nirmala Kumari">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/nirmala-kumari.jpg" alt="Dr. V Nirmala Kumari" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">VK</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. V Nirmala Kumari</div><div class="fcard__role">Associate Professor</div></div>
+              <img src="images/freshman/nirmala-kumari.jpg" alt="Dr. V Nirmala Kumari" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">VK</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. V Nirmala Kumari</div>
+                <div class="fcard__role">Associate Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. V Nirmala Kumari</div>
-                <div class="fcard__back-role">Associate Professor</div>
-                <div class="fcard__back-spec">Mathematics</div>
-                <a href="faculty-profile.html?name=Dr.%20V%20Nirmala%20Kumari&role=Associate%20Professor&photo=images/freshman/nirmala-kumari.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. V Nirmala Kumari</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">Mathematics</div>
+                <a href="faculty-profile.html?name=Dr.%20Manuri%20Brahmayya&role=Associate%20Professor&photo=images/freshman/nirmala-kumari.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Kola Aravind Mudhiraj">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/aravind-mudhiraj.jpg" alt="Dr. Kola Aravind Mudhiraj" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">KM</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Kola Aravind Mudhiraj</div><div class="fcard__role">Associate Professor</div></div>
+              <img src="images/freshman/aravind-mudhiraj.jpg" alt="Dr. Kola Aravind Mudhiraj" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">KM</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Kola Aravind Mudhiraj</div>
+                <div class="fcard__role">Associate Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Kola Aravind Mudhiraj</div>
-                <div class="fcard__back-role">Associate Professor</div>
-                <div class="fcard__back-spec">Physics</div>
-                <a href="faculty-profile.html?name=Dr.%20Kola%20Aravind%20Mudhiraj&role=Associate%20Professor&photo=images/freshman/aravind-mudhiraj.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Kola Aravind Mudhiraj</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">Physics</div>
+                <a href="faculty-profile.html?name=Dr.%20V%20Nirmala%20Kumari&role=Associate%20Professor&photo=images/freshman/aravind-mudhiraj.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="V. Haripriya">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/haripriya.jpg" alt="Dr. V. Haripriya" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">VH</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. V. Haripriya</div><div class="fcard__role">Associate Professor</div></div>
+              <img src="images/freshman/haripriya.jpg" alt="Dr. V. Haripriya" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">VH</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. V. Haripriya</div>
+                <div class="fcard__role">Associate Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. V. Haripriya</div>
-                <div class="fcard__back-role">Associate Professor</div>
-                <div class="fcard__back-spec">English</div>
-                <a href="faculty-profile.html?name=Dr.%20V.%20Haripriya&role=Associate%20Professor&photo=images/freshman/haripriya.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. V. Haripriya</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">English</div>
+                <a href="faculty-profile.html?name=Dr.%20V.%20Haripriya&role=Associate%20Professor&photo=images/freshman/haripriya.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Parsharamulu Medichelmi">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/parsharamulu.jpg" alt="Parsharamulu Medichelmi" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">PM</div>
-                <div class="fcard__overlay"><div class="fcard__name">Parsharamulu Medichelmi</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/parsharamulu.jpg" alt="Parsharamulu Medichelmi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">PM</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Parsharamulu Medichelmi</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Parsharamulu Medichelmi</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Mathematics</div>
-                <a href="faculty-profile.html?name=Parsharamulu%20Medichelmi&role=Assistant%20Professor&photo=images/freshman/parsharamulu.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Parsharamulu Medichelmi</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Mathematics</div>
+                <a href="faculty-profile.html?name=Parsharamulu%20Medichelmi&role=Assistant%20Professor&photo=images/freshman/parsharamulu.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Madhuraveni Divya">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/divya.jpg" alt="Madhuraveni Divya" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">MD</div>
-                <div class="fcard__overlay"><div class="fcard__name">Madhuraveni Divya</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/divya.jpg" alt="Madhuraveni Divya" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MD</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Madhuraveni Divya</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Madhuraveni Divya</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Chemistry</div>
-                <a href="faculty-profile.html?name=Madhuraveni%20Divya&role=Assistant%20Professor&photo=images/freshman/divya.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Madhuraveni Divya</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Chemistry</div>
+                <a href="faculty-profile.html?name=Madhuraveni%20Divya&role=Assistant%20Professor&photo=images/freshman/divya.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Sumalatha Manne">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/sumalatha.jpg" alt="Dr. Sumalatha Manne" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">SM</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Sumalatha Manne</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/sumalatha.jpg" alt="Dr. Sumalatha Manne" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">SM</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Sumalatha Manne</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Sumalatha Manne</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Mathematics</div>
-                <a href="faculty-profile.html?name=Dr.%20Sumalatha%20Manne&role=Assistant%20Professor&photo=images/freshman/sumalatha.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Sumalatha Manne</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Mathematics</div>
+                <a href="faculty-profile.html?name=Dr.%20Sumalatha%20Manne&role=Assistant%20Professor&photo=images/freshman/sumalatha.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Amalendu Rana">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/amalendu.jpg" alt="Dr. Amalendu Rana" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">AR</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Amalendu Rana</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/amalendu.jpg" alt="Dr. Amalendu Rana" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">AR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Amalendu Rana</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Amalendu Rana</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Physics</div>
-                <a href="faculty-profile.html?name=Dr.%20Amalendu%20Rana&role=Assistant%20Professor&photo=images/freshman/amalendu.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Amalendu Rana</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Physics</div>
+                <a href="faculty-profile.html?name=Dr.%20Amalendu%20Rana&role=Assistant%20Professor&photo=images/freshman/amalendu.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Harsha Vincent">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/harsha-vincent.jpg" alt="Dr. Harsha Vincent" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">HV</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Harsha Vincent</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/harsha-vincent.jpg" alt="Dr. Harsha Vincent" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">HV</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Harsha Vincent</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Harsha Vincent</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">English</div>
-                <a href="faculty-profile.html?name=Dr.%20Harsha%20Vincent&role=Assistant%20Professor&photo=images/freshman/harsha-vincent.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Harsha Vincent</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">English</div>
+                <a href="faculty-profile.html?name=Dr.%20Harsha%20Vincent&role=Assistant%20Professor&photo=images/freshman/harsha-vincent.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Abdullah Nouman">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/abdullah.jpg" alt="Mr. Abdullah Nouman" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">AN</div>
-                <div class="fcard__overlay"><div class="fcard__name">Mr. Abdullah Nouman</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/abdullah.jpg" alt="Mr. Abdullah Nouman" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">AN</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mr. Abdullah Nouman</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Mr. Abdullah Nouman</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Mathematics</div>
-                <a href="faculty-profile.html?name=Mr.%20Abdullah%20Nouman&role=Assistant%20Professor&photo=images/freshman/abdullah.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mr. Abdullah Nouman</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Mathematics</div>
+                <a href="faculty-profile.html?name=Mr.%20Abdullah%20Nouman&role=Assistant%20Professor&photo=images/freshman/abdullah.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="N. Pratyusha">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/pratyusha.jpg" alt="Dr. N. Pratyusha" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">NP</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. N. Pratyusha</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/pratyusha.jpg" alt="Dr. N. Pratyusha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">NP</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. N. Pratyusha</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. N. Pratyusha</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Chemistry</div>
-                <a href="faculty-profile.html?name=Dr.%20N.%20Pratyusha&role=Assistant%20Professor&photo=images/freshman/pratyusha.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. N. Pratyusha</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Chemistry</div>
+                <a href="faculty-profile.html?name=Dr.%20N.%20Pratyusha&role=Assistant%20Professor&photo=images/freshman/pratyusha.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="L Ratna Priya">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/ratna-priya.jpg" alt="Mrs. L Ratna Priya" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">LP</div>
-                <div class="fcard__overlay"><div class="fcard__name">Mrs. L Ratna Priya</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/ratna-priya.jpg" alt="Mrs. L Ratna Priya" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">LP</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mrs. L Ratna Priya</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Mrs. L Ratna Priya</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Physics</div>
-                <a href="faculty-profile.html?name=Mrs.%20L%20Ratna%20Priya&role=Assistant%20Professor&photo=images/freshman/ratna-priya.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mrs. L Ratna Priya</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Physics</div>
+                <a href="faculty-profile.html?name=Mrs.%20L%20Ratna%20Priya&role=Assistant%20Professor&photo=images/freshman/ratna-priya.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="S Eranna">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/eranna.jpg" alt="Mr. S Eranna" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">SE</div>
-                <div class="fcard__overlay"><div class="fcard__name">Mr. S Eranna</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/eranna.jpg" alt="Mr. S Eranna" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">SE</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mr. S Eranna</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Mr. S Eranna</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Mathematics</div>
-                <a href="faculty-profile.html?name=Mr.%20S%20Eranna&role=Assistant%20Professor&photo=images/freshman/eranna.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mr. S Eranna</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Mathematics</div>
+                <a href="faculty-profile.html?name=Mr.%20S%20Eranna&role=Assistant%20Professor&photo=images/freshman/eranna.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Momin Ali">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/momin-ali.jpg" alt="Mr. Momin Ali" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">MA</div>
-                <div class="fcard__overlay"><div class="fcard__name">Mr. Momin Ali</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/momin-ali.jpg" alt="Mr. Momin Ali" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MA</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mr. Momin Ali</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Mr. Momin Ali</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Physics</div>
-                <a href="faculty-profile.html?name=Mr.%20Momin%20Ali&role=Assistant%20Professor&photo=images/freshman/momin-ali.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mr. Momin Ali</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Physics</div>
+                <a href="faculty-profile.html?name=Mr.%20S%20Eranna&role=Assistant%20Professor&photo=images/freshman/eranna.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Subhadeep Kumar">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/subhadeep.jpg" alt="Dr. Subhadeep Kumar" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">SK</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Subhadeep Kumar</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/subhadeep.jpg" alt="Dr. Subhadeep Kumar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">SK</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Subhadeep Kumar</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Subhadeep Kumar</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Chemistry</div>
-                <a href="faculty-profile.html?name=Dr.%20Subhadeep%20Kumar&role=Assistant%20Professor&photo=images/freshman/subhadeep.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Subhadeep Kumar</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Chemistry</div>
+                <a href="faculty-profile.html?name=Dr.%20Subhadeep%20Kumar&role=Assistant%20Professor&photo=images/freshman/subhadeep.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Inzamul Sarkar">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/inzamul.jpg" alt="Dr. Inzamul Sarkar" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">IS</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Inzamul Sarkar</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/inzamul.jpg" alt="Dr. Inzamul Sarkar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">IS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Inzamul Sarkar</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Inzamul Sarkar</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Physics</div>
-                <a href="faculty-profile.html?name=Dr.%20Inzamul%20Sarkar&role=Assistant%20Professor&photo=images/freshman/inzamul.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Inzamul Sarkar</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Physics</div>
+                <a href="faculty-profile.html?name=Dr.%20Subhadeep%20Kumar&role=Assistant%20Professor&photo=images/freshman/subhadeep.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Ekramul Haque">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/ekramul.jpg" alt="Mr. Ekramul Haque" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">EH</div>
-                <div class="fcard__overlay"><div class="fcard__name">Mr. Ekramul Haque</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/ekramul.jpg" alt="Mr. Ekramul Haque" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">EH</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mr. Ekramul Haque</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Mr. Ekramul Haque</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Mathematics</div>
-                <a href="faculty-profile.html?name=Mr.%20Ekramul%20Haque&role=Assistant%20Professor&photo=images/freshman/ekramul.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mr. Ekramul Haque</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Mathematics</div>
+                <a href="faculty-profile.html?name=Dr.%20Inzamul%20Sarkar&role=Assistant%20Professor&photo=images/freshman/inzamul.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Shubhra Dash">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/shubhra.jpg" alt="Dr. Shubhra Dash" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">SD</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Shubhra Dash</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/shubhra.jpg" alt="Dr. Shubhra Dash" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">SD</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Shubhra Dash</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Shubhra Dash</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Chemistry</div>
-                <a href="faculty-profile.html?name=Dr.%20Shubhra%20Dash&role=Assistant%20Professor&photo=images/freshman/shubhra.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Shubhra Dash</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Chemistry</div>
+                <a href="faculty-profile.html?name=Mr.%20Ekramul%20Haque&role=Assistant%20Professor&photo=images/freshman/ekramul.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Atasi Ray">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/atasi.jpg" alt="Dr. Atasi Ray" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">AR</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Atasi Ray</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/atasi.jpg" alt="Dr. Atasi Ray" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">AR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Atasi Ray</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Atasi Ray</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Physics</div>
-                <a href="faculty-profile.html?name=Dr.%20Atasi%20Ray&role=Assistant%20Professor&photo=images/freshman/atasi.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Atasi Ray</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Physics</div>
+                <a href="faculty-profile.html?name=Dr.%20Shubhra%20Dash&role=Assistant%20Professor&photo=images/freshman/shubhra.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Srimanta Pal">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/srimanta.jpg" alt="Dr. Srimanta Pal" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">MP</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Srimanta Pal</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/srimanta.jpg" alt="Dr. Srimanta Pal" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MP</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Srimanta Pal</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Srimanta Pal</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Mathematics</div>
-                <a href="faculty-profile.html?name=Dr.%20Srimanta%20Pal&role=Assistant%20Professor&photo=images/freshman/srimanta.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Srimanta Pal</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Mathematics</div>
+                <a href="faculty-profile.html?name=Dr.%20Atasi%20Ray&role=Assistant%20Professor&photo=images/freshman/atasi.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Monaj Karar">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/monaj.jpg" alt="Dr. Monaj Karar" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">MK</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Monaj Karar</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/monaj.jpg" alt="Dr. Monaj Karar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MK</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Monaj Karar</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Monaj Karar</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Chemistry</div>
-                <a href="faculty-profile.html?name=Dr.%20Monaj%20Karar&role=Assistant%20Professor&photo=images/freshman/monaj.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Monaj Karar</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Chemistry</div>
+                <a href="faculty-profile.html?name=Dr.%20Srimanta%20Pal&role=&photo=images/freshman/srimanta.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Srinivas Indla">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/srinivas-indla.jpg" alt="Dr. Srinivas Indla" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">NI</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Srinivas Indla</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/srinivas-indla.jpg" alt="Dr. Srinivas Indla" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">NI</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Srinivas Indla</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Srinivas Indla</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">English</div>
-                <a href="faculty-profile.html?name=Dr.%20Srinivas%20Indla&role=Assistant%20Professor&photo=images/freshman/srinivas-indla.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Srinivas Indla</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">English</div>
+                <a href="faculty-profile.html?name=Dr.%20Monaj%20Karar&role=&photo=images/freshman/monaj.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Subhasish Saha">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/subhasish.jpg" alt="Dr. Subhasish Saha" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">SS</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Subhasish Saha</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/subhasish.jpg" alt="Dr. Subhasish Saha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">SS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Subhasish Saha</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Subhasish Saha</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Physics</div>
-                <a href="faculty-profile.html?name=Dr.%20Subhasish%20Saha&role=Assistant%20Professor&photo=images/freshman/subhasish.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Subhasish Saha</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Physics</div>
+                <a href="faculty-profile.html?name=Dr.%20Subhasish%20Saha&role=Assistant%20Professor&photo=images/freshman/subhasish.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Sri Ram Shiva Kumar">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/shiva-kumar.jpg" alt="Sri Ram Shiva Kumar" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">RK</div>
-                <div class="fcard__overlay"><div class="fcard__name">Sri Ram Shiva Kumar</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/shiva-kumar.jpg" alt="Sri Ram Shiva Kumar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">RK</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Sri Ram Shiva Kumar</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Sri Ram Shiva Kumar</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Mathematics</div>
-                <a href="faculty-profile.html?name=Sri%20Ram%20Shiva%20Kumar&role=Assistant%20Professor&photo=images/freshman/shiva-kumar.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Sri Ram Shiva Kumar</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Mathematics</div>
+                <a href="faculty-profile.html?name=Sri%20Ram%20Shiva%20Kumar&role=Assistant%20Professor&photo=images/freshman/shiva-kumar.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Arif Ahammed">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/arif.jpg" alt="Mr. Arif Ahammed" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">AA</div>
-                <div class="fcard__overlay"><div class="fcard__name">Mr. Arif Ahammed</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/arif.jpg" alt="Mr. Arif Ahammed" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">AA</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mr. Arif Ahammed</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Mr. Arif Ahammed</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Physics</div>
-                <a href="faculty-profile.html?name=Mr.%20Arif%20Ahammed&role=Assistant%20Professor&photo=images/freshman/arif.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mr. Arif Ahammed</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Physics</div>
+                <a href="faculty-profile.html?name=Dr.%20Subhasish%20Saha&role=Assistant%20Professor&photo=images/freshman/shiva-kumar.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="M. Sujatha">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/sujatha.jpg" alt="M. Sujatha" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">MS</div>
-                <div class="fcard__overlay"><div class="fcard__name">M. Sujatha</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/sujatha.jpg" alt="M. Sujatha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">M. Sujatha</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">M. Sujatha</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Chemistry</div>
-                <a href="faculty-profile.html?name=M.%20Sujatha&role=Assistant%20Professor&photo=images/freshman/sujatha.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">M. Sujatha</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Chemistry</div>
+                <a href="faculty-profile.html?name=Sri%20Ram%20Shiva%20Kumar&role=Assistant%20Professor&photo=images/freshman/arif.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Janga Anil Reddy">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/janga-anil.jpg" alt="Janga Anil Reddy" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">JR</div>
-                <div class="fcard__overlay"><div class="fcard__name">Janga Anil Reddy</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/janga-anil.jpg" alt="Janga Anil Reddy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">JR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Janga Anil Reddy</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Janga Anil Reddy</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">English</div>
-                <a href="faculty-profile.html?name=Janga%20Anil%20Reddy&role=Assistant%20Professor&photo=images/freshman/janga-anil.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Janga Anil Reddy</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">English</div>
+                <a href="faculty-profile.html?name=Mr.%20Arif%20Ahammed&role=Assistant%20Professor&photo=images/freshman/sujatha.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="A. Shilpa">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/shilpa.jpg" alt="A. Shilpa" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">AS</div>
-                <div class="fcard__overlay"><div class="fcard__name">A. Shilpa</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/shilpa.jpg" alt="A. Shilpa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">AS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">A. Shilpa</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">A. Shilpa</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Mathematics</div>
-                <a href="faculty-profile.html?name=A.%20Shilpa&role=Assistant%20Professor&photo=images/freshman/shilpa.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">A. Shilpa</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Mathematics</div>
+                <a href="faculty-profile.html?name=M.%20Sujatha&role=Assistant%20Professor&photo=images/freshman/janga-anil.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Amritha Saha">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/amritha.jpg" alt="Dr. Amritha Saha" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">AS</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Amritha Saha</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/amritha.jpg" alt="Dr. Amritha Saha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">AS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Amritha Saha</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Amritha Saha</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Chemistry</div>
-                <a href="faculty-profile.html?name=Dr.%20Amritha%20Saha&role=Assistant%20Professor&photo=images/freshman/amritha.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Amritha Saha</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Chemistry</div>
+                <a href="faculty-profile.html?name=Janga%20Anil%20Reddy&role=Assistant%20Professor&photo=images/freshman/shilpa.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Noel Nalli">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/noel.jpg" alt="Mr. Noel Nalli" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">NN</div>
-                <div class="fcard__overlay"><div class="fcard__name">Mr. Noel Nalli</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/noel.jpg" alt="Mr. Noel Nalli" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">NN</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mr. Noel Nalli</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Mr. Noel Nalli</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">English</div>
-                <a href="faculty-profile.html?name=Mr.%20Noel%20Nalli&role=Assistant%20Professor&photo=images/freshman/noel.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mr. Noel Nalli</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">English</div>
+                <a href="faculty-profile.html?name=A.%20Shilpa&role=Assistant%20Professor&photo=images/freshman/amritha.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Y. Lavanya">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/lavanya.jpg" alt="Dr. Y. Lavanya" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">YL</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. Y. Lavanya</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/lavanya.jpg" alt="Dr. Y. Lavanya" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">YL</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Y. Lavanya</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. Y. Lavanya</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Mathematics</div>
-                <a href="faculty-profile.html?name=Dr.%20Y.%20Lavanya&role=Assistant%20Professor&photo=images/freshman/lavanya.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Y. Lavanya</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Mathematics</div>
+                <a href="faculty-profile.html?name=Dr.%20Amritha%20Saha&role=Assistant%20Professor&photo=images/freshman/noel.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Vishal Nakka">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/vishal.jpg" alt="Mr. Vishal Nakka" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">VN</div>
-                <div class="fcard__overlay"><div class="fcard__name">Mr. Vishal Nakka</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/vishal.jpg" alt="Mr. Vishal Nakka" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">VN</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mr. Vishal Nakka</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Mr. Vishal Nakka</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Physics</div>
-                <a href="faculty-profile.html?name=Mr.%20Vishal%20Nakka&role=Assistant%20Professor&photo=images/freshman/vishal.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mr. Vishal Nakka</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Physics</div>
+                <a href="faculty-profile.html?name=Mr.%20Noel%20Nalli&role=Assistant%20Professor&photo=images/freshman/lavanya.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="M. Hymavathi">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/hymavathi.jpg" alt="M. Hymavathi" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">MH</div>
-                <div class="fcard__overlay"><div class="fcard__name">M. Hymavathi</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/hymavathi.jpg" alt="M. Hymavathi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MH</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">M. Hymavathi</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">M. Hymavathi</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Chemistry</div>
-                <a href="faculty-profile.html?name=M.%20Hymavathi&role=Assistant%20Professor&photo=images/freshman/hymavathi.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">M. Hymavathi</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Chemistry</div>
+                <a href="faculty-profile.html?name=M.%20Hymavathi&role=Assistant%20Professor&photo=images/freshman/hymavathi.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="N. Praveen Kumar">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/praveen-kumar.jpg" alt="N. Praveen Kumar" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">NK</div>
-                <div class="fcard__overlay"><div class="fcard__name">N. Praveen Kumar</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/praveen-kumar.jpg" alt="N. Praveen Kumar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">NK</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">N. Praveen Kumar</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">N. Praveen Kumar</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Mathematics</div>
-                <a href="faculty-profile.html?name=N.%20Praveen%20Kumar&role=Assistant%20Professor&photo=images/freshman/praveen-kumar.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">N. Praveen Kumar</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Mathematics</div>
+                <a href="faculty-profile.html?name=N.%20Praveen%20Kumar&role=Assistant%20Professor&photo=images/freshman/praveen-kumar.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="T Veera Raghavulu">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/veera-raghavulu.jpg" alt="Mr. T Veera Raghavulu" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">TR</div>
-                <div class="fcard__overlay"><div class="fcard__name">Mr. T Veera Raghavulu</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/veera-raghavulu.jpg" alt="Mr. T Veera Raghavulu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">TR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mr. T Veera Raghavulu</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Mr. T Veera Raghavulu</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Physics</div>
-                <a href="faculty-profile.html?name=Mr.%20T%20Veera%20Raghavulu&role=Assistant%20Professor&photo=images/freshman/veera-raghavulu.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mr. T Veera Raghavulu</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Physics</div>
+                <a href="faculty-profile.html?name=M.%20Hymavathi&role=Assistant%20Professor&photo=images/freshman/hymavathi.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="M. Sudheer Kumar">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/sudheer.jpg" alt="Dr. M. Sudheer Kumar" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">MK</div>
-                <div class="fcard__overlay"><div class="fcard__name">Dr. M. Sudheer Kumar</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/sudheer.jpg" alt="Dr. M. Sudheer Kumar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MK</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. M. Sudheer Kumar</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Dr. M. Sudheer Kumar</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">English</div>
-                <a href="faculty-profile.html?name=Dr.%20M.%20Sudheer%20Kumar&role=Assistant%20Professor&photo=images/freshman/sudheer.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. M. Sudheer Kumar</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">English</div>
+                <a href="faculty-profile.html?name=Dr.%20M.%20Sudheer%20Kumar&role=Assistant%20Professor&photo=images/freshman/sudheer.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="Neela Amar Nath">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/amar-nath.jpg" alt="Neela Amar Nath" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">NN</div>
-                <div class="fcard__overlay"><div class="fcard__name">Neela Amar Nath</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/amar-nath.jpg" alt="Neela Amar Nath" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">NN</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Neela Amar Nath</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Neela Amar Nath</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Mathematics</div>
-                <a href="faculty-profile.html?name=Neela%20Amar%20Nath&role=Assistant%20Professor&photo=images/freshman/amar-nath.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Neela Amar Nath</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Mathematics</div>
+                <a href="faculty-profile.html?name=Neela%20Amar%20Nath&role=Assistant%20Professor&photo=images/freshman/amar-nath.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="K. Krishnudu">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/krishnudu.jpg" alt="Mr. K. Krishnudu" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">KK</div>
-                <div class="fcard__overlay"><div class="fcard__name">Mr. K. Krishnudu</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/krishnudu.jpg" alt="Mr. K. Krishnudu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">KK</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mr. K. Krishnudu</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Mr. K. Krishnudu</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Physics</div>
-                <a href="faculty-profile.html?name=Mr.%20K.%20Krishnudu&role=Assistant%20Professor&photo=images/freshman/krishnudu.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mr. K. Krishnudu</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Physics</div>
+                <a href="faculty-profile.html?name=Dr.%20M.%20Sudheer%20Kumar&role=Assistant%20Professor&photo=images/freshman/sudheer.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
           <div class="fcard" data-author="A Venkata Laxman Rao">
-            <div class="fcard__inner">
-              <div class="fcard__front">
-                <img src="images/freshman/laxman-rao.jpg" alt="Mr. A Venkata Laxman Rao" onerror="this.style.display='none';this.parentElement.querySelector('.fcard__ini').style.display='flex'" />
-                <div class="fcard__ini" style="display:none">AR</div>
-                <div class="fcard__overlay"><div class="fcard__name">Mr. A Venkata Laxman Rao</div><div class="fcard__role">Assistant Professor</div></div>
+              <img src="images/freshman/laxman-rao.jpg" alt="Mr. A Venkata Laxman Rao" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">AR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mr. A Venkata Laxman Rao</div>
+                <div class="fcard__role">Assistant Professor</div>
               </div>
-              <div class="fcard__back">
-                <div class="fcard__back-name">Mr. A Venkata Laxman Rao</div>
-                <div class="fcard__back-role">Assistant Professor</div>
-                <div class="fcard__back-spec">Chemistry</div>
-                <a href="faculty-profile.html?name=Mr.%20A%20Venkata%20Laxman%20Rao&role=Assistant%20Professor&photo=images/freshman/laxman-rao.jpg" class="fcard__back-btn">View Profile</a>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mr. A Venkata Laxman Rao</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Chemistry</div>
+                <a href="faculty-profile.html?name=Neela%20Amar%20Nath&role=Assistant%20Professor&photo=images/freshman/amar-nath.jpg" class="fcard__hover-btn">View Research</a>
               </div>
-            </div>
           </div>
     </div>
     </div>
@@ -1248,8 +1216,8 @@
       <div class="catalog-item" style="justify-content:space-between;">
         <div><span class="catalog-item__text">R25 First Year Syllabus (All Branches)</span><span class="catalog-item__sub">Place PDF at: departments/syllabus/freshman/r25.pdf</span></div>
         <div class="syll-actions">
-          <a href="syllabus/freshman/r25.pdf" target="_blank" class="syll-btn syll-btn--view">View</a>
-          <a href="syllabus/freshman/r25.pdf" download class="syll-btn syll-btn--download">Download</a>
+          <a href="syllabus/pdfs/cse-r25-syllabus.pdf" target="_blank" class="syll-btn syll-btn--view">View</a>
+          <a href="syllabus/pdfs/cse-r25-syllabus.pdf" download class="syll-btn syll-btn--download">Download</a>
         </div>
       </div>
     </div>
@@ -1302,6 +1270,9 @@
     </ul>
   </div>
 
+  </div><!-- .dept-body__panels -->
+  </div><!-- .dept-body -->
+
   <script>
     // ── STANDALONE TAB SWITCHER (runs first, always works) ──
     (function () {
@@ -1321,9 +1292,9 @@
       });
     })();
 
-    (function(){var tabs=document.querySelectorAll('.dept-tab');var panels=document.querySelectorAll('.dept-panel');var qbtns=document.querySelectorAll('.qbar__btn');function sw(id){tabs.forEach(function(t){t.classList.remove('is-active')});panels.forEach(function(p){p.classList.remove('is-active')});qbtns.forEach(function(q){q.classList.remove('is-active')});var tab=document.querySelector('[data-tab="'+id+'"]');var panel=document.getElementById('panel-'+id);var qbtn=document.querySelector('[data-qtab="'+id+'"]');if(tab)tab.classList.add('is-active');if(panel)panel.classList.add('is-active');if(qbtn)qbtn.classList.add('is-active')}tabs.forEach(function(t){t.addEventListener('click',function(){sw(t.getAttribute('data-tab'))})});qbtns.forEach(function(b){b.addEventListener('click',function(){sw(b.getAttribute('data-qtab'))})});var hash=window.location.hash.replace('#','');if(hash)sw(hash)})();
     (function(){document.querySelectorAll('[data-achieve]').forEach(function(card){var toggle=card.querySelector('.achieve-toggle');card.addEventListener('click',function(){var expanded=card.classList.toggle('is-expanded');if(toggle)toggle.textContent=expanded?'Read Less':'Read More'})})})();
-    (function(){document.querySelectorAll('.fcard').forEach(function(item){item.addEventListener('click',function(){var backBtn=item.querySelector('.fcard__back-btn');if(backBtn){var n=item.querySelector('.fcard__back-name');var r=item.querySelector('.fcard__back-role');var img=item.querySelector('.fcard__front img');window.location.href='faculty-profile.html?name='+encodeURIComponent(n?n.textContent:'')+'&role='+encodeURIComponent(r?r.textContent:'')+'&photo='+encodeURIComponent(img?img.getAttribute('src'):'')}})})})();
+    // Faculty hover → filter publications
+    (function(){var fcards=document.querySelectorAll('.fcard');var pubCards=document.querySelectorAll('.pub-card');fcards.forEach(function(fcard){var author=fcard.getAttribute('data-author');fcard.addEventListener('mouseenter',function(){var hasMatch=false;pubCards.forEach(function(pub){var a=pub.querySelector('.pub-card__authors');if(a&&a.textContent.indexOf(author)!==-1){pub.classList.remove('is-dimmed');hasMatch=true}else{pub.classList.add('is-dimmed')}});if(!hasMatch)pubCards.forEach(function(p){p.classList.remove('is-dimmed')});});fcard.addEventListener('mouseleave',function(){pubCards.forEach(function(pub){pub.classList.remove('is-dimmed')});});});})();
     // Dark sidebar — show items for active tab
     (function () {
       var dsItems = document.querySelectorAll('.ds-item');
@@ -1363,7 +1334,6 @@
           fireStreak();
         });
       });
-      });
 
       // Sidebar item click — mark active + fire streak + scroll to section
       dsItems.forEach(function (item) {
@@ -1377,18 +1347,91 @@
           siblings.forEach(function (s) { s.classList.remove('is-active'); });
           item.classList.add('is-active');
           fireStreak();
-          // Scroll to target after a brief delay to let panel show
+          // Scroll to target — close other accordions, open the right one
           if (target) {
             setTimeout(function () {
               var el = document.getElementById(target);
-              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 50);
+              if (!el) return;
+              // Close all open accordions first
+              document.querySelectorAll('.sub-accordion.is-open').forEach(function(a) {
+                a.classList.remove('is-open');
+              });
+              // Open accordion if target is inside one or is the header
+              var accordion = el.closest ? el.closest('.sub-accordion') : null;
+              if (!accordion && el.parentElement && el.parentElement.classList && el.parentElement.classList.contains('sub-accordion')) {
+                accordion = el.parentElement;
+              }
+              if (accordion) accordion.classList.add('is-open');
+              el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 120);
           }
         });
       });
 
       // Initialize
       updateSidebar('overview');
+      window.scrollTo(0, 0);
+    })();
+    // Scroll-spy — highlights sidebar only, does NOT touch accordion state
+    (function () {
+      var targets = [];
+      document.querySelectorAll('.ds-item[data-ds-target]').forEach(function(item) {
+        var id = item.getAttribute('data-ds-target');
+        var el = document.getElementById(id);
+        if (el) targets.push({ el: el, item: item });
+      });
+      if (!targets.length) return;
+      var spyReady = false;
+      setTimeout(function () { spyReady = true; }, 600);
+      var observer = new IntersectionObserver(function(entries) {
+        if (!spyReady) return;
+        entries.forEach(function(entry) {
+          if (!entry.isIntersecting) return;
+          var matched = targets.find(function(t) { return t.el === entry.target; });
+          if (!matched) return;
+          if (matched.item.style.display === 'none') return;
+          document.querySelectorAll('.ds-item').forEach(function(i) { i.classList.remove('is-active'); });
+          matched.item.classList.add('is-active');
+        });
+      }, { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' });
+      targets.forEach(function(t) { observer.observe(t.el); });
+    })();
+
+
+    // Auto-open accordions when scrolled into view (open only, never force-close)
+    (function () {
+      var accords = document.querySelectorAll('.sub-accordion');
+      if (!accords.length) return;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !entry.target.classList.contains('is-open')) {
+            entry.target.classList.add('is-open');
+          }
+        });
+      }, { threshold: 0.2 });
+      accords.forEach(function (acc) { observer.observe(acc); });
+    })();
+
+    // Accordion toggle — header clicks only
+    (function () {
+      document.querySelectorAll('.sub-accordion__header').forEach(function (header) {
+        header.style.cursor = 'pointer';
+        header.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var accordion = header.closest('.sub-accordion');
+          if (!accordion) accordion = header.parentElement;
+          if (accordion) {
+            var wasOpen = accordion.classList.contains('is-open');
+            accordion.classList.toggle('is-open');
+            if (!wasOpen) {
+              setTimeout(function () {
+                accordion.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              }, 50);
+            }
+          }
+        });
+      });
     })();
   </script>
 
