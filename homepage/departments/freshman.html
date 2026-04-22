@@ -381,7 +381,7 @@
       });
       hero.addEventListener('mouseleave', function(){
         vid.classList.remove('is-visible');
-        setTimeout(function(){ vid.pause(); }, 650);
+        setTimeout(function(){ vid.pause(); vid.currentTime = 0; }, 650);
       });
     })();
   </script>
