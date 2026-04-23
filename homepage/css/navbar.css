@@ -315,6 +315,15 @@ ul { list-style: none; }
 }
 
 /* ===== Support Tab ===== */
+.main-nav__item--support {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
 .main-nav__link--support {
   display: flex;
   align-items: center;
@@ -325,11 +334,18 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.13);
+  border: 1px solid rgba(255,255,255,0.18);
   flex-shrink: 0;
+  transition: background 0.22s ease, border-color 0.22s ease;
+}
+
+.main-nav__item--support:hover .support-avatar {
+  background: rgba(232,93,31,0.18);
+  border-color: rgba(232,93,31,0.45);
 }
 
 /* ===== Support Panel ===== */

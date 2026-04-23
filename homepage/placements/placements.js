@@ -225,7 +225,10 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="pl-gs pl-gs--hero">
             <div class="pl-gs__img">
               <img src="${img.src}" alt="${img.alt}" loading="eager" />
-              <figcaption class="pl-gs__cap">${img.alt}</figcaption>
+              <figcaption class="pl-gs__cap">
+                <span class="pl-gs__cap-tag">MLRIT · Campus</span>
+                <span class="pl-gs__cap-title">${img.alt}</span>
+              </figcaption>
             </div>
           </div>`;
         i++;
@@ -235,11 +238,17 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="pl-gs pl-gs--pair${pairFlip ? ' pl-gs--flip' : ''}">
             <div class="pl-gs__img pl-gs__img--dom">
               <img src="${img.src}" alt="${img.alt}" loading="lazy" />
-              <figcaption class="pl-gs__cap">${img.alt}</figcaption>
+              <figcaption class="pl-gs__cap">
+                <span class="pl-gs__cap-tag">On Campus</span>
+                <span class="pl-gs__cap-title">${img.alt}</span>
+              </figcaption>
             </div>
             ${next ? `<div class="pl-gs__img pl-gs__img--sup">
               <img src="${next.src}" alt="${next.alt}" loading="lazy" />
-              <figcaption class="pl-gs__cap">${next.alt}</figcaption>
+              <figcaption class="pl-gs__cap">
+                <span class="pl-gs__cap-tag">On Campus</span>
+                <span class="pl-gs__cap-title">${next.alt}</span>
+              </figcaption>
             </div>` : ''}
           </div>`;
         pairFlip = !pairFlip;
@@ -295,5 +304,53 @@ document.addEventListener('DOMContentLoaded', function () {
   })();
 
   /* Recruiter interactions handled by pl-globe.js */
+
+  /* ── Counter: all numbers count up when scrolled into view ── */
+  (function () {
+    function parseNum(str) {
+      const m = str.match(/^([^0-9]*)([0-9]+(?:\.[0-9]+)?)(.*)$/);
+      if (!m) return null;
+      const dec = m[2].includes('.') ? m[2].split('.')[1].length : 0;
+      return { pre: m[1], val: parseFloat(m[2]), suf: m[3], dec };
+    }
+
+    function countUp(el) {
+      /* Find first text node that contains a digit */
+      let node = null;
+      for (const n of el.childNodes) {
+        if (n.nodeType === 3 && /\d/.test(n.textContent)) { node = n; break; }
+      }
+      if (!node) return;
+
+      const p = parseNum(node.textContent.trim());
+      if (!p || p.val === 0) return;
+
+      const fmt  = v => p.pre + (p.dec ? v.toFixed(p.dec) : Math.round(v)) + p.suf;
+      const ease = t => 1 - Math.pow(1 - t, 3);
+      const dur  = 1500;
+      let t0 = null;
+
+      requestAnimationFrame(function tick(ts) {
+        if (!t0) t0 = ts;
+        const prog = Math.min((ts - t0) / dur, 1);
+        node.textContent = fmt(p.val * ease(prog));
+        if (prog < 1) requestAnimationFrame(tick);
+      });
+    }
+
+    const counterIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        countUp(e.target);
+        counterIO.unobserve(e.target);
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll(
+      '.pl-wall__item-num, .pl-statgrid__value, ' +
+      '.pl-year-featured__val, .pl-year-row__val, ' +
+      '.pl-infra__stat-num'
+    ).forEach(el => counterIO.observe(el));
+  })();
 
 });

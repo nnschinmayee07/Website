@@ -94,7 +94,12 @@
       img.loading = 'lazy';
       img.draggable = false;
 
+      const label = document.createElement('span');
+      label.className   = 'pl-globe-node__label';
+      label.textContent = node.rec.name;
+
       div.appendChild(img);
+      div.appendChild(label);
       field.appendChild(div);
       node.el = div;
 
@@ -222,7 +227,7 @@
     /* ── Update logo node positions + depth styling ── */
     function updateNodes() {
       const cx     = W / 2, cy = H / 2;
-      const SMOOTH = 0.08;    /* lerp speed — controls how fast depth transitions */
+      const SMOOTH = 0.05;    /* lerp speed — controls how fast depth transitions */
 
       nodes.forEach(node => {
         const p   = project(node.lat, node.lon);
@@ -252,13 +257,10 @@
         /* z-index: depth order, active always on top */
         const zIdx = Math.round(depth * 100) + (active ? 60 : 0);
 
-        /* Box-shadow:
-           — orange ring ONLY on selected (click)
-           — soft white lift ONLY on hover
-           — nothing by default */
+        /* Box-shadow: orange glow on hover/select */
         let shadow;
-        if (sel)      shadow = '0 0 0 2px rgba(255,120,0,0.55), 0 6px 28px rgba(255,120,0,0.10)';
-        else if (hov) shadow = '0 4px 24px rgba(255,255,255,0.10)';
+        if (sel)      shadow = '0 0 0 2px rgba(255,122,24,0.85), 0 0 36px rgba(255,122,24,0.45), 0 8px 40px rgba(255,122,24,0.22)';
+        else if (hov) shadow = '0 0 0 1.5px rgba(255,122,24,0.55), 0 0 24px rgba(255,122,24,0.32), 0 6px 28px rgba(255,122,24,0.16)';
         else          shadow = 'none';
 
         /* Apply — transform is set directly (no CSS transition, lerp handles smoothness) */
@@ -278,12 +280,12 @@
     let running = false;
 
     function frame() {
-      /* Very slow rotation — full revolution ≈ 115s at 60fps */
-      autoAngle += 0.00055;
+      /* Very slow rotation — full revolution ≈ 165s at 60fps */
+      autoAngle += 0.00038;
 
       /* Smooth tilt towards mouse target */
-      tiltX = lerp(tiltX, myNorm * 0.09,  0.045);
-      tiltY = lerp(tiltY, mxNorm * 0.13,  0.045);
+      tiltX = lerp(tiltX, myNorm * 0.07,  0.028);
+      tiltY = lerp(tiltY, mxNorm * 0.10,  0.028);
 
       drawWire();
       updateNodes();
