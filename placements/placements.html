@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Placements — MLRIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="placements.css" />
+  <script src="data/placements-data.js"></script>
+</head>
+<body>
+
+  <!-- =====================
+       NAVBAR
+       ===================== -->
+  <header class="site-header">
+    <div class="masthead">
+      <div class="container masthead__inner">
+        <a href="../index.html" class="masthead__logo" aria-label="MLRIT Home">
+          <img src="../mlrit-logo-transparent.png" alt="MLRIT Logo" />
+        </a>
+        <div class="masthead__tagline">
+          <span>Marri Laxman Reddy Institute of Technology</span>
+        </div>
+        <a href="#" class="masthead__eapcet">EAPCET CODE : MLID</a>
+      </div>
+    </div>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <div class="container main-nav__inner">
+        <ul class="main-nav__list">
+
+          <li class="main-nav__item">
+            <a href="#" class="main-nav__link">About <span class="chevron"></span></a>
+            <div class="dropdown">
+              <div class="dropdown__col">
+                <h4>Institution</h4>
+                <a href="#">Vision &amp; Mission</a>
+                <a href="#">Accreditations</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="main-nav__item">
+            <a href="#" class="main-nav__link">Academics <span class="chevron"></span></a>
+            <div class="dropdown">
+              <div class="dropdown__col">
+                <h4>Programmes</h4>
+                <a href="../departments/ug.html">Undergraduate (B.Tech)</a>
+                <a href="../departments/pg.html">Postgraduate (M.Tech &amp; MBA)</a>
+              </div>
+              <div class="dropdown__col">
+                <h4>Resources</h4>
+                <a href="#">ERP</a>
+                <a href="#">LMS</a>
+                <a href="#">Academic Calendar</a>
+                <a href="#">Exam Portal</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="main-nav__item">
+            <a href="#" class="main-nav__link">Admissions <span class="chevron"></span></a>
+            <div class="dropdown">
+              <div class="dropdown__col">
+                <h4>Undergraduate</h4>
+                <a href="#">How to Apply</a>
+                <a href="#">Eligibility</a>
+                <a href="#">Fee Structure</a>
+                <a href="#">Scholarships</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="main-nav__item">
+            <a href="#" class="main-nav__link">Research <span class="chevron"></span></a>
+            <div class="dropdown">
+              <div class="dropdown__col">
+                <h4>Research Areas</h4>
+                <a href="#">AI &amp; Machine Learning</a>
+                <a href="#">IoT &amp; Embedded Systems</a>
+                <a href="#">Data Science</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="main-nav__item">
+            <a href="#" class="main-nav__link">Campus <span class="chevron"></span></a>
+            <div class="dropdown">
+              <div class="dropdown__col">
+                <h4>Facilities</h4>
+                <a href="#">Hostels</a>
+                <a href="#">Sports</a>
+                <a href="#">Transport</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="main-nav__item">
+            <a href="placements.html" class="main-nav__link is-active">Placements</a>
+          </li>
+
+          <li class="main-nav__item main-nav__item--right" style="margin-right: 8px;">
+            <a href="#" class="main-nav__link">MLRIT Chronicles <span class="chevron"></span></a>
+            <div class="dropdown dropdown--right">
+              <div class="dropdown__col">
+                <h4>Bulletins</h4>
+                <a href="#">Academic Notices</a>
+                <a href="#">Exam Schedules</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="main-nav__item--support">
+            <div class="support-avatar">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =====================
+       STATS WALL
+       ===================== -->
+  <section id="pl-wall" class="pl-wall">
+
+    <!-- Ghost background numbers -->
+    <div class="pl-wall__bg" aria-hidden="true">
+      <span class="pl-wall__ghost pl-wall__ghost--1" data-parallax="0.08">7000+</span>
+      <span class="pl-wall__ghost pl-wall__ghost--2" data-parallax="0.05">536</span>
+      <span class="pl-wall__ghost pl-wall__ghost--3" data-parallax="0.12">62+</span>
+    </div>
+
+    <!-- Foreground -->
+    <div class="pl-wall__inner">
+
+      <p class="pl-wall__statement">
+        MLR Institute of Technology has achieved
+        <span class="pl-wall__stmt-accent">80% and above</span>
+        placements every year — placing engineers in the world's leading
+        organisations and transforming students into professionals
+        industry cannot afford to overlook.
+      </p>
+
+      <div class="pl-wall__rule"></div>
+
+      <div class="pl-wall__secondary">
+        <div class="pl-wall__item">
+          <span class="pl-wall__item-num">536</span>
+          <span class="pl-wall__item-label">Offers · 2025</span>
+        </div>
+        <div class="pl-wall__item-sep" aria-hidden="true"></div>
+        <div class="pl-wall__item">
+          <span class="pl-wall__item-num">62+</span>
+          <span class="pl-wall__item-label">Companies Visited</span>
+        </div>
+        <div class="pl-wall__item-sep" aria-hidden="true"></div>
+        <div class="pl-wall__item">
+          <span class="pl-wall__item-num">7000+</span>
+          <span class="pl-wall__item-label">Students Placed</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================
+       PLACEMENT PERFORMANCE
+       ===================== -->
+  <section class="pl-performance" id="pl-performance">
+    <div class="pl-section-inner">
+      <span class="pl-label">By the Numbers</span>
+      <h2 class="pl-heading">Placement Performance</h2>
+      <div class="pl-statgrid__grid">
+        <div class="pl-statgrid__card pl-fade">
+          <span class="pl-statgrid__value">₹33 LPA</span>
+          <span class="pl-statgrid__label">Highest Package</span>
+          <span class="pl-statgrid__note">ServiceNow · 2025</span>
+        </div>
+        <div class="pl-statgrid__card pl-fade">
+          <span class="pl-statgrid__value">536</span>
+          <span class="pl-statgrid__label">Total Job Offers</span>
+          <span class="pl-statgrid__note">Academic Year 2025</span>
+        </div>
+        <div class="pl-statgrid__card pl-fade">
+          <span class="pl-statgrid__value">62+</span>
+          <span class="pl-statgrid__label">Companies Visited</span>
+          <span class="pl-statgrid__note">MNCs and product firms</span>
+        </div>
+        <div class="pl-statgrid__card pl-fade">
+          <span class="pl-statgrid__value">7000+</span>
+          <span class="pl-statgrid__label">Students Placed</span>
+          <span class="pl-statgrid__note">Cumulative · all years</span>
+        </div>
+      </div>
+      <div class="pl-perf-history">
+        <span class="pl-perf-history__label">Year on Year</span>
+        <div id="pl-yearstats-content"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       TOP RECRUITERS
+       ===================== -->
+  <section class="pl-recruiters">
+    <div class="pl-section-inner">
+      <span class="pl-label">Our Recruiters</span>
+      <h2 class="pl-heading">Top Hiring Partners</h2>
+      <p class="pl-recruiters__sub">Leading organisations across IT, product, consulting, and core engineering sectors recruit regularly from MLRIT.</p>
+      <div class="pl-recruiters__grid" id="pl-recruiters-grid"></div>
+    </div>
+  </section>
+
+  <!-- =====================
+       TRAINING & DEVELOPMENT — Story Strips
+       ===================== -->
+  <section class="pl-training">
+    <div class="pl-section-inner pl-training__header">
+      <span class="pl-label">Preparation</span>
+      <h2 class="pl-heading">Training and Development</h2>
+    </div>
+
+    <div class="pl-train__strip">
+      <div class="pl-train__icon-panel pl-train__icon-panel--1" aria-hidden="true">
+        <div class="pl-train__avatar">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="5.5" fill="currentColor"/>
+            <circle cx="32" cy="9"  r="3" fill="currentColor" opacity="0.5"/>
+            <circle cx="32" cy="55" r="3" fill="currentColor" opacity="0.5"/>
+            <circle cx="9"  cy="22" r="3" fill="currentColor" opacity="0.5"/>
+            <circle cx="55" cy="22" r="3" fill="currentColor" opacity="0.5"/>
+            <circle cx="9"  cy="42" r="3" fill="currentColor" opacity="0.5"/>
+            <circle cx="55" cy="42" r="3" fill="currentColor" opacity="0.5"/>
+            <line x1="32" y1="26.5" x2="32" y2="12"  stroke="currentColor" stroke-width="1.5" opacity="0.28"/>
+            <line x1="32" y1="37.5" x2="32" y2="52"  stroke="currentColor" stroke-width="1.5" opacity="0.28"/>
+            <line x1="27" y1="29"   x2="12" y2="22"  stroke="currentColor" stroke-width="1.5" opacity="0.28"/>
+            <line x1="37" y1="29"   x2="52" y2="22"  stroke="currentColor" stroke-width="1.5" opacity="0.28"/>
+            <line x1="27" y1="35"   x2="12" y2="42"  stroke="currentColor" stroke-width="1.5" opacity="0.28"/>
+            <line x1="37" y1="35"   x2="52" y2="42"  stroke="currentColor" stroke-width="1.5" opacity="0.28"/>
+          </svg>
+        </div>
+      </div>
+      <div class="pl-train__content">
+        <span class="pl-train__num">01</span>
+        <h3 class="pl-train__title">Aptitude and Reasoning</h3>
+        <p class="pl-train__desc">Structured training in quantitative aptitude, logical reasoning, and data interpretation — aligned to placement test patterns of top MNCs and product companies.</p>
+      </div>
+    </div>
+
+    <div class="pl-train__strip pl-train__strip--flip">
+      <div class="pl-train__icon-panel pl-train__icon-panel--2" aria-hidden="true">
+        <div class="pl-train__avatar">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="24,18 10,32 24,46"/>
+            <polyline points="40,18 54,32 40,46"/>
+            <line x1="29" y1="26" x2="35" y2="38"/>
+          </svg>
+        </div>
+      </div>
+      <div class="pl-train__content">
+        <span class="pl-train__num">02</span>
+        <h3 class="pl-train__title">Technical Skills</h3>
+        <p class="pl-train__desc">Domain-specific programmes covering DSA, Java, C++, Web Programming, MySQL, and department-specific tools — preparing students for technical interview rounds.</p>
+      </div>
+    </div>
+
+    <div class="pl-train__strip">
+      <div class="pl-train__icon-panel pl-train__icon-panel--3" aria-hidden="true">
+        <div class="pl-train__avatar">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="18" r="7" stroke="currentColor" stroke-width="2"/>
+            <path d="M7,52 C7,40 12,35 20,35 C25,35 28,37 31,40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="44" cy="18" r="7" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+            <path d="M57,52 C57,40 52,35 44,35 C39,35 36,37 33,40" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+            <circle cx="32" cy="41" r="2.5" fill="currentColor" opacity="0.35"/>
+          </svg>
+        </div>
+      </div>
+      <div class="pl-train__content">
+        <span class="pl-train__num">03</span>
+        <h3 class="pl-train__title">Soft Skills</h3>
+        <p class="pl-train__desc">Interview readiness, group discussion techniques, professional etiquette, and workplace communication — building confidence for every stage of the recruitment process.</p>
+      </div>
+    </div>
+
+    <div class="pl-train__strip pl-train__strip--flip">
+      <div class="pl-train__icon-panel pl-train__icon-panel--4" aria-hidden="true">
+        <div class="pl-train__avatar">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg">
+            <rect x="24" y="10" width="16" height="22" rx="8"/>
+            <path d="M16,34 C16,44 24,50 32,50 C40,50 48,44 48,34"/>
+            <line x1="32" y1="50" x2="32" y2="58"/>
+            <line x1="22" y1="58" x2="42" y2="58"/>
+          </svg>
+        </div>
+      </div>
+      <div class="pl-train__content">
+        <span class="pl-train__num">04</span>
+        <h3 class="pl-train__title">Verbal Communication</h3>
+        <p class="pl-train__desc">Verbal ability, business writing, and English proficiency training to help students meet the communication standards expected by leading global employers.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- =====================
+       INFRASTRUCTURE
+       ===================== -->
+  <section class="pl-infra">
+    <div class="pl-section-inner pl-infra__inner">
+      <div class="pl-infra__text">
+        <span class="pl-label pl-label--light">Facilities</span>
+        <h2 class="pl-heading pl-heading--light">Placement Infrastructure</h2>
+        <p class="pl-infra__sub">MLRIT maintains a dedicated placement block equipped to host large-scale campus recruitment drives throughout the year.</p>
+        <ul class="pl-infra__list">
+          <li>800+ networked computer systems with webcams and 1 Gbps internet connectivity</li>
+          <li>Auditorium with 1,200-seat capacity for pre-placement talks and mass drives</li>
+          <li>Dedicated placement block with seminar halls, GD rooms, and interview panels</li>
+          <li>Uninterrupted power backup across all placement facilities</li>
+          <li>Centres of Excellence with Virtusa and EPAM Systems for advanced domain training</li>
+        </ul>
+      </div>
+      <div class="pl-infra__stats">
+        <div class="pl-infra__stat pl-fade">
+          <span class="pl-infra__stat-num">800+</span>
+          <span class="pl-infra__stat-label">Systems</span>
+        </div>
+        <div class="pl-infra__stat pl-fade">
+          <span class="pl-infra__stat-num">1200</span>
+          <span class="pl-infra__stat-label">Seat Auditorium</span>
+        </div>
+        <div class="pl-infra__stat pl-fade">
+          <span class="pl-infra__stat-num">1 Gbps</span>
+          <span class="pl-infra__stat-label">Connectivity</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       MoUs & COLLABORATIONS
+       ===================== -->
+  <section class="pl-mou">
+    <div class="pl-section-inner">
+      <span class="pl-label">Industry Partnerships</span>
+      <h2 class="pl-heading">MoUs and Centres of Excellence</h2>
+      <p class="pl-mou__sub">MLRIT has established formal partnerships and Centres of Excellence with leading industry organisations to provide students with advanced domain training and direct placement pathways.</p>
+      <div class="pl-mou__grid" id="pl-mou-grid"></div>
+    </div>
+  </section>
+
+  <!-- =====================
+       GALLERY
+       ===================== -->
+  <section class="pl-gallery">
+    <div class="pl-section-inner">
+      <span class="pl-label">On Campus</span>
+      <h2 class="pl-heading">Placement Drives</h2>
+      <p class="pl-gallery__context">Dozens of companies. Hundreds of offers. Every placement season, MLRIT brings industry directly to campus.</p>
+      <div class="pl-gallery__layout" id="pl-gallery-grid"></div>
+    </div>
+  </section>
+
+  <!-- =====================
+       CONTACT
+       ===================== -->
+  <section class="pl-contact">
+    <div class="pl-section-inner pl-contact__inner">
+      <div>
+        <span class="pl-label">Get in Touch</span>
+        <h2 class="pl-heading">Placement Cell</h2>
+        <p class="pl-contact__name">Ravi Chandra P</p>
+        <p class="pl-contact__role">Head of Placements</p>
+        <div class="pl-contact__details">
+          <a href="tel:+919849991299" class="pl-contact__item">
+            <span class="pl-contact__icon">&#9742;</span>
+            +91 98499 91299
+          </a>
+          <a href="tel:+919652226061" class="pl-contact__item">
+            <span class="pl-contact__icon">&#9742;</span>
+            +91 96522 26061
+          </a>
+          <a href="mailto:ravichandra@mlrinstitutions.ac.in" class="pl-contact__item">
+            <span class="pl-contact__icon">&#9993;</span>
+            ravichandra@mlrinstitutions.ac.in
+          </a>
+        </div>
+      </div>
+      <div class="pl-contact__address">
+        <h3 class="pl-contact__addr-heading">Address</h3>
+        <p>MLR Institute of Technology<br />
+        Survey No. 444, Dundigal<br />
+        Medchal Malkajgiri<br />
+        Telangana – 500 043</p>
+        <p class="pl-contact__eapcet">EAPCET Code: <strong>MLID</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <script src="../js/navbar.js" defer></script>
+  <script src="pl-globe.js" defer></script>
+  <script src="placements.js" defer></script>
+</body>
+</html>

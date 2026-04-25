@@ -1,0 +1,331 @@
+/* ===========================
+   EVENT SHOWCASE — v3
+   Full-screen video · cursor PLAY · logo→centre hover · mute
+   Source: COLLEGE-WEBSITE-main/css/events-disc.css (Mounith)
+   =========================== */
+
+/* ── Section shell ── */
+.event-showcase {
+  position: relative;
+  width: 100%;
+  height: 115vh;
+  min-height: 700px;
+  overflow: hidden;
+  cursor: none; /* default cursor hidden inside section */
+}
+
+/* ── Section heading — top centre ── */
+.es__heading {
+  position: absolute;
+  top: clamp(2.5rem, 5vh, 4rem);
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 8;
+  pointer-events: none;
+}
+
+.es__heading-label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 0.5rem;
+}
+
+.es__heading-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.5);
+  margin: 0;
+}
+
+/* ── Video ── */
+.es__video {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* ── Overlay ── */
+.es__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.78) 0%,
+    rgba(0,0,0,0.40) 40%,
+    rgba(0,0,0,0.30) 70%,
+    rgba(0,0,0,0.42) 100%
+  );
+  transition: background 0.6s ease;
+}
+
+/* Darken when logo is expanded */
+.event-showcase.logo-expanded .es__overlay {
+  background: rgba(0,0,0,0.72);
+}
+
+/* ── Custom PLAY cursor ── */
+.es__cursor {
+  position: absolute;
+  top: 0; left: 0;
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  pointer-events: none;
+  z-index: 20;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.25s ease;
+  will-change: transform, opacity;
+}
+
+.es__cursor svg {
+  width: 18px; height: 18px;
+  color: #111;
+  margin-left: 3px; /* optical center for triangle */
+}
+
+.es__cursor span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #111;
+  line-height: 1;
+}
+
+.event-showcase.cursor-visible .es__cursor {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* Shrink cursor when hovering interactive elements */
+.event-showcase.cursor-shrink .es__cursor {
+  transform: translate(-50%, -50%) scale(0.55);
+}
+
+/* ── Mute button — bottom right ── */
+.es__mute {
+  position: absolute;
+  bottom: 2.2rem;
+  right: 2.2rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 50px;
+  padding: 0.45rem 0.9rem 0.45rem 0.65rem;
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+}
+
+.es__mute:hover {
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.35);
+  transform: translateY(-2px);
+}
+
+.es__mute-icon {
+  width: 16px; height: 16px;
+  flex-shrink: 0;
+}
+
+.es__mute-icon--on  { display: block; }
+.es__mute-icon--off { display: none; }
+
+.event-showcase.is-muted .es__mute-icon--on  { display: none; }
+.event-showcase.is-muted .es__mute-icon--off { display: block; }
+
+.es__mute-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* ── Event info panels — below centred logo ── */
+.es__panels {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.es__panel {
+  position: absolute;
+  /* sits below the logo which is centred at ~38% — info starts at ~62% */
+  top: 62%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  text-align: center;
+  color: #fff;
+  max-width: 480px;
+  width: 90%;
+  opacity: 0;
+  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.es__panel.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.es__panel-tag {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 0.75rem;
+}
+
+.es__panel-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.4);
+}
+
+.es__panel-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.65);
+  font-weight: 300;
+  max-width: 420px;
+  margin: 0 auto 1.5rem;
+}
+
+.es__panel-cta {
+  min-width: 150px;
+  height: 42px;
+  font-size: 0.8rem;
+}
+
+/* ── btn--white (used by event panel CTAs) ── */
+.btn--white { background: rgba(255,255,255,0.08); color: #fff; border: 1.5px solid rgba(255,255,255,0.3); }
+.btn--white .btn__chevron { background: rgba(255,255,255,0.18); color: #fff; }
+.btn--white:hover { border-color: rgba(255,255,255,0.5); }
+
+/* ── Event logos — bottom left (one at a time, crossfade) ── */
+.es__logos {
+  position: absolute;
+  bottom: 2.8rem;
+  left: 2.5rem;
+  z-index: 8;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  align-items: end;
+}
+
+.es__logo {
+  grid-area: 1 / 1;
+  cursor: none;
+  position: relative;
+  outline: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+.es__logo.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.es__logo-img {
+  display: block;
+  width: clamp(140px, 18vw, 220px);
+  height: auto;
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5)) brightness(0.92);
+  transform-origin: left bottom;
+  transition:
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.4s ease,
+    width 0.4s ease;
+  will-change: transform;
+}
+
+/* Dim non-hovered logos when one is expanded */
+.event-showcase.logo-expanded .es__logo:not(.is-expanded) .es__logo-img {
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5)) brightness(0.3);
+}
+
+/* Expanded logo moves to viewport centre via inline transform set by JS */
+.es__logo.is-expanded .es__logo-img {
+  filter: drop-shadow(0 8px 40px rgba(0,0,0,0.6)) brightness(1.05);
+}
+
+/* ── Dots — bottom centre ── */
+.es__dots {
+  position: absolute;
+  bottom: 2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
+  display: flex;
+  gap: 8px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.es__dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.es__dot.is-active {
+  background: #fff;
+  width: 20px;
+  border-radius: 3px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .event-showcase { cursor: auto; height: 100vh; min-height: 600px; }
+  .es__cursor { display: none; }
+  .es__heading-title { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+  .es__logos {
+    bottom: 5rem;
+    right: 1.2rem;
+    gap: 1rem;
+  }
+  .es__logo-img { width: clamp(100px, 35vw, 160px); }
+  .es__mute { bottom: 1.5rem; left: 1.2rem; }
+  .es__panel-title { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+}

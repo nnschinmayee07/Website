@@ -1,0 +1,60 @@
+<!-- ===== EVENTS SECTION START (DO NOT MODIFY OUTSIDE THIS FILE) ===== -->
+<section class="ev-section" id="events">
+
+  <!-- Full-screen background video -->
+  <video class="ev-bg-video" id="evBgVideo" muted loop playsinline></video>
+  <div class="ev-bg-scrim"></div>
+
+  <!-- Beam sweep -->
+  <div class="ev-beam" id="evBeam" aria-hidden="true"></div>
+
+  <!-- Explore prompt — centered, moves to top-left on scroll -->
+  <div class="ev-explore" id="evExplore">Explore the real <em>MLRIT</em></div>
+
+  <!-- Content wrap -->
+  <div class="ev-content" id="evContent">
+
+    <!-- Bottom-left: event text -->
+    <div class="ev-text" id="evText">
+      <p class="ev-text__quote" id="evQuote"></p>
+      <div class="ev-text__meta">
+        <strong id="evName"></strong>
+        <span id="evRole"></span>
+      </div>
+    </div>
+
+    <!-- Bottom-right: sidebar -->
+    <div class="ev-sidebar">
+
+      <!-- Main hover player -->
+      <div class="ev-main-thumb" id="evMainThumb">
+        <video class="ev-main-thumb__video" id="evThumbVid" muted loop playsinline></video>
+        <div class="ev-main-thumb__play">&#9654;</div>
+      </div>
+
+      <!-- Controls + mini queue -->
+      <div class="ev-controls-row">
+        <button class="ev-ctrl-btn" id="evPrev" aria-label="Previous">&#8592;</button>
+
+        <div class="ev-mini-queue" id="evMiniQueue">
+          <div class="ev-mini-thumb is-active" data-idx="0"><video src="events/e1.mp4" muted playsinline preload="metadata"></video></div>
+          <div class="ev-mini-thumb" data-idx="1"><video src="events/e2.mp4" muted playsinline preload="metadata"></video></div>
+          <div class="ev-mini-thumb" data-idx="2"><video src="events/e3.mp4" muted playsinline preload="metadata"></video></div>
+          <div class="ev-mini-thumb" data-idx="3"><video src="events/e4.mp4" muted playsinline preload="metadata"></video></div>
+        </div>
+
+        <button class="ev-ctrl-btn" id="evNext" aria-label="Next">&#8594;</button>
+      </div>
+
+      <!-- Mute toggle -->
+      <button class="ev-mute-btn" id="evMuteBtn" aria-label="Toggle mute">
+        <svg class="ev-mute-btn__off" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="ev-mute-btn__on" width="14" height="14" viewBox="0 0 24 24" fill="none" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- ===== EVENTS SECTION END ===== -->

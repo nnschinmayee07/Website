@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Postgraduate Programmes — MLRIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&family=Raleway:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #F4F1EA; color: #3A3A3A; line-height: 1.7; }
+
+    .prog-hero {
+      background: linear-gradient(135deg, #1A0D37, #2A1A5C);
+      padding: 80px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .prog-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(232,93,31,0.12), transparent 60%);
+    }
+    .prog-hero__eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .prog-hero__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .prog-hero__sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .prog-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 32px 80px;
+    }
+
+    .section-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #18453B;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(24,69,59,0.15);
+    }
+
+    .prog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .dept-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 36px 28px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 4px solid #2A1A5C;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dept-card--mba {
+      border-top-color: #8A6218;
+    }
+
+    .dept-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+    }
+
+    .dept-card::after {
+      content: '\2192';
+      position: absolute;
+      top: 28px;
+      right: 24px;
+      font-size: 1.2rem;
+      color: rgba(42,26,92,0.2);
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .dept-card:hover::after {
+      color: #E85D1F;
+      transform: translateX(4px);
+    }
+
+    .dept-card__code {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #E85D1F;
+      margin-bottom: 8px;
+    }
+
+    .dept-card__name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0B0F1A;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .dept-card__desc {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #18453B;
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #E85D1F; }
+
+    @media (max-width: 600px) {
+      .prog-hero { padding: 48px 24px; }
+      .prog-content { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="masthead">
+      <div class="container masthead__inner">
+        <a href="../index.html" class="masthead__logo" aria-label="MLRIT Home">
+          <img src="../mlrit-logo-transparent.png" alt="MLRIT Logo" />
+        </a>
+        <div class="masthead__tagline">
+          <span>Marri Laxman Reddy Institute of Technology</span>
+        </div>
+        <a href="#" class="masthead__eapcet">EAPCET CODE : MLID</a>
+      </div>
+    </div>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <div class="container main-nav__inner">
+        <ul class="main-nav__list">
+          <li class="main-nav__item">
+            <a href="../index.html" class="main-nav__link">Home</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="ug.html" class="main-nav__link">Undergraduate</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="pg.html" class="main-nav__link" style="color:#E85D1F;">Postgraduate</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="prog-hero">
+    <div class="prog-hero__eyebrow">M.Tech and MBA Programmes</div>
+    <h1 class="prog-hero__title">Postgraduate Programmes</h1>
+    <p class="prog-hero__sub">Advance your career with M.Tech specialisations across 5 engineering disciplines or pursue an MBA in management studies.</p>
+  </div>
+
+  <div class="prog-content">
+    <a href="../index.html" class="back-link">&larr; Back to Home</a>
+
+    <div class="section-label">M.Tech Programmes</div>
+    <div class="prog-grid">
+
+      <a href="cse.html" class="dept-card">
+        <div class="dept-card__code">M.Tech</div>
+        <div class="dept-card__name">Computer Science and Engineering</div>
+        <div class="dept-card__desc">Advanced algorithms, architecture, data structures. Research-focused with dissertation in Year 2.</div>
+      </a>
+
+      <a href="ece.html" class="dept-card">
+        <div class="dept-card__code">M.Tech</div>
+        <div class="dept-card__name">Electronics and Communication Engineering</div>
+        <div class="dept-card__desc">Advanced DSP, communication systems, microprocessor systems. Embedded Systems specialisation.</div>
+      </a>
+
+      <a href="eee.html" class="dept-card">
+        <div class="dept-card__code">M.Tech</div>
+        <div class="dept-card__name">Electrical and Electronics Engineering</div>
+        <div class="dept-card__desc">Advanced power systems, smart grid technology, renewable energy systems and power electronics.</div>
+      </a>
+
+      <a href="mechanical.html" class="dept-card">
+        <div class="dept-card__code">M.Tech</div>
+        <div class="dept-card__name">Mechanical Engineering</div>
+        <div class="dept-card__desc">Advanced thermodynamics, manufacturing processes, composite materials and FEM.</div>
+      </a>
+
+      <a href="aeronautical.html" class="dept-card">
+        <div class="dept-card__code">M.Tech</div>
+        <div class="dept-card__name">Aeronautical Engineering</div>
+        <div class="dept-card__desc">Advanced aerodynamics, propulsion systems, aeroelasticity and aircraft design.</div>
+      </a>
+
+    </div>
+
+    <div class="section-label">MBA Programme</div>
+    <div class="prog-grid">
+
+      <a href="mba.html" class="dept-card dept-card--mba">
+        <div class="dept-card__code">MBA</div>
+        <div class="dept-card__name">Master of Business Administration</div>
+        <div class="dept-card__desc">2-year programme focusing on innovation, research, entrepreneurial skills. Specialisations in Finance, Marketing, HR, Operations.</div>
+      </a>
+
+    </div>
+  </div>
+
+</body>
+</html>

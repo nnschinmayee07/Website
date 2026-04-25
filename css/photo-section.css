@@ -1,0 +1,330 @@
+/* ===========================
+   STRUCTURED PHOTO SECTION
+   PRD v1.0 — Orange + Green
+   =========================== */
+
+/* Brand tokens */
+:root {
+  --ps-orange:       #D4622B;
+  --ps-orange-light: #FBEADF;
+  --ps-orange-dark:  #7A3412;
+  --ps-green:        #2E8B57;
+  --ps-green-light:  #E5F1E9;
+  --ps-black:        #111111;
+  --ps-bg:           #F7F7F7;
+  --ps-white:        #FFFFFF;
+  --ps-gap:          12px;
+}
+
+/* Section wrapper */
+.photo-section {
+  background: var(--ps-bg);
+  padding: 48px 0;
+}
+
+@media (max-width: 768px) {
+  .photo-section { padding: 32px 0; }
+}
+
+.photo-section__inner {
+  width: 100%;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+/* Section heading */
+.photo-section__heading {
+  font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--ps-orange);
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+/* ===========================
+   GRID LAYOUT
+   =========================== */
+.photo-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: var(--ps-gap);
+}
+
+/* Row 1 */
+.photo-grid__hero      { grid-column: 1; grid-row: 1; }
+.photo-grid__secondary { grid-column: 2; grid-row: 1; display: flex; flex-direction: column; gap: var(--ps-gap); }
+
+/* Row 2 */
+.photo-grid__tertiary {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ps-gap);
+}
+
+/* ===========================
+   TILE BASE
+   =========================== */
+.tile {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  background: #EBEBEB;
+  border-radius: 0; /* PRD: sharp edges */
+  cursor: pointer;
+  /* Scroll-reveal: hidden by default */
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.25s ease;
+}
+
+/* Revealed state (JS adds .is-visible) */
+.tile.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays per PRD */
+.tile--hero       { transition-delay: 0ms; }
+.tile--secondary-a { transition-delay: 80ms; }
+.tile--secondary-b { transition-delay: 160ms; }
+.tile--tertiary   { transition-delay: 260ms; }
+
+/* Active press feedback */
+.tile:active { transform: scale(0.98); transition: transform 120ms ease-in-out; }
+
+/* Image */
+.tile__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.tile:hover .tile__img {
+  transform: scale(1.03);
+}
+
+/* Hero tile — fixed height */
+.tile--hero { height: 520px; }
+
+/* Secondary tiles — equal halves */
+.tile--secondary-a,
+.tile--secondary-b { height: 254px; }
+
+/* Tertiary tiles */
+.tile--tertiary { height: 260px; }
+
+/* ===========================
+   SKELETON SHIMMER
+   =========================== */
+.tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #EBEBEB 25%, #F7F7F7 50%, #EBEBEB 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tile.img-loaded::before {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Image sits above skeleton */
+.tile__img { position: relative; z-index: 1; }
+
+/* ===========================
+   SCRIM (Secondary + Tertiary)
+   =========================== */
+.tile__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.3) 55%, transparent 100%);
+  z-index: 2;
+  transform: translateY(100%);
+  transition: transform 220ms ease-out;
+}
+
+.tile:hover .tile__scrim,
+.tile.caption-visible .tile__scrim {
+  transform: translateY(0);
+}
+
+/* Hero has no scrim */
+.tile--hero .tile__scrim { display: none; }
+
+/* ===========================
+   CAPTION SYSTEM
+   =========================== */
+.tile__caption {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Hero: always visible, bottom-left, orange bg */
+.tile--hero .tile__caption {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--ps-orange);
+  padding: 14px 20px 16px;
+  opacity: 1;
+}
+
+/* Secondary + Tertiary: fade in on hover */
+.tile--secondary-a .tile__caption,
+.tile--secondary-b .tile__caption,
+.tile--tertiary .tile__caption {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px 16px 16px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 220ms ease-out, transform 220ms ease-out;
+}
+
+.tile:hover .tile--secondary-a .tile__caption,
+.tile:hover .tile--secondary-b .tile__caption,
+.tile:hover .tile--tertiary .tile__caption,
+.tile.caption-visible .tile__caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Simpler: target caption inside hovered tile */
+.tile:hover .tile__caption,
+.tile.caption-visible .tile__caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Category badge */
+.tile__badge {
+  display: inline-block;
+  background: var(--ps-orange);
+  color: var(--ps-white);
+  font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+/* Hero badge sits on orange bg — use white outline style */
+.tile--hero .tile__badge {
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+/* Context headline */
+.tile__headline {
+  font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ps-white);
+  line-height: 1.45;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* CTA arrow */
+.tile__cta {
+  font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ps-white);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+  transition: gap 0.2s ease;
+}
+
+.tile:hover .tile__cta { gap: 8px; }
+
+/* ===========================
+   IMAGE FALLBACK
+   =========================== */
+.tile.img-error {
+  background: #F7F7F7;
+  border: 1px solid var(--ps-orange);
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-grid__hero      { grid-column: 1; }
+  .photo-grid__secondary { grid-column: 1; flex-direction: row; }
+  .photo-grid__tertiary  {
+    grid-column: 1;
+    grid-template-columns: repeat(3, 80vw);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+
+  .tile--tertiary {
+    scroll-snap-align: start;
+    min-width: 80vw;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .photo-grid__secondary { flex-direction: column; }
+  .tile--hero { height: 320px; }
+  .tile--secondary-a,
+  .tile--secondary-b { height: 200px; }
+}
+
+/* ===========================
+   REDUCED MOTION
+   =========================== */
+@media (prefers-reduced-motion: reduce) {
+  .tile,
+  .tile__scrim,
+  .tile__caption,
+  .tile__img {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .tile {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .tile::before { animation: none; }
+}

@@ -1,0 +1,186 @@
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Stacked videos for crossfade */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out;
+  transform: translateZ(0); /* GPU layer — prevents blur from compositing */
+  will-change: opacity;
+  image-rendering: auto;
+  backface-visibility: hidden;
+}
+
+.hero__bg--a {
+  object-position: center center;
+}
+
+.hero__bg--b {
+  object-position: center center;
+}
+
+.hero__bg.is-active {
+  opacity: 1;
+}
+
+/* ===== Scroll indicator ===== */
+.hero__scroll {
+  position: absolute;
+  bottom: 2rem;
+  right: 2.5rem;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+}
+
+.hero__scroll-line {
+  display: block;
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__scroll-line::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f5c518;
+  animation: scroll-drop 1.6s ease-in-out infinite;
+}
+
+@keyframes scroll-drop {
+  0%   { top: -100%; opacity: 1; }
+  100% { top: 100%;  opacity: 0; }
+}
+
+/* Gradient overlay — lighter so video stays crisp */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.0)  0%,
+    rgba(0,0,0,0.1)  45%,
+    rgba(0,0,0,0.55) 75%,
+    rgba(0,0,0,0.75) 100%
+  );
+  z-index: 1;
+}
+
+/* Content above overlay */
+.hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero__headline {
+  padding: 0 0 3.5rem;
+  max-width: 680px;
+}
+
+.hero__headline .container {
+  width: 100%;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.hero__headline h1 {
+  font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 32px rgba(0,0,0,0.5);
+  margin-bottom: 1.5rem;
+}
+
+.hero__headline h1 span {
+  display: block;
+  color: #f5c518;
+}
+
+/* "Excellence" italic accent inside the yellow span */
+.hero__headline h1 span em {
+  font-style: normal;
+  color: #fff;
+  -webkit-text-stroke: 1.5px #f5c518;
+  text-shadow: 0 0 40px rgba(245,197,24,0.4);
+}
+
+.hero__headline p {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-weight: 400;
+  color: rgba(255,255,255,0.78);
+  max-width: 440px;
+  line-height: 1.8;
+  margin-bottom: 2.2rem;
+}
+
+.hero__ctas {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hero__ctas a {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.hero__ctas a:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: #f5c518;
+  color: #111;
+}
+
+.btn-primary:hover { background: #e0b000; }
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.7);
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: #fff;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero__headline h1 { font-size: 2.4rem; letter-spacing: -0.02em; }
+  .hero__bg { object-position: center center; }
+}

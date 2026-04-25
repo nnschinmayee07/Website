@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Educational Objectives & Outcomes — CSE, MLRIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/navbar.css" />
+  <link rel="stylesheet" href="../../css/main.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #F4F1EA; color: #3A3A3A; line-height: 1.7; }
+    .obe-page { max-width: 900px; margin: 0 auto; padding: 40px 32px 80px; }
+    .obe-back { font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 700; color: #18453B; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 32px; transition: color 0.2s; }
+    .obe-back:hover { color: #E85D1F; }
+    .obe-hero { background: linear-gradient(135deg, #0B0F1A 0%, #18453B 100%); border-radius: 16px; padding: 40px 48px; margin-bottom: 40px; color: #fff; }
+    .obe-hero__tag { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #E85D1F; margin-bottom: 12px; }
+    .obe-hero__title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+    .obe-hero__sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); }
+    .obe-section { background: #fff; border-radius: 12px; padding: 32px 36px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+    .obe-section__label { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #E85D1F; margin-bottom: 6px; }
+    .obe-section__title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #0B0F1A; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid rgba(24,69,59,0.12); }
+    .peo-item, .po-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .peo-item:last-child, .po-item:last-child { border-bottom: none; }
+    .peo-badge { flex-shrink: 0; width: 48px; height: 48px; border-radius: 10px; background: linear-gradient(135deg, #18453B, #2a6b58); display: flex; align-items: center; justify-content: center; font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 800; color: #fff; letter-spacing: 0.04em; }
+    .po-badge { flex-shrink: 0; width: 48px; height: 48px; border-radius: 10px; background: linear-gradient(135deg, #0B0F1A, #2A2F40); display: flex; align-items: center; justify-content: center; font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 800; color: #fff; }
+    .pso-badge { flex-shrink: 0; width: 48px; height: 48px; border-radius: 10px; background: linear-gradient(135deg, #E85D1F, #c44d17); display: flex; align-items: center; justify-content: center; font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 800; color: #fff; }
+    .item-text { font-size: 0.88rem; color: #444; line-height: 1.65; padding-top: 12px; }
+    .tab-row { display: flex; gap: 8px; margin-bottom: 28px; }
+    .tab-btn { font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 700; padding: 8px 20px; border-radius: 20px; border: 2px solid rgba(24,69,59,0.2); background: #fff; color: #18453B; cursor: pointer; transition: all 0.2s; }
+    .tab-btn.active, .tab-btn:hover { background: #18453B; color: #fff; border-color: #18453B; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+  </style>
+</head>
+<body>
+  <div class="obe-page">
+    <a class="obe-back" href="../cse.html">← Back to CSE Department</a>
+
+    <div class="obe-hero">
+      <div class="obe-hero__tag">Outcome Based Education</div>
+      <div class="obe-hero__title">Educational Objectives &amp; Outcomes</div>
+      <div class="obe-hero__sub">Computer Science &amp; Engineering — MLRIT, Dundigal</div>
+    </div>
+
+    <div class="tab-row">
+      <button class="tab-btn active" onclick="switchTab('btech', this)">B.Tech (CSE)</button>
+      <button class="tab-btn" onclick="switchTab('mtech', this)">M.Tech (CSE)</button>
+    </div>
+
+    <!-- B.TECH -->
+    <div id="tab-btech" class="tab-panel active">
+      <div class="obe-section">
+        <div class="obe-section__label">Programme Educational Objectives</div>
+        <div class="obe-section__title">PEOs — B.Tech Computer Science &amp; Engineering</div>
+        <div class="peo-item">
+          <div class="peo-badge">PEO 1</div>
+          <div class="item-text">Graduates of the program will have a globally competent professional career in the software industry.</div>
+        </div>
+        <div class="peo-item">
+          <div class="peo-badge">PEO 2</div>
+          <div class="item-text">Graduates of the program will pursue higher education and research.</div>
+        </div>
+        <div class="peo-item">
+          <div class="peo-badge">PEO 3</div>
+          <div class="item-text">Graduates of the program will have entrepreneur skills to solve societal problems.</div>
+        </div>
+      </div>
+
+      <div class="obe-section">
+        <div class="obe-section__label">Programme Outcomes</div>
+        <div class="obe-section__title">POs — B.Tech Computer Science &amp; Engineering</div>
+        <div class="po-item"><div class="po-badge">PO 1</div><div class="item-text"><strong>Engineering Knowledge:</strong> Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.</div></div>
+        <div class="po-item"><div class="po-badge">PO 2</div><div class="item-text"><strong>Problem Analysis:</strong> Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.</div></div>
+        <div class="po-item"><div class="po-badge">PO 3</div><div class="item-text"><strong>Design/Development:</strong> Design solutions for complex engineering problems and system components considering public health, safety, cultural, societal, and environmental factors appropriately.</div></div>
+        <div class="po-item"><div class="po-badge">PO 4</div><div class="item-text"><strong>Conduct Investigations:</strong> Apply research-based methodologies including experimental design, data analysis, and information synthesis to reach valid conclusions.</div></div>
+        <div class="po-item"><div class="po-badge">PO 5</div><div class="item-text"><strong>Modern Tool Usage:</strong> Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of their limitations.</div></div>
+        <div class="po-item"><div class="po-badge">PO 6</div><div class="item-text"><strong>The Engineer and Society:</strong> Apply contextual knowledge to assess societal, health, safety, legal, and cultural issues relevant to professional engineering practice and responsibilities.</div></div>
+        <div class="po-item"><div class="po-badge">PO 7</div><div class="item-text"><strong>Environment and Sustainability:</strong> Comprehend professional engineering solutions' societal and environmental impacts and recognize the necessity of sustainable development.</div></div>
+        <div class="po-item"><div class="po-badge">PO 8</div><div class="item-text"><strong>Ethics:</strong> Apply ethical principles and maintain professional ethics, responsibilities, and norms of engineering practice.</div></div>
+        <div class="po-item"><div class="po-badge">PO 9</div><div class="item-text"><strong>Individual and Team Work:</strong> Demonstrate individual competence and function effectively as a member and leader in diverse, multidisciplinary teams.</div></div>
+        <div class="po-item"><div class="po-badge">PO 10</div><div class="item-text"><strong>Communication:</strong> Communicate complex engineering activities effectively — through reports, design documentation, and presentations — with diverse audiences.</div></div>
+        <div class="po-item"><div class="po-badge">PO 11</div><div class="item-text"><strong>Project Management:</strong> Demonstrate knowledge and understanding of engineering and management principles and apply them to manage projects in multidisciplinary environments.</div></div>
+        <div class="po-item"><div class="po-badge">PO 12</div><div class="item-text"><strong>Life-long Learning:</strong> Recognize the need for and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.</div></div>
+      </div>
+
+      <div class="obe-section">
+        <div class="obe-section__label">Programme Specific Outcomes</div>
+        <div class="obe-section__title">PSOs — B.Tech Computer Science &amp; Engineering</div>
+        <div class="peo-item">
+          <div class="pso-badge">PSO 1</div>
+          <div class="item-text">Master software system structures and development methodologies to tackle contemporary computing challenges.</div>
+        </div>
+        <div class="peo-item">
+          <div class="pso-badge">PSO 2</div>
+          <div class="item-text">Develop intelligent and autonomous systems to cater societal needs in health care, e-commerce, banking, agriculture, and cyber security.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- M.TECH -->
+    <div id="tab-mtech" class="tab-panel">
+      <div class="obe-section">
+        <div class="obe-section__label">Programme Educational Objectives</div>
+        <div class="obe-section__title">PEOs — M.Tech Computer Science &amp; Engineering</div>
+        <div class="peo-item">
+          <div class="peo-badge">PEO 1</div>
+          <div class="item-text">Graduates will excel in their professional careers or higher education by acquiring in-depth knowledge and research skills in advanced computing technologies.</div>
+        </div>
+        <div class="peo-item">
+          <div class="peo-badge">PEO 2</div>
+          <div class="item-text">Graduates will continuously enhance their knowledge and research capabilities to match developments in the IT industry and pursue innovative or entrepreneurial initiatives.</div>
+        </div>
+        <div class="peo-item">
+          <div class="peo-badge">PEO 3</div>
+          <div class="item-text">Graduates will exhibit professionalism, cultural awareness, teamwork, ethics, and effective communication in solving social and environmental problems using advanced computer technology.</div>
+        </div>
+      </div>
+
+      <div class="obe-section">
+        <div class="obe-section__label">Programme Outcomes</div>
+        <div class="obe-section__title">POs — M.Tech Computer Science &amp; Engineering</div>
+        <div class="po-item"><div class="po-badge">PO 1</div><div class="item-text"><strong>Scholarship of Knowledge:</strong> Independently acquire, assimilate, and apply knowledge at the forefront of the discipline for research and development.</div></div>
+        <div class="po-item"><div class="po-badge">PO 2</div><div class="item-text"><strong>Critical Thinking:</strong> Apply analytical thinking, evaluation, and synthesis to solve complex technical problems from multiple perspectives.</div></div>
+        <div class="po-item"><div class="po-badge">PO 3</div><div class="item-text"><strong>Problem Solving:</strong> Think innovatively, laterally, and originally in complex and applied situations and identify problems and possible solutions.</div></div>
+        <div class="po-item"><div class="po-badge">PO 4</div><div class="item-text"><strong>Research Skill:</strong> Plan and execute original research, interpret results, and draw well-reasoned conclusions using scientific methodology.</div></div>
+        <div class="po-item"><div class="po-badge">PO 5</div><div class="item-text"><strong>Usage of Modern Tools:</strong> Create, select, apply, and adapt appropriate techniques, modern tools, and technologies to conduct research and development of complex systems.</div></div>
+        <div class="po-item"><div class="po-badge">PO 6</div><div class="item-text"><strong>Collaborative and Multidisciplinary Work:</strong> Work effectively in teams within a multi-disciplinary setting and apply their skills and knowledge to the work of the team.</div></div>
+        <div class="po-item"><div class="po-badge">PO 7</div><div class="item-text"><strong>Project Management and Finance:</strong> Demonstrate knowledge and understanding of financial, project management, and business engineering principles.</div></div>
+        <div class="po-item"><div class="po-badge">PO 8</div><div class="item-text"><strong>Communication:</strong> Communicate complex technical and research matters effectively to diverse audiences — technical and non-technical.</div></div>
+        <div class="po-item"><div class="po-badge">PO 9</div><div class="item-text"><strong>Life-long Learning:</strong> Engage in continuous learning and keep up-to-date with evolving technologies and research trends.</div></div>
+        <div class="po-item"><div class="po-badge">PO 10</div><div class="item-text"><strong>Ethical Practices and Social Responsibility:</strong> Apply ethical norms to professional activities and demonstrate awareness of societal responsibilities as an engineer.</div></div>
+      </div>
+
+      <div class="obe-section">
+        <div class="obe-section__label">Programme Specific Outcomes</div>
+        <div class="obe-section__title">PSOs — M.Tech Computer Science &amp; Engineering</div>
+        <div class="peo-item">
+          <div class="pso-badge">PSO 1</div>
+          <div class="item-text">Apply advanced research methodologies and computational techniques to solve real-world problems in areas like AI, Machine Learning, Data Science, and cybersecurity.</div>
+        </div>
+        <div class="peo-item">
+          <div class="pso-badge">PSO 2</div>
+          <div class="item-text">Design and develop scalable, secure software systems and publish research findings in reputed national or international journals and conferences.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(tab, btn) {
+      document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      document.getElementById('tab-' + tab).classList.add('active');
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>

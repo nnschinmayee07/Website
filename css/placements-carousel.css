@@ -1,0 +1,105 @@
+/* ===========================
+   PLACEMENTS CAROUSEL
+   Purdue news-and-events pattern
+   =========================== */
+
+.placements-carousel {
+  padding: 80px 0 0;
+  background: #0f0f0f;
+  overflow: hidden;
+}
+
+.placements-carousel__header {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.placements-carousel__header .section-label {
+  color: #D4622B;
+}
+
+.placements-carousel__header .section-heading {
+  color: #fff;
+  font-family: Georgia, serif;
+}
+
+.placements-carousel__header .section-sub {
+  color: rgba(255,255,255,0.5);
+  margin-top: 8px;
+}
+
+.placements-carousel__view-all {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #D4622B;
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 1px solid #D4622B;
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.placements-carousel__view-all:hover {
+  color: #E87A4A;
+  border-color: #E87A4A;
+}
+
+/* ── Track ── */
+.placements-carousel__track-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.placements-carousel__track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 48px;
+  cursor: grab;
+}
+
+.placements-carousel__track::-webkit-scrollbar { display: none; }
+.placements-carousel__track.is-dragging { cursor: grabbing; }
+
+/* Peek: last card partially visible */
+.placements-carousel__track::after {
+  content: '';
+  flex-shrink: 0;
+  width: 1px;
+}
+
+/* ── Card ── */
+.placement-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+  text-decoration: none;
+}
+
+.placement-card:hover {
+  border-color: #D4622B;
+  transform: translateY(-4px);
+}
+
+.placement-card__img-wrap {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}

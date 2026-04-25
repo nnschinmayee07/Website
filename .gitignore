@@ -1,0 +1,24 @@
+# Purdue reference (local only)
+purdue-home.html
+purdue-theme/
+
+# Dependencies
+node_modules/
+
+# Hero videos (large files — add manually after cloning)
+hero1.mp4
+hero2.mp4
+hero1_hq.mp4
+hero2_hq.mp4
+hero1_hq.fdash-2194482937713757v.mp4
+hero1_hq.fdash-803408162602197a.m4a
+
+# Event videos (large files)
+events/*.mp4
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/

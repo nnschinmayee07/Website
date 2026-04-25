@@ -1,0 +1,178 @@
+/* ===== Rankings & Accreditations ===== */
+.mlrit-rankings {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  align-items: center;
+  padding: 72px 80px;
+  background: #fff;
+  gap: 80px;
+  border-bottom: 1px solid #E5E2DC;
+}
+
+/* ===== Left — Rankings ===== */
+.mlrit-rankings__left {
+  display: flex;
+  flex-direction: column;
+}
+
+.mlrit-rankings__left .section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1A5C3A;
+  margin-bottom: 14px;
+}
+
+.mlrit-rankings__left h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 8px;
+  color: #0f0f0f;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -0.01em;
+}
+
+.mlrit-rankings__left p.sub {
+  color: #777;
+  font-size: 0.875rem;
+  margin-bottom: 36px;
+  line-height: 1.6;
+  max-width: 340px;
+}
+
+/* Rank items */
+.mlrit-rank-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.mlrit-rank-item:last-child {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.rank-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1A5C3A;
+  font-family: Georgia, serif;
+  min-width: 48px;
+  line-height: 1;
+}
+
+.rank-divider {
+  width: 1px;
+  height: 32px;
+  background: #E5E2DC;
+  flex-shrink: 0;
+}
+
+.rank-text strong {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 2px;
+}
+
+.rank-text span {
+  font-size: 0.75rem;
+  color: #999;
+  letter-spacing: 0.01em;
+}
+
+/* ===== Right — Accreditations ===== */
+.mlrit-rankings__right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mlrit-rankings__right .section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1A5C3A;
+}
+
+.mlrit-accred-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+/* ===== Glare hover cards ===== */
+:root {
+  --gh-angle: 135deg;
+  --gh-rgba: rgba(255,255,255,0.6);
+  --gh-size: 200% 200%;
+  --gh-duration: 0.5s;
+}
+
+.glare-hover {
+  aspect-ratio: 3 / 2;
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #E5E2DC;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  transition: box-shadow 0.28s ease, transform 0.28s ease, border-color 0.28s ease;
+}
+
+.glare-hover:hover {
+  box-shadow: 0 6px 22px rgba(0,0,0,0.11);
+  transform: translateY(-3px);
+  border-color: #d0d0d0;
+}
+
+.glare-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    var(--gh-angle),
+    hsla(0,0%,0%,0) 55%,
+    var(--gh-rgba) 68%,
+    hsla(0,0%,0%,0) 100%
+  );
+  background-size: var(--gh-size);
+  background-repeat: no-repeat;
+  background-position: -100% -100%;
+  transition: background-position var(--gh-duration) ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.glare-hover:hover::before {
+  background-position: 120% 120%;
+}
+
+.glare-hover img {
+  width: 72%;
+  height: 65%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .mlrit-rankings {
+    grid-template-columns: 1fr;
+    padding: 48px 40px;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mlrit-rankings { padding: 40px 24px; }
+  .mlrit-accred-strip { grid-template-columns: repeat(3, 1fr); }
+}

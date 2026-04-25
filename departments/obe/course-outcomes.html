@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Outcomes Description — CSE, MLRIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/navbar.css" />
+  <link rel="stylesheet" href="../../css/main.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #F4F1EA; color: #3A3A3A; line-height: 1.7; }
+    .obe-page { max-width: 960px; margin: 0 auto; padding: 40px 32px 80px; }
+    .obe-back { font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 700; color: #18453B; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 32px; transition: color 0.2s; }
+    .obe-back:hover { color: #E85D1F; }
+    .obe-hero { background: linear-gradient(135deg, #0B0F1A 0%, #18453B 100%); border-radius: 16px; padding: 40px 48px; margin-bottom: 40px; color: #fff; }
+    .obe-hero__tag { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #E85D1F; margin-bottom: 12px; }
+    .obe-hero__title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+    .obe-hero__sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); }
+    .obe-section { background: #fff; border-radius: 12px; padding: 32px 36px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+    .obe-section__label { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #E85D1F; margin-bottom: 6px; }
+    .obe-section__title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #0B0F1A; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid rgba(24,69,59,0.12); }
+    .course-card { background: #F4F1EA; border-radius: 10px; padding: 20px 22px; margin-bottom: 14px; }
+    .course-card__header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+    .course-card__name { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.9rem; color: #0B0F1A; }
+    .course-card__sem { font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 700; color: #E85D1F; background: rgba(232,93,31,0.1); padding: 3px 10px; border-radius: 10px; }
+    .co-list { display: flex; flex-direction: column; gap: 6px; }
+    .co-item { display: flex; gap: 10px; font-size: 0.82rem; color: #444; }
+    .co-tag { flex-shrink: 0; font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 800; color: #18453B; background: rgba(24,69,59,0.1); padding: 2px 8px; border-radius: 4px; margin-top: 1px; }
+    .tab-row { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
+    .tab-btn { font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 700; padding: 8px 20px; border-radius: 20px; border: 2px solid rgba(24,69,59,0.2); background: #fff; color: #18453B; cursor: pointer; transition: all 0.2s; }
+    .tab-btn.active, .tab-btn:hover { background: #18453B; color: #fff; border-color: #18453B; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+  </style>
+</head>
+<body>
+  <div class="obe-page">
+    <a class="obe-back" href="../cse.html">← Back to CSE Department</a>
+    <div class="obe-hero">
+      <div class="obe-hero__tag">Outcome Based Education</div>
+      <div class="obe-hero__title">Course Outcomes Description Booklets</div>
+      <div class="obe-hero__sub">Computer Science &amp; Engineering — MLRIT, Dundigal</div>
+    </div>
+
+    <div class="tab-row">
+      <button class="tab-btn active" onclick="switchTab('btech',this)">B.Tech (CSE)</button>
+      <button class="tab-btn" onclick="switchTab('mtech',this)">M.Tech (CSE)</button>
+    </div>
+
+    <!-- B.TECH -->
+    <div id="tab-btech" class="tab-panel active">
+      <div class="obe-section">
+        <div class="obe-section__label">R25 Regulation — Year I</div>
+        <div class="obe-section__title">Semester I &amp; II Core Courses</div>
+        <div class="course-card">
+          <div class="course-card__header"><span class="course-card__name">Programming for Problem Solving (C)</span><span class="course-card__sem">Sem I</span></div>
+          <div class="co-list">
+            <div class="co-item"><span class="co-tag">CO1</span>Understand the structure and programming constructs of C language.</div>
+            <div class="co-item"><span class="co-tag">CO2</span>Apply control flow statements and functions to solve problems.</div>
+            <div class="co-item"><span class="co-tag">CO3</span>Use arrays, strings, and pointers effectively in programs.</div>
+            <div class="co-item"><span class="co-tag">CO4</span>Implement structures, unions, and file I/O operations.</div>
+            <div class="co-item"><span class="co-tag">CO5</span>Develop modular programs for real-world problem solving.</div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-card__header"><span class="course-card__name">Data Structures</span><span class="course-card__sem">Sem II</span></div>
+          <div class="co-list">
+            <div class="co-item"><span class="co-tag">CO1</span>Understand linear data structures: arrays, stacks, queues, and linked lists.</div>
+            <div class="co-item"><span class="co-tag">CO2</span>Implement tree data structures (BST, AVL, Heaps).</div>
+            <div class="co-item"><span class="co-tag">CO3</span>Apply graph algorithms (BFS, DFS, shortest paths).</div>
+            <div class="co-item"><span class="co-tag">CO4</span>Analyze time and space complexity of algorithms.</div>
+            <div class="co-item"><span class="co-tag">CO5</span>Select appropriate data structures for given problems.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obe-section">
+        <div class="obe-section__label">R25 Regulation — Year II</div>
+        <div class="obe-section__title">Core Courses — Semesters III &amp; IV</div>
+        <div class="course-card">
+          <div class="course-card__header"><span class="course-card__name">Database Management Systems</span><span class="course-card__sem">Sem III</span></div>
+          <div class="co-list">
+            <div class="co-item"><span class="co-tag">CO1</span>Understand relational model, ER diagrams, and normalization.</div>
+            <div class="co-item"><span class="co-tag">CO2</span>Write SQL queries including joins, aggregates, and subqueries.</div>
+            <div class="co-item"><span class="co-tag">CO3</span>Design and implement relational database schemas.</div>
+            <div class="co-item"><span class="co-tag">CO4</span>Understand transaction management, concurrency, and recovery.</div>
+            <div class="co-item"><span class="co-tag">CO5</span>Apply indexing, hashing, and query optimization techniques.</div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-card__header"><span class="course-card__name">Operating Systems</span><span class="course-card__sem">Sem IV</span></div>
+          <div class="co-list">
+            <div class="co-item"><span class="co-tag">CO1</span>Understand OS concepts: processes, threads, and scheduling.</div>
+            <div class="co-item"><span class="co-tag">CO2</span>Apply process synchronization and deadlock handling techniques.</div>
+            <div class="co-item"><span class="co-tag">CO3</span>Understand memory management: paging, segmentation, virtual memory.</div>
+            <div class="co-item"><span class="co-tag">CO4</span>Understand file systems, I/O management, and disk scheduling.</div>
+            <div class="co-item"><span class="co-tag">CO5</span>Analyze security and protection mechanisms in operating systems.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obe-section">
+        <div class="obe-section__label">R25 Regulation — Year III &amp; IV</div>
+        <div class="obe-section__title">Core &amp; Elective Courses</div>
+        <div class="course-card">
+          <div class="course-card__header"><span class="course-card__name">Machine Learning</span><span class="course-card__sem">Sem V</span></div>
+          <div class="co-list">
+            <div class="co-item"><span class="co-tag">CO1</span>Understand supervised and unsupervised learning algorithms.</div>
+            <div class="co-item"><span class="co-tag">CO2</span>Apply regression, classification, and clustering techniques.</div>
+            <div class="co-item"><span class="co-tag">CO3</span>Implement neural networks and deep learning frameworks.</div>
+            <div class="co-item"><span class="co-tag">CO4</span>Evaluate model performance using appropriate metrics.</div>
+            <div class="co-item"><span class="co-tag">CO5</span>Develop ML solutions for real-world datasets and problems.</div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-card__header"><span class="course-card__name">Computer Networks</span><span class="course-card__sem">Sem V</span></div>
+          <div class="co-list">
+            <div class="co-item"><span class="co-tag">CO1</span>Understand network architecture, OSI and TCP/IP models.</div>
+            <div class="co-item"><span class="co-tag">CO2</span>Apply data link protocols, error detection, and MAC techniques.</div>
+            <div class="co-item"><span class="co-tag">CO3</span>Understand routing algorithms and IP addressing.</div>
+            <div class="co-item"><span class="co-tag">CO4</span>Analyze transport layer protocols (TCP, UDP) and congestion control.</div>
+            <div class="co-item"><span class="co-tag">CO5</span>Understand application layer protocols and network security basics.</div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-card__header"><span class="course-card__name">Cryptography &amp; Network Security</span><span class="course-card__sem">Sem VI</span></div>
+          <div class="co-list">
+            <div class="co-item"><span class="co-tag">CO1</span>Understand symmetric and asymmetric encryption algorithms.</div>
+            <div class="co-item"><span class="co-tag">CO2</span>Apply hash functions, digital signatures, and PKI.</div>
+            <div class="co-item"><span class="co-tag">CO3</span>Understand network security protocols (SSL/TLS, IPSec, SSH).</div>
+            <div class="co-item"><span class="co-tag">CO4</span>Analyze common attacks and apply countermeasures.</div>
+            <div class="co-item"><span class="co-tag">CO5</span>Design secure systems using cryptographic best practices.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- M.TECH -->
+    <div id="tab-mtech" class="tab-panel">
+      <div class="obe-section">
+        <div class="obe-section__label">M.Tech — Year I</div>
+        <div class="obe-section__title">Core Courses — Semesters I &amp; II</div>
+        <div class="course-card">
+          <div class="course-card__header"><span class="course-card__name">Advanced Data Structures &amp; Algorithms</span><span class="course-card__sem">Sem I</span></div>
+          <div class="co-list">
+            <div class="co-item"><span class="co-tag">CO1</span>Analyze advanced data structures: B-trees, Red-Black trees, Skip lists.</div>
+            <div class="co-item"><span class="co-tag">CO2</span>Apply algorithm design paradigms: DP, greedy, divide and conquer.</div>
+            <div class="co-item"><span class="co-tag">CO3</span>Evaluate algorithm complexity using formal analysis techniques.</div>
+            <div class="co-item"><span class="co-tag">CO4</span>Implement and analyze graph algorithms for complex network problems.</div>
+            <div class="co-item"><span class="co-tag">CO5</span>Apply advanced algorithmic techniques to research-level problems.</div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-card__header"><span class="course-card__name">Machine Learning and Deep Learning</span><span class="course-card__sem">Sem I</span></div>
+          <div class="co-list">
+            <div class="co-item"><span class="co-tag">CO1</span>Apply advanced ML algorithms including SVM, Random Forests, and ensembles.</div>
+            <div class="co-item"><span class="co-tag">CO2</span>Design and train deep neural networks (CNN, RNN, LSTM, Transformers).</div>
+            <div class="co-item"><span class="co-tag">CO3</span>Apply transfer learning and fine-tuning strategies.</div>
+            <div class="co-item"><span class="co-tag">CO4</span>Evaluate and optimize models for real-world deployment.</div>
+            <div class="co-item"><span class="co-tag">CO5</span>Conduct original research integrating ML/DL solutions to domain problems.</div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-card__header"><span class="course-card__name">Research Methodology &amp; Technical Writing</span><span class="course-card__sem">Sem II</span></div>
+          <div class="co-list">
+            <div class="co-item"><span class="co-tag">CO1</span>Understand research methodologies and scientific writing conventions.</div>
+            <div class="co-item"><span class="co-tag">CO2</span>Critically review and synthesize literature from reputed journals.</div>
+            <div class="co-item"><span class="co-tag">CO3</span>Formulate research questions and design experiments.</div>
+            <div class="co-item"><span class="co-tag">CO4</span>Write well-structured research papers for journal/conference submission.</div>
+            <div class="co-item"><span class="co-tag">CO5</span>Apply ethical norms in research and handle data responsibly.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function switchTab(tab, btn) {
+      document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      document.getElementById('tab-' + tab).classList.add('active');
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>
