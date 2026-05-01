@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -n \"is-revealed\\\\|is-playing\\\\|interactions-ready\" c:/mlr/css/*.css)"
+    ]
+  }
+}
