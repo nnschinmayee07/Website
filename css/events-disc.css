@@ -1,53 +1,19 @@
-/* ===========================
-   EVENT SHOWCASE — v3
-   Full-screen video · cursor PLAY · logo→centre hover · mute
-   Source: COLLEGE-WEBSITE-main/css/events-disc.css (Mounith)
+﻿/* ===========================
+   EVENT SHOWCASE
+   Full-screen video Â· always-visible info Â· cursor PLAY Â· mute
    =========================== */
 
-/* ── Section shell ── */
+/* â”€â”€ Section shell â”€â”€ */
 .event-showcase {
   position: relative;
   width: 100%;
-  height: 115vh;
-  min-height: 700px;
+  height: 100vh;
+  min-height: 560px;
   overflow: hidden;
-  cursor: none; /* default cursor hidden inside section */
+  cursor: none;
 }
 
-/* ── Section heading — top centre ── */
-.es__heading {
-  position: absolute;
-  top: clamp(2.5rem, 5vh, 4rem);
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  z-index: 8;
-  pointer-events: none;
-}
-
-.es__heading-label {
-  display: block;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
-  margin-bottom: 0.5rem;
-}
-
-.es__heading-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 800;
-  color: #fff;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  text-shadow: 0 2px 24px rgba(0,0,0,0.5);
-  margin: 0;
-}
-
-/* ── Video ── */
+/* â”€â”€ Video â”€â”€ */
 .es__video {
   position: absolute;
   inset: 0;
@@ -57,7 +23,18 @@
   z-index: 0;
 }
 
-/* ── Overlay ── */
+/* â”€â”€ Instagram embed â”€â”€ */
+.es__embed {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  border: none;
+  z-index: 0;
+  display: none;
+  background: #000;
+}
+
+/* â”€â”€ Overlay â”€â”€ */
 .es__overlay {
   position: absolute;
   inset: 0;
@@ -65,24 +42,18 @@
   pointer-events: none;
   background: linear-gradient(
     to top,
-    rgba(0,0,0,0.78) 0%,
+    rgba(0,0,0,0.82) 0%,
     rgba(0,0,0,0.40) 40%,
-    rgba(0,0,0,0.30) 70%,
-    rgba(0,0,0,0.42) 100%
+    rgba(0,0,0,0.18) 70%,
+    rgba(0,0,0,0.30) 100%
   );
-  transition: background 0.6s ease;
 }
 
-/* Darken when logo is expanded */
-.event-showcase.logo-expanded .es__overlay {
-  background: rgba(0,0,0,0.72);
-}
-
-/* ── Custom PLAY cursor ── */
+/* â”€â”€ Custom PLAY cursor â€” hidden until mouse moves â”€â”€ */
 .es__cursor {
   position: absolute;
   top: 0; left: 0;
-  width: 88px; height: 88px;
+  width: 80px; height: 80px;
   border-radius: 50%;
   background: rgba(255,255,255,0.92);
   display: flex;
@@ -100,14 +71,14 @@
 }
 
 .es__cursor svg {
-  width: 18px; height: 18px;
+  width: 16px; height: 16px;
   color: #111;
-  margin-left: 3px; /* optical center for triangle */
+  margin-left: 2px;
 }
 
 .es__cursor span {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.55rem;
+  font-size: 0.5rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -115,22 +86,214 @@
   line-height: 1;
 }
 
+/* Only show after first mouse movement */
 .event-showcase.cursor-visible .es__cursor {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
 }
 
-/* Shrink cursor when hovering interactive elements */
+/* Shrink over interactive elements */
 .event-showcase.cursor-shrink .es__cursor {
-  transform: translate(-50%, -50%) scale(0.55);
+  transform: translate(-50%, -50%) scale(0.5);
 }
 
-/* ── Mute button — bottom right ── */
-.es__mute {
+/* â”€â”€ Event info â€” always visible, bottom left â”€â”€ */
+.es__info {
   position: absolute;
-  bottom: 2.2rem;
-  right: 2.2rem;
+  bottom: 5rem;
+  left: 2.5rem;
+  z-index: 6;
+  max-width: 480px;
+  color: #fff;
+}
+
+.es__info-inner {
+  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.es__info-inner.es-fading {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* Small event logo above the text */
+.es__info-logo {
+  display: block;
+  width: clamp(80px, 12vw, 140px);
+  height: auto;
+  margin-bottom: 1.2rem;
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,0.4));
+  transition: opacity 0.4s ease;
+}
+
+.es__info-tag {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.50);
+  margin: 0 0 0.6rem;
+}
+
+.es__info-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.35);
+}
+
+.es__info-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.60);
+  font-weight: 300;
+  margin: 0 0 1.4rem;
+  max-width: 400px;
+}
+
+.es__info-cta {
+  min-width: 150px;
+  height: 42px;
+  font-size: 0.8rem;
+}
+
+/* â”€â”€ btn--white for event showcase â”€â”€ */
+.btn.btn--white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  height: 44px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  transition: box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.btn.btn--white:hover {
+  border-color: rgba(255,255,255,0.5);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+
+.btn.btn--white:active { transform: scale(0.98); }
+
+.btn.btn--white .btn__label {
+  padding: 0 1.4rem 0 3.2rem;
+  transition: opacity 0.45s ease;
+  white-space: nowrap;
+  z-index: 1;
+  position: relative;
+}
+
+.btn.btn--white:hover .btn__label { opacity: 0; }
+
+.btn.btn--white .btn__chevron {
+  position: absolute;
+  left: 4px; top: 4px; bottom: 4px;
+  width: 36px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+}
+
+.btn.btn--white:hover .btn__chevron { width: calc(100% - 8px); }
+.btn.btn--white:active .btn__chevron { transform: scale(0.96); }
+
+.btn.btn--white .btn__chevron svg {
+  width: 16px; height: 16px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* â”€â”€ Next event button â€” vertically centred, right side â”€â”€ */
+.es__next {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 10;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.22);
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgba(255,255,255,0.8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.es__next:hover {
+  border-color: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* â”€â”€ Bottom bar â€” dots left, mute right â”€â”€ */
+.es__bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 2.5rem;
+}
+
+/* â”€â”€ Dot navigation â”€â”€ */
+.es__dots {
+  display: flex;
+  gap: 8px;
+}
+
+.es__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(255,255,255,0.30);
+  cursor: pointer;
+  transition: background 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
+}
+
+.es__dot:hover {
+  background: rgba(255,255,255,0.55);
+}
+
+.es__dot.is-active {
+  background: #fff;
+  width: 28px;
+  border-radius: 4px;
+}
+
+/* â”€â”€ Mute button â”€â”€ */
+.es__mute {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -169,163 +332,35 @@
   letter-spacing: 0.04em;
 }
 
-/* ── Event info panels — below centred logo ── */
-.es__panels {
-  position: absolute;
-  inset: 0;
-  z-index: 6;
-  pointer-events: none;
-}
-
-.es__panel {
-  position: absolute;
-  /* sits below the logo which is centred at ~38% — info starts at ~62% */
-  top: 62%;
-  left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  text-align: center;
-  color: #fff;
-  max-width: 480px;
-  width: 90%;
-  opacity: 0;
-  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-}
-
-.es__panel.is-visible {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-  pointer-events: auto;
-}
-
-.es__panel-tag {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  margin-bottom: 0.75rem;
-}
-
-.es__panel-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2rem, 4.5vw, 3.8rem);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 30px rgba(0,0,0,0.4);
-}
-
-.es__panel-desc {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.88rem;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.65);
-  font-weight: 300;
-  max-width: 420px;
-  margin: 0 auto 1.5rem;
-}
-
-.es__panel-cta {
-  min-width: 150px;
-  height: 42px;
-  font-size: 0.8rem;
-}
-
-/* ── btn--white (used by event panel CTAs) ── */
-.btn--white { background: rgba(255,255,255,0.08); color: #fff; border: 1.5px solid rgba(255,255,255,0.3); }
-.btn--white .btn__chevron { background: rgba(255,255,255,0.18); color: #fff; }
-.btn--white:hover { border-color: rgba(255,255,255,0.5); }
-
-/* ── Event logos — bottom left (one at a time, crossfade) ── */
-.es__logos {
-  position: absolute;
-  bottom: 2.8rem;
-  left: 2.5rem;
-  z-index: 8;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr;
-  align-items: end;
-}
-
-.es__logo {
-  grid-area: 1 / 1;
-  cursor: none;
-  position: relative;
-  outline: none;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.6s ease;
-}
-
-.es__logo.is-active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.es__logo-img {
-  display: block;
-  width: clamp(140px, 18vw, 220px);
-  height: auto;
-  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5)) brightness(0.92);
-  transform-origin: left bottom;
-  transition:
-    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-    filter 0.4s ease,
-    width 0.4s ease;
-  will-change: transform;
-}
-
-/* Dim non-hovered logos when one is expanded */
-.event-showcase.logo-expanded .es__logo:not(.is-expanded) .es__logo-img {
-  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5)) brightness(0.3);
-}
-
-/* Expanded logo moves to viewport centre via inline transform set by JS */
-.es__logo.is-expanded .es__logo-img {
-  filter: drop-shadow(0 8px 40px rgba(0,0,0,0.6)) brightness(1.05);
-}
-
-/* ── Dots — bottom centre ── */
-.es__dots {
-  position: absolute;
-  bottom: 2.2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9;
-  display: flex;
-  gap: 8px;
-  pointer-events: none;
-  opacity: 0.6;
-}
-
-.es__dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.35);
-  transition: background 0.3s ease, width 0.3s ease;
-}
-
-.es__dot.is-active {
-  background: #fff;
-  width: 20px;
-  border-radius: 3px;
-}
-
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 768px) {
-  .event-showcase { cursor: auto; height: 100vh; min-height: 600px; }
+  .event-showcase { cursor: auto; }
   .es__cursor { display: none; }
-  .es__heading-title { font-size: clamp(1.6rem, 6vw, 2.4rem); }
-  .es__logos {
+
+  .es__info {
     bottom: 5rem;
+    left: 1.2rem;
     right: 1.2rem;
-    gap: 1rem;
+    max-width: none;
   }
-  .es__logo-img { width: clamp(100px, 35vw, 160px); }
-  .es__mute { bottom: 1.5rem; left: 1.2rem; }
-  .es__panel-title { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+
+  .es__info-title { font-size: clamp(1.4rem, 7vw, 2.2rem); }
+  .es__info-logo  { width: clamp(60px, 20vw, 100px); }
+
+  .es__bottom-bar {
+    padding: 1.2rem 1.2rem;
+  }
+
+  .es__mute {
+    padding: 0.35rem 0.7rem 0.35rem 0.5rem;
+  }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .es__cursor,
+  .es__info-inner {
+    transition: none;
+  }
+}
+
+

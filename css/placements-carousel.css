@@ -1,4 +1,4 @@
-/* ===========================
+﻿/* ===========================
    PLACEMENTS CAROUSEL
    Purdue news-and-events pattern
    =========================== */
@@ -12,7 +12,7 @@
 .placements-carousel__header {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 2rem 40px;
+  padding: 0 var(--page-pad) 40px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -20,12 +20,12 @@
 }
 
 .placements-carousel__header .section-label {
-  color: #D4622B;
+  color: #E8500A;
 }
 
 .placements-carousel__header .section-heading {
   color: #fff;
-  font-family: Georgia, serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .placements-carousel__header .section-sub {
@@ -36,25 +36,25 @@
 .placements-carousel__view-all {
   font-size: 0.8rem;
   font-weight: 700;
-  color: #D4622B;
+  color: #E8500A;
   text-decoration: none;
   white-space: nowrap;
-  border-bottom: 1px solid #D4622B;
+  border-bottom: 1px solid #E8500A;
   padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
   flex-shrink: 0;
 }
 
 .placements-carousel__view-all:hover {
-  color: #E87A4A;
-  border-color: #E87A4A;
+  color: #ff7a3d;
+  border-color: #ff7a3d;
 }
 
-/* ── Track ── */
+/* â”€â”€ Track â”€â”€ */
 .placements-carousel__track-wrap {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--page-pad);
   position: relative;
 }
 
@@ -79,7 +79,7 @@
   width: 1px;
 }
 
-/* ── Card ── */
+/* â”€â”€ Card â”€â”€ */
 .placement-card {
   flex: 0 0 300px;
   scroll-snap-align: start;
@@ -94,12 +94,13 @@
 }
 
 .placement-card:hover {
-  border-color: #D4622B;
+  border-color: #E8500A;
   transform: translateY(-4px);
 }
 
 .placement-card__img-wrap {
   width: 100%;
   aspect-ratio: 16/9;
-  overflow: hidden;
-}
+  overflow: hidden
+
+

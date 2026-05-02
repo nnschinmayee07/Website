@@ -1,10 +1,10 @@
-/* ============================================================
-   MLRIT Placements — placements.css
-   Premium · Cinematic · Single source of truth
-   v3.0 — full rewrite
+﻿/* ============================================================
+   MLRIT Placements â€” placements.css
+   Premium Â· Cinematic Â· Single source of truth
+   v3.0 â€” full rewrite
    ============================================================ */
 
-/* ── Local motion tokens ── */
+/* â”€â”€ Local motion tokens â”€â”€ */
 :root {
   --ease-lux:    cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out:    cubic-bezier(0.0,  0, 0.2, 1);
@@ -33,7 +33,7 @@
   cursor: default;
 }
 
-/* Layer 1 — Fine noise grain */
+/* Layer 1 â€” Fine noise grain */
 .pl-wall::before {
   content: '';
   position: absolute;
@@ -47,7 +47,7 @@
   mix-blend-mode: overlay;
 }
 
-/* Layer 2 — Subtle dot grid + diagonal streak + ember + vignette */
+/* Layer 2 â€” Subtle dot grid + diagonal streak + ember + vignette */
 .pl-wall::after {
   content: '';
   position: absolute;
@@ -55,7 +55,7 @@
   z-index: 3;
   pointer-events: none;
   background:
-    /* Dot grid — very subtle */
+    /* Dot grid â€” very subtle */
     radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px),
     /* Diagonal light streak */
     linear-gradient(
@@ -65,7 +65,7 @@
       rgba(255, 140, 30, 0.09) 54%,
       transparent 66%
     ),
-    /* Ember glow — pulled to far right corner only */
+    /* Ember glow â€” pulled to far right corner only */
     radial-gradient(
       ellipse at 95% 60%,
       rgba(255, 80, 0, 0.18) 0%,
@@ -138,7 +138,7 @@
 .pl-wall.is-visible .pl-wall__eyebrow { opacity: 1; transform: none; }
 
 .pl-wall__headline {
-  font-family: var(--serif);
+  font-family: var(--heading);
   font-size: clamp(2.2rem, 4.8vw, 4rem);
   font-weight: 700;
   color: #fff;
@@ -156,7 +156,7 @@
   display: block;
   width: 52px;
   height: 3px;
-  background: linear-gradient(90deg, #E6CC7A, rgba(230,204,122,0.2));
+  background: linear-gradient(90deg, #C8960C, rgba(230,204,122,0.2));
   border-radius: 2px;
   margin-bottom: 20px;
   opacity: 0;
@@ -181,7 +181,7 @@
 }
 .pl-wall.is-visible .pl-wall__statement { opacity: 1; transform: none; }
 
-/* ── Inline stat strip ── */
+/* â”€â”€ Inline stat strip â”€â”€ */
 .pl-wall__statstrip {
   display: flex;
   align-items: center;
@@ -201,10 +201,10 @@
 }
 
 .pl-wall__stat-val {
-  font-family: var(--serif);
+  font-family: var(--heading);
   font-size: clamp(1.5rem, 2.4vw, 2rem);
   font-weight: 700;
-  color: #E6CC7A;
+  color: #C8960C;
   line-height: 1;
   letter-spacing: -0.02em;
   white-space: nowrap;
@@ -279,13 +279,13 @@
   font-weight: 700;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--green-mid);
+  color: var(--green);
   margin-bottom: 14px;
 }
 .pl-label--light { color: rgba(0,0,0,0.4); }
 
 .pl-heading {
-  font-family: var(--serif);
+  font-family: var(--heading);
   font-size: clamp(2rem, 3.6vw, 2.9rem);
   font-weight: 700;
   color: var(--text-dark);
@@ -307,7 +307,7 @@
 
 
 /* ============================================================
-   2. HERO — About Glass Panel
+   2. HERO â€” About Glass Panel
    ============================================================ */
 
 .pl-hero-about {
@@ -352,7 +352,7 @@
 /* Year history panel */
 .pl-perf-history {
   margin-top: 56px;
-  background: var(--navy);
+  background: var(--primary-dark);
   border-radius: var(--radius);
   overflow: hidden;
 }
@@ -393,7 +393,7 @@
 }
 
 .pl-statgrid__value {
-  font-family: var(--display);
+  font-family: var(--heading);
   font-size: clamp(1.8rem, 2.8vw, 2.3rem);
   font-weight: 800;
   color: var(--green);
@@ -416,11 +416,11 @@
 
 
 /* ============================================================
-   4. TOP RECRUITERS — "Globe Wall"
+   4. TOP RECRUITERS â€” "Globe Wall"
    ============================================================ */
 
 .pl-recruiters {
-  background: var(--navy);
+  background: var(--primary-dark);
   padding: 120px 0;
   position: relative;
   overflow: hidden;
@@ -438,7 +438,7 @@
   background-size: 24px 24px;
 }
 
-/* Orange glow blob — top right */
+/* Orange glow blob â€” top right */
 .pl-recruiters::after {
   content: '';
   position: absolute;
@@ -635,7 +635,7 @@
   position: relative;
 }
 .pl-infra__stat:hover .pl-infra__stat-num {
-  color: #E6CC7A;
+  color: #C8960C;
   text-shadow: 0 0 32px rgba(230,204,122,0.4);
 }
 .pl-infra__stat:hover .pl-infra__stat-label {
@@ -644,7 +644,7 @@
 
 .pl-infra__stat-num {
   display: block;
-  font-family: var(--display);
+  font-family: var(--heading);
   font-size: 2.4rem;
   font-weight: 800;
   color: #fff;
@@ -670,7 +670,7 @@
    ============================================================ */
 
 .pl-contact {
-  background: var(--navy);
+  background: var(--primary-dark);
   padding: 120px 0;
 }
 
@@ -775,7 +775,7 @@
   margin-bottom: 56px;
 }
 
-/* ── MoU Narrative Timeline ── */
+/* â”€â”€ MoU Narrative Timeline â”€â”€ */
 .pl-mou__narrative {
   position: relative;
   padding-left: 24px;
@@ -801,7 +801,7 @@
   top: 40px;
   width: 7px; height: 7px;
   border-radius: 50%;
-  background: var(--green-mid);
+  background: var(--green);
   border: 2px solid var(--green-light);
   transition: background 300ms ease, box-shadow 300ms ease;
 }
@@ -832,7 +832,7 @@
   transition: background 300ms ease, color 300ms ease;
 }
 .pl-mou__type--coe {
-  color: var(--green-mid);
+  color: var(--green);
   background: rgba(26,82,54,0.08);
 }
 .pl-mou__row:hover .pl-mou__type {
@@ -852,7 +852,7 @@
 }
 
 .pl-mou__company {
-  font-family: var(--serif);
+  font-family: var(--heading);
   font-size: clamp(1.4rem, 2.2vw, 1.9rem);
   font-weight: 800;
   color: var(--green);
@@ -865,7 +865,7 @@
   position: absolute;
   bottom: -2px; left: 50%;
   width: 0; height: 1.5px;
-  background: var(--green-mid);
+  background: var(--green);
   transform: translateX(-50%);
   transition: width 320ms var(--ease-lux);
 }
@@ -877,7 +877,7 @@
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: var(--green-mid);
+  color: var(--green);
   background: rgba(26, 82, 54, 0.08);
   padding: 3px 10px;
   border-radius: 4px;
@@ -960,7 +960,7 @@
   margin-bottom: 0;
 }
 
-/* ── Uniform drive grid ── */
+/* â”€â”€ Uniform drive grid â”€â”€ */
 .pl-gallery__layout {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -975,7 +975,7 @@
   .pl-gallery__layout { grid-template-columns: 1fr; }
 }
 
-/* ── Drive card ── */
+/* â”€â”€ Drive card â”€â”€ */
 .pl-drive-card {
   border-radius: 10px;
   overflow: hidden;
@@ -1007,7 +1007,7 @@
   transform: scale(1.04);
 }
 
-/* Caption overlay — slides up on hover */
+/* Caption overlay â€” slides up on hover */
 .pl-drive-card__overlay {
   position: absolute;
   inset: 0;
@@ -1043,7 +1043,7 @@
 
 
 /* ============================================================
-   EXPAND / COLLAPSE — shared system
+   EXPAND / COLLAPSE â€” shared system
    ============================================================ */
 
 .pl-expand-btn {
@@ -1067,7 +1067,7 @@
     box-shadow   400ms var(--ease-lux);
 }
 .pl-expand-btn:hover {
-  color: var(--green-dark);
+  color: var(--primary-dark);
   border-color: rgba(26,58,46,0.6);
 }
 .pl-expand-btn.is-open {
@@ -1128,7 +1128,7 @@
 .pl-year-featured:hover { border-color: rgba(255,255,255,0.14); }
 
 .pl-year-featured__year {
-  font-family: var(--display);
+  font-family: var(--heading);
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 800;
   color: rgba(var(--orange-raw), 0.92);
@@ -1141,7 +1141,7 @@
 .pl-year-featured__stat { text-align: center; }
 .pl-year-featured__val {
   display: block;
-  font-family: var(--display);
+  font-family: var(--heading);
   font-size: 1.95rem;
   font-weight: 800;
   color: #fff;
@@ -1184,13 +1184,13 @@
   color: rgba(var(--orange-raw), 0.88);
 }
 .pl-year-row__year {
-  font-family: var(--display);
+  font-family: var(--heading);
   font-size: 1rem;
   font-weight: 700;
   color: rgba(var(--orange-raw), 0.65);
 }
 .pl-year-row__val {
-  font-family: var(--display);
+  font-family: var(--heading);
   font-size: 0.95rem;
   font-weight: 600;
   color: rgba(255,255,255,0.7);
@@ -1208,7 +1208,7 @@
    ANIMATION SYSTEM
    ============================================================ */
 
-/* Fade + lift — triggered by IntersectionObserver adding .is-visible */
+/* Fade + lift â€” triggered by IntersectionObserver adding .is-visible */
 .pl-fade {
   opacity: 0;
   transform: translateY(24px);
@@ -1218,7 +1218,7 @@
 }
 .pl-fade.is-visible { opacity: 1; transform: translateY(0); }
 
-/* Stagger reveal — children inside expand panels */
+/* Stagger reveal â€” children inside expand panels */
 .stagger-in {
   opacity: 0;
   transform: translateY(18px) scale(0.98);
@@ -1228,7 +1228,7 @@
 }
 .stagger-in.is-visible { opacity: 1; transform: translateY(0) scale(1); }
 
-/* Masonry reveal — expand items */
+/* Masonry reveal â€” expand items */
 .masonry-in {
   opacity: 0;
   transform: translateY(18px);
@@ -1246,13 +1246,13 @@
 
 
 /* ============================================================
-   ORANGE HOVER HINTS — subtle warmth everywhere on hover
-   rgba(255,120,0,x) — never above 0.30 opacity
+   ORANGE HOVER HINTS â€” subtle warmth everywhere on hover
+   rgba(255,120,0,x) â€” never above 0.30 opacity
    ============================================================ */
 
 /* MoU: underline grows orange from center */
 .pl-mou__company::after {
-  background: linear-gradient(90deg, var(--green-mid) 0%, rgba(255,120,0,0.45) 100%);
+  background: linear-gradient(90deg, var(--green) 0%, rgba(255,120,0,0.45) 100%);
 }
 
 /* MoU: metric tag warms slightly on row hover */
@@ -1301,7 +1301,7 @@
   .pl-contact__inner { grid-template-columns: 1fr; gap: 48px; }
   .pl-infra__stats { flex-direction: row; flex-wrap: wrap; min-width: unset; }
 
-  /* Gallery strips — stack to single column */
+  /* Gallery strips â€” stack to single column */
   .pl-gs--pair,
   .pl-gs--flip { grid-template-columns: 1fr; grid-template-rows: auto; }
   .pl-gs__img--dom,
@@ -1340,7 +1340,7 @@
   .pl-hero-about { max-width: 100%; }
 }
 
-/* ── Reduced motion ── */
+/* â”€â”€ Reduced motion â”€â”€ */
 @media (prefers-reduced-motion: reduce) {
   .pl-fade, .stagger-in, .masonry-in, .pl-year-row {
     opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important;
@@ -1355,7 +1355,7 @@
 
 
 /* ============================================================
-   CINEMATIC ENHANCEMENTS — Gallery · Recruiter depth
+   CINEMATIC ENHANCEMENTS â€” Gallery Â· Recruiter depth
    ============================================================ */
 
 /* Gallery: light background */
@@ -1374,17 +1374,17 @@
 
 
 /* ============================================================
-   PAGE LAYOUT — sidebar + content
+   PAGE LAYOUT â€” sidebar + content
    ============================================================ */
 
 html { scroll-behavior: smooth; }
 
 .pl-page-content {
-  /* sidebar is position:fixed — no layout offset needed */
+  /* sidebar is position:fixed â€” no layout offset needed */
 }
 
 /* ============================================================
-   SIDEBAR — full-height fixed left quick nav (CSE dark-sidebar style)
+   SIDEBAR â€” full-height fixed left quick nav (CSE dark-sidebar style)
    ============================================================ */
 
 .pl-sidebar {
@@ -1421,7 +1421,7 @@ html { scroll-behavior: smooth; }
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: #1A3A2E;
+  color: #2E7D32;
   padding: 0 20px 14px;
   border-bottom: 1px solid rgba(0,0,0,0.06);
   margin-bottom: 8px;
@@ -1476,7 +1476,7 @@ html { scroll-behavior: smooth; }
 
 
 /* ============================================================
-   RECRUITERS — Infinite-scroll logo band
+   RECRUITERS â€” Infinite-scroll logo band
    ============================================================ */
 
 .pl-logo-band {
@@ -1534,7 +1534,7 @@ html { scroll-behavior: smooth; }
 
 
 /* ============================================================
-   MoU — Document links
+   MoU â€” Document links
    ============================================================ */
 
 .pl-mou__docs {
@@ -1550,7 +1550,7 @@ html { scroll-behavior: smooth; }
   font-family: var(--sans);
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--green-mid);
+  color: var(--green);
   text-decoration: none;
   padding: 5px 12px;
   border: 1px solid rgba(26,82,54,0.22);
@@ -1569,12 +1569,12 @@ html { scroll-behavior: smooth; }
 
 
 /* ============================================================
-   YEAR TABLE — hover detail panel
+   YEAR TABLE â€” hover detail panel
    ============================================================ */
 
 .pl-year-wrap { position: relative; }
 
-/* Hidden by default — shown via JS .is-active class */
+/* Hidden by default â€” shown via JS .is-active class */
 .pl-year-detail {
   max-height: 0;
   overflow: hidden;
@@ -1592,7 +1592,7 @@ html { scroll-behavior: smooth; }
   background: rgba(255,255,255,0.06);
 }
 
-/* White panel for detail table — contrast against dark section */
+/* White panel for detail table â€” contrast against dark section */
 .pl-year-detail__inner {
   background: #fff;
   border-radius: 10px;
@@ -1639,14 +1639,14 @@ html { scroll-behavior: smooth; }
   width: 40px;
   letter-spacing: 0.04em;
 }
-/* Company name — slightly bolder */
+/* Company name â€” slightly bolder */
 .pl-year-detail__table td:nth-child(2) {
   font-weight: 600;
   color: #111;
 }
-/* Salary — orange accent */
+/* Salary â€” orange accent */
 .pl-year-detail__table td:nth-child(4) {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.8rem;
   font-weight: 700;
   color: rgba(var(--orange-raw), 0.85);
@@ -1658,3 +1658,4 @@ html { scroll-behavior: smooth; }
   .pl-year-detail__table th,
   .pl-year-detail__table td { padding: 8px 12px; }
 }
+

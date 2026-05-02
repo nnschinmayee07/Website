@@ -1,10 +1,10 @@
-/* ===========================
-   SUCCESS STORIES — Carousel
+﻿/* ===========================
+   SUCCESS STORIES â€” Carousel
    =========================== */
 
 .ss-section {
   background: #FBF5E6;
-  padding: 80px 0 96px;
+  padding: 48px 0 56px;
 }
 
 .ss-container {
@@ -13,9 +13,13 @@
   padding: 0 40px;
 }
 
-/* ── Header ── */
+/* â”€â”€ Header â”€â”€ */
 .ss-header {
-  margin-bottom: 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 32px;
 }
 
 .ss-eyebrow {
@@ -25,17 +29,17 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #8A6218;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .ss-heading {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 700;
   color: #0B0F1A;
   line-height: 1.0;
   letter-spacing: -0.02em;
-  margin: 0 0 12px;
+  margin: 0;
 }
 
 .ss-heading em {
@@ -44,29 +48,43 @@
 }
 
 .ss-desc {
-  font-size: 0.93rem;
+  font-size: 0.88rem;
   color: rgba(11,15,26,0.5);
-  line-height: 1.7;
+  line-height: 1.65;
   margin: 0;
-  max-width: 400px;
+  max-width: 280px;
+  flex-shrink: 0;
+  text-align: right;
 }
 
-/* ── Carousel wrapper ── */
+@media (max-width: 600px) {
+  .ss-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .ss-desc {
+    text-align: left;
+    max-width: 100%;
+  }
+}
+
+/* â”€â”€ Carousel wrapper â”€â”€ */
 .ss-carousel {
   position: relative;
   border-radius: 14px;
   overflow: hidden;
-  border: 2px solid rgba(224,123,57,0.35);
-  box-shadow: 0 4px 32px rgba(224,123,57,0.1);
+  border: 2px solid rgba(200,150,12,0.35);
+  box-shadow: 0 4px 32px rgba(200,150,12,0.1);
 }
 
-/* ── Track ── */
+/* â”€â”€ Track â”€â”€ */
 .ss-track {
   position: relative;
   width: 100%;
 }
 
-/* ── Card base — hidden ── */
+/* â”€â”€ Card base â€” hidden â”€â”€ */
 .ss-card {
   position: absolute;
   inset: 0;
@@ -80,7 +98,7 @@
   pointer-events: none;
 }
 
-/* Active card — in flow to set height */
+/* Active card â€” in flow to set height */
 .ss-card.is-active {
   position: relative;
   opacity: 1;
@@ -96,21 +114,15 @@
   z-index: 1;
 }
 
-/* ── Image wrapper — positions overlay inside ── */
+/* â”€â”€ Image wrapper â”€â”€ */
 .ss-card__img-wrap {
   position: relative;
   width: 100%;
   overflow: hidden;
   background: #FFFDF7;
-  outline: 2px solid transparent;
-  transition: outline-color 0.25s ease;
 }
 
-.ss-card__img-wrap:hover {
-  outline-color: rgba(224,123,57,0.5);
-}
-
-/* ── Image ── */
+/* â”€â”€ Image â”€â”€ */
 .ss-card img {
   display: block;
   width: 100%;
@@ -120,7 +132,7 @@
   object-position: center top;
 }
 
-/* ── Hover info — slides up inside the image area ── */
+/* â”€â”€ Hover info â€” slides up inside the image area â”€â”€ */
 .ss-card__info {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -145,7 +157,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #D4A843;
+  color: #C8960C;
   border: 1px solid rgba(212,168,67,0.35);
   border-radius: 3px;
   padding: 2px 7px;
@@ -153,7 +165,7 @@
 }
 
 .ss-card__name {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
   color: #F8F6F1;
@@ -170,7 +182,7 @@
 .ss-card__company {
   font-size: 0.78rem;
   font-weight: 600;
-  color: #D4A843;
+  color: #C8960C;
   margin: 0 0 8px;
 }
 
@@ -184,7 +196,7 @@
   padding-left: 10px;
 }
 
-/* ── Gold caption strip — always visible below image ── */
+/* â”€â”€ Gold caption strip â€” always visible below image â”€â”€ */
 .ss-card__name-badge {
   width: 100%;
   padding: 13px 24px 11px;
@@ -210,7 +222,7 @@
 }
 
 .ss-card__name-badge .ss-card__name {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.05rem;
   font-weight: 700;
   color: #1A0F00;
@@ -218,7 +230,7 @@
   line-height: 1.25;
 }
 
-/* ── Dots ── */
+/* â”€â”€ Dots â”€â”€ */
 .ss-dots {
   display: flex;
   justify-content: center;
@@ -243,20 +255,23 @@
   transform: scale(1.35);
 }
 
-/* hide arrows */
-.ss-arrow { display: none; }
+/* â”€â”€ Arrows â€” hidden by default, show on hover â”€â”€ */
+.ss-arrow {
+  display: none;
+}
 
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 768px) {
   .ss-section { padding: 56px 0 72px; }
   .ss-container { padding: 0 16px; }
   .ss-card__name-badge { padding: 11px 16px 10px; gap: 10px; }
   .ss-card__name-badge .ss-card__name { font-size: 0.9rem; }
   .ss-card img { max-height: 360px; }
-  .ss-card:hover .ss-card__info { max-height: 200px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .ss-card { transition: none; }
   .ss-card__info { transition: none; }
 }
+
+

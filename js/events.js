@@ -1,117 +1,152 @@
-// Event Showcase: cursor, logo slideshow, expand, mute
-// Source: COLLEGE-WEBSITE-main/js/navbar.js (Mounith)
+// ── Event Showcase — auto-cycling info · cursor · mute ──
 (function () {
-  const section   = document.querySelector('.event-showcase');
+  var section  = document.querySelector('.event-showcase');
   if (!section) return;
 
-  const cursor    = document.getElementById('esCursor');
-  const muteBtn   = document.getElementById('esMute');
-  const video     = document.getElementById('esVideo');
-  const logos     = Array.from(section.querySelectorAll('.es__logo'));
-  const dots      = section.querySelectorAll('.es__dot');
+  var video    = document.getElementById('esVideo');
+  var cursor   = document.getElementById('esCursor');
+  var muteBtn  = document.getElementById('esMute');
+  var nextBtn  = document.getElementById('esNext');
+  var infoWrap = document.querySelector('.es__info-inner');
+  var logoImg  = document.getElementById('esInfoLogo');
+  var tagEl    = document.getElementById('esInfoTag');
+  var titleEl  = document.getElementById('esInfoTitle');
+  var descEl   = document.getElementById('esInfoDesc');
+  var dots     = document.querySelectorAll('.es__dot');
 
-  let currentIdx   = 0;
-  let slideTimer   = null;
-  let expandedLogo = null;
-  let isPaused     = false;
+  // ── Event data ──
+  var events = [
+    {
+      video: '/equinox.mp4',
+      logo:  '/assets/logo.svg',
+      tag:   'Entrepreneurship Summit \u00b7 2024',
+      title: 'The Equinox<br>E-Summit 2K24',
+      desc:  "MLRIT\u2019s flagship annual summit bringing together entrepreneurs, investors, and innovators to inspire the next generation of leaders."
+    },
+    {
+      type:  'embed',
+      embed: 'https://www.instagram.com/reel/DRrMiTKjP8w/embed/',
+      logo:  '/assets/main-logo.svg',
+      tag:   'Technical & Cultural Fest \u00b7 2025',
+      title: 'Zignasa<br>2025',
+      desc:  "MLRIT\u2019s grand annual extravaganza featuring technical competitions, hackathons, cultural performances, and celebrity nights."
+    }
+  ];
 
-  // ── Custom cursor tracking ──
-  const interactiveEls = section.querySelectorAll('.es__logo, .es__mute, .btn');
+  var current = 0;
+  var embed = document.getElementById('esEmbed');
 
-  function updateCursor(e) {
-    const rect = section.getBoundingClientRect();
-    cursor.style.left = (e.clientX - rect.left) + 'px';
-    cursor.style.top  = (e.clientY - rect.top)  + 'px';
+  // ── Switch event with crossfade ──
+  function goTo(idx) {
+    if (idx === current) return;
+    idx = (idx + events.length) % events.length;
+
+    // Fade out
+    if (infoWrap) infoWrap.classList.add('es-fading');
+
+    setTimeout(function () {
+      var ev = events[idx];
+
+      // Swap media — video or Instagram embed
+      if (ev.type === 'embed') {
+        if (video) { video.pause(); video.style.display = 'none'; }
+        if (embed) { embed.src = ev.embed; embed.style.display = 'block'; }
+      } else {
+        if (embed) { embed.src = ''; embed.style.display = 'none'; }
+        if (video) {
+          video.style.display = 'block';
+          var src = video.querySelector('source');
+          if (src) src.setAttribute('src', ev.video);
+          video.load();
+          video.play().catch(function () {});
+        }
+      }
+
+      if (logoImg)  logoImg.src = ev.logo;
+      if (tagEl)    tagEl.textContent = ev.tag;
+      if (titleEl)  titleEl.innerHTML = ev.title;
+      if (descEl)   descEl.textContent = ev.desc;
+
+      // Update dots
+      dots.forEach(function (d) { d.classList.remove('is-active'); });
+      if (dots[idx]) dots[idx].classList.add('is-active');
+
+      current = idx;
+
+      // Fade in
+      if (infoWrap) infoWrap.classList.remove('es-fading');
+    }, 400);
   }
 
-  section.addEventListener('mousemove', updateCursor, { passive: true });
-  section.addEventListener('mouseenter', () => section.classList.add('cursor-visible'));
-  section.addEventListener('mouseleave', () => section.classList.remove('cursor-visible', 'cursor-shrink'));
-
-  interactiveEls.forEach(el => {
-    el.addEventListener('mouseenter', () => section.classList.add('cursor-shrink'));
-    el.addEventListener('mouseleave', () => section.classList.remove('cursor-shrink'));
-  });
-
-  // ── Slideshow ──
-  function showLogo(idx) {
-    currentIdx = idx;
-    logos.forEach((l, i) => {
-      l.classList.toggle('is-active', i === idx);
+  // ── Next button ──
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function () {
+      goTo(current + 1);
     });
-    dots.forEach(d => d.classList.toggle('is-active', d.dataset.index === String(idx)));
   }
 
-  function advance() {
-    if (isPaused || expandedLogo) return;
-    showLogo((currentIdx + 1) % logos.length);
-  }
-
-  function startSlide() {
-    clearInterval(slideTimer);
-    slideTimer = setInterval(advance, 4000);
-  }
-
-  showLogo(0);
-  startSlide();
-
-  // ── Logo expand → centre ──
-  function expandLogo(logo) {
-    if (expandedLogo === logo) return;
-    collapseLogo();
-    isPaused = true;
-
-    const idx   = logo.dataset.index;
-    const img   = logo.querySelector('.es__logo-img');
-    const panel = section.querySelector(`.es__panel[data-panel="${idx}"]`);
-    const sRect = section.getBoundingClientRect();
-    const iRect = img.getBoundingClientRect();
-
-    const fromX = iRect.left + iRect.width  / 2 - sRect.left;
-    const fromY = iRect.top  + iRect.height / 2 - sRect.top;
-    const toX   = sRect.width  / 2;
-    const toY   = sRect.height * 0.42;
-    const dx    = toX - fromX;
-    const dy    = toY - fromY;
-    const scale = (sRect.width * 0.38) / iRect.width;
-
-    img.style.transform = `translate(${dx}px, ${dy}px) scale(${scale})`;
-    logo.classList.add('is-expanded');
-    section.classList.add('logo-expanded');
-    expandedLogo = logo;
-
-    if (panel) setTimeout(() => panel.classList.add('is-visible'), 280);
-    dots.forEach(d => d.classList.toggle('is-active', d.dataset.index === idx));
-  }
-
-  function collapseLogo() {
-    if (!expandedLogo) return;
-    const img   = expandedLogo.querySelector('.es__logo-img');
-    const idx   = expandedLogo.dataset.index;
-    const panel = section.querySelector(`.es__panel[data-panel="${idx}"]`);
-
-    img.style.transform = '';
-    expandedLogo.classList.remove('is-expanded');
-    section.classList.remove('logo-expanded');
-    if (panel) panel.classList.remove('is-visible');
-    expandedLogo = null;
-    isPaused = false;
-    startSlide();
-  }
-
-  logos.forEach(logo => {
-    logo.addEventListener('mouseenter', () => expandLogo(logo));
-    logo.addEventListener('mouseleave', collapseLogo);
-    logo.addEventListener('focus',      () => expandLogo(logo));
-    logo.addEventListener('blur',       collapseLogo);
+  // ── Dot click navigation ──
+  dots.forEach(function (dot) {
+    dot.addEventListener('click', function () {
+      var idx = parseInt(dot.dataset.index, 10);
+      goTo(idx);
+    });
   });
 
-  // ── Mute toggle ──
+  // ── 2. Custom cursor — only show after first mouse move ──
+  var cursorX = 0, cursorY = 0, hasMoved = false, raf;
+
+  function moveCursor() {
+    if (cursor) {
+      cursor.style.left = cursorX + 'px';
+      cursor.style.top  = cursorY + 'px';
+    }
+    raf = requestAnimationFrame(moveCursor);
+  }
+
+  section.addEventListener('mousemove', function (e) {
+    var rect = section.getBoundingClientRect();
+    cursorX = e.clientX - rect.left;
+    cursorY = e.clientY - rect.top;
+
+    if (!hasMoved) {
+      hasMoved = true;
+      section.classList.add('cursor-visible');
+      raf = requestAnimationFrame(moveCursor);
+    }
+  });
+
+  section.addEventListener('mouseleave', function () {
+    hasMoved = false;
+    section.classList.remove('cursor-visible', 'cursor-shrink');
+    cancelAnimationFrame(raf);
+  });
+
+  // Shrink cursor over interactive elements
+  section.querySelectorAll('button, a, [role="button"]').forEach(function (el) {
+    el.addEventListener('mouseenter', function () { section.classList.add('cursor-shrink'); });
+    el.addEventListener('mouseleave', function () { section.classList.remove('cursor-shrink'); });
+  });
+
+  // ── 3. Mute / unmute toggle ──
+  section.classList.add('is-muted');
+
   if (muteBtn && video) {
-    section.classList.add('is-muted');
-    muteBtn.addEventListener('click', () => {
+    muteBtn.addEventListener('click', function () {
       video.muted = !video.muted;
       section.classList.toggle('is-muted', video.muted);
     });
   }
+
+  // ── 4. Pause / resume video on visibility ──
+  var ioVideo = new IntersectionObserver(function (entries) {
+    if (!video) return;
+    if (entries[0].isIntersecting) {
+      video.play().catch(function () {});
+    } else {
+      video.pause();
+    }
+  }, { threshold: 0 });
+  ioVideo.observe(section);
+
 })();

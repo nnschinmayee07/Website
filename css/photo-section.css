@@ -1,15 +1,15 @@
-/* ===========================
+﻿/* ===========================
    STRUCTURED PHOTO SECTION
-   PRD v1.0 — Orange + Green
+   PRD v1.0 â€” Orange + Green
    =========================== */
 
 /* Brand tokens */
 :root {
-  --ps-orange:       #D4622B;
-  --ps-orange-light: #FBEADF;
-  --ps-orange-dark:  #7A3412;
-  --ps-green:        #2E8B57;
-  --ps-green-light:  #E5F1E9;
+  --ps-orange:       #E8500A;
+  --ps-orange-light: #FDF0EA;
+  --ps-orange-dark:  #7A2E0B;
+  --ps-green:        #2E7D32;
+  --ps-green-light:  #EAF4EA;
   --ps-black:        #111111;
   --ps-bg:           #F7F7F7;
   --ps-white:        #FFFFFF;
@@ -29,13 +29,13 @@
 .photo-section__inner {
   width: 100%;
   margin: 0;
-  padding: 0 1rem;
+  padding: 0 var(--page-pad);
 }
 
 /* Section heading */
 .photo-section__heading {
-  font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
-  font-size: 36px;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: var(--fs-h2);
   font-weight: 700;
   color: var(--ps-orange);
   margin-bottom: 24px;
@@ -111,10 +111,10 @@
   transform: scale(1.03);
 }
 
-/* Hero tile — fixed height */
+/* Hero tile â€” fixed height */
 .tile--hero { height: 520px; }
 
-/* Secondary tiles — equal halves */
+/* Secondary tiles â€” equal halves */
 .tile--secondary-a,
 .tile--secondary-b { height: 254px; }
 
@@ -222,7 +222,7 @@
   display: inline-block;
   background: var(--ps-orange);
   color: var(--ps-white);
-  font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -232,7 +232,7 @@
   width: fit-content;
 }
 
-/* Hero badge sits on orange bg — use white outline style */
+/* Hero badge sits on orange bg â€” use white outline style */
 .tile--hero .tile__badge {
   background: rgba(255,255,255,0.2);
   border: 1px solid rgba(255,255,255,0.5);
@@ -240,8 +240,8 @@
 
 /* Context headline */
 .tile__headline {
-  font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
-  font-size: 13px;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  font-size: var(--fs-meta);
   font-weight: 500;
   color: var(--ps-white);
   line-height: 1.45;
@@ -253,8 +253,8 @@
 
 /* CTA arrow */
 .tile__cta {
-  font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
-  font-size: 13px;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  font-size: var(--fs-meta);
   font-weight: 600;
   color: var(--ps-white);
   display: flex;
@@ -328,3 +328,5 @@
 
   .tile::before { animation: none; }
 }
+
+

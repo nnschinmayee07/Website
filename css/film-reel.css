@@ -1,4 +1,4 @@
-/* ===========================
+﻿/* ===========================
    FILM REEL SECTION
    =========================== */
 .film-reel-section {
@@ -19,7 +19,7 @@
 }
 
 /* ===========================
-   LEFT — copy
+   LEFT â€” copy
    =========================== */
 .film-reel-section__copy {
   max-width: 420px;
@@ -47,7 +47,7 @@
 }
 
 /* ===========================
-   RIGHT — scene
+   RIGHT â€” scene
    =========================== */
 .film-scene {
   display: flex;
@@ -70,7 +70,7 @@
   flex-shrink: 0;
 }
 
-/* Viewport — the film strip window */
+/* Viewport â€” the film strip window */
 .film-viewport {
   height: 440px;
   width: 320px;
@@ -274,3 +274,5 @@
   .film-frame { width: 172px; height: 140px; }
   .film-connector { display: none; }
 }
+
+
