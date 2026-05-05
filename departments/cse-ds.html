@@ -6,17 +6,17 @@
   <title>CSE (Data Science) Department — MLRIT</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&family=Raleway:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/main.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #3A3A3A; line-height: 1.7; }
+    body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; background: #FFFFFF; color: #3A3A3A; line-height: 1.7; }
 
     /* ── Dept Nav ── */
     .dept-nav { background: #0B0F1A; display: flex; align-items: stretch; padding: 0 16px; border-bottom: 1px solid rgba(0,0,0,0.06); }
-    .dept-nav__link { display: flex; align-items: center; padding: 0 20px; height: 44px; font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.5); text-decoration: none; position: relative; transition: color 0.2s, background 0.2s; }
+    .dept-nav__link { display: flex; align-items: center; padding: 0 20px; height: 44px; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.5); text-decoration: none; position: relative; transition: color 0.2s, background 0.2s; }
     .dept-nav__link:hover { color: rgba(255,255,255,0.85); background: rgba(232,93,31,0.08); }
     .dept-nav__link::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%) scaleX(0); width: 70%; height: 2px; background: linear-gradient(90deg, transparent, #E85D1F, transparent); transition: transform 0.25s; }
     .dept-nav__link:hover::after { transform: translateX(-50%) scaleX(1); }
@@ -33,13 +33,13 @@
     .dept-hero:hover .dept-hero__overlay { opacity: 0.28; }
     .dept-hero__eyebrow, .dept-hero__title { position: relative; z-index: 2; }
     .dept-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 70% 30%, rgba(232,93,31,0.12), transparent 60%); pointer-events: none; z-index: 3; }
-    .dept-hero__eyebrow { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; position: relative; z-index: 1; }
-    .dept-hero__title { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 700; color: #fff; position: relative; z-index: 1; }
+    .dept-hero__eyebrow { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; position: relative; z-index: 1; }
+    .dept-hero__title { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 700; color: #fff; position: relative; z-index: 1; }
 
     /* ── Tabs ── */
     .dept-tabs { background: #0B0F1A; display: flex; gap: 0; overflow-x: auto; border-bottom: 3px solid #1F6B24; position: sticky; top: 0; z-index: 40; }
     .dept-tabs::-webkit-scrollbar { height: 0; }
-    .dept-tab { font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.5); text-decoration: none; padding: 14px 24px; white-space: nowrap; cursor: pointer; position: relative; transition: color 0.25s, background 0.25s; }
+    .dept-tab { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.5); text-decoration: none; padding: 14px 24px; white-space: nowrap; cursor: pointer; position: relative; transition: color 0.25s, background 0.25s; }
     .dept-tab::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%) scaleX(0); width: 70%; height: 3px; background: linear-gradient(90deg, transparent, #E85D1F, transparent); transition: transform 0.25s ease; }
     .dept-tab:hover { color: rgba(255,255,255,0.8); background: rgba(232,93,31,0.08); }
     .dept-tab:hover::after { transform: translateX(-50%) scaleX(1); }
@@ -51,32 +51,32 @@
     .dept-panel.is-active { display: block; animation: fadeIn 0.35s ease; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-    .panel-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 700; color: #0B0F1A; margin-bottom: 28px; line-height: 1.2; }
+    .panel-heading { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 700; color: #0B0F1A; margin-bottom: 28px; line-height: 1.2; }
     .panel-heading::after { content: ''; display: block; width: 60px; height: 4px; background: #E85D1F; margin-top: 14px; border-radius: 2px; }
-    .panel-sub { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 800; color: #1F6B24; text-transform: uppercase; letter-spacing: 0.1em; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 2px solid rgba(24,69,59,0.12); }
+    .panel-sub { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.72rem; font-weight: 800; color: #1F6B24; text-transform: uppercase; letter-spacing: 0.1em; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 2px solid rgba(24,69,59,0.12); }
     p { font-size: 0.95rem; color: #3A3A3A; max-width: 780px; margin-bottom: 14px; line-height: 1.8; }
 
     /* ── Cards ── */
     .card { background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; }
     .card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
-    .card h3 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.15rem; color: #0B0F1A; margin-bottom: 10px; }
+    .card h3 { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 1.15rem; color: #0B0F1A; margin-bottom: 10px; }
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .card--accent { border-top: 3px solid #1F6B24; transition: transform 0.25s ease, box-shadow 0.25s ease, border-top-color 0.25s ease; }
     .card--accent:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-top-color: #E85D1F; }
-    .peo-num { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #1F6B24; margin-bottom: 10px; }
+    .peo-num { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 800; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #1F6B24; margin-bottom: 10px; }
 
     /* ── HOD Message ── */
     .hod-msg { display: flex; gap: 28px; align-items: flex-start; background: #fff; border-radius: 16px; padding: 32px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 36px; border-left: 4px solid #1F6B24; }
     .hod-msg__photo { width: 100px; height: 100px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 3px solid #1F6B24; }
     .hod-msg__photo img { width: 100%; height: 100%; object-fit: cover; }
-    .hod-msg__label { font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #E85D1F; margin-bottom: 8px; }
+    .hod-msg__label { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #E85D1F; margin-bottom: 8px; }
     .hod-msg__text { font-size: 0.92rem; color: #444; line-height: 1.8; font-style: italic; max-width: none; }
-    .hod-msg__name { font-family: 'Raleway', sans-serif; font-size: 0.82rem; font-weight: 700; color: #1F6B24; margin-top: 12px; }
+    .hod-msg__name { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.82rem; font-weight: 700; color: #1F6B24; margin-top: 12px; }
 
     /* ── Accordion ── */
     .sub-accordion { margin-bottom: 16px; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 1px 8px rgba(0,0,0,0.05); }
-    .sub-accordion__header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; cursor: pointer; font-family: 'Raleway', sans-serif; font-size: 0.88rem; font-weight: 700; color: #0B0F1A; border-left: 3px solid #1F6B24; transition: background 0.2s, border-left-color 0.25s, transform 0.2s; }
+    .sub-accordion__header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; cursor: pointer; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.88rem; font-weight: 700; color: #0B0F1A; border-left: 3px solid #1F6B24; transition: background 0.2s, border-left-color 0.25s, transform 0.2s; }
     .sub-accordion__header:hover { background: rgba(24,69,59,0.04); border-left-color: #E85D1F; transform: translateX(4px); }
     .sub-accordion__chevron { font-size: 0.7rem; color: #888; transition: transform 0.3s; }
     .sub-accordion.is-open .sub-accordion__chevron { transform: rotate(180deg); color: #E85D1F; }
@@ -87,12 +87,12 @@
     .lab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
     .lab-card { background: #f9f8f5; border-radius: 8px; padding: 16px 18px; border-left: 3px solid #1F6B24; transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease; cursor: default; }
     .lab-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); border-left-color: #E85D1F; }
-    .lab-card__name { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.85rem; color: #0B0F1A; margin-bottom: 4px; }
+    .lab-card__name { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.85rem; color: #0B0F1A; margin-bottom: 4px; }
     .lab-card__desc { font-size: 0.78rem; color: #666; }
 
     /* ── OBE ── */
     .obe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 20px; }
-    .obe-col h4 { font-family: 'Raleway', sans-serif; font-size: 0.82rem; font-weight: 800; color: #1F6B24; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+    .obe-col h4 { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.82rem; font-weight: 800; color: #1F6B24; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
     .obe-list { list-style: none; padding: 0; }
     .obe-list li { font-size: 0.88rem; color: #444; padding: 8px 0 8px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); position: relative; transition: transform 0.2s ease, color 0.2s ease; cursor: default; }
     .obe-list li:hover { transform: translateX(6px); color: #0B0F1A; }
@@ -104,26 +104,26 @@
     .catalog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
     .catalog-item { background: #fff; border-radius: 10px; padding: 16px 20px; box-shadow: 0 1px 8px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; border-left: 3px solid #1F6B24; }
     .catalog-item:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
-    .catalog-item__text { font-family: 'Raleway', sans-serif; font-size: 0.82rem; font-weight: 700; color: #0B0F1A; }
+    .catalog-item__text { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.82rem; font-weight: 700; color: #0B0F1A; }
     .catalog-item__sub { font-size: 0.68rem; color: #888; display: block; margin-top: 2px; }
 
     /* ── Syllabus ── */
     .pill-row { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
-    .pill { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.82rem; padding: 10px 22px; border-radius: 24px; border: 2px solid rgba(24,69,59,0.25); background: transparent; color: #3A3A3A; cursor: pointer; transition: all 0.25s; }
+    .pill { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.82rem; padding: 10px 22px; border-radius: 24px; border: 2px solid rgba(24,69,59,0.25); background: transparent; color: #3A3A3A; cursor: pointer; transition: all 0.25s; }
     .pill:hover { border-color: #E85D1F; color: #E85D1F; }
     .pill.is-active { background: #1F6B24; border-color: #1F6B24; color: #fff; }
     .subject-list { max-width: 700px; opacity: 0; transform: translateY(10px); transition: opacity 0.35s, transform 0.35s; }
     .subject-list.is-visible { opacity: 1; transform: translateY(0); }
     .subject-row { display: flex; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,0.06); gap: 16px; cursor: pointer; }
-    .subject-num { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.72rem; color: #1F6B24; width: 28px; }
+    .subject-num { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 800; font-size: 0.72rem; color: #1F6B24; width: 28px; }
     .subject-name { flex: 1; font-size: 0.92rem; color: #3A3A3A; }
-    .subject-code { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 700; color: #1F6B24; background: rgba(24,69,59,0.08); padding: 2px 8px; border-radius: 4px; flex-shrink: 0; letter-spacing: 0.04em; }
-    .syll-btn { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 700; padding: 6px 14px; border-radius: 6px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px; }
+    .subject-code { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.7rem; font-weight: 700; color: #1F6B24; background: rgba(24,69,59,0.08); padding: 2px 8px; border-radius: 4px; flex-shrink: 0; letter-spacing: 0.04em; }
+    .syll-btn { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.72rem; font-weight: 700; padding: 6px 14px; border-radius: 6px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px; }
     .syll-btn--download { color: #fff; background: #1F6B24; }
     .syll-btn--download:hover { background: #0D3320; }
-    .full-syllabus-btn { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.85rem; font-weight: 700; color: #fff; background: #1F6B24; padding: 10px 24px; border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+    .full-syllabus-btn { display: inline-block; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.85rem; font-weight: 700; color: #fff; background: #1F6B24; padding: 10px 24px; border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.2s; }
     .full-syllabus-btn:hover { background: #0D3320; transform: translateY(-1px); }
-    .subject-pdf { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 700; color: #E85D1F; text-decoration: none; padding: 4px 12px; border: 1px solid rgba(232,93,31,0.3); border-radius: 6px; transition: all 0.2s; white-space: nowrap; }
+    .subject-pdf { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.7rem; font-weight: 700; color: #E85D1F; text-decoration: none; padding: 4px 12px; border: 1px solid rgba(232,93,31,0.3); border-radius: 6px; transition: all 0.2s; white-space: nowrap; }
     .subject-pdf:hover { background: #E85D1F; color: #fff; }
     .subject-toggle { font-size: 0.7rem; color: #888; margin-left: 8px; transition: transform 0.3s; display: inline-block; }
     .subject-row.is-expanded .subject-toggle { transform: rotate(90deg); color: #E85D1F; }
@@ -131,16 +131,16 @@
     .subject-row.is-expanded + .subject-units { max-height: 300px; }
     .subject-units ol { list-style: none; padding: 8px 0 12px; counter-reset: unit; }
     .subject-units li { font-size: 0.82rem; color: #555; padding: 4px 0; counter-increment: unit; }
-    .subject-units li::before { content: 'Unit ' counter(unit) ': '; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.7rem; color: #1F6B24; }
+    .subject-units li::before { content: 'Unit ' counter(unit) ': '; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.7rem; color: #1F6B24; }
 
     /* ── Faculty flip cards ── */
     .fcard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
     .fcard { width: 100%; aspect-ratio: 3/4; border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; background: linear-gradient(135deg, #2A2F40, #3A4050); }
     .fcard img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.4s ease; }
     .fcard:hover img { transform: scale(1.05); }
-    .fcard__ini { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 2rem; color: rgba(255,255,255,0.3); position: absolute; inset: 0; }
+    .fcard__ini { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 2rem; color: rgba(255,255,255,0.3); position: absolute; inset: 0; }
     .fcard__overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 18px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); z-index: 2; transition: opacity 0.3s; }
-    .fcard__name { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.85rem; color: #fff; }
+    .fcard__name { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.85rem; color: #fff; }
     .fcard__role { font-size: 0.68rem; color: rgba(255,255,255,0.6); }
     .fcard::before { content: ''; position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: #E85D1F; clip-path: circle(0% at 100% 0%); transition: clip-path 0.5s cubic-bezier(0.25,0.46,0.45,0.94); z-index: 3; }
     .fcard:hover::before { clip-path: circle(150% at 100% 0%); }
@@ -149,19 +149,19 @@
     .fcard:hover .fcard__overlay { opacity: 0; }
     .fcard__hover-info { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; text-align: center; z-index: 5; opacity: 0; transform: translateY(10px); transition: opacity 0.35s ease 0.2s, transform 0.35s ease 0.2s; }
     .fcard:hover .fcard__hover-info { opacity: 1; transform: translateY(0); }
-    .fcard__hover-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: #fff; margin-bottom: 4px; }
+    .fcard__hover-name { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 1.05rem; color: #fff; margin-bottom: 4px; }
     .fcard__hover-role { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
-    .fcard__hover-spec { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 600; color: #E85D1F; margin-bottom: 20px; letter-spacing: 0.04em; }
-    .fcard__hover-btn { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 700; color: #fff; text-decoration: none; padding: 8px 20px; border: 1px solid #fff; border-radius: 6px; transition: all 0.2s; }
+    .fcard__hover-spec { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.72rem; font-weight: 600; color: #E85D1F; margin-bottom: 20px; letter-spacing: 0.04em; }
+    .fcard__hover-btn { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.72rem; font-weight: 700; color: #fff; text-decoration: none; padding: 8px 20px; border: 1px solid #fff; border-radius: 6px; transition: all 0.2s; }
     .fcard__hover-btn:hover { background: #fff; color: #0B0F1A; }
 
     /* ── Achievements ── */
     .achieve-grid { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 700px; }
     .achieve-card { border-left: 3px solid #E85D1F; cursor: pointer; }
-    .achieve-card h4 { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.95rem; color: #0B0F1A; margin-bottom: 6px; }
+    .achieve-card h4 { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.95rem; color: #0B0F1A; margin-bottom: 6px; }
     .achieve-card p { font-size: 0.88rem; color: #555; margin-bottom: 0; max-height: 0; overflow: hidden; transition: max-height 0.4s; }
     .achieve-card.is-expanded p { max-height: 200px; margin-bottom: 8px; }
-    .achieve-toggle { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 700; color: #E85D1F; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px; display: inline-block; }
+    .achieve-toggle { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.7rem; font-weight: 700; color: #E85D1F; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px; display: inline-block; }
     .achieve-list { list-style: none; padding: 0; max-width: 700px; }
     .achieve-list li { position: relative; padding: 14px 16px 14px 28px; margin-bottom: 8px; border-radius: 8px; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,0.04); font-size: 0.88rem; color: #444; border-left: 3px solid transparent; transition: transform 0.2s ease, border-left-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; cursor: default; }
     .achieve-list li:hover { transform: translateX(6px); border-left-color: #E85D1F; box-shadow: 0 4px 16px rgba(232,93,31,0.1); background: rgba(232,93,31,0.02); }
@@ -170,7 +170,7 @@
 
     /* ── Roll of Honour ── */
     .honour-table { width: 100%; max-width: 700px; border-collapse: separate; border-spacing: 0 6px; }
-    .honour-table th { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; text-align: left; padding: 12px 16px; border-bottom: 2px solid rgba(0,0,0,0.08); }
+    .honour-table th { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; text-align: left; padding: 12px 16px; border-bottom: 2px solid rgba(0,0,0,0.08); }
     .honour-table td { font-size: 0.88rem; color: #333; padding: 14px 16px; background: #fff; transition: background 0.2s ease, box-shadow 0.2s ease; }
     .honour-table tr { transition: transform 0.2s ease; }
     .honour-table tbody tr:hover { transform: translateX(6px); }
@@ -178,48 +178,48 @@
     .honour-table tbody tr:hover td:first-child { border-left: 3px solid #E85D1F; }
     .honour-table td:first-child { border-radius: 8px 0 0 8px; border-left: 3px solid transparent; }
     .honour-table td:last-child { border-radius: 0 8px 8px 0; }
-    .honour-table .honour-name { font-family: 'Raleway', sans-serif; font-weight: 700; color: #0B0F1A; }
-    .honour-table .honour-badge { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 10px; letter-spacing: 0.04em; }
+    .honour-table .honour-name { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; color: #0B0F1A; }
+    .honour-table .honour-badge { display: inline-block; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 10px; letter-spacing: 0.04em; }
     .honour-badge--topper { background: rgba(232,93,31,0.12); color: #E85D1F; }
     .honour-badge--rank { background: rgba(24,69,59,0.1); color: #1F6B24; }
-    .honour-table .honour-score { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: #1F6B24; }
+    .honour-table .honour-score { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 1.05rem; color: #1F6B24; }
 
     /* ── Internship stats ── */
     .intern-stats { display: flex; gap: 20px; margin-bottom: 36px; flex-wrap: wrap; }
     .stat-card { background: #fff; border-radius: 12px; padding: 24px 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); text-align: center; flex: 1; min-width: 140px; }
-    .stat-card__num { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.8rem; color: #1F6B24; line-height: 1; margin-bottom: 6px; }
-    .stat-card__label { font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 0.75rem; color: #888; letter-spacing: 0.06em; text-transform: uppercase; }
+    .stat-card__num { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 1.8rem; color: #1F6B24; line-height: 1; margin-bottom: 6px; }
+    .stat-card__label { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 600; font-size: 0.75rem; color: #888; letter-spacing: 0.06em; text-transform: uppercase; }
 
     /* ── Publications ── */
     .pub-filters { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
-    .pub-filter { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.75rem; padding: 7px 18px; border-radius: 20px; border: 2px solid rgba(24,69,59,0.25); background: transparent; color: #3A3A3A; cursor: pointer; transition: all 0.25s; }
+    .pub-filter { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.75rem; padding: 7px 18px; border-radius: 20px; border: 2px solid rgba(24,69,59,0.25); background: transparent; color: #3A3A3A; cursor: pointer; transition: all 0.25s; }
     .pub-filter:hover { border-color: #E85D1F; color: #E85D1F; }
     .pub-filter.is-active { background: #1F6B24; border-color: #1F6B24; color: #fff; }
     .pub-list { display: flex; flex-direction: column; gap: 16px; max-width: 780px; }
     .pub-card { background: #fff; border-radius: 12px; padding: 24px 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 3px solid #1F6B24; display: flex; align-items: flex-start; gap: 20px; transition: opacity 0.4s ease; }
     .pub-card.is-dimmed { opacity: 0.2; }
     .pub-card__body { flex: 1; }
-    .pub-card__title { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.95rem; color: #0B0F1A; margin-bottom: 6px; line-height: 1.4; }
+    .pub-card__title { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.95rem; color: #0B0F1A; margin-bottom: 6px; line-height: 1.4; }
     .pub-card__authors { font-size: 0.82rem; color: #888; margin-bottom: 4px; }
     .pub-card__journal { font-size: 0.82rem; color: #E85D1F; font-style: italic; }
-    .pub-card__year { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.68rem; color: #fff; background: #1F6B24; padding: 4px 10px; border-radius: 10px; flex-shrink: 0; }
-    .pub-tag { display: inline-block; margin-top: 8px; font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 700; color: #1F6B24; background: rgba(24,69,59,0.08); padding: 3px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .pub-card__year { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 800; font-size: 0.68rem; color: #fff; background: #1F6B24; padding: 4px 10px; border-radius: 10px; flex-shrink: 0; }
+    .pub-tag { display: inline-block; margin-top: 8px; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.68rem; font-weight: 700; color: #1F6B24; background: rgba(24,69,59,0.08); padding: 3px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
 
     /* ── Placement stats ── */
     .placement-stats { display: flex; gap: 16px; flex-wrap: wrap; margin: 16px 0; }
     .placement-stat { background: #fff; border-radius: 10px; padding: 20px 28px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; flex: 1; min-width: 130px; border-top: 3px solid #E85D1F; }
-    .placement-stat__num { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.6rem; color: #E85D1F; }
+    .placement-stat__num { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 1.6rem; color: #E85D1F; }
     .placement-stat__label { font-size: 0.72rem; color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
 
     /* ── Committee table ── */
     .committee-table { width: 100%; border-collapse: separate; border-spacing: 0 6px; max-width: 900px; }
-    .committee-table th { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; text-align: left; padding: 12px 16px; border-bottom: 2px solid rgba(0,0,0,0.08); }
+    .committee-table th { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; text-align: left; padding: 12px 16px; border-bottom: 2px solid rgba(0,0,0,0.08); }
     .committee-table td { font-size: 0.88rem; color: #333; padding: 14px 16px; background: #fff; }
     .committee-table td:first-child { border-radius: 8px 0 0 8px; border-left: 3px solid transparent; }
     .committee-table tbody tr:hover td:first-child { border-left: 3px solid #E85D1F; }
     .committee-table tbody tr:hover td { background: rgba(232,93,31,0.04); }
     .committee-table td:last-child { border-radius: 0 8px 8px 0; }
-    .committee-badge { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 10px; letter-spacing: 0.04em; }
+    .committee-badge { display: inline-block; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 10px; letter-spacing: 0.04em; }
     .badge--chairman { background: rgba(24,69,59,0.12); color: #1F6B24; }
     .badge--convener { background: rgba(232,93,31,0.12); color: #E85D1F; }
     .badge--industry { background: rgba(11,15,26,0.08); color: #0B0F1A; }
@@ -238,13 +238,13 @@
     .dark-sidebar { position: sticky; top: 44px; align-self: start; height: calc(100vh - 44px); background: #FAFAF8; z-index: 35; padding-top: 24px; border-right: 1px solid rgba(0,0,0,0.05); overflow-y: auto; }
     .dark-sidebar::-webkit-scrollbar { width: 4px; }
     .dark-sidebar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 2px; }
-    .dark-sidebar__title { font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #155218; padding: 0 20px 14px; border-bottom: 1px solid rgba(0,0,0,0.06); margin-bottom: 8px; }
+    .dark-sidebar__title { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #155218; padding: 0 20px 14px; border-bottom: 1px solid rgba(0,0,0,0.06); margin-bottom: 8px; }
     .ds-item { display: flex; align-items: center; padding: 8px 20px; cursor: pointer; border-left: 3px solid transparent; transition: all 0.2s; text-decoration: none; color: inherit; }
     .ds-item:hover { background: rgba(232,93,31,0.06); }
     .ds-item.is-active { border-left-color: #E85D1F; background: rgba(232,93,31,0.08); }
     .ds-item__dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(0,0,0,0.1); flex-shrink: 0; margin-right: 12px; transition: all 0.2s; }
     .ds-item.is-active .ds-item__dot { background: #E85D1F; box-shadow: 0 0 6px rgba(232,93,31,0.4); }
-    .ds-item__label { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 600; color: rgba(26,58,46,0.5); transition: color 0.2s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ds-item__label { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.7rem; font-weight: 600; color: rgba(26,58,46,0.5); transition: color 0.2s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .ds-item:hover .ds-item__label { color: rgba(232,93,31,0.8); }
     .ds-item.is-active .ds-item__label { color: #E85D1F; }
 
@@ -265,7 +265,7 @@
   <header class="site-header">
     <div class="masthead">
       <div class="container masthead__inner">
-        <a href="../index.html" class="masthead__logo" aria-label="MLRIT Home"><img src="../mlrit-logo-transparent.png" alt="MLRIT Logo" /></a>
+        <a href="../index.html" class="masthead__logo" aria-label="MLRIT Home"><img src="../mlrit-logo-main.png" alt="MLRIT Logo" /></a>
         <div class="masthead__tagline"><span>Marri Laxman Reddy Institute of Technology</span></div>
         <a href="#" class="masthead__eapcet">EAPCET CODE : MLID</a>
       </div>
@@ -286,7 +286,7 @@
       <source src="dept.mp4" type="video/mp4" />
     </video>
     <div class="dept-hero__overlay" id="heroOverlay"></div>
-    <div class="dept-hero__eyebrow">B.Tech &mdash; Computer Science &amp; Engineering (Data Science)</div>
+    <div class="dept-hero__eyebrow">B.Tech &mdash; Computer Science and Engineering (Data Science)</div>
     <div class="dept-hero__title">Department of CSE &mdash; Data Science</div>
   </div>
   <script>
@@ -322,7 +322,7 @@
     <aside class="dark-sidebar" id="darkSidebar">
       <div class="dark-sidebar__title">Quick Nav</div>
       <a class="ds-item" data-ds-tab="overview" data-ds-target="hod-msg"><span class="ds-item__dot"></span><span class="ds-item__label">HOD Message</span></a>
-      <a class="ds-item" data-ds-tab="overview" data-ds-target="vm-section"><span class="ds-item__dot"></span><span class="ds-item__label">Vision &amp; Mission</span></a>
+      <a class="ds-item" data-ds-tab="overview" data-ds-target="vm-section"><span class="ds-item__dot"></span><span class="ds-item__label">Vision and Mission</span></a>
       <a class="ds-item" data-ds-tab="overview" data-ds-target="teaching-method"><span class="ds-item__dot"></span><span class="ds-item__label">Teaching</span></a>
       <a class="ds-item" data-ds-tab="overview" data-ds-target="history-section"><span class="ds-item__dot"></span><span class="ds-item__label">History</span></a>
       <a class="ds-item" data-ds-tab="overview" data-ds-target="labs-section"><span class="ds-item__dot"></span><span class="ds-item__label">Labs</span></a>
@@ -355,7 +355,7 @@
           <div class="hod-msg__content">
             <div class="hod-msg__label">From the HOD's Desk</div>
             <p class="hod-msg__text">"Our Data Science department fosters innovation in data analytics, machine learning, and cloud computing. With 22 research papers, 5 patents, and industry projects with Mu Sigma, Fractal Analytics, and Amazon, we equip students with skills to lead in the data-driven economy."</p>
-            <div class="hod-msg__name">— Dr. P. Subhashini, Professor &amp; HOD, CSE (Data Science)</div>
+            <div class="hod-msg__name">— Dr. P. Subhashini, Professor and HOD, CSE (Data Science)</div>
           </div>
         </div>
 
@@ -388,7 +388,7 @@
           </div>
 
           <div class="sub-accordion">
-            <div class="sub-accordion__header">NBA Accreditation &amp; Recognitions <span class="sub-accordion__chevron">&#9660;</span></div>
+            <div class="sub-accordion__header">NBA Accreditation and Recognitions <span class="sub-accordion__chevron">&#9660;</span></div>
             <div class="sub-accordion__body"><div class="sub-accordion__content">
               <p>The B.Tech CSE (Data Science) programme is currently under preparation for NBA accreditation aligned with the Washington Accord criteria. The department holds institutional memberships in NASSCOM Future Skills and the Computer Society of India (CSI), and actively participates in NASSCOM-curated industry skilling programmes.</p>
             </div></div>
@@ -469,233 +469,712 @@
         <h2 class="panel-heading" id="panel-faculty-heading">Faculty Profiles</h2>
         <p>Hover for details. Click "View Research" for full profile.</p>
         <div id="faculty-grid-section" class="fcard-grid">
-
-          <div class="fcard" data-author="P. Subhashini" style="position:relative;">
-            <img src="https://mlrit.ac.in/wp-content/uploads/0202/03/subhashini-mam-e1767165355989.jpeg" alt="Dr. P. Subhashini" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.style.background='#1F6B24'" />
-            <div class="fcard__ini" style="display:none">PS</div>
-            <div style="position:absolute;top:10px;left:10px;z-index:6;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:#1F6B24;padding:3px 8px;border-radius:4px;">HOD</div>
-            <div class="fcard__overlay">
-              <div class="fcard__name">Dr. P. Subhashini</div>
-              <div class="fcard__role">Professor &amp; HOD</div>
-            </div>
-            <div class="fcard__hover-info">
-              <div class="fcard__hover-name">Dr. P. Subhashini</div>
-              <div class="fcard__hover-role">Professor &amp; HOD</div>
-              <div class="fcard__hover-spec">Machine Learning, Cybersecurity, IoT, Data Science</div>
-              <a href="faculty-profile.html?name=Dr.%20P.%20Subhashini&role=Professor%20%26%20HOD&photo=https%3A%2F%2Fmlrit.ac.in%2Fwp-content%2Fuploads%2F0202%2F03%2Fsubhashini-mam-e1767165355989.jpeg" class="fcard__hover-btn">View Research</a>
-            </div>
+          <div class="fcard" data-author="Dr. P. Subhashini" style="position:relative;">
+              <img src="images/cse-ds/p-subhashini.jpg" alt="Dr. P. Subhashini" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">PS</div>
+              <div style="position:absolute;top:10px;left:10px;z-index:6;font-family:'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:#1F6B24;padding:3px 8px;border-radius:4px;">HOD</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. P. Subhashini</div>
+                <div class="fcard__role">Professor and HOD</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. P. Subhashini</div>
+                <div class="fcard__hover-role">Professor and HOD</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Dr.%20P.%20Subhashini&role=Professor%20%26%20HOD&photo=images/cse-ds/p-subhashini.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
           </div>
 
-          <div class="fcard" data-author="D.B.K. Kamesh" style="position:relative;">
-            <img src="https://mlrit.ac.in/wp-content/uploads/2024/06/Prof.-Kamesh-Sir.jpg" alt="Dr. D.B.K. Kamesh" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.style.background='#1F6B24'" />
-            <div class="fcard__ini" style="display:none">DK</div>
-            <div class="fcard__overlay">
-              <div class="fcard__name">Dr. D.B.K. Kamesh</div>
-              <div class="fcard__role">Professor</div>
-            </div>
-            <div class="fcard__hover-info">
-              <div class="fcard__hover-name">Dr. D.B.K. Kamesh</div>
-              <div class="fcard__hover-role">Professor</div>
-              <div class="fcard__hover-spec">Computer Science, Data Science, Research</div>
-              <a href="faculty-profile.html?name=Dr.%20D.B.K.%20Kamesh&role=Professor&photo=https%3A%2F%2Fmlrit.ac.in%2Fwp-content%2Fuploads%2F2024%2F06%2FProf.-Kamesh-Sir.jpg" class="fcard__hover-btn">View Research</a>
-            </div>
+          <div class="fcard" data-author="Dr. D.B.K. Kamesh">
+              <img src="images/cse-ds/d-b-k-kamesh.jpg" alt="Dr. D.B.K. Kamesh" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">DK</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. D.B.K. Kamesh</div>
+                <div class="fcard__role">Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. D.B.K. Kamesh</div>
+                <div class="fcard__hover-role">Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Dr.%20D.B.K.%20Kamesh&role=Professor&photo=images/cse-ds/d-b-k-kamesh.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
           </div>
 
-          <div class="fcard" data-author="Damalla Jyothi" style="position:relative;">
-            <img src="https://mlrit.ac.in/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-25-at-11.18.11-AM-1-e1717231709688.jpeg" alt="Dr. Damalla Jyothi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.style.background='#1F6B24'" />
-            <div class="fcard__ini" style="display:none">DJ</div>
-            <div class="fcard__overlay">
-              <div class="fcard__name">Dr. Damalla Jyothi</div>
-              <div class="fcard__role">Associate Professor</div>
-            </div>
-            <div class="fcard__hover-info">
-              <div class="fcard__hover-name">Dr. Damalla Jyothi</div>
-              <div class="fcard__hover-role">Associate Professor</div>
-              <div class="fcard__hover-spec">Network Security, Data Analytics</div>
-              <a href="faculty-profile.html?name=Dr.%20Damalla%20Jyothi&role=Associate%20Professor&photo=https%3A%2F%2Fmlrit.ac.in%2Fwp-content%2Fuploads%2F2024%2F04%2FWhatsApp-Image-2024-04-25-at-11.18.11-AM-1-e1717231709688.jpeg" class="fcard__hover-btn">View Research</a>
-            </div>
+          <div class="fcard" data-author="Dr. Damalla Jyothi">
+              <img src="images/cse-ds/damalla-jyothi.jpg" alt="Dr. Damalla Jyothi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">DJ</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Damalla Jyothi</div>
+                <div class="fcard__role">Associate Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Damalla Jyothi</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Dr.%20Damalla%20Jyothi&role=Associate%20Professor&photo=images/cse-ds/damalla-jyothi.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
           </div>
 
-          <div class="fcard" data-author="P. Salma Khatoon" style="position:relative;">
-            <img src="images/ds/p-salma-khatoon.jpg" alt="Dr. P Salma Khatoon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.style.background='#1F6B24'" />
-            <div class="fcard__ini" style="display:none">PS</div>
-            <div class="fcard__overlay">
-              <div class="fcard__name">Dr. P Salma Khatoon</div>
-              <div class="fcard__role">Associate Professor</div>
-            </div>
-            <div class="fcard__hover-info">
-              <div class="fcard__hover-name">Dr. P Salma Khatoon</div>
-              <div class="fcard__hover-role">Associate Professor</div>
-              <div class="fcard__hover-spec">Cloud Security, Data Structures, IoT</div>
-              <a href="faculty-profile.html?name=Dr.%20P%20Salma%20Khatoon&role=Associate%20Professor&photo=images/ds/p-salma-khatoon.jpg" class="fcard__hover-btn">View Research</a>
-            </div>
+          <div class="fcard" data-author="Dr. P. Salma Khatoon">
+              <img src="images/cse-ds/p-salma-khatoon.jpg" alt="Dr. P. Salma Khatoon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">PK</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. P. Salma Khatoon</div>
+                <div class="fcard__role">Associate Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. P. Salma Khatoon</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Dr.%20P.%20Salma%20Khatoon&role=Associate%20Professor&photo=images/cse-ds/p-salma-khatoon.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
           </div>
 
-          <div class="fcard" data-author="Veerasekhar Reddy" style="position:relative;">
-            <img src="images/ds/veerasekhar-reddy.jpg" alt="Dr. Veerasekhar Reddy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.style.background='#1F6B24'" />
-            <div class="fcard__ini" style="display:none">VR</div>
-            <div class="fcard__overlay">
-              <div class="fcard__name">Dr. Veerasekhar Reddy</div>
-              <div class="fcard__role">Associate Professor</div>
-            </div>
-            <div class="fcard__hover-info">
-              <div class="fcard__hover-name">Dr. Veerasekhar Reddy</div>
-              <div class="fcard__hover-role">Associate Professor</div>
-              <div class="fcard__hover-spec">Data Science, ML</div>
-              <a href="faculty-profile.html?name=Dr.%20Veerasekhar%20Reddy&role=Associate%20Professor&photo=images/ds/veerasekhar-reddy.jpg" class="fcard__hover-btn">View Research</a>
-            </div>
+          <div class="fcard" data-author="Dr. Veerasekhar Reddy">
+              <img src="images/cse-ds/veerasekhar-reddy.jpg" alt="Dr. Veerasekhar Reddy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">VR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Veerasekhar Reddy</div>
+                <div class="fcard__role">Associate Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Veerasekhar Reddy</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Dr.%20Veerasekhar%20Reddy&role=Associate%20Professor&photo=images/cse-ds/veerasekhar-reddy.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
           </div>
 
-          <div class="fcard" data-author="Arshiya Begum" style="position:relative;">
-            <img src="images/ds/arshiya-begum.jpg" alt="Arshiya Begum" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.style.background='#1F6B24'" />
-            <div class="fcard__ini" style="display:none">AB</div>
-            <div class="fcard__overlay">
-              <div class="fcard__name">Arshiya Begum</div>
-              <div class="fcard__role">Assistant Professor</div>
-            </div>
-            <div class="fcard__hover-info">
-              <div class="fcard__hover-name">Arshiya Begum</div>
-              <div class="fcard__hover-role">Assistant Professor</div>
-              <div class="fcard__hover-spec">Data Science, Statistics</div>
-              <a href="faculty-profile.html?name=Arshiya%20Begum&role=Assistant%20Professor&photo=images/ds/arshiya-begum.jpg" class="fcard__hover-btn">View Research</a>
-            </div>
+          <div class="fcard" data-author="Arshiya Begum">
+              <img src="images/cse-ds/arshiya-begum.jpg" alt="Arshiya Begum" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">AB</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Arshiya Begum</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Arshiya Begum</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Arshiya%20Begum&role=Assistant%20Professor&photo=images/cse-ds/arshiya-begum.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
           </div>
 
-          <div class="fcard" data-author="Tahneyath Ahmed" style="position:relative;">
-            <img src="images/ds/tahneyath-ahmed.jpg" alt="Tahneyath Ahmed" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.style.background='#1F6B24'" />
-            <div class="fcard__ini" style="display:none">TA</div>
-            <div class="fcard__overlay">
-              <div class="fcard__name">Tahneyath Ahmed</div>
-              <div class="fcard__role">Assistant Professor</div>
-            </div>
-            <div class="fcard__hover-info">
-              <div class="fcard__hover-name">Tahneyath Ahmed</div>
-              <div class="fcard__hover-role">Assistant Professor</div>
-              <div class="fcard__hover-spec">Big Data, Analytics</div>
-              <a href="faculty-profile.html?name=Tahneyath%20Ahmed&role=Assistant%20Professor&photo=images/ds/tahneyath-ahmed.jpg" class="fcard__hover-btn">View Research</a>
-            </div>
+          <div class="fcard" data-author="Tahneyath Ahmed">
+              <img src="images/cse-ds/tahneyath-ahmed.jpg" alt="Tahneyath Ahmed" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">TA</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Tahneyath Ahmed</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Tahneyath Ahmed</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Tahneyath%20Ahmed&role=Assistant%20Professor&photo=images/cse-ds/tahneyath-ahmed.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
           </div>
 
-          <div class="fcard" data-author="K. Rani" style="position:relative;">
-            <img src="images/ds/k-rani.jpg" alt="K. Rani" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.style.background='#1F6B24'" />
-            <div class="fcard__ini" style="display:none">KR</div>
-            <div class="fcard__overlay">
-              <div class="fcard__name">K. Rani</div>
-              <div class="fcard__role">Assistant Professor</div>
-            </div>
-            <div class="fcard__hover-info">
-              <div class="fcard__hover-name">K. Rani</div>
-              <div class="fcard__hover-role">Assistant Professor</div>
-              <div class="fcard__hover-spec">Data Engineering, Python</div>
-              <a href="faculty-profile.html?name=K.%20Rani&role=Assistant%20Professor&photo=images/ds/k-rani.jpg" class="fcard__hover-btn">View Research</a>
-            </div>
+          <div class="fcard" data-author="K. Rani">
+              <img src="images/cse-ds/k-rani.jpg" alt="K. Rani" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">KR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">K. Rani</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">K. Rani</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=K.%20Rani&role=Assistant%20Professor&photo=images/cse-ds/k-rani.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
           </div>
 
-          <div class="fcard" data-author="Sravanthi Anumasula" style="position:relative;">
-            <img src="images/ds/sravanthi-anumasula.jpg" alt="Sravanthi Anumasula" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.style.background='#1F6B24'" />
-            <div class="fcard__ini" style="display:none">SA</div>
-            <div class="fcard__overlay">
-              <div class="fcard__name">Sravanthi Anumasula</div>
-              <div class="fcard__role">Assistant Professor</div>
-            </div>
-            <div class="fcard__hover-info">
-              <div class="fcard__hover-name">Sravanthi Anumasula</div>
-              <div class="fcard__hover-role">Assistant Professor</div>
-              <div class="fcard__hover-spec">Machine Learning, Data Visualization</div>
-              <a href="faculty-profile.html?name=Sravanthi%20Anumasula&role=Assistant%20Professor&photo=images/ds/sravanthi-anumasula.jpg" class="fcard__hover-btn">View Research</a>
-            </div>
+          <div class="fcard" data-author="Manasaraj">
+              <img src="images/cse-ds/manasaraj.jpg" alt="Manasaraj" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MA</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Manasaraj</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Manasaraj</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Manasaraj&role=Assistant%20Professor&photo=images/cse-ds/manasaraj.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
           </div>
 
-          <div class="fcard" data-author="D. Srivalli" style="position:relative;">
-            <img src="images/ds/d-srivalli.jpg" alt="D. Srivalli" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.style.background='#1F6B24'" />
-            <div class="fcard__ini" style="display:none">DS</div>
-            <div class="fcard__overlay">
-              <div class="fcard__name">D. Srivalli</div>
-              <div class="fcard__role">Assistant Professor</div>
-            </div>
-            <div class="fcard__hover-info">
-              <div class="fcard__hover-name">D. Srivalli</div>
-              <div class="fcard__hover-role">Assistant Professor</div>
-              <div class="fcard__hover-spec">Cloud Analytics, BI Tools</div>
-              <a href="faculty-profile.html?name=D.%20Srivalli&role=Assistant%20Professor&photo=images/ds/d-srivalli.jpg" class="fcard__hover-btn">View Research</a>
-            </div>
+          <div class="fcard" data-author="S. Shakina">
+              <img src="images/cse-ds/s-shakina.jpg" alt="S. Shakina" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">SS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">S. Shakina</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">S. Shakina</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=S.%20Shakina&role=Assistant%20Professor&photo=images/cse-ds/s-shakina.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
           </div>
 
-          <div class="fcard" data-author="D. Gayathri" style="position:relative;">
-            <img src="images/ds/d-gayathri.jpg" alt="D. Gayathri" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.style.background='#1F6B24'" />
-            <div class="fcard__ini" style="display:none">DG</div>
-            <div class="fcard__overlay">
-              <div class="fcard__name">D. Gayathri</div>
-              <div class="fcard__role">Assistant Professor</div>
-            </div>
-            <div class="fcard__hover-info">
-              <div class="fcard__hover-name">D. Gayathri</div>
-              <div class="fcard__hover-role">Assistant Professor</div>
-              <div class="fcard__hover-spec">Data Mining, Statistics</div>
-              <a href="faculty-profile.html?name=D.%20Gayathri&role=Assistant%20Professor&photo=images/ds/d-gayathri.jpg" class="fcard__hover-btn">View Research</a>
-            </div>
+          <div class="fcard" data-author="Sravanthi Anumasula">
+              <img src="images/cse-ds/sravanthi-anumasula.jpg" alt="Sravanthi Anumasula" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">SA</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Sravanthi Anumasula</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Sravanthi Anumasula</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Sravanthi%20Anumasula&role=Assistant%20Professor&photo=images/cse-ds/sravanthi-anumasula.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
           </div>
 
-          <div class="fcard" data-author="Dasari Amulya" style="position:relative;">
-            <img src="images/ds/dasari-amulya.jpg" alt="Dasari Amulya" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.style.background='#1F6B24'" />
-            <div class="fcard__ini" style="display:none">DA</div>
-            <div class="fcard__overlay">
-              <div class="fcard__name">Dasari Amulya</div>
-              <div class="fcard__role">Assistant Professor</div>
-            </div>
-            <div class="fcard__hover-info">
-              <div class="fcard__hover-name">Dasari Amulya</div>
-              <div class="fcard__hover-role">Assistant Professor</div>
-              <div class="fcard__hover-spec">Data Science, AI</div>
-              <a href="faculty-profile.html?name=Dasari%20Amulya&role=Assistant%20Professor&photo=images/ds/dasari-amulya.jpg" class="fcard__hover-btn">View Research</a>
-            </div>
+          <div class="fcard" data-author="D. Srivalli">
+              <img src="images/cse-ds/d-srivalli.jpg" alt="D. Srivalli" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">DS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">D. Srivalli</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">D. Srivalli</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=D.%20Srivalli&role=Assistant%20Professor&photo=images/cse-ds/d-srivalli.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
           </div>
 
-          <div class="fcard" data-author="V. Divya" style="position:relative;">
-            <img src="images/ds/v-divya.jpg" alt="V. Divya" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.style.background='#1F6B24'" />
-            <div class="fcard__ini" style="display:none">VD</div>
-            <div class="fcard__overlay">
-              <div class="fcard__name">V. Divya</div>
-              <div class="fcard__role">Assistant Professor</div>
-            </div>
-            <div class="fcard__hover-info">
-              <div class="fcard__hover-name">V. Divya</div>
-              <div class="fcard__hover-role">Assistant Professor</div>
-              <div class="fcard__hover-spec">Database Systems, SQL</div>
-              <a href="faculty-profile.html?name=V.%20Divya&role=Assistant%20Professor&photo=images/ds/v-divya.jpg" class="fcard__hover-btn">View Research</a>
-            </div>
+          <div class="fcard" data-author="D. Gayathri">
+              <img src="images/cse-ds/d-gayathri.jpg" alt="D. Gayathri" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">DG</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">D. Gayathri</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">D. Gayathri</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=D.%20Gayathri&role=Assistant%20Professor&photo=images/cse-ds/d-gayathri.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
           </div>
 
-          <div class="fcard" data-author="Madhavi Banala" style="position:relative;">
-            <img src="images/ds/madhavi-banala.jpg" alt="Madhavi Banala" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.style.background='#1F6B24'" />
-            <div class="fcard__ini" style="display:none">MB</div>
-            <div class="fcard__overlay">
-              <div class="fcard__name">Madhavi Banala</div>
-              <div class="fcard__role">Assistant Professor</div>
-            </div>
-            <div class="fcard__hover-info">
-              <div class="fcard__hover-name">Madhavi Banala</div>
-              <div class="fcard__hover-role">Assistant Professor</div>
-              <div class="fcard__hover-spec">Data Science, Python</div>
-              <a href="faculty-profile.html?name=Madhavi%20Banala&role=Assistant%20Professor&photo=images/ds/madhavi-banala.jpg" class="fcard__hover-btn">View Research</a>
-            </div>
+          <div class="fcard" data-author="N. Baby Rani">
+              <img src="images/cse-ds/n-baby-rani.jpg" alt="N. Baby Rani" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">NR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">N. Baby Rani</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">N. Baby Rani</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=N.%20Baby%20Rani&role=Assistant%20Professor&photo=images/cse-ds/n-baby-rani.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
           </div>
 
-          <div class="fcard" data-author="Bochu Sandhya" style="position:relative;">
-            <img src="images/ds/bochu-sandhya.jpg" alt="Bochu Sandhya" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.style.background='#1F6B24'" />
-            <div class="fcard__ini" style="display:none">BS</div>
-            <div class="fcard__overlay">
-              <div class="fcard__name">Bochu Sandhya</div>
-              <div class="fcard__role">Assistant Professor</div>
-            </div>
-            <div class="fcard__hover-info">
-              <div class="fcard__hover-name">Bochu Sandhya</div>
-              <div class="fcard__hover-role">Assistant Professor</div>
-              <div class="fcard__hover-spec">Data Analytics, Tableau</div>
-              <a href="faculty-profile.html?name=Bochu%20Sandhya&role=Assistant%20Professor&photo=images/ds/bochu-sandhya.jpg" class="fcard__hover-btn">View Research</a>
-            </div>
+          <div class="fcard" data-author="Dasari Amulya">
+              <img src="images/cse-ds/dasari-amulya.jpg" alt="Dasari Amulya" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">DA</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dasari Amulya</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dasari Amulya</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Dasari%20Amulya&role=Assistant%20Professor&photo=images/cse-ds/dasari-amulya.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
           </div>
 
+          <div class="fcard" data-author="V. Divya">
+              <img src="images/cse-ds/v-divya.jpg" alt="V. Divya" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">VD</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">V. Divya</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">V. Divya</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=V.%20Divya&role=Assistant%20Professor&photo=images/cse-ds/v-divya.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Ms. P. Nishitha">
+              <img src="images/cse-ds/p-nishitha.jpg" alt="Ms. P. Nishitha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">PN</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Ms. P. Nishitha</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Ms. P. Nishitha</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Ms.%20P.%20Nishitha&role=Assistant%20Professor&photo=images/cse-ds/p-nishitha.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="A. Nirisha">
+              <img src="images/cse-ds/a-nirisha.jpg" alt="A. Nirisha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">AN</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">A. Nirisha</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">A. Nirisha</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=A.%20Nirisha&role=Assistant%20Professor&photo=images/cse-ds/a-nirisha.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="S. Anudeep">
+              <img src="images/cse-ds/s-anudeep.jpg" alt="S. Anudeep" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">SA</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">S. Anudeep</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">S. Anudeep</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=S.%20Anudeep&role=Assistant%20Professor&photo=images/cse-ds/s-anudeep.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Ms. Madhavi Banala">
+              <img src="images/cse-ds/madhavi-banala.jpg" alt="Ms. Madhavi Banala" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MB</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Ms. Madhavi Banala</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Ms. Madhavi Banala</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Ms.%20Madhavi%20Banala&role=Assistant%20Professor&photo=images/cse-ds/madhavi-banala.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mrs. Pallavi Mechineni">
+              <img src="images/cse-ds/pallavi-mechineni.jpg" alt="Mrs. Pallavi Mechineni" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">PM</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mrs. Pallavi Mechineni</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mrs. Pallavi Mechineni</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mrs.%20Pallavi%20Mechineni&role=Assistant%20Professor&photo=images/cse-ds/pallavi-mechineni.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Bochu Sandhya">
+              <img src="images/cse-ds/bochu-sandhya.jpg" alt="Bochu Sandhya" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">BS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Bochu Sandhya</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Bochu Sandhya</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Bochu%20Sandhya&role=Assistant%20Professor&photo=images/cse-ds/bochu-sandhya.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mrs. Swathi Dendi">
+              <img src="images/cse-ds/swathi-dendi.jpg" alt="Mrs. Swathi Dendi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">SD</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mrs. Swathi Dendi</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mrs. Swathi Dendi</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mrs.%20Swathi%20Dendi&role=Assistant%20Professor&photo=images/cse-ds/swathi-dendi.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mrs. Banoth Rajeshwari">
+              <img src="images/cse-ds/banoth-rajeshwari.jpg" alt="Mrs. Banoth Rajeshwari" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">BR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mrs. Banoth Rajeshwari</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mrs. Banoth Rajeshwari</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mrs.%20Banoth%20Rajeshwari&role=Assistant%20Professor&photo=images/cse-ds/banoth-rajeshwari.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Irfan Bagawan">
+              <img src="images/cse-ds/irfan-bagawan.jpg" alt="Irfan Bagawan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">IB</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Irfan Bagawan</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Irfan Bagawan</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Irfan%20Bagawan&role=Assistant%20Professor&photo=images/cse-ds/irfan-bagawan.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Kiran Kumar Reddy A.">
+              <img src="images/cse-ds/kiran-kumar-reddy-a.jpg" alt="Kiran Kumar Reddy A." onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">KA</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Kiran Kumar Reddy A.</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Kiran Kumar Reddy A.</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Kiran%20Kumar%20Reddy%20A.&role=Assistant%20Professor&photo=images/cse-ds/kiran-kumar-reddy-a.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Bolagani Balaji">
+              <img src="images/cse-ds/bolagani-balaji.jpg" alt="Bolagani Balaji" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">BB</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Bolagani Balaji</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Bolagani Balaji</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Bolagani%20Balaji&role=Assistant%20Professor&photo=images/cse-ds/bolagani-balaji.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Malothu Sindhuja">
+              <img src="images/cse-ds/malothu-sindhuja.jpg" alt="Malothu Sindhuja" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Malothu Sindhuja</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Malothu Sindhuja</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Malothu%20Sindhuja&role=Assistant%20Professor&photo=images/cse-ds/malothu-sindhuja.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Hasina Nasrin">
+              <img src="images/cse-ds/hasina-nasrin.jpg" alt="Hasina Nasrin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">HN</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Hasina Nasrin</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Hasina Nasrin</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Hasina%20Nasrin&role=Assistant%20Professor&photo=images/cse-ds/hasina-nasrin.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Ms. K. Alankruthi">
+              <img src="images/cse-ds/k-alankruthi.jpg" alt="Ms. K. Alankruthi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">KA</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Ms. K. Alankruthi</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Ms. K. Alankruthi</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Ms.%20K.%20Alankruthi&role=Assistant%20Professor&photo=images/cse-ds/k-alankruthi.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mrs. B. Ravali Reddy">
+              <img src="images/cse-ds/b-ravali-reddy.jpg" alt="Mrs. B. Ravali Reddy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">BR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mrs. B. Ravali Reddy</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mrs. B. Ravali Reddy</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mrs.%20B.%20Ravali%20Reddy&role=Assistant%20Professor&photo=images/cse-ds/b-ravali-reddy.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mathipogu Ashok Babu">
+              <img src="images/cse-ds/mathipogu-ashok-babu.jpg" alt="Mathipogu Ashok Babu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MB</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mathipogu Ashok Babu</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mathipogu Ashok Babu</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mathipogu%20Ashok%20Babu&role=Assistant%20Professor&photo=images/cse-ds/mathipogu-ashok-babu.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mrs. K. Srinija">
+              <img src="images/cse-ds/k-srinija.jpg" alt="Mrs. K. Srinija" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">KS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mrs. K. Srinija</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mrs. K. Srinija</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mrs.%20K.%20Srinija&role=Assistant%20Professor&photo=images/cse-ds/k-srinija.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Bhukya Balakrishna">
+              <img src="images/cse-ds/bhukya-balakrishna.jpg" alt="Bhukya Balakrishna" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">BB</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Bhukya Balakrishna</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Bhukya Balakrishna</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Bhukya%20Balakrishna&role=Assistant%20Professor&photo=images/cse-ds/bhukya-balakrishna.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Jangam Nagaraju">
+              <img src="images/cse-ds/jangam-nagaraju.jpg" alt="Jangam Nagaraju" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">JN</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Jangam Nagaraju</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Jangam Nagaraju</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Jangam%20Nagaraju&role=Assistant%20Professor&photo=images/cse-ds/jangam-nagaraju.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mary Navyatha Govindu">
+              <img src="images/cse-ds/mary-navyatha-govindu.jpg" alt="Mary Navyatha Govindu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MG</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mary Navyatha Govindu</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mary Navyatha Govindu</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mary%20Navyatha%20Govindu&role=Assistant%20Professor&photo=images/cse-ds/mary-navyatha-govindu.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="N. Thulasi Chithra">
+              <img src="images/cse-ds/n-thulasi-chithra.jpg" alt="N. Thulasi Chithra" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">NC</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">N. Thulasi Chithra</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">N. Thulasi Chithra</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=N.%20Thulasi%20Chithra&role=Assistant%20Professor&photo=images/cse-ds/n-thulasi-chithra.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mrs. S. Parvathi">
+              <img src="images/cse-ds/s-parvathi.jpg" alt="Mrs. S. Parvathi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">SP</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mrs. S. Parvathi</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mrs. S. Parvathi</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mrs.%20S.%20Parvathi&role=Assistant%20Professor&photo=images/cse-ds/s-parvathi.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="N. Sandhya">
+              <img src="images/cse-ds/n-sandhya.jpg" alt="N. Sandhya" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">NS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">N. Sandhya</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">N. Sandhya</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=N.%20Sandhya&role=Assistant%20Professor&photo=images/cse-ds/n-sandhya.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mrs. M. Srividya">
+              <img src="images/cse-ds/m-srividya.jpg" alt="Mrs. M. Srividya" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mrs. M. Srividya</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mrs. M. Srividya</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mrs.%20M.%20Srividya&role=Assistant%20Professor&photo=images/cse-ds/m-srividya.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Ms. D. Neelima Priyadarshini">
+              <img src="images/cse-ds/d-neelima-priyadarshini.jpg" alt="Ms. D. Neelima Priyadarshini" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">DP</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Ms. D. Neelima Priyadarshini</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Ms. D. Neelima Priyadarshini</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Ms.%20D.%20Neelima%20Priyadarshini&role=Assistant%20Professor&photo=images/cse-ds/d-neelima-priyadarshini.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Ms. N. Vijayasri">
+              <img src="images/cse-ds/n-vijayasri.jpg" alt="Ms. N. Vijayasri" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">NV</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Ms. N. Vijayasri</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Ms. N. Vijayasri</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Ms.%20N.%20Vijayasri&role=Assistant%20Professor&photo=images/cse-ds/n-vijayasri.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Rowsonara Begum">
+              <img src="images/cse-ds/rowsonara-begum.jpg" alt="Rowsonara Begum" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">RB</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Rowsonara Begum</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Rowsonara Begum</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Rowsonara%20Begum&role=Assistant%20Professor&photo=images/cse-ds/rowsonara-begum.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mr. Mohd Anwar Ali">
+              <img src="images/cse-ds/mohd-anwar-ali.jpg" alt="Mr. Mohd Anwar Ali" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MA</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mr. Mohd Anwar Ali</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mr. Mohd Anwar Ali</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mr.%20Mohd%20Anwar%20Ali&role=Assistant%20Professor&photo=images/cse-ds/mohd-anwar-ali.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Ms. B. Sushma">
+              <img src="images/cse-ds/b-sushma.jpg" alt="Ms. B. Sushma" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">BS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Ms. B. Sushma</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Ms. B. Sushma</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Ms.%20B.%20Sushma&role=Assistant%20Professor&photo=images/cse-ds/b-sushma.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mr. D. Sandeep">
+              <img src="images/cse-ds/d-sandeep.jpg" alt="Mr. D. Sandeep" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">DS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mr. D. Sandeep</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mr. D. Sandeep</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mr.%20D.%20Sandeep&role=Assistant%20Professor&photo=images/cse-ds/d-sandeep.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="S. Navya">
+              <img src="images/cse-ds/s-navya.jpg" alt="S. Navya" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">SN</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">S. Navya</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">S. Navya</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=S.%20Navya&role=Assistant%20Professor&photo=images/cse-ds/s-navya.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+        
         </div>
       </div>
 
@@ -827,48 +1306,95 @@
         </ul>
 
         <div class="panel-sub" id="pub-section">Faculty Publications</div>
-        <div class="pub-filters" id="pubFilters">
-          <button class="pub-filter is-active" data-year="all">All Years</button>
-          <button class="pub-filter" data-year="2024">2024</button>
-          <button class="pub-filter" data-year="2023">2023</button>
-          <button class="pub-filter" data-year="2022">2022</button>
-        </div>
-        <div class="pub-list" id="pubList">
-          <div class="pub-card" data-pub-year="2024">
+<p>Selected publications from departmental faculty, ingested from the individual profile pages on mlrit.ac.in.</p>
+<div class="pub-list" id="pubList">
+          <div class="pub-card" data-pub-year="2022">
             <div class="pub-card__body">
-              <div class="pub-card__title">Streaming Anomaly Detection in Multivariate IoT Sensor Data Using Isolation Forest and Apache Kafka</div>
-              <div class="pub-card__authors">Department Faculty, MLRIT</div>
-              <div class="pub-card__journal">IEEE Transactions on Industrial Informatics</div>
-              <span class="pub-tag">Streaming Analytics</span>
+              <div class="pub-card__title">An architecture on drome agriculture IoT using Machine learning</div>
+              <div class="pub-card__authors">Dr. D.B.K. Kamesh</div>
+              <div class="pub-card__journal">2nd International Conference on Cognitive and Intelligent Computing (ICCIC-2022)</div>
             </div>
-            <span class="pub-card__year">2024</span>
-          </div>
-          <div class="pub-card" data-pub-year="2024">
-            <div class="pub-card__body">
-              <div class="pub-card__title">Federated Statistical Learning for Privacy-Preserving Healthcare Analytics Across Distributed Hospital Networks</div>
-              <div class="pub-card__authors">Department Faculty, MLRIT</div>
-              <div class="pub-card__journal">Elsevier — Journal of Biomedical Informatics</div>
-              <span class="pub-tag">Privacy-Preserving DS</span>
-            </div>
-            <span class="pub-card__year">2024</span>
-          </div>
-          <div class="pub-card" data-pub-year="2023">
-            <div class="pub-card__body">
-              <div class="pub-card__title">Hybrid ARIMA-LSTM Model for Long-Horizon Retail Demand Forecasting with External Regressor Integration</div>
-              <div class="pub-card__authors">Department Faculty, MLRIT</div>
-              <div class="pub-card__journal">Springer — Neural Computing and Applications</div>
-              <span class="pub-tag">Time Series</span>
-            </div>
-            <span class="pub-card__year">2023</span>
+            <span class="pub-card__year">2022</span>
           </div>
           <div class="pub-card" data-pub-year="2022">
             <div class="pub-card__body">
-              <div class="pub-card__title">Scalable Graph-Based Collaborative Filtering for Real-Time Recommendation in E-Commerce Platforms</div>
-              <div class="pub-card__authors">Department Faculty, MLRIT</div>
-              <div class="pub-card__journal">ACM Transactions on Information Systems</div>
-              <span class="pub-tag">Recommender Systems</span>
+              <div class="pub-card__title">Machine Learning-Based Software effort estimation of suggestive Agile and Scrumban Methodologies</div>
+              <div class="pub-card__authors">Dr. D.B.K. Kamesh</div>
+              <div class="pub-card__journal">Proceedings of the 14th International Conference on Soft Computing and Pattern Recognition (SoCPaR 2022)</div>
             </div>
             <span class="pub-card__year">2022</span>
+          </div>
+          <div class="pub-card" data-pub-year="2018">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Automating WEB interface in relation to user behavior</div>
+              <div class="pub-card__authors">Dr. D.B.K. Kamesh</div>
+              <div class="pub-card__journal">Artificial Intelligence and Cognitive Computing</div>
+            </div>
+            <span class="pub-card__year">2018</span>
+          </div>
+          <div class="pub-card" data-pub-year="2018">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Identification of effective parameters for designing a data channel</div>
+              <div class="pub-card__authors">Dr. D.B.K. Kamesh</div>
+              <div class="pub-card__journal">Artificial Intelligence and Cognitive Computing</div>
+            </div>
+            <span class="pub-card__year">2018</span>
+          </div>
+          <div class="pub-card" data-pub-year="2018">
+            <div class="pub-card__body">
+              <div class="pub-card__title">An advanced framework to identify cybercrime using data analytics</div>
+              <div class="pub-card__authors">Dr. D.B.K. Kamesh</div>
+              <div class="pub-card__journal">Artificial Intelligence and Cognitive Computing</div>
+            </div>
+            <span class="pub-card__year">2018</span>
+          </div>
+          <div class="pub-card" data-pub-year="2018">
+            <div class="pub-card__body">
+              <div class="pub-card__title">An efficient technique for energy-proficient clustering-based routing protocol for packet split and merge in wireless sensor networks</div>
+              <div class="pub-card__authors">Dr. D.B.K. Kamesh</div>
+              <div class="pub-card__journal">Artificial Intelligence and Cognitive Computing</div>
+            </div>
+            <span class="pub-card__year">2018</span>
+          </div>
+          <div class="pub-card" data-pub-year="2018">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Home automation using GSM</div>
+              <div class="pub-card__authors">Dr. D.B.K. Kamesh</div>
+              <div class="pub-card__journal">Artificial Intelligence and Cognitive Computing</div>
+            </div>
+            <span class="pub-card__year">2018</span>
+          </div>
+          <div class="pub-card" data-pub-year="2018">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Online speaker authentication using phonemic distance measurements</div>
+              <div class="pub-card__authors">Dr. D.B.K. Kamesh</div>
+              <div class="pub-card__journal">Artificial Intelligence and Cognitive Computing</div>
+            </div>
+            <span class="pub-card__year">2018</span>
+          </div>
+          <div class="pub-card" data-pub-year="2018">
+            <div class="pub-card__body">
+              <div class="pub-card__title">A secured surveillance system for monitoring your home</div>
+              <div class="pub-card__authors">Dr. D.B.K. Kamesh</div>
+              <div class="pub-card__journal">Artificial Intelligence and Cognitive Computing</div>
+            </div>
+            <span class="pub-card__year">2018</span>
+          </div>
+          <div class="pub-card" data-pub-year="2016">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Snort Rule Detection for Countering in Network Attack</div>
+              <div class="pub-card__authors">Dr. D.B.K. Kamesh</div>
+              <div class="pub-card__journal">FICTA-2016 SPRINGER Publication, 2016, International Conference on Frontiers of Intelligent Computing: Theory and applications (FICTA’16)</div>
+            </div>
+            <span class="pub-card__year">2016</span>
+          </div>
+          <div class="pub-card" data-pub-year="2016">
+            <div class="pub-card__body">
+              <div class="pub-card__title">Text-to-Speech Conversion</div>
+              <div class="pub-card__authors">Dr. D.B.K. Kamesh</div>
+              <div class="pub-card__journal">3rd International Conference on Advances in Computer Science, Engineering and Technology (ICACSET’16)</div>
+            </div>
+            <span class="pub-card__year">2016</span>
           </div>
         </div>
       </div>
@@ -881,9 +1407,9 @@
         <div class="panel-sub">Composition</div>
         <div style="overflow-x:auto;">
           <table class="committee-table">
-            <thead><tr><th>S.No</th><th>Name &amp; Details</th><th>Designation at MLRIT</th><th>Role</th></tr></thead>
+            <thead><tr><th>S.No</th><th>Name and Details</th><th>Designation at MLRIT</th><th>Role</th></tr></thead>
             <tbody>
-              <tr><td>1</td><td><strong>Dr. R. Sridevi</strong><br><span style="font-size:0.78rem;color:#888;">Professor &amp; HOD, CSE (Data Science) &mdash; MLRIT</span></td><td>Professor &amp; HOD</td><td><span class="committee-badge badge--chairman">Chairman / Convener</span></td></tr>
+              <tr><td>1</td><td><strong>Dr. R. Sridevi</strong><br><span style="font-size:0.78rem;color:#888;">Professor and HOD, CSE (Data Science) &mdash; MLRIT</span></td><td>Professor and HOD</td><td><span class="committee-badge badge--chairman">Chairman / Convener</span></td></tr>
               <tr><td>2</td><td><strong>Mr. B. Nagaraju</strong><br><span style="font-size:0.78rem;color:#888;">Associate Professor, CSE (Data Science) &mdash; MLRIT</span></td><td>Associate Professor</td><td><span class="committee-badge badge--academic">Member</span></td></tr>
               <tr><td>3</td><td><strong>Mrs. P. Anuradha</strong><br><span style="font-size:0.78rem;color:#888;">Associate Professor, CSE (Data Science) &mdash; MLRIT</span></td><td>Associate Professor</td><td><span class="committee-badge badge--academic">Member</span></td></tr>
               <tr><td>4</td><td><strong>Mr. S. Mahesh Kumar</strong><br><span style="font-size:0.78rem;color:#888;">Assistant Professor, CSE (Data Science) &mdash; MLRIT</span></td><td>Assistant Professor</td><td><span class="committee-badge badge--academic">Member</span></td></tr>
@@ -911,9 +1437,9 @@
         <div class="panel-sub">Composition</div>
         <div style="overflow-x:auto;">
           <table class="committee-table">
-            <thead><tr><th>S.No</th><th>Name &amp; Details</th><th>Designation / Organisation</th><th>Role</th></tr></thead>
+            <thead><tr><th>S.No</th><th>Name and Details</th><th>Designation / Organisation</th><th>Role</th></tr></thead>
             <tbody>
-              <tr><td>1</td><td><strong>Dr. R. Sridevi</strong><br><span style="font-size:0.78rem;color:#888;">Professor &amp; HOD, CSE (Data Science) &mdash; MLRIT</span></td><td>Professor &amp; HOD, CSE (Data Science)</td><td><span class="committee-badge badge--chairman">Chairman</span></td></tr>
+              <tr><td>1</td><td><strong>Dr. R. Sridevi</strong><br><span style="font-size:0.78rem;color:#888;">Professor and HOD, CSE (Data Science) &mdash; MLRIT</span></td><td>Professor and HOD, CSE (Data Science)</td><td><span class="committee-badge badge--chairman">Chairman</span></td></tr>
               <tr><td>2</td><td><strong>Mr. B. Nagaraju</strong><br><span style="font-size:0.78rem;color:#888;">Associate Professor, CSE (Data Science) &mdash; MLRIT</span></td><td>Associate Professor, CSE (Data Science)</td><td><span class="committee-badge badge--academic">Internal Member</span></td></tr>
               <tr><td>3</td><td><strong>Mrs. P. Anuradha</strong><br><span style="font-size:0.78rem;color:#888;">Associate Professor, CSE (Data Science) &mdash; MLRIT</span></td><td>Associate Professor, CSE (Data Science)</td><td><span class="committee-badge badge--academic">Internal Member</span></td></tr>
               <tr><td>4</td><td><strong>Industry Expert from Mu Sigma</strong><br><span style="font-size:0.78rem;color:#888;">Senior Analytics Consultant, Mu Sigma Inc.</span></td><td>Mu Sigma Inc.</td><td><span class="committee-badge badge--industry">Industry Expert</span></td></tr>
@@ -948,19 +1474,19 @@
       var programs = {
         btech: {
           1: {
-            1: ['Probability & Statistics', 'Python for Data Science', 'Linear Algebra', 'Database Systems', 'Communication Skills', 'Python Lab', 'DB Lab'],
+            1: ['Probability and Statistics', 'Python for Data Science', 'Linear Algebra', 'Database Systems', 'Communication Skills', 'Python Lab', 'DB Lab'],
             2: ['Statistical Inference', 'Data Structures', 'R Programming', 'Business Analytics', 'Environmental Science', 'R Lab', 'BA Lab']
           },
           2: {
-            3: ['Machine Learning', 'Data Visualisation', 'Big Data Technologies', 'SQL & NoSQL', 'Open Elective-I', 'ML Lab', 'Big Data Lab'],
+            3: ['Machine Learning', 'Data Visualisation', 'Big Data Technologies', 'SQL and NoSQL', 'Open Elective-I', 'ML Lab', 'Big Data Lab'],
             4: ['Deep Learning for Data Science', 'Feature Engineering', 'Time Series Analysis', 'Cloud Computing', 'Open Elective-II', 'DL Lab', 'Cloud Lab']
           },
           3: {
-            5: ['Natural Language Processing', 'Data Warehousing & BI', 'Computer Vision', 'Professional Elective-I', 'Professional Elective-II', 'NLP Lab', 'BI Lab'],
-            6: ['Recommender Systems', 'Graph Analytics', 'Data Ethics & Governance', 'Professional Elective-III', 'Open Elective-III', 'Recommender Lab', 'Mini Project']
+            5: ['Natural Language Processing', 'Data Warehousing and BI', 'Computer Vision', 'Professional Elective-I', 'Professional Elective-II', 'NLP Lab', 'BI Lab'],
+            6: ['Recommender Systems', 'Graph Analytics', 'Data Ethics and Governance', 'Professional Elective-III', 'Open Elective-III', 'Recommender Lab', 'Mini Project']
           },
           4: {
-            7: ['MLOps & Data Engineering', 'Professional Elective-IV', 'Professional Elective-V', 'Open Elective-IV', 'Capstone Project Phase-I', 'Internship'],
+            7: ['MLOps and Data Engineering', 'Professional Elective-IV', 'Professional Elective-V', 'Open Elective-IV', 'Capstone Project Phase-I', 'Internship'],
             8: ['Advanced Analytics', 'Professional Elective-VI', 'Capstone Project Phase-II', 'Seminar']
           }
         }
@@ -971,7 +1497,7 @@
       };
 
       var subjectDetails = {
-        "Probability & Statistics": ["Probability Theory and Axioms", "Random Variables and Distributions", "Joint Distributions and Expectations", "Sampling Distributions", "Regression and Correlation Analysis"],
+        "Probability and Statistics": ["Probability Theory and Axioms", "Random Variables and Distributions", "Joint Distributions and Expectations", "Sampling Distributions", "Regression and Correlation Analysis"],
         "Python for Data Science": ["Python Basics and Data Types", "NumPy and Array Computing", "Pandas for Data Wrangling", "Matplotlib and Seaborn", "Scikit-learn Introduction"],
         "Linear Algebra": ["Vectors and Vector Spaces", "Matrix Operations and Factorisation", "Eigenvalues and Eigenvectors", "Singular Value Decomposition", "Applications in Data Science"],
         "Database Systems": ["Relational Model and SQL", "Normalisation and Schema Design", "Transactions and Concurrency", "Indexing and Query Optimisation", "NoSQL Introduction"],
@@ -982,11 +1508,11 @@
         "Big Data Technologies": ["Hadoop Ecosystem — HDFS, MapReduce", "Apache Spark Core and SQL", "Streaming with Apache Kafka", "Data Lakes and Delta Lake", "Batch vs. Stream Processing"],
         "Time Series Analysis": ["Time Series Components and Decomposition", "ARIMA and Seasonal Models", "Exponential Smoothing Methods", "LSTM for Sequence Forecasting", "Forecast Evaluation Metrics"],
         "Natural Language Processing": ["Text Preprocessing and Tokenisation", "TF-IDF and Word Embeddings", "Named Entity Recognition and POS Tagging", "Transformers and BERT for NLP", "Sentiment Analysis and Topic Modelling"],
-        "Data Warehousing & BI": ["Data Warehouse Architecture", "ETL Design and Best Practices", "OLAP and Dimensional Modelling", "Snowflake and BigQuery", "BI Report Design with Looker"],
+        "Data Warehousing and BI": ["Data Warehouse Architecture", "ETL Design and Best Practices", "OLAP and Dimensional Modelling", "Snowflake and BigQuery", "BI Report Design with Looker"],
         "Recommender Systems": ["Collaborative Filtering — User and Item Based", "Matrix Factorisation Techniques", "Content-Based Filtering", "Hybrid Recommender Models", "Evaluation — Precision, Recall, NDCG"],
         "Graph Analytics": ["Graph Theory Foundations", "NetworkX and Graph Databases", "Community Detection Algorithms", "Graph Neural Networks Introduction", "Knowledge Graphs and Applications"],
-        "Data Ethics & Governance": ["Bias and Fairness in Data Pipelines", "Privacy Laws — GDPR, PDPA", "Data Quality and Stewardship", "Explainability and Accountability", "Responsible AI and DS Frameworks"],
-        "MLOps & Data Engineering": ["ML Pipeline Design and Orchestration", "Experiment Tracking with MLflow", "Model Serving and APIs", "CI/CD for ML Systems", "Monitoring and Data Drift Detection"],
+        "Data Ethics and Governance": ["Bias and Fairness in Data Pipelines", "Privacy Laws — GDPR, PDPA", "Data Quality and Stewardship", "Explainability and Accountability", "Responsible AI and DS Frameworks"],
+        "MLOps and Data Engineering": ["ML Pipeline Design and Orchestration", "Experiment Tracking with MLflow", "Model Serving and APIs", "CI/CD for ML Systems", "Monitoring and Data Drift Detection"],
         "Advanced Analytics": ["Causal Inference and A/B Testing", "Bayesian Methods for Decision Making", "Survival Analysis", "Spatial Data Analytics", "Advanced Optimisation Techniques"]
       };
 

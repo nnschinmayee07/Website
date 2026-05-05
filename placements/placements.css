@@ -668,7 +668,7 @@
    ============================================================ */
 
 .pl-contact {
-  background: var(--primary-dark);
+  background: #000;
   padding: 120px 0;
 }
 
@@ -777,15 +777,15 @@
 .pl-mou__stack {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   position: relative;
   z-index: 1;
 }
 
 .pl-mou-card {
   position: relative;
-  padding: 26px 32px;
-  border-radius: 16px;
+  padding: 18px 24px;
+  border-radius: 14px;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(18px) saturate(120%);
   -webkit-backdrop-filter: blur(18px) saturate(120%);
@@ -842,20 +842,20 @@
 .pl-mou-card__head {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 .pl-mou-card[data-side="right"] .pl-mou-card__head { justify-content: flex-end; }
 .pl-mou-card__type {
   font-family: var(--sans);
-  font-size: 0.62rem;
+  font-size: 0.55rem;
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--orange);
   background: rgba(232, 93, 31, 0.10);
-  padding: 4px 10px;
+  padding: 3px 8px;
   border-radius: 999px;
   border: 1px solid rgba(232, 93, 31, 0.18);
 }
@@ -866,30 +866,30 @@
 }
 .pl-mou-card__metric {
   font-family: var(--sans);
-  font-size: 0.72rem;
+  font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--green);
   background: rgba(26, 82, 54, 0.08);
-  padding: 3px 10px;
+  padding: 2px 8px;
   border-radius: 6px;
   white-space: nowrap;
 }
 
 .pl-mou-card__name {
   font-family: var(--heading);
-  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-size: clamp(1.15rem, 1.6vw, 1.5rem);
   font-weight: 800;
   color: var(--green);
-  margin: 4px 0 8px;
+  margin: 2px 0 6px;
   line-height: 1.15;
 }
 
 .pl-mou-card__desc {
   font-family: var(--sans);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
-  line-height: 1.65;
+  line-height: 1.55;
   margin: 0;
 }
 
@@ -897,17 +897,17 @@
 .pl-mou-card__docs {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
-  margin-top: 14px;
+  gap: 6px;
+  margin-top: 10px;
 }
 .pl-mou-card[data-side="right"] .pl-mou-card__docs { justify-content: flex-end; }
 .pl-mou-card__doc {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 11px;
+  gap: 5px;
+  padding: 5px 10px;
   font-family: var(--sans);
-  font-size: 0.72rem;
+  font-size: 0.66rem;
   font-weight: 600;
   color: var(--green);
   text-decoration: none;
@@ -921,8 +921,8 @@
     transform 0.25s ease;
 }
 .pl-mou-card__doc svg {
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
   flex-shrink: 0;
 }
 .pl-mou-card__doc:hover {
@@ -1445,7 +1445,7 @@ html { scroll-behavior: smooth; }
 .pl-sidebar__inner::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 2px; }
 
 .pl-sidebar__title {
-  font-family: 'Raleway', sans-serif;
+  font-family: var(--sans);
   font-size: 0.6rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -1487,7 +1487,7 @@ html { scroll-behavior: smooth; }
 }
 
 .pl-sidebar__label {
-  font-family: 'Raleway', sans-serif;
+  font-family: var(--sans);
   font-size: 0.72rem;
   font-weight: 600;
   color: rgba(26,58,46,0.5);
@@ -1634,7 +1634,7 @@ html { scroll-behavior: smooth; }
   border-collapse: collapse;
 }
 .pl-year-detail__table th {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--sans);
   font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1646,7 +1646,7 @@ html { scroll-behavior: smooth; }
   background: #fafafa;
 }
 .pl-year-detail__table td {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--sans);
   font-size: 0.82rem;
   font-weight: 450;
   color: #1c1c2e;
@@ -1660,7 +1660,7 @@ html { scroll-behavior: smooth; }
   color: #1c1c2e;
 }
 .pl-year-detail__table td:first-child {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--sans);
   font-size: 0.72rem;
   font-weight: 700;
   color: rgba(var(--orange-raw), 0.7);
@@ -1674,7 +1674,7 @@ html { scroll-behavior: smooth; }
 }
 /* Salary — orange accent */
 .pl-year-detail__table td:nth-child(4) {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--heading);
   font-size: 0.8rem;
   font-weight: 700;
   color: rgba(var(--orange-raw), 0.85);

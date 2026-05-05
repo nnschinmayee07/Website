@@ -31,7 +31,7 @@
     <div class="masthead">
       <div class="container masthead__inner">
         <a href="/" class="masthead__logo" aria-label="MLRIT Home">
-          <img src="mlrit-logo-transparent.png" alt="MLRIT Logo" />
+          <img src="mlrit-logo-main.png" alt="MLRIT Logo" />
         </a>
         <div class="masthead__tagline">
           <span>Marri Laxman Reddy Institute of Technology</span>
@@ -266,7 +266,7 @@
         <div class="ss-header">
           <span class="ss-eyebrow">Wall of Achievements</span>
           <h2 class="ss-heading">Success<br><em>Stories.</em></h2>
-          <p class="ss-desc">Students, faculty &amp; athletes — every banner tells a story of excellence.</p>
+          <p class="ss-desc">Students, faculty and athletes — every banner tells a story of excellence.</p>
         </div>
 
         <div class="ss-carousel" id="ssCarousel" aria-label="Success Stories Carousel">
@@ -278,7 +278,7 @@
                 <div class="ss-card__info">
                   <span class="ss-card__tag">Placement · Batch 2026</span>
                   <h3 class="ss-card__name">Microsoft Internship</h3>
-                  <p class="ss-card__role">Sai Loukhya Chundi &amp; Kakumanu Sailatha</p>
+                  <p class="ss-card__role">Sai Loukhya Chundi and Kakumanu Sailatha</p>
                   <p class="ss-card__company">Microsoft · 51 LPA · ₹1.25 Lakh/month Stipend</p>
                 </div>
               </div>
@@ -432,7 +432,7 @@
 
           <div style="padding-right: 40px; position:relative; z-index:2;">
             <span class="section-label reveal">Recognition</span>
-            <h2 class="section-heading reveal" data-delay="1">Accreditations &amp; Approvals</h2>
+            <h2 class="section-heading reveal" data-delay="1">Accreditations and Approvals</h2>
             <p class="section-sub reveal" data-delay="2">AICTE, NAAC, NBA, ARIIA and more &mdash; recognised by leading national bodies for academic excellence and quality education.</p>
 
             <div class="achievements__ranks">
@@ -799,7 +799,7 @@
           <div class="sf-cta">
             <div class="sf-cta__text">
               <h3>Start Your Journey at MLRIT</h3>
-              <p>Applications open for B.Tech, M.Tech &amp; MBA — limited seats.</p>
+              <p>Applications open for B.Tech, M.Tech and MBA — limited seats.</p>
             </div>
             <div class="sf-cta__right">
               <div class="sf-cta__actions">
@@ -820,7 +820,7 @@
 
             <!-- Brand column -->
             <div class="sf-brand sf-col-reveal">
-              <img src="https://i.ibb.co/zHVr8JGd/mlrit-logo-new.png" alt="MLRIT" class="sf-brand__logo" />
+              <img src="mlrit-logo-main.png" alt="MLRIT" class="sf-brand__logo" loading="lazy" decoding="async" />
               <p class="sf-brand__desc">MLR Institute of Technology, Dundigal, Hyderabad — shaping engineers and leaders since 2005.</p>
               <div class="sf-brand__contact">
                 <a href="tel:+919652226061">+91 96522 26061</a>
@@ -854,7 +854,7 @@
                 <li><a href="https://mlrit.ac.in/mba/">MBA</a></li>
                 <li><a href="https://mlrit.ac.in/research/details-of-research-scholar/">Ph.D</a></li>
                 <li><a href="https://mlrit.ac.in/examinations/">Academic Calendar</a></li>
-                <li><a href="https://mlrit.ac.in/examinations/">Syllabus &amp; Curriculum</a></li>
+                <li><a href="https://mlrit.ac.in/examinations/">Syllabus and Curriculum</a></li>
                 <li><a href="https://mlrit.ac.in/campus-life/library/">Library</a></li>
                 <li><a href="https://mlrit.ac.in/examinations/">Examinations</a></li>
                 <li><a href="https://mlrit.ac.in/innovation-cell/innovation-overview/">Innovation Cell</a></li>
@@ -880,8 +880,8 @@
             <div class="sf-col sf-col-reveal" style="--delay: 0.3s">
               <h5>Campus Life</h5>
               <ul>
-                <li><a href="https://mlrit.ac.in/campus-life/">Clubs &amp; Societies</a></li>
-                <li><a href="https://mlrit.ac.in/sports/">Sports &amp; Fitness</a></li>
+                <li><a href="https://mlrit.ac.in/campus-life/">Clubs and Societies</a></li>
+                <li><a href="https://mlrit.ac.in/sports/">Sports and Fitness</a></li>
                 <li><a href="https://mlrit.ac.in/events/">Cultural Events</a></li>
                 <li><a href="https://mlrit.ac.in/campus-life/hostel-facility/">Hostel</a></li>
                 <li><a href="https://mlrit.ac.in/campus-life/cafeteria/">Cafeteria</a></li>
@@ -901,7 +901,7 @@
                 <li><a href="placements/placements.html">Placements</a></li>
                 <li><a href="https://mlrit.ac.in/research/">Research</a></li>
                 <li><a href="https://mlrit.ac.in/nirf-ranked-institution/">NIRF Rankings</a></li>
-                <li><a href="https://mlrit.ac.in/category/news/">Press &amp; Media</a></li>
+                <li><a href="https://mlrit.ac.in/category/news/">Press and Media</a></li>
                 <li><a href="https://mlrit.ac.in/contactus/">Contact Us</a></li>
                 <li><a href="https://alumni.mlrit.ac.in/">Alumni</a></li>
                 <li><a href="https://mlrit.ac.in/careers/">Careers</a></li>
@@ -1381,13 +1381,15 @@
     (function () {
       const cols = document.querySelectorAll('.sf-col-reveal');
       if (!cols.length) return;
+      const footer = document.querySelector('.sticky-footer');
+      if (!footer) return;
       const io = new IntersectionObserver(entries => {
         if (entries[0].isIntersecting) {
           cols.forEach(c => c.classList.add('is-visible'));
           io.disconnect();
         }
-      }, { threshold: 0.1 });
-      io.observe(document.querySelector('.sticky-footer'));
+      }, { rootMargin: '300px 0px', threshold: 0 });
+      io.observe(footer);
     })();
   </script>
 

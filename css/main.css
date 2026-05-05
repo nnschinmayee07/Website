@@ -1360,7 +1360,7 @@ body {
 .sf-watermark {
   position: relative; z-index: 1;
   font-family: var(--heading);
-  font-size: clamp(6rem, 14vw, 14rem);
+  font-size: clamp(5rem, 11vw, 11rem);
   font-weight: 700;
   letter-spacing: 0.05em;
   text-align: center;
@@ -1368,9 +1368,9 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  line-height: 0.85;
-  margin-top: -0.5rem;
-  padding-bottom: 0;
+  line-height: 1;
+  margin-top: 0;
+  padding-bottom: 0.5rem;
   user-select: none;
   pointer-events: none;
 }
@@ -1379,12 +1379,12 @@ body {
 .sf-col-reveal {
   opacity: 0;
   transform: translateY(-10px);
-  filter: blur(4px);
-  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out), filter 0.7s var(--ease-out);
+  will-change: opacity, transform;
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
   transition-delay: var(--delay, 0s);
 }
 .sf-col-reveal.is-visible {
-  opacity: 1; transform: translateY(0); filter: blur(0);
+  opacity: 1; transform: translateY(0);
 }
 
 /* ===========================

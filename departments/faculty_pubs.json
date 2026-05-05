@@ -1,0 +1,934 @@
+{
+  "csit/d-b-k-kamesh": {
+    "research": [
+      {
+        "title": "Snort Rule Detection for Countering in Network Attack",
+        "venue": "FICTA-2016 SPRINGER Publication, 2016, International Conference on Frontiers of Intelligent Computing: Theory and applications (FICTA\u201916)",
+        "year": "2016"
+      },
+      {
+        "title": "Text-to-Speech Conversion",
+        "venue": "3rd International Conference on Advances in Computer Science, Engineering and Technology (ICACSET\u201916)",
+        "year": "2016"
+      },
+      {
+        "title": "Automating WEB interface in relation to user behavior",
+        "venue": "Artificial Intelligence & Cognitive Computing",
+        "year": "2018"
+      },
+      {
+        "title": "Identification of effective parameters for designing a data channel",
+        "venue": "Artificial Intelligence & Cognitive Computing",
+        "year": "2018"
+      },
+      {
+        "title": "An advanced framework to identify cybercrime using data analytics",
+        "venue": "Artificial Intelligence & Cognitive Computing",
+        "year": "2018"
+      },
+      {
+        "title": "An efficient technique for energy-proficient clustering-based routing protocol for packet split and merge in wireless sensor networks",
+        "venue": "Artificial Intelligence & Cognitive Computing",
+        "year": "2018"
+      },
+      {
+        "title": "Home automation using GSM",
+        "venue": "Artificial Intelligence & Cognitive Computing",
+        "year": "2018"
+      },
+      {
+        "title": "Online speaker authentication using phonemic distance measurements",
+        "venue": "Artificial Intelligence & Cognitive Computing",
+        "year": "2018"
+      },
+      {
+        "title": "A secured surveillance system for monitoring your home",
+        "venue": "Artificial Intelligence & Cognitive Computing",
+        "year": "2018"
+      },
+      {
+        "title": "An architecture on drome agriculture IoT using Machine learning",
+        "venue": "2nd International Conference on Cognitive & Intelligent Computing (ICCIC-2022)",
+        "year": "2022"
+      },
+      {
+        "title": "Machine Learning-Based Software effort estimation of suggestive Agile and Scrumban Methodologies",
+        "venue": "Proceedings of the 14th International Conference on Soft Computing and Pattern Recognition (SoCPaR 2022)",
+        "year": "2022"
+      }
+    ],
+    "books": [
+      {
+        "title": "Practical Approach through C and D.S. Programming",
+        "publisher": "Lulu Publication Raleigh",
+        "year": "2017"
+      },
+      {
+        "title": "A Practical Approach for OOP through Java",
+        "publisher": "Lulu Publication Raleigh",
+        "year": "2019"
+      }
+    ],
+    "name": "Dr. D.B.K. Kamesh",
+    "url": "https://mlrit.ac.in/faculty/dr-d-b-k-kamesh/"
+  },
+  "csit/p-nishitha": {
+    "research": [],
+    "books": [],
+    "name": "Ms .P.Nishitha",
+    "url": "https://mlrit.ac.in/faculty/p-nishitha-2/"
+  },
+  "csit/d-rajeshwari": {
+    "research": [],
+    "books": [],
+    "name": "D.Rajeshwari",
+    "url": "https://mlrit.ac.in/faculty/d-rajeshwari/"
+  },
+  "csit/a-nirisha": {
+    "research": [],
+    "books": [],
+    "name": "A.Nirisha",
+    "url": "https://mlrit.ac.in/faculty/a-nirisha/"
+  },
+  "csit/p-poojasree": {
+    "research": [],
+    "books": [],
+    "name": "P. Poojasree",
+    "url": "https://mlrit.ac.in/faculty/p-poojasree/"
+  },
+  "csit/rajkumar-bhookya": {
+    "research": [],
+    "books": [],
+    "name": "Rajkumar Bhookya",
+    "url": "https://mlrit.ac.in/faculty/rajkumar-bhookya/"
+  },
+  "csit/devolla-manogna": {
+    "research": [],
+    "books": [],
+    "name": "Devolla Manogna",
+    "url": "https://mlrit.ac.in/faculty/devolla-manogna/"
+  },
+  "csit/s-anudeep": {
+    "research": [],
+    "books": [],
+    "name": "S. Anudeep",
+    "url": "https://mlrit.ac.in/faculty/sadula-anudeep/"
+  },
+  "csit/banothu-seva": {
+    "research": [],
+    "books": [],
+    "name": "Banothu Seva",
+    "url": "https://mlrit.ac.in/faculty/banothu-seva/"
+  },
+  "csit/madhavi-banala": {
+    "research": [],
+    "books": [],
+    "name": "Ms.Madhavi Banala",
+    "url": "https://mlrit.ac.in/faculty/b-madhavi/"
+  },
+  "csit/n-thulasi-chithra": {
+    "research": [],
+    "books": [],
+    "name": "N. Thulasi Chithra",
+    "url": "https://mlrit.ac.in/faculty/n-thulasi-chitra/"
+  },
+  "csit/v-srikanth": {
+    "research": [],
+    "books": [],
+    "name": "V. Srikanth",
+    "url": "https://mlrit.ac.in/faculty/v-srikanth/"
+  },
+  "csit/t-gandhi": {
+    "research": [],
+    "books": [],
+    "name": "T. Gandhi",
+    "url": "https://mlrit.ac.in/faculty/t-gandhi/"
+  },
+  "csit/t-mounika": {
+    "research": [],
+    "books": [],
+    "name": "Mrs T. Mounika",
+    "url": "https://mlrit.ac.in/faculty/mrs-t-mounika/"
+  },
+  "csit/s-parvathi": {
+    "research": [],
+    "books": [],
+    "name": "Mrs S.Parvathi",
+    "url": "https://mlrit.ac.in/faculty/mrs-s-parvathi/"
+  },
+  "csit/n-sandhya": {
+    "research": [],
+    "books": [],
+    "name": "N. Sandhya",
+    "url": "https://mlrit.ac.in/faculty/mrs-n-sandhya-rani/"
+  },
+  "csit/m-srividya": {
+    "research": [],
+    "books": [],
+    "name": "Mrs M.Srividya",
+    "url": "https://mlrit.ac.in/faculty/mrs-m-srividya/"
+  },
+  "csit/d-neelima-priyadarshini": {
+    "research": [],
+    "books": [],
+    "name": "Ms D.Neelima Priyadarshini",
+    "url": "https://mlrit.ac.in/faculty/mrs-d-neelima/"
+  },
+  "csit/n-vijayasri": {
+    "research": [],
+    "books": [],
+    "name": "Ms N.Vijayasri",
+    "url": "https://mlrit.ac.in/faculty/mrs-ch-vijayasri/"
+  },
+  "csit/s-navya": {
+    "research": [],
+    "books": [],
+    "name": "S. Navya",
+    "url": "https://mlrit.ac.in/faculty/soleti-navya/"
+  },
+  "it/n-v-raja-sekhar-reddy": {
+    "research": [],
+    "books": [],
+    "name": "Dr.N V Raja Sekhar Reddy",
+    "url": "https://mlrit.ac.in/faculty/dr-n-v-rajasekhar-reddy/"
+  },
+  "it/dhilli-rao-gorja": {
+    "research": [],
+    "books": [],
+    "name": "Dr. Dhilli Rao Gorja",
+    "url": "https://mlrit.ac.in/faculty/dr-dhilli-rao-gorja/"
+  },
+  "it/vemuri-nitin": {
+    "research": [],
+    "books": [],
+    "name": "Vemuri Nitin",
+    "url": "https://mlrit.ac.in/faculty/vemuri-nitin/"
+  },
+  "it/shruthi-patel": {
+    "research": [],
+    "books": [],
+    "name": "Mrs Shruthi Patel",
+    "url": "https://mlrit.ac.in/faculty/mrs-shruti-patil/"
+  },
+  "it/d-sandeep": {
+    "research": [],
+    "books": [],
+    "name": "Mr D. Sandeep",
+    "url": "https://mlrit.ac.in/faculty/d-sandeep/"
+  },
+  "it/j-adilakshmi": {
+    "research": [],
+    "books": [],
+    "name": "J Adilakshmi",
+    "url": "https://mlrit.ac.in/faculty/j-adilakshmi/"
+  },
+  "it/bhasker-boddu": {
+    "research": [],
+    "books": [],
+    "name": "Bhasker Boddu",
+    "url": "https://mlrit.ac.in/faculty/bhasker-boddu/"
+  },
+  "it/p-laxmaiah": {
+    "research": [],
+    "books": [],
+    "name": "P laxmaiah",
+    "url": "https://mlrit.ac.in/faculty/p-laxmaiah/"
+  },
+  "it/b-varija": {
+    "research": [],
+    "books": [],
+    "name": "B Varija",
+    "url": "https://mlrit.ac.in/faculty/b-varija/"
+  },
+  "it/b-sushma": {
+    "research": [],
+    "books": [],
+    "name": "Ms B. Sushma",
+    "url": "https://mlrit.ac.in/faculty/b-sushma/"
+  },
+  "it/g-sathyanarayan": {
+    "research": [],
+    "books": [],
+    "name": "G Sathyanarayan",
+    "url": "https://mlrit.ac.in/faculty/g-sathyanarayan/"
+  },
+  "it/mohd-anwar-ali": {
+    "research": [],
+    "books": [],
+    "name": "Mr.Mohd Anwar Ali",
+    "url": "https://mlrit.ac.in/faculty/mohd-anwar-ali/"
+  },
+  "it/m-harshini": {
+    "research": [],
+    "books": [],
+    "name": "M Harshini",
+    "url": "https://mlrit.ac.in/faculty/m-harshini/"
+  },
+  "it/mopur-vijaya-bhaskar-reddy": {
+    "research": [],
+    "books": [],
+    "name": "Dr. Mopur Vijaya Bhaskar Reddy",
+    "url": "https://mlrit.ac.in/faculty/dr-mopur-vijaya-bhaskar-reddy/"
+  },
+  "aiml/kashi-sai-prasad": {
+    "research": [],
+    "books": [],
+    "name": "Dr. Kashi Sai Prasad",
+    "url": "https://mlrit.ac.in/faculty/kashi-sai-prasad/"
+  },
+  "aiml/k-varada-rajkumar": {
+    "research": [],
+    "books": [],
+    "name": "Dr. K. Varada Rajkumar",
+    "url": "https://mlrit.ac.in/faculty/dr-k-varada-rajkumar/"
+  },
+  "aiml/penubaka-kiran-kumar-reddy": {
+    "research": [],
+    "books": [],
+    "name": "Dr. Penubaka Kiran Kumar Reddy",
+    "url": "https://mlrit.ac.in/faculty/penubaka-kiran-kumar-reddy/"
+  },
+  "aiml/vs-pavan-kumar": {
+    "research": [],
+    "books": [],
+    "name": "VS Pavan Kumar",
+    "url": "https://mlrit.ac.in/faculty/vs-pavan-kumar/"
+  },
+  "aiml/bidinamcherla-ammanni": {
+    "research": [],
+    "books": [],
+    "name": "Bidinamcherla Ammanni",
+    "url": "https://mlrit.ac.in/faculty/bidinamcherla-ammanni/"
+  },
+  "aiml/sivakrishna-kondaveeti": {
+    "research": [],
+    "books": [],
+    "name": "Dr. Sivakrishna Kondaveeti",
+    "url": "https://mlrit.ac.in/faculty/dr-sivakrishna-kondaveeti/"
+  },
+  "aiml/g-sowmya": {
+    "research": [],
+    "books": [],
+    "name": "G. Sowmya",
+    "url": "https://mlrit.ac.in/faculty/g-sowmya/"
+  },
+  "aiml/singanamala-priyanka": {
+    "research": [],
+    "books": [],
+    "name": "Singanamala Priyanka",
+    "url": "https://mlrit.ac.in/faculty/s-priyanka/"
+  },
+  "aiml/pasupuleti-pavani": {
+    "research": [],
+    "books": [],
+    "name": "Pasupuleti Pavani",
+    "url": "https://mlrit.ac.in/faculty/pasupuleti-pavani/"
+  },
+  "aiml/remedi-sravani": {
+    "research": [],
+    "books": [],
+    "name": "Remedi Sravani",
+    "url": "https://mlrit.ac.in/faculty/remedi-sravani/"
+  },
+  "aiml/lakshmi-saritha": {
+    "research": [],
+    "books": [],
+    "name": "Lakshmi Saritha",
+    "url": "https://mlrit.ac.in/faculty/lakshmi-saritha/"
+  },
+  "aiml/komari-biksheswara-rao": {
+    "research": [],
+    "books": [],
+    "name": "Komari BiksheswaraRao",
+    "url": "https://mlrit.ac.in/faculty/komari-biksheswararao/"
+  },
+  "aiml/e-raghavender": {
+    "research": [],
+    "books": [],
+    "name": "E Raghavender",
+    "url": "https://mlrit.ac.in/faculty/e-raghavender/"
+  },
+  "aiml/seedarla-sandhya-rani": {
+    "research": [],
+    "books": [],
+    "name": "Seedarla Sandhya Rani",
+    "url": "https://mlrit.ac.in/faculty/seedarla-sandhya-rani/"
+  },
+  "aiml/shaik-gouse-pasha": {
+    "research": [],
+    "books": [],
+    "name": "Shaik Gouse Pasha",
+    "url": "https://mlrit.ac.in/faculty/shaik-gouse-pasha/"
+  },
+  "aiml/m-lakshmi-saranya": {
+    "research": [],
+    "books": [],
+    "name": "M Lakshmi Saranya",
+    "url": "https://mlrit.ac.in/faculty/m-lakshmi-saranya/"
+  },
+  "aiml/pottapinjara-babu": {
+    "research": [],
+    "books": [],
+    "name": "Pottapinjara Babu",
+    "url": "https://mlrit.ac.in/faculty/pottapinjara-babu/"
+  },
+  "aiml/b-mamatha": {
+    "research": [],
+    "books": [],
+    "name": "B.Mamatha",
+    "url": "https://mlrit.ac.in/faculty/b-mamatha/"
+  },
+  "aiml/t-aswani": {
+    "research": [],
+    "books": [],
+    "name": "T Aswani",
+    "url": "https://mlrit.ac.in/faculty/t-aswani/"
+  },
+  "aiml/ravi-gangadharolla": {
+    "research": [],
+    "books": [],
+    "name": "Ravi Gangadharolla",
+    "url": "https://mlrit.ac.in/faculty/ravi-gangadharolla/"
+  },
+  "aiml/pacha-swathi": {
+    "research": [],
+    "books": [],
+    "name": "Pacha Swathi",
+    "url": "https://mlrit.ac.in/faculty/pacha-swathi/"
+  },
+  "aiml/t-nagini": {
+    "research": [],
+    "books": [],
+    "name": "T Nagini",
+    "url": "https://mlrit.ac.in/faculty/t-nagini/"
+  },
+  "aiml/h-ramanjineyulu": {
+    "research": [],
+    "books": [],
+    "name": "H Ramanjineyulu",
+    "url": "https://mlrit.ac.in/faculty/harijana-ramanjineyulu/"
+  },
+  "aiml/talari-meena": {
+    "research": [],
+    "books": [],
+    "name": "Talari Meena",
+    "url": "https://mlrit.ac.in/faculty/talari-meena/"
+  },
+  "aiml/nemala-jayasri": {
+    "research": [],
+    "books": [],
+    "name": "Nemala Jayasri",
+    "url": "https://mlrit.ac.in/faculty/nemala-jayasri/"
+  },
+  "aiml/gunda-aishwarya": {
+    "research": [],
+    "books": [],
+    "name": "Gunda Aishwarya",
+    "url": "https://mlrit.ac.in/faculty/gunda-aishwarya/"
+  },
+  "aiml/p-lokesh-kumar": {
+    "research": [],
+    "books": [],
+    "name": "P Lokesh Kumar",
+    "url": "https://mlrit.ac.in/faculty/p-lokesh-kumar/"
+  },
+  "aiml/j-teja": {
+    "research": [],
+    "books": [],
+    "name": "J. Teja",
+    "url": "https://mlrit.ac.in/faculty/mr-j-teja/"
+  },
+  "aiml/k-anusha": {
+    "research": [],
+    "books": [],
+    "name": "Mrs. K. Anusha",
+    "url": "https://mlrit.ac.in/faculty/mrs-k-anusha/"
+  },
+  "aiml/r-akhilesh-reddy": {
+    "research": [],
+    "books": [],
+    "name": "Mr.R Akhilesh Reddy",
+    "url": "https://mlrit.ac.in/faculty/mr-r-akhilesh-reddy/"
+  },
+  "aiml/p-sai-kumar": {
+    "research": [],
+    "books": [],
+    "name": "P Sai Kumar",
+    "url": "https://mlrit.ac.in/faculty/p-sai-kumar/"
+  },
+  "aiml/damala-obulesu": {
+    "research": [],
+    "books": [],
+    "name": "Damala Obulesu",
+    "url": "https://mlrit.ac.in/faculty/damala-obulesu/"
+  },
+  "aiml/bhaskar-mekala": {
+    "research": [],
+    "books": [],
+    "name": "Bhaskar Mekala",
+    "url": "https://mlrit.ac.in/faculty/bhaskar-mekala/"
+  },
+  "aiml/masigari-nagalakshmi": {
+    "research": [],
+    "books": [],
+    "name": "Masigari Nagalakshmi",
+    "url": "https://mlrit.ac.in/faculty/masigiri-nagalakshmi/"
+  },
+  "aiml/y-naveen": {
+    "research": [],
+    "books": [],
+    "name": "Y. Naveen",
+    "url": "https://mlrit.ac.in/faculty/y-naveen/"
+  },
+  "aiml/kallam-hemanthi": {
+    "research": [],
+    "books": [],
+    "name": "Kallam Hemanthi",
+    "url": "https://mlrit.ac.in/faculty/kallam-hemanthi/"
+  },
+  "aiml/vijay-keerthika": {
+    "research": [],
+    "books": [],
+    "name": "Vijay Keerthika",
+    "url": "https://mlrit.ac.in/faculty/vijay-keerthika/"
+  },
+  "aiml/g-umamaheswari": {
+    "research": [],
+    "books": [],
+    "name": "G. Umamaheswari",
+    "url": "https://mlrit.ac.in/faculty/g-umamaheswari/"
+  },
+  "aiml/k-jyothsna-reddy": {
+    "research": [],
+    "books": [],
+    "name": "K. Jyothsna Reddy",
+    "url": "https://mlrit.ac.in/faculty/k-jyothsna-reddy/"
+  },
+  "cse-cs/p-subhashini": {
+    "research": [],
+    "books": [],
+    "name": "Dr. P. Subhashini",
+    "url": "https://mlrit.ac.in/faculty/dr-p-subhashini/"
+  },
+  "cse-cs/atluri-srujan": {
+    "research": [],
+    "books": [],
+    "name": "Mr. Atluri Srujan",
+    "url": "https://mlrit.ac.in/faculty/mr-atluri-srujan/"
+  },
+  "cse-cs/manisha-kandukuri": {
+    "research": [],
+    "books": [],
+    "name": "Manisha Kandukuri",
+    "url": "https://mlrit.ac.in/faculty/manisha-kandukuri/"
+  },
+  "cse-cs/juttu-suresh": {
+    "research": [],
+    "books": [],
+    "name": "Juttu Suresh",
+    "url": "https://mlrit.ac.in/faculty/juttu-suresh/"
+  },
+  "cse-cs/k-shiva-krishna": {
+    "research": [],
+    "books": [],
+    "name": "K.Shiva Krishna",
+    "url": "https://mlrit.ac.in/faculty/k-shiva-krishna/"
+  },
+  "cse-cs/bochu-sandhya": {
+    "research": [],
+    "books": [],
+    "name": "Bochu Sandhya",
+    "url": "https://mlrit.ac.in/faculty/mrs-kannuri-sandhya/"
+  },
+  "cse-cs/swathi-dendi": {
+    "research": [],
+    "books": [],
+    "name": "Mrs. Swathi Dendi",
+    "url": "https://mlrit.ac.in/faculty/mrs-swathi-dendi/"
+  },
+  "cse-cs/y-anjali-satyavati": {
+    "research": [],
+    "books": [],
+    "name": "Mrs. Y Anjali Satyavati",
+    "url": "https://mlrit.ac.in/faculty/mrs-y-anjali-satyavati/"
+  },
+  "cse-cs/irfan-bagawan": {
+    "research": [],
+    "books": [],
+    "name": "Irfan Bagawan",
+    "url": "https://mlrit.ac.in/faculty/mr-irfan-bagawan/"
+  },
+  "cse-cs/kiran-kumar-reddy-a": {
+    "research": [],
+    "books": [],
+    "name": "Kiran Kumar Reddy.A",
+    "url": "https://mlrit.ac.in/faculty/mr-a-kiran-kumar-reddy/"
+  },
+  "cse-cs/mukku-bhavana": {
+    "research": [],
+    "books": [],
+    "name": "Ms. Mukku Bhavana",
+    "url": "https://mlrit.ac.in/faculty/ms-mukku-bhavana/"
+  },
+  "cse-cs/bolagani-balaji": {
+    "research": [],
+    "books": [],
+    "name": "Bolagani Balaji",
+    "url": "https://mlrit.ac.in/faculty/mr-bolagani-balaji/"
+  },
+  "cse-cs/d-tejaswini": {
+    "research": [],
+    "books": [],
+    "name": "Ms. D. Tejaswini",
+    "url": "https://mlrit.ac.in/faculty/ms-d-tejaswini/"
+  },
+  "cse-cs/ch-sharonu-pushpa": {
+    "research": [],
+    "books": [],
+    "name": "Mrs. Ch. Sharonu Pushpa",
+    "url": "https://mlrit.ac.in/faculty/mrs-ch-sharonu-pushpa/"
+  },
+  "cse-cs/g-umamaheswari": {
+    "research": [],
+    "books": [],
+    "name": "G. Umamaheswari",
+    "url": "https://mlrit.ac.in/faculty/g-uma-maheshwari/"
+  },
+  "cse-ds/d-b-k-kamesh": {
+    "research": [
+      {
+        "title": "Snort Rule Detection for Countering in Network Attack",
+        "venue": "FICTA-2016 SPRINGER Publication, 2016, International Conference on Frontiers of Intelligent Computing: Theory and applications (FICTA\u201916)",
+        "year": "2016"
+      },
+      {
+        "title": "Text-to-Speech Conversion",
+        "venue": "3rd International Conference on Advances in Computer Science, Engineering and Technology (ICACSET\u201916)",
+        "year": "2016"
+      },
+      {
+        "title": "Automating WEB interface in relation to user behavior",
+        "venue": "Artificial Intelligence & Cognitive Computing",
+        "year": "2018"
+      },
+      {
+        "title": "Identification of effective parameters for designing a data channel",
+        "venue": "Artificial Intelligence & Cognitive Computing",
+        "year": "2018"
+      },
+      {
+        "title": "An advanced framework to identify cybercrime using data analytics",
+        "venue": "Artificial Intelligence & Cognitive Computing",
+        "year": "2018"
+      },
+      {
+        "title": "An efficient technique for energy-proficient clustering-based routing protocol for packet split and merge in wireless sensor networks",
+        "venue": "Artificial Intelligence & Cognitive Computing",
+        "year": "2018"
+      },
+      {
+        "title": "Home automation using GSM",
+        "venue": "Artificial Intelligence & Cognitive Computing",
+        "year": "2018"
+      },
+      {
+        "title": "Online speaker authentication using phonemic distance measurements",
+        "venue": "Artificial Intelligence & Cognitive Computing",
+        "year": "2018"
+      },
+      {
+        "title": "A secured surveillance system for monitoring your home",
+        "venue": "Artificial Intelligence & Cognitive Computing",
+        "year": "2018"
+      },
+      {
+        "title": "An architecture on drome agriculture IoT using Machine learning",
+        "venue": "2nd International Conference on Cognitive & Intelligent Computing (ICCIC-2022)",
+        "year": "2022"
+      },
+      {
+        "title": "Machine Learning-Based Software effort estimation of suggestive Agile and Scrumban Methodologies",
+        "venue": "Proceedings of the 14th International Conference on Soft Computing and Pattern Recognition (SoCPaR 2022)",
+        "year": "2022"
+      }
+    ],
+    "books": [
+      {
+        "title": "Practical Approach through C and D.S. Programming",
+        "publisher": "Lulu Publication Raleigh",
+        "year": "2017"
+      },
+      {
+        "title": "A Practical Approach for OOP through Java",
+        "publisher": "Lulu Publication Raleigh",
+        "year": "2019"
+      }
+    ],
+    "name": "Dr. D.B.K. Kamesh",
+    "url": "https://mlrit.ac.in/faculty/dr-d-b-k-kamesh/"
+  },
+  "cse-ds/p-subhashini": {
+    "research": [],
+    "books": [],
+    "name": "Dr. P. Subhashini",
+    "url": "https://mlrit.ac.in/faculty/dr-p-subhashini/"
+  },
+  "cse-ds/damalla-jyothi": {
+    "research": [],
+    "books": [],
+    "name": "Dr. Damalla Jyothi",
+    "url": "https://mlrit.ac.in/faculty/d-jyothi/"
+  },
+  "cse-ds/veerasekhar-reddy": {
+    "research": [],
+    "books": [],
+    "name": "Dr. Veerasekhar reddy",
+    "url": "https://mlrit.ac.in/faculty/b-veerasekhar-reddy/"
+  },
+  "cse-ds/tahneyath-ahmed": {
+    "research": [],
+    "books": [],
+    "name": "Tahneyath Ahmed",
+    "url": "https://mlrit.ac.in/faculty/tahneyath-ahmed/"
+  },
+  "cse-ds/k-rani": {
+    "research": [],
+    "books": [],
+    "name": "K. Rani",
+    "url": "https://mlrit.ac.in/faculty/mrs-kommula-rani/"
+  },
+  "cse-ds/manasaraj": {
+    "research": [],
+    "books": [],
+    "name": "Manasaraj",
+    "url": "https://mlrit.ac.in/faculty/p-manasaraj/"
+  },
+  "cse-ds/s-shakina": {
+    "research": [],
+    "books": [],
+    "name": "S. Shakina",
+    "url": "https://mlrit.ac.in/faculty/shakina-samuel-mark/"
+  },
+  "cse-ds/sravanthi-anumasula": {
+    "research": [],
+    "books": [],
+    "name": "Sravanthi Anumasula",
+    "url": "https://mlrit.ac.in/faculty/d-sravanthi/"
+  },
+  "cse-ds/d-srivalli": {
+    "research": [],
+    "books": [],
+    "name": "D.SRIVALLI",
+    "url": "https://mlrit.ac.in/faculty/d-srivalli/"
+  },
+  "cse-ds/d-gayathri": {
+    "research": [],
+    "books": [],
+    "name": "D.GAYATHRI",
+    "url": "https://mlrit.ac.in/faculty/d-gayathri/"
+  },
+  "cse-ds/n-baby-rani": {
+    "research": [],
+    "books": [],
+    "name": "N.BABY RANI",
+    "url": "https://mlrit.ac.in/faculty/n-baby-rani/"
+  },
+  "cse-ds/dasari-amulya": {
+    "research": [],
+    "books": [],
+    "name": "Dasari Amulya",
+    "url": "https://mlrit.ac.in/faculty/dasari-amulya/"
+  },
+  "cse-ds/v-divya": {
+    "research": [],
+    "books": [],
+    "name": "V. DIVYA",
+    "url": "https://mlrit.ac.in/faculty/v-divya/"
+  },
+  "cse-ds/p-nishitha": {
+    "research": [],
+    "books": [],
+    "name": "Ms .P.Nishitha",
+    "url": "https://mlrit.ac.in/faculty/p-nishitha-2/"
+  },
+  "cse-ds/a-nirisha": {
+    "research": [],
+    "books": [],
+    "name": "A.Nirisha",
+    "url": "https://mlrit.ac.in/faculty/a-nirisha/"
+  },
+  "cse-ds/s-anudeep": {
+    "research": [],
+    "books": [],
+    "name": "S. Anudeep",
+    "url": "https://mlrit.ac.in/faculty/sadula-anudeep/"
+  },
+  "cse-ds/madhavi-banala": {
+    "research": [],
+    "books": [],
+    "name": "Ms.Madhavi Banala",
+    "url": "https://mlrit.ac.in/faculty/b-madhavi/"
+  },
+  "cse-ds/pallavi-mechineni": {
+    "research": [],
+    "books": [],
+    "name": "Mrs. Pallavi Mechineni",
+    "url": "https://mlrit.ac.in/faculty/mrs-pallavi-mechineni/"
+  },
+  "cse-ds/bochu-sandhya": {
+    "research": [],
+    "books": [],
+    "name": "Bochu Sandhya",
+    "url": "https://mlrit.ac.in/faculty/mrs-kannuri-sandhya/"
+  },
+  "cse-ds/swathi-dendi": {
+    "research": [],
+    "books": [],
+    "name": "Mrs. Swathi Dendi",
+    "url": "https://mlrit.ac.in/faculty/mrs-swathi-dendi/"
+  },
+  "cse-ds/banoth-rajeshwari": {
+    "research": [],
+    "books": [],
+    "name": "Mrs. Banoth Rajeshwari",
+    "url": "https://mlrit.ac.in/faculty/mrs-banoth-rajeshwari/"
+  },
+  "cse-ds/irfan-bagawan": {
+    "research": [],
+    "books": [],
+    "name": "Irfan Bagawan",
+    "url": "https://mlrit.ac.in/faculty/mr-irfan-bagawan/"
+  },
+  "cse-ds/kiran-kumar-reddy-a": {
+    "research": [],
+    "books": [],
+    "name": "Kiran Kumar Reddy.A",
+    "url": "https://mlrit.ac.in/faculty/mr-a-kiran-kumar-reddy/"
+  },
+  "cse-ds/bolagani-balaji": {
+    "research": [],
+    "books": [],
+    "name": "Bolagani Balaji",
+    "url": "https://mlrit.ac.in/faculty/mr-bolagani-balaji/"
+  },
+  "cse-ds/malothu-sindhuja": {
+    "research": [],
+    "books": [],
+    "name": "Malothu Sindhuja",
+    "url": "https://mlrit.ac.in/faculty/mrs-malothu-sindhuja/"
+  },
+  "cse-ds/hasina-nasrin": {
+    "research": [],
+    "books": [],
+    "name": "Hasina Nasrin",
+    "url": "https://mlrit.ac.in/faculty/hasina-nasrin/"
+  },
+  "cse-ds/k-alankruthi": {
+    "research": [],
+    "books": [],
+    "name": "Ms. K.Alankruthi",
+    "url": "https://mlrit.ac.in/faculty/ms-k-alankruthi/"
+  },
+  "cse-ds/b-ravali-reddy": {
+    "research": [],
+    "books": [],
+    "name": "Mrs. B.Ravali Reddy",
+    "url": "https://mlrit.ac.in/faculty/mrs-b-ravali-reddy/"
+  },
+  "cse-ds/mathipogu-ashok-babu": {
+    "research": [],
+    "books": [],
+    "name": "Mathipogu Ashok Babu",
+    "url": "https://mlrit.ac.in/faculty/mr-m-ashok-babu/"
+  },
+  "cse-ds/k-srinija": {
+    "research": [],
+    "books": [],
+    "name": "Mrs. K.Srinija",
+    "url": "https://mlrit.ac.in/faculty/mrs-k-srinija/"
+  },
+  "cse-ds/bhukya-balakrishna": {
+    "research": [],
+    "books": [],
+    "name": "Bhukya Balakrishna",
+    "url": "https://mlrit.ac.in/faculty/bhukya-balakrishna/"
+  },
+  "cse-ds/jangam-nagaraju": {
+    "research": [],
+    "books": [],
+    "name": "Jangam Nagaraju",
+    "url": "https://mlrit.ac.in/faculty/mr-j-nagaraju/"
+  },
+  "cse-ds/mary-navyatha-govindu": {
+    "research": [],
+    "books": [],
+    "name": "Mary Navyatha Govindu",
+    "url": "https://mlrit.ac.in/faculty/mrs-navyatha-ravi/"
+  },
+  "cse-ds/n-thulasi-chithra": {
+    "research": [],
+    "books": [],
+    "name": "N. Thulasi Chithra",
+    "url": "https://mlrit.ac.in/faculty/n-thulasi-chitra/"
+  },
+  "cse-ds/s-parvathi": {
+    "research": [],
+    "books": [],
+    "name": "Mrs S.Parvathi",
+    "url": "https://mlrit.ac.in/faculty/mrs-s-parvathi/"
+  },
+  "cse-ds/n-sandhya": {
+    "research": [],
+    "books": [],
+    "name": "N. Sandhya",
+    "url": "https://mlrit.ac.in/faculty/mrs-n-sandhya-rani/"
+  },
+  "cse-ds/m-srividya": {
+    "research": [],
+    "books": [],
+    "name": "Mrs M.Srividya",
+    "url": "https://mlrit.ac.in/faculty/mrs-m-srividya/"
+  },
+  "cse-ds/d-neelima-priyadarshini": {
+    "research": [],
+    "books": [],
+    "name": "Ms D.Neelima Priyadarshini",
+    "url": "https://mlrit.ac.in/faculty/mrs-d-neelima/"
+  },
+  "cse-ds/n-vijayasri": {
+    "research": [],
+    "books": [],
+    "name": "Ms N.Vijayasri",
+    "url": "https://mlrit.ac.in/faculty/mrs-ch-vijayasri/"
+  },
+  "cse-ds/rowsonara-begum": {
+    "research": [],
+    "books": [],
+    "name": "Rowsonara Begum",
+    "url": "https://mlrit.ac.in/faculty/rowsonara-begum/"
+  },
+  "cse-ds/mohd-anwar-ali": {
+    "research": [],
+    "books": [],
+    "name": "Mr.Mohd Anwar Ali",
+    "url": "https://mlrit.ac.in/faculty/mohd-anwar-ali/"
+  },
+  "cse-ds/b-sushma": {
+    "research": [],
+    "books": [],
+    "name": "Ms B. Sushma",
+    "url": "https://mlrit.ac.in/faculty/b-sushma/"
+  },
+  "cse-ds/d-sandeep": {
+    "research": [],
+    "books": [],
+    "name": "Mr D. Sandeep",
+    "url": "https://mlrit.ac.in/faculty/d-sandeep/"
+  },
+  "cse-ds/s-navya": {
+    "research": [],
+    "books": [],
+    "name": "S. Navya",
+    "url": "https://mlrit.ac.in/faculty/soleti-navya/"
+  }
+}

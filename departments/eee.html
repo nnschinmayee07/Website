@@ -6,17 +6,17 @@
   <title>EEE Department — MLRIT</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&family=Raleway:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/main.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #3A3A3A; line-height: 1.7; }
+    body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; background: #FFFFFF; color: #3A3A3A; line-height: 1.7; }
 
     /* ── Dept Nav ── */
     .dept-nav { background: #0B0F1A; display: flex; align-items: stretch; padding: 0 16px; border-bottom: 1px solid rgba(0,0,0,0.06); }
-    .dept-nav__link { display: flex; align-items: center; padding: 0 20px; height: 44px; font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.5); text-decoration: none; position: relative; transition: color 0.2s, background 0.2s; }
+    .dept-nav__link { display: flex; align-items: center; padding: 0 20px; height: 44px; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.5); text-decoration: none; position: relative; transition: color 0.2s, background 0.2s; }
     .dept-nav__link:hover { color: rgba(255,255,255,0.85); background: rgba(232,93,31,0.08); }
     .dept-nav__link:active { background: rgba(232,93,31,0.18); }
     .dept-nav__link::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%) scaleX(0); width: 70%; height: 2px; background: linear-gradient(90deg, transparent, #E85D1F, transparent); transition: transform 0.25s; }
@@ -33,13 +33,13 @@
     .dept-hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,51,32,0.75), rgba(24,69,59,0.75)); z-index: 1; transition: opacity 0.6s ease; }
     .dept-hero__eyebrow, .dept-hero__title { position: relative; z-index: 2; }
     .dept-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 70% 30%, rgba(232,93,31,0.12), transparent 60%); pointer-events: none; z-index: 3; }
-    .dept-hero__eyebrow { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; position: relative; z-index: 1; }
-    .dept-hero__title { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 700; color: #fff; position: relative; z-index: 1; }
+    .dept-hero__eyebrow { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; position: relative; z-index: 1; }
+    .dept-hero__title { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 700; color: #fff; position: relative; z-index: 1; }
 
     /* ── Tabs ── */
     .dept-tabs { background: #0B0F1A; display: flex; gap: 0; overflow-x: auto; border-bottom: 3px solid #1F6B24; position: sticky; top: 0; z-index: 40; }
     .dept-tabs::-webkit-scrollbar { height: 0; }
-    .dept-tab { font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.5); text-decoration: none; padding: 14px 24px; white-space: nowrap; cursor: pointer; position: relative; transition: color 0.25s, background 0.25s; }
+    .dept-tab { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.5); text-decoration: none; padding: 14px 24px; white-space: nowrap; cursor: pointer; position: relative; transition: color 0.25s, background 0.25s; }
     .dept-tab::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%) scaleX(0); width: 70%; height: 3px; background: linear-gradient(90deg, transparent, #E85D1F, transparent); transition: transform 0.25s ease; }
     .dept-tab:hover { color: rgba(255,255,255,0.8); background: rgba(232,93,31,0.08); }
     .dept-tab:hover::after { transform: translateX(-50%) scaleX(1); }
@@ -53,32 +53,32 @@
     .dept-panel.is-active { display: block; animation: fadeIn 0.35s ease; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-    .panel-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 700; color: #0B0F1A; margin-bottom: 28px; line-height: 1.2; }
+    .panel-heading { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 700; color: #0B0F1A; margin-bottom: 28px; line-height: 1.2; }
     .panel-heading::after { content: ''; display: block; width: 60px; height: 4px; background: #E85D1F; margin-top: 14px; border-radius: 2px; }
-    .panel-sub { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 800; color: #1F6B24; text-transform: uppercase; letter-spacing: 0.1em; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 2px solid rgba(24,69,59,0.12); }
+    .panel-sub { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.72rem; font-weight: 800; color: #1F6B24; text-transform: uppercase; letter-spacing: 0.1em; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 2px solid rgba(24,69,59,0.12); }
     p { font-size: 0.95rem; color: #3A3A3A; max-width: 780px; margin-bottom: 14px; line-height: 1.8; }
 
     /* ── Cards ── */
     .card { background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; }
     .card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
-    .card h3 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.15rem; color: #0B0F1A; margin-bottom: 10px; }
+    .card h3 { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 1.15rem; color: #0B0F1A; margin-bottom: 10px; }
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .card--accent { border-top: 3px solid #1F6B24; transition: transform 0.25s ease, box-shadow 0.25s ease, border-top-color 0.25s ease; }
     .card--accent:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-top-color: #E85D1F; }
-    .peo-num { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #1F6B24; margin-bottom: 10px; }
+    .peo-num { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 800; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #1F6B24; margin-bottom: 10px; }
 
     /* ── HOD Message ── */
     .hod-msg { display: flex; gap: 28px; align-items: flex-start; background: #fff; border-radius: 16px; padding: 32px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 36px; border-left: 4px solid #1F6B24; }
     .hod-msg__photo { width: 100px; height: 100px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 3px solid #1F6B24; }
     .hod-msg__photo img { width: 100%; height: 100%; object-fit: cover; }
-    .hod-msg__label { font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #E85D1F; margin-bottom: 8px; }
+    .hod-msg__label { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #E85D1F; margin-bottom: 8px; }
     .hod-msg__text { font-size: 0.92rem; color: #444; line-height: 1.8; font-style: italic; max-width: none; }
-    .hod-msg__name { font-family: 'Raleway', sans-serif; font-size: 0.82rem; font-weight: 700; color: #1F6B24; margin-top: 12px; }
+    .hod-msg__name { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.82rem; font-weight: 700; color: #1F6B24; margin-top: 12px; }
 
     /* ── Accordion ── */
     .sub-accordion { margin-bottom: 16px; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 1px 8px rgba(0,0,0,0.05); }
-    .sub-accordion__header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; cursor: pointer; font-family: 'Raleway', sans-serif; font-size: 0.88rem; font-weight: 700; color: #0B0F1A; border-left: 3px solid #1F6B24; transition: background 0.2s, border-left-color 0.25s, transform 0.2s; }
+    .sub-accordion__header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; cursor: pointer; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.88rem; font-weight: 700; color: #0B0F1A; border-left: 3px solid #1F6B24; transition: background 0.2s, border-left-color 0.25s, transform 0.2s; }
     .sub-accordion__header:hover { background: rgba(24,69,59,0.04); border-left-color: #E85D1F; transform: translateX(4px); }
     .sub-accordion__chevron { font-size: 0.7rem; color: #888; transition: transform 0.3s; }
     .sub-accordion.is-open .sub-accordion__chevron { transform: rotate(180deg); color: #E85D1F; }
@@ -89,12 +89,12 @@
     .lab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
     .lab-card { background: #f9f8f5; border-radius: 8px; padding: 16px 18px; border-left: 3px solid #1F6B24; transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease; cursor: default; }
     .lab-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); border-left-color: #E85D1F; }
-    .lab-card__name { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.85rem; color: #0B0F1A; margin-bottom: 4px; }
+    .lab-card__name { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.85rem; color: #0B0F1A; margin-bottom: 4px; }
     .lab-card__desc { font-size: 0.78rem; color: #666; }
 
     /* ── OBE ── */
     .obe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 20px; }
-    .obe-col h4 { font-family: 'Raleway', sans-serif; font-size: 0.82rem; font-weight: 800; color: #1F6B24; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+    .obe-col h4 { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.82rem; font-weight: 800; color: #1F6B24; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
     .obe-list { list-style: none; padding: 0; }
     .obe-list li { font-size: 0.88rem; color: #444; padding: 8px 0 8px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); position: relative; transition: transform 0.2s ease, color 0.2s ease; cursor: default; }
     .obe-list li:hover { transform: translateX(6px); color: #0B0F1A; }
@@ -103,44 +103,44 @@
     .obe-list li a { color: inherit; text-decoration: none; display: block; }
     .obe-list li a:hover { color: #E85D1F; }
     .obe-list-numbered p { font-size: 0.88rem; color: #444; line-height: 1.6; margin-bottom: 10px; max-width: none; }
-    .obe-list-numbered p strong { color: #1F6B24; font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.78rem; }
+    .obe-list-numbered p strong { color: #1F6B24; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 800; font-size: 0.78rem; }
 
     /* ── Catalog ── */
     .catalog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
     .catalog-item { background: #fff; border-radius: 10px; padding: 16px 20px; box-shadow: 0 1px 8px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; border-left: 3px solid #1F6B24; }
     .catalog-item:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
-    .catalog-item__text { font-family: 'Raleway', sans-serif; font-size: 0.82rem; font-weight: 700; color: #0B0F1A; }
+    .catalog-item__text { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.82rem; font-weight: 700; color: #0B0F1A; }
     .catalog-item__sub { font-size: 0.68rem; color: #888; display: block; margin-top: 2px; }
 
     /* ── Syllabus ── */
     .pill-row { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
-    .pill { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.82rem; padding: 10px 22px; border-radius: 24px; border: 2px solid rgba(24,69,59,0.25); background: transparent; color: #3A3A3A; cursor: pointer; transition: all 0.25s; }
+    .pill { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.82rem; padding: 10px 22px; border-radius: 24px; border: 2px solid rgba(24,69,59,0.25); background: transparent; color: #3A3A3A; cursor: pointer; transition: all 0.25s; }
     .pill:hover { border-color: #E85D1F; color: #E85D1F; }
     .pill.is-active { background: #1F6B24; border-color: #1F6B24; color: #fff; }
     .subject-list { max-width: 700px; opacity: 0; transform: translateY(10px); transition: opacity 0.35s, transform 0.35s; }
     .subject-list.is-visible { opacity: 1; transform: translateY(0); }
     .subject-row { display: flex; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,0.06); gap: 16px; cursor: pointer; }
-    .subject-num { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.72rem; color: #1F6B24; width: 28px; }
+    .subject-num { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 800; font-size: 0.72rem; color: #1F6B24; width: 28px; }
     .subject-name { flex: 1; font-size: 0.92rem; color: #3A3A3A; }
-    .subject-code { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 700; color: #1F6B24; background: rgba(24,69,59,0.08); padding: 2px 8px; border-radius: 4px; flex-shrink: 0; letter-spacing: 0.04em; }
+    .subject-code { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.7rem; font-weight: 700; color: #1F6B24; background: rgba(24,69,59,0.08); padding: 2px 8px; border-radius: 4px; flex-shrink: 0; letter-spacing: 0.04em; }
 
     /* ── Syllabus download/view buttons ── */
     .syll-actions { display: flex; gap: 8px; }
-    .syll-btn { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 700; padding: 6px 14px; border-radius: 6px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px; }
+    .syll-btn { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.72rem; font-weight: 700; padding: 6px 14px; border-radius: 6px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px; }
     .syll-btn--download { color: #fff; background: #1F6B24; }
     .syll-btn--download:hover { background: #0D3320; }
     .syll-btn--view { color: #E85D1F; border: 1px solid rgba(232,93,31,0.3); background: transparent; }
     .syll-btn--view:hover { background: #E85D1F; color: #fff; }
-    .full-syllabus-btn { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.85rem; font-weight: 700; color: #fff; background: #1F6B24; padding: 10px 24px; border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+    .full-syllabus-btn { display: inline-block; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.85rem; font-weight: 700; color: #fff; background: #1F6B24; padding: 10px 24px; border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.2s; }
     .full-syllabus-btn:hover { background: #0D3320; transform: translateY(-1px); }
-    .subject-pdf { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 700; color: #E85D1F; text-decoration: none; padding: 4px 12px; border: 1px solid rgba(232,93,31,0.3); border-radius: 6px; transition: all 0.2s; white-space: nowrap; }
+    .subject-pdf { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.7rem; font-weight: 700; color: #E85D1F; text-decoration: none; padding: 4px 12px; border: 1px solid rgba(232,93,31,0.3); border-radius: 6px; transition: all 0.2s; white-space: nowrap; }
     .subject-pdf:hover { background: #E85D1F; color: #fff; }
     .subject-pdf--disabled { color: #aaa; border-color: #ddd; pointer-events: none; background: #f5f5f5; }
     .subject-units { max-height: 0; overflow: hidden; transition: max-height 0.4s; padding: 0 0 0 44px; }
     .subject-row.is-expanded + .subject-units { max-height: 300px; }
     .subject-units ol { list-style: none; padding: 8px 0 12px; counter-reset: unit; }
     .subject-units li { font-size: 0.82rem; color: #555; padding: 4px 0; counter-increment: unit; }
-    .subject-units li::before { content: 'Unit ' counter(unit) ': '; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.7rem; color: #1F6B24; }
+    .subject-units li::before { content: 'Unit ' counter(unit) ': '; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.7rem; color: #1F6B24; }
     .subject-toggle { font-size: 0.7rem; color: #888; margin-left: 8px; transition: transform 0.3s; display: inline-block; }
     .subject-row.is-expanded .subject-toggle { transform: rotate(90deg); color: #E85D1F; }
 
@@ -161,13 +161,13 @@
     .qbar__btn:hover { width: 160px; background: rgba(232,93,31,0.08); }
     .qbar__btn.is-active { border-left-color: #E85D1F; }
     .qbar__abbr {
-      font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 800;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.62rem; font-weight: 800;
       color: rgba(255,255,255,0.5); letter-spacing: 0.06em;
       flex-shrink: 0; width: 24px; text-align: center;
     }
     .qbar__btn.is-active .qbar__abbr { color: #E85D1F; }
     .qbar__label {
-      font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 600;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.72rem; font-weight: 600;
       color: rgba(255,255,255,0.7); white-space: nowrap; margin-right: 8px;
       opacity: 0; transition: opacity 0.2s;
     }
@@ -178,9 +178,9 @@
     .fcard { width: 100%; aspect-ratio: 3/4; border-radius: 12px; overflow: hidden; min-height: 240px; position: relative; cursor: pointer; background: linear-gradient(135deg, #2A2F40, #3A4050); }
     .fcard img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.4s ease; }
     .fcard:hover img { transform: scale(1.05); }
-    .fcard__ini { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 2rem; color: rgba(255,255,255,0.3); position: absolute; inset: 0; }
+    .fcard__ini { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 2rem; color: rgba(255,255,255,0.3); position: absolute; inset: 0; }
     .fcard__overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 18px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); z-index: 2; transition: opacity 0.3s; }
-    .fcard__name { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.85rem; color: #fff; }
+    .fcard__name { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.85rem; color: #fff; }
     .fcard__role { font-size: 0.68rem; color: rgba(255,255,255,0.6); }
 
     .fcard::before { content: ''; position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: #E85D1F; clip-path: circle(0% at 100% 0%); transition: clip-path 0.5s cubic-bezier(0.25,0.46,0.45,0.94); z-index: 3; }
@@ -192,10 +192,10 @@
 
     .fcard__hover-info { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; text-align: center; z-index: 5; opacity: 0; transform: translateY(10px); transition: opacity 0.35s ease 0.2s, transform 0.35s ease 0.2s; }
     .fcard:hover .fcard__hover-info { opacity: 1; transform: translateY(0); }
-    .fcard__hover-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: #fff; margin-bottom: 4px; }
+    .fcard__hover-name { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 1.05rem; color: #fff; margin-bottom: 4px; }
     .fcard__hover-role { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
-    .fcard__hover-spec { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 600; color: #E85D1F; margin-bottom: 20px; letter-spacing: 0.04em; }
-    .fcard__hover-btn { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 700; color: #fff; text-decoration: none; padding: 8px 20px; border: 1px solid #fff; border-radius: 6px; transition: all 0.2s; }
+    .fcard__hover-spec { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.72rem; font-weight: 600; color: #E85D1F; margin-bottom: 20px; letter-spacing: 0.04em; }
+    .fcard__hover-btn { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.72rem; font-weight: 700; color: #fff; text-decoration: none; padding: 8px 20px; border: 1px solid #fff; border-radius: 6px; transition: all 0.2s; }
     .fcard__hover-btn:hover { background: #fff; color: #0B0F1A; }
 
     /* ══ FEATURE 4: Pub filter by faculty ══ */
@@ -205,30 +205,30 @@
     /* ── Achievements ── */
     .achieve-grid { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 700px; }
     .achieve-card { border-left: 3px solid #E85D1F; cursor: pointer; }
-    .achieve-card h4 { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.95rem; color: #0B0F1A; margin-bottom: 6px; }
+    .achieve-card h4 { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.95rem; color: #0B0F1A; margin-bottom: 6px; }
     .achieve-card p { font-size: 0.88rem; color: #555; margin-bottom: 0; max-height: 0; overflow: hidden; transition: max-height 0.4s; }
     .achieve-card.is-expanded p { max-height: 200px; margin-bottom: 8px; }
-    .achieve-toggle { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 700; color: #E85D1F; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px; display: inline-block; }
+    .achieve-toggle { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.7rem; font-weight: 700; color: #E85D1F; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px; display: inline-block; }
 
     /* ── Publications ── */
     .pub-filters { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
-    .pub-filter { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.75rem; padding: 7px 18px; border-radius: 20px; border: 2px solid rgba(24,69,59,0.25); background: transparent; color: #3A3A3A; cursor: pointer; transition: all 0.25s; }
+    .pub-filter { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.75rem; padding: 7px 18px; border-radius: 20px; border: 2px solid rgba(24,69,59,0.25); background: transparent; color: #3A3A3A; cursor: pointer; transition: all 0.25s; }
     .pub-filter:hover { border-color: #E85D1F; color: #E85D1F; }
     .pub-filter.is-active { background: #1F6B24; border-color: #1F6B24; color: #fff; }
     .pub-list { display: flex; flex-direction: column; gap: 16px; max-width: 780px; }
     .pub-card { background: #fff; border-radius: 12px; padding: 24px 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 3px solid #1F6B24; display: flex; align-items: flex-start; gap: 20px; }
     .pub-card__body { flex: 1; }
-    .pub-card__title { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.95rem; color: #0B0F1A; margin-bottom: 6px; line-height: 1.4; }
+    .pub-card__title { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.95rem; color: #0B0F1A; margin-bottom: 6px; line-height: 1.4; }
     .pub-card__authors { font-size: 0.82rem; color: #888; margin-bottom: 4px; }
     .pub-card__journal { font-size: 0.82rem; color: #E85D1F; font-style: italic; }
-    .pub-card__year { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.68rem; color: #fff; background: #1F6B24; padding: 4px 10px; border-radius: 10px; flex-shrink: 0; }
-    .pub-tag { display: inline-block; margin-top: 8px; font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 700; color: #1F6B24; background: rgba(24,69,59,0.08); padding: 3px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .pub-card__year { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 800; font-size: 0.68rem; color: #fff; background: #1F6B24; padding: 4px 10px; border-radius: 10px; flex-shrink: 0; }
+    .pub-tag { display: inline-block; margin-top: 8px; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.68rem; font-weight: 700; color: #1F6B24; background: rgba(24,69,59,0.08); padding: 3px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
 
     /* ── Internships ── */
     .intern-stats { display: flex; gap: 20px; margin-bottom: 36px; flex-wrap: wrap; }
     .stat-card { background: #fff; border-radius: 12px; padding: 24px 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); text-align: center; flex: 1; min-width: 140px; }
-    .stat-card__num { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.8rem; color: #1F6B24; line-height: 1; margin-bottom: 6px; }
-    .stat-card__label { font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 0.75rem; color: #888; letter-spacing: 0.06em; text-transform: uppercase; }
+    .stat-card__num { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 1.8rem; color: #1F6B24; line-height: 1; margin-bottom: 6px; }
+    .stat-card__label { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 600; font-size: 0.75rem; color: #888; letter-spacing: 0.06em; text-transform: uppercase; }
     .intern-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin-bottom: 28px; }
     .intern-card { perspective: 600px; background: none; height: 100px; }
     .intern-card__inner { position: relative; width: 100%; height: 100%; transition: transform 0.5s; transform-style: preserve-3d; }
@@ -236,15 +236,15 @@
     .intern-card__front, .intern-card__back { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
     .intern-card__front { background: #fff; }
     .intern-card__back { background: #1F6B24; transform: rotateY(180deg); color: #fff; }
-    .intern-card__back-num { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.4rem; margin-bottom: 4px; }
-    .intern-card__back-label { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; }
-    .intern-card__name { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.95rem; color: #0B0F1A; margin-bottom: 4px; }
+    .intern-card__back-num { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 1.4rem; margin-bottom: 4px; }
+    .intern-card__back-label { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; }
+    .intern-card__name { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.95rem; color: #0B0F1A; margin-bottom: 4px; }
     .intern-card__type { font-size: 0.75rem; color: #888; }
     .intern-note { font-size: 0.88rem; color: #666; font-style: italic; max-width: 700px; }
 
     /* ── Honour / Achievement list ── */
     .honour-table { width: 100%; max-width: 700px; border-collapse: separate; border-spacing: 0 6px; }
-    .honour-table th { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; text-align: left; padding: 12px 16px; border-bottom: 2px solid rgba(0,0,0,0.08); }
+    .honour-table th { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; text-align: left; padding: 12px 16px; border-bottom: 2px solid rgba(0,0,0,0.08); }
     .honour-table td { font-size: 0.88rem; color: #333; padding: 14px 16px; background: #fff; transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
     .honour-table tr { transition: transform 0.2s ease; }
     .honour-table tbody tr:hover { transform: translateX(6px); }
@@ -252,11 +252,11 @@
     .honour-table tbody tr:hover td:first-child { border-left: 3px solid #E85D1F; }
     .honour-table td:first-child { border-radius: 8px 0 0 8px; border-left: 3px solid transparent; }
     .honour-table td:last-child { border-radius: 0 8px 8px 0; }
-    .honour-table .honour-name { font-family: 'Raleway', sans-serif; font-weight: 700; color: #0B0F1A; }
-    .honour-table .honour-badge { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 10px; letter-spacing: 0.04em; }
+    .honour-table .honour-name { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; color: #0B0F1A; }
+    .honour-table .honour-badge { display: inline-block; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 10px; letter-spacing: 0.04em; }
     .honour-badge--topper { background: rgba(232,93,31,0.12); color: #E85D1F; }
     .honour-badge--rank { background: rgba(24,69,59,0.1); color: #1F6B24; }
-    .honour-table .honour-score { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: #1F6B24; }
+    .honour-table .honour-score { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 1.05rem; color: #1F6B24; }
     .achieve-list { list-style: none; padding: 0; max-width: 700px; }
     .achieve-list li { position: relative; padding: 14px 16px 14px 28px; margin-bottom: 8px; border-radius: 8px; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,0.04); font-size: 0.88rem; color: #444; border-left: 3px solid transparent; transition: transform 0.2s ease, border-left-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; cursor: default; }
     .achieve-list li:hover { transform: translateX(6px); border-left-color: #E85D1F; box-shadow: 0 4px 16px rgba(232,93,31,0.1); background: rgba(232,93,31,0.02); }
@@ -266,7 +266,7 @@
     /* ── Placement stats ── */
     .placement-stats { display: flex; gap: 16px; flex-wrap: wrap; margin: 16px 0; }
     .placement-stat { background: #fff; border-radius: 10px; padding: 20px 28px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; flex: 1; min-width: 130px; border-top: 3px solid #E85D1F; }
-    .placement-stat__num { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.6rem; color: #E85D1F; }
+    .placement-stat__num { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 1.6rem; color: #E85D1F; }
     .placement-stat__label { font-size: 0.72rem; color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
 
 
@@ -294,7 +294,7 @@
     .dark-sidebar::-webkit-scrollbar { width: 4px; }
     .dark-sidebar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 2px; }
     .dark-sidebar__title {
-      font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 800;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.6rem; font-weight: 800;
       text-transform: uppercase; letter-spacing: 0.14em; color: #155218;
       padding: 0 20px 14px; border-bottom: 1px solid rgba(0,0,0,0.06); margin-bottom: 8px;
     }
@@ -310,7 +310,7 @@
     }
     .ds-item.is-active .ds-item__dot { background: #E85D1F; box-shadow: 0 0 6px rgba(232,93,31,0.4); }
     .ds-item__label {
-      font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 600;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.7rem; font-weight: 600;
       color: rgba(26,58,46,0.5); transition: color 0.2s; white-space: nowrap;
       overflow: hidden; text-overflow: ellipsis;
     }
@@ -340,7 +340,7 @@
   <header class="site-header">
     <div class="masthead">
       <div class="container masthead__inner">
-        <a href="../index.html" class="masthead__logo" aria-label="MLRIT Home"><img src="../mlrit-logo-transparent.png" alt="MLRIT Logo" /></a>
+        <a href="../index.html" class="masthead__logo" aria-label="MLRIT Home"><img src="../mlrit-logo-main.png" alt="MLRIT Logo" /></a>
         <div class="masthead__tagline"><span>Marri Laxman Reddy Institute of Technology</span></div>
         <a href="#" class="masthead__eapcet">EAPCET CODE : MLID</a>
       </div>
@@ -387,6 +387,7 @@
     <a class="dept-tab" data-tab="faculty">Faculty Profiles</a>
     <a class="dept-tab" data-tab="academics">Academics</a>
     <a class="dept-tab" data-tab="achievements">Achievements</a>
+    <a class="dept-tab" data-tab="committees">Committees</a>
   </nav>
 <div class="streak" id="navStreak"></div>
   <!-- TAB 1: Overview -->
@@ -413,6 +414,9 @@
     <a class="ds-item" data-ds-tab="achievements" data-ds-target="honour-section"><span class="ds-item__dot"></span><span class="ds-item__label">Roll of Honour</span></a>
     <a class="ds-item" data-ds-tab="achievements" data-ds-target="pub-section"><span class="ds-item__dot"></span><span class="ds-item__label">Publications</span></a>
     <a class="ds-item" data-ds-tab="achievements" data-ds-target="intern-section"><span class="ds-item__dot"></span><span class="ds-item__label">Internships</span></a>
+    <a class="ds-item" data-ds-tab="committees" data-ds-target="panel-committees"><span class="ds-item__dot"></span><span class="ds-item__label">DAC</span></a>
+    <a class="ds-item" data-ds-tab="committees" data-ds-target="panel-committees"><span class="ds-item__dot"></span><span class="ds-item__label">PAC</span></a>
+    <a class="ds-item" data-ds-tab="committees" data-ds-target="panel-committees"><span class="ds-item__dot"></span><span class="ds-item__label">Domain Experts</span></a>
   </aside>
 
   <div class="dept-body__panels">
@@ -487,14 +491,14 @@
           <div class="fcard" data-author="Ashok Kumar Cheeli" style="position:relative;">
               <img src="images/eee/ashok-kumar.jpg" alt="Prof. Ashok Kumar Cheeli" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.style.background='#1F6B24';this.nextElementSibling.style.color='#fff'" />
               <div class="fcard__ini" style="display:none">AC</div>
-              <div style="position:absolute;top:10px;left:10px;z-index:6;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:#1F6B24;padding:3px 8px;border-radius:4px;">HOD</div>
+              <div style="position:absolute;top:10px;left:10px;z-index:6;font-family:'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:#1F6B24;padding:3px 8px;border-radius:4px;">HOD</div>
               <div class="fcard__overlay">
                 <div class="fcard__name">Prof. Ashok Kumar Cheeli</div>
-                <div class="fcard__role">Professor &amp; HOD</div>
+                <div class="fcard__role">Professor and HOD</div>
               </div>
               <div class="fcard__hover-info">
                 <div class="fcard__hover-name">Prof. Ashok Kumar Cheeli</div>
-                <div class="fcard__hover-role">Professor &amp; HOD</div>
+                <div class="fcard__hover-role">Professor and HOD</div>
                 <div class="fcard__hover-spec">Communication Engg, VLSI, Fiber Optics</div>
                 <a href="faculty-profile.html?name=Prof.%20Ashok%20Kumar%20Cheeli&role=Professor%20%26amp%3B%20HOD&photo=images/eee/ashok-kumar.jpg" class="fcard__hover-btn">View Research</a>
               </div>
@@ -978,6 +982,41 @@
         <p class="intern-note">Internship opportunities are facilitated through the Training and Placement Cell in collaboration with the EEE department.</p>
   </div>
 
+
+  <!-- == TAB: Committees == -->
+  <div class="dept-panel" id="panel-committees">
+    <h2 class="panel-heading">Departmental Committees</h2>
+    <p>The department operates through several key committees that ensure quality education, curriculum relevance, and continuous improvement in line with NBA and autonomous regulations. These committees comprise senior faculty, industry experts, and academic leaders who guide the department's strategic direction.</p>
+
+    <div class="panel-sub">Departmental Advisory Committee (DAC)</div>
+    <div class="card" style="margin-bottom:20px;">
+      <h3>DAC</h3>
+      <p>The Departmental Advisory Committee advises on curriculum design, infrastructure development, and academic policies. It includes senior faculty, HOD, and external industry representatives who meet periodically to review and recommend improvements to the programme.</p>
+      <a href="assets/DAC formation.docx" download style="font-family:'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;font-size:0.75rem;font-weight:700;color:#E85D1F;text-decoration:none;padding:6px 14px;border:1px solid rgba(232,93,31,0.3);border-radius:6px;display:inline-flex;align-items:center;gap:6px;margin-top:12px;">&#8595; DAC Formation Document</a>
+    </div>
+
+    <div class="panel-sub">Programme Assessment Committee (PAC)</div>
+    <div class="card" style="margin-bottom:20px;">
+      <h3>PAC</h3>
+      <p>The Programme Assessment and Quality Improvement Committee monitors course outcomes, programme outcomes, and attainment levels. It drives the OBE process, reviews CO-PO mapping, and recommends corrective actions to improve educational quality.</p>
+      <a href="assets/PAC Member formation.docx" download style="font-family:'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;font-size:0.75rem;font-weight:700;color:#E85D1F;text-decoration:none;padding:6px 14px;border:1px solid rgba(232,93,31,0.3);border-radius:6px;display:inline-flex;align-items:center;gap:6px;margin-top:12px;">&#8595; PAC Member Formation Document</a>
+    </div>
+
+    <div class="panel-sub">Course Expert Team</div>
+    <div class="card" style="margin-bottom:20px;">
+      <h3>Domain Experts</h3>
+      <p>The Course Expert Team comprises domain specialists from industry and academia who review and validate the curriculum content, ensuring alignment with current technology trends and industry requirements. They provide inputs on professional electives, lab experiments, and project topics.</p>
+      <a href="assets/Domain experts formation-CSE.docx" download style="font-family:'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;font-size:0.75rem;font-weight:700;color:#E85D1F;text-decoration:none;padding:6px 14px;border:1px solid rgba(232,93,31,0.3);border-radius:6px;display:inline-flex;align-items:center;gap:6px;margin-top:12px;">&#8595; Domain Experts Formation Document</a>
+    </div>
+
+    <div class="panel-sub">Vision and Mission Process</div>
+    <div class="card" style="margin-bottom:20px;">
+      <h3>Vision and Mission Committee</h3>
+      <p>This committee is responsible for defining, reviewing, and periodically updating the department's vision and mission statements in consultation with all stakeholders — faculty, students, alumni, parents, and industry partners. The process follows a structured methodology aligned with NBA requirements.</p>
+      <a href="assets/1.1&1.1.2- Vision Mission Process.docx" download style="font-family:'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;font-size:0.75rem;font-weight:700;color:#E85D1F;text-decoration:none;padding:6px 14px;border:1px solid rgba(232,93,31,0.3);border-radius:6px;display:inline-flex;align-items:center;gap:6px;margin-top:12px;">&#8595; Vision Mission Process Document</a>
+    </div>
+  </div>
+
   </div><!-- .dept-body__panels -->
   </div><!-- .dept-body -->
 
@@ -1023,7 +1062,7 @@
     (function () {
       var programs = {
         btech: {
-          1: { 1: ['Matrices and Calculus', 'Advanced Engineering Physics', 'Programming for Problem Solving', 'Basic Electrical Engineering', 'Computer Aided Engineering Drawing', 'Advanced Engineering Physics Lab', 'Programming for Problem Solving Lab', 'Basic Electrical Engineering Lab', 'IOT & IT Workshop'],
+          1: { 1: ['Matrices and Calculus', 'Advanced Engineering Physics', 'Programming for Problem Solving', 'Basic Electrical Engineering', 'Computer Aided Engineering Drawing', 'Advanced Engineering Physics Lab', 'Programming for Problem Solving Lab', 'Basic Electrical Engineering Lab', 'IOT and IT Workshop'],
                2: ['Ordinary Differential Equations and Vector Calculus', 'Engineering Chemistry', 'Data Structures', 'Basic Electronics', 'English for Skill Enhancement', 'Engineering Chemistry Lab', 'Data Structures Lab', 'English Language and Communication Skills Lab', 'Engineering Workshop', 'Python Programming Lab'] },
           2: { 3: ['Transforms and Partial Differential Equations', 'Electrical Machines-I', 'Network Analysis and Synthesis', 'Electronic Devices and Circuits', 'Electromagnetic Fields', 'Electrical Machines Lab-I', 'EDC Lab', 'Computational Mathematics Lab', 'Electrical Simulation Lab'],
                4: ['Probability and Statistics', 'Electrical Machines-II', 'Power Systems-I', 'Control Systems', 'Signals and Systems', 'Innovation and Entrepreneurship', 'Electrical Machines Lab-II', 'Control Systems Lab', 'Power Systems Lab', 'Indian Knowledge System'] },
@@ -1033,7 +1072,7 @@
                8: ['Professional Elective-V', 'Professional Elective-VI', 'Project Work'] }
         },
         mtech: {
-          1: { 1: ['Advanced Power Systems', 'Advanced Power Electronics', 'Professional Elective-I', 'Professional Elective-II', 'Power Systems Lab', 'Professional Elective-I Lab', 'Research Methodology & IPR', 'Audit Course-I'],
+          1: { 1: ['Advanced Power Systems', 'Advanced Power Electronics', 'Professional Elective-I', 'Professional Elective-II', 'Power Systems Lab', 'Professional Elective-I Lab', 'Research Methodology and IPR', 'Audit Course-I'],
                2: ['Smart Grid Technology', 'Renewable Energy Systems', 'Professional Elective-III', 'Professional Elective-IV', 'Smart Grid Lab', 'Professional Elective-III Lab', 'Mini Project with Seminar', 'Audit Course-II'] },
           2: { 3: ['Professional Elective-V', 'Open Elective', 'Dissertation Phase-I'],
                4: ['Dissertation Phase-II', 'Dissertation Public Viva-Voce'] }
@@ -1046,7 +1085,7 @@
 
       var subjectDetails = {
         "Matrices and Calculus": ["Matrices", "Eigen Values and Eigen Vectors", "Single Variable Calculus", "Multivariable Calculus", "Multiple Integrals"],
-        "Advanced Engineering Physics": ["Crystallography & Materials Characterization", "Quantum Mechanics", "Quantum Computing", "Magnetic and Dielectric Materials", "Laser and Fibre Optics"],
+        "Advanced Engineering Physics": ["Crystallography and Materials Characterization", "Quantum Mechanics", "Quantum Computing", "Magnetic and Dielectric Materials", "Laser and Fibre Optics"],
         "Programming for Problem Solving": ["Overview of C and Selection Structures", "Repetition, Loop Statements and Arrays", "Functions and Pointers", "Strings and User Defined Data Types", "File Handling, Searching and Sorting"],
         "Basic Electrical Engineering": ["D.C. Circuits", "A.C. Circuits", "Transformers", "Electrical Machines", "Electrical Installations"],
         "Engineering Chemistry": ["Water and Its Treatment", "Electrochemistry and Corrosion", "Energy Sources", "Polymers", "Advanced Functional Materials"],

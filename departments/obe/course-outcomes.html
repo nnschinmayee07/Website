@@ -10,26 +10,26 @@
   <link rel="stylesheet" href="../../css/main.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background: #F4F1EA; color: #3A3A3A; line-height: 1.7; }
+    body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; background: #F4F1EA; color: #3A3A3A; line-height: 1.7; }
     .obe-page { max-width: 960px; margin: 0 auto; padding: 40px 32px 80px; }
-    .obe-back { font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 700; color: #18453B; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 32px; transition: color 0.2s; }
+    .obe-back { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.78rem; font-weight: 700; color: #18453B; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 32px; transition: color 0.2s; }
     .obe-back:hover { color: #E85D1F; }
     .obe-hero { background: linear-gradient(135deg, #0B0F1A 0%, #18453B 100%); border-radius: 16px; padding: 40px 48px; margin-bottom: 40px; color: #fff; }
-    .obe-hero__tag { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #E85D1F; margin-bottom: 12px; }
-    .obe-hero__title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+    .obe-hero__tag { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #E85D1F; margin-bottom: 12px; }
+    .obe-hero__title { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
     .obe-hero__sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); }
     .obe-section { background: #fff; border-radius: 12px; padding: 32px 36px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
-    .obe-section__label { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #E85D1F; margin-bottom: 6px; }
-    .obe-section__title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #0B0F1A; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid rgba(24,69,59,0.12); }
+    .obe-section__label { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #E85D1F; margin-bottom: 6px; }
+    .obe-section__title { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 1.3rem; color: #0B0F1A; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid rgba(24,69,59,0.12); }
     .course-card { background: #F4F1EA; border-radius: 10px; padding: 20px 22px; margin-bottom: 14px; }
     .course-card__header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
-    .course-card__name { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.9rem; color: #0B0F1A; }
-    .course-card__sem { font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 700; color: #E85D1F; background: rgba(232,93,31,0.1); padding: 3px 10px; border-radius: 10px; }
+    .course-card__name { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 800; font-size: 0.9rem; color: #0B0F1A; }
+    .course-card__sem { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.68rem; font-weight: 700; color: #E85D1F; background: rgba(232,93,31,0.1); padding: 3px 10px; border-radius: 10px; }
     .co-list { display: flex; flex-direction: column; gap: 6px; }
     .co-item { display: flex; gap: 10px; font-size: 0.82rem; color: #444; }
-    .co-tag { flex-shrink: 0; font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 800; color: #18453B; background: rgba(24,69,59,0.1); padding: 2px 8px; border-radius: 4px; margin-top: 1px; }
+    .co-tag { flex-shrink: 0; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.7rem; font-weight: 800; color: #18453B; background: rgba(24,69,59,0.1); padding: 2px 8px; border-radius: 4px; margin-top: 1px; }
     .tab-row { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
-    .tab-btn { font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 700; padding: 8px 20px; border-radius: 20px; border: 2px solid rgba(24,69,59,0.2); background: #fff; color: #18453B; cursor: pointer; transition: all 0.2s; }
+    .tab-btn { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.78rem; font-weight: 700; padding: 8px 20px; border-radius: 20px; border: 2px solid rgba(24,69,59,0.2); background: #fff; color: #18453B; cursor: pointer; transition: all 0.2s; }
     .tab-btn.active, .tab-btn:hover { background: #18453B; color: #fff; border-color: #18453B; }
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
@@ -41,7 +41,7 @@
     <div class="obe-hero">
       <div class="obe-hero__tag">Outcome Based Education</div>
       <div class="obe-hero__title">Course Outcomes Description Booklets</div>
-      <div class="obe-hero__sub">Computer Science &amp; Engineering — MLRIT, Dundigal</div>
+      <div class="obe-hero__sub">Computer Science and Engineering — MLRIT, Dundigal</div>
     </div>
 
     <div class="tab-row">
@@ -53,7 +53,7 @@
     <div id="tab-btech" class="tab-panel active">
       <div class="obe-section">
         <div class="obe-section__label">R25 Regulation — Year I</div>
-        <div class="obe-section__title">Semester I &amp; II Core Courses</div>
+        <div class="obe-section__title">Semester I and II Core Courses</div>
         <div class="course-card">
           <div class="course-card__header"><span class="course-card__name">Programming for Problem Solving (C)</span><span class="course-card__sem">Sem I</span></div>
           <div class="co-list">
@@ -78,7 +78,7 @@
 
       <div class="obe-section">
         <div class="obe-section__label">R25 Regulation — Year II</div>
-        <div class="obe-section__title">Core Courses — Semesters III &amp; IV</div>
+        <div class="obe-section__title">Core Courses — Semesters III and IV</div>
         <div class="course-card">
           <div class="course-card__header"><span class="course-card__name">Database Management Systems</span><span class="course-card__sem">Sem III</span></div>
           <div class="co-list">
@@ -102,8 +102,8 @@
       </div>
 
       <div class="obe-section">
-        <div class="obe-section__label">R25 Regulation — Year III &amp; IV</div>
-        <div class="obe-section__title">Core &amp; Elective Courses</div>
+        <div class="obe-section__label">R25 Regulation — Year III and IV</div>
+        <div class="obe-section__title">Core and Elective Courses</div>
         <div class="course-card">
           <div class="course-card__header"><span class="course-card__name">Machine Learning</span><span class="course-card__sem">Sem V</span></div>
           <div class="co-list">
@@ -125,7 +125,7 @@
           </div>
         </div>
         <div class="course-card">
-          <div class="course-card__header"><span class="course-card__name">Cryptography &amp; Network Security</span><span class="course-card__sem">Sem VI</span></div>
+          <div class="course-card__header"><span class="course-card__name">Cryptography and Network Security</span><span class="course-card__sem">Sem VI</span></div>
           <div class="co-list">
             <div class="co-item"><span class="co-tag">CO1</span>Understand symmetric and asymmetric encryption algorithms.</div>
             <div class="co-item"><span class="co-tag">CO2</span>Apply hash functions, digital signatures, and PKI.</div>
@@ -141,9 +141,9 @@
     <div id="tab-mtech" class="tab-panel">
       <div class="obe-section">
         <div class="obe-section__label">M.Tech — Year I</div>
-        <div class="obe-section__title">Core Courses — Semesters I &amp; II</div>
+        <div class="obe-section__title">Core Courses — Semesters I and II</div>
         <div class="course-card">
-          <div class="course-card__header"><span class="course-card__name">Advanced Data Structures &amp; Algorithms</span><span class="course-card__sem">Sem I</span></div>
+          <div class="course-card__header"><span class="course-card__name">Advanced Data Structures and Algorithms</span><span class="course-card__sem">Sem I</span></div>
           <div class="co-list">
             <div class="co-item"><span class="co-tag">CO1</span>Analyze advanced data structures: B-trees, Red-Black trees, Skip lists.</div>
             <div class="co-item"><span class="co-tag">CO2</span>Apply algorithm design paradigms: DP, greedy, divide and conquer.</div>
@@ -163,7 +163,7 @@
           </div>
         </div>
         <div class="course-card">
-          <div class="course-card__header"><span class="course-card__name">Research Methodology &amp; Technical Writing</span><span class="course-card__sem">Sem II</span></div>
+          <div class="course-card__header"><span class="course-card__name">Research Methodology and Technical Writing</span><span class="course-card__sem">Sem II</span></div>
           <div class="co-list">
             <div class="co-item"><span class="co-tag">CO1</span>Understand research methodologies and scientific writing conventions.</div>
             <div class="co-item"><span class="co-tag">CO2</span>Critically review and synthesize literature from reputed journals.</div>

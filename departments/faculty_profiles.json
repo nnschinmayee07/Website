@@ -1,0 +1,1055 @@
+{
+  "csit/d-b-k-kamesh": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Dr. D.B.K. Kamesh",
+    "url": "https://mlrit.ac.in/faculty/dr-d-b-k-kamesh/"
+  },
+  "csit/p-nishitha": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Ms .P.Nishitha",
+    "url": "https://mlrit.ac.in/faculty/p-nishitha-2/"
+  },
+  "csit/d-rajeshwari": {
+    "areas": [
+      "E-Commerce",
+      "Information Retrieval System",
+      "Cloud Essentials",
+      "Data Communication",
+      "Computer Networks",
+      "Big Data"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "D.Rajeshwari",
+    "url": "https://mlrit.ac.in/faculty/d-rajeshwari/"
+  },
+  "csit/a-nirisha": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "A.Nirisha",
+    "url": "https://mlrit.ac.in/faculty/a-nirisha/"
+  },
+  "csit/p-poojasree": {
+    "areas": [
+      "Devops",
+      "Python",
+      "SQL",
+      "Production Support"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "P. Poojasree",
+    "url": "https://mlrit.ac.in/faculty/p-poojasree/"
+  },
+  "csit/rajkumar-bhookya": {
+    "areas": [
+      "Image processing",
+      "Deep learning",
+      "Cloud - Devops"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Rajkumar Bhookya",
+    "url": "https://mlrit.ac.in/faculty/rajkumar-bhookya/"
+  },
+  "csit/devolla-manogna": {
+    "areas": [
+      "Programming languages",
+      "Computer Networks",
+      "and Cyber Security"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Devolla Manogna",
+    "url": "https://mlrit.ac.in/faculty/devolla-manogna/"
+  },
+  "csit/s-anudeep": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "S. Anudeep",
+    "url": "https://mlrit.ac.in/faculty/sadula-anudeep/"
+  },
+  "csit/banothu-seva": {
+    "areas": [
+      "Programming languages",
+      "Computer Networks",
+      "and Cyber Security"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Banothu Seva",
+    "url": "https://mlrit.ac.in/faculty/banothu-seva/"
+  },
+  "csit/madhavi-banala": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Ms.Madhavi Banala",
+    "url": "https://mlrit.ac.in/faculty/b-madhavi/"
+  },
+  "csit/n-thulasi-chithra": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "N. Thulasi Chithra",
+    "url": "https://mlrit.ac.in/faculty/n-thulasi-chitra/"
+  },
+  "csit/v-srikanth": {
+    "areas": [
+      "Artificial Intelligence",
+      "Machine Learning"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "V. Srikanth",
+    "url": "https://mlrit.ac.in/faculty/v-srikanth/"
+  },
+  "csit/t-gandhi": {
+    "areas": [
+      "Machine Learning"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "T. Gandhi",
+    "url": "https://mlrit.ac.in/faculty/t-gandhi/"
+  },
+  "csit/t-mounika": {
+    "areas": [
+      "Machine Learning"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Mrs T. Mounika",
+    "url": "https://mlrit.ac.in/faculty/mrs-t-mounika/"
+  },
+  "csit/s-parvathi": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Mrs S.Parvathi",
+    "url": "https://mlrit.ac.in/faculty/mrs-s-parvathi/"
+  },
+  "csit/n-sandhya": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "N. Sandhya",
+    "url": "https://mlrit.ac.in/faculty/mrs-n-sandhya-rani/"
+  },
+  "csit/m-srividya": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Mrs M.Srividya",
+    "url": "https://mlrit.ac.in/faculty/mrs-m-srividya/"
+  },
+  "csit/d-neelima-priyadarshini": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Ms D.Neelima Priyadarshini",
+    "url": "https://mlrit.ac.in/faculty/mrs-d-neelima/"
+  },
+  "csit/n-vijayasri": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Ms N.Vijayasri",
+    "url": "https://mlrit.ac.in/faculty/mrs-ch-vijayasri/"
+  },
+  "csit/s-navya": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "S. Navya",
+    "url": "https://mlrit.ac.in/faculty/soleti-navya/"
+  },
+  "it/n-v-raja-sekhar-reddy": {
+    "areas": [
+      "Wireless Networks",
+      "Cloud Computing"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Dr.N V Raja Sekhar Reddy",
+    "url": "https://mlrit.ac.in/faculty/dr-n-v-rajasekhar-reddy/"
+  },
+  "it/dhilli-rao-gorja": {
+    "areas": [
+      "Organic Synthesis",
+      "Chemical Biology",
+      "Cancer Research",
+      "Nuclear Magnetic Resonance Spectroscopy",
+      "Bio Physical Applications"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Dr. Dhilli Rao Gorja",
+    "url": "https://mlrit.ac.in/faculty/dr-dhilli-rao-gorja/"
+  },
+  "it/vemuri-nitin": {
+    "areas": [
+      "Data Mining"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Vemuri Nitin",
+    "url": "https://mlrit.ac.in/faculty/vemuri-nitin/"
+  },
+  "it/shruthi-patel": {
+    "areas": [
+      "UG Degree"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Mrs Shruthi Patel",
+    "url": "https://mlrit.ac.in/faculty/mrs-shruti-patil/"
+  },
+  "it/d-sandeep": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Mr D. Sandeep",
+    "url": "https://mlrit.ac.in/faculty/d-sandeep/"
+  },
+  "it/j-adilakshmi": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "J Adilakshmi",
+    "url": "https://mlrit.ac.in/faculty/j-adilakshmi/"
+  },
+  "it/bhasker-boddu": {
+    "areas": [
+      "Computer Science & Engineering"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Bhasker Boddu",
+    "url": "https://mlrit.ac.in/faculty/bhasker-boddu/"
+  },
+  "it/p-laxmaiah": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "P laxmaiah",
+    "url": "https://mlrit.ac.in/faculty/p-laxmaiah/"
+  },
+  "it/b-varija": {
+    "areas": [
+      "UG Degree"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "B Varija",
+    "url": "https://mlrit.ac.in/faculty/b-varija/"
+  },
+  "it/b-sushma": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Ms B. Sushma",
+    "url": "https://mlrit.ac.in/faculty/b-sushma/"
+  },
+  "it/g-sathyanarayan": {
+    "areas": [
+      "UG Degree"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "G Sathyanarayan",
+    "url": "https://mlrit.ac.in/faculty/g-sathyanarayan/"
+  },
+  "it/mohd-anwar-ali": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Mr.Mohd Anwar Ali",
+    "url": "https://mlrit.ac.in/faculty/mohd-anwar-ali/"
+  },
+  "it/m-harshini": {
+    "areas": [
+      "UG Degree"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "M Harshini",
+    "url": "https://mlrit.ac.in/faculty/m-harshini/"
+  },
+  "it/mopur-vijaya-bhaskar-reddy": {
+    "areas": [
+      "UG Degree"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Dr. Mopur Vijaya Bhaskar Reddy",
+    "url": "https://mlrit.ac.in/faculty/dr-mopur-vijaya-bhaskar-reddy/"
+  },
+  "aiml/kashi-sai-prasad": {
+    "areas": [
+      "CSE-AI&ML"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Dr. Kashi Sai Prasad",
+    "url": "https://mlrit.ac.in/faculty/kashi-sai-prasad/"
+  },
+  "aiml/k-varada-rajkumar": {
+    "areas": [
+      "Computer Science Engineering"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Dr. K. Varada Rajkumar",
+    "url": "https://mlrit.ac.in/faculty/dr-k-varada-rajkumar/"
+  },
+  "aiml/penubaka-kiran-kumar-reddy": {
+    "areas": [
+      "Machine learning",
+      "Data science",
+      "Internet of Things",
+      "Python"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Dr. Penubaka Kiran Kumar Reddy",
+    "url": "https://mlrit.ac.in/faculty/penubaka-kiran-kumar-reddy/"
+  },
+  "aiml/vs-pavan-kumar": {
+    "areas": [
+      "Regular"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "VS Pavan Kumar",
+    "url": "https://mlrit.ac.in/faculty/vs-pavan-kumar/"
+  },
+  "aiml/bidinamcherla-ammanni": {
+    "areas": [
+      "Machine Learning"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Bidinamcherla Ammanni",
+    "url": "https://mlrit.ac.in/faculty/bidinamcherla-ammanni/"
+  },
+  "aiml/sivakrishna-kondaveeti": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Dr. Sivakrishna Kondaveeti",
+    "url": "https://mlrit.ac.in/faculty/dr-sivakrishna-kondaveeti/"
+  },
+  "aiml/g-sowmya": {
+    "areas": [
+      "`CSE"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "G. Sowmya",
+    "url": "https://mlrit.ac.in/faculty/g-sowmya/"
+  },
+  "aiml/singanamala-priyanka": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Singanamala Priyanka",
+    "url": "https://mlrit.ac.in/faculty/s-priyanka/"
+  },
+  "aiml/pasupuleti-pavani": {
+    "areas": [
+      "Web Technologies",
+      "Natural Language Processing"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Pasupuleti Pavani",
+    "url": "https://mlrit.ac.in/faculty/pasupuleti-pavani/"
+  },
+  "aiml/remedi-sravani": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Remedi Sravani",
+    "url": "https://mlrit.ac.in/faculty/remedi-sravani/"
+  },
+  "aiml/lakshmi-saritha": {
+    "areas": [
+      "UG Degree"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Lakshmi Saritha",
+    "url": "https://mlrit.ac.in/faculty/lakshmi-saritha/"
+  },
+  "aiml/komari-biksheswara-rao": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Komari BiksheswaraRao",
+    "url": "https://mlrit.ac.in/faculty/komari-biksheswararao/"
+  },
+  "aiml/e-raghavender": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "E Raghavender",
+    "url": "https://mlrit.ac.in/faculty/e-raghavender/"
+  },
+  "aiml/seedarla-sandhya-rani": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Seedarla Sandhya Rani",
+    "url": "https://mlrit.ac.in/faculty/seedarla-sandhya-rani/"
+  },
+  "aiml/shaik-gouse-pasha": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Shaik Gouse Pasha",
+    "url": "https://mlrit.ac.in/faculty/shaik-gouse-pasha/"
+  },
+  "aiml/m-lakshmi-saranya": {
+    "areas": [
+      "Regular"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "M Lakshmi Saranya",
+    "url": "https://mlrit.ac.in/faculty/m-lakshmi-saranya/"
+  },
+  "aiml/pottapinjara-babu": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Pottapinjara Babu",
+    "url": "https://mlrit.ac.in/faculty/pottapinjara-babu/"
+  },
+  "aiml/b-mamatha": {
+    "areas": [
+      "UG Degree"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "B.Mamatha",
+    "url": "https://mlrit.ac.in/faculty/b-mamatha/"
+  },
+  "aiml/t-aswani": {
+    "areas": [
+      "Java",
+      "Operating Systems"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "T Aswani",
+    "url": "https://mlrit.ac.in/faculty/t-aswani/"
+  },
+  "aiml/ravi-gangadharolla": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Ravi Gangadharolla",
+    "url": "https://mlrit.ac.in/faculty/ravi-gangadharolla/"
+  },
+  "aiml/pacha-swathi": {
+    "areas": [
+      "Machine learning"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Pacha Swathi",
+    "url": "https://mlrit.ac.in/faculty/pacha-swathi/"
+  },
+  "aiml/t-nagini": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "T Nagini",
+    "url": "https://mlrit.ac.in/faculty/t-nagini/"
+  },
+  "aiml/h-ramanjineyulu": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "H Ramanjineyulu",
+    "url": "https://mlrit.ac.in/faculty/harijana-ramanjineyulu/"
+  },
+  "aiml/talari-meena": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Talari Meena",
+    "url": "https://mlrit.ac.in/faculty/talari-meena/"
+  },
+  "aiml/nemala-jayasri": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Nemala Jayasri",
+    "url": "https://mlrit.ac.in/faculty/nemala-jayasri/"
+  },
+  "aiml/gunda-aishwarya": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Gunda Aishwarya",
+    "url": "https://mlrit.ac.in/faculty/gunda-aishwarya/"
+  },
+  "aiml/p-lokesh-kumar": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "P Lokesh Kumar",
+    "url": "https://mlrit.ac.in/faculty/p-lokesh-kumar/"
+  },
+  "aiml/j-teja": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "J. Teja",
+    "url": "https://mlrit.ac.in/faculty/mr-j-teja/"
+  },
+  "aiml/k-anusha": {
+    "areas": [
+      "Machine Learning",
+      "Deep Learning"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Mrs. K. Anusha",
+    "url": "https://mlrit.ac.in/faculty/mrs-k-anusha/"
+  },
+  "aiml/r-akhilesh-reddy": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Mr.R Akhilesh Reddy",
+    "url": "https://mlrit.ac.in/faculty/mr-r-akhilesh-reddy/"
+  },
+  "aiml/p-sai-kumar": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "P Sai Kumar",
+    "url": "https://mlrit.ac.in/faculty/p-sai-kumar/"
+  },
+  "aiml/damala-obulesu": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Damala Obulesu",
+    "url": "https://mlrit.ac.in/faculty/damala-obulesu/"
+  },
+  "aiml/bhaskar-mekala": {
+    "areas": [
+      "CSE(AIML)"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Bhaskar Mekala",
+    "url": "https://mlrit.ac.in/faculty/bhaskar-mekala/"
+  },
+  "aiml/masigari-nagalakshmi": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Masigari Nagalakshmi",
+    "url": "https://mlrit.ac.in/faculty/masigiri-nagalakshmi/"
+  },
+  "aiml/y-naveen": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Y. Naveen",
+    "url": "https://mlrit.ac.in/faculty/y-naveen/"
+  },
+  "aiml/kallam-hemanthi": {
+    "areas": [
+      "Machine learning"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Kallam Hemanthi",
+    "url": "https://mlrit.ac.in/faculty/kallam-hemanthi/"
+  },
+  "aiml/vijay-keerthika": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Vijay Keerthika",
+    "url": "https://mlrit.ac.in/faculty/vijay-keerthika/"
+  },
+  "aiml/g-umamaheswari": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "G. Umamaheswari",
+    "url": "https://mlrit.ac.in/faculty/g-umamaheswari/"
+  },
+  "aiml/k-jyothsna-reddy": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "K. Jyothsna Reddy",
+    "url": "https://mlrit.ac.in/faculty/k-jyothsna-reddy/"
+  },
+  "cse-cs/p-subhashini": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Dr. P. Subhashini",
+    "url": "https://mlrit.ac.in/faculty/dr-p-subhashini/"
+  },
+  "cse-cs/atluri-srujan": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Mr. Atluri Srujan",
+    "url": "https://mlrit.ac.in/faculty/mr-atluri-srujan/"
+  },
+  "cse-cs/manisha-kandukuri": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Manisha Kandukuri",
+    "url": "https://mlrit.ac.in/faculty/manisha-kandukuri/"
+  },
+  "cse-cs/juttu-suresh": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Juttu Suresh",
+    "url": "https://mlrit.ac.in/faculty/juttu-suresh/"
+  },
+  "cse-cs/k-shiva-krishna": {
+    "areas": [
+      "Data Science"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "K.Shiva Krishna",
+    "url": "https://mlrit.ac.in/faculty/k-shiva-krishna/"
+  },
+  "cse-cs/bochu-sandhya": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Bochu Sandhya",
+    "url": "https://mlrit.ac.in/faculty/mrs-kannuri-sandhya/"
+  },
+  "cse-cs/swathi-dendi": {
+    "areas": [
+      "Data Science"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Mrs. Swathi Dendi",
+    "url": "https://mlrit.ac.in/faculty/mrs-swathi-dendi/"
+  },
+  "cse-cs/y-anjali-satyavati": {
+    "areas": [
+      "Cyber Security"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Mrs. Y Anjali Satyavati",
+    "url": "https://mlrit.ac.in/faculty/mrs-y-anjali-satyavati/"
+  },
+  "cse-cs/irfan-bagawan": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Irfan Bagawan",
+    "url": "https://mlrit.ac.in/faculty/mr-irfan-bagawan/"
+  },
+  "cse-cs/kiran-kumar-reddy-a": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Kiran Kumar Reddy.A",
+    "url": "https://mlrit.ac.in/faculty/mr-a-kiran-kumar-reddy/"
+  },
+  "cse-cs/mukku-bhavana": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Ms. Mukku Bhavana",
+    "url": "https://mlrit.ac.in/faculty/ms-mukku-bhavana/"
+  },
+  "cse-cs/bolagani-balaji": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Bolagani Balaji",
+    "url": "https://mlrit.ac.in/faculty/mr-bolagani-balaji/"
+  },
+  "cse-cs/d-tejaswini": {
+    "areas": [
+      "Cyber Security"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Ms. D. Tejaswini",
+    "url": "https://mlrit.ac.in/faculty/ms-d-tejaswini/"
+  },
+  "cse-cs/ch-sharonu-pushpa": {
+    "areas": [
+      "Data Science"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Mrs. Ch. Sharonu Pushpa",
+    "url": "https://mlrit.ac.in/faculty/mrs-ch-sharonu-pushpa/"
+  },
+  "cse-cs/g-umamaheswari": {
+    "areas": [
+      "Cyber Security"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "G. Umamaheswari",
+    "url": "https://mlrit.ac.in/faculty/g-uma-maheshwari/"
+  },
+  "cse-ds/d-b-k-kamesh": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Dr. D.B.K. Kamesh",
+    "url": "https://mlrit.ac.in/faculty/dr-d-b-k-kamesh/"
+  },
+  "cse-ds/p-subhashini": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Dr. P. Subhashini",
+    "url": "https://mlrit.ac.in/faculty/dr-p-subhashini/"
+  },
+  "cse-ds/damalla-jyothi": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Dr. Damalla Jyothi",
+    "url": "https://mlrit.ac.in/faculty/d-jyothi/"
+  },
+  "cse-ds/veerasekhar-reddy": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Dr. Veerasekhar reddy",
+    "url": "https://mlrit.ac.in/faculty/b-veerasekhar-reddy/"
+  },
+  "cse-ds/tahneyath-ahmed": {
+    "areas": [
+      "Data Science"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Tahneyath Ahmed",
+    "url": "https://mlrit.ac.in/faculty/tahneyath-ahmed/"
+  },
+  "cse-ds/k-rani": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "K. Rani",
+    "url": "https://mlrit.ac.in/faculty/mrs-kommula-rani/"
+  },
+  "cse-ds/manasaraj": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Manasaraj",
+    "url": "https://mlrit.ac.in/faculty/p-manasaraj/"
+  },
+  "cse-ds/s-shakina": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "S. Shakina",
+    "url": "https://mlrit.ac.in/faculty/shakina-samuel-mark/"
+  },
+  "cse-ds/sravanthi-anumasula": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Sravanthi Anumasula",
+    "url": "https://mlrit.ac.in/faculty/d-sravanthi/"
+  },
+  "cse-ds/d-srivalli": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "D.SRIVALLI",
+    "url": "https://mlrit.ac.in/faculty/d-srivalli/"
+  },
+  "cse-ds/d-gayathri": {
+    "areas": [
+      "Data Science"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "D.GAYATHRI",
+    "url": "https://mlrit.ac.in/faculty/d-gayathri/"
+  },
+  "cse-ds/n-baby-rani": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "N.BABY RANI",
+    "url": "https://mlrit.ac.in/faculty/n-baby-rani/"
+  },
+  "cse-ds/dasari-amulya": {
+    "areas": [
+      "Data Science"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Dasari Amulya",
+    "url": "https://mlrit.ac.in/faculty/dasari-amulya/"
+  },
+  "cse-ds/v-divya": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "V. DIVYA",
+    "url": "https://mlrit.ac.in/faculty/v-divya/"
+  },
+  "cse-ds/p-nishitha": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Ms .P.Nishitha",
+    "url": "https://mlrit.ac.in/faculty/p-nishitha-2/"
+  },
+  "cse-ds/a-nirisha": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "A.Nirisha",
+    "url": "https://mlrit.ac.in/faculty/a-nirisha/"
+  },
+  "cse-ds/s-anudeep": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "S. Anudeep",
+    "url": "https://mlrit.ac.in/faculty/sadula-anudeep/"
+  },
+  "cse-ds/madhavi-banala": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Ms.Madhavi Banala",
+    "url": "https://mlrit.ac.in/faculty/b-madhavi/"
+  },
+  "cse-ds/pallavi-mechineni": {
+    "areas": [
+      "Data Science"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Mrs. Pallavi Mechineni",
+    "url": "https://mlrit.ac.in/faculty/mrs-pallavi-mechineni/"
+  },
+  "cse-ds/bochu-sandhya": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Bochu Sandhya",
+    "url": "https://mlrit.ac.in/faculty/mrs-kannuri-sandhya/"
+  },
+  "cse-ds/swathi-dendi": {
+    "areas": [
+      "Data Science"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Mrs. Swathi Dendi",
+    "url": "https://mlrit.ac.in/faculty/mrs-swathi-dendi/"
+  },
+  "cse-ds/banoth-rajeshwari": {
+    "areas": [
+      "Data Science"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Mrs. Banoth Rajeshwari",
+    "url": "https://mlrit.ac.in/faculty/mrs-banoth-rajeshwari/"
+  },
+  "cse-ds/irfan-bagawan": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Irfan Bagawan",
+    "url": "https://mlrit.ac.in/faculty/mr-irfan-bagawan/"
+  },
+  "cse-ds/kiran-kumar-reddy-a": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Kiran Kumar Reddy.A",
+    "url": "https://mlrit.ac.in/faculty/mr-a-kiran-kumar-reddy/"
+  },
+  "cse-ds/bolagani-balaji": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Bolagani Balaji",
+    "url": "https://mlrit.ac.in/faculty/mr-bolagani-balaji/"
+  },
+  "cse-ds/malothu-sindhuja": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Malothu Sindhuja",
+    "url": "https://mlrit.ac.in/faculty/mrs-malothu-sindhuja/"
+  },
+  "cse-ds/hasina-nasrin": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Hasina Nasrin",
+    "url": "https://mlrit.ac.in/faculty/hasina-nasrin/"
+  },
+  "cse-ds/k-alankruthi": {
+    "areas": [
+      "Data Science"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Ms. K.Alankruthi",
+    "url": "https://mlrit.ac.in/faculty/ms-k-alankruthi/"
+  },
+  "cse-ds/b-ravali-reddy": {
+    "areas": [
+      "Data Science"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Mrs. B.Ravali Reddy",
+    "url": "https://mlrit.ac.in/faculty/mrs-b-ravali-reddy/"
+  },
+  "cse-ds/mathipogu-ashok-babu": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Mathipogu Ashok Babu",
+    "url": "https://mlrit.ac.in/faculty/mr-m-ashok-babu/"
+  },
+  "cse-ds/k-srinija": {
+    "areas": [
+      "Data Science"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Mrs. K.Srinija",
+    "url": "https://mlrit.ac.in/faculty/mrs-k-srinija/"
+  },
+  "cse-ds/bhukya-balakrishna": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Bhukya Balakrishna",
+    "url": "https://mlrit.ac.in/faculty/bhukya-balakrishna/"
+  },
+  "cse-ds/jangam-nagaraju": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Jangam Nagaraju",
+    "url": "https://mlrit.ac.in/faculty/mr-j-nagaraju/"
+  },
+  "cse-ds/mary-navyatha-govindu": {
+    "areas": [
+      "Data Science"
+    ],
+    "qual": "",
+    "counts": {},
+    "name": "Mary Navyatha Govindu",
+    "url": "https://mlrit.ac.in/faculty/mrs-navyatha-ravi/"
+  },
+  "cse-ds/n-thulasi-chithra": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "N. Thulasi Chithra",
+    "url": "https://mlrit.ac.in/faculty/n-thulasi-chitra/"
+  },
+  "cse-ds/s-parvathi": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Mrs S.Parvathi",
+    "url": "https://mlrit.ac.in/faculty/mrs-s-parvathi/"
+  },
+  "cse-ds/n-sandhya": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "N. Sandhya",
+    "url": "https://mlrit.ac.in/faculty/mrs-n-sandhya-rani/"
+  },
+  "cse-ds/m-srividya": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Mrs M.Srividya",
+    "url": "https://mlrit.ac.in/faculty/mrs-m-srividya/"
+  },
+  "cse-ds/d-neelima-priyadarshini": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Ms D.Neelima Priyadarshini",
+    "url": "https://mlrit.ac.in/faculty/mrs-d-neelima/"
+  },
+  "cse-ds/n-vijayasri": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Ms N.Vijayasri",
+    "url": "https://mlrit.ac.in/faculty/mrs-ch-vijayasri/"
+  },
+  "cse-ds/rowsonara-begum": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Rowsonara Begum",
+    "url": "https://mlrit.ac.in/faculty/rowsonara-begum/"
+  },
+  "cse-ds/mohd-anwar-ali": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Mr.Mohd Anwar Ali",
+    "url": "https://mlrit.ac.in/faculty/mohd-anwar-ali/"
+  },
+  "cse-ds/b-sushma": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Ms B. Sushma",
+    "url": "https://mlrit.ac.in/faculty/b-sushma/"
+  },
+  "cse-ds/d-sandeep": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "Mr D. Sandeep",
+    "url": "https://mlrit.ac.in/faculty/d-sandeep/"
+  },
+  "cse-ds/s-navya": {
+    "areas": [],
+    "qual": "",
+    "counts": {},
+    "name": "S. Navya",
+    "url": "https://mlrit.ac.in/faculty/soleti-navya/"
+  }
+}
