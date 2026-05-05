@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Test</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .test { margin: 20px 0; padding: 15px; border: 1px solid #ddd; }
+        .success { background: #d4edda; border-color: #c3e6cb; }
+        .error { background: #f8d7da; border-color: #f5c6cb; }
+    </style>
+</head>
+<body>
+    <h1>Search Module Test</h1>
+    
+    <div id="test1" class="test">
+        <h3>Test 1: Static Search Data</h3>
+        <p id="result1">Testing...</p>
+    </div>
+    
+    <div id="test2" class="test">
+        <h3>Test 2: Search Engine</h3>
+        <p id="result2">Testing...</p>
+    </div>
+    
+    <div id="test3" class="test">
+        <h3>Test 3: Search Components</h3>
+        <p id="result3">Testing...</p>
+    </div>
+    
+    <script src="modules/search/data/searchData.js"></script>
+    <script src="modules/search/utils/searchEngine.js"></script>
+    <script src="modules/search/components/SearchOverlay.js"></script>
+    <script src="modules/search/components/SearchInput.js"></script>
+    <script src="modules/search/components/FAQList.js"></script>
+    <script src="modules/search/components/SearchResultsPreview.js"></script>
+    <script src="modules/search/index.js"></script>
+    
+    <script>
+        // Test 1: Static Search Data
+        if (window.StaticSearchData) {
+            var results = window.StaticSearchData.search('cse', '');
+            document.getElementById('test1').className = 'test success';
+            document.getElementById('result1').textContent = '✓ StaticSearchData loaded. Found ' + results.length + ' results for "cse"';
+        } else {
+            document.getElementById('test1').className = 'test error';
+            document.getElementById('result1').textContent = '✗ StaticSearchData not found';
+        }
+        
+        // Test 2: Search Engine
+        if (window.SearchEngine) {
+            document.getElementById('test2').className = 'test success';
+            document.getElementById('result2').textContent = '✓ SearchEngine loaded';
+        } else {
+            document.getElementById('test2').className = 'test error';
+            document.getElementById('result2').textContent = '✗ SearchEngine not found';
+        }
+        
+        // Test 3: Search System
+        if (window.SearchSystem) {
+            document.getElementById('test3').className = 'test success';
+            document.getElementById('result3').textContent = '✓ SearchSystem loaded';
+        } else {
+            document.getElementById('test3').className = 'test error';
+            document.getElementById('result3').textContent = '✗ SearchSystem not found';
+        }
+    </script>
+</body>
+</html>

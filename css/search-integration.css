@@ -1,0 +1,31 @@
+/* Search Integration Styles */
+
+/* Make masthead sticky */
+.masthead {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+}
+
+/* Fix EAPCET button positioning - remove its margin-left: auto */
+.masthead__eapcet {
+    margin-left: 0 !important;
+}
+
+/*
+ * Header right container - add margin-left: auto to push it to the right
+ * This keeps EAPCET button and search icon together at the far right
+ */
+.masthead__inner .header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.masthead__inner {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}

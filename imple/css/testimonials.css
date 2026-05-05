@@ -1,0 +1,305 @@
+﻿/* ===========================
+   TESTIMONIALS â€” Fan Card Layout
+   =========================== */
+
+/* â”€â”€ Section background with soft gradient + node network â”€â”€ */
+.testimonials {
+  position: relative;
+  padding: 56px 0 56px;
+  background: linear-gradient(160deg, #f0f2f0 0%, #e8ede9 40%, #eef0ee 100%);
+  overflow: hidden;
+}
+
+/* Geometric node-network SVG background */
+.testimonials::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(46,125,50,0.18) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgba(46,125,50,0.08) 1px, transparent 1px);
+  background-size: 72px 72px, 36px 36px;
+  background-position: 0 0, 18px 18px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* SVG line-network overlay */
+.testimonials::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cg stroke='%232E7D32' stroke-opacity='0.07' stroke-width='1'%3E%3Cline x1='0' y1='0' x2='200' y2='400'/%3E%3Cline x1='200' y1='0' x2='400' y2='400'/%3E%3Cline x1='0' y1='200' x2='400' y2='0'/%3E%3Cline x1='0' y1='400' x2='400' y2='200'/%3E%3Cline x1='100' y1='0' x2='300' y2='400'/%3E%3Cline x1='0' y1='100' x2='400' y2='300'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 400px 400px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Green top accent bar */
+.testimonials .testi-topbar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1F6B24, #4CAF50, #1F6B24);
+}
+
+.testimonials .section-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* â”€â”€ Header â”€â”€ */
+.testi-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.testi-header .section-label {
+  color: #1F6B24;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.testi-header .section-heading {
+  margin: 10px 0 12px;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  color: #111;
+  line-height: 1.15;
+}
+
+.testi-header .section-sub {
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* â”€â”€ Fan Container â”€â”€ */
+.testi-fan {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 60px 20px 40px;
+  position: relative;
+}
+
+/* â”€â”€ Card â”€â”€ */
+.testi-card {
+  width: 220px;
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  /* Default: stacked in center */
+  transform: rotate(0deg) translateY(0) scale(0.98);
+  transform-origin: center bottom;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.6s ease,
+              margin 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15),
+              0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 1;
+  margin: 0 -110px;
+  background: #1a1a1a;
+}
+
+.testi-card--center {
+  transform: rotate(0deg) translateY(0) scale(1);
+  z-index: 3;
+}
+
+/* â”€â”€ Scattered state: fan out on hover â”€â”€ */
+.testi-fan:hover .testi-card {
+  transform: rotate(var(--rotate)) translateY(var(--ty));
+  margin: 0 -20px;
+}
+
+.testi-fan:hover .testi-card--center {
+  transform: rotate(0deg) translateY(0px) scale(1.08);
+}
+
+/* â”€â”€ Video â”€â”€ */
+.testi-card__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  transition: filter 0.4s ease, opacity 0.4s ease;
+}
+
+/* Paused / thumbnail state â€” dim + desaturate */
+.testi-card:not(.testi-card--active) .testi-card__video {
+  filter: brightness(0.6) saturate(0.4);
+  opacity: 0.85;
+}
+
+.testi-card--active .testi-card__video {
+  filter: none;
+  opacity: 1;
+}
+
+/* â”€â”€ Gradient overlay â”€â”€ */
+.testi-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* â”€â”€ Card Label â”€â”€ */
+.testi-card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 18px 14px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.testi-card-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.testi-card-role {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.3;
+}
+
+/* â”€â”€ Hover individual card (only when scattered) â”€â”€ */
+.testi-fan:hover .testi-card:hover {
+  transform: rotate(0deg) translateY(-10px) scale(1.12);
+  z-index: 10;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25),
+              0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.testi-fan:hover .testi-card--center:hover {
+  transform: rotate(0deg) translateY(-10px) scale(1.15);
+}
+
+/* â”€â”€ Mobile: horizontal scroll â”€â”€ */
+@media (max-width: 768px) {
+  .testi-fan {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 20px 20px 30px;
+  }
+
+  .testi-card {
+    transform: none;
+    margin: 0;
+    width: 200px;
+    height: 290px;
+    scroll-snap-align: center;
+  }
+
+  .testi-card--center {
+    transform: none;
+  }
+
+  .testi-card:hover {
+    transform: translateY(-6px) scale(1.03);
+  }
+
+  .testi-card--center:hover {
+    transform: translateY(-6px) scale(1.03);
+  }
+
+  /* Hide scrollbar */
+  .testi-fan::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testi-fan {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* â”€â”€ Sound toggle â”€â”€ */
+.testi-sound-bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.testi-mute {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, transform 0.2s;
+  color: #555;
+}
+
+.testi-mute:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #1F6B24;
+  color: #1F6B24;
+  transform: scale(1.05);
+}
+
+.testi-mute.is-unmuted {
+  background: #1F6B24;
+  border-color: #1F6B24;
+  color: #fff;
+}
+
+.testi-mute-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Show/hide icons based on state */
+.testi-mute .testi-mute-icon--on { display: none; }
+.testi-mute .testi-mute-icon--off { display: block; }
+.testi-mute.is-unmuted .testi-mute-icon--on { display: block; }
+.testi-mute.is-unmuted .testi-mute-icon--off { display: none; }
+
+.testi-mute-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* â”€â”€ Reduced motion â”€â”€ */
+@media (prefers-reduced-motion: reduce) {
+  .testi-card {
+    transition: none;
+  }
+}
+
+

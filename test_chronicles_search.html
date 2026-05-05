@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Chronicles Search</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .result { margin: 10px 0; padding: 10px; border: 1px solid #ddd; }
+        .success { background: #d4edda; }
+        .error { background: #f8d7da; }
+    </style>
+</head>
+<body>
+    <h1>Chronicles Search Test</h1>
+    
+    <div>
+        <label>Search: </label>
+        <input type="text" id="searchInput" value="hackathon" />
+        <button onclick="testSearch()">Test Search</button>
+    </div>
+    
+    <h2>Results:</h2>
+    <div id="results"></div>
+    
+    <script src="modules/search/data/chroniclesData.js"></script>
+    
+    <script>
+        function testSearch() {
+            var query = document.getElementById('searchInput').value;
+            var resultsDiv = document.getElementById('results');
+            
+            resultsDiv.innerHTML = '<p>Testing search for: <strong>' + query + '</strong></p>';
+            
+            // Test 1: Check if ChroniclesData is loaded
+            if (!window.ChroniclesData) {
+                resultsDiv.innerHTML += '<div class="result error">❌ ChroniclesData not loaded!</div>';
+                return;
+            }
+            resultsDiv.innerHTML += '<div class="result success">✅ ChroniclesData loaded</div>';
+            
+            // Test 2: Search for the query
+            var results = window.ChroniclesData.search(query);
+            resultsDiv.innerHTML += '<div class="result success">✅ Found ' + results.length + ' results</div>';
+            
+            // Test 3: Display results
+            if (results.length > 0) {
+                results.forEach(function(item) {
+                    resultsDiv.innerHTML += 
+                        '<div class="result">' +
+                        '<strong>' + item.title + '</strong><br>' +
+                        '<small>' + item.date + ' | ' + item.category + '</small><br>' +
+                        item.snippet +
+                        '</div>';
+                });
+            } else {
+                resultsDiv.innerHTML += '<div class="result error">❌ No results found</div>';
+            }
+        }
+        
+        // Auto-run test on load
+        window.onload = function() {
+            testSearch();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,1211 @@
+﻿/* =============================================================
+   MOBILE RESPONSIVE â€” MLRIT Homepage
+   Only adds styles for max-width: 768px and below.
+   Does NOT override any desktop styles.
+   =============================================================
+
+   TABLE OF CONTENTS
+   1.  Global / Base
+   2.  Navbar â€” Hamburger Menu
+   3.  Hero
+   4.  Stats Strip
+   5.  Achievements / Rankings
+   6.  Programs (Departments Scroll-to-Stack)
+   7.  Placements
+   8.  Testimonials
+   9.  Campus Life
+   10. Events
+   11. Admissions CTA
+   12. Footer
+   13. Success Stories
+   14. Why MLRIT
+   15. Event Showcase
+   16. Photo Section
+   ============================================================= */
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   1. GLOBAL / BASE
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+
+  /* Kill the desktop zoom â€” let the browser handle scaling */
+  html {
+    zoom: 1;
+  }
+
+  /* Prevent any horizontal overflow */
+  body,
+  .site-header,
+  section,
+  .section-wrap {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* Tighten side padding on mobile */
+  :root {
+    --page-pad: 1rem;
+    --header-h: 72px;  /* masthead only â€” green nav bar hidden on mobile */
+  }
+
+  /* Fluid images everywhere */
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Section headings â€” slightly smaller on mobile */
+  .section-heading {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .section-sub {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+}
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   2. NAVBAR â€” Hamburger Menu
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+
+  /* â”€â”€ Masthead â”€â”€ */
+  .masthead {
+    padding: 0.6rem 0;
+  }
+
+  .masthead .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .masthead__inner {
+    gap: 0.75rem;
+    flex-wrap: nowrap;
+  }
+
+  .masthead__logo img {
+    height: 44px;
+  }
+
+  /* Hide tagline on mobile â€” saves space */
+  .masthead__tagline {
+    display: none;
+  }
+
+  /* Shrink EAPCET badge */
+  .eapcet-badge {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.7rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* â”€â”€ Hamburger button â€” injected into masthead__right by JS â”€â”€ */
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .nav-hamburger:hover {
+    background: #f0f0f0;
+    border-color: #1F6B24;
+  }
+
+  .nav-hamburger__bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #1F6B24;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Animate to X when open */
+  .nav-hamburger.is-open .nav-hamburger__bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-hamburger.is-open .nav-hamburger__bar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .nav-hamburger.is-open .nav-hamburger__bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* â”€â”€ Main nav â€” hidden by JS, shown as dropdown drawer â”€â”€ */
+  .main-nav {
+    display: none;  /* hidden on mobile â€” JS-built drawer replaces it */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  }
+
+  /* Nav list: vertical drawer â€” JS controls display via inline style */
+  .main-nav__list {
+    flex-direction: column;
+    width: 100%;
+    background: #155218;
+    padding: 0.5rem 0 1rem;
+    max-height: 80vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Nav items â€” full width rows */
+  .main-nav__item {
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .main-nav__item--right {
+    margin-left: 0;
+  }
+
+  .main-nav__item--support {
+    border-bottom: none;
+  }
+
+  /* Nav links â€” full width, taller touch target */
+  .main-nav__link {
+    width: 100%;
+    height: auto;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.9rem;
+    justify-content: space-between;
+  }
+
+  /* Chevron points right by default on mobile */
+  .main-nav__link .chevron {
+    transform: rotate(-45deg) translateY(0);
+  }
+
+  .main-nav__item.is-open > .main-nav__link .chevron {
+    transform: rotate(45deg) translateY(-2px);
+  }
+
+  /* Underline indicator â€” disable on mobile */
+  .main-nav__link::before {
+    display: none;
+  }
+
+  /* â”€â”€ Dropdowns â€” accordion style on mobile â”€â”€ */
+  .dropdown,
+  .support-panel {
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-image: none !important;
+    border-top: 1px solid rgba(255,255,255,0.07) !important;
+    background: rgba(0,0,0,0.25) !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    padding: 0.75rem 1.25rem 1rem !important;
+    display: none !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  .main-nav__item.is-open > .dropdown,
+  .main-nav__item.is-open > .support-panel {
+    display: flex !important;
+  }
+
+  .dropdown__col {
+    min-width: 0;
+    flex: none;
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+
+  .dropdown__col:last-child {
+    margin-bottom: 0;
+  }
+
+  .dropdown__col h4 {
+    font-size: 0.65rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
+  }
+
+  .dropdown__col a {
+    font-size: 0.82rem;
+    padding: 0.4rem 0;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .dropdown__col a:hover {
+    color: #fff;
+    padding-left: 0.5rem;
+  }
+
+  .dropdown__col a::before {
+    background: rgba(255,255,255,0.5);
+  }
+
+  /* Right-aligned dropdown â€” reset on mobile */
+  .dropdown--right {
+    left: 0 !important;
+    right: auto !important;
+  }
+
+  /* Support panel on mobile */
+  .support-panel {
+    border-radius: 0 !important;
+    border-top: 1px solid rgba(255,255,255,0.07) !important;
+  }
+
+  .support-panel__map {
+    height: 120px;
+  }
+}
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   3. HERO
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 500px;
+    height: 90vh;
+  }
+
+  .hero__headline {
+    padding: 0 1rem 2.5rem;
+    max-width: 100%;
+  }
+
+  .hero__headline h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .hero__sub {
+    font-size: 0.82rem;
+    max-width: 100%;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__ctas {
+    gap: 0.6rem;
+  }
+
+  .hero__ctas a {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.82rem;
+    min-height: 44px; /* touch-friendly */
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Move scroll indicator so it doesn't overlap content */
+  .hero__scroll {
+    right: 1rem;
+    bottom: 1.5rem;
+  }
+}
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   4. STATS STRIP
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+
+  /* 2Ã—2 grid â€” all 4 stats visible at once */
+  .stats-strip__inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item {
+    padding: 24px 12px;
+  }
+
+  .stat-item__number {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+    margin-bottom: 8px;
+  }
+
+  .stat-item__label {
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* Hide all pseudo-element vertical dividers â€” grid handles spacing */
+  .stat-item::before {
+    display: none;
+  }
+
+  /* Divider between the two rows */
+  .stat-item:nth-child(1),
+  .stat-item:nth-child(2) {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* Divider between left and right columns */
+  .stat-item:nth-child(odd) {
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+}
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   5. ACHIEVEMENTS / RANKINGS
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+
+  .achievements {
+    padding: 40px 0 36px;
+  }
+
+  .achievements__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .achievements__ranks {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .rank-row {
+    padding: 16px 14px;
+  }
+
+  .rank-row__num {
+    font-size: 1.5rem;
+  }
+
+  /* Hide logo constellation on mobile â€” too cluttered at small sizes */
+  .logo-cluster-wrap {
+    display: none;
+  }
+
+  /* Rank cards row */
+  .rank-cards {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .rank-card {
+    padding: 18px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievements__ranks {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   6. PROGRAMS (Departments Scroll-to-Stack)
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+
+  .programs-topbar {
+    padding: 20px 0 14px;
+  }
+
+  .programs-topbar__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .programs-heading {
+    font-size: clamp(1.3rem, 5vw, 1.7rem);
+  }
+
+  .programs-topbar__right {
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .programs-tabs {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tab-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+    min-height: 36px;
+  }
+
+  /* Stack columns vertically */
+  .dept-columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 20px 1rem 0;
+    /* Disable sticky on mobile â€” scroll-to-stack animation is desktop-only */
+    position: static;
+    top: auto;
+  }
+
+  .dept-card {
+    padding: 18px 18px;
+  }
+
+  .dept-card__name {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   7. PLACEMENTS
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+
+  .placements {
+    padding: 44px 0 0;
+  }
+
+  .placements__title {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+
+  .placements__sub {
+    font-size: 0.85rem;
+    max-width: 100%;
+  }
+
+  .placements__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .placement-stat {
+    padding: 20px 12px 16px;
+  }
+
+  .placement-stat__num {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+  }
+
+  .placement-stat__label {
+    font-size: 0.68rem;
+    max-width: 100%;
+  }
+
+  /* Recruiter band â€” smaller items on mobile */
+  .recruiter-band__item {
+    width: 130px;
+    height: 70px;
+  }
+
+  .recruiter-band::before,
+  .recruiter-band::after {
+    width: 60px;
+  }
+
+  /* Placements carousel header */
+  .placements-carousel__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 24px;
+  }
+
+  .placements-carousel__header .section-heading {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+  }
+
+  /* Cards â€” slightly narrower on mobile */
+  .placement-card {
+    flex: 0 0 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .placements__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .placement-stat:nth-child(2) {
+    border-right: none;
+  }
+}
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   8. TESTIMONIALS â€” Simple horizontal scroll on mobile
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+
+  .testimonials {
+    padding: 44px 0 44px;
+  }
+
+  .testi-header {
+    margin-bottom: 24px;
+    padding: 0 1rem;
+    text-align: left;
+  }
+
+  .testi-header .section-heading {
+    font-size: clamp(1.4rem, 6vw, 1.9rem);
+  }
+
+  /* Hide the "hover over the deck" hint â€” irrelevant on touch */
+  .testi-header .section-sub {
+    display: none;
+  }
+
+  /* Allow horizontal scroll â€” parent overflow:hidden blocks it */
+  .testimonials {
+    overflow: visible;
+  }
+
+  /* Contain the fan scroll within its own box */
+  .testi-fan {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    gap: 12px;
+    /* Left padding shows first card flush; right padding hints at next card */
+    padding: 8px 1rem 20px;
+  }
+
+  .testi-fan::-webkit-scrollbar { display: none; }
+
+  /* â”€â”€ Each card â€” upright, no rotation, no overlap â”€â”€ */
+  .testi-card {
+    transform: none;
+    margin: 0;
+
+    /* ~2.5 cards visible: viewport minus padding divided by 2.5 */
+    width: calc((100vw - 2rem - 24px) / 2.3);
+    min-width: 130px;
+    max-width: 175px;
+    height: 220px;
+
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .testi-card--center {
+    transform: none;
+  }
+
+  /* Lift on hover/tap */
+  .testi-fan .testi-card:hover,
+  .testi-fan .testi-card:focus-within {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.4);
+    z-index: 10;
+  }
+
+  /* Video â€” dimmed by default so name is readable, brightens when active */
+  .testi-card .testi-card__video {
+    filter: brightness(0.7);
+    opacity: 1;
+  }
+
+  .testi-card.testi-card--active .testi-card__video,
+  .testi-card:hover .testi-card__video {
+    filter: brightness(1);
+  }
+}
+
+  /* Name label sizing */
+  .testi-card-label {
+    padding: 12px 10px;
+  }
+
+  .testi-card-name {
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+  }
+
+  .testi-card-role {
+    font-size: 0.62rem;
+  }
+
+  /* Sound bar */
+  .testi-sound-bar {
+    margin-top: 12px;
+    padding: 0 1rem;
+  }
+
+  .testi-mute {
+    min-height: 44px;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   9. CAMPUS LIFE
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+
+  .campus-life {
+    padding: 44px 0;
+  }
+
+  .campus-life__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .campus-card__img {
+    aspect-ratio: 16/9;
+  }
+
+  .campus-card__body {
+    padding: 16px 16px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Two-column grid on small phones */
+  .campus-life__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .campus-card__body {
+    padding: 12px 12px 14px;
+  }
+
+  .campus-card__title {
+    font-size: 0.75rem;
+  }
+}
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   10. EVENTS â€” keep horizontal layout on mobile
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+
+  .events {
+    padding: 44px 0;
+  }
+
+  /* Restore side-by-side: featured left, list right */
+  .events__grid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .event-featured__img {
+    aspect-ratio: 4/3;
+  }
+
+  .event-featured__body {
+    padding: 14px;
+  }
+
+  .event-featured__tag {
+    font-size: 0.6rem;
+    margin-bottom: 5px;
+  }
+
+  .event-featured__title {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    margin-bottom: 6px;
+  }
+
+  .event-featured__desc {
+    font-size: 0.72rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    /* Limit to 3 lines so it doesn't overflow */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .event-featured__body .btn {
+    font-size: 0.72rem;
+    padding: 0.5rem 1rem;
+    min-height: 36px;
+  }
+
+  /* Event list â€” compact */
+  .event-item {
+    padding: 10px 0;
+    gap: 8px;
+  }
+
+  .event-item__date .day {
+    font-size: 1.1rem;
+  }
+
+  .event-item__date .month {
+    font-size: 0.6rem;
+  }
+
+  .event-item__info strong {
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+
+  .event-item__info span {
+    font-size: 0.62rem;
+  }
+}
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   11. ADMISSIONS CTA
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+
+  .admissions-cta {
+    padding: 48px 0;
+  }
+
+  .admissions-cta__inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .admissions-cta__heading {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+  }
+
+  .admissions-cta__sub {
+    font-size: 0.88rem;
+    max-width: 100%;
+  }
+
+  .admissions-cta__actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .admissions-cta__actions .btn {
+    min-height: 44px;
+    padding: 0.65rem 1.4rem;
+  }
+}
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   12. FOOTER
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+
+  /* Disable sticky footer effect on mobile â€” just a normal block */
+  .sticky-footer {
+    height: auto;
+    clip-path: none;
+  }
+
+  .sticky-footer__inner {
+    position: static;
+    top: auto;
+    height: auto;
+  }
+
+  .sticky-footer__content {
+    height: auto;
+    padding: 1.5rem 1rem 0;
+    gap: 1rem;
+    overflow: visible;
+  }
+
+  /* CTA bar */
+  .sf-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .sf-cta__text h3 {
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
+  }
+
+  .sf-cta__right {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .sf-cta__actions {
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .sf-cta__actions .btn {
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  .sf-newsletter--cta {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Main grid â€” brand full width, then link cols in 2 columns */
+  .sf-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem 1.5rem;
+  }
+
+  /* Brand column spans both columns */
+  .sf-brand {
+    grid-column: 1 / -1;
+  }
+
+  /* Each link column takes one cell â€” 2 per row */
+  .sf-col {
+    min-width: 0;
+  }
+
+  .sf-col h5 {
+    font-size: 0.72rem;
+    margin-bottom: 10px;
+  }
+
+  .sf-col ul li {
+    margin-bottom: 7px;
+  }
+
+  .sf-col ul li a {
+    font-size: 0.82rem;
+  }
+
+  .sf-brand__desc {
+    max-width: 100%;
+    font-size: 0.85rem;
+  }
+
+  /* Bottom bar */
+  .sf-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 0.75rem 0;
+  }
+
+  .sf-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* Watermark â€” scale down */
+  .sf-watermark {
+    font-size: clamp(3.5rem, 18vw, 7rem);
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Keep 2-column link grid even on small phones */
+  .sf-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.2rem;
+  }
+
+  .sf-brand {
+    grid-column: 1 / -1;
+  }
+
+  .sticky-footer__content {
+    padding: 1.2rem 1rem 0;
+  }
+}
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   13. SUCCESS STORIES
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+
+  .ss-section {
+    padding: 40px 0 52px;
+  }
+
+  .ss-container {
+    padding: 0 1rem;
+  }
+
+  .ss-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .ss-heading {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+
+  .ss-desc {
+    text-align: left;
+    max-width: 100%;
+    font-size: 0.82rem;
+  }
+
+  .ss-card img {
+    max-height: 320px;
+  }
+
+  .ss-card__name-badge {
+    padding: 10px 14px 9px;
+    gap: 8px;
+  }
+
+  .ss-card__name-badge .ss-card__name {
+    font-size: 0.88rem;
+  }
+}
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   14. WHY MLRIT
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+
+  .why-section {
+    padding: 52px 0;
+  }
+
+  .why-section__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 0 1rem;
+  }
+
+  .why-section__heading {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .why-section__body {
+    font-size: 0.9rem;
+    max-width: 100%;
+    line-height: 1.75;
+  }
+
+  /* Video â€” always visible on mobile (no slide-in animation needed) */
+  .why-section__right {
+    opacity: 1;
+    transform: none;
+  }
+
+  .why-section__video {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+}
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   15. EVENT SHOWCASE â€” desktop-like horizontal on mobile
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+
+  .event-showcase {
+    height: 56vw;
+    min-height: 300px;
+    max-height: 420px;
+    cursor: auto;
+  }
+
+  .es__cursor {
+    display: none !important;
+  }
+
+  /* Info panel â€” compact, bottom-left */
+  .es__info {
+    bottom: 2.8rem;
+    left: 1rem;
+    right: 3.5rem;
+    max-width: none;
+  }
+
+  /* Hide logo on mobile â€” saves space */
+  .es__info-logo {
+    display: none;
+  }
+
+  .es__info-tag {
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.3rem;
+  }
+
+  .es__info-title {
+    font-size: clamp(0.95rem, 4vw, 1.25rem);
+    margin-bottom: 0.35rem;
+    line-height: 1.2;
+  }
+
+  /* Hide description â€” too cluttered on small screen */
+  .es__info-desc {
+    display: none;
+  }
+
+  .es__info-cta {
+    height: 34px;
+    font-size: 0.7rem;
+    min-width: 110px;
+  }
+
+  /* Next button */
+  .es__next {
+    right: 0.6rem;
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Bottom bar */
+  .es__bottom-bar {
+    padding: 0.6rem 1rem;
+  }
+
+  .es__dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .es__dot.is-active {
+    width: 18px;
+  }
+
+  .es__mute {
+    padding: 0.28rem 0.55rem 0.28rem 0.4rem;
+    gap: 4px;
+  }
+
+  .es__mute-label {
+    font-size: 0.6rem;
+  }
+
+  .es__mute-icon {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   16. PHOTO SECTION
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+
+  .photo-section {
+    padding: 28px 0;
+  }
+
+  .photo-section__inner {
+    padding: 0 1rem;
+  }
+
+  .photo-section__heading {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+    margin-bottom: 16px;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .photo-grid__hero {
+    grid-column: 1;
+  }
+
+  .photo-grid__secondary {
+    grid-column: 1;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .photo-grid__tertiary {
+    grid-column: 1;
+    grid-template-columns: repeat(3, 75vw);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    gap: 10px;
+  }
+
+  .tile--hero {
+    height: 280px;
+  }
+
+  .tile--secondary-a,
+  .tile--secondary-b {
+    height: 180px;
+    flex: 1;
+  }
+
+  .tile--tertiary {
+    height: 220px;
+    scroll-snap-align: start;
+    min-width: 75vw;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .photo-grid__secondary {
+    flex-direction: column;
+  }
+
+  .tile--hero {
+    height: 240px;
+  }
+
+  .tile--secondary-a,
+  .tile--secondary-b {
+    height: 180px;
+    flex: none;
+    width: 100%;
+  }
+}
+
+
+
+

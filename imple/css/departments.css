@@ -1,0 +1,236 @@
+﻿/* ===========================
+   PROGRAMS â€” Scroll-to-Stack
+   Cards spread â†’ compress one by one
+   Stack stays pinned on screen
+   =========================== */
+
+.programs-section {
+  background: #0d0d0d;
+  position: relative;
+}
+
+.programs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+}
+
+/* â”€â”€ Sticky top bar â”€â”€ */
+.programs-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #0d0d0d;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 28px 0 20px;
+}
+
+.programs-topbar__inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.programs-eyebrow {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #1F6B24;
+  margin-bottom: 8px;
+}
+
+.programs-heading {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.programs-topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+/* â”€â”€ Tabs â”€â”€ */
+.programs-tabs { display: flex; gap: 8px; }
+
+.tab-btn {
+  padding: 0.4rem 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  border-radius: 50px;
+  border: 1.5px solid rgba(255,255,255,0.12);
+  background: transparent;
+  color: rgba(255,255,255,0.45);
+  cursor: pointer;
+  transition: background 0.22s, color 0.22s, border-color 0.22s;
+}
+
+.tab-btn--active,
+.tab-btn:hover {
+  background: #1F6B24;
+  color: #fff;
+  border-color: #1F6B24;
+  box-shadow: 0 2px 14px rgba(0,143,49,0.3);
+}
+
+/* â”€â”€ Counter â”€â”€ */
+.programs-counter {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.25);
+  min-width: 52px;
+  text-align: right;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   Sticky two-column grid
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.dept-columns {
+  position: sticky;
+  top: 100px;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px clamp(20px, 4vw, 48px) 0;
+}
+
+.dept-col { min-width: 0; }
+
+.dept-col__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* â”€â”€ Stack â€” flex column â”€â”€ */
+.dept-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* â”€â”€ Card â€” SOLID background, no opacity tricks â”€â”€ */
+.dept-card {
+  position: relative;
+  /* Later cards stack ON TOP of earlier ones */
+  z-index: calc(var(--i, 0) + 1);
+
+  background: #161616;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-left: 4px solid var(--accent, #1F6B24);
+  border-radius: 14px;
+  padding: 22px 24px;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+
+  transform-origin: top center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+
+  /* no transition on transform â€” JS drives it smoothly via rAF */
+  transition: box-shadow 0.3s ease,
+              border-color 0.3s ease,
+              background 0.3s ease;
+  will-change: transform;
+}
+
+.dept-card:hover {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+  border-color: var(--accent, #1F6B24);
+  background: #1e1e1e;
+  z-index: 20;
+}
+
+/* â”€â”€ Text â”€â”€ */
+.dept-card__badge {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent, #1F6B24);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  padding: 2px 8px;
+  margin-bottom: 10px;
+}
+
+.dept-card__name {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(0.92rem, 1.4vw, 1.1rem);
+  font-weight: 700;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.3;
+  margin: 0 0 6px;
+}
+
+.dept-card__meta {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.3);
+  margin: 0 0 12px;
+}
+
+.dept-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  transition: color 0.22s;
+}
+
+.dept-card:hover .dept-card__link,
+.dept-card__link:hover {
+  color: var(--accent, #1F6B24);
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   Responsive
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+@media (max-width: 768px) {
+  /* section height set by JS */
+  .programs-topbar__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .programs-topbar__right {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .dept-columns {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dept-card { will-change: auto; }
+}
+
+
+
