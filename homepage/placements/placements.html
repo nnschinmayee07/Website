@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&family=Raleway:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/chronicles-dropdown.css" />
   <link rel="stylesheet" href="placements.css" />
   <script src="data/placements-data.js"></script>
 </head>
@@ -106,22 +107,132 @@
             <a href="placements.html" class="main-nav__link is-active">Placements</a>
           </li>
 
-          <li class="main-nav__item main-nav__item--right" style="margin-right: 8px;">
-            <a href="#" class="main-nav__link">MLRIT Chronicles <span class="chevron"></span></a>
-            <div class="dropdown dropdown--right">
-              <div class="dropdown__col">
-                <h4>Bulletins</h4>
-                <a href="#">Academic Notices</a>
-                <a href="#">Exam Schedules</a>
+          <li class="main-nav__item main-nav__item--right main-nav__item--chronicles" style="margin-right: 8px;">
+            <a href="../chronicles/" class="main-nav__link">MLRIT Chronicles <span class="chevron"></span></a>
+            <div class="dropdown dropdown--right dropdown--chronicles">
+
+              <!-- ① LEFT BRAND PANEL -->
+              <div class="chron-brand">
+                <a href="../chronicles/" class="chron-brand__logo">
+                  <div class="chron-brand__logo-icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <rect x="2" y="4" width="16" height="2" rx="1" fill="#fff"/>
+                      <rect x="2" y="8" width="12" height="1.5" rx="0.75" fill="rgba(255,255,255,0.7)"/>
+                      <rect x="2" y="11" width="14" height="1.5" rx="0.75" fill="rgba(255,255,255,0.7)"/>
+                      <rect x="2" y="14" width="9" height="1.5" rx="0.75" fill="rgba(255,255,255,0.45)"/>
+                    </svg>
+                  </div>
+                  <span>MLRIT<br>Chronicles</span>
+                </a>
+                <p class="chron-brand__tagline">News, events and notices from Dundigal</p>
+                <div class="chron-brand__rule"></div>
+                <div class="chron-brand__stats">
+                  <div class="chron-brand__stat"><strong>621</strong><span>Offers 2026</span></div>
+                  <div class="chron-brand__stat"><strong>37</strong><span>Companies</span></div>
+                  <div class="chron-brand__stat"><strong>4</strong><span>Active notices</span></div>
+                </div>
+                <a href="../chronicles/" class="chron-brand__cta">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 4l4 3-4 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Open Full Edition
+                </a>
               </div>
+
+              <!-- ② CENTER: RECENT STORIES -->
+              <div class="chron-stories">
+                <h4 class="chron-section-label">Recent Stories</h4>
+                <div class="chron-story-list">
+                  <a href="../chronicles/" class="chron-story-card">
+                    <div class="chron-story-card__thumb"><div class="chron-story-card__thumb-fill chron-story-card__thumb-fill--academic"></div></div>
+                    <div class="chron-story-card__body">
+                      <span class="chron-badge chron-badge--academic">Campus</span>
+                      <p class="chron-story-card__title">21st Annual Day — a packed evening at the MLRIT auditorium</p>
+                      <div class="chron-story-card__meta"><span class="chron-story-card__date">14 Mar 2026</span><span class="chron-story-card__read">Read &rarr;</span></div>
+                    </div>
+                  </a>
+                  <a href="../chronicles/" class="chron-story-card">
+                    <div class="chron-story-card__thumb"><div class="chron-story-card__thumb-fill chron-story-card__thumb-fill--event"></div></div>
+                    <div class="chron-story-card__body">
+                      <span class="chron-badge chron-badge--event">Workshop</span>
+                      <p class="chron-story-card__title">TSFA–UNESCO workshop puts MLRIT students in global conversation</p>
+                      <div class="chron-story-card__meta"><span class="chron-story-card__date">2 Jan 2026</span><span class="chron-story-card__read">Read &rarr;</span></div>
+                    </div>
+                  </a>
+                  <a href="../chronicles/" class="chron-story-card">
+                    <div class="chron-story-card__thumb"><div class="chron-story-card__thumb-fill chron-story-card__thumb-fill--placement"></div></div>
+                    <div class="chron-story-card__body">
+                      <span class="chron-badge chron-badge--placement">Placement</span>
+                      <p class="chron-story-card__title">Cognizant, Infosys, HCL Tech lead 2026 campus drive with 621 total offers</p>
+                      <div class="chron-story-card__meta"><span class="chron-story-card__date">Apr 2026</span><span class="chron-story-card__read">Read &rarr;</span></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!-- ③ CENTER-RIGHT: EVENTS + NOTICES -->
+              <div class="chron-mid">
+                <div class="chron-events">
+                  <h4 class="chron-section-label">Events and Culture</h4>
+                  <ul class="chron-events-list">
+                    <li><span class="chron-event-dot"></span><div><a href="https://www.mlrit.ac.in/events" target="_blank">Workshop Carnival 2026</a><span class="chron-event-when">10–11 Apr 2026</span></div></li>
+                    <li><span class="chron-event-dot"></span><div><a href="https://www.mlrit.ac.in/events" target="_blank">Zenith — Annual Tech Fest</a><span class="chron-event-when">Dec 18–20, 2025</span></div></li>
+                    <li><span class="chron-event-dot"></span><div><a href="https://www.mlrit.ac.in/events" target="_blank">TedX MLRIT</a><span class="chron-event-when">25 Apr 2025</span></div></li>
+                    <li><span class="chron-event-dot"></span><div><a href="https://www.mlrit.ac.in/events" target="_blank">SIH Internal Hackathon</a><span class="chron-event-when">18 Sep 2025</span></div></li>
+                  </ul>
+                </div>
+                <div class="chron-notices">
+                  <h4 class="chron-section-label">Notices and Circulars</h4>
+                  <ul class="chron-notices-list">
+                    <li><span class="chron-notice-tag chron-notice-tag--exam">MARKS</span><a href="https://www.mlrit.ac.in/circulars" target="_blank">II B.Tech II Sem CIE-II Internal Marks — check portal</a></li>
+                    <li><span class="chron-notice-tag chron-notice-tag--exam">EXAM</span><a href="https://www.mlrit.ac.in/circulars" target="_blank">I B.Tech II Sem R25 MID-2 Timetable — June 2026</a></li>
+                    <li><span class="chron-notice-tag chron-notice-tag--result">SUPP</span><a href="https://www.mlrit.ac.in/circulars" target="_blank">II B.Tech Supplementary Exams — June 2026 Timetable</a></li>
+                    <li><span class="chron-notice-tag chron-notice-tag--scholarship">VIKSIT</span><a href="https://www.mlrit.ac.in/news" target="_blank">Koduri Viplav selected for Viksit Bharat Young Leaders 2026</a></li>
+                  </ul>
+                  <div class="chron-notices-footer">
+                    <a href="https://www.mlrit.ac.in/circulars" target="_blank" class="chron-notices-all">All Notices
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M7 3l3 3-3 3" stroke="#1F6B24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ④ RIGHT: STATS PANEL -->
+              <div class="chron-stats-panel">
+                <div class="chron-placements-box">
+                  <div class="chron-placements-box__head">
+                    <span class="chron-placements-box__label">Placements 2026</span>
+                    <span class="chron-placements-box__year">Batch Report</span>
+                  </div>
+                  <div class="chron-placements-box__body">
+                    <span class="chron-placements-box__lpa">&#8377;51 LPA</span>
+                    <span class="chron-placements-box__sub">Highest Package</span>
+                    <span class="chron-placements-box__note">621 total offers · 37 companies</span>
+                    <div class="chron-placements-box__companies"><span>Cognizant</span><span>Infosys</span><span>HCL Tech</span><span>Virtusa</span><span>Deloitte</span></div>
+                  </div>
+                </div>
+                <div class="chron-the-box">
+                  <span class="chron-the-box__label">Rankings 2025</span>
+                  <p class="chron-the-box__text">#6 in Telangana (Times). #9 in Hyderabad (The Week). DataQuest Top 50 T-Schools India.</p>
+                </div>
+                <div class="chron-quickstats">
+                  <div class="chron-quickstat"><strong>NAAC A+</strong><span>Accredited</span></div>
+                  <div class="chron-quickstat"><strong>#6 TG</strong><span>Times 2025</span></div>
+                  <div class="chron-quickstat"><strong>420</strong><span>Patents filed</span></div>
+                </div>
+              </div>
+
             </div>
           </li>
 
-          <li class="main-nav__item--support">
-            <div class="support-avatar">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-            </div>
-          </li>
+          <li class="main-nav__item main-nav__item--support">
+            <a href="#" class="main-nav__link main-nav__link--support">
+              <span class="support-avatar" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <circle cx="9" cy="6" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M2 15.5c0-3.038 3.134-5.5 7-5.5s7 2.462 7 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              Support
+            </a>
 
         </ul>
       </div>
