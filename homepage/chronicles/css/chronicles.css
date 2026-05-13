@@ -30,17 +30,36 @@ img { display: block; max-width: 100%; }
   --rule:        rgba(0,0,0,0.08);
   --rule-mid:    rgba(0,0,0,0.13);
 
-  /* Card at rest: clean neutral shadow */
-  --sh-rest: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.07);
-
-  /* Orange glow on hover — strong ring + diffuse bloom */
-  --sh-hover: 0 0 0 3px #d4521a,
-              0 8px 32px rgba(212,82,26,0.45),
-              0 2px 8px rgba(0,0,0,0.12);
+  --sh-rest:  0 2px 6px rgba(0,0,0,0.07), 0 6px 20px rgba(0,0,0,0.08);
+  --sh-hover: 0 0 0 2.5px #d4521a,
+              0 0 28px 4px rgba(212,82,26,0.55),
+              0 18px 48px rgba(0,0,0,0.18);
 
   --radius: 10px;
   --page-x: clamp(16px, 5vw, 64px);
 }
+
+/* ── Tile bevel effect (applied via JS) ── */
+.tile {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.tile__shine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255,255,255,0.22) 0%,
+    rgba(255,255,255,0.06) 40%,
+    transparent 70%
+  );
+}
+.tile:hover .tile__shine { opacity: 1; }
 
 /* ══════════════════════════════════════
    MASTHEAD
@@ -245,12 +264,12 @@ img { display: block; max-width: 100%; }
   box-shadow: var(--sh-rest);
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: box-shadow 0.15s ease;
   cursor: pointer;
+  position: relative;
 }
 .chron-featured:hover {
   box-shadow: var(--sh-hover);
-  transform: translateY(-4px);
 }
 
 .chron-featured__img {
@@ -353,11 +372,11 @@ img { display: block; max-width: 100%; }
   background: var(--white);
   border-radius: var(--radius);
   box-shadow: var(--sh-rest);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: box-shadow 0.15s ease;
+  position: relative;
 }
 .chron-sidebar-box:hover {
   box-shadow: var(--sh-hover);
-  transform: translateY(-4px);
 }
 .chron-sidebar-box__head {
   padding: 10px 16px;
@@ -467,12 +486,12 @@ img { display: block; max-width: 100%; }
   box-shadow: var(--sh-rest);
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: box-shadow 0.15s ease;
   cursor: pointer;
+  position: relative;
 }
 .chron-card:hover {
   box-shadow: var(--sh-hover);
-  transform: translateY(-6px);
 }
 
 /* Image clips itself, not the card */
@@ -574,11 +593,11 @@ img { display: block; max-width: 100%; }
   background: var(--white);
   border-radius: var(--radius);
   box-shadow: var(--sh-rest);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: box-shadow 0.15s ease;
+  position: relative;
 }
 .chron-notices-board:hover {
   box-shadow: var(--sh-hover);
-  transform: translateY(-4px);
 }
 .chron-notices-board__head {
   padding: 13px 20px;
@@ -642,11 +661,11 @@ img { display: block; max-width: 100%; }
   background: var(--white);
   border-radius: var(--radius);
   box-shadow: var(--sh-rest);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: box-shadow 0.15s ease;
+  position: relative;
 }
 .chron-subscribe:hover {
   box-shadow: var(--sh-hover);
-  transform: translateY(-4px);
 }
 .chron-subscribe__head {
   padding: 16px 18px 13px;
@@ -702,11 +721,11 @@ img { display: block; max-width: 100%; }
   border-radius: var(--radius);
   margin-top: 14px;
   box-shadow: var(--sh-rest);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: box-shadow 0.15s ease;
+  position: relative;
 }
 .chron-research-box:hover {
   box-shadow: var(--sh-hover);
-  transform: translateY(-4px);
 }
 .chron-research-box__title {
   background: var(--paper-warm);
