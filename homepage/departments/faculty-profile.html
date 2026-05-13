@@ -3347,15 +3347,22 @@
       if (!data && params.get('photo')) {
         var photo = decodeURIComponent(params.get('photo'));
         var slug = photo.replace(/^.*\//, '').replace(/\.[^.]+$/, '');
+        // Normalize spaces to dashes for CDN filenames that may have spaces
+        var slugNorm = slug.replace(/\s+/g, '-').replace(/[^a-z0-9-]/gi, '').toLowerCase();
         if (facultyDB[slug]) data = facultyDB[slug];
+        else if (facultyDB[slugNorm]) data = facultyDB[slugNorm];
         else if (slugAliases[slug] && facultyDB[slugAliases[slug]]) data = facultyDB[slugAliases[slug]];
+        else if (slugAliases[slugNorm] && facultyDB[slugAliases[slugNorm]]) data = facultyDB[slugAliases[slugNorm]];
       }
 
-      // Strategy 3: match by name param against DB entries
+      // Strategy 3: match by name param against DB entries (with and without title prefix)
       if (!data && params.get('name')) {
         var qName = decodeURIComponent(params.get('name')).toLowerCase().trim();
+        var qNameNoTitle = qName.replace(/^(dr|mr|mrs|ms|prof)\.?\s*/i, '').trim();
         for (var key in facultyDB) {
-          if (facultyDB[key].name.toLowerCase() === qName) {
+          var dbName = facultyDB[key].name.toLowerCase();
+          var dbNameNoTitle = dbName.replace(/^(dr|mr|mrs|ms|prof)\.?\s*/i, '').trim();
+          if (dbName === qName || dbNameNoTitle === qName || dbName === qNameNoTitle || dbNameNoTitle === qNameNoTitle) {
             data = facultyDB[key];
             break;
           }
