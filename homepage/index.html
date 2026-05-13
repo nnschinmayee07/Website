@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,18 +6,19 @@
   <title>MLRIT — Marri Laxman Reddy Institute of Technology</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&family=Raleway:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/navbar.css" />
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/rankings.css" />
   <link rel="stylesheet" href="css/photo-section.css" />
   <link rel="stylesheet" href="css/success-stories.css" />
+  <link rel="stylesheet" href="css/testimonials.css" />
   <link rel="stylesheet" href="css/why-mlrit.css" />
   <link rel="stylesheet" href="css/events-disc.css" />
-  <link rel="stylesheet" href="css/rankings.css" />
-  <link rel="stylesheet" href="css/placements-carousel.css" />
-  <link rel="stylesheet" href="css/departments.css" />
   <link rel="stylesheet" href="css/chronicles-dropdown.css" />
+  <!-- Mobile responsive styles — loaded last so they override desktop where needed -->
+  <link rel="stylesheet" href="css/mobile.css" />
 </head>
 <body>
 
@@ -28,101 +29,176 @@
     <div class="masthead">
       <div class="container masthead__inner">
         <a href="/" class="masthead__logo" aria-label="MLRIT Home">
-          <img src="mlrit-logo-transparent.png" alt="MLRIT Logo" />
+          <img src="https://i.ibb.co/zHVr8JGd/mlrit-logo-new.png" alt="MLRIT Logo" />
         </a>
         <div class="masthead__tagline">
-          <span>Marri Laxman Reddy Institute of Technology</span>
+          <span>MLR Institute of Technology</span>
         </div>
-        <a href="#" class="masthead__eapcet">EAPCET CODE : MLID</a>
+        <div class="masthead__right">
+          <a href="#" class="eapcet-badge" aria-label="EAPCET Code MLID">
+            EAPCET CODE&nbsp;:&nbsp;MLID
+          </a>
+          <button class="masthead__search-btn" id="searchToggle" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Search overlay -->
+        <div class="masthead__search-overlay" id="searchOverlay">
+          <div class="masthead__search-box">
+            <svg class="masthead__search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" class="masthead__search-input" id="searchInput" placeholder="Search MLRIT..." autocomplete="off" />
+            <button class="masthead__search-close" id="searchClose" aria-label="Close search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
     <nav class="main-nav" aria-label="Main navigation">
       <div class="container main-nav__inner">
-        <ul class="main-nav__list">
+        <ul class="main-nav__list" id="mainNavList">
 
+          <!-- About -->
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">About <span class="chevron"></span></a>
+            <a href="https://mlrit.ac.in/about-us/" class="main-nav__link">About <span class="chevron"></span></a>
             <div class="dropdown">
               <div class="dropdown__col">
                 <h4>Institution</h4>
-                <a href="#">Vision and Mission</a>
-                <a href="#">Accreditations</a>
+                <a href="https://mlrit.ac.in/about-us/">Vision &amp; Mission</a>
+                <a href="https://mlrit.ac.in/about-us/milestones/">Milestones</a>
+                <a href="https://mlrit.ac.in/about-us/governing-body/">Governing Body</a>
+                <a href="https://mlrit.ac.in/iqac/">IQAC</a>
+                <a href="https://mlrit.ac.in/mandatory-disclosures/">Mandatory Disclosures</a>
+                <a href="https://mlrit.ac.in/aicte-approvals/">AICTE Approvals</a>
+                <a href="https://naac.mlrit.ac.in/">NAAC SSR</a>
+                <a href="https://mlrit.ac.in/nirf-ranked-institution/">NIRF Ranking</a>
+              </div>
+              <div class="dropdown__col">
+                <h4>Programs</h4>
+                <a href="https://mlrit.ac.in/admissions/">B.Tech</a>
+                <a href="https://mlrit.ac.in/admissions/">M.Tech</a>
+                <a href="https://mlrit.ac.in/mba/">MBA</a>
+                <a href="https://mlrit.ac.in/about-us/course-intake/">Course Intake</a>
+                <a href="https://mlrit.ac.in/virtual-tour/">Virtual Tour</a>
+                <a href="https://mlrit.ac.in/careers/">Careers at MLRIT</a>
               </div>
             </div>
           </li>
 
+          <!-- Academics -->
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">Academics <span class="chevron"></span></a>
+            <a href="https://mlrit.ac.in/examinations/" class="main-nav__link">Academics <span class="chevron"></span></a>
             <div class="dropdown">
               <div class="dropdown__col">
-                <h4>Programmes</h4>
-                <a href="departments/ug.html">Undergraduate (B.Tech)</a>
-                <a href="departments/pg.html">Postgraduate (M.Tech and MBA)</a>
+                <h4>Departments</h4>
+                <a href="https://mlrit.ac.in/computer-science-engineering/">CSE</a>
+                <a href="https://mlrit.ac.in/csit/">CS &amp; IT</a>
+                <a href="https://mlrit.ac.in/cse-aiml/">CSE – AI &amp; ML</a>
+                <a href="https://mlrit.ac.in/cse-ds/">CSE – Data Science</a>
+                <a href="https://mlrit.ac.in/cse-cs/">CSE – Cyber Security</a>
+                <a href="https://mlrit.ac.in/ece/">ECE</a>
+                <a href="https://mlrit.ac.in/eee/">EEE</a>
+                <a href="https://mlrit.ac.in/mechanical-engineering/">Mechanical</a>
+                <a href="https://mlrit.ac.in/aeronautical-engineering/">Aeronautical</a>
+                <a href="https://mlrit.ac.in/it/">Information Technology</a>
+                <a href="https://mlrit.ac.in/freshman/">Freshman Engineering</a>
+              </div>
+              <div class="dropdown__col">
+                <h4>Programs</h4>
+                <a href="https://mlrit.ac.in/admissions/">B.Tech</a>
+                <a href="https://mlrit.ac.in/admissions/">M.Tech</a>
+                <a href="https://mlrit.ac.in/mba/">MBA</a>
               </div>
               <div class="dropdown__col">
                 <h4>Resources</h4>
-                <a href="#">ERP</a>
-                <a href="#">LMS</a>
-                <a href="#">Academic Calendar</a>
-                <a href="#">Edmit – Course Registration</a>
-                <a href="#">Exam Portal</a>
+                <a href="https://lms.mlrit.ac.in/">LMS</a>
+                <a href="https://edmit.mlrit.ac.in/">Edmit – Course Registration</a>
+                <a href="https://mlrit.ac.in/examinations/">Exam Portal</a>
+                <a href="https://mlrit.ac.in/scholarships/">Scholarships</a>
+                <a href="https://mlrit.ac.in/events/">Events</a>
               </div>
             </div>
           </li>
 
+          <!-- Admissions -->
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">Admissions <span class="chevron"></span></a>
+            <a href="https://mlrit.ac.in/admissions/" class="main-nav__link">Admissions <span class="chevron"></span></a>
             <div class="dropdown">
               <div class="dropdown__col">
                 <h4>Undergraduate</h4>
-                <a href="#">How to Apply</a>
-                <a href="#">Eligibility</a>
-                <a href="#">Fee Structure</a>
-                <a href="#">Scholarships</a>
+                <a href="https://mlrit.ac.in/admissions/">How to Apply</a>
+                <a href="https://mlrit.ac.in/admissions/">Eligibility</a>
+                <a href="https://mlrit.ac.in/admissions/">Fee Structure</a>
+                <a href="https://mlrit.ac.in/scholarships/">Scholarships</a>
               </div>
             </div>
           </li>
 
+          <!-- Research -->
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">Research <span class="chevron"></span></a>
+            <a href="https://mlrit.ac.in/research/" class="main-nav__link">Research <span class="chevron"></span></a>
             <div class="dropdown">
               <div class="dropdown__col">
-                <h4>Research Areas</h4>
-                <a href="#">AI and Machine Learning</a>
-                <a href="#">IoT and Embedded Systems</a>
-                <a href="#">VLSI Design</a>
-                <a href="#">Data Science</a>
+                <h4>Research</h4>
+                <a href="https://mlrit.ac.in/research/">Overview</a>
+                <a href="https://mlrit.ac.in/research/">Publications</a>
+                <a href="https://mlrit.ac.in/research/">Patents</a>
+                <a href="https://mlrit.ac.in/research/">Research Centers</a>
               </div>
               <div class="dropdown__col">
-                <h4>Centers</h4>
-                <a href="#">Research Centers</a>
-                <a href="#">Publications</a>
-                <a href="#">Patents</a>
+                <h4>Innovation Cell</h4>
+                <a href="https://mlrit.ac.in/innovation-cell/innovation-overview/">Overview</a>
+                <a href="https://mlrit.ac.in/innovation-cell/student-startups/">Student Startups</a>
+                <a href="https://mlrit.ac.in/innovation-cell/incubation-services/">Incubation Services</a>
+                <a href="https://mlrit.ac.in/innovation-cell/enterpreneurship-courses/">Entrepreneurship</a>
+                <a href="https://mlrit.ac.in/cie-annual-reports/">CIE Annual Reports</a>
               </div>
             </div>
           </li>
 
+          <!-- Campus -->
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">Campus <span class="chevron"></span></a>
+            <a href="https://mlrit.ac.in/campus-life/" class="main-nav__link">Campus <span class="chevron"></span></a>
             <div class="dropdown">
               <div class="dropdown__col">
                 <h4>Facilities</h4>
-                <a href="#">Hostels</a>
-                <a href="#">Sports</a>
-                <a href="#">Cafeteria</a>
-                <a href="#">Transport</a>
+                <a href="https://mlrit.ac.in/campus-life/">Hostels</a>
+                <a href="https://mlrit.ac.in/sports/">Sports</a>
+                <a href="https://mlrit.ac.in/campus-life/">Cafeteria</a>
+                <a href="https://mlrit.ac.in/campus-life/">Transport</a>
               </div>
               <div class="dropdown__col">
                 <h4>Student Life</h4>
-                <a href="#">Clubs and Societies</a>
-                <a href="#">Events</a>
+                <a href="https://mlrit.ac.in/campus-life/">Clubs &amp; Societies</a>
+                <a href="https://mlrit.ac.in/events/">Events</a>
+                <a href="https://alumni.mlrit.ac.in/">Alumni</a>
+                <a href="https://mlrit.ac.in/contactus/">Contact Us</a>
               </div>
             </div>
           </li>
 
+          <!-- Placements -->
           <li class="main-nav__item">
-            <a href="placements/placements.html" class="main-nav__link">Placements</a>
+            <a href="https://mlrit.ac.in/placements/" class="main-nav__link">Placements <span class="chevron"></span></a>
+            <div class="dropdown">
+              <div class="dropdown__col">
+                <h4>Careers</h4>
+                <a href="https://mlrit.ac.in/placements/">Placement Cell</a>
+                <a href="https://mlrit.ac.in/placements/">Top Recruiters</a>
+                <a href="https://mlrit.ac.in/placements/">Statistics</a>
+                <a href="https://mlrit.ac.in/placements/">Internships</a>
+              </div>
+            </div>
           </li>
 
           <li class="main-nav__item main-nav__item--right main-nav__item--chronicles" style="margin-right: 8px;">
@@ -326,7 +402,7 @@
               <div class="support-panel__call-row">
                 <a href="tel:18005724363" class="support-panel__call-btn" aria-label="Call toll free">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <circle cx="16" cy="16" r="16" fill="#18453B"/>
+                    <circle cx="16" cy="16" r="16" fill="#2E7D32"/>
                     <path d="M11.5 10h2.8l1.2 3-1.6 1a9.1 9.1 0 0 0 4.1 4.1l1-1.6 3 1.2v2.8A1.5 1.5 0 0 1 20.5 22C13.6 22 10 18.4 10 11.5A1.5 1.5 0 0 1 11.5 10Z" fill="#fff"/>
                   </svg>
                 </a>
@@ -340,7 +416,7 @@
               <p class="support-panel__heading">Connect with us</p>
               <div class="support-panel__socials">
                 <a href="https://x.com/mlritin"                                          class="support-panel__social" aria-label="X / Twitter">
-                  <svg width="70" height="70" viewBox="0 0 70 70" fill="none"><circle cx="35" cy="35" r="35" fill="#000"/><path d="M39.77 32.36L46.88 24h-1.68l-6.18 7.26L33.6 24H27l7.47 10.97L27 43.5h1.68l6.53-7.67 5.21 7.67H47l-7.23-11.14zm-2.31 2.71l-.76-1.09-6.02-8.7h2.59l4.86 7.02.76 1.09 6.32 9.14h-2.59l-5.16-7.46z" fill="#fff"/></svg>
+                  <svg width="70" height="70" viewBox="0 0 70 70" fill="none"><circle cx="35" cy="35" r="35" fill="#f0f0f0"/><text x="35" y="41" text-anchor="middle" font-size="22" font-family="Arial" fill="#333">𝕏</text></svg>
                 </a>
                 <a href="https://www.linkedin.com/school/mlr-institute-of-technology/" class="support-panel__social" aria-label="LinkedIn">
                   <svg width="70" height="70" viewBox="0 0 70 70" fill="none"><circle cx="35" cy="35" r="35" fill="#0A66C2"/><text x="35" y="43" text-anchor="middle" font-size="26" font-family="Arial" fill="#fff" font-weight="bold">in</text></svg>
@@ -351,7 +427,7 @@
                 <a href="https://www.facebook.com/Mlrit/"                                class="support-panel__social" aria-label="Facebook">
                   <svg width="70" height="70" viewBox="0 0 70 70" fill="none"><circle cx="35" cy="35" r="35" fill="#1877F2"/><text x="35" y="44" text-anchor="middle" font-size="30" font-family="Arial" fill="#fff" font-weight="bold">f</text></svg>
                 </a>
-                <a href="https://www.instagram.com/mlritofficial/"                       class="support-panel__social" aria-label="Instagram">
+                <a href="https://www.instagram.com/mlr_institute_of_technology/"                       class="support-panel__social" aria-label="Instagram">
                   <svg width="70" height="70" viewBox="0 0 70 70" fill="none"><defs><radialGradient id="ig" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><circle cx="35" cy="35" r="35" fill="url(#ig)"/><rect x="20" y="20" width="30" height="30" rx="8" stroke="#fff" stroke-width="2.5" fill="none"/><circle cx="35" cy="35" r="7" stroke="#fff" stroke-width="2.5" fill="none"/><circle cx="44" cy="26" r="2" fill="#fff"/></svg>
                 </a>
               </div>
@@ -383,25 +459,26 @@
          1. HERO
          ===================== -->
     <section class="hero">
-      <video class="hero__bg hero__bg--a is-active" id="heroA" autoplay muted loop playsinline>
-        <source src="hero1_hq.mp4" type="video/mp4" />
+
+      <video class="hero__bg hero__bg--a is-active" id="heroA" autoplay muted loop playsinline preload="auto">
+        <source src="https://res.cloudinary.com/dhqhhtvym/video/upload/v1777367629/hero1_hq.mp4" type="video/mp4" />
       </video>
 
       <div class="hero__content">
         <div class="hero__headline">
-          <div class="container">
-            <h1>Where<br>Innovation<span>Meets <em>Excellence.</em></span></h1>
-            <p>MLRIT shapes engineers, thinkers, and leaders ready to solve tomorrow's challenges — right here in Hyderabad.</p>
-            <div class="hero__ctas">
-              <a href="#" class="btn-primary">Explore Programs</a>
-            </div>
-          </div>
+          <h1>
+            <span class="hero__line hero__line--1">Where</span>
+            <span class="hero__line hero__line--2">Innovation</span>
+            <span class="hero__line hero__line--3">Meets <em class="hero__gold">Excellence.</em></span>
+          </h1>
+          <p class="hero__sub">MLRIT shapes engineers, thinkers, and leaders ready to solve tomorrow's challenges — right here in Hyderabad.</p>
         </div>
       </div>
 
       <a href="#stats" class="hero__scroll" aria-label="Scroll down">
         <span class="hero__scroll-line"></span>
       </a>
+
     </section>
 
     <!-- =====================
@@ -410,118 +487,73 @@
     <div class="stats-strip" id="stats">
       <div class="section-wrap">
         <div class="stats-strip__inner">
-          <div class="stat-item nudge">
-            <div class="stat-item__number" data-target="20" data-suffix="+">0<span>+</span></div>
+          <div class="stat-item">
+            <div class="stat-item__number">
+              <span class="stat-count" data-target="20">0</span><span class="stat-suffix">+</span>
+            </div>
             <div class="stat-item__label">Years of Excellence</div>
           </div>
-          <div class="stat-item nudge">
-            <div class="stat-item__number" data-target="11" data-suffix="K+">0<span>K+</span></div>
+          <div class="stat-item">
+            <div class="stat-item__number">
+              <span class="stat-count" data-target="11">0</span><span class="stat-suffix">K+</span>
+            </div>
             <div class="stat-item__label">Students Enrolled</div>
           </div>
-          <div class="stat-item nudge">
-            <div class="stat-item__number" data-target="98" data-suffix="%">0<span>%</span></div>
+          <div class="stat-item">
+            <div class="stat-item__number">
+              <span class="stat-count" data-target="98">0</span><span class="stat-suffix">%</span>
+            </div>
             <div class="stat-item__label">Placement Rate</div>
           </div>
-          <div class="stat-item nudge">
-            <div class="stat-item__number" data-target="37" data-suffix="+">0<span>+</span></div>
-            <div class="stat-item__label">Recruiters · 2026</div>
+          <div class="stat-item">
+            <div class="stat-item__number">
+              <span class="stat-count" data-target="200">0</span><span class="stat-suffix">+</span>
+            </div>
+            <div class="stat-item__label">Recruiting Companies</div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- =====================
-         SUCCESS STORIES — Bento Grid
+         3. SUCCESS STORIES
          ===================== -->
-    <section class="ss-section" id="success-stories">
+    <section class="ss-section" id="ssSection">
       <div class="ss-container">
 
         <div class="ss-header">
           <span class="ss-eyebrow">Wall of Achievements</span>
           <h2 class="ss-heading">Success<br><em>Stories.</em></h2>
-          <p class="ss-desc">Students, faculty and athletes — every banner tells a story of excellence.</p>
+          <p class="ss-desc">Students, faculty &amp; athletes — every banner tells a story of excellence.</p>
         </div>
 
         <div class="ss-carousel" id="ssCarousel" aria-label="Success Stories Carousel">
           <div class="ss-track" id="ssTrack">
 
-            <div class="ss-card is-active" role="group" aria-label="Slide 1 of 7">
+            <div class="ss-card is-active" role="group" aria-label="Slide 1 of 6">
               <div class="ss-card__img-wrap">
-                <img src="success stories/1.jpg" alt="68 Students Placed at HCLTech" loading="eager" />
+                <img src="https://i.ibb.co/MxvbKjRH/8.jpg" alt="Microsoft Internship — 51 LPA" loading="eager" />
                 <div class="ss-card__info">
                   <span class="ss-card__tag">Placement · Batch 2026</span>
-                  <h3 class="ss-card__name">68 Students at HCLTech</h3>
-                  <p class="ss-card__role">Campus to Corporate · #2026Placements</p>
-                  <p class="ss-card__company">HCLTech · 4.5 LPA</p>
-                  <p class="ss-card__quote">"Supercharging progress — 68 MLRIT engineers join HCLTech."</p>
+                  <h3 class="ss-card__name">Microsoft Internship</h3>
+                  <p class="ss-card__role">Sai Loukhya Chundi &amp; Kakumanu Sailatha</p>
+                  <p class="ss-card__company">Microsoft · 51 LPA · ₹1.25 Lakh/month Stipend</p>
                 </div>
               </div>
               <div class="ss-card__name-badge">
                 <span class="ss-card__tag">Placement · Batch 2026</span>
-                <h3 class="ss-card__name">68 Students at HCLTech</h3>
+                <h3 class="ss-card__name">Microsoft Internship</h3>
               </div>
             </div>
 
-            <div class="ss-card" role="group" aria-label="Slide 2 of 7">
+            <div class="ss-card" role="group" aria-label="Slide 2 of 6">
               <div class="ss-card__img-wrap">
-                <img src="success stories/2.jpg" alt="Dr. Ajmeera Kiran — Best Mentor Award" loading="lazy" />
-                <div class="ss-card__info">
-                  <span class="ss-card__tag">Faculty · Achievement</span>
-                  <h3 class="ss-card__name">Dr. Ajmeera Kiran</h3>
-                  <p class="ss-card__role">Associate Professor and HOD, Dept. of CSE</p>
-                  <p class="ss-card__company">Best Mentor Award · IGNITE 2K26</p>
-                  <p class="ss-card__quote">"Mentoring the next generation of engineers is my greatest reward."</p>
-                </div>
-              </div>
-              <div class="ss-card__name-badge">
-                <span class="ss-card__tag">Faculty · Achievement</span>
-                <h3 class="ss-card__name">Dr. Ajmeera Kiran</h3>
-              </div>
-            </div>
-
-            <div class="ss-card" role="group" aria-label="Slide 3 of 7">
-              <div class="ss-card__img-wrap">
-                <img src="success stories/3.jpg" alt="19 Students Placed at Eidiko — 4.70 LPA" loading="lazy" />
-                <div class="ss-card__info">
-                  <span class="ss-card__tag">Placement · Batch 2025</span>
-                  <h3 class="ss-card__name">19 Students at Eidiko</h3>
-                  <p class="ss-card__role">Right Education, Bright Placements</p>
-                  <p class="ss-card__company">Eidiko Systems Integrators · 4.70 LPA</p>
-                  <p class="ss-card__quote">"Shaping champions for the challenges of the real world."</p>
-                </div>
-              </div>
-              <div class="ss-card__name-badge">
-                <span class="ss-card__tag">Placement · Batch 2025</span>
-                <h3 class="ss-card__name">19 Students at Eidiko</h3>
-              </div>
-            </div>
-
-            <div class="ss-card" role="group" aria-label="Slide 4 of 7">
-              <div class="ss-card__img-wrap">
-                <img src="success stories/4.jpg" alt="3 Students Placed at HashedIn by Deloitte — 8.1 LPA" loading="lazy" />
-                <div class="ss-card__info">
-                  <span class="ss-card__tag">Placement · Batch 2026</span>
-                  <h3 class="ss-card__name">HashedIn by Deloitte</h3>
-                  <p class="ss-card__role">Kalakuntla Venkatesh · Nalla Somesh · Samala Sripadh</p>
-                  <p class="ss-card__company">HashedIn by Deloitte · 8.1 LPA</p>
-                  <p class="ss-card__quote">"Three MLRIT engineers placed at a global consulting powerhouse."</p>
-                </div>
-              </div>
-              <div class="ss-card__name-badge">
-                <span class="ss-card__tag">Placement · Batch 2026</span>
-                <h3 class="ss-card__name">HashedIn by Deloitte</h3>
-              </div>
-            </div>
-
-            <div class="ss-card" role="group" aria-label="Slide 5 of 7">
-              <div class="ss-card__img-wrap">
-                <img src="success stories/5.png" alt="Mrs. Vijay Keerthika — Wipro Certified Faculty" loading="lazy" />
+                <img src="https://i.ibb.co/670CTVrD/6.png" alt="Mrs. Vijay Keerthika — Wipro Certified Faculty" loading="lazy" />
                 <div class="ss-card__info">
                   <span class="ss-card__tag">Faculty · Certification</span>
                   <h3 class="ss-card__name">Mrs. Vijay Keerthika</h3>
-                  <p class="ss-card__role">CSE-AIML Faculty · MLRIT</p>
-                  <p class="ss-card__company">Wipro Certified Faculty · TalentNext · Java Full Stack · 87%</p>
-                  <p class="ss-card__quote">"Excellence in teaching begins with excellence in learning."</p>
+                  <p class="ss-card__role">MLRIT CSE-AIML Faculty</p>
+                  <p class="ss-card__company">Wipro TalentNext · Java Full Stack · 87%</p>
                 </div>
               </div>
               <div class="ss-card__name-badge">
@@ -530,37 +562,67 @@
               </div>
             </div>
 
-            <div class="ss-card" role="group" aria-label="Slide 6 of 7">
+            <div class="ss-card" role="group" aria-label="Slide 3 of 6">
               <div class="ss-card__img-wrap">
-                <img src="success stories/6.jpeg" alt="Sai Loukhya and Kakumanu Sailatha — Microsoft Internship 51 LPA" loading="lazy" />
+                <img src="https://i.ibb.co/99JB52L2/4.jpg" alt="MLRIT Football Team — 1st Place" loading="lazy" />
                 <div class="ss-card__info">
-                  <span class="ss-card__tag">Internship · Batch 2026</span>
-                  <h3 class="ss-card__name">Microsoft Internship</h3>
-                  <p class="ss-card__role">Sai Loukhya Chundi (CSE-AI&amp;ML) · Kakumanu Sailatha (IT)</p>
-                  <p class="ss-card__company">Microsoft · ₹1.25 L/month Stipend · 51 LPA Post-Offer</p>
-                  <p class="ss-card__quote">"From MLRIT classrooms to Microsoft — the sky is not the limit."</p>
+                  <span class="ss-card__tag">Sports · Football</span>
+                  <h3 class="ss-card__name">MLRIT Football Team</h3>
+                  <p class="ss-card__role">Sports Tournament · March 21–22</p>
+                  <p class="ss-card__company">1st Place · St. Peter's Engineering College</p>
                 </div>
               </div>
               <div class="ss-card__name-badge">
-                <span class="ss-card__tag">Internship · Batch 2026</span>
-                <h3 class="ss-card__name">Microsoft Internship</h3>
+                <span class="ss-card__tag">Sports · Football</span>
+                <h3 class="ss-card__name">MLRIT Football Team</h3>
               </div>
             </div>
 
-            <div class="ss-card" role="group" aria-label="Slide 7 of 7">
+            <div class="ss-card" role="group" aria-label="Slide 4 of 6">
               <div class="ss-card__img-wrap">
-                <img src="success stories/7.jpg" alt="Boddu Surya Vamshi — Yash Technologies 6 LPA" loading="lazy" />
+                <img src="https://i.ibb.co/YFgQdGgx/1.jpg" alt="19 Students Placed at Eidiko" loading="lazy" />
                 <div class="ss-card__info">
                   <span class="ss-card__tag">Placement · Batch 2025</span>
-                  <h3 class="ss-card__name">Boddu Surya Vamshi</h3>
-                  <p class="ss-card__role">CSIT · Batch 2025</p>
-                  <p class="ss-card__company">Yash Technologies · 6 LPA</p>
-                  <p class="ss-card__quote">"More than what you think — MLRIT engineers deliver beyond expectations."</p>
+                  <h3 class="ss-card__name">19 Students at Eidiko</h3>
+                  <p class="ss-card__role">Right Education, Bright Placements</p>
+                  <p class="ss-card__company">Eidiko Systems Integrators · 4.70 LPA</p>
                 </div>
               </div>
               <div class="ss-card__name-badge">
                 <span class="ss-card__tag">Placement · Batch 2025</span>
-                <h3 class="ss-card__name">Boddu Surya Vamshi</h3>
+                <h3 class="ss-card__name">19 Students at Eidiko</h3>
+              </div>
+            </div>
+
+            <div class="ss-card" role="group" aria-label="Slide 5 of 6">
+              <div class="ss-card__img-wrap">
+                <img src="https://i.ibb.co/S4L7YCQY/2.jpg" alt="Careers360 AAAA Rating" loading="lazy" />
+                <div class="ss-card__info">
+                  <span class="ss-card__tag">Recognition · Rating</span>
+                  <h3 class="ss-card__name">Careers360 AAAA</h3>
+                  <p class="ss-card__role">Four-A Accredited Institution</p>
+                  <p class="ss-card__company">Careers360 · Top Engineering College</p>
+                </div>
+              </div>
+              <div class="ss-card__name-badge">
+                <span class="ss-card__tag">Recognition · Rating</span>
+                <h3 class="ss-card__name">Careers360 AAAA</h3>
+              </div>
+            </div>
+
+            <div class="ss-card" role="group" aria-label="Slide 6 of 6">
+              <div class="ss-card__img-wrap">
+                <img src="https://i.ibb.co/Xf6Vbj44/5.jpg" alt="3 Students Placed at Mehta Hitech" loading="lazy" />
+                <div class="ss-card__info">
+                  <span class="ss-card__tag">Placements · 2025</span>
+                  <h3 class="ss-card__name">Mehta Hitech Industries</h3>
+                  <p class="ss-card__role">3 Students · Batch 2025</p>
+                  <p class="ss-card__company">Bright Placements · Right Education</p>
+                </div>
+              </div>
+              <div class="ss-card__name-badge">
+                <span class="ss-card__tag">Placements · 2025</span>
+                <h3 class="ss-card__name">Mehta Hitech Industries</h3>
               </div>
             </div>
 
@@ -578,281 +640,75 @@
             <button class="ss-dot" data-idx="3"></button>
             <button class="ss-dot" data-idx="4"></button>
             <button class="ss-dot" data-idx="5"></button>
-            <button class="ss-dot" data-idx="6"></button>
           </div>
 
         </div><!-- /.ss-carousel -->
       </div>
     </section>
 
-    <script>
-    (function () {
-      var carousel = document.getElementById('ssCarousel');
-      var cards    = carousel.querySelectorAll('.ss-card');
-      var prev     = document.getElementById('ssPrev');
-      var next     = document.getElementById('ssNext');
-      var dots     = document.querySelectorAll('.ss-dot');
-      var total    = cards.length;
-      var current  = 0;
-      var timer    = null;
-      var INTERVAL = 3000;
-
-      function goTo(idx) {
-        var next_idx = (idx + total) % total;
-        if (next_idx === current) return;
-
-        var leaving = cards[current];
-        leaving.classList.add('is-leaving');
-        leaving.classList.remove('is-active');
-
-        current = next_idx;
-        var entering = cards[current];
-        entering.classList.add('is-active');
-        entering.classList.remove('is-leaving');
-
-        /* clean up leaving class after transition */
-        var onEnd = function () {
-          leaving.classList.remove('is-leaving');
-          leaving.removeEventListener('transitionend', onEnd);
-        };
-        leaving.addEventListener('transitionend', onEnd);
-
-        dots.forEach(function (d, i) {
-          d.classList.toggle('ss-dot--active', i === current);
-        });
-      }
-
-      function startAuto() {
-        timer = setInterval(function () { goTo(current + 1); }, INTERVAL);
-      }
-
-      function stopAuto() { clearInterval(timer); }
-
-      prev.addEventListener('click', function () { stopAuto(); goTo(current - 1); startAuto(); });
-      next.addEventListener('click', function () { stopAuto(); goTo(current + 1); startAuto(); });
-
-      dots.forEach(function (d) {
-        d.addEventListener('click', function () {
-          stopAuto();
-          goTo(parseInt(d.dataset.idx, 10));
-          startAuto();
-        });
-      });
-
-      carousel.addEventListener('mouseenter', stopAuto);
-      carousel.addEventListener('mouseleave', startAuto);
-
-      startAuto();
-    })();
-    </script>
-
     <!-- =====================
          4. WHY MLRIT
          ===================== -->
-    <!-- ===== WHY MLRIT ===== -->
     <section class="why-section" id="why-mlrit">
       <div class="why-section__bg" aria-hidden="true"></div>
       <div class="why-section__inner">
 
-        <!-- Left — Text content -->
         <div class="why-section__left">
-          <h2 class="why-section__heading">
-            Why<br><em>MLRIT</em>?
+          <span class="section-label reveal">Why MLRIT</span>
+          <h2 class="why-section__heading reveal" data-delay="1">
+            <span class="why-quote">&ldquo;</span><span class="why-section__dropcap">I</span>ndustry Integrated Curriculum Blended With Sports<span class="why-quote">&rdquo;</span>
           </h2>
-
-          <div class="why-stats-row">
-            <div class="why-stat">
-              <span class="why-stat__num">98<span class="why-stat__unit">%</span></span>
-              <span class="why-stat__label">Placement Rate</span>
-            </div>
-            <div class="why-stat">
-              <span class="why-stat__num">200<span class="why-stat__unit">+</span></span>
-              <span class="why-stat__label">Recruiting Companies</span>
-            </div>
-            <div class="why-stat">
-              <span class="why-stat__num" id="mlritYears">20<span class="why-stat__unit">+</span></span>
-              <span class="why-stat__label">Years of Excellence</span>
-            </div>
-          </div>
-
-          <p class="why-section__body">MLRIT is the only engineering college in Telangana where athletic performance is built into your degree — national coaching, scholarships, and structured sports hours — alongside Deep Tech Labs with AI/ML centres, IoT infrastructure, and industry-grade research facilities, with 200+ companies recruiting directly from campus every year.</p>
+          <p class="why-section__body reveal" data-delay="2">MLRIT is the only engineering college in Telangana where athletic performance is built into your degree &mdash; with national-level coaching, sports scholarships, and dedicated training hours. Our students compete at state and national levels across cricket, badminton, athletics, and more, backed by professional infrastructure and full institutional support.</p>
         </div>
 
-        <!-- Right — Single video -->
         <div class="why-section__right">
-          <div style="position:relative; display:inline-block; width:100%;">
-            <video class="why-section__video" id="whyVideo" src="sports.mp4" autoplay muted loop playsinline preload="metadata"></video>
-            <button class="vid-mute-btn vid-mute-btn--corner" id="whyMute" aria-label="Toggle mute">
-              <svg class="vid-mute-btn__off" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              <svg class="vid-mute-btn__on" width="16" height="16" viewBox="0 0 24 24" fill="none" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </button>
-          </div>
+          <video class="why-section__video" id="whyVideo" src="https://res.cloudinary.com/dhqhhtvym/video/upload/v1777366655/sports.mp4" muted loop playsinline preload="metadata"></video>
         </div>
 
       </div>
     </section>
 
     <!-- =====================
-         DEPARTMENTS — Morphing Tile Grid
+         4. ACHIEVEMENTS
          ===================== -->
-    <section class="dept-section" id="departments">
-      <div class="dept-section__watermark">
-        <img src="mlrit-logo-transparent.png" alt="" aria-hidden="true" />
-      </div>
-
-      <div class="dept-inner">
-        <div class="dept-header">
-          <span class="section-label">Programmes</span>
-          <h2 class="dept-heading">Explore Our Departments</h2>
-        </div>
-
-        <div class="dept-arena">
-          <!-- Level 0: UG + PG + Freshman parent tiles -->
-          <div class="dept-level dept-level--active" id="deptLevel0">
-            <div class="dept-tile dept-tile--ug-parent" id="tileUG">
-              <p class="dept-tile__label">Undergraduate</p>
-              <span class="dept-tile__sub">8 programmes</span>
-            </div>
-            <div class="dept-tile dept-tile--pg-parent" id="tilePG">
-              <p class="dept-tile__label">Postgraduate</p>
-              <span class="dept-tile__sub">2 programmes</span>
-            </div>
-          </div>
-
-          <!-- Level 1 UG: back tile + Freshman + 7 B.Tech children -->
-          <div class="dept-level" id="deptLevel1UG">
-            <div class="dept-tile dept-tile--back" data-back="l0">
-              <span class="dept-tile__arrow">&larr;</span>
-            </div>
-            <div class="dept-tile dept-tile--ug-parent dept-tile--shrunk">
-              <p class="dept-tile__label">UG</p>
-            </div>
-            <a href="departments/freshman.html" class="dept-tile dept-tile--child dept-tile--freshman" style="transition-delay:0.05s; text-decoration:none; color:inherit;">
-              <p class="dept-tile__label">Freshman</p>
-              <span class="dept-tile__sub">H&amp;S · Foundation Year</span>
-            </a>
-            <a href="departments/cse.html" class="dept-tile dept-tile--child dept-tile--ug-1" style="transition-delay:0.10s; text-decoration:none; color:inherit;">
-              <p class="dept-tile__label">B.Tech CSE</p>
-              <span class="dept-tile__sub">Computer Science</span>
-            </a>
-            <a href="departments/eee.html" class="dept-tile dept-tile--child dept-tile--ug-2" style="transition-delay:0.10s; text-decoration:none; color:inherit;">
-              <p class="dept-tile__label">B.Tech EEE</p>
-              <span class="dept-tile__sub">Electrical</span>
-            </a>
-            <a href="departments/ece.html" class="dept-tile dept-tile--child dept-tile--ug-3" style="transition-delay:0.15s; text-decoration:none; color:inherit;">
-              <p class="dept-tile__label">B.Tech ECE</p>
-              <span class="dept-tile__sub">Electronics</span>
-            </a>
-            <a href="departments/mechanical.html" class="dept-tile dept-tile--child dept-tile--ug-4" style="transition-delay:0.20s; text-decoration:none; color:inherit;">
-              <p class="dept-tile__label">B.Tech Mechanical</p>
-              <span class="dept-tile__sub">Mechanical Engg.</span>
-            </a>
-            <a href="departments/aeronautical.html" class="dept-tile dept-tile--child dept-tile--ug-5" style="transition-delay:0.25s; text-decoration:none; color:inherit;">
-              <p class="dept-tile__label">B.Tech Aeronautical</p>
-              <span class="dept-tile__sub">Aeronautical Engg.</span>
-            </a>
-            <div class="dept-tile dept-tile--child dept-tile--ug-6" style="transition-delay:0.30s">
-              <p class="dept-tile__label">B.Tech CSE (AI/ML)</p>
-              <span class="dept-tile__sub">AI and Machine Learning</span>
-            </div>
-            <div class="dept-tile dept-tile--child dept-tile--ug-7" style="transition-delay:0.35s">
-              <p class="dept-tile__label">B.Tech CSE (DS)</p>
-              <span class="dept-tile__sub">Data Science</span>
-            </div>
-          </div>
-
-          <!-- Level 1 PG: back tile + M.Tech + MBA -->
-          <div class="dept-level" id="deptLevel1PG">
-            <div class="dept-tile dept-tile--back" data-back="l0">
-              <span class="dept-tile__arrow">&larr;</span>
-            </div>
-            <div class="dept-tile dept-tile--pg-parent dept-tile--shrunk">
-              <p class="dept-tile__label">PG</p>
-            </div>
-            <div class="dept-tile dept-tile--child dept-tile--mtech" id="tileMTech" style="transition-delay:0.05s">
-              <p class="dept-tile__label">M.Tech</p>
-              <span class="dept-tile__sub">5 specialisations</span>
-            </div>
-            <a href="departments/mba.html" class="dept-tile dept-tile--child dept-tile--mba" style="transition-delay:0.10s; text-decoration:none; color:inherit;">
-              <p class="dept-tile__label">MBA</p>
-              <span class="dept-tile__sub">Business Administration</span>
-            </a>
-          </div>
-
-          <!-- Level 2 M.Tech: back tile + 5 specialisations -->
-          <div class="dept-level" id="deptLevel2MT">
-            <div class="dept-tile dept-tile--back" data-back="l1pg">
-              <span class="dept-tile__arrow">&larr;</span>
-            </div>
-            <div class="dept-tile dept-tile--mtech dept-tile--shrunk">
-              <p class="dept-tile__label">M.Tech</p>
-            </div>
-            <div class="dept-tile dept-tile--child dept-tile--mt-1" style="transition-delay:0.05s">
-              <p class="dept-tile__label">M.Tech CSE</p>
-              <span class="dept-tile__sub">Computer Science</span>
-            </div>
-            <div class="dept-tile dept-tile--child dept-tile--mt-2" style="transition-delay:0.10s">
-              <p class="dept-tile__label">M.Tech ECE</p>
-              <span class="dept-tile__sub">Electronics</span>
-            </div>
-            <div class="dept-tile dept-tile--child dept-tile--mt-3" style="transition-delay:0.15s">
-              <p class="dept-tile__label">M.Tech EEE</p>
-              <span class="dept-tile__sub">Electrical</span>
-            </div>
-            <div class="dept-tile dept-tile--child dept-tile--mt-4" style="transition-delay:0.20s">
-              <p class="dept-tile__label">M.Tech Mechanical</p>
-              <span class="dept-tile__sub">Mechanical Engg.</span>
-            </div>
-            <div class="dept-tile dept-tile--child dept-tile--mt-5" style="transition-delay:0.25s">
-              <p class="dept-tile__label">M.Tech Aeronautical</p>
-              <span class="dept-tile__sub">Aeronautical Engg.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- =====================
-         5. ACHIEVEMENTS + PROGRAMS (About)
-         ===================== -->
-    <!-- ===== ACCREDITATIONS ===== -->
     <section class="achievements" id="achievements">
+
+      <!-- Background blobs -->
+      <div class="accred-blob accred-blob--green" aria-hidden="true"></div>
+      <div class="accred-blob accred-blob--gold"  aria-hidden="true"></div>
+      <div class="accred-blob accred-blob--orange" aria-hidden="true"></div>
+
+      <!-- Grid texture -->
+      <div class="accred-grid-bg" aria-hidden="true"></div>
+
+      <!-- Top/bottom fade transitions -->
+      <div class="accred-fade accred-fade--top"    aria-hidden="true"></div>
+      <div class="accred-fade accred-fade--bottom" aria-hidden="true"></div>
+
       <div class="section-wrap">
         <div class="achievements__grid">
 
-          <div class="accred-keyboard-wrapper">
-            <div class="accred-keyboard">
-              <div class="accred-key nudge nudge--bounce"><img src="nirf/aicte.svg" alt="AICTE"></div>
-              <div class="accred-key nudge nudge--bounce"><img src="nirf/naac.svg" alt="NAAC"></div>
-              <div class="accred-key nudge nudge--bounce"><img src="nirf/nba.svg" alt="NBA"></div>
-              <div class="accred-key nudge nudge--bounce"><img src="nirf/arha.svg" alt="ARIIA"></div>
-              <div class="accred-key nudge nudge--bounce"><img src="nirf/the week.svg" alt="The Week"></div>
-              <div class="accred-key nudge nudge--bounce"><img src="nirf/dataquest.svg" alt="Dataquest"></div>
-            </div>
-          </div>
-
-          <div style="padding-left: 40px;">
-            <span class="section-label">Recognition</span>
-            <h2 class="section-heading">Accreditations and Approvals</h2>
-            <p class="section-sub">AICTE, NAAC, NBA, ARIIA and more — recognised by leading national bodies for academic excellence and quality education.</p>
+          <div style="padding-right: 40px; position:relative; z-index:2;">
+            <span class="section-label reveal">Recognition</span>
+            <h2 class="section-heading reveal" data-delay="1">Accreditations &amp; Approvals</h2>
+            <p class="section-sub reveal" data-delay="2">AICTE, NAAC, NBA, ARIIA and more &mdash; recognised by leading national bodies for academic excellence and quality education.</p>
 
             <div class="achievements__ranks">
-              <div class="rank-row nudge">
+              <div class="rank-row">
                 <div class="rank-row__num">201</div>
                 <div class="rank-row__info">
                   <strong>NIRF Rankings 2024</strong>
-                  <span>201–300 Band, Engineering Category</span>
+                  <span>201&ndash;300 Band, Engineering Category</span>
                 </div>
               </div>
-              <div class="rank-row nudge">
+              <div class="rank-row">
                 <div class="rank-row__num">#6</div>
                 <div class="rank-row__info">
                   <strong>Times Engineering Survey</strong>
                   <span>6th in Telangana</span>
                 </div>
               </div>
-              <div class="rank-row nudge">
+              <div class="rank-row">
                 <div class="rank-row__num">AAAA</div>
                 <div class="rank-row__info">
                   <strong>Career360 Rating</strong>
@@ -862,384 +718,637 @@
             </div>
           </div>
 
-        </div>
-      </div>
-    </section>
+          <div class="logo-cluster-wrap" style="position:relative; z-index:2; margin-top: -60px;">
+            <svg class="accred-constellation" viewBox="0 0 520 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <line x1="260" y1="240" x2="90"  y2="90"  />
+              <line x1="260" y1="240" x2="405" y2="75"  />
+              <line x1="260" y1="240" x2="445" y2="220" />
+              <line x1="260" y1="240" x2="410" y2="395" />
+              <line x1="260" y1="240" x2="205" y2="420" />
+              <line x1="260" y1="240" x2="75"  y2="295" />
+              <line x1="90"  y1="90"  x2="405" y2="75"  />
+              <line x1="405" y1="75"  x2="445" y2="220" />
+              <line x1="445" y1="220" x2="410" y2="395" />
+              <line x1="410" y1="395" x2="205" y2="420" />
+              <line x1="205" y1="420" x2="75"  y2="295" />
+              <line x1="75"  y1="295" x2="90"  y2="90"  />
+            </svg>
 
-    <!-- =====================
-         6. ALUMNI NETWORK
-         ===================== -->
-    <section class="alumni-section" id="testimonials">
-      <div class="section-wrap">
-        <span class="section-label">Alumni Voices</span>
-        <h2 class="section-heading">Our Alumni Network</h2>
-        <p class="section-sub">Connecting global professionals who started their journey at MLRIT.</p>
-
-        <div class="alumni-grid">
-
-          <div class="alumni-card nudge nudge--bounce">
-            <div class="alumni-preview">
-              <h3>Sathvika</h3>
-              <p class="alumni-role">Software Engineer at Microsoft</p>
-              <p class="alumni-desc">From campus placement to building cloud platforms — Sathvika shares her journey from MLRIT to Microsoft.</p>
-              <span class="alumni-play-hint">Hover to watch</span>
+            <div class="logo-cluster" id="logoCluster">
+              <!-- Center: NAAC -->
+              <div class="lc-bubble lc-bubble--center" data-idx="0">
+                <img src="nirf/naac.svg" alt="NAAC">
+              </div>
+              <!-- Top-left: AICTE -->
+              <div class="lc-bubble lc-bubble--md" data-idx="1" style="--lx:-120px;--ly:-120px;">
+                <img src="nirf/aicte.svg" alt="AICTE">
+              </div>
+              <!-- Top-right: The Week -->
+              <div class="lc-bubble lc-bubble--md" data-idx="2" style="--lx:120px;--ly:-120px;">
+                <img src="nirf/the-week.svg" alt="The Week">
+              </div>
+              <!-- Right: ARIIA -->
+              <div class="lc-bubble lc-bubble--sm" data-idx="3" style="--lx:155px;--ly:20px;">
+                <img src="nirf/arha.svg" alt="ARIIA">
+              </div>
+              <!-- Bottom-right: NBA -->
+              <div class="lc-bubble lc-bubble--md" data-idx="4" style="--lx:90px;--ly:145px;">
+                <img src="nirf/nba.svg" alt="NBA">
+              </div>
+              <!-- Bottom-left: Dataquest -->
+              <div class="lc-bubble lc-bubble--md" data-idx="5" style="--lx:-90px;--ly:145px;">
+                <img src="nirf/dataquest.svg" alt="Dataquest">
+              </div>
+              <!-- Left: Gyaan Vigyan -->
+              <div class="lc-bubble lc-bubble--sm" data-idx="6" style="--lx:-155px;--ly:20px;">
+                <img src="nirf/gyaanvigyan.svg" alt="Gyaan Vigyan">
+              </div>
             </div>
-            <div class="alumni-info">
-              <h3>Sathvika</h3>
-              <p class="alumni-role">Software Engineer</p>
-              <p class="alumni-company">Microsoft</p>
-            </div>
-            <video class="alumni-video" src="av1.mp4" muted loop playsinline></video>
-            <button class="alumni-mute-btn" aria-label="Toggle mute">
-              <svg class="alumni-mute-btn__off" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              <svg class="alumni-mute-btn__on" width="14" height="14" viewBox="0 0 24 24" fill="none" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </button>
           </div>
-
-          <div class="alumni-card nudge nudge--bounce">
-            <div class="alumni-preview">
-              <h3>Dasam Pranay</h3>
-              <p class="alumni-role">Aerospace Engineer at HAL</p>
-              <p class="alumni-desc">Designing the future of Indian aviation — Pranay's story of going from MLRIT labs to HAL's engineering floors.</p>
-              <span class="alumni-play-hint">Hover to watch</span>
-            </div>
-            <div class="alumni-info">
-              <h3>Dasam Pranay</h3>
-              <p class="alumni-role">Aerospace Engineer</p>
-              <p class="alumni-company">HAL</p>
-            </div>
-            <video class="alumni-video" src="av2.mp4" muted loop playsinline></video>
-            <button class="alumni-mute-btn" aria-label="Toggle mute">
-              <svg class="alumni-mute-btn__off" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              <svg class="alumni-mute-btn__on" width="14" height="14" viewBox="0 0 24 24" fill="none" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </button>
-          </div>
-
-          <div class="alumni-card nudge nudge--bounce">
-            <div class="alumni-preview">
-              <h3>Gopi Pavani</h3>
-              <p class="alumni-role">Systems Engineer at Safran</p>
-              <p class="alumni-desc">From embedded systems coursework to global aerospace — Pavani talks about her path from MLRIT to Safran.</p>
-              <span class="alumni-play-hint">Hover to watch</span>
-            </div>
-            <div class="alumni-info">
-              <h3>Gopi Pavani</h3>
-              <p class="alumni-role">Systems Engineer</p>
-              <p class="alumni-company">Safran</p>
-            </div>
-            <video class="alumni-video" src="av3.mp4" muted loop playsinline></video>
-            <button class="alumni-mute-btn" aria-label="Toggle mute">
-              <svg class="alumni-mute-btn__off" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              <svg class="alumni-mute-btn__on" width="14" height="14" viewBox="0 0 24 24" fill="none" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </button>
-          </div>
-
 
         </div>
       </div>
     </section>
 
     <!-- =====================
-         6. PLACEMENTS
+         7. PLACEMENTS
          ===================== -->
     <section class="placements" id="placements">
+
+      <!-- Network background SVG -->
+      <svg class="placements__network" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <!-- Lines -->
+        <line x1="5%"  y1="15%" x2="28%" y2="42%"/><line x1="28%" y1="42%" x2="55%" y2="20%"/>
+        <line x1="55%" y1="20%" x2="80%" y2="38%"/><line x1="80%" y1="38%" x2="95%" y2="12%"/>
+        <line x1="28%" y1="42%" x2="45%" y2="68%"/><line x1="45%" y1="68%" x2="70%" y2="75%"/>
+        <line x1="70%" y1="75%" x2="80%" y2="38%"/><line x1="55%" y1="20%" x2="45%" y2="68%"/>
+        <line x1="10%" y1="70%" x2="28%" y2="42%"/><line x1="10%" y1="70%" x2="45%" y2="68%"/>
+        <line x1="70%" y1="75%" x2="92%" y2="85%"/><line x1="80%" y1="38%" x2="92%" y2="85%"/>
+        <line x1="5%"  y1="15%" x2="55%" y2="20%"/><line x1="92%" y1="85%" x2="95%" y2="12%"/>
+        <!-- Nodes -->
+        <circle cx="5%"  cy="15%" r="3"/><circle cx="28%" cy="42%" r="4"/><circle cx="55%" cy="20%" r="3"/>
+        <circle cx="80%" cy="38%" r="4"/><circle cx="95%" cy="12%" r="2.5"/><circle cx="45%" cy="68%" r="3.5"/>
+        <circle cx="70%" cy="75%" r="3"/><circle cx="10%" cy="70%" r="2.5"/><circle cx="92%" cy="85%" r="3"/>
+      </svg>
+
       <div class="section-wrap">
+
+        <!-- Header -->
         <div class="placements__header">
-          <span class="section-label">Placements</span>
-          <h2 class="section-heading">From Campus to Corporate</h2>
-          <p class="section-sub">Our placement records reflect the quality of education and industry readiness we build in every student.</p>
+          <span class="placements__label reveal">Placements</span>
+          <h2 class="placements__title reveal" data-delay="1">From Campus to Corporate</h2>
+          <p class="placements__sub reveal" data-delay="2">Our placement records reflect the quality of education and industry readiness we build in every student.</p>
         </div>
 
+        <!-- Gold divider line -->
+        <div class="placements__divider"></div>
+
+        <!-- Stats -->
         <div class="placements__stats">
-          <div class="placement-stat nudge">
-            <div class="placement-stat__num">51<span class="unit">LPA</span></div>
-            <div class="placement-stat__label">Highest Package 2026</div>
+          <div class="placement-stat">
+            <div class="placement-stat__num">
+              <span class="placement-stat__count" data-target="44" data-suffix="LPA">0</span>
+            </div>
+            <div class="placement-stat__label">Highest Package</div>
           </div>
-          <div class="placement-stat nudge">
-            <div class="placement-stat__num">621<span class="unit"></span></div>
-            <div class="placement-stat__label">Offers · Batch 2026</div>
+          <div class="placement-stat">  
+            <div class="placement-stat__num">
+              <span class="placement-stat__count" data-target="5" data-suffix="K+">0</span>
+            </div>
+            <div class="placement-stat__label">Students Placed in Top MNCs</div>
           </div>
-          <div class="placement-stat nudge">
-            <div class="placement-stat__num">37<span class="unit">+</span></div>
-            <div class="placement-stat__label">Companies · 2026 Season</div>
+          <div class="placement-stat">
+            <div class="placement-stat__num">
+              <span class="placement-stat__count" data-target="18" data-suffix="LPA">0</span>
+            </div>
+            <div class="placement-stat__label">Avg. Salary — Top 25%</div>
           </div>
-          <div class="placement-stat nudge">
-            <div class="placement-stat__num">8<span class="unit">K+</span></div>
-            <div class="placement-stat__label">Students Placed Cumulative</div>
+          <div class="placement-stat">
+            <div class="placement-stat__num">
+              <span class="placement-stat__count" data-target="200" data-suffix="+">0</span>
+            </div>
+            <div class="placement-stat__label">Recruiters incl. IIT/IIM/NIT Hirers</div>
           </div>
         </div>
 
-        <p class="placements__logos-label">Recent Recruiters</p>
+        <!-- Recruiters label -->
+        <p class="placements__partners-label">Global Hiring Partners</p>
+
       </div>
 
-      <!-- Full-bleed scrolling band — outside section-wrap -->
+      <!-- Full-bleed scrolling band -->
       <div class="recruiter-band" id="recruiterBand">
         <div class="recruiter-band__track" id="recruiterTrack">
-          <div class="recruiter-band__item nudge"><img src="placements/p1.jpg"  alt="Recruiter"></div>
-          <div class="recruiter-band__item nudge"><img src="placements/p2.jpg"  alt="Recruiter"></div>
-          <div class="recruiter-band__item nudge"><img src="placements/p3.jpg"  alt="Recruiter"></div>
-          <div class="recruiter-band__item nudge"><img src="placements/p4.jpg"  alt="Recruiter"></div>
-          <div class="recruiter-band__item nudge"><img src="placements/p5.jpg"  alt="Recruiter"></div>
-          <div class="recruiter-band__item nudge"><img src="placements/p6.jpg"  alt="Recruiter"></div>
-          <div class="recruiter-band__item nudge"><img src="placements/p7.png"  alt="Recruiter"></div>
-          <div class="recruiter-band__item nudge"><img src="placements/p8.png"  alt="Recruiter"></div>
-          <div class="recruiter-band__item nudge"><img src="placements/p9.png"  alt="Recruiter"></div>
-          <div class="recruiter-band__item nudge"><img src="placements/p10.png" alt="Recruiter"></div>
-          <div class="recruiter-band__item nudge"><img src="placements/p11.png" alt="Recruiter"></div>
-          <div class="recruiter-band__item nudge"><img src="placements/p12.png" alt="Recruiter"></div>
-          <div class="recruiter-band__item nudge"><img src="placements/p13.png" alt="Recruiter"></div>
-          <div class="recruiter-band__item nudge"><img src="placements/p14.png" alt="Recruiter"></div>
-          <div class="recruiter-band__item nudge"><img src="placements/p15.png" alt="Recruiter"></div>
-          <div class="recruiter-band__item nudge"><img src="placements/p16.png" alt="Recruiter"></div>
+          <div class="recruiter-band__item"><img src="https://i.ibb.co/MxdFJtVN/p1.jpg"  alt="Recruiter" loading="lazy"></div>
+          <div class="recruiter-band__item"><img src="https://i.ibb.co/hxb9B8Rm/p2.jpg"  alt="Recruiter" loading="lazy"></div>
+          <div class="recruiter-band__item"><img src="https://i.ibb.co/DgQ4WvbB/p3.jpg"  alt="Recruiter" loading="lazy"></div>
+          <div class="recruiter-band__item"><img src="https://i.ibb.co/vxSGHBmw/p4.jpg"  alt="Recruiter" loading="lazy"></div>
+          <div class="recruiter-band__item"><img src="https://i.ibb.co/b5cK4qdM/p5.jpg"  alt="Recruiter" loading="lazy"></div>
+          <div class="recruiter-band__item"><img src="https://i.ibb.co/yKrnqpd/p6.jpg"  alt="Recruiter" loading="lazy"></div>
+          <div class="recruiter-band__item"><img src="https://i.ibb.co/HpzqWPjR/p7.png"  alt="Recruiter" loading="lazy"></div>
+          <div class="recruiter-band__item"><img src="https://i.ibb.co/8nkfj9sg/p8.png"  alt="Recruiter" loading="lazy"></div>
+          <div class="recruiter-band__item"><img src="https://i.ibb.co/TNHCPvZ/p9.png"  alt="Recruiter" loading="lazy"></div>
+          <div class="recruiter-band__item"><img src="https://i.ibb.co/3Y0gYGJz/p10.png" alt="Recruiter" loading="lazy"></div>
+          <div class="recruiter-band__item"><img src="https://i.ibb.co/21xG3kDV/p11.png" alt="Recruiter" loading="lazy"></div>
+          <div class="recruiter-band__item"><img src="https://i.ibb.co/9kHx3P3w/p12.png" alt="Recruiter" loading="lazy"></div>
+          <div class="recruiter-band__item"><img src="https://i.ibb.co/5hNNWqtG/p13.png" alt="Recruiter" loading="lazy"></div>
+          <div class="recruiter-band__item"><img src="https://i.ibb.co/Q37MvbMH/p14.png" alt="Recruiter" loading="lazy"></div>
+          <div class="recruiter-band__item"><img src="https://i.ibb.co/8Ly3wxNp/p15.png" alt="Recruiter" loading="lazy"></div>
+          <div class="recruiter-band__item"><img src="https://i.ibb.co/SwXyqZMc/p16.png" alt="Recruiter" loading="lazy"></div>
+          <!-- duplicates for seamless loop -->
+          <div class="recruiter-band__item" aria-hidden="true"><img src="https://i.ibb.co/MxdFJtVN/p1.jpg"  alt=""></div>
+          <div class="recruiter-band__item" aria-hidden="true"><img src="https://i.ibb.co/hxb9B8Rm/p2.jpg"  alt=""></div>
+          <div class="recruiter-band__item" aria-hidden="true"><img src="https://i.ibb.co/DgQ4WvbB/p3.jpg"  alt=""></div>
+          <div class="recruiter-band__item" aria-hidden="true"><img src="https://i.ibb.co/vxSGHBmw/p4.jpg"  alt=""></div>
+          <div class="recruiter-band__item" aria-hidden="true"><img src="https://i.ibb.co/b5cK4qdM/p5.jpg"  alt=""></div>
+          <div class="recruiter-band__item" aria-hidden="true"><img src="https://i.ibb.co/yKrnqpd/p6.jpg"  alt=""></div>
+          <div class="recruiter-band__item" aria-hidden="true"><img src="https://i.ibb.co/HpzqWPjR/p7.png"  alt=""></div>
+          <div class="recruiter-band__item" aria-hidden="true"><img src="https://i.ibb.co/8nkfj9sg/p8.png"  alt=""></div>
+          <div class="recruiter-band__item" aria-hidden="true"><img src="https://i.ibb.co/TNHCPvZ/p9.png"  alt=""></div>
+          <div class="recruiter-band__item" aria-hidden="true"><img src="https://i.ibb.co/3Y0gYGJz/p10.png" alt=""></div>
+          <div class="recruiter-band__item" aria-hidden="true"><img src="https://i.ibb.co/21xG3kDV/p11.png" alt=""></div>
+          <div class="recruiter-band__item" aria-hidden="true"><img src="https://i.ibb.co/9kHx3P3w/p12.png" alt=""></div>
+          <div class="recruiter-band__item" aria-hidden="true"><img src="https://i.ibb.co/5hNNWqtG/p13.png" alt=""></div>
+          <div class="recruiter-band__item" aria-hidden="true"><img src="https://i.ibb.co/Q37MvbMH/p14.png" alt=""></div>
+          <div class="recruiter-band__item" aria-hidden="true"><img src="https://i.ibb.co/8Ly3wxNp/p15.png" alt=""></div>
+          <div class="recruiter-band__item" aria-hidden="true"><img src="https://i.ibb.co/SwXyqZMc/p16.png" alt=""></div>
         </div>
+      </div>
+
+      <div style="text-align:center; padding: 40px 0 20px;">
+        <a href="https://mlrit.ac.in/placements/" class="btn btn-ghost" style="border: 1px solid rgba(255,255,255,0.3); color:#fff; letter-spacing:0.1em; font-size:0.85rem; text-transform:uppercase;">Explore More &rarr;</a>
       </div>
 
     </section>
 
     <!-- =====================
-         7. EVENTS
+         8. TESTIMONIALS
          ===================== -->
-    <!-- ===== EVENTS ===== -->
-    <section class="ev-section" id="events">
-
-      <!-- Full-screen background video -->
-      <video class="ev-bg-video" id="evBgVideo" muted loop playsinline></video>
-      <div class="ev-bg-scrim"></div>
-
-      <!-- Beam sweep -->
-      <div class="ev-beam" id="evBeam" aria-hidden="true"></div>
-
-      <!-- Explore prompt — centered, moves to top-left on scroll -->
-      <div class="ev-explore" id="evExplore">Explore the real <em>MLRIT</em></div>
-
-      <!-- Content wrap -->
-      <div class="ev-content" id="evContent">
-
-        <!-- Bottom-left: event text -->
-        <div class="ev-text" id="evText">
-          <p class="ev-text__quote" id="evQuote"></p>
-          <div class="ev-text__meta">
-            <strong id="evName"></strong>
-            <span id="evRole"></span>
-          </div>
-        </div>
-
-        <!-- Bottom-right: sidebar -->
-        <div class="ev-sidebar">
-
-          <!-- Main hover player -->
-          <div class="ev-main-thumb nudge nudge--bounce" id="evMainThumb">
-            <video class="ev-main-thumb__video" id="evThumbVid" muted loop playsinline></video>
-            <div class="ev-main-thumb__play">
-              <span class="ev-main-thumb__play-text">hover to<br>play</span>
-              <span class="ev-main-thumb__play-icon">&#9654;</span>
-            </div>
-          </div>
-
-          <!-- Controls + mini queue -->
-          <div class="ev-controls-row">
-            <button class="ev-ctrl-btn" id="evPrev" aria-label="Previous">&#8592;</button>
-
-            <div class="ev-mini-queue" id="evMiniQueue">
-              <div class="ev-mini-thumb is-active nudge nudge--pop" data-idx="0"><video src="events/e1.mp4" muted playsinline preload="metadata"></video></div>
-              <div class="ev-mini-thumb nudge nudge--pop" data-idx="1"><video src="events/e2.mp4" muted playsinline preload="metadata"></video></div>
-              <div class="ev-mini-thumb nudge nudge--pop" data-idx="2"><video src="events/e3.mp4" muted playsinline preload="metadata"></video></div>
-              <div class="ev-mini-thumb nudge nudge--pop" data-idx="3"><video src="events/e4.mp4" muted playsinline preload="metadata"></video></div>
-            </div>
-
-            <button class="ev-ctrl-btn" id="evNext" aria-label="Next">&#8594;</button>
-          </div>
-
-          <!-- Mute toggle -->
-          <button class="ev-mute-btn" id="evMuteBtn" aria-label="Toggle mute">
-            <svg class="ev-mute-btn__off" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            <svg class="ev-mute-btn__on" width="14" height="14" viewBox="0 0 24 24" fill="none" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- =====================
-         10. FOOTER
-         ===================== -->
-    <footer class="site-footer">
+    <section class="testimonials" id="testimonials">
+      <div class="testi-topbar"></div>
       <div class="section-wrap">
-        <div class="footer__grid">
+        <div class="testi-header">
+          <span class="section-label reveal">Alumni Voices</span>
+          <h2 class="section-heading reveal" data-delay="1">What Our Graduates Say</h2>
+          <p class="section-sub reveal" data-delay="2">Hover over the deck to explore their stories.</p>
+        </div>
 
-          <div class="footer__brand">
-            <img src="mlrit-logo-transparent.png" alt="MLRIT" />
-            <p>MLR Institute of Technology, Dundigal, Hyderabad — shaping engineers and leaders since 2005.</p>
-            <div class="footer__socials">
-              <a href="https://www.facebook.com/Mlrit/" aria-label="Facebook">f</a>
-              <a href="https://x.com/mlritin" aria-label="X">x</a>
-              <a href="https://www.instagram.com/mlritofficial/" aria-label="Instagram">in</a>
-              <a href="https://www.linkedin.com/school/mlr-institute-of-technology/" aria-label="LinkedIn">li</a>
-              <a href="https://www.youtube.com/channel/UCAfZfemyTCM-965RZy6QiGA" aria-label="YouTube">yt</a>
+        <!-- Fan card layout -->
+        <div class="testi-fan">
+          <!-- Card 1 -->
+          <div class="testi-card" style="--rotate: -18deg; --ty: 40px;">
+            <video class="testi-card__video" src="https://res.cloudinary.com/dhqhhtvym/video/upload/v1777495632/alumni_card1.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="testi-card__overlay"></div>
+            <div class="testi-card-label">
+              <span class="testi-card-name">Ishant</span>
+              <span class="testi-card-role">SDE @ Amazon</span>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="testi-card" style="--rotate: -9deg; --ty: 15px;">
+            <video class="testi-card__video" src="https://res.cloudinary.com/dhqhhtvym/video/upload/v1777495647/alumni_card2.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="testi-card__overlay"></div>
+            <div class="testi-card-label">
+              <span class="testi-card-name">Snigdha Reddy</span>
+              <span class="testi-card-role">DBS</span>
+            </div>
+          </div>
+          <!-- Card 3 — center (plays by default) -->
+          <div class="testi-card testi-card--center testi-card--active" style="--rotate: 0deg; --ty: 0px;">
+            <video class="testi-card__video" src="https://res.cloudinary.com/dhqhhtvym/video/upload/v1777366676/av3.mp4" autoplay muted loop playsinline preload="auto"></video>
+            <div class="testi-card__overlay"></div>
+            <div class="testi-card-label">
+              <span class="testi-card-name">Gopi Pavani</span>
+              <span class="testi-card-role">Safran</span>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="testi-card" style="--rotate: 9deg; --ty: 15px;">
+            <video class="testi-card__video" src="https://res.cloudinary.com/dhqhhtvym/video/upload/v1777371368/sneha_patel.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="testi-card__overlay"></div>
+            <div class="testi-card-label">
+              <span class="testi-card-name">Sravya Lingisetty</span>
+              <span class="testi-card-role">Infosys</span>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="testi-card" style="--rotate: 18deg; --ty: 40px;">
+            <video class="testi-card__video" src="https://res.cloudinary.com/dhqhhtvym/video/upload/v1777495652/alumni_card5.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="testi-card__overlay"></div>
+            <div class="testi-card-label">
+              <span class="testi-card-name">Aishwarya</span>
+              <span class="testi-card-role">Cognizant</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sound toggle -->
+        <div class="testi-sound-bar">
+          <button class="testi-mute" id="testiMute" aria-label="Toggle testimonial sound">
+            <svg class="testi-mute-icon testi-mute-icon--on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            </svg>
+            <svg class="testi-mute-icon testi-mute-icon--off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+              <line x1="23" y1="9" x2="17" y2="15"/>
+              <line x1="17" y1="9" x2="23" y2="15"/>
+            </svg>
+            <span class="testi-mute-label">Sound</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================
+         7. EVENT SHOWCASE
+         ===================== -->
+    <section class="event-showcase" id="events">
+
+      <!-- Video background -->
+      <video class="es__video" id="esVideo" autoplay muted loop playsinline preload="auto">
+        <source src="https://res.cloudinary.com/dhqhhtvym/video/upload/v1777366731/equinox.mp4" type="video/mp4" />
+      </video>
+
+      <!-- Instagram embed (hidden by default, shown for embed-type events) -->
+      <iframe class="es__embed" id="esEmbed" allowfullscreen frameborder="0" scrolling="no"></iframe>
+
+      <!-- Dark overlay -->
+      <div class="es__overlay"></div>
+
+      <!-- Cursor-following PLAY circle (only visible on mouse move) -->
+      <div class="es__cursor" id="esCursor" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <span>PLAY</span>
+      </div>
+
+      <!-- Event info — always visible at bottom left -->
+      <div class="es__info" id="esInfo">
+        <div class="es__info-inner">
+          <!-- Event logo thumbnail -->
+          <img class="es__info-logo" id="esInfoLogo" src="/assets/logo.svg" alt="Event logo" />
+          <!-- Event details -->
+          <p class="es__info-tag" id="esInfoTag">Entrepreneurship Summit · 2024</p>
+          <h2 class="es__info-title" id="esInfoTitle">The Equinox<br>E-Summit 2K24</h2>
+          <p class="es__info-desc" id="esInfoDesc">MLRIT's flagship annual summit bringing together entrepreneurs, investors, and innovators to inspire the next generation of leaders.</p>
+          <a href="#" class="btn btn--white es__info-cta">
+            <span class="btn__chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+            <span class="btn__label">Explore Event</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Next event button — right side -->
+      <button class="es__next" id="esNext" aria-label="Next event">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <!-- Bottom bar: dots (left) · mute (right) -->
+      <div class="es__bottom-bar">
+        <!-- Dot navigation -->
+        <div class="es__dots" id="esDots">
+          <button class="es__dot is-active" data-index="0" aria-label="Event 1"></button>
+          <button class="es__dot" data-index="1" aria-label="Event 2"></button>
+        </div>
+
+        <!-- Mute toggle -->
+        <button class="es__mute" id="esMute" aria-label="Toggle mute">
+          <svg class="es__mute-icon es__mute-icon--on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+          <svg class="es__mute-icon es__mute-icon--off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <line x1="23" y1="9" x2="17" y2="15"/>
+            <line x1="17" y1="9" x2="23" y2="15"/>
+          </svg>
+          <span class="es__mute-label">Sound</span>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- =====================
+         10. STICKY FOOTER
+         ===================== -->
+    <footer class="sticky-footer">
+      <div class="sticky-footer__inner">
+        <div class="sticky-footer__content">
+
+          <!-- Decorative radial gradients -->
+          <div class="sticky-footer__bg" aria-hidden="true">
+            <div class="sfbg sfbg--1"></div>
+            <div class="sfbg sfbg--2"></div>
+            <div class="sfbg sfbg--3"></div>
+          </div>
+
+          <!-- Top CTA bar -->
+          <div class="sf-cta">
+            <div class="sf-cta__text">
+              <h3>Start Your Journey at MLRIT</h3>
+              <p>Applications open for B.Tech, M.Tech &amp; MBA — limited seats.</p>
+            </div>
+            <div class="sf-cta__right">
+              <div class="sf-cta__actions">
+                <a href="https://mlrit.ac.in/admissions/" class="btn btn--primary">Apply Now</a>
+                <a href="https://mlrit.ac.in/wp-content/uploads/2024/05/MLRIT_Brochure.pdf" class="btn btn--white">Download Brochure</a>
+              </div>
+              <form class="sf-newsletter sf-newsletter--cta" onsubmit="return false;">
+                <input type="email" placeholder="Your email address" />
+                <button type="submit">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </form>
             </div>
           </div>
 
-          <div class="footer__col">
-            <h5>Quick Links</h5>
-            <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Admissions</a></li>
-              <li><a href="#">Campus Life</a></li>
-              <li><a href="#">Examinations</a></li>
-              <li><a href="#">Training and Placements</a></li>
-              <li><a href="#">Scholarships</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
+          <!-- Main grid -->
+          <div class="sf-grid">
+
+            <!-- Brand column -->
+            <div class="sf-brand sf-col-reveal">
+              <img src="https://i.ibb.co/zHVr8JGd/mlrit-logo-new.png" alt="MLRIT" class="sf-brand__logo" />
+              <p class="sf-brand__desc">MLR Institute of Technology, Dundigal, Hyderabad — shaping engineers and leaders since 2005.</p>
+              <div class="sf-brand__contact">
+                <a href="tel:+919652226061">+91 96522 26061</a>
+                <a href="mailto:info@mlrinstitutions.ac.in">info@mlrinstitutions.ac.in</a>
+              </div>
+              <div class="sf-brand__socials">
+                <a href="https://www.facebook.com/Mlrit/" aria-label="Facebook" class="sf-social-btn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/mlr_institute_of_technology/" aria-label="Instagram" class="sf-social-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+                <a href="https://www.youtube.com/channel/UCAfZfemyTCM-965RZy6QiGA" aria-label="YouTube" class="sf-social-btn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0a0a0a"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/school/mlr-institute-of-technology/" aria-label="LinkedIn" class="sf-social-btn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="https://x.com/mlritin" aria-label="X / Twitter" class="sf-social-btn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Academics -->
+            <div class="sf-col sf-col-reveal" style="--delay: 0.1s">
+              <h5>Academics</h5>
+              <ul>
+                <li><a href="https://mlrit.ac.in/about-us/course-intake/">B.Tech Programs</a></li>
+                <li><a href="https://mlrit.ac.in/about-us/course-intake/">M.Tech Programs</a></li>
+                <li><a href="https://mlrit.ac.in/mba/">MBA</a></li>
+                <li><a href="https://mlrit.ac.in/research/details-of-research-scholar/">Ph.D</a></li>
+                <li><a href="https://mlrit.ac.in/examinations/">Academic Calendar</a></li>
+                <li><a href="https://mlrit.ac.in/examinations/">Syllabus &amp; Curriculum</a></li>
+                <li><a href="https://mlrit.ac.in/campus-life/library/">Library</a></li>
+                <li><a href="https://mlrit.ac.in/examinations/">Examinations</a></li>
+                <li><a href="https://mlrit.ac.in/innovation-cell/innovation-overview/">Innovation Cell</a></li>
+              </ul>
+            </div>
+
+            <!-- Admissions -->
+            <div class="sf-col sf-col-reveal" style="--delay: 0.2s">
+              <h5>Admissions</h5>
+              <ul>
+                <li><a href="https://mlrit.ac.in/admissions/">How to Apply</a></li>
+                <li><a href="https://mlrit.ac.in/admissions/">Eligibility Criteria</a></li>
+                <li><a href="https://mlrit.ac.in/admissions/">Fee Structure</a></li>
+                <li><a href="https://mlrit.ac.in/scholarships/">Scholarships</a></li>
+                <li><a href="https://mlrit.ac.in/admissions/">EAMCET Counselling</a></li>
+                <li><a href="https://mlrit.ac.in/admissions/">International Students</a></li>
+                <li><a href="https://mlrit.ac.in/admissions/">Lateral Entry</a></li>
+                <li><a href="https://files.mlrit.ac.in/uploads/ADMISSION_FORM_2024-25.pdf">Application Form</a></li>
+              </ul>
+            </div>
+
+            <!-- Campus -->
+            <div class="sf-col sf-col-reveal" style="--delay: 0.3s">
+              <h5>Campus Life</h5>
+              <ul>
+                <li><a href="https://mlrit.ac.in/campus-life/">Clubs &amp; Societies</a></li>
+                <li><a href="https://mlrit.ac.in/sports/">Sports &amp; Fitness</a></li>
+                <li><a href="https://mlrit.ac.in/events/">Cultural Events</a></li>
+                <li><a href="https://mlrit.ac.in/campus-life/hostel-facility/">Hostel</a></li>
+                <li><a href="https://mlrit.ac.in/campus-life/cafeteria/">Cafeteria</a></li>
+                <li><a href="https://mlrit.ac.in/campus-life/transport-facility/">Transport</a></li>
+                <li><a href="https://mlrit.ac.in/campus-life/">Health Centre</a></li>
+                <li><a href="https://mlrit.ac.in/virtual-tour/">Virtual Tour</a></li>
+                <li><a href="https://mlrit.ac.in/campus-life/auditorium/">Auditorium</a></li>
+              </ul>
+            </div>
+
+            <!-- Connect -->
+            <div class="sf-col sf-col-reveal" style="--delay: 0.4s">
+              <h5>Connect</h5>
+              <ul>
+                <li><a href="https://mlrit.ac.in/about-us/">About MLRIT</a></li>
+                <li><a href="https://mlrit.ac.in/about-us/governing-body/">Leadership</a></li>
+                <li><a href="https://mlrit.ac.in/placements/">Placements</a></li>
+                <li><a href="https://mlrit.ac.in/research/">Research</a></li>
+                <li><a href="https://mlrit.ac.in/nirf-ranked-institution/">NIRF Rankings</a></li>
+                <li><a href="https://mlrit.ac.in/category/news/">Press &amp; Media</a></li>
+                <li><a href="https://mlrit.ac.in/contactus/">Contact Us</a></li>
+                <li><a href="https://alumni.mlrit.ac.in/">Alumni</a></li>
+                <li><a href="https://mlrit.ac.in/careers/">Careers</a></li>
+                <li><a href="https://mlrit.ac.in/iqac/">IQAC</a></li>
+                <li><a href="https://naac.mlrit.ac.in/">NAAC</a></li>
+              </ul>
+            </div>
+
+          </div><!-- /sf-grid -->
+
+          <!-- Bottom bar -->
+          <div class="sf-bottom">
+            <span>&copy; 2025 KMR Educational Society. All rights reserved.</span>
+            <span class="sf-legal">
+              <a href="https://mlrit.ac.in/mandatory-disclosures/">Mandatory Disclosures</a>
+              <a href="https://mlrit.ac.in/aicte-approvals/">AICTE Approvals</a>
+              <a href="https://mlrit.edugrievance.com/">Grievance Portal</a>
+            </span>
           </div>
 
-          <div class="footer__col">
-            <h5>Useful Links</h5>
-            <ul>
-              <li><a href="#">AICTE Approvals</a></li>
-              <li><a href="#">Mandatory Disclosures</a></li>
-              <li><a href="#">UGC Undertaking</a></li>
-              <li><a href="#">Academic Calendars</a></li>
-              <li><a href="#">Annual Reports</a></li>
-              <li><a href="#">Audited Statements</a></li>
-            </ul>
-          </div>
+          <!-- Big MLRIT watermark -->
+          <div class="sf-watermark" aria-hidden="true">MLRIT</div>
 
-          <div class="footer__col">
-            <h5>Departments</h5>
-            <ul>
-              <li><a href="#">Aeronautical Engineering</a></li>
-              <li><a href="#">AI and Machine Learning</a></li>
-              <li><a href="#">Computer Science and Engineering</a></li>
-              <li><a href="#">Electronics and Communication</a></li>
-              <li><a href="#">Electrical and Electronics</a></li>
-              <li><a href="#">Mechanical Engineering</a></li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div class="footer__bottom">
-          <span>© 2025 KMR Educational Society. All rights reserved.</span>
-          <span>
-            Survey No. 444, Dundigal, Medchal Malkajgiri, Telangana – 500 043 &nbsp;·&nbsp;
-            <a href="tel:+919652226061">+91 96522 26061</a> &nbsp;·&nbsp;
-            <a href="mailto:info@mlrinstitutions.ac.in">info@mlrinstitutions.ac.in</a>
-          </span>
         </div>
       </div>
     </footer>
 
   </main>
 
-  <script src="js/loader.js"></script>
   <script src="js/navbar.js"></script>
-  <script src="js/rankings.js"></script>
-  <script src="js/placements.js"></script>
-  <script src="js/footer.js"></script>
-  <script src="js/why-mlrit.js" defer></script>
+  <script src="js/hero-scroll.js"></script>
+
+  <!-- Search toggle -->
   <script>
-    // Hero video — single loop
-
-    // Why MLRIT video mute button
     (function () {
-      var btn = document.getElementById('whyMute');
-      var vid = document.getElementById('whyVideo');
-      if (!btn || !vid) return;
-      var iconOff = btn.querySelector('.vid-mute-btn__off');
-      var iconOn  = btn.querySelector('.vid-mute-btn__on');
-      btn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        vid.muted = !vid.muted;
-        if (iconOff) iconOff.style.display = vid.muted ? '' : 'none';
-        if (iconOn)  iconOn.style.display  = vid.muted ? 'none' : '';
+      var btn     = document.getElementById('searchToggle');
+      var overlay = document.getElementById('searchOverlay');
+      var input   = document.getElementById('searchInput');
+      var close   = document.getElementById('searchClose');
+      if (!btn || !overlay) return;
+
+      btn.addEventListener('click', function () {
+        overlay.classList.add('is-open');
+        setTimeout(function () { input.focus(); }, 300);
+      });
+
+      close.addEventListener('click', function () {
+        overlay.classList.remove('is-open');
+      });
+
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) overlay.classList.remove('is-open');
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') overlay.classList.remove('is-open');
       });
     })();
-
-    // Alumni hover — video play/pause + mute toggle
+  </script>
+  <script>
+    // ── Stats Counter Animation ──────────────────────────────────────────
     (function () {
-      document.querySelectorAll('.alumni-card').forEach(function(card) {
-        var vid = card.querySelector('.alumni-video');
-        var btn = card.querySelector('.alumni-mute-btn');
-        var playTimer = null;
-        if (!vid) return;
+      const strip    = document.getElementById('stats');
+      const counters = document.querySelectorAll('.stat-count');
+      if (!counters.length) return;
 
-        card.addEventListener('mouseenter', function() {
-          playTimer = setTimeout(function() { vid.play().catch(function(){}); }, 450);
-        });
-        card.addEventListener('mouseleave', function() {
-          clearTimeout(playTimer);
-          vid.pause();
-          vid.currentTime = 0;
-        });
+      // Mouse-tracking ambient glow
+      strip.addEventListener('mousemove', e => {
+        const rect = strip.getBoundingClientRect();
+        const pct  = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+        strip.style.setProperty('--mx', pct + '%');
+      });
 
-        if (btn) {
-          btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            vid.muted = !vid.muted;
-            var off = btn.querySelector('.alumni-mute-btn__off');
-            var on  = btn.querySelector('.alumni-mute-btn__on');
-            if (off) off.style.display = vid.muted ? '' : 'none';
-            if (on)  on.style.display  = vid.muted ? 'none' : '';
-          });
+      function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+
+      function spawnSparkles(el) {
+        const item = el.closest('.stat-item');
+        for (let i = 0; i < 8; i++) {
+          const s  = document.createElement('span');
+          s.className = 'stat-sparkle';
+          const angle = (i / 8) * 360;
+          const dist  = 28 + Math.random() * 20;
+          s.style.setProperty('--sx', `${Math.cos(angle * Math.PI / 180) * dist}px`);
+          s.style.setProperty('--sy', `${Math.sin(angle * Math.PI / 180) * dist}px`);
+          s.style.top  = '40%';
+          s.style.left = '50%';
+          item.appendChild(s);
+          requestAnimationFrame(() => s.classList.add('burst'));
+          setTimeout(() => s.remove(), 750);
         }
-      });
+      }
+
+      function animateCounter(el) {
+        const target   = +el.dataset.target;
+        const duration = 1800;
+        const start    = performance.now();
+
+        function step(now) {
+          const elapsed  = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          el.textContent = Math.floor(easeOutQuart(progress) * target);
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            el.textContent = target;
+            el.classList.add('done');
+            spawnSparkles(el);
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            counters.forEach((el, i) =>
+              setTimeout(() => animateCounter(el), i * 120)
+            );
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.1 });
+
+      observer.observe(strip);
     })();
 
-    // Why MLRIT — handled by initWhyMLRIT() in loader.js
-    // Rankings rows — handled by rankings.js
 
-
-
-
-        //  Recruiter Band 
+    // Why MLRIT video — autoplay on scroll into view
     (function () {
+      const vid     = document.getElementById('whyVideo');
+      const section = document.getElementById('why-mlrit');
+      if (!vid || !section) return;
+    // Why MLRIT video — autoplay on scroll into view
+      const io = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          vid.play().catch(() => {});
+          vid.classList.add('is-playing');
+        } else {
+          vid.pause();
+          vid.classList.remove('is-playing');
+        }
+      }, { threshold: 0.5 });
+    // Why MLRIT video — autoplay on scroll into view
+      io.observe(section);
+    })();
+
+    // (Events section JS moved to js/events.js)
+
+    // ── Recruiter Band ──────────────────────────────
+    (function () {
+      // ── Placement stat counters ──
+      const statEls = document.querySelectorAll('.placement-stat__count');
+      if (statEls.length) {
+        const io = new IntersectionObserver(entries => {
+          if (!entries[0].isIntersecting) return;
+          io.disconnect();
+          statEls.forEach(el => {
+            const target = +el.dataset.target;
+            const duration = 1600;
+            const start = performance.now();
+            function tick(now) {
+              const p = Math.min((now - start) / duration, 1);
+              // ease-out expo
+              const ease = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
+              el.textContent = Math.round(ease * target);
+              if (p < 1) requestAnimationFrame(tick);
+              else el.textContent = target;
+            }
+            requestAnimationFrame(tick);
+          });
+        }, { threshold: 0.4 });
+        const statsSection = document.querySelector('.placements__stats');
+        if (statsSection) io.observe(statsSection);
+      }
+
       const track = document.getElementById('recruiterTrack');
       const band  = document.getElementById('recruiterBand');
       if (!track || !band) return;
 
-      const GAP   = 20;
-      const SPEED = 0.9;
-
-      let offset  = 0;
-      let paused  = false;
-      let cardW   = 0;
-
-      requestAnimationFrame(() => {
-        const first = track.firstElementChild;
-        cardW = first ? first.getBoundingClientRect().width + GAP : 216;
-        run();
-      });
-
-      band.addEventListener('mouseenter', () => { paused = true; });
-      band.addEventListener('mouseleave', () => { paused = false; });
-
-      function run() {
-        function tick() {
-          if (!paused) {
-            offset += SPEED;
-            if (offset >= cardW) {
-              offset -= cardW;
-              track.appendChild(track.firstElementChild);
-            }
-            track.style.transform = `translateX(-${offset}px)`;
-          }
-          requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-      }
+      // Pause CSS scroll animation on hover
+      band.addEventListener('mouseenter', () => { track.style.animationPlayState = 'paused'; });
+      band.addEventListener('mouseleave', () => { track.style.animationPlayState = 'running'; });
 
       // 4-direction tilt on individual cards
       function applyTilt(card, e) {
-        const rect   = card.getBoundingClientRect();
-        const cx     = rect.left + rect.width  / 2;
-        const cy     = rect.top  + rect.height / 2;
-        const dx     = (e.clientX - cx) / (rect.width  / 2);
-        const dy     = (e.clientY - cy) / (rect.height / 2);
-        const rotY   =  dx * 12;
-        const rotX   = -dy * 8;
-        card.style.transform = `perspective(500px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.06)`;
+        const rect = card.getBoundingClientRect();
+        const dx   = (e.clientX - (rect.left + rect.width  / 2)) / (rect.width  / 2);
+        const dy   = (e.clientY - (rect.top  + rect.height / 2)) / (rect.height / 2);
+        card.style.transform = `perspective(500px) rotateX(${-dy * 8}deg) rotateY(${dx * 12}deg) scale(1.06)`;
       }
 
       track.addEventListener('mousemove', e => {
@@ -1247,21 +1356,14 @@
         if (card) applyTilt(card, e);
       });
 
-      track.addEventListener('mouseleave', e => {
-        const card = e.target.closest('.recruiter-band__item');
-        if (card) card.style.transform = '';
-      }, true);
-
       track.addEventListener('mouseout', e => {
         const card = e.target.closest('.recruiter-band__item');
-        if (card && !card.contains(e.relatedTarget)) {
-          card.style.transform = '';
-        }
+        if (card && !card.contains(e.relatedTarget)) card.style.transform = '';
       });
 
     })();
 
-    // ΓöÇΓöÇ Photo Section ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    // ── Photo Section ──────────────────────────────
 
     // 1. Scroll-triggered staggered reveal via IntersectionObserver
     const photoSection = document.querySelector('.photo-section');
@@ -1288,12 +1390,6 @@
         img.addEventListener('load', () => tile.classList.add('img-loaded'));
         img.addEventListener('error', () => tile.classList.add('img-error'));
       }
-    });
-
-    // 3. Mobile two-tap pattern
-    const isTouchDevice = () => window.matchMedia('(hover: none)').matches;
-
-    tiles.forEach(tile => {
       if (tile.classList.contains('tile--hero')) return; // hero always visible
       tile.addEventListener('click', (e) => {
         if (!isTouchDevice()) return; // desktop: let link navigate normally
@@ -1314,146 +1410,504 @@
       }
     });
 
-    // ΓöÇΓöÇ Stats Count-up ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    // ── Story Deck ──────────────────────────────────────────────────────────
     (function () {
-      var strip = document.getElementById('stats');
-      if (!strip) return;
-      var animated = false;
+      const stories = [
+        { name: 'Sathvika',      role: 'CSIT · MLRIT',                    batch: 'B.Tech CSE · 2023', src: 'https://res.cloudinary.com/dhqhhtvym/video/upload/v1777366665/av1.mp4', accent: '#2E7D32' },
+        { name: 'Dasam Pranay',  role: 'Aeronautical Engineering · MLRIT', batch: 'B.Tech AE · 2023',  src: 'https://res.cloudinary.com/dhqhhtvym/video/upload/v1777366673/av2.mp4', accent: '#0668E1' },
+        { name: 'Gopi Pavani',   role: 'Placed at Safran',                 batch: 'B.Tech AE · 2022',  src: 'https://res.cloudinary.com/dhqhhtvym/video/upload/v1777366676/av3.mp4', accent: '#E8500A' },
+        { name: 'Ravi Teja',     role: 'SDE at TCS · MLRIT',              batch: 'B.Tech ECE · 2024',  src: '/videos/alumni-testimonial.mp4', accent: '#9B59B6' },
+        { name: 'Ananya Reddy',  role: 'Data Analyst at Infosys',          batch: 'M.Tech AI · 2024',   src: 'https://res.cloudinary.com/dhqhhtvym/video/upload/v1777366673/av2.mp4', accent: '#E67E22' },
+      ];
 
-      function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+      const stackWrapper = document.getElementById('stackWrapper');
+      const scatterRow   = document.getElementById('scatterRow');
+      const deckHint     = document.getElementById('deckHint');
+      const deckDots     = document.getElementById('deckDots');
+      const deckZone     = document.getElementById('deckZone');
+      const mobileDeck   = document.getElementById('mobileDeck');
+      if (!stackWrapper) return;
 
-      function animateCounters() {
-        if (animated) return;
-        animated = true;
-        var duration = 1200;
-        var start = null;
-        var nums = strip.querySelectorAll('[data-target]');
+      function buildCard(story) {
+        const card = document.createElement('div');
+        card.className = 'sv-card';
+        card.innerHTML = `
+          <video class="sv-card__video" src="${story.src}" muted loop playsinline preload="metadata"></video>
+          <div class="sv-card__overlay"></div>
+          <div class="sv-card__accent" style="background:${story.accent}"></div>
+          <div class="sv-card__content">
+            <div class="sv-card__badge" style="background:${story.accent}22;border:1px solid ${story.accent}55;color:${story.accent}">
+              <span class="sv-card__badge-dot" style="background:${story.accent}"></span>${story.role.split('·')[0].trim()}
+            </div>
+            <div class="sv-card__name">${story.name}</div>
+            <div class="sv-card__role">${story.role}</div>
+            <div class="sv-card__batch">${story.batch}</div>
+          </div>`;
+        return card;
+      }
 
-        function tick(ts) {
-          if (!start) start = ts;
-          var progress = Math.min((ts - start) / duration, 1);
-          var ease = easeOutCubic(progress);
-          nums.forEach(function(el) {
-            var target = parseInt(el.getAttribute('data-target'), 10);
-            var suffix = el.getAttribute('data-suffix');
-            var current = Math.floor(ease * target);
-            el.innerHTML = current + '<span>' + suffix + '</span>';
-          });
-          if (progress < 1) requestAnimationFrame(tick);
+      // ── Stack — fanned deck ──
+      // Fan angles: cards behind rotate outward alternately left/right
+      const fanConfig = [
+        { rotate:  0,   tx:  0,  ty:  0,   scale: 1,     opacity: 1,    zIndex: 5, cls: 'sv-card--top' },
+        { rotate: -6,   tx: -14, ty:  10,  scale: 0.97,  opacity: 0.85, zIndex: 4, cls: 'sv-card--bg'  },
+        { rotate:  7,   tx:  16, ty:  14,  scale: 0.95,  opacity: 0.72, zIndex: 3, cls: 'sv-card--bg'  },
+        { rotate: -11,  tx: -24, ty:  20,  scale: 0.93,  opacity: 0.55, zIndex: 2, cls: 'sv-card--bg'  },
+        { rotate:  13,  tx:  26, ty:  24,  scale: 0.91,  opacity: 0.40, zIndex: 1, cls: 'sv-card--bg'  },
+      ];
+
+      stories.forEach((story, i) => {
+        const card = buildCard(story);
+        const cfg  = fanConfig[i] || fanConfig[fanConfig.length - 1];
+        card.classList.add(cfg.cls);
+        card.style.transform = `rotate(${cfg.rotate}deg) translate(${cfg.tx}px, ${cfg.ty}px) scale(${cfg.scale})`;
+        card.style.opacity   = String(cfg.opacity);
+        card.style.zIndex    = String(cfg.zIndex);
+        stackWrapper.appendChild(card);
+      });
+
+      // ── Show cards in a static row immediately ──
+      if (deckHint) deckHint.classList.add('hidden');
+      stackWrapper.style.display = 'none';
+      scatterRow.style.display   = 'flex';
+      scatterRow.innerHTML       = '';
+
+      stories.forEach((story, i) => {
+        const card   = buildCard(story);
+        const n      = stories.length > 1 ? (i / (stories.length - 1)) * 2 - 1 : 0;
+        const rotate = n * 5;
+        card.style.transform = `rotate(${rotate}deg) scale(1)`;
+        card.style.opacity   = '1';
+        scatterRow.appendChild(card);
+      });
+
+      // ── Mobile ──
+      stories.forEach(story => {
+        const card = buildCard(story);
+        card.querySelector('.sv-card__badge').style.cssText += 'opacity:1;transform:none;';
+        card.querySelector('.sv-card__batch').style.cssText += 'opacity:1;transform:none;';
+        mobileDeck.appendChild(card);
+      });
+    })();
+
+  </script>
+
+  <script>
+    // ── Stats counter animation ──
+    (function () {
+      const counters = document.querySelectorAll('.stat-count');
+      const duration = 1800;
+
+      function animateCounter(el) {
+        const target = +el.dataset.target;
+        const start = performance.now();
+        function step(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(ease * target);
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = target;
         }
-        requestAnimationFrame(tick);
+        requestAnimationFrame(step);
       }
 
-      var io = new IntersectionObserver(function(entries) {
-        if (entries[0].isIntersecting) { animateCounters(); io.disconnect(); }
-      }, { threshold: 0.4 });
-      io.observe(strip);
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      counters.forEach(c => observer.observe(c));
     })();
+  </script>
 
-    //  Scroll Nudge — reveal interactive elements with stagger 
+  <script>
+    // ── Reveal on Scroll ─────────────────────────────────────────────────
     (function () {
-      var nudges = document.querySelectorAll('.nudge');
-      if (!nudges.length) return;
+      const els = document.querySelectorAll('.reveal');
+      if (!els.length) return;
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
 
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
+  <script>
+    // ── Testimonial fan: play on hover (desktop) + tap (mobile) + sound toggle ──
+    (function () {
+      const cards   = document.querySelectorAll('.testi-card');
+      const muteBtn = document.getElementById('testiMute');
+      if (!cards.length) return;
 
-          var el = entry.target;
-          observer.unobserve(el);
+      var soundEnabled = false;
 
-          // Stagger siblings: find all .nudge in the same parent
-          var parent = el.parentElement;
-          var siblings = parent.querySelectorAll(':scope > .nudge:not(.is-nudged)');
-          siblings.forEach(function (sib, i) {
-            setTimeout(function () {
-              sib.classList.add('is-nudged');
-            }, i * 120);
-            observer.unobserve(sib);
+      // ── Sound toggle ──
+      if (muteBtn) {
+        muteBtn.addEventListener('click', function () {
+          soundEnabled = !soundEnabled;
+          muteBtn.classList.toggle('is-unmuted', soundEnabled);
+          cards.forEach(function (c) {
+            var v = c.querySelector('.testi-card__video');
+            if (v) v.muted = !soundEnabled;
           });
         });
+      }
+
+      // ── Seek to first frame so thumbnail shows (not black) ──
+      cards.forEach(function (card) {
+        var video = card.querySelector('.testi-card__video');
+        if (!video || video.autoplay) return;
+        video.addEventListener('loadeddata', function () {
+          if (video.currentTime === 0) video.currentTime = 0.1;
+        }, { once: true });
+      });
+
+      // ── Helper: play one card, pause all others ──
+      function playCard(card) {
+        cards.forEach(function (c) {
+          var v = c.querySelector('.testi-card__video');
+          if (v && c !== card) { v.pause(); }
+          c.classList.remove('testi-card--active');
+        });
+        var video = card.querySelector('.testi-card__video');
+        if (!video) return;
+        video.muted = !soundEnabled;
+        // Use play() directly — must be called synchronously in gesture handler
+        var p = video.play();
+        if (p && p.catch) p.catch(function () {});
+        card.classList.add('testi-card--active');
+      }
+
+      function pauseCard(card) {
+        var video = card.querySelector('.testi-card__video');
+        if (video) video.pause();
+        card.classList.remove('testi-card--active');
+      }
+
+      var isMobile = window.matchMedia('(max-width: 768px)');
+
+      cards.forEach(function (card) {
+        // ── Desktop: hover to play ──
+        card.addEventListener('mouseenter', function () {
+          playCard(card);
+        });
+
+        card.addEventListener('mouseleave', function () {
+          if (!card.classList.contains('testi-card--center') || isMobile.matches) {
+            pauseCard(card);
+          }
+        });
+
+        // ── Mobile: tap to toggle (click + touchend for reliability) ──
+        var tapped = false;
+
+        card.addEventListener('touchend', function (e) {
+          if (!isMobile.matches) return;
+          tapped = true;
+          e.preventDefault(); // prevent ghost click
+          if (card.classList.contains('testi-card--active')) {
+            pauseCard(card);
+          } else {
+            playCard(card);
+          }
+        }, { passive: false });
+
+        card.addEventListener('click', function (e) {
+          if (!isMobile.matches) return;
+          if (tapped) { tapped = false; return; } // already handled by touchend
+          if (card.classList.contains('testi-card--active')) {
+            pauseCard(card);
+          } else {
+            playCard(card);
+          }
+        });
+      });
+    })();
+  </script>
+
+  <!-- Footer column reveal -->
+  <script>
+    (function () {
+      const cols = document.querySelectorAll('.sf-col-reveal');
+      if (!cols.length) return;
+      const io = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          cols.forEach(c => c.classList.add('is-visible'));
+          io.disconnect();
+        }
       }, { threshold: 0.1 });
-
-      nudges.forEach(function (el) { observer.observe(el); });
+      io.observe(document.querySelector('.sticky-footer'));
     })();
+  </script>
 
-    //  Scroll Parallax 
+  <script src="js/events.js" defer></script>
+  <script src="js/success-stories-scroll.js" defer></script>
+  <script src="js/why-mlrit.js" defer></script>
+
+  <!-- ── Mobile hamburger menu ── -->
+  <script>
+  (function () {
+    'use strict';
+
+    var MQ = window.matchMedia('(max-width: 768px)');
+    if (!MQ.matches) return;
+
+    var siteHeader = document.querySelector('.site-header');
+    var navList    = document.getElementById('mainNavList');
+    var mastRight  = document.querySelector('.masthead__right');
+
+    /* ── Hamburger button ── */
+    var hamburger = document.createElement('button');
+    hamburger.className = 'nav-hamburger';
+    hamburger.setAttribute('aria-label', 'Toggle navigation');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.innerHTML =
+      '<span class="nav-hamburger__bar"></span>' +
+      '<span class="nav-hamburger__bar"></span>' +
+      '<span class="nav-hamburger__bar"></span>';
+    mastRight.appendChild(hamburger);
+
+    /* ── Drawer overlay — starts BELOW the fixed header ── */
+    var drawer = document.createElement('div');
+    drawer.id = 'mobileNavDrawer';
+    Object.assign(drawer.style, {
+      position: 'fixed', top: '0', left: '0', right: '0', bottom: '0',
+      zIndex: '998',   /* below site-header (z-index:1000) so header stays tappable */
+      display: 'none', flexDirection: 'column',
+      background: '#1a5c1e', overflowY: 'auto',
+      WebkitOverflowScrolling: 'touch'
+    });
+    document.body.appendChild(drawer);
+
+    /* ── Build menu from original nav items ── */
+    function buildDrawer() {
+      drawer.innerHTML = '';
+      var allPanels = []; /* track all accordion entries for mutual close */
+
+      /* Get all top-level nav items from the original nav */
+      var originalItems = Array.from(navList.querySelectorAll(':scope > .main-nav__item'));
+
+      originalItems.forEach(function (origItem) {
+        var wrapper = document.createElement('div');
+        wrapper.style.cssText = 'border-bottom:1px solid rgba(255,255,255,0.1);';
+
+        /* ── Top-level row ── */
+        var row = document.createElement('div');
+        row.style.cssText = [
+          'display:flex', 'align-items:center', 'justify-content:space-between',
+          'padding:0.9rem 1.25rem', 'cursor:pointer', 'user-select:none'
+        ].join(';');
+
+        /* Label — strip the chevron span, keep only text */
+        var origLink = origItem.querySelector(':scope > .main-nav__link');
+        var labelText = origLink ? origLink.childNodes[0].textContent.trim() : '';
+
+        var label = document.createElement('span');
+        label.textContent = labelText;
+        label.style.cssText = 'color:#fff;font-size:1rem;font-weight:600;font-family:Poppins,sans-serif;';
+
+        /* Dropdown columns from original */
+        var origDrop = origItem.querySelector(':scope > .dropdown, :scope > .support-panel');
+
+        if (origDrop) {
+          /* Arrow indicator */
+          var arrow = document.createElement('span');
+          arrow.textContent = '›';
+          arrow.style.cssText = 'color:rgba(255,255,255,0.6);font-size:1.4rem;line-height:1;transition:transform 0.25s;display:inline-block;';
+
+          row.appendChild(label);
+          row.appendChild(arrow);
+          wrapper.appendChild(row);
+
+          /* ── Sub-links panel ── */
+          var panel = document.createElement('div');
+          panel.style.cssText = [
+            'display:flex', 'flex-direction:column',
+            'background:rgba(255,255,255,0.12)',
+            'padding:0 1.25rem',
+            'max-height:0',
+            'overflow:hidden',
+            'opacity:0',
+            'transition:max-height 0.35s ease, opacity 0.3s ease, padding 0.3s ease'
+          ].join(';');
+
+          /* Build sub-links from dropdown columns */
+          var cols = Array.from(origDrop.querySelectorAll('.dropdown__col'));
+          cols.forEach(function (col) {
+            var heading = col.querySelector('h4');
+            if (heading) {
+              var h = document.createElement('div');
+              h.textContent = heading.textContent.trim();
+              h.style.cssText = [
+                'font-size:0.62rem', 'font-weight:700',
+                'letter-spacing:0.12em', 'text-transform:uppercase',
+                'color:rgba(255,255,255,0.5)',
+                'margin:0.75rem 0 0.4rem',
+                'padding-bottom:0.3rem',
+                'border-bottom:1px solid rgba(255,255,255,0.12)'
+              ].join(';');
+              panel.appendChild(h);
+            }
+            var links = Array.from(col.querySelectorAll('a'));
+            links.forEach(function (a) {
+              var item = document.createElement('a');
+              item.href = a.href || '#';
+              item.textContent = a.textContent.trim();
+              item.style.cssText = [
+                'display:block', 'padding:0.45rem 0',
+                'color:rgba(255,255,255,0.85)',
+                'font-size:0.88rem',
+                'font-family:Poppins,sans-serif',
+                'text-decoration:none',
+                'border-bottom:1px solid rgba(255,255,255,0.08)'
+              ].join(';');
+              panel.appendChild(item);
+            });
+          });
+
+          wrapper.appendChild(panel);
+
+          /* Track all panels so we can close others */
+          allPanels.push({ panel: panel, arrow: arrow, row: row, isOpen: false });
+          var thisEntry = allPanels[allPanels.length - 1];
+
+          /* Toggle accordion on row tap — close others smoothly */
+          row.addEventListener('click', function () {
+            var opening = !thisEntry.isOpen;
+
+            /* Close every other open panel */
+            allPanels.forEach(function (entry) {
+              if (entry !== thisEntry && entry.isOpen) {
+                entry.isOpen = false;
+                entry.panel.style.maxHeight = '0';
+                entry.panel.style.opacity = '0';
+                entry.panel.style.padding = '0 1.25rem';
+                entry.arrow.style.transform = 'rotate(0deg)';
+                entry.row.style.background = '';
+              }
+            });
+
+            /* Toggle this one */
+            thisEntry.isOpen = opening;
+            if (opening) {
+              panel.style.maxHeight = panel.scrollHeight + 200 + 'px';
+              panel.style.opacity = '1';
+              panel.style.padding = '0.25rem 1.25rem 1rem';
+              arrow.style.transform = 'rotate(90deg)';
+              row.style.background = 'rgba(255,255,255,0.08)';
+            } else {
+              panel.style.maxHeight = '0';
+              panel.style.opacity = '0';
+              panel.style.padding = '0 1.25rem';
+              arrow.style.transform = 'rotate(0deg)';
+              row.style.background = '';
+            }
+          });
+
+        } else {
+          /* No dropdown — direct link */
+          var href = origLink ? origLink.getAttribute('href') : '#';
+          var directLink = document.createElement('a');
+          directLink.href = href || '#';
+          directLink.style.cssText = [
+            'display:flex', 'align-items:center', 'justify-content:space-between',
+            'padding:0.9rem 1.25rem', 'color:#fff',
+            'font-size:1rem', 'font-weight:600',
+            'font-family:Poppins,sans-serif',
+            'text-decoration:none', 'width:100%'
+          ].join(';');
+          directLink.textContent = labelText;
+          wrapper.appendChild(directLink);
+        }
+
+        drawer.appendChild(wrapper);
+      });
+    }
+
+    /* ── Open / close ── */
+    function openDrawer() {
+      buildDrawer();
+      /* Position drawer to start exactly below the fixed header */
+      var hh = siteHeader ? siteHeader.offsetHeight : 70;
+      drawer.style.top = hh + 'px';
+      drawer.style.display = 'flex';
+      hamburger.classList.add('is-open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer.style.display = 'none';
+      hamburger.classList.remove('is-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      drawer.style.display === 'flex' ? closeDrawer() : openDrawer();
+    });
+
+    /* Tap drawer background to close */
+    drawer.addEventListener('click', function (e) {
+      if (e.target === drawer) closeDrawer();
+    });
+
+    window.addEventListener('resize', function () {
+      if (!MQ.matches) closeDrawer();
+    });
+
+  })();
+  </script>
+
+  <!-- Testimonial fan: play video on hover + sound toggle -->
+  <script>
     (function () {
-      var els = document.querySelectorAll('[data-parallax]');
-      if (!els.length) return;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const cards = document.querySelectorAll('.testi-card');
+      const muteBtn = document.getElementById('testiMute');
+      if (!cards.length) return;
 
-      function onScroll() {
-        var scrollY = window.scrollY;
-        els.forEach(function (el) {
-          var speed  = parseFloat(el.getAttribute('data-parallax')) || 0.15;
-          var rect   = el.getBoundingClientRect();
-          var center = rect.top + rect.height / 2;
-          var offset = (window.innerHeight / 2 - center) * speed;
-          el.style.transform = 'translateY(' + offset + 'px)';
+      var soundEnabled = false;
+
+      // Sound toggle
+      if (muteBtn) {
+        muteBtn.addEventListener('click', function () {
+          soundEnabled = !soundEnabled;
+          muteBtn.classList.toggle('is-unmuted', soundEnabled);
+          // Apply to all videos
+          cards.forEach(function (c) {
+            var v = c.querySelector('.testi-card__video');
+            if (v) v.muted = !soundEnabled;
+          });
         });
       }
 
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    })();
+      cards.forEach(function (card) {
+        var video = card.querySelector('.testi-card__video');
+        if (!video) return;
 
-    //  Departments — morphing tile grid navigation 
-    (function () {
-      var section = document.getElementById('departments');
-      if (!section) return;
-
-      var arena = section.querySelector('.dept-arena');
-      var levels = {
-        l0:   document.getElementById('deptLevel0'),
-        l1ug: document.getElementById('deptLevel1UG'),
-        l1pg: document.getElementById('deptLevel1PG'),
-        l2mt: document.getElementById('deptLevel2MT')
-      };
-
-      var tileUG    = document.getElementById('tileUG');
-      var tilePG    = document.getElementById('tilePG');
-      var tileMTech = document.getElementById('tileMTech');
-
-      var currentLevel = 'l0';
-      var leaveTimer = null;
-
-      function showLevel(key) {
-        if (key === currentLevel) return;
-        Object.keys(levels).forEach(function (k) {
-          levels[k].classList.toggle('dept-level--active', k === key);
+        card.addEventListener('mouseenter', function () {
+          // Pause all other videos
+          cards.forEach(function (c) {
+            var v = c.querySelector('.testi-card__video');
+            if (v && v !== video) { v.pause(); }
+            c.classList.remove('testi-card--active');
+          });
+          // Play this one
+          video.muted = !soundEnabled;
+          video.play();
+          card.classList.add('testi-card--active');
         });
-        currentLevel = key;
-      }
-
-      // Use mouseover+closest so gaps between tiles don't fire spurious events
-      arena.addEventListener('mouseover', function (e) {
-        clearTimeout(leaveTimer);
-        var tile = e.target.closest('.dept-tile');
-        if (!tile) return;
-        if (tile === tileUG)    { showLevel('l1ug'); return; }
-        if (tile === tilePG)    { showLevel('l1pg'); return; }
-        if (tile === tileMTech) { showLevel('l2mt'); return; }
-        var back = tile.getAttribute('data-back');
-        if (back) showLevel(back);
       });
-
-      // Leaving the arena: debounce reset so small gaps don't flicker
-      arena.addEventListener('mouseleave', function () {
-        leaveTimer = setTimeout(function () { showLevel('l0'); }, 450);
-      });
-      arena.addEventListener('mouseenter', function () {
-        clearTimeout(leaveTimer);
-      });
-
-      // Watermark visibility on scroll
-      function updateWatermark() {
-        var rect = section.getBoundingClientRect();
-        var inView = rect.top < window.innerHeight && rect.bottom > 0;
-        section.classList.toggle('in-view', inView);
-      }
-      window.addEventListener('scroll', updateWatermark, { passive: true });
-      updateWatermark();
     })();
   </script>
 </body>
