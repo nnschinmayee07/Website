@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="css/why-mlrit.css" />
   <link rel="stylesheet" href="css/events-disc.css" />
   <link rel="stylesheet" href="css/placements-carousel.css" />
-  <link rel="stylesheet" href="css/departments.css" />
   <link rel="stylesheet" href="css/mobile.css" />
   <link rel="stylesheet" href="css/chronicles-dropdown.css" />
 </head>
@@ -592,117 +591,6 @@
     </section>
 
     <!-- =====================
-         DEPARTMENTS — Morphing Tile Grid
-         ===================== -->
-    <section class="dept-section" id="departments">
-      <div class="dept-section__watermark">
-        <img src="mlrit-logo-transparent.png" alt="" aria-hidden="true" />
-      </div>
-      <div class="dept-inner">
-        <div class="dept-header">
-          <span class="section-label">Programmes</span>
-          <h2 class="dept-heading">Explore Our Departments</h2>
-        </div>
-        <div class="dept-arena">
-          <div class="dept-level dept-level--active" id="deptLevel0">
-            <div class="dept-tile dept-tile--ug-parent" id="tileUG">
-              <p class="dept-tile__label">Undergraduate</p>
-              <span class="dept-tile__sub">8 programmes</span>
-            </div>
-            <div class="dept-tile dept-tile--pg-parent" id="tilePG">
-              <p class="dept-tile__label">Postgraduate</p>
-              <span class="dept-tile__sub">2 programmes</span>
-            </div>
-          </div>
-          <div class="dept-level" id="deptLevel1UG">
-            <div class="dept-tile dept-tile--back" data-back="l0">
-              <span class="dept-tile__arrow">&larr;</span>
-            </div>
-            <div class="dept-tile dept-tile--ug-parent dept-tile--shrunk">
-              <p class="dept-tile__label">UG</p>
-            </div>
-            <a href="departments/freshman.html" class="dept-tile dept-tile--child dept-tile--freshman" style="transition-delay:0.05s; text-decoration:none; color:inherit;">
-              <p class="dept-tile__label">Freshman</p>
-              <span class="dept-tile__sub">H&amp;S · Foundation Year</span>
-            </a>
-            <a href="departments/cse.html" class="dept-tile dept-tile--child dept-tile--ug-1" style="transition-delay:0.10s; text-decoration:none; color:inherit;">
-              <p class="dept-tile__label">B.Tech CSE</p>
-              <span class="dept-tile__sub">Computer Science</span>
-            </a>
-            <a href="departments/eee.html" class="dept-tile dept-tile--child dept-tile--ug-2" style="transition-delay:0.10s; text-decoration:none; color:inherit;">
-              <p class="dept-tile__label">B.Tech EEE</p>
-              <span class="dept-tile__sub">Electrical</span>
-            </a>
-            <a href="departments/ece.html" class="dept-tile dept-tile--child dept-tile--ug-3" style="transition-delay:0.15s; text-decoration:none; color:inherit;">
-              <p class="dept-tile__label">B.Tech ECE</p>
-              <span class="dept-tile__sub">Electronics</span>
-            </a>
-            <a href="departments/mechanical.html" class="dept-tile dept-tile--child dept-tile--ug-4" style="transition-delay:0.20s; text-decoration:none; color:inherit;">
-              <p class="dept-tile__label">B.Tech Mechanical</p>
-              <span class="dept-tile__sub">Mechanical Engg.</span>
-            </a>
-            <a href="departments/aeronautical.html" class="dept-tile dept-tile--child dept-tile--ug-5" style="transition-delay:0.25s; text-decoration:none; color:inherit;">
-              <p class="dept-tile__label">B.Tech Aeronautical</p>
-              <span class="dept-tile__sub">Aeronautical Engg.</span>
-            </a>
-            <div class="dept-tile dept-tile--child dept-tile--ug-6" style="transition-delay:0.30s">
-              <p class="dept-tile__label">B.Tech CSE (AI/ML)</p>
-              <span class="dept-tile__sub">AI and Machine Learning</span>
-            </div>
-            <div class="dept-tile dept-tile--child dept-tile--ug-7" style="transition-delay:0.35s">
-              <p class="dept-tile__label">B.Tech CSE (DS)</p>
-              <span class="dept-tile__sub">Data Science</span>
-            </div>
-          </div>
-          <div class="dept-level" id="deptLevel1PG">
-            <div class="dept-tile dept-tile--back" data-back="l0">
-              <span class="dept-tile__arrow">&larr;</span>
-            </div>
-            <div class="dept-tile dept-tile--pg-parent dept-tile--shrunk">
-              <p class="dept-tile__label">PG</p>
-            </div>
-            <div class="dept-tile dept-tile--child dept-tile--mtech" id="tileMTech" style="transition-delay:0.05s">
-              <p class="dept-tile__label">M.Tech</p>
-              <span class="dept-tile__sub">5 specialisations</span>
-            </div>
-            <a href="departments/mba.html" class="dept-tile dept-tile--child dept-tile--mba" style="transition-delay:0.10s; text-decoration:none; color:inherit;">
-              <p class="dept-tile__label">MBA</p>
-              <span class="dept-tile__sub">Business Administration</span>
-            </a>
-          </div>
-          <div class="dept-level" id="deptLevel2MT">
-            <div class="dept-tile dept-tile--back" data-back="l1pg">
-              <span class="dept-tile__arrow">&larr;</span>
-            </div>
-            <div class="dept-tile dept-tile--mtech dept-tile--shrunk">
-              <p class="dept-tile__label">M.Tech</p>
-            </div>
-            <div class="dept-tile dept-tile--child dept-tile--mt-1" style="transition-delay:0.05s">
-              <p class="dept-tile__label">M.Tech CSE</p>
-              <span class="dept-tile__sub">Computer Science</span>
-            </div>
-            <div class="dept-tile dept-tile--child dept-tile--mt-2" style="transition-delay:0.10s">
-              <p class="dept-tile__label">M.Tech ECE</p>
-              <span class="dept-tile__sub">Electronics</span>
-            </div>
-            <div class="dept-tile dept-tile--child dept-tile--mt-3" style="transition-delay:0.15s">
-              <p class="dept-tile__label">M.Tech EEE</p>
-              <span class="dept-tile__sub">Electrical</span>
-            </div>
-            <div class="dept-tile dept-tile--child dept-tile--mt-4" style="transition-delay:0.20s">
-              <p class="dept-tile__label">M.Tech Mechanical</p>
-              <span class="dept-tile__sub">Mechanical Engg.</span>
-            </div>
-            <div class="dept-tile dept-tile--child dept-tile--mt-5" style="transition-delay:0.25s">
-              <p class="dept-tile__label">M.Tech Aeronautical</p>
-              <span class="dept-tile__sub">Aeronautical Engg.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================
          5. ACHIEVEMENTS
          ===================== -->
     <section class="achievements" id="achievements">
@@ -1213,53 +1101,6 @@
   })();
   </script>
 
-  <!-- Departments tile navigation -->
-  <script>
-  (function () {
-    var section = document.getElementById('departments');
-    if (!section) return;
-    var arena = section.querySelector('.dept-arena');
-    var levels = {
-      l0:   document.getElementById('deptLevel0'),
-      l1ug: document.getElementById('deptLevel1UG'),
-      l1pg: document.getElementById('deptLevel1PG'),
-      l2mt: document.getElementById('deptLevel2MT')
-    };
-    var tileUG    = document.getElementById('tileUG');
-    var tilePG    = document.getElementById('tilePG');
-    var tileMTech = document.getElementById('tileMTech');
-    var currentLevel = 'l0';
-    var leaveTimer = null;
-    function showLevel(key) {
-      if (key === currentLevel) return;
-      Object.keys(levels).forEach(function (k) {
-        levels[k].classList.toggle('dept-level--active', k === key);
-      });
-      currentLevel = key;
-    }
-    arena.addEventListener('mouseover', function (e) {
-      clearTimeout(leaveTimer);
-      var tile = e.target.closest('.dept-tile');
-      if (!tile) return;
-      if (tile === tileUG)    { showLevel('l1ug'); return; }
-      if (tile === tilePG)    { showLevel('l1pg'); return; }
-      if (tile === tileMTech) { showLevel('l2mt'); return; }
-      var back = tile.getAttribute('data-back');
-      if (back) showLevel(back);
-    });
-    arena.addEventListener('mouseleave', function () {
-      leaveTimer = setTimeout(function () { showLevel('l0'); }, 450);
-    });
-    arena.addEventListener('mouseenter', function () { clearTimeout(leaveTimer); });
-    function updateWatermark() {
-      var rect = section.getBoundingClientRect();
-      section.classList.toggle('in-view', rect.top < window.innerHeight && rect.bottom > 0);
-    }
-    window.addEventListener('scroll', updateWatermark, { passive: true });
-    updateWatermark();
-  })();
-  </script>
-
   <!-- Placement stat counters + recruiter band -->
   <script>
   (function () {
@@ -1398,46 +1239,6 @@
       if (entries[0].isIntersecting) { cols.forEach(c => c.classList.add('is-visible')); io.disconnect(); }
     }, { threshold: 0.1 });
     io.observe(footer);
-  })();
-  </script>
-
-  <!-- Success stories carousel -->
-  <script>
-  (function () {
-    var carousel = document.getElementById('ssCarousel');
-    if (!carousel) return;
-    var cards    = carousel.querySelectorAll('.ss-card');
-    var prev     = document.getElementById('ssPrev');
-    var next     = document.getElementById('ssNext');
-    var dots     = document.querySelectorAll('.ss-dot');
-    var total    = cards.length;
-    var current  = 0;
-    var timer    = null;
-    var INTERVAL = 3000;
-    function goTo(idx) {
-      var next_idx = (idx + total) % total;
-      if (next_idx === current) return;
-      var leaving = cards[current];
-      leaving.classList.add('is-leaving');
-      leaving.classList.remove('is-active');
-      current = next_idx;
-      var entering = cards[current];
-      entering.classList.add('is-active');
-      entering.classList.remove('is-leaving');
-      var onEnd = function () { leaving.classList.remove('is-leaving'); leaving.removeEventListener('transitionend', onEnd); };
-      leaving.addEventListener('transitionend', onEnd);
-      dots.forEach(function (d, i) { d.classList.toggle('ss-dot--active', i === current); });
-    }
-    function startAuto() { timer = setInterval(function () { goTo(current + 1); }, INTERVAL); }
-    function stopAuto()  { clearInterval(timer); }
-    if (prev) prev.addEventListener('click', function () { stopAuto(); goTo(current - 1); startAuto(); });
-    if (next) next.addEventListener('click', function () { stopAuto(); goTo(current + 1); startAuto(); });
-    dots.forEach(function (d) {
-      d.addEventListener('click', function () { stopAuto(); goTo(parseInt(d.dataset.idx, 10)); startAuto(); });
-    });
-    carousel.addEventListener('mouseenter', stopAuto);
-    carousel.addEventListener('mouseleave', startAuto);
-    startAuto();
   })();
   </script>
 
