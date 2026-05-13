@@ -33,35 +33,67 @@ const mous = [
     domain: "Talend Data Integration and AWS — hands-on training with live industry projects through a dedicated on-campus Centre of Excellence.",
     package: "5.5 – 7 LPA",
     type: "Centre of Excellence",
-    logo: null
+    logo: null,
+    docs: [
+      { label: "MoU Agreement",       file: "mou assests/Virtusa_MOU_COE Partner_2025_Signed.pdf" },
+      { label: "AWS Track",           file: "mou assests/Virtusa Consulting Services - AWS.pdf" },
+      { label: "Dot Net Track",       file: "mou assests/Virtusa Consulting Services - Dot Net.pdf" },
+      { label: "Talend + Big Data",   file: "mou assests/Virtusa Consulting Services - Talend DI + Big Data.pdf" }
+    ]
   },
   {
     name: "EPAM Systems",
     domain: "Fullstack Development and Cloud Engineering — specialised curriculum delivered by EPAM practitioners at our on-campus CoE.",
     package: "8 – 12 LPA",
     type: "Centre of Excellence",
-    logo: null
+    logo: null,
+    docs: []
   },
   {
     name: "Boeing",
     domain: "Aerospace Design and Manufacturing — formal partnership enabling internships, research collaboration, and direct recruitment.",
     package: null,
     type: "MoU Partner",
-    logo: null
+    logo: null,
+    docs: []
   },
   {
     name: "Cyient",
     domain: "Engineering and Technology Services — strategic MoU covering campus recruitment, joint technical training, and faculty development.",
     package: null,
     type: "MoU Partner",
-    logo: null
+    logo: null,
+    docs: [
+      { label: "MoU Agreement", file: "mou assests/Cyient MLRIT MoU.pdf" }
+    ]
   },
   {
     name: "Tata Technologies",
     domain: "PLM and Engineering Design — dedicated Tata Technologies Centre of Excellence for advanced product lifecycle and manufacturing skills.",
     package: null,
     type: "Centre of Excellence",
-    logo: null
+    logo: null,
+    docs: []
+  },
+  {
+    name: "Infosys",
+    domain: "Campus Connect Programme — structured industry partnership providing students with Infosys-designed curriculum, certification pathways, and direct campus recruitment.",
+    package: null,
+    type: "MoU Partner",
+    logo: null,
+    docs: [
+      { label: "Campus Connect", file: "mou assests/Infosys Campus Connect.pdf" }
+    ]
+  },
+  {
+    name: "Revature",
+    domain: "Technology staffing and training partnership — placing graduates directly into software development roles at Fortune 500 clients through Revature's workforce development model.",
+    package: null,
+    type: "MoU Partner",
+    logo: null,
+    docs: [
+      { label: "MoU Agreement", file: "mou assests/Revature MoU.pdf" }
+    ]
   }
 ];
 
@@ -109,15 +141,12 @@ const recruiters = [
 ];
 
 const gallery = [
-  { src: "assets/images/overall-placements.jpg", alt: "MLRIT Placement Drive", featured: true  },
-  { src: "assets/images/drive-1.jpg",            alt: "Campus Placement Drive 2024"             },
-  { src: "assets/images/drive-2.jpg",            alt: "Pre-Placement Talk"                      },
-  { src: "assets/images/drive-3.jpg",            alt: "Placement Drive — Batch 2024"            },
-  { src: "assets/images/drive-4.jpg",            alt: "Interview Session"                       },
-  { src: "assets/images/drive-5.jpg",            alt: "Placement Ceremony"                      },
-  { src: "assets/images/placement-1.jpg",        alt: "Placement Activity"                      },
-  { src: "assets/images/placement-2.jpg",        alt: "Recruitment Drive"                       },
-  { src: "assets/images/placement-3.jpg",        alt: "Campus Recruitment"                      }
+  { src: "assets/images/overall-placements.jpg", alt: "MLRIT Placement Drive",     featured: true },
+  { src: "assets/images/drive-1.jpg",            alt: "Campus Placement Drive 2024"               },
+  { src: "assets/images/drive-2.jpg",            alt: "Pre-Placement Talk"                        },
+  { src: "assets/images/drive-3.jpg",            alt: "Placement Drive — Batch 2024"              },
+  { src: "assets/images/drive-4.jpg",            alt: "Interview Session"                         },
+  { src: "assets/images/drive-5.jpg",            alt: "Placement Ceremony"                        }
 ];
 
 const yearwiseStats = [
@@ -128,3 +157,66 @@ const yearwiseStats = [
   { year: "2022", offers: 1236, companies: 42, highest: 25   },
   { year: "2021", offers: 740,  companies: 49, highest: 18.1 }
 ];
+
+const yearwiseDetails = {
+  "2025": [
+    { company: "ServiceNow",   role: "Software Engineer",   salary: "33 LPA",  selects: 4   },
+    { company: "Virtusa",      role: "Data/AWS Engineer",   salary: "5.5 LPA", selects: 45  },
+    { company: "EPAM Systems", role: "Fullstack Developer", salary: "8 LPA",   selects: 38  },
+    { company: "TCS",          role: "Systems Engineer",    salary: "4.0 LPA", selects: 72  },
+    { company: "Capgemini",    role: "Assoc. Consultant",   salary: "4.5 LPA", selects: 58  },
+    { company: "Infosys",      role: "Systems Engineer",    salary: "4.0 LPA", selects: 65  },
+    { company: "Wipro",        role: "Project Engineer",    salary: "4.0 LPA", selects: 52  },
+    { company: "LTI Mindtree", role: "Software Engineer",   salary: "5.5 LPA", selects: 34  },
+    { company: "NTT Data",     role: "Associate Analyst",   salary: "4.5 LPA", selects: 28  },
+    { company: "Mphasis",      role: "Software Engineer",   salary: "4.0 LPA", selects: 22  }
+  ],
+  "2024": [
+    { company: "Boeing",             role: "Aerospace Engineer",  salary: "28.5 LPA", selects: 3  },
+    { company: "EPAM Systems",       role: "Fullstack Developer", salary: "8 LPA",    selects: 42 },
+    { company: "Amazon",             role: "SDE I",               salary: "12 LPA",   selects: 6  },
+    { company: "Virtusa",            role: "Data Engineer",       salary: "5.5 LPA",  selects: 48 },
+    { company: "TCS",                role: "Systems Engineer",    salary: "4.0 LPA",  selects: 88 },
+    { company: "Infosys",            role: "Systems Engineer",    salary: "4.0 LPA",  selects: 76 },
+    { company: "Capgemini",          role: "Assoc. Consultant",   salary: "4.5 LPA",  selects: 64 },
+    { company: "Tata Technologies",  role: "Design Engineer",     salary: "4.5 LPA",  selects: 52 },
+    { company: "Tech Mahindra",      role: "Software Engineer",   salary: "4.0 LPA",  selects: 46 },
+    { company: "Optum",              role: "Associate Developer", salary: "5.8 LPA",  selects: 38 }
+  ],
+  "2023": [
+    { company: "Amazon",       role: "SDE I",               salary: "58 LPA",  selects: 2   },
+    { company: "Virtusa",      role: "Data Engineer",       salary: "5.5 LPA", selects: 52  },
+    { company: "Boeing",       role: "Aerospace Engineer",  salary: "16 LPA",  selects: 4   },
+    { company: "LTI Mindtree", role: "Software Engineer",   salary: "5.5 LPA", selects: 44  },
+    { company: "TCS",          role: "Systems Engineer",    salary: "4.0 LPA", selects: 96  },
+    { company: "Capgemini",    role: "Assoc. Consultant",   salary: "4.5 LPA", selects: 72  },
+    { company: "Infosys",      role: "Systems Engineer",    salary: "4.0 LPA", selects: 84  },
+    { company: "Cyient",       role: "Engineering Analyst", salary: "4.5 LPA", selects: 38  },
+    { company: "NTT Data",     role: "Associate Analyst",   salary: "4.5 LPA", selects: 32  },
+    { company: "GlobalEdge",   role: "Software Engineer",   salary: "4.0 LPA", selects: 28  }
+  ],
+  "2022": [
+    { company: "Prolifics",          role: "Fullstack Developer", salary: "25 LPA",  selects: 3   },
+    { company: "Capgemini",          role: "Assoc. Consultant",   salary: "4.5 LPA", selects: 142 },
+    { company: "TCS",                role: "Systems Engineer",    salary: "4.0 LPA", selects: 188 },
+    { company: "Infosys",            role: "Systems Engineer",    salary: "3.8 LPA", selects: 156 },
+    { company: "Tata Technologies",  role: "Design Engineer",     salary: "4.5 LPA", selects: 62  },
+    { company: "Wipro",              role: "Project Engineer",    salary: "4.0 LPA", selects: 96  },
+    { company: "Cognizant",          role: "Programmer Analyst",  salary: "4.0 LPA", selects: 84  },
+    { company: "Tech Mahindra",      role: "Software Engineer",   salary: "3.8 LPA", selects: 74  },
+    { company: "Virtusa",            role: "Associate Engineer",  salary: "5.0 LPA", selects: 58  },
+    { company: "Sonata Software",    role: "Software Engineer",   salary: "4.0 LPA", selects: 44  }
+  ],
+  "2021": [
+    { company: "Mphasis",        role: "Senior Associate",    salary: "18.1 LPA", selects: 8   },
+    { company: "TCS",            role: "Systems Engineer",    salary: "3.5 LPA",  selects: 162 },
+    { company: "Infosys",        role: "Systems Engineer",    salary: "3.5 LPA",  selects: 118 },
+    { company: "Wipro",          role: "Project Engineer",    salary: "3.5 LPA",  selects: 96  },
+    { company: "Capgemini",      role: "Assoc. Consultant",   salary: "4.0 LPA",  selects: 88  },
+    { company: "DXC Technology", role: "Associate",           salary: "3.8 LPA",  selects: 64  },
+    { company: "Virtusa",        role: "Associate Engineer",  salary: "4.5 LPA",  selects: 44  },
+    { company: "Cyient",         role: "Engineering Analyst", salary: "4.0 LPA",  selects: 38  },
+    { company: "MEIL",           role: "Graduate Engineer",   salary: "3.5 LPA",  selects: 32  },
+    { company: "ValueLabs",      role: "Software Engineer",   salary: "3.8 LPA",  selects: 28  }
+  ]
+};

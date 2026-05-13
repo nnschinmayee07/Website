@@ -6,7 +6,7 @@
   <title>Placements — MLRIT</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&family=Raleway:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/main.css" />
   <link rel="stylesheet" href="placements.css" />
@@ -39,7 +39,7 @@
             <div class="dropdown">
               <div class="dropdown__col">
                 <h4>Institution</h4>
-                <a href="#">Vision and Mission</a>
+                <a href="#">Vision &amp; Mission</a>
                 <a href="#">Accreditations</a>
               </div>
             </div>
@@ -51,7 +51,7 @@
               <div class="dropdown__col">
                 <h4>Programmes</h4>
                 <a href="../departments/ug.html">Undergraduate (B.Tech)</a>
-                <a href="../departments/pg.html">Postgraduate (M.Tech and MBA)</a>
+                <a href="../departments/pg.html">Postgraduate (M.Tech &amp; MBA)</a>
               </div>
               <div class="dropdown__col">
                 <h4>Resources</h4>
@@ -81,8 +81,8 @@
             <div class="dropdown">
               <div class="dropdown__col">
                 <h4>Research Areas</h4>
-                <a href="#">AI and Machine Learning</a>
-                <a href="#">IoT and Embedded Systems</a>
+                <a href="#">AI &amp; Machine Learning</a>
+                <a href="#">IoT &amp; Embedded Systems</a>
                 <a href="#">Data Science</a>
               </div>
             </div>
@@ -126,48 +126,55 @@
     </nav>
   </header>
 
+  <div class="pl-page-content">
+
   <!-- =====================
        STATS WALL
        ===================== -->
   <section id="pl-wall" class="pl-wall">
+    <!-- Neural network canvas -->
+    <canvas class="pl-wall__canvas" id="plNetCanvas" aria-hidden="true"></canvas>
+    <!-- Background video (plays on scroll reveal) -->
+    <video class="pl-wall__video" id="plWallVideo" playsinline muted loop aria-hidden="true">
+      <source src="place vid.mp4" type="video/mp4" />
+    </video>
+    <!-- Gradient overlay — fades partially when video activates -->
+    <div class="pl-wall__overlay" aria-hidden="true"></div>
 
-    <!-- Ghost background numbers -->
-    <div class="pl-wall__bg" aria-hidden="true">
-      <span class="pl-wall__ghost pl-wall__ghost--1" data-parallax="0.08">8000+</span>
-      <span class="pl-wall__ghost pl-wall__ghost--2" data-parallax="0.05">621</span>
-      <span class="pl-wall__ghost pl-wall__ghost--3" data-parallax="0.12">37</span>
-    </div>
-
-    <!-- Foreground -->
+    <!-- Foreground text + chips -->
     <div class="pl-wall__inner">
+      <span class="pl-wall__eyebrow">Placements at MLRIT</span>
+      <h1 class="pl-wall__headline">Engineering careers<br>are built here.</h1>
+      <span class="pl-wall__headline-accent" aria-hidden="true"></span>
+      <p class="pl-wall__statement">80% and above placements every year — engineers from MLRIT land roles at the world's most respected organisations.</p>
 
-      <p class="pl-wall__statement">
-        MLR Institute of Technology has achieved
-        <span class="pl-wall__stmt-accent">80% and above</span>
-        placements every year — placing engineers in the world's leading
-        organisations and transforming students into professionals
-        industry cannot afford to overlook.
-      </p>
-
-      <div class="pl-wall__rule"></div>
-
-      <div class="pl-wall__secondary">
-        <div class="pl-wall__item">
-          <span class="pl-wall__item-num">621</span>
-          <span class="pl-wall__item-label">Offers · 2026</span>
+      <!-- Inline stat strip -->
+      <div class="pl-wall__statstrip">
+        <div class="pl-wall__stat">
+          <span class="pl-wall__stat-val">₹51 LPA</span>
+          <span class="pl-wall__stat-lbl">Highest Package</span>
         </div>
-        <div class="pl-wall__item-sep" aria-hidden="true"></div>
-        <div class="pl-wall__item">
-          <span class="pl-wall__item-num">37</span>
-          <span class="pl-wall__item-label">Companies · 2026</span>
+        <div class="pl-wall__stat-divider" aria-hidden="true"></div>
+        <div class="pl-wall__stat">
+          <span class="pl-wall__stat-val">621+</span>
+          <span class="pl-wall__stat-lbl">Offers · 2026</span>
         </div>
-        <div class="pl-wall__item-sep" aria-hidden="true"></div>
-        <div class="pl-wall__item">
-          <span class="pl-wall__item-num">8000+</span>
-          <span class="pl-wall__item-label">Students Placed</span>
+        <div class="pl-wall__stat-divider" aria-hidden="true"></div>
+        <div class="pl-wall__stat">
+          <span class="pl-wall__stat-val">37+</span>
+          <span class="pl-wall__stat-lbl">Companies</span>
+        </div>
+        <div class="pl-wall__stat-divider" aria-hidden="true"></div>
+        <div class="pl-wall__stat">
+          <span class="pl-wall__stat-val">8000+</span>
+          <span class="pl-wall__stat-lbl">Alumni Placed</span>
         </div>
       </div>
 
+      <div class="pl-wall__hover-hint" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <span>Hover to preview</span>
+      </div>
     </div>
   </section>
 
@@ -180,7 +187,7 @@
       <h2 class="pl-heading">Placement Performance</h2>
       <div class="pl-statgrid__grid">
         <div class="pl-statgrid__card pl-fade">
-          <span class="pl-statgrid__value">&#8377;51 LPA</span>
+          <span class="pl-statgrid__value">₹51 LPA</span>
           <span class="pl-statgrid__label">Highest Package</span>
           <span class="pl-statgrid__note">Microsoft · 2026</span>
         </div>
@@ -190,9 +197,9 @@
           <span class="pl-statgrid__note">Academic Year 2026</span>
         </div>
         <div class="pl-statgrid__card pl-fade">
-          <span class="pl-statgrid__value">37</span>
-          <span class="pl-statgrid__label">Companies</span>
-          <span class="pl-statgrid__note">2026 placement season</span>
+          <span class="pl-statgrid__value">37+</span>
+          <span class="pl-statgrid__label">Companies Visited</span>
+          <span class="pl-statgrid__note">MNCs and product firms</span>
         </div>
         <div class="pl-statgrid__card pl-fade">
           <span class="pl-statgrid__value">8000+</span>
@@ -201,7 +208,7 @@
         </div>
       </div>
       <div class="pl-perf-history">
-        <span class="pl-perf-history__label">Year on Year</span>
+        <span class="pl-perf-history__label">Track Record</span>
         <div id="pl-yearstats-content"></div>
       </div>
     </div>
@@ -210,111 +217,21 @@
   <!-- =====================
        TOP RECRUITERS
        ===================== -->
-  <section class="pl-recruiters">
+  <section class="pl-recruiters" id="pl-recruiters">
     <div class="pl-section-inner">
       <span class="pl-label">Our Recruiters</span>
       <h2 class="pl-heading">Top Hiring Partners</h2>
       <p class="pl-recruiters__sub">Leading organisations across IT, product, consulting, and core engineering sectors recruit regularly from MLRIT.</p>
-      <div class="pl-recruiters__grid" id="pl-recruiters-grid"></div>
-    </div>
-  </section>
-
-  <!-- =====================
-       TRAINING and DEVELOPMENT — Story Strips
-       ===================== -->
-  <section class="pl-training">
-    <div class="pl-section-inner pl-training__header">
-      <span class="pl-label">Preparation</span>
-      <h2 class="pl-heading">Training and Development</h2>
-    </div>
-
-    <div class="pl-train__strip">
-      <div class="pl-train__icon-panel pl-train__icon-panel--1" aria-hidden="true">
-        <div class="pl-train__avatar">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="32" cy="32" r="5.5" fill="currentColor"/>
-            <circle cx="32" cy="9"  r="3" fill="currentColor" opacity="0.5"/>
-            <circle cx="32" cy="55" r="3" fill="currentColor" opacity="0.5"/>
-            <circle cx="9"  cy="22" r="3" fill="currentColor" opacity="0.5"/>
-            <circle cx="55" cy="22" r="3" fill="currentColor" opacity="0.5"/>
-            <circle cx="9"  cy="42" r="3" fill="currentColor" opacity="0.5"/>
-            <circle cx="55" cy="42" r="3" fill="currentColor" opacity="0.5"/>
-            <line x1="32" y1="26.5" x2="32" y2="12"  stroke="currentColor" stroke-width="1.5" opacity="0.28"/>
-            <line x1="32" y1="37.5" x2="32" y2="52"  stroke="currentColor" stroke-width="1.5" opacity="0.28"/>
-            <line x1="27" y1="29"   x2="12" y2="22"  stroke="currentColor" stroke-width="1.5" opacity="0.28"/>
-            <line x1="37" y1="29"   x2="52" y2="22"  stroke="currentColor" stroke-width="1.5" opacity="0.28"/>
-            <line x1="27" y1="35"   x2="12" y2="42"  stroke="currentColor" stroke-width="1.5" opacity="0.28"/>
-            <line x1="37" y1="35"   x2="52" y2="42"  stroke="currentColor" stroke-width="1.5" opacity="0.28"/>
-          </svg>
-        </div>
-      </div>
-      <div class="pl-train__content">
-        <span class="pl-train__num">01</span>
-        <h3 class="pl-train__title">Aptitude and Reasoning</h3>
-        <p class="pl-train__desc">Structured training in quantitative aptitude, logical reasoning, and data interpretation — aligned to placement test patterns of top MNCs and product companies.</p>
+      <div class="pl-logo-band" id="pl-recruiters-grid">
+        <div class="pl-logo-track pl-logo-track--fwd" id="plLogoRow1"></div>
       </div>
     </div>
-
-    <div class="pl-train__strip pl-train__strip--flip">
-      <div class="pl-train__icon-panel pl-train__icon-panel--2" aria-hidden="true">
-        <div class="pl-train__avatar">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="24,18 10,32 24,46"/>
-            <polyline points="40,18 54,32 40,46"/>
-            <line x1="29" y1="26" x2="35" y2="38"/>
-          </svg>
-        </div>
-      </div>
-      <div class="pl-train__content">
-        <span class="pl-train__num">02</span>
-        <h3 class="pl-train__title">Technical Skills</h3>
-        <p class="pl-train__desc">Domain-specific programmes covering DSA, Java, C++, Web Programming, MySQL, and department-specific tools — preparing students for technical interview rounds.</p>
-      </div>
-    </div>
-
-    <div class="pl-train__strip">
-      <div class="pl-train__icon-panel pl-train__icon-panel--3" aria-hidden="true">
-        <div class="pl-train__avatar">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="18" r="7" stroke="currentColor" stroke-width="2"/>
-            <path d="M7,52 C7,40 12,35 20,35 C25,35 28,37 31,40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="44" cy="18" r="7" stroke="currentColor" stroke-width="2" opacity="0.5"/>
-            <path d="M57,52 C57,40 52,35 44,35 C39,35 36,37 33,40" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-            <circle cx="32" cy="41" r="2.5" fill="currentColor" opacity="0.35"/>
-          </svg>
-        </div>
-      </div>
-      <div class="pl-train__content">
-        <span class="pl-train__num">03</span>
-        <h3 class="pl-train__title">Soft Skills</h3>
-        <p class="pl-train__desc">Interview readiness, group discussion techniques, professional etiquette, and workplace communication — building confidence for every stage of the recruitment process.</p>
-      </div>
-    </div>
-
-    <div class="pl-train__strip pl-train__strip--flip">
-      <div class="pl-train__icon-panel pl-train__icon-panel--4" aria-hidden="true">
-        <div class="pl-train__avatar">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg">
-            <rect x="24" y="10" width="16" height="22" rx="8"/>
-            <path d="M16,34 C16,44 24,50 32,50 C40,50 48,44 48,34"/>
-            <line x1="32" y1="50" x2="32" y2="58"/>
-            <line x1="22" y1="58" x2="42" y2="58"/>
-          </svg>
-        </div>
-      </div>
-      <div class="pl-train__content">
-        <span class="pl-train__num">04</span>
-        <h3 class="pl-train__title">Verbal Communication</h3>
-        <p class="pl-train__desc">Verbal ability, business writing, and English proficiency training to help students meet the communication standards expected by leading global employers.</p>
-      </div>
-    </div>
-
   </section>
 
   <!-- =====================
        INFRASTRUCTURE
        ===================== -->
-  <section class="pl-infra">
+  <section class="pl-infra" id="pl-infra">
     <div class="pl-section-inner pl-infra__inner">
       <div class="pl-infra__text">
         <span class="pl-label pl-label--light">Facilities</span>
@@ -346,9 +263,9 @@
   </section>
 
   <!-- =====================
-       MoUs and COLLABORATIONS
+       MoUs & COLLABORATIONS
        ===================== -->
-  <section class="pl-mou">
+  <section class="pl-mou" id="pl-mou">
     <div class="pl-section-inner">
       <span class="pl-label">Industry Partnerships</span>
       <h2 class="pl-heading">MoUs and Centres of Excellence</h2>
@@ -360,7 +277,7 @@
   <!-- =====================
        GALLERY
        ===================== -->
-  <section class="pl-gallery">
+  <section class="pl-gallery" id="pl-gallery">
     <div class="pl-section-inner">
       <span class="pl-label">On Campus</span>
       <h2 class="pl-heading">Placement Drives</h2>
@@ -372,7 +289,7 @@
   <!-- =====================
        CONTACT
        ===================== -->
-  <section class="pl-contact">
+  <section class="pl-contact" id="pl-contact">
     <div class="pl-section-inner pl-contact__inner">
       <div>
         <span class="pl-label">Get in Touch</span>
@@ -405,8 +322,163 @@
     </div>
   </section>
 
+  </div><!-- /.pl-page-content -->
+
+  <!-- =====================
+       SIDEBAR QUICK NAV
+       ===================== -->
+  <aside class="pl-sidebar" id="plSidebar" aria-label="Page sections">
+    <div class="pl-sidebar__title">Quick Nav</div>
+    <a href="#pl-wall"        class="pl-sidebar__item is-active" data-section="pl-wall">
+      <span class="pl-sidebar__dot"></span>
+      <span class="pl-sidebar__label">Overview</span>
+    </a>
+    <a href="#pl-performance" class="pl-sidebar__item" data-section="pl-performance">
+      <span class="pl-sidebar__dot"></span>
+      <span class="pl-sidebar__label">Year Stats</span>
+    </a>
+    <a href="#pl-recruiters"  class="pl-sidebar__item" data-section="pl-recruiters">
+      <span class="pl-sidebar__dot"></span>
+      <span class="pl-sidebar__label">Recruiters</span>
+    </a>
+    <a href="#pl-infra"       class="pl-sidebar__item" data-section="pl-infra">
+      <span class="pl-sidebar__dot"></span>
+      <span class="pl-sidebar__label">Infrastructure</span>
+    </a>
+    <a href="#pl-mou"         class="pl-sidebar__item" data-section="pl-mou">
+      <span class="pl-sidebar__dot"></span>
+      <span class="pl-sidebar__label">MOU</span>
+    </a>
+    <a href="#pl-gallery"     class="pl-sidebar__item" data-section="pl-gallery">
+      <span class="pl-sidebar__dot"></span>
+      <span class="pl-sidebar__label">Placement Drives</span>
+    </a>
+    <a href="#pl-contact"     class="pl-sidebar__item" data-section="pl-contact">
+      <span class="pl-sidebar__dot"></span>
+      <span class="pl-sidebar__label">Contact</span>
+    </a>
+  </aside>
+
   <script src="../js/navbar.js" defer></script>
-  <script src="pl-globe.js" defer></script>
   <script src="placements.js" defer></script>
+  <script>
+  /* ── Neural Network Canvas — pl-wall background ── */
+  (function () {
+    const canvas = document.getElementById('plNetCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    const NODE_COUNT   = 62;
+    const MAX_DIST     = 180;
+    const NODE_RADIUS  = 2.2;
+    const SPEED        = 0.38;
+    const LINE_COLOR   = 'rgba(255,255,255,';
+    const NODE_COLOR   = 'rgba(255,255,255,';
+    const ACCENT_COLOR = 'rgba(255,140,30,';
+
+    let W, H, nodes = [], raf;
+
+    function resize() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      W = canvas.width  = rect.width;
+      H = canvas.height = rect.height;
+    }
+
+    function makeNode() {
+      return {
+        x:  Math.random() * W,
+        y:  Math.random() * H,
+        vx: (Math.random() - 0.5) * SPEED,
+        vy: (Math.random() - 0.5) * SPEED,
+        r:  NODE_RADIUS + Math.random() * 1.2,
+        accent: Math.random() < 0.12   /* ~12% nodes are orange accent */
+      };
+    }
+
+    function init() {
+      resize();
+      nodes = Array.from({ length: NODE_COUNT }, makeNode);
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+
+      /* Draw connections */
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i], b = nodes[j];
+          const dx = a.x - b.x, dy = a.y - b.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist > MAX_DIST) continue;
+
+          const alpha = (1 - dist / MAX_DIST) * 0.18;
+          const isAccent = a.accent || b.accent;
+
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = isAccent
+            ? ACCENT_COLOR + (alpha * 1.8) + ')'
+            : LINE_COLOR   + alpha + ')';
+          ctx.lineWidth = isAccent ? 0.8 : 0.5;
+          ctx.stroke();
+        }
+      }
+
+      /* Draw nodes */
+      nodes.forEach(n => {
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = n.accent
+          ? ACCENT_COLOR + '0.75)'
+          : NODE_COLOR   + '0.35)';
+        ctx.fill();
+
+        /* Glow ring on accent nodes */
+        if (n.accent) {
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.r + 3, 0, Math.PI * 2);
+          ctx.strokeStyle = ACCENT_COLOR + '0.18)';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      });
+    }
+
+    function update() {
+      nodes.forEach(n => {
+        n.x += n.vx;
+        n.y += n.vy;
+        if (n.x < 0 || n.x > W) n.vx *= -1;
+        if (n.y < 0 || n.y > H) n.vy *= -1;
+      });
+    }
+
+    function loop() {
+      update();
+      draw();
+      raf = requestAnimationFrame(loop);
+    }
+
+    /* Pause when video plays */
+    const wall = document.getElementById('pl-wall');
+    if (wall) {
+      const obs = new MutationObserver(() => {
+        if (wall.classList.contains('video-active')) {
+          cancelAnimationFrame(raf);
+          canvas.style.opacity = '0';
+        } else {
+          canvas.style.opacity = '1';
+          loop();
+        }
+      });
+      obs.observe(wall, { attributes: true, attributeFilter: ['class'] });
+    }
+
+    window.addEventListener('resize', () => { resize(); });
+    init();
+    loop();
+  })();
+  </script>
 </body>
 </html>
