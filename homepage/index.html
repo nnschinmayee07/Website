@@ -236,45 +236,45 @@
 
               <!-- ③ CENTER-RIGHT: EVENTS + NOTICES -->
               <div class="chron-mid">
-                <div class="chron-events">
+                <div class="chron-events-tile">
                   <h4 class="chron-section-label">Events and Culture</h4>
                   <ul class="chron-events-list">
                     <li>
                       <span class="chron-event-dot"></span>
-                      <div><a href="https://www.mlrit.ac.in/events" target="_blank">Workshop Carnival 2026</a><span class="chron-event-when">10–11 Apr 2026</span></div>
+                      <div><a href="chronicles/">Workshop Carnival 2026</a><span class="chron-event-when">10–11 Apr 2026</span></div>
                     </li>
                     <li>
                       <span class="chron-event-dot"></span>
-                      <div><a href="https://www.mlrit.ac.in/events" target="_blank">Zenith — Annual Tech Fest</a><span class="chron-event-when">Dec 18–20, 2025</span></div>
+                      <div><a href="chronicles/">Zenith — Annual Tech Fest</a><span class="chron-event-when">Dec 18–20, 2025</span></div>
                     </li>
                     <li>
                       <span class="chron-event-dot"></span>
-                      <div><a href="https://www.mlrit.ac.in/events" target="_blank">TedX MLRIT</a><span class="chron-event-when">25 Apr 2025</span></div>
+                      <div><a href="chronicles/">TedX MLRIT</a><span class="chron-event-when">25 Apr 2025</span></div>
                     </li>
                     <li>
                       <span class="chron-event-dot"></span>
-                      <div><a href="https://www.mlrit.ac.in/events" target="_blank">SIH Internal Hackathon</a><span class="chron-event-when">18 Sep 2025</span></div>
+                      <div><a href="chronicles/">SIH Internal Hackathon</a><span class="chron-event-when">18 Sep 2025</span></div>
                     </li>
                   </ul>
                 </div>
-                <div class="chron-notices">
+                <div class="chron-notices-tile">
                   <h4 class="chron-section-label">Notices and Circulars</h4>
                   <ul class="chron-notices-list">
                     <li>
                       <span class="chron-notice-tag chron-notice-tag--exam">MARKS</span>
-                      <a href="https://www.mlrit.ac.in/circulars" target="_blank">II B.Tech II Sem CIE-II Internal Marks — check portal</a>
+                      <a href="chronicles/">II B.Tech II Sem CIE-II Internal Marks — check portal</a>
                     </li>
                     <li>
                       <span class="chron-notice-tag chron-notice-tag--exam">EXAM</span>
-                      <a href="https://www.mlrit.ac.in/circulars" target="_blank">I B.Tech II Sem R25 MID-2 Timetable — June 2026</a>
+                      <a href="chronicles/">I B.Tech II Sem R25 MID-2 Timetable — June 2026</a>
                     </li>
                     <li>
                       <span class="chron-notice-tag chron-notice-tag--result">SUPP</span>
-                      <a href="https://www.mlrit.ac.in/circulars" target="_blank">II B.Tech Supplementary Exams — June 2026 Timetable</a>
+                      <a href="chronicles/">II B.Tech Supplementary Exams — June 2026 Timetable</a>
                     </li>
                     <li>
                       <span class="chron-notice-tag chron-notice-tag--scholarship">VIKSIT</span>
-                      <a href="https://www.mlrit.ac.in/news" target="_blank">Koduri Viplav selected for Viksit Bharat Young Leaders 2026</a>
+                      <a href="chronicles/">Koduri Viplav selected for Viksit Bharat Young Leaders 2026</a>
                     </li>
                   </ul>
                   <div class="chron-notices-footer">
@@ -1341,6 +1341,51 @@
     }
     hamburger.addEventListener('click', function () { if (isOpen) closeDrawer(); else openDrawer(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && isOpen) closeDrawer(); });
+  })();
+  </script>
+
+  <script>
+  (function () {
+    'use strict';
+    var TILT = 8;
+    var IN   = 'transform 0.12s ease-out, box-shadow 0.15s ease';
+    var OUT  = 'transform 0.5s cubic-bezier(0.23,1,0.32,1), box-shadow 0.15s ease';
+
+    function makeTile(el) {
+      var shine = document.createElement('div');
+      shine.className = 'tile__shine';
+      el.appendChild(shine);
+      var raf = null, live = false;
+      el.addEventListener('mouseenter', function () {
+        live = true; el.style.transition = IN;
+      });
+      el.addEventListener('mousemove', function (e) {
+        if (!live) return;
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(function () {
+          var r  = el.getBoundingClientRect();
+          var x  = e.clientX - r.left;
+          var y  = e.clientY - r.top;
+          var rx = ((y - r.height / 2) / (r.height / 2)) * -TILT;
+          var ry = ((x - r.width  / 2) / (r.width  / 2)) *  TILT;
+          el.style.transform = 'perspective(700px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg) scale3d(1.03,1.03,1.03) translateZ(14px)';
+          shine.style.setProperty('--mx', ((x / r.width)  * 100).toFixed(1) + '%');
+          shine.style.setProperty('--my', ((y / r.height) * 100).toFixed(1) + '%');
+        });
+      });
+      el.addEventListener('mouseleave', function () {
+        live = false; cancelAnimationFrame(raf);
+        el.style.transition = OUT; el.style.transform = '';
+      });
+    }
+
+    function init() {
+      document.querySelectorAll('.chron-events-tile, .chron-notices-tile').forEach(makeTile);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else { init(); }
   })();
   </script>
 
