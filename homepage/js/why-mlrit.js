@@ -1,19 +1,14 @@
-// ═══════════════════════════════════════════════════════════════
-// WHY MLRIT — Scroll-based video autoplay + fade-in
-// ═══════════════════════════════════════════════════════════════
-
+// ── Why MLRIT: slide-in video on scroll ───────────────────────────────
 (function () {
-  'use strict';
+  var el = document.querySelector('.why-section__right');
+  if (!el) return;
 
-  const section = document.getElementById('why-mlrit');
-  const video = document.getElementById('whyVideo');
+  var obs = new IntersectionObserver(function (entries) {
+    if (entries[0].isIntersecting) {
+      el.classList.add('is-visible');
+      obs.disconnect();
+    }
+  }, { threshold: 0.15 });
 
-  if (!section || !video) return;
-
-  // Dynamic "Years of Excellence" stat
-  var yearsEl = document.getElementById('mlritYears');
-  if (yearsEl) {
-    var years = new Date().getFullYear() - 2005;
-    yearsEl.innerHTML = years + '<span class="why-stat__unit">+</span>';
-  }
+  obs.observe(el);
 })();

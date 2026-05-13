@@ -17,8 +17,8 @@
   // ── Event data ──
   var events = [
     {
-      video: 'https://res.cloudinary.com/dhqhhtvym/video/upload/v1777366731/equinox.mp4',
-      logo:  'assets/logo.svg',
+      video: '/equinox.mp4',
+      logo:  '/assets/logo.svg',
       tag:   'Entrepreneurship Summit \u00b7 2024',
       title: 'The Equinox<br>E-Summit 2K24',
       desc:  "MLRIT\u2019s flagship annual summit bringing together entrepreneurs, investors, and innovators to inspire the next generation of leaders."
@@ -26,7 +26,7 @@
     {
       type:  'embed',
       embed: 'https://www.instagram.com/reel/DRrMiTKjP8w/embed/',
-      logo:  'assets/main-logo.svg',
+      logo:  '/assets/main-logo.svg',
       tag:   'Technical & Cultural Fest \u00b7 2025',
       title: 'Zignasa<br>2025',
       desc:  "MLRIT\u2019s grand annual extravaganza featuring technical competitions, hackathons, cultural performances, and celebrity nights."
