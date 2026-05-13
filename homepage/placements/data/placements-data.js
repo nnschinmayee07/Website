@@ -121,7 +121,7 @@ const gallery = [
 ];
 
 const yearwiseStats = [
-  { year: "2026", offers: 621,  companies: 37, highest: 51   },
+  { year: "2026", offers: 544,  companies: 36, highest: 51   },
   { year: "2025", offers: 536,  companies: 62, highest: 33   },
   { year: "2024", offers: 674,  companies: 55, highest: 28.5 },
   { year: "2023", offers: 734,  companies: 32, highest: 58   },
