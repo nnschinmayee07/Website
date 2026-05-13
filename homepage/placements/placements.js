@@ -3,27 +3,70 @@
    Premium interactions · v4.0
    ============================================================ */
 
-/* ── 1. Stats Wall: entry animation + hover video ── */
+/* ── 1. Stats Wall: entry animation + mouse/scroll parallax ── */
 (function () {
   const wall = document.getElementById('pl-wall');
-  const vid  = document.getElementById('plWallVideo');
   if (!wall) return;
+
+  const ghosts = Array.from(wall.querySelectorAll('.pl-wall__ghost[data-parallax]'));
+  const state  = ghosts.map(() => ({ mx: 0, my: 0, sy: 0, bright: 1.0 }));
+  let raf = false;
+
+  function flush() {
+    ghosts.forEach((g, i) => {
+      const s = state[i];
+      g.style.translate = `${s.mx.toFixed(1)}px ${(s.my + s.sy).toFixed(1)}px`;
+      g.style.filter = s.bright > 1.02 ? `brightness(${s.bright.toFixed(2)})` : '';
+    });
+    raf = false;
+  }
+  function queue() { if (!raf) { requestAnimationFrame(flush); raf = true; } }
 
   new IntersectionObserver(([e]) => {
     if (e.isIntersecting) wall.classList.add('is-visible');
   }, { threshold: 0.18 }).observe(wall);
 
-  if (vid) {
-    wall.addEventListener('mouseenter', () => {
-      vid.play().catch(() => {});
-      wall.classList.add('video-active');
+  wall.addEventListener('mousemove', (e) => {
+    const r  = wall.getBoundingClientRect();
+    const cx = e.clientX - r.left;
+    const cy = e.clientY - r.top;
+    const nx = (cx - r.width  * 0.5) / (r.width  * 0.5);
+    const ny = (cy - r.height * 0.5) / (r.height * 0.5);
+
+    ghosts.forEach((g, i) => {
+      const sp = parseFloat(g.dataset.parallax) || 0.06;
+      state[i].mx = nx * sp * 280;
+      state[i].my = ny * sp * 180;
+
+      /* Proximity brightness — ghost glows as cursor approaches its center */
+      const gr   = g.getBoundingClientRect();
+      const gCx  = gr.left + gr.width  / 2 - r.left;
+      const gCy  = gr.top  + gr.height / 2 - r.top;
+      const dist = Math.hypot(cx - gCx, cy - gCy);
+      const prox = Math.max(0, 1 - dist / (Math.hypot(r.width, r.height) * 0.55));
+      state[i].bright = 1 + prox * 7;
     });
-    wall.addEventListener('mouseleave', () => {
-      vid.pause();
-      vid.currentTime = 0;
-      wall.classList.remove('video-active');
+    queue();
+  }, { passive: true });
+
+  wall.addEventListener('mouseleave', () => {
+    state.forEach(s => { s.mx = 0; s.my = 0; s.bright = 1.0; });
+    queue();
+  });
+
+  window.addEventListener('scroll', () => {
+    const rect  = wall.getBoundingClientRect();
+    const wallH = wall.offsetHeight;
+    const depth = 1 - rect.bottom / (wallH + window.innerHeight);
+    ghosts.forEach((g, i) => {
+      const sp     = parseFloat(g.dataset.parallax) || 0.06;
+      state[i].sy  = depth * sp * wallH * 0.5;
     });
-  }
+    wall.style.opacity = rect.top < 0
+      ? (1 - Math.max(0, Math.min(1, -rect.top / wallH)) * 0.15).toFixed(3)
+      : '1';
+    queue();
+  }, { passive: true });
 })();
 
 
@@ -108,89 +151,60 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <div class="pl-year-list" id="pl-year-history-rows">
-        ${older.map(y => {
-          const details = (typeof yearwiseDetails !== 'undefined' && yearwiseDetails[y.year]) || [];
-          return `<div class="pl-year-wrap">
-            <div class="pl-year-row">
-              <span class="pl-year-row__year">${y.year}</span>
-              <div class="pl-year-row__val">${y.offers}<span class="pl-year-row__lbl">Offers</span></div>
-              <div class="pl-year-row__val">${y.companies}<span class="pl-year-row__lbl">Companies</span></div>
-              <div class="pl-year-row__val">₹${y.highest} LPA<span class="pl-year-row__lbl">Highest</span></div>
-            </div>
-            ${details.length ? `<div class="pl-year-detail">
-              <div class="pl-year-detail__inner">
-              <table class="pl-year-detail__table">
-                <thead><tr><th>S.No</th><th>Company</th><th>Role</th><th>Salary</th><th>Selects</th></tr></thead>
-                <tbody>${details.map((d, j) => `<tr><td>${j + 1}</td><td>${d.company}</td><td>${d.role}</td><td>${d.salary}</td><td>${d.selects}</td></tr>`).join('')}</tbody>
-              </table>
-              </div>
-            </div>` : ''}
-          </div>`;
-        }).join('')}
+        ${older.map(y => `
+          <div class="pl-year-row">
+            <span class="pl-year-row__year">${y.year}</span>
+            <div class="pl-year-row__val">${y.offers}<span class="pl-year-row__lbl">Offers</span></div>
+            <div class="pl-year-row__val">${y.companies}<span class="pl-year-row__lbl">Companies</span></div>
+            <div class="pl-year-row__val">₹${y.highest} LPA<span class="pl-year-row__lbl">Highest</span></div>
+          </div>`).join('')}
       </div>`;
 
     observeFade(yearContainer.querySelector('.pl-fade'));
 
     const rowsEl = document.getElementById('pl-year-history-rows');
     if (rowsEl) {
-      const rows = Array.from(rowsEl.querySelectorAll('.pl-year-row'));
-
+      const rows = rowsEl.querySelectorAll('.pl-year-row');
       new IntersectionObserver(([entry]) => {
         if (!entry.isIntersecting) return;
         rows.forEach((row, i) => {
           setTimeout(() => row.classList.add('is-visible'), i * 80);
         });
       }, { threshold: 0.1 }).observe(rowsEl);
-
-      /* Hover: show this year's detail, hide all others */
-      const wraps = Array.from(rowsEl.querySelectorAll('.pl-year-wrap'));
-      wraps.forEach(wrap => {
-        const detail = wrap.querySelector('.pl-year-detail');
-        if (!detail) return;
-        wrap.addEventListener('mouseenter', () => {
-          wraps.forEach(w => {
-            const d = w.querySelector('.pl-year-detail');
-            if (d) d.classList.remove('is-active');
-            w.classList.remove('is-hovered');
-          });
-          detail.classList.add('is-active');
-          wrap.classList.add('is-hovered');
-        });
-        wrap.addEventListener('mouseleave', () => {
-          detail.classList.remove('is-active');
-          wrap.classList.remove('is-hovered');
-        });
-      });
     }
   }
 
-  /* 4c. Recruiters — single infinite-scroll logo band with 4-side tilt */
-  const row1 = document.getElementById('plLogoRow1');
-  if (row1 && typeof recruiters !== 'undefined') {
-    const makeItem = r => `<div class="pl-logo-item" title="${r.name}">
-      <img src="${r.logo}" alt="${r.name}" loading="lazy" />
-    </div>`;
+  /* 4c. Recruiters — handled by pl-globe.js (globe replaces entire section inner).
+          Flat grid renders only if globe script did not run. */
+  const grid = document.getElementById('pl-recruiters-grid');
+  if (grid && typeof recruiters !== 'undefined') {
+    const visible = recruiters.slice(0, 8);
+    const hidden  = recruiters.slice(8);
 
-    /* Duplicate for seamless loop */
-    row1.innerHTML = [...recruiters, ...recruiters].map(makeItem).join('');
+    grid.innerHTML = visible.map(r => `
+      <div class="pl-recruiter-card">
+        <img src="${r.logo}" alt="${r.name}" loading="lazy" title="${r.name}" />
+      </div>`).join('');
 
-    /* 4-side tilt effect on each card */
-    row1.querySelectorAll('.pl-logo-item').forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const r = card.getBoundingClientRect();
-        const x = (e.clientX - r.left - r.width  / 2) / (r.width  / 2);
-        const y = (e.clientY - r.top  - r.height / 2) / (r.height / 2);
-        card.style.transition = 'transform 0.08s ease, border-color 0.3s, background 0.3s, box-shadow 0.3s';
-        card.style.transform  = `perspective(500px) rotateX(${-y * 12}deg) rotateY(${x * 12}deg) scale(1.06)`;
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transition = 'transform 0.45s ease, border-color 0.3s, background 0.3s, box-shadow 0.3s';
-        card.style.transform  = '';
-      });
-    });
+    if (hidden.length) {
+      const extra = document.createElement('div');
+      extra.className = 'pl-extra-content';
+      extra.innerHTML = `
+        <div class="pl-recruiters__grid-inner">
+          ${hidden.map(r => `
+            <div class="pl-recruiter-card stagger-in">
+              <img src="${r.logo}" alt="${r.name}" loading="lazy" title="${r.name}" />
+            </div>`).join('')}
+        </div>`;
+
+      const btn = makeExpandBtn(`View All ${recruiters.length} Recruiters`, 'Show Less');
+      grid.parentElement.appendChild(extra);
+      grid.parentElement.appendChild(btn);
+      bindExpand(extra, btn);
+    }
   }
 
-  /* 4d. MoUs — Narrative timeline blocks with optional document links */
+  /* 4d. MoUs — Narrative timeline blocks (all shown, no expand) */
   const mouGrid = document.getElementById('pl-mou-grid');
   if (mouGrid && typeof mous !== 'undefined') {
     mouGrid.className = 'pl-mou__narrative';
@@ -204,28 +218,57 @@ document.addEventListener('DOMContentLoaded', function () {
           <h3 class="pl-mou__company">${m.name}</h3>
         </div>
         <p class="pl-mou__desc">${m.domain.replace(/&amp;/g, 'and')}</p>
-        ${m.docs && m.docs.length ? `<div class="pl-mou__docs">${m.docs.map(d =>
-          `<a href="${d.file}" class="pl-mou__doc-link" target="_blank" rel="noopener">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            ${d.label}</a>`).join('')}</div>` : ''}
       </div>`).join('');
 
     mouGrid.querySelectorAll('.pl-fade').forEach(observeFade);
   }
 
-  /* 4f. Gallery — uniform grid */
+  /* 4f. Gallery — Narrative story strips (blur→sharpen reveal) */
   const galleryGrid = document.getElementById('pl-gallery-grid');
   if (galleryGrid && typeof gallery !== 'undefined') {
-    galleryGrid.innerHTML = gallery.map((img, i) => `
-      <div class="pl-drive-card pl-fade">
-        <div class="pl-drive-card__img">
-          <img src="${img.src}" alt="${img.alt}" loading="${i === 0 ? 'eager' : 'lazy'}" />
-          <div class="pl-drive-card__overlay">
-            <span class="pl-drive-card__tag">On Campus</span>
-            <span class="pl-drive-card__title">${img.alt}</span>
-          </div>
-        </div>
-      </div>`).join('');
+    let html = '';
+    let pairFlip = false;
+
+    for (let i = 0; i < gallery.length; ) {
+      const img = gallery[i];
+
+      if (i === 0) {
+        html += `
+          <div class="pl-gs pl-gs--hero">
+            <div class="pl-gs__img">
+              <img src="${img.src}" alt="${img.alt}" loading="eager" />
+              <figcaption class="pl-gs__cap">
+                <span class="pl-gs__cap-tag">MLRIT · Campus</span>
+                <span class="pl-gs__cap-title">${img.alt}</span>
+              </figcaption>
+            </div>
+          </div>`;
+        i++;
+      } else {
+        const next = gallery[i + 1];
+        html += `
+          <div class="pl-gs pl-gs--pair${pairFlip ? ' pl-gs--flip' : ''}">
+            <div class="pl-gs__img pl-gs__img--dom">
+              <img src="${img.src}" alt="${img.alt}" loading="lazy" />
+              <figcaption class="pl-gs__cap">
+                <span class="pl-gs__cap-tag">On Campus</span>
+                <span class="pl-gs__cap-title">${img.alt}</span>
+              </figcaption>
+            </div>
+            ${next ? `<div class="pl-gs__img pl-gs__img--sup">
+              <img src="${next.src}" alt="${next.alt}" loading="lazy" />
+              <figcaption class="pl-gs__cap">
+                <span class="pl-gs__cap-tag">On Campus</span>
+                <span class="pl-gs__cap-title">${next.alt}</span>
+              </figcaption>
+            </div>` : ''}
+          </div>`;
+        pairFlip = !pairFlip;
+        i += next ? 2 : 1;
+      }
+    }
+
+    galleryGrid.innerHTML = html;
 
     const gsIO = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -235,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }, { threshold: 0.1 });
 
-    galleryGrid.querySelectorAll('.pl-drive-card').forEach(c => gsIO.observe(c));
+    galleryGrid.querySelectorAll('.pl-gs').forEach(s => gsIO.observe(s));
   }
 
   /* ── Scroll-reveal: wire all .pl-fade in static HTML ── */
@@ -258,48 +301,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { threshold: 0.08 }).observe(sec);
   });
 
-  /* ── Sidebar visibility: appear only after hero leaves viewport ── */
+  /* ── Story strips: directional reveal ── */
   (function () {
-    const sidebar = document.getElementById('plSidebar');
-    const hero    = document.getElementById('pl-wall');
-    if (!sidebar || !hero) return;
-    new IntersectionObserver(([entry]) => {
-      sidebar.classList.toggle('is-visible', !entry.isIntersecting);
-    }, { threshold: 0 }).observe(hero);
-  })();
-
-  /* ── Sidebar: click → smooth scroll + active tracking on scroll ── */
-  (function () {
-    const items = Array.from(document.querySelectorAll('.pl-sidebar__item[data-section]'));
-    if (!items.length) return;
-
-    const sections = items.map(a => document.getElementById(a.dataset.section)).filter(Boolean);
-
-    function setActive(id) {
-      items.forEach(a => a.classList.toggle('is-active', a.dataset.section === id));
-    }
-
-    /* Smooth scroll on click */
-    items.forEach(a => {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.getElementById(a.dataset.section);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          setActive(a.dataset.section);
+    const stripIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          stripIO.unobserve(entry.target);
         }
       });
-    });
+    }, { threshold: 0.18 });
 
-    /* Scroll-spy — highlights whichever section occupies the upper half of viewport */
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) setActive(entry.target.id);
-      });
-    }, { threshold: 0, rootMargin: '-20% 0px -55% 0px' });
-
-    sections.forEach(s => io.observe(s));
+    document.querySelectorAll('.pl-train__strip').forEach(strip => stripIO.observe(strip));
   })();
+
+  /* Recruiter interactions handled by pl-globe.js */
 
   /* ── Counter: all numbers count up when scrolled into view ── */
   (function () {
@@ -343,7 +359,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { threshold: 0.5 });
 
     document.querySelectorAll(
-      '.pl-statgrid__value, ' +
+      '.pl-wall__item-num, .pl-statgrid__value, ' +
       '.pl-year-featured__val, .pl-year-row__val, ' +
       '.pl-infra__stat-num'
     ).forEach(el => counterIO.observe(el));

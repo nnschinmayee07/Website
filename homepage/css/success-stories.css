@@ -4,7 +4,7 @@
 
 .ss-section {
   background: #FBF5E6;
-  padding: 48px 0 56px;
+  padding: 80px 0 96px;
 }
 
 .ss-container {
@@ -15,11 +15,7 @@
 
 /* ── Header ── */
 .ss-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 32px;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .ss-eyebrow {
@@ -29,17 +25,17 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #8A6218;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 .ss-heading {
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
   font-weight: 700;
   color: #0B0F1A;
   line-height: 1.0;
   letter-spacing: -0.02em;
-  margin: 0;
+  margin: 0 0 12px;
 }
 
 .ss-heading em {
@@ -48,25 +44,11 @@
 }
 
 .ss-desc {
-  font-size: 0.88rem;
+  font-size: 0.93rem;
   color: rgba(11,15,26,0.5);
-  line-height: 1.65;
+  line-height: 1.7;
   margin: 0;
-  max-width: 280px;
-  flex-shrink: 0;
-  text-align: right;
-}
-
-@media (max-width: 600px) {
-  .ss-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .ss-desc {
-    text-align: left;
-    max-width: 100%;
-  }
+  max-width: 400px;
 }
 
 /* ── Carousel wrapper ── */
@@ -74,8 +56,8 @@
   position: relative;
   border-radius: 14px;
   overflow: hidden;
-  border: 2px solid rgba(200,150,12,0.35);
-  box-shadow: 0 4px 32px rgba(200,150,12,0.1);
+  border: 2px solid rgba(224,123,57,0.35);
+  box-shadow: 0 4px 32px rgba(224,123,57,0.1);
 }
 
 /* ── Track ── */
@@ -114,12 +96,18 @@
   z-index: 1;
 }
 
-/* ── Image wrapper ── */
+/* ── Image wrapper — positions overlay inside ── */
 .ss-card__img-wrap {
   position: relative;
   width: 100%;
   overflow: hidden;
   background: #FFFDF7;
+  outline: 2px solid transparent;
+  transition: outline-color 0.25s ease;
+}
+
+.ss-card__img-wrap:hover {
+  outline-color: rgba(224,123,57,0.5);
 }
 
 /* ── Image ── */
@@ -165,7 +153,7 @@
 }
 
 .ss-card__name {
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.15rem;
   font-weight: 700;
   color: #F8F6F1;
@@ -222,7 +210,7 @@
 }
 
 .ss-card__name-badge .ss-card__name {
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.05rem;
   font-weight: 700;
   color: #1A0F00;
@@ -255,10 +243,8 @@
   transform: scale(1.35);
 }
 
-/* ── Arrows — hidden by default, show on hover ── */
-.ss-arrow {
-  display: none;
-}
+/* hide arrows */
+.ss-arrow { display: none; }
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
@@ -267,6 +253,7 @@
   .ss-card__name-badge { padding: 11px 16px 10px; gap: 10px; }
   .ss-card__name-badge .ss-card__name { font-size: 0.9rem; }
   .ss-card img { max-height: 360px; }
+  .ss-card:hover .ss-card__info { max-height: 200px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

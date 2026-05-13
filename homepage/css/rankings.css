@@ -1,283 +1,178 @@
-/* ===================================================
-   Accreditations — Premium Design
-   =================================================== */
-
-.achievements {
-  background: #fafafa;
-  padding: 56px 0 48px;
-  position: relative;
-  overflow: visible;
-  isolation: isolate;
-}
-
-/* ── Top / bottom fade transitions ── */
-.accred-fade {
-  position: absolute;
-  left: 0; right: 0;
-  height: 80px;
-  pointer-events: none;
-  z-index: 3;
-}
-.accred-fade--top {
-  top: 0;
-  background: linear-gradient(to bottom, #fafafa, transparent);
-}
-.accred-fade--bottom {
-  bottom: 0;
-  background: linear-gradient(to top, #fafafa, transparent);
-}
-
-/* ── Subtle grid texture ── */
-.accred-grid-bg {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(46,125,50,0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(46,125,50,0.12) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* ── Blurred color blobs — clipped to section ── */
-.achievements::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.accred-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  pointer-events: none;
-  z-index: 0;
-  clip-path: inset(0);
-}
-.accred-blob--green {
-  width: 420px; height: 420px;
-  background: rgba(46,125,50,0.22);
-  top: -80px; left: -60px;
-}
-.accred-blob--gold {
-  width: 360px; height: 360px;
-  background: rgba(245,197,24,0.22);
-  bottom: -60px; right: 10%;
-}
-.accred-blob--orange {
-  width: 280px; height: 280px;
-  background: rgba(232,80,10,0.18);
-  top: 30%; right: 30%;
-}
-
-/* ── Two-column layout ── */
-.achievements__grid {
+/* ===== Rankings & Accreditations ===== */
+.mlrit-rankings {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 60px;
-  align-items: start;
-  position: relative;
-  z-index: 2;
+  grid-template-columns: 1fr 1.4fr;
+  align-items: center;
+  padding: 72px 80px;
+  background: #fff;
+  gap: 80px;
+  border-bottom: 1px solid #E5E2DC;
 }
 
-/* ── Ranking cards ── */
-.achievements__ranks {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 28px;
+/* ===== Left — Rankings ===== */
+.mlrit-rankings__left {
+  display: flex;
+  flex-direction: column;
 }
 
-.rank-row {
-  padding: 20px 18px;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(0,0,0,0.07);
-  position: relative;
-  cursor: default;
-  transition: background 0.25s ease, border-color 0.25s ease,
-              box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+.mlrit-rankings__left .section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1A5C3A;
+  margin-bottom: 14px;
 }
 
-.rank-row::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 50%;
-  width: 0; height: 2px;
-  background: linear-gradient(90deg, #ff6400, #ffaa00);
-  border-radius: 2px;
-  transform: translateX(-50%);
-  transition: width 0.35s ease;
+.mlrit-rankings__left h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 8px;
+  color: #0f0f0f;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -0.01em;
 }
 
-.rank-row:hover::before { width: 60%; }
-
-.rank-row:hover {
-  background: linear-gradient(135deg, rgba(255,100,0,0.06) 0%, rgba(255,160,50,0.10) 100%);
-  border-color: rgba(255,120,0,0.2);
-  box-shadow: 0 6px 24px rgba(255,100,0,0.10);
-  transform: translateY(-4px);
+.mlrit-rankings__left p.sub {
+  color: #777;
+  font-size: 0.875rem;
+  margin-bottom: 36px;
+  line-height: 1.6;
+  max-width: 340px;
 }
 
-.rank-row__num {
-  font-family: var(--heading);
-  font-size: 1.9rem;
-  font-weight: 900;
-  color: #2e7d32;
+/* Rank items */
+.mlrit-rank-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.mlrit-rank-item:last-child {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.rank-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1A5C3A;
+  font-family: Georgia, serif;
+  min-width: 48px;
   line-height: 1;
-  letter-spacing: -0.03em;
-  margin-bottom: 10px;
-  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
 }
 
-.rank-row:hover .rank-row__num { transform: scale(1.06); }
-
-.rank-row__info strong {
-  display: block;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #111;
-  margin-bottom: 3px;
-  line-height: 1.3;
-}
-
-.rank-row__info span {
-  font-size: 0.72rem;
-  color: #999;
-  line-height: 1.4;
-}
-
-/* ── Constellation SVG ── */
-.logo-cluster-wrap {
-  position: relative;
-  width: 380px;
-  height: 380px;
+.rank-divider {
+  width: 1px;
+  height: 32px;
+  background: #E5E2DC;
   flex-shrink: 0;
 }
 
-.accred-constellation {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  overflow: visible;
+.rank-text strong {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 2px;
 }
 
-.accred-constellation line {
-  stroke: rgba(46,125,50,0.18);
-  stroke-width: 1;
-  stroke-dasharray: 4 6;
-  animation: dashMove 8s linear infinite;
+.rank-text span {
+  font-size: 0.75rem;
+  color: #999;
+  letter-spacing: 0.01em;
 }
 
-.accred-constellation line:nth-child(2n) {
-  animation-duration: 12s;
-  animation-direction: reverse;
-}
-
-.accred-constellation line:nth-child(3n) {
-  stroke: rgba(245,197,24,0.2);
-  animation-duration: 10s;
-}
-
-@keyframes dashMove {
-  to { stroke-dashoffset: -40; }
-}
-
-/* ── Logo cluster ── */
-.logo-cluster {
-  position: absolute;
-  inset: 0;
-  animation: clusterIn 0.9s cubic-bezier(0.22,1,0.36,1) both;
-  z-index: 2;
-}
-
-@keyframes clusterIn {
-  from { opacity: 0; transform: scale(0.75); }
-  to   { opacity: 1; transform: scale(1); }
-}
-
-.lc-bubble {
-  position: absolute;
-  top: 50%; left: 50%;
-  border-radius: 50%;
+/* ===== Right — Accreditations ===== */
+.mlrit-rankings__right {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: default;
-  background: rgba(255,255,255,0.55);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.8);
-  /* NO transition on transform — fully static */
-  transition: box-shadow 0.25s ease, opacity 0.25s ease;
-  will-change: auto;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* All non-center bubbles use --lx/--ly for fixed offset */
-.lc-bubble:not(.lc-bubble--center) {
-  transform: translate(calc(-50% + var(--lx, 0px)), calc(-50% + var(--ly, 0px)));
+.mlrit-rankings__right .section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1A5C3A;
 }
 
-.lc-bubble--center {
-  transform: translate(-50%, -50%);
-  z-index: 5;
+.mlrit-accred-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
 }
 
-/* Size variants */
-.lc-bubble--center { width: 140px; height: 140px; box-shadow: 0 12px 48px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.08); }
-.lc-bubble--md     { width: 110px; height: 110px; z-index: 4; box-shadow: 0 8px 32px rgba(0,0,0,0.10); }
-.lc-bubble--sm     { width: 88px;  height: 88px;  z-index: 3; box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
-.lc-bubble--xs     { width: 70px;  height: 70px;  z-index: 2; box-shadow: 0 4px 14px rgba(0,0,0,0.07); }
+/* ===== Glare hover cards ===== */
+:root {
+  --gh-angle: 135deg;
+  --gh-rgba: rgba(255,255,255,0.6);
+  --gh-size: 200% 200%;
+  --gh-duration: 0.5s;
+}
 
-.lc-bubble img {
-  width: 80%;
-  height: 80%;
-  object-fit: contain;
+.glare-hover {
+  aspect-ratio: 3 / 2;
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #E5E2DC;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  transition: box-shadow 0.28s ease, transform 0.28s ease, border-color 0.28s ease;
+}
+
+.glare-hover:hover {
+  box-shadow: 0 6px 22px rgba(0,0,0,0.11);
+  transform: translateY(-3px);
+  border-color: #d0d0d0;
+}
+
+.glare-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    var(--gh-angle),
+    hsla(0,0%,0%,0) 55%,
+    var(--gh-rgba) 68%,
+    hsla(0,0%,0%,0) 100%
+  );
+  background-size: var(--gh-size);
+  background-repeat: no-repeat;
+  background-position: -100% -100%;
+  transition: background-position var(--gh-duration) ease;
+  z-index: 2;
   pointer-events: none;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12));
 }
 
-/* Hover — scale only, no position change */
-.lc-bubble:hover {
-  z-index: 10 !important;
-  box-shadow: 0 16px 48px rgba(0,0,0,0.18), 0 0 0 2px rgba(255,255,255,0.9);
+.glare-hover:hover::before {
+  background-position: 120% 120%;
 }
 
-.lc-bubble--center:hover {
-  transform: translate(-50%, -50%) scale(1.06);
+.glare-hover img {
+  width: 72%;
+  height: 65%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
 }
 
-.lc-bubble:not(.lc-bubble--center):hover {
-  transform: translate(calc(-50% + var(--lx, 0px)), calc(-50% + var(--ly, 0px))) scale(1.08);
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .mlrit-rankings {
+    grid-template-columns: 1fr;
+    padding: 48px 40px;
+    gap: 48px;
+  }
 }
 
-/* Dim siblings on hover */
-.logo-cluster:has(.lc-bubble:hover) .lc-bubble:not(:hover) {
-  opacity: 0.3;
-}
-
-/* ── Responsive ── */
-@media (max-width: 1100px) {
-  .logo-cluster-wrap { width: 340px; height: 340px; }
-  .lc-bubble--center { width: 120px; height: 120px; }
-  .lc-bubble--md     { width: 96px;  height: 96px;  }
-  .lc-bubble--sm     { width: 76px;  height: 76px;  }
-  .lc-bubble--xs     { width: 60px;  height: 60px;  }
-}
-
-@media (max-width: 900px) {
-  .achievements__grid { grid-template-columns: 1fr; gap: 48px; }
-  .logo-cluster-wrap  { width: 300px; height: 300px; margin: 0 auto; }
-  .lc-bubble--center  { width: 100px; height: 100px; }
-  .lc-bubble--md      { width: 80px;  height: 80px;  }
-  .lc-bubble--sm      { width: 64px;  height: 64px;  }
-  .achievements__ranks { grid-template-columns: 1fr; }
+@media (max-width: 600px) {
+  .mlrit-rankings { padding: 40px 24px; }
+  .mlrit-accred-strip { grid-template-columns: repeat(3, 1fr); }
 }

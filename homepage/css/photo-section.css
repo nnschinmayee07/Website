@@ -5,11 +5,11 @@
 
 /* Brand tokens */
 :root {
-  --ps-orange:       #E8500A;
-  --ps-orange-light: #FDF0EA;
-  --ps-orange-dark:  #7A2E0B;
-  --ps-green:        #2E7D32;
-  --ps-green-light:  #EAF4EA;
+  --ps-orange:       #D4622B;
+  --ps-orange-light: #FBEADF;
+  --ps-orange-dark:  #7A3412;
+  --ps-green:        #2E8B57;
+  --ps-green-light:  #E5F1E9;
   --ps-black:        #111111;
   --ps-bg:           #F7F7F7;
   --ps-white:        #FFFFFF;
@@ -29,13 +29,13 @@
 .photo-section__inner {
   width: 100%;
   margin: 0;
-  padding: 0 var(--page-pad);
+  padding: 0 1rem;
 }
 
 /* Section heading */
 .photo-section__heading {
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: var(--fs-h2);
+  font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
+  font-size: 36px;
   font-weight: 700;
   color: var(--ps-orange);
   margin-bottom: 24px;
@@ -222,7 +222,7 @@
   display: inline-block;
   background: var(--ps-orange);
   color: var(--ps-white);
-  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -240,8 +240,8 @@
 
 /* Context headline */
 .tile__headline {
-  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-  font-size: var(--fs-meta);
+  font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
+  font-size: 13px;
   font-weight: 500;
   color: var(--ps-white);
   line-height: 1.45;
@@ -253,8 +253,8 @@
 
 /* CTA arrow */
 .tile__cta {
-  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-  font-size: var(--fs-meta);
+  font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
+  font-size: 13px;
   font-weight: 600;
   color: var(--ps-white);
   display: flex;
