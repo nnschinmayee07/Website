@@ -98,13 +98,13 @@ const mous = [
 ];
 
 const certPartners = [
-  { name: "Partner 1", logo: "assets/logos/certi-1.png" },
-  { name: "Partner 2", logo: "assets/logos/certi-2.png" },
-  { name: "Partner 3", logo: "assets/logos/certi-3.png" },
-  { name: "Partner 4", logo: "assets/logos/certi-4.png" },
-  { name: "Partner 5", logo: "assets/logos/certi-5.png" },
-  { name: "Partner 6", logo: "assets/logos/certi-6.png" },
-  { name: "Partner 7", logo: "assets/logos/certi-7.png" }
+  { name: "Partner 1", logo: "https://i.ibb.co/ksyv7xv9/certi-1.png" },
+  { name: "Partner 2", logo: "https://i.ibb.co/1tBXkvWd/certi-2.png" },
+  { name: "Partner 3", logo: "https://i.ibb.co/mWyjw9J/certi-3.png" },
+  { name: "Partner 4", logo: "https://i.ibb.co/6cKr61N9/certi-4.png" },
+  { name: "Partner 5", logo: "https://i.ibb.co/mCp7RZ6h/certi-5.png" },
+  { name: "Partner 6", logo: "https://i.ibb.co/b5Yz1SNH/certi-6.png" },
+  { name: "Partner 7", logo: "https://i.ibb.co/d0GQX8GJ/certi-7.png" }
 ];
 
 const recruiters = [
@@ -141,12 +141,12 @@ const recruiters = [
 ];
 
 const gallery = [
-  { src: "assets/images/overall-placements.jpg", alt: "MLRIT Placement Drive",     featured: true },
-  { src: "assets/images/drive-1.jpg",            alt: "Campus Placement Drive 2024"               },
-  { src: "assets/images/drive-2.jpg",            alt: "Pre-Placement Talk"                        },
-  { src: "assets/images/drive-3.jpg",            alt: "Placement Drive — Batch 2024"              },
-  { src: "assets/images/drive-4.jpg",            alt: "Interview Session"                         },
-  { src: "assets/images/drive-5.jpg",            alt: "Placement Ceremony"                        }
+  { src: "https://i.ibb.co/MxyG45Hy/overall-placements.jpg", alt: "MLRIT Placement Drive",     featured: true },
+  { src: "https://i.ibb.co/6RnrcxXz/drive-1.jpg",            alt: "Campus Placement Drive 2024"               },
+  { src: "https://i.ibb.co/qLcYhb5r/drive-2.jpg",            alt: "Pre-Placement Talk"                        },
+  { src: "https://i.ibb.co/6Jf8p7Hf/drive-3.jpg",            alt: "Placement Drive — Batch 2024"              },
+  { src: "https://i.ibb.co/7dCGYfL8/drive-4.jpg",            alt: "Interview Session"                         },
+  { src: "https://i.ibb.co/RpK1GXMG/drive-5.jpg",            alt: "Placement Ceremony"                        }
 ];
 
 const yearwiseStats = [
