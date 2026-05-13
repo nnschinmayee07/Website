@@ -20,6 +20,7 @@ img { display: block; max-width: 100%; }
   --green-mid:    #2e7d32;
   --green-light:  #edf6ee;
   --orange:       #d4521a;
+  --orange-light: #fdf0eb;
   --ink:          #181818;
   --ink-mid:      #4a4a4a;
   --ink-light:    #999;
@@ -31,6 +32,8 @@ img { display: block; max-width: 100%; }
   --rule-mid:     rgba(0,0,0,0.12);
   --shadow-card:  0 2px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
   --shadow-lift:  0 12px 40px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.06);
+  --glow-orange:  0 0 0 2px rgba(212,82,26,0.15), 0 8px 28px rgba(212,82,26,0.12);
+  --glow-orange-strong: 0 0 0 2px rgba(212,82,26,0.22), 0 12px 36px rgba(212,82,26,0.18);
   --radius:       8px;
   --page-x:       clamp(16px, 5vw, 64px);
 }
@@ -265,20 +268,25 @@ img { display: block; max-width: 100%; }
   box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
 }
 
 .chron-featured:hover {
-  box-shadow: var(--shadow-lift);
+  box-shadow: var(--glow-orange-strong);
+  transform: translateY(-2px);
 }
 
 .chron-featured__img {
   height: 290px;
   position: relative;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .chron-featured__img-real {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -402,9 +410,10 @@ img { display: block; max-width: 100%; }
 }
 
 .chron-read-more:hover {
-  background: var(--green-mid);
+  background: var(--orange);
   gap: 11px;
   transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(212,82,26,0.3);
 }
 
 /* ── Sidebar ── */
@@ -419,6 +428,13 @@ img { display: block; max-width: 100%; }
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-card);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  cursor: default;
+}
+
+.chron-sidebar-box:hover {
+  box-shadow: var(--glow-orange);
+  transform: translateY(-2px);
 }
 
 .chron-sidebar-box__head {
@@ -634,7 +650,7 @@ img { display: block; max-width: 100%; }
 }
 
 .chron-card:hover {
-  box-shadow: var(--shadow-lift);
+  box-shadow: var(--glow-orange-strong);
   transform: translateY(-4px);
 }
 
@@ -828,6 +844,11 @@ img { display: block; max-width: 100%; }
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-card);
+  transition: box-shadow 0.25s ease;
+}
+
+.chron-notices-board:hover {
+  box-shadow: var(--glow-orange);
 }
 
 .chron-notices-board__head {
@@ -867,10 +888,14 @@ img { display: block; max-width: 100%; }
   gap: 12px;
   padding: 14px 20px;
   border-bottom: 1px solid var(--rule);
-  transition: background 0.18s ease;
+  transition: background 0.18s ease, border-left 0.18s ease;
+  border-left: 3px solid transparent;
 }
 
-.chron-notices-board__list li:hover { background: #faf9f7; }
+.chron-notices-board__list li:hover {
+  background: var(--orange-light);
+  border-left-color: var(--orange);
+}
 .chron-notices-board__list li:last-child { border-bottom: none; }
 
 .chron-notice-tag {
@@ -917,6 +942,12 @@ img { display: block; max-width: 100%; }
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-card);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.chron-subscribe:hover {
+  box-shadow: var(--glow-orange);
+  transform: translateY(-2px);
 }
 
 .chron-subscribe__head {
@@ -1002,6 +1033,12 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
   margin-top: 14px;
   box-shadow: var(--shadow-card);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.chron-research-box:hover {
+  box-shadow: var(--glow-orange);
+  transform: translateY(-2px);
 }
 
 .chron-research-box__title {
@@ -1117,11 +1154,23 @@ img { display: block; max-width: 100%; }
   }
 }
 
+/* ── Chronicles page: logo fix (transparent PNG on white bg) ── */
+.chron-page__masthead ~ * .masthead__logo img,
+.site-header .masthead__logo img {
+  height: 60px;
+  width: auto;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .chron-ticker__track,
   .chron-ticker__label::before { animation: none; }
   .chron-card,
   .chron-card__img-bg,
   .chron-featured,
-  .chron-featured__img-bg { transition: none; }
+  .chron-featured__img-bg,
+  .chron-featured__img-real,
+  .chron-sidebar-box,
+  .chron-notices-board,
+  .chron-subscribe,
+  .chron-research-box { transition: none; }
 }
