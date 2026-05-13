@@ -461,8 +461,25 @@
   background: #fff;
   border: 1px solid rgba(31,107,36,0.18);
   border-radius: 8px;
-  overflow: hidden;
+  position: relative;
+  box-shadow: var(--mid-sh-rest);
+  transition: box-shadow 0.18s ease, transform 0.5s cubic-bezier(0.23,1,0.32,1);
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: pointer;
 }
+
+.chron-placements-box:hover {
+  box-shadow: var(--mid-sh-hover);
+}
+
+.chron-placements-box .tile__shine {
+  position: absolute; inset: 0; border-radius: inherit;
+  pointer-events: none; z-index: 10; opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.06) 40%, transparent 70%);
+}
+.chron-placements-box:hover .tile__shine { opacity: 1; }
 
 .chron-placements-box__head {
   background: #1F6B24;
@@ -470,6 +487,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 7px 7px 0 0;
 }
 
 .chron-placements-box__label {
@@ -539,7 +557,25 @@
   border-left: 3px solid #E85D1F;
   border-radius: 5px;
   padding: 10px 11px;
+  position: relative;
+  box-shadow: var(--mid-sh-rest);
+  transition: box-shadow 0.18s ease, transform 0.5s cubic-bezier(0.23,1,0.32,1);
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: pointer;
 }
+
+.chron-the-box:hover {
+  box-shadow: var(--mid-sh-hover);
+}
+
+.chron-the-box .tile__shine {
+  position: absolute; inset: 0; border-radius: inherit;
+  pointer-events: none; z-index: 10; opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.06) 40%, transparent 70%);
+}
+.chron-the-box:hover .tile__shine { opacity: 1; }
 
 .chron-the-box__label {
   display: block;
@@ -573,13 +609,25 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  position: relative;
+  box-shadow: var(--mid-sh-rest);
+  transition: box-shadow 0.18s ease, transform 0.5s cubic-bezier(0.23,1,0.32,1);
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: pointer;
 }
 
 .chron-quickstat:hover {
-  border-color: rgba(31,107,36,0.3);
-  box-shadow: 0 2px 8px rgba(31,107,36,0.08);
+  box-shadow: var(--mid-sh-hover);
 }
+
+.chron-quickstat .tile__shine {
+  position: absolute; inset: 0; border-radius: inherit;
+  pointer-events: none; z-index: 10; opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.06) 40%, transparent 70%);
+}
+.chron-quickstat:hover .tile__shine { opacity: 1; }
 
 .chron-quickstat:first-child { grid-column: 1 / -1; }
 

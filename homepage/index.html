@@ -1377,10 +1377,18 @@
         live = false; cancelAnimationFrame(raf);
         el.style.transition = OUT; el.style.transform = '';
       });
+      /* click anywhere on tile navigates to chronicles */
+      el.addEventListener('click', function (e) {
+        if (e.target.closest('a')) return;
+        window.location.href = 'chronicles/';
+      });
     }
 
     function init() {
-      document.querySelectorAll('.chron-events-tile, .chron-notices-tile').forEach(makeTile);
+      document.querySelectorAll(
+        '.chron-events-tile, .chron-notices-tile, ' +
+        '.chron-placements-box, .chron-the-box, .chron-quickstat'
+      ).forEach(makeTile);
     }
 
     if (document.readyState === 'loading') {
