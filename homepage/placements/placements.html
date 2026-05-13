@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&family=Raleway:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/chronicles-dropdown.css" />
   <link rel="stylesheet" href="placements.css" />
   <script src="data/placements-data.js"></script>
 </head>
@@ -20,104 +21,423 @@
   <header class="site-header">
     <div class="masthead">
       <div class="container masthead__inner">
-        <a href="../index.html" class="masthead__logo" aria-label="MLRIT Home">
-          <img src="../mlrit-logo-transparent.png" alt="MLRIT Logo" />
+        <a href="/" class="masthead__logo" aria-label="MLRIT Home">
+          <img src="https://i.ibb.co/zHVr8JGd/mlrit-logo-new.png" alt="MLRIT Logo" />
         </a>
         <div class="masthead__tagline">
-          <span>Marri Laxman Reddy Institute of Technology</span>
+          <span>MLR Institute of Technology</span>
         </div>
-        <a href="#" class="masthead__eapcet">EAPCET CODE : MLID</a>
+        <div class="masthead__right">
+          <a href="#" class="eapcet-badge" aria-label="EAPCET Code MLID">
+            EAPCET CODE&nbsp;:&nbsp;MLID
+          </a>
+          <button class="masthead__search-btn" id="searchToggle" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Search overlay -->
+        <div class="masthead__search-overlay" id="searchOverlay">
+          <div class="masthead__search-box">
+            <svg class="masthead__search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" class="masthead__search-input" id="searchInput" placeholder="Search MLRIT..." autocomplete="off" />
+            <button class="masthead__search-close" id="searchClose" aria-label="Close search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
     <nav class="main-nav" aria-label="Main navigation">
       <div class="container main-nav__inner">
-        <ul class="main-nav__list">
+        <ul class="main-nav__list" id="mainNavList">
 
+          <!-- About -->
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">About <span class="chevron"></span></a>
+            <a href="https://mlrit.ac.in/about-us/" class="main-nav__link">About <span class="chevron"></span></a>
             <div class="dropdown">
               <div class="dropdown__col">
                 <h4>Institution</h4>
-                <a href="#">Vision &amp; Mission</a>
-                <a href="#">Accreditations</a>
+                <a href="https://mlrit.ac.in/about-us/">Vision &amp; Mission</a>
+                <a href="https://mlrit.ac.in/about-us/milestones/">Milestones</a>
+                <a href="https://mlrit.ac.in/about-us/governing-body/">Governing Body</a>
+                <a href="https://mlrit.ac.in/iqac/">IQAC</a>
+                <a href="https://mlrit.ac.in/mandatory-disclosures/">Mandatory Disclosures</a>
+                <a href="https://mlrit.ac.in/aicte-approvals/">AICTE Approvals</a>
+                <a href="https://naac.mlrit.ac.in/">NAAC SSR</a>
+                <a href="https://mlrit.ac.in/nirf-ranked-institution/">NIRF Ranking</a>
+              </div>
+              <div class="dropdown__col">
+                <h4>Programs</h4>
+                <a href="../departments/ug.html">B.Tech</a>
+                <a href="../departments/pg.html">M.Tech</a>
+                <a href="../departments/mba.html">MBA</a>
+                <a href="https://mlrit.ac.in/about-us/course-intake/">Course Intake</a>
+                <a href="https://mlrit.ac.in/virtual-tour/">Virtual Tour</a>
+                <a href="https://mlrit.ac.in/careers/">Careers at MLRIT</a>
               </div>
             </div>
           </li>
 
+          <!-- Academics -->
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">Academics <span class="chevron"></span></a>
+            <a href="https://mlrit.ac.in/examinations/" class="main-nav__link">Academics <span class="chevron"></span></a>
             <div class="dropdown">
               <div class="dropdown__col">
-                <h4>Programmes</h4>
-                <a href="../departments/ug.html">Undergraduate (B.Tech)</a>
-                <a href="../departments/pg.html">Postgraduate (M.Tech &amp; MBA)</a>
+                <h4>Departments</h4>
+                <a href="../departments/cse.html">CSE</a>
+                <a href="../departments/csit.html">CS &amp; IT</a>
+                <a href="../departments/aiml.html">CSE – AI &amp; ML</a>
+                <a href="../departments/cse-ds.html">CSE – Data Science</a>
+                <a href="../departments/cse-cs.html">CSE – Cyber Security</a>
+                <a href="../departments/ece.html">ECE</a>
+                <a href="../departments/eee.html">EEE</a>
+                <a href="../departments/mechanical.html">Mechanical</a>
+                <a href="../departments/aeronautical.html">Aeronautical</a>
+                <a href="../departments/it.html">Information Technology</a>
+                <a href="../departments/freshman.html">Freshman Engineering</a>
+              </div>
+              <div class="dropdown__col">
+                <h4>Programs</h4>
+                <a href="../departments/ug.html">B.Tech</a>
+                <a href="../departments/pg.html">M.Tech</a>
+                <a href="../departments/mba.html">MBA</a>
               </div>
               <div class="dropdown__col">
                 <h4>Resources</h4>
-                <a href="#">ERP</a>
-                <a href="#">LMS</a>
-                <a href="#">Academic Calendar</a>
-                <a href="#">Exam Portal</a>
+                <a href="https://lms.mlrit.ac.in/">LMS</a>
+                <a href="https://edmit.mlrit.ac.in/">Edmit – Course Registration</a>
+                <a href="https://mlrit.ac.in/examinations/">Exam Portal</a>
+                <a href="https://mlrit.ac.in/scholarships/">Scholarships</a>
+                <a href="https://mlrit.ac.in/events/">Events</a>
               </div>
             </div>
           </li>
 
+          <!-- Admissions -->
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">Admissions <span class="chevron"></span></a>
+            <a href="https://mlrit.ac.in/admissions/" class="main-nav__link">Admissions <span class="chevron"></span></a>
             <div class="dropdown">
               <div class="dropdown__col">
                 <h4>Undergraduate</h4>
-                <a href="#">How to Apply</a>
-                <a href="#">Eligibility</a>
-                <a href="#">Fee Structure</a>
-                <a href="#">Scholarships</a>
+                <a href="https://mlrit.ac.in/admissions/">How to Apply</a>
+                <a href="https://mlrit.ac.in/admissions/">Eligibility</a>
+                <a href="https://mlrit.ac.in/admissions/">Fee Structure</a>
+                <a href="https://mlrit.ac.in/scholarships/">Scholarships</a>
               </div>
             </div>
           </li>
 
+          <!-- Research -->
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">Research <span class="chevron"></span></a>
+            <a href="https://mlrit.ac.in/research/" class="main-nav__link">Research <span class="chevron"></span></a>
             <div class="dropdown">
               <div class="dropdown__col">
-                <h4>Research Areas</h4>
-                <a href="#">AI &amp; Machine Learning</a>
-                <a href="#">IoT &amp; Embedded Systems</a>
-                <a href="#">Data Science</a>
+                <h4>Research</h4>
+                <a href="https://mlrit.ac.in/research/">Overview</a>
+                <a href="https://mlrit.ac.in/research/">Publications</a>
+                <a href="https://mlrit.ac.in/research/">Patents</a>
+                <a href="https://mlrit.ac.in/research/">Research Centers</a>
+              </div>
+              <div class="dropdown__col">
+                <h4>Innovation Cell</h4>
+                <a href="https://mlrit.ac.in/innovation-cell/innovation-overview/">Overview</a>
+                <a href="https://mlrit.ac.in/innovation-cell/student-startups/">Student Startups</a>
+                <a href="https://mlrit.ac.in/innovation-cell/incubation-services/">Incubation Services</a>
+                <a href="https://mlrit.ac.in/innovation-cell/enterpreneurship-courses/">Entrepreneurship</a>
+                <a href="https://mlrit.ac.in/cie-annual-reports/">CIE Annual Reports</a>
               </div>
             </div>
           </li>
 
+          <!-- Campus -->
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">Campus <span class="chevron"></span></a>
+            <a href="https://mlrit.ac.in/campus-life/" class="main-nav__link">Campus <span class="chevron"></span></a>
             <div class="dropdown">
               <div class="dropdown__col">
                 <h4>Facilities</h4>
-                <a href="#">Hostels</a>
-                <a href="#">Sports</a>
-                <a href="#">Transport</a>
+                <a href="https://mlrit.ac.in/campus-life/">Hostels</a>
+                <a href="https://mlrit.ac.in/sports/">Sports</a>
+                <a href="https://mlrit.ac.in/campus-life/">Cafeteria</a>
+                <a href="https://mlrit.ac.in/campus-life/">Transport</a>
               </div>
-            </div>
-          </li>
-
-          <li class="main-nav__item">
-            <a href="placements.html" class="main-nav__link is-active">Placements</a>
-          </li>
-
-          <li class="main-nav__item main-nav__item--right" style="margin-right: 8px;">
-            <a href="#" class="main-nav__link">MLRIT Chronicles <span class="chevron"></span></a>
-            <div class="dropdown dropdown--right">
               <div class="dropdown__col">
-                <h4>Bulletins</h4>
-                <a href="#">Academic Notices</a>
-                <a href="#">Exam Schedules</a>
+                <h4>Student Life</h4>
+                <a href="https://mlrit.ac.in/campus-life/">Clubs &amp; Societies</a>
+                <a href="https://mlrit.ac.in/events/">Events</a>
+                <a href="https://alumni.mlrit.ac.in/">Alumni</a>
+                <a href="https://mlrit.ac.in/contactus/">Contact Us</a>
               </div>
             </div>
           </li>
 
-          <li class="main-nav__item--support">
-            <div class="support-avatar">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          <!-- Placements -->
+          <li class="main-nav__item">
+            <a href="placements.html" class="main-nav__link is-active">Placements <span class="chevron"></span></a>
+            <div class="dropdown">
+              <div class="dropdown__col">
+                <h4>Careers</h4>
+                <a href="placements.html">Placement Cell</a>
+                <a href="placements/placements.html#recruiters">Top Recruiters</a>
+                <a href="placements/placements.html#stats">Statistics</a>
+                <a href="placements/placements.html#training">Training</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="main-nav__item main-nav__item--right main-nav__item--chronicles" style="margin-right: 8px;">
+            <a href="../chronicles/" class="main-nav__link">MLRIT Chronicles <span class="chevron"></span></a>
+            <div class="dropdown dropdown--right dropdown--chronicles">
+
+              <!-- ① LEFT BRAND PANEL -->
+              <div class="chron-brand">
+                <a href="../chronicles/" class="chron-brand__logo">
+                  <div class="chron-brand__logo-icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <rect x="2" y="4" width="16" height="2" rx="1" fill="#fff"/>
+                      <rect x="2" y="8" width="12" height="1.5" rx="0.75" fill="rgba(255,255,255,0.7)"/>
+                      <rect x="2" y="11" width="14" height="1.5" rx="0.75" fill="rgba(255,255,255,0.7)"/>
+                      <rect x="2" y="14" width="9" height="1.5" rx="0.75" fill="rgba(255,255,255,0.45)"/>
+                    </svg>
+                  </div>
+                  <span>MLRIT<br>Chronicles</span>
+                </a>
+                <p class="chron-brand__tagline">News, events and notices from Dundigal</p>
+                <div class="chron-brand__rule"></div>
+                <div class="chron-brand__stats">
+                  <div class="chron-brand__stat">
+                    <strong>621</strong><span>Offers 2026</span>
+                  </div>
+                  <div class="chron-brand__stat">
+                    <strong>37</strong><span>Companies</span>
+                  </div>
+                  <div class="chron-brand__stat">
+                    <strong>4</strong><span>Active notices</span>
+                  </div>
+                </div>
+                <a href="../chronicles/" class="chron-brand__cta">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 4l4 3-4 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Open Full Edition
+                </a>
+              </div>
+
+              <!-- ② CENTER: RECENT STORIES -->
+              <div class="chron-stories">
+                <h4 class="chron-section-label">Recent Stories</h4>
+                <div class="chron-story-list">
+
+                  <a href="../chronicles/" class="chron-story-card">
+                    <div class="chron-story-card__thumb">
+                      <div class="chron-story-card__thumb-fill chron-story-card__thumb-fill--academic"></div>
+                    </div>
+                    <div class="chron-story-card__body">
+                      <span class="chron-badge chron-badge--academic">Campus</span>
+                      <p class="chron-story-card__title">21st Annual Day — a packed evening at the MLRIT auditorium</p>
+                      <div class="chron-story-card__meta">
+                        <span class="chron-story-card__date">14 Mar 2026</span>
+                        <span class="chron-story-card__read">Read &rarr;</span>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="../chronicles/" class="chron-story-card">
+                    <div class="chron-story-card__thumb">
+                      <div class="chron-story-card__thumb-fill chron-story-card__thumb-fill--event"></div>
+                    </div>
+                    <div class="chron-story-card__body">
+                      <span class="chron-badge chron-badge--event">Workshop</span>
+                      <p class="chron-story-card__title">TSFA–UNESCO workshop puts MLRIT students in global conversation</p>
+                      <div class="chron-story-card__meta">
+                        <span class="chron-story-card__date">2 Jan 2026</span>
+                        <span class="chron-story-card__read">Read &rarr;</span>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="../chronicles/" class="chron-story-card">
+                    <div class="chron-story-card__thumb">
+                      <div class="chron-story-card__thumb-fill chron-story-card__thumb-fill--placement"></div>
+                    </div>
+                    <div class="chron-story-card__body">
+                      <span class="chron-badge chron-badge--placement">Placement</span>
+                      <p class="chron-story-card__title">Cognizant, Infosys, HCL Tech lead 2026 campus drive with 621 total offers</p>
+                      <div class="chron-story-card__meta">
+                        <span class="chron-story-card__date">Apr 2026</span>
+                        <span class="chron-story-card__read">Read &rarr;</span>
+                      </div>
+                    </div>
+                  </a>
+
+                </div>
+              </div>
+
+              <!-- ③ CENTER-RIGHT: EVENTS + NOTICES -->
+              <div class="chron-mid">
+                <div class="chron-events">
+                  <h4 class="chron-section-label">Events and Culture</h4>
+                  <ul class="chron-events-list">
+                    <li>
+                      <span class="chron-event-dot"></span>
+                      <div><a href="https://www.mlrit.ac.in/events" target="_blank">Workshop Carnival 2026</a><span class="chron-event-when">10–11 Apr 2026</span></div>
+                    </li>
+                    <li>
+                      <span class="chron-event-dot"></span>
+                      <div><a href="https://www.mlrit.ac.in/events" target="_blank">Zenith — Annual Tech Fest</a><span class="chron-event-when">Dec 18–20, 2025</span></div>
+                    </li>
+                    <li>
+                      <span class="chron-event-dot"></span>
+                      <div><a href="https://www.mlrit.ac.in/events" target="_blank">TedX MLRIT</a><span class="chron-event-when">25 Apr 2025</span></div>
+                    </li>
+                    <li>
+                      <span class="chron-event-dot"></span>
+                      <div><a href="https://www.mlrit.ac.in/events" target="_blank">SIH Internal Hackathon</a><span class="chron-event-when">18 Sep 2025</span></div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="chron-notices">
+                  <h4 class="chron-section-label">Notices and Circulars</h4>
+                  <ul class="chron-notices-list">
+                    <li>
+                      <span class="chron-notice-tag chron-notice-tag--exam">MARKS</span>
+                      <a href="https://www.mlrit.ac.in/circulars" target="_blank">II B.Tech II Sem CIE-II Internal Marks — check portal</a>
+                    </li>
+                    <li>
+                      <span class="chron-notice-tag chron-notice-tag--exam">EXAM</span>
+                      <a href="https://www.mlrit.ac.in/circulars" target="_blank">I B.Tech II Sem R25 MID-2 Timetable — June 2026</a>
+                    </li>
+                    <li>
+                      <span class="chron-notice-tag chron-notice-tag--result">SUPP</span>
+                      <a href="https://www.mlrit.ac.in/circulars" target="_blank">II B.Tech Supplementary Exams — June 2026 Timetable</a>
+                    </li>
+                    <li>
+                      <span class="chron-notice-tag chron-notice-tag--scholarship">VIKSIT</span>
+                      <a href="https://www.mlrit.ac.in/news" target="_blank">Koduri Viplav selected for Viksit Bharat Young Leaders 2026</a>
+                    </li>
+                  </ul>
+                  <div class="chron-notices-footer">
+                    <a href="https://www.mlrit.ac.in/circulars" target="_blank" class="chron-notices-all">All Notices
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M7 3l3 3-3 3" stroke="#1F6B24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ④ RIGHT: STATS PANEL -->
+              <div class="chron-stats-panel">
+                <div class="chron-placements-box">
+                  <div class="chron-placements-box__head">
+                    <span class="chron-placements-box__label">Placements 2026</span>
+                    <span class="chron-placements-box__year">Batch Report</span>
+                  </div>
+                  <div class="chron-placements-box__body">
+                    <span class="chron-placements-box__lpa">&#8377;51 LPA</span>
+                    <span class="chron-placements-box__sub">Highest Package</span>
+                    <span class="chron-placements-box__note">621 total offers · 37 companies</span>
+                    <div class="chron-placements-box__companies">
+                      <span>Cognizant</span>
+                      <span>Infosys</span>
+                      <span>HCL Tech</span>
+                      <span>Virtusa</span>
+                      <span>Deloitte</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="chron-the-box">
+                  <span class="chron-the-box__label">Rankings 2025</span>
+                  <p class="chron-the-box__text">#6 in Telangana (Times). #9 in Hyderabad (The Week). DataQuest Top 50 T-Schools India.</p>
+                </div>
+                <div class="chron-quickstats">
+                  <div class="chron-quickstat">
+                    <strong>NAAC A+</strong>
+                    <span>Accredited</span>
+                  </div>
+                  <div class="chron-quickstat">
+                    <strong>#6 TG</strong>
+                    <span>Times 2025</span>
+                  </div>
+                  <div class="chron-quickstat">
+                    <strong>420</strong>
+                    <span>Patents filed</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </li>
+
+          <li class="main-nav__item main-nav__item--support">
+            <a href="#" class="main-nav__link main-nav__link--support">
+              <span class="support-avatar" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <circle cx="9" cy="6" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M2 15.5c0-3.038 3.134-5.5 7-5.5s7 2.462 7 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              Support
+            </a>
+
+            <div class="support-panel">
+
+              <!-- Divider top -->
+              <div class="support-panel__divider"></div>
+
+              <!-- Talk with us -->
+              <p class="support-panel__heading">Talk with us</p>
+              <div class="support-panel__call-row">
+                <a href="tel:18005724363" class="support-panel__call-btn" aria-label="Call toll free">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="16" r="16" fill="#2E7D32"/>
+                    <path d="M11.5 10h2.8l1.2 3-1.6 1a9.1 9.1 0 0 0 4.1 4.1l1-1.6 3 1.2v2.8A1.5 1.5 0 0 1 20.5 22C13.6 22 10 18.4 10 11.5A1.5 1.5 0 0 1 11.5 10Z" fill="#fff"/>
+                  </svg>
+                </a>
+                <span class="support-panel__call-text">Toll Free: 1800 572 4363</span>
+              </div>
+
+              <!-- Divider mid -->
+              <div class="support-panel__divider"></div>
+
+              <!-- Connect with us -->
+              <p class="support-panel__heading">Connect with us</p>
+              <div class="support-panel__socials">
+                <a href="https://x.com/mlritin"                                          class="support-panel__social" aria-label="X / Twitter">
+                  <svg width="70" height="70" viewBox="0 0 70 70" fill="none"><circle cx="35" cy="35" r="35" fill="#f0f0f0"/><text x="35" y="41" text-anchor="middle" font-size="22" font-family="Arial" fill="#333">𝕏</text></svg>
+                </a>
+                <a href="https://www.linkedin.com/school/mlr-institute-of-technology/" class="support-panel__social" aria-label="LinkedIn">
+                  <svg width="70" height="70" viewBox="0 0 70 70" fill="none"><circle cx="35" cy="35" r="35" fill="#0A66C2"/><text x="35" y="43" text-anchor="middle" font-size="26" font-family="Arial" fill="#fff" font-weight="bold">in</text></svg>
+                </a>
+                <a href="https://www.youtube.com/channel/UCAfZfemyTCM-965RZy6QiGA"      class="support-panel__social" aria-label="YouTube">
+                  <svg width="70" height="70" viewBox="0 0 70 70" fill="none"><circle cx="35" cy="35" r="35" fill="#FF0000"/><polygon points="28,24 28,46 50,35" fill="#fff"/></svg>
+                </a>
+                <a href="https://www.facebook.com/Mlrit/"                                class="support-panel__social" aria-label="Facebook">
+                  <svg width="70" height="70" viewBox="0 0 70 70" fill="none"><circle cx="35" cy="35" r="35" fill="#1877F2"/><text x="35" y="44" text-anchor="middle" font-size="30" font-family="Arial" fill="#fff" font-weight="bold">f</text></svg>
+                </a>
+                <a href="https://www.instagram.com/mlr_institute_of_technology/"                       class="support-panel__social" aria-label="Instagram">
+                  <svg width="70" height="70" viewBox="0 0 70 70" fill="none"><defs><radialGradient id="ig" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><circle cx="35" cy="35" r="35" fill="url(#ig)"/><rect x="20" y="20" width="30" height="30" rx="8" stroke="#fff" stroke-width="2.5" fill="none"/><circle cx="35" cy="35" r="7" stroke="#fff" stroke-width="2.5" fill="none"/><circle cx="44" cy="26" r="2" fill="#fff"/></svg>
+                </a>
+              </div>
+
+              <!-- Find us -->
+              <p class="support-panel__heading">Find us</p>
+              <div class="support-panel__map">
+                <iframe
+                  src="https://maps.google.com/maps?q=MLR+Institute+of+Technology+Dundigal+Hyderabad&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                  width="100%" height="100%"
+                  style="border:0; border-radius:15px; display:block; background:#1a1a1a;"
+                  allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="MLRIT Location">
+                </iframe>
+              </div>
+
             </div>
           </li>
 

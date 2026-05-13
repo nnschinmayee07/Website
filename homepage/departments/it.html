@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Information Technology Department — MLRIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; background: #FFFFFF; color: #3A3A3A; line-height: 1.7; }
+
+    /* ── Dept Nav ── */
+    .dept-nav { background: #0B0F1A; display: flex; align-items: stretch; padding: 0 16px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .dept-nav__link { display: flex; align-items: center; padding: 0 20px; height: 44px; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.5); text-decoration: none; position: relative; transition: color 0.2s, background 0.2s; }
+    .dept-nav__link:hover { color: rgba(255,255,255,0.85); background: rgba(232,93,31,0.08); }
+    .dept-nav__link::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%) scaleX(0); width: 70%; height: 2px; background: linear-gradient(90deg, transparent, #E85D1F, transparent); transition: transform 0.25s; }
+    .dept-nav__link:hover::after { transform: translateX(-50%) scaleX(1); }
+    .dept-nav__link--active { color: #E85D1F; }
+    .dept-nav__link--active::after { transform: translateX(-50%) scaleX(1); background: #E85D1F; }
+    .dept-nav__link--dept { color: #fff; font-weight: 700; margin-left: auto; }
+    .dept-nav__sep { width: 1px; height: 20px; background: rgba(255,255,255,0.1); align-self: center; margin: 0 4px; }
+
+    /* ── Hero ── */
+    .dept-hero { background: linear-gradient(135deg, #0D3320, #1F6B24); min-height: 60vh; padding: 80px 48px 60px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; }
+    .dept-hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0; opacity: 0; transition: opacity 0.6s ease; pointer-events: none; }
+    .dept-hero__video.is-visible { opacity: 0.55; }
+    .dept-hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,51,32,0.75), rgba(24,69,59,0.75)); z-index: 1; transition: opacity 0.6s ease; }
+    .dept-hero:hover .dept-hero__overlay { opacity: 0.28; }
+    .dept-hero__eyebrow, .dept-hero__title { position: relative; z-index: 2; }
+    .dept-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 70% 30%, rgba(232,93,31,0.12), transparent 60%); pointer-events: none; z-index: 3; }
+    .dept-hero__eyebrow { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; position: relative; z-index: 1; }
+    .dept-hero__title { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 700; color: #fff; position: relative; z-index: 1; }
+
+    /* ── Tabs ── */
+    .dept-tabs { background: #0B0F1A; display: flex; gap: 0; overflow-x: auto; border-bottom: 3px solid #1F6B24; position: sticky; top: 0; z-index: 40; }
+    .dept-tabs::-webkit-scrollbar { height: 0; }
+    .dept-tab { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.5); text-decoration: none; padding: 14px 24px; white-space: nowrap; cursor: pointer; position: relative; transition: color 0.25s, background 0.25s; }
+    .dept-tab::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%) scaleX(0); width: 70%; height: 3px; background: linear-gradient(90deg, transparent, #E85D1F, transparent); transition: transform 0.25s ease; }
+    .dept-tab:hover { color: rgba(255,255,255,0.8); background: rgba(232,93,31,0.08); }
+    .dept-tab:hover::after { transform: translateX(-50%) scaleX(1); }
+    .dept-tab.is-active { color: #fff; background: rgba(232,93,31,0.1); }
+    .dept-tab.is-active::after { transform: translateX(-50%) scaleX(1); background: #E85D1F; height: 3px; }
+
+    /* ── Panels ── */
+    .dept-panel { display: none; padding: 40px 48px; max-width: none; margin: 0; }
+    .dept-panel.is-active { display: block; animation: fadeIn 0.35s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    .panel-heading { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 700; color: #0B0F1A; margin-bottom: 28px; line-height: 1.2; }
+    .panel-heading::after { content: ''; display: block; width: 60px; height: 4px; background: #E85D1F; margin-top: 14px; border-radius: 2px; }
+    .panel-sub { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.72rem; font-weight: 800; color: #1F6B24; text-transform: uppercase; letter-spacing: 0.1em; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 2px solid rgba(24,69,59,0.12); }
+    p { font-size: 0.95rem; color: #3A3A3A; max-width: 780px; margin-bottom: 14px; line-height: 1.8; }
+
+    /* ── Cards ── */
+    .card { background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+    .card h3 { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 1.15rem; color: #0B0F1A; margin-bottom: 10px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card--accent { border-top: 3px solid #1F6B24; transition: transform 0.25s ease, box-shadow 0.25s ease, border-top-color 0.25s ease; }
+    .card--accent:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-top-color: #E85D1F; }
+    .peo-num { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 800; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #1F6B24; margin-bottom: 10px; }
+
+    /* ── HOD Message ── */
+    .hod-msg { display: flex; gap: 28px; align-items: flex-start; background: #fff; border-radius: 16px; padding: 32px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); margin-bottom: 36px; border-left: 4px solid #1F6B24; }
+    .hod-msg__photo { width: 100px; height: 100px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 3px solid #1F6B24; }
+    .hod-msg__photo img { width: 100%; height: 100%; object-fit: cover; }
+    .hod-msg__label { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #E85D1F; margin-bottom: 8px; }
+    .hod-msg__text { font-size: 0.92rem; color: #444; line-height: 1.8; font-style: italic; max-width: none; }
+    .hod-msg__name { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.82rem; font-weight: 700; color: #1F6B24; margin-top: 12px; }
+
+    /* ── Accordion ── */
+    .sub-accordion { margin-bottom: 16px; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 1px 8px rgba(0,0,0,0.05); }
+    .sub-accordion__header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; cursor: pointer; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.88rem; font-weight: 700; color: #0B0F1A; border-left: 3px solid #1F6B24; transition: background 0.2s, border-left-color 0.25s, transform 0.2s; }
+    .sub-accordion__header:hover { background: rgba(24,69,59,0.04); border-left-color: #E85D1F; transform: translateX(4px); }
+    .sub-accordion__chevron { font-size: 0.7rem; color: #888; transition: transform 0.3s; }
+    .sub-accordion.is-open .sub-accordion__chevron { transform: rotate(180deg); color: #E85D1F; }
+    .sub-accordion.is-open .sub-accordion__header { border-left-color: #E85D1F; color: #E85D1F; }
+    .sub-accordion__body { max-height: 0; overflow: hidden; transition: max-height 0.4s; }
+    .sub-accordion.is-open .sub-accordion__body { max-height: 2000px; }
+    .sub-accordion__content { padding: 0 20px 20px; }
+    .lab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+    .lab-card { background: #f9f8f5; border-radius: 8px; padding: 16px 18px; border-left: 3px solid #1F6B24; transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease; cursor: default; }
+    .lab-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); border-left-color: #E85D1F; }
+    .lab-card__name { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.85rem; color: #0B0F1A; margin-bottom: 4px; }
+    .lab-card__desc { font-size: 0.78rem; color: #666; }
+
+    /* ── OBE ── */
+    .obe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 20px; }
+    .obe-col h4 { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.82rem; font-weight: 800; color: #1F6B24; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+    .obe-list { list-style: none; padding: 0; }
+    .obe-list li { font-size: 0.88rem; color: #444; padding: 8px 0 8px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); position: relative; transition: transform 0.2s ease, color 0.2s ease; cursor: default; }
+    .obe-list li:hover { transform: translateX(6px); color: #0B0F1A; }
+    .obe-list li::before { content: ''; position: absolute; left: 0; top: 14px; width: 6px; height: 6px; border-radius: 50%; background: #E85D1F; }
+    .obe-list li a { color: inherit; text-decoration: none; display: block; }
+    .obe-list li a:hover { color: #E85D1F; }
+
+    /* ── Catalog ── */
+    .catalog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+    .catalog-item { background: #fff; border-radius: 10px; padding: 16px 20px; box-shadow: 0 1px 8px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; border-left: 3px solid #1F6B24; }
+    .catalog-item:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+    .catalog-item__text { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.82rem; font-weight: 700; color: #0B0F1A; }
+    .catalog-item__sub { font-size: 0.68rem; color: #888; display: block; margin-top: 2px; }
+
+    /* ── Syllabus ── */
+    .pill-row { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    .pill { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.82rem; padding: 10px 22px; border-radius: 24px; border: 2px solid rgba(24,69,59,0.25); background: transparent; color: #3A3A3A; cursor: pointer; transition: all 0.25s; }
+    .pill:hover { border-color: #E85D1F; color: #E85D1F; }
+    .pill.is-active { background: #1F6B24; border-color: #1F6B24; color: #fff; }
+    .subject-list { max-width: 700px; opacity: 0; transform: translateY(10px); transition: opacity 0.35s, transform 0.35s; }
+    .subject-list.is-visible { opacity: 1; transform: translateY(0); }
+    .subject-row { display: flex; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,0.06); gap: 16px; cursor: pointer; }
+    .subject-num { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 800; font-size: 0.72rem; color: #1F6B24; width: 28px; }
+    .subject-name { flex: 1; font-size: 0.92rem; color: #3A3A3A; }
+    .subject-code { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.7rem; font-weight: 700; color: #1F6B24; background: rgba(24,69,59,0.08); padding: 2px 8px; border-radius: 4px; flex-shrink: 0; letter-spacing: 0.04em; }
+    .syll-btn { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.72rem; font-weight: 700; padding: 6px 14px; border-radius: 6px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px; }
+    .syll-btn--download { color: #fff; background: #1F6B24; }
+    .syll-btn--download:hover { background: #0D3320; }
+    .full-syllabus-btn { display: inline-block; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.85rem; font-weight: 700; color: #fff; background: #1F6B24; padding: 10px 24px; border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+    .full-syllabus-btn:hover { background: #0D3320; transform: translateY(-1px); }
+    .subject-pdf { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.7rem; font-weight: 700; color: #E85D1F; text-decoration: none; padding: 4px 12px; border: 1px solid rgba(232,93,31,0.3); border-radius: 6px; transition: all 0.2s; white-space: nowrap; }
+    .subject-pdf:hover { background: #E85D1F; color: #fff; }
+    .subject-toggle { font-size: 0.7rem; color: #888; margin-left: 8px; transition: transform 0.3s; display: inline-block; }
+    .subject-row.is-expanded .subject-toggle { transform: rotate(90deg); color: #E85D1F; }
+    .subject-units { max-height: 0; overflow: hidden; transition: max-height 0.4s; padding: 0 0 0 44px; }
+    .subject-row.is-expanded + .subject-units { max-height: 300px; }
+    .subject-units ol { list-style: none; padding: 8px 0 12px; counter-reset: unit; }
+    .subject-units li { font-size: 0.82rem; color: #555; padding: 4px 0; counter-increment: unit; }
+    .subject-units li::before { content: 'Unit ' counter(unit) ': '; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.7rem; color: #1F6B24; }
+
+    /* ── Faculty flip cards ── */
+    .fcard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+    .fcard { width: 100%; aspect-ratio: 3/4; border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; background: linear-gradient(135deg, #2A2F40, #3A4050); }
+    .fcard img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.4s ease; }
+    .fcard:hover img { transform: scale(1.05); }
+    .fcard__ini { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 2rem; color: rgba(255,255,255,0.3); position: absolute; inset: 0; }
+    .fcard__overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 18px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); z-index: 2; transition: opacity 0.3s; }
+    .fcard__name { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.85rem; color: #fff; }
+    .fcard__role { font-size: 0.68rem; color: rgba(255,255,255,0.6); }
+    .fcard::before { content: ''; position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: #E85D1F; clip-path: circle(0% at 100% 0%); transition: clip-path 0.5s cubic-bezier(0.25,0.46,0.45,0.94); z-index: 3; }
+    .fcard:hover::before { clip-path: circle(150% at 100% 0%); }
+    .fcard::after { content: ''; position: absolute; inset: 0; background: rgba(11,15,26,0.85); opacity: 0; transition: opacity 0.3s ease 0.15s; z-index: 4; }
+    .fcard:hover::after { opacity: 1; }
+    .fcard:hover .fcard__overlay { opacity: 0; }
+    .fcard__hover-info { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; text-align: center; z-index: 5; opacity: 0; transform: translateY(10px); transition: opacity 0.35s ease 0.2s, transform 0.35s ease 0.2s; }
+    .fcard:hover .fcard__hover-info { opacity: 1; transform: translateY(0); }
+    .fcard__hover-name { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 1.05rem; color: #fff; margin-bottom: 4px; }
+    .fcard__hover-role { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
+    .fcard__hover-spec { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.72rem; font-weight: 600; color: #E85D1F; margin-bottom: 20px; letter-spacing: 0.04em; }
+    .fcard__hover-btn { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.72rem; font-weight: 700; color: #fff; text-decoration: none; padding: 8px 20px; border: 1px solid #fff; border-radius: 6px; transition: all 0.2s; }
+    .fcard__hover-btn:hover { background: #fff; color: #0B0F1A; }
+
+    /* ── Achievements ── */
+    .achieve-grid { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 700px; }
+    .achieve-card { border-left: 3px solid #E85D1F; cursor: pointer; }
+    .achieve-card h4 { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.95rem; color: #0B0F1A; margin-bottom: 6px; }
+    .achieve-card p { font-size: 0.88rem; color: #555; margin-bottom: 0; max-height: 0; overflow: hidden; transition: max-height 0.4s; }
+    .achieve-card.is-expanded p { max-height: 200px; margin-bottom: 8px; }
+    .achieve-toggle { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.7rem; font-weight: 700; color: #E85D1F; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px; display: inline-block; }
+    .achieve-list { list-style: none; padding: 0; max-width: 700px; }
+    .achieve-list li { position: relative; padding: 14px 16px 14px 28px; margin-bottom: 8px; border-radius: 8px; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,0.04); font-size: 0.88rem; color: #444; border-left: 3px solid transparent; transition: transform 0.2s ease, border-left-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; cursor: default; }
+    .achieve-list li:hover { transform: translateX(6px); border-left-color: #E85D1F; box-shadow: 0 4px 16px rgba(232,93,31,0.1); background: rgba(232,93,31,0.02); }
+    .achieve-list li::before { content: ''; position: absolute; left: 10px; top: 20px; width: 8px; height: 8px; border-radius: 50%; background: #E85D1F; transition: transform 0.2s ease; }
+    .achieve-list li:hover::before { transform: scale(1.4); }
+
+    /* ── Roll of Honour ── */
+    .honour-table { width: 100%; max-width: 700px; border-collapse: separate; border-spacing: 0 6px; }
+    .honour-table th { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; text-align: left; padding: 12px 16px; border-bottom: 2px solid rgba(0,0,0,0.08); }
+    .honour-table td { font-size: 0.88rem; color: #333; padding: 14px 16px; background: #fff; transition: background 0.2s ease, box-shadow 0.2s ease; }
+    .honour-table tr { transition: transform 0.2s ease; }
+    .honour-table tbody tr:hover { transform: translateX(6px); }
+    .honour-table tbody tr:hover td { background: rgba(232,93,31,0.06); box-shadow: 0 2px 12px rgba(232,93,31,0.1); }
+    .honour-table tbody tr:hover td:first-child { border-left: 3px solid #E85D1F; }
+    .honour-table td:first-child { border-radius: 8px 0 0 8px; border-left: 3px solid transparent; }
+    .honour-table td:last-child { border-radius: 0 8px 8px 0; }
+    .honour-table .honour-name { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; color: #0B0F1A; }
+    .honour-table .honour-badge { display: inline-block; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 10px; letter-spacing: 0.04em; }
+    .honour-badge--topper { background: rgba(232,93,31,0.12); color: #E85D1F; }
+    .honour-badge--rank { background: rgba(24,69,59,0.1); color: #1F6B24; }
+    .honour-table .honour-score { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 1.05rem; color: #1F6B24; }
+
+    /* ── Internship stats ── */
+    .intern-stats { display: flex; gap: 20px; margin-bottom: 36px; flex-wrap: wrap; }
+    .stat-card { background: #fff; border-radius: 12px; padding: 24px 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); text-align: center; flex: 1; min-width: 140px; }
+    .stat-card__num { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 1.8rem; color: #1F6B24; line-height: 1; margin-bottom: 6px; }
+    .stat-card__label { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 600; font-size: 0.75rem; color: #888; letter-spacing: 0.06em; text-transform: uppercase; }
+
+    /* ── Publications ── */
+    .pub-filters { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
+    .pub-filter { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.75rem; padding: 7px 18px; border-radius: 20px; border: 2px solid rgba(24,69,59,0.25); background: transparent; color: #3A3A3A; cursor: pointer; transition: all 0.25s; }
+    .pub-filter:hover { border-color: #E85D1F; color: #E85D1F; }
+    .pub-filter.is-active { background: #1F6B24; border-color: #1F6B24; color: #fff; }
+    .pub-list { display: flex; flex-direction: column; gap: 16px; max-width: 780px; }
+    .pub-card { background: #fff; border-radius: 12px; padding: 24px 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 3px solid #1F6B24; display: flex; align-items: flex-start; gap: 20px; transition: opacity 0.4s ease; }
+    .pub-card.is-dimmed { opacity: 0.2; }
+    .pub-card__body { flex: 1; }
+    .pub-card__title { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.95rem; color: #0B0F1A; margin-bottom: 6px; line-height: 1.4; }
+    .pub-card__authors { font-size: 0.82rem; color: #888; margin-bottom: 4px; }
+    .pub-card__journal { font-size: 0.82rem; color: #E85D1F; font-style: italic; }
+    .pub-card__year { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 800; font-size: 0.68rem; color: #fff; background: #1F6B24; padding: 4px 10px; border-radius: 10px; flex-shrink: 0; }
+    .pub-tag { display: inline-block; margin-top: 8px; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.68rem; font-weight: 700; color: #1F6B24; background: rgba(24,69,59,0.08); padding: 3px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* ── Placement stats ── */
+    .placement-stats { display: flex; gap: 16px; flex-wrap: wrap; margin: 16px 0; }
+    .placement-stat { background: #fff; border-radius: 10px; padding: 20px 28px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; flex: 1; min-width: 130px; border-top: 3px solid #E85D1F; }
+    .placement-stat__num { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 1.6rem; color: #E85D1F; }
+    .placement-stat__label { font-size: 0.72rem; color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
+
+    /* ── Committee table ── */
+    .committee-table { width: 100%; border-collapse: separate; border-spacing: 0 6px; max-width: 900px; }
+    .committee-table th { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; text-align: left; padding: 12px 16px; border-bottom: 2px solid rgba(0,0,0,0.08); }
+    .committee-table td { font-size: 0.88rem; color: #333; padding: 14px 16px; background: #fff; }
+    .committee-table td:first-child { border-radius: 8px 0 0 8px; border-left: 3px solid transparent; }
+    .committee-table tbody tr:hover td:first-child { border-left: 3px solid #E85D1F; }
+    .committee-table tbody tr:hover td { background: rgba(232,93,31,0.04); }
+    .committee-table td:last-child { border-radius: 0 8px 8px 0; }
+    .committee-badge { display: inline-block; font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 10px; letter-spacing: 0.04em; }
+    .badge--chairman { background: rgba(24,69,59,0.12); color: #1F6B24; }
+    .badge--convener { background: rgba(232,93,31,0.12); color: #E85D1F; }
+    .badge--industry { background: rgba(11,15,26,0.08); color: #0B0F1A; }
+    .badge--academic { background: rgba(24,69,59,0.06); color: #1F6B24; }
+
+    /* ── Orange streak ── */
+    @keyframes orange-streak { 0% { transform: scaleX(0); opacity: 1; } 65% { transform: scaleX(1); opacity: 1; } 100% { transform: scaleX(1); opacity: 0; } }
+    .streak { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #E85D1F 0%, rgba(232,93,31,0.4) 60%, transparent 100%); transform-origin: left; transform: scaleX(0); opacity: 0; z-index: 9999; pointer-events: none; border-radius: 0 2px 2px 0; }
+    .streak.is-firing { animation: orange-streak 0.55s cubic-bezier(0.25,0.46,0.45,0.94) forwards; }
+
+    /* ── Body flex layout ── */
+    .dept-body { display: grid; grid-template-columns: 220px minmax(0, 1fr); align-items: stretch; min-height: calc(100vh - 44px); }
+    .dept-body__panels { min-width: 0; }
+
+    /* ── Left sidebar ── */
+    .dark-sidebar { position: sticky; top: 44px; align-self: start; height: calc(100vh - 44px); background: #FAFAF8; z-index: 35; padding-top: 24px; border-right: 1px solid rgba(0,0,0,0.05); overflow-y: auto; }
+    .dark-sidebar::-webkit-scrollbar { width: 4px; }
+    .dark-sidebar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 2px; }
+    .dark-sidebar__title { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #155218; padding: 0 20px 14px; border-bottom: 1px solid rgba(0,0,0,0.06); margin-bottom: 8px; }
+    .ds-item { display: flex; align-items: center; padding: 8px 20px; cursor: pointer; border-left: 3px solid transparent; transition: all 0.2s; text-decoration: none; color: inherit; }
+    .ds-item:hover { background: rgba(232,93,31,0.06); }
+    .ds-item.is-active { border-left-color: #E85D1F; background: rgba(232,93,31,0.08); }
+    .ds-item__dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(0,0,0,0.1); flex-shrink: 0; margin-right: 12px; transition: all 0.2s; }
+    .ds-item.is-active .ds-item__dot { background: #E85D1F; box-shadow: 0 0 6px rgba(232,93,31,0.4); }
+    .ds-item__label { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.7rem; font-weight: 600; color: rgba(26,58,46,0.5); transition: color 0.2s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ds-item:hover .ds-item__label { color: rgba(232,93,31,0.8); }
+    .ds-item.is-active .ds-item__label { color: #E85D1F; }
+
+    @media (max-width: 768px) {
+      .dept-panel { padding: 32px 20px; }
+      .two-col, .three-col, .obe-grid, .catalog-grid, .lab-grid { grid-template-columns: 1fr; }
+      .hod-msg { flex-direction: column; align-items: center; text-align: center; }
+      .dark-sidebar { display: none; }
+      .dept-body { display: block; }
+      .fcard-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    }
+
+    .ds-item[data-ds-tab]:not([data-ds-tab="overview"]) { display: none; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="masthead">
+      <div class="container masthead__inner">
+        <a href="../index.html" class="masthead__logo" aria-label="MLRIT Home"><img src="../mlrit-logo-main.png" alt="MLRIT Logo" /></a>
+        <div class="masthead__tagline"><span>Marri Laxman Reddy Institute of Technology</span></div>
+        <a href="#" class="masthead__eapcet">EAPCET CODE : MLID</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="dept-nav">
+    <a href="../index.html" class="dept-nav__link">Home</a>
+    <span class="dept-nav__sep"></span>
+    <a href="ug.html" class="dept-nav__link dept-nav__link--active">Undergraduate</a>
+    <a href="pg.html" class="dept-nav__link">Postgraduate</a>
+    <span class="dept-nav__sep"></span>
+    <span class="dept-nav__link dept-nav__link--dept">IT Department</span>
+  </nav>
+
+  <div class="dept-hero" id="page-top">
+    <video class="dept-hero__video" id="heroVideo" muted loop playsinline preload="metadata">
+      <source src="dept.mp4" type="video/mp4" />
+    </video>
+    <div class="dept-hero__overlay" id="heroOverlay"></div>
+    <div class="dept-hero__eyebrow">B.Tech — Information Technology</div>
+    <div class="dept-hero__title">Department of Information Technology</div>
+  </div>
+  <script>
+    (function(){
+      var hero = document.querySelector('.dept-hero');
+      var vid  = document.getElementById('heroVideo');
+      if (!hero || !vid) return;
+      hero.addEventListener('mouseenter', function(){
+        if (vid.readyState === 0) { vid.load(); }
+        var p = vid.play(); if (p && p.catch) p.catch(function(){});
+        vid.classList.add('is-visible');
+      });
+      hero.addEventListener('mouseleave', function(){
+        vid.classList.remove('is-visible');
+        setTimeout(function(){ vid.pause(); vid.currentTime = 0; }, 650);
+      });
+    })();
+  </script>
+
+  <nav class="dept-tabs" id="deptTabs">
+    <a class="dept-tab is-active" data-tab="overview">Overview</a>
+    <a class="dept-tab" data-tab="objectives">Objectives</a>
+    <a class="dept-tab" data-tab="faculty">Faculty Profiles</a>
+    <a class="dept-tab" data-tab="academics">Academics</a>
+    <a class="dept-tab" data-tab="achievements">Achievements</a>
+    <a class="dept-tab" data-tab="committees">Committees</a>
+  </nav>
+  <div class="streak" id="navStreak"></div>
+
+  <div class="dept-body">
+
+    <!-- Left sidebar -->
+    <aside class="dark-sidebar" id="darkSidebar">
+      <div class="dark-sidebar__title">Quick Nav</div>
+      <a class="ds-item" data-ds-tab="overview" data-ds-target="hod-msg"><span class="ds-item__dot"></span><span class="ds-item__label">HOD Message</span></a>
+      <a class="ds-item" data-ds-tab="overview" data-ds-target="vm-section"><span class="ds-item__dot"></span><span class="ds-item__label">Vision and Mission</span></a>
+      <a class="ds-item" data-ds-tab="overview" data-ds-target="teaching-method"><span class="ds-item__dot"></span><span class="ds-item__label">Teaching</span></a>
+      <a class="ds-item" data-ds-tab="overview" data-ds-target="history-section"><span class="ds-item__dot"></span><span class="ds-item__label">History</span></a>
+      <a class="ds-item" data-ds-tab="overview" data-ds-target="labs-section"><span class="ds-item__dot"></span><span class="ds-item__label">Labs</span></a>
+      <a class="ds-item" data-ds-tab="objectives" data-ds-target="peo-section"><span class="ds-item__dot"></span><span class="ds-item__label">PEOs</span></a>
+      <a class="ds-item" data-ds-tab="objectives" data-ds-target="obe-section"><span class="ds-item__dot"></span><span class="ds-item__label">OBE</span></a>
+      <a class="ds-item" data-ds-tab="objectives" data-ds-target="handbook-section"><span class="ds-item__dot"></span><span class="ds-item__label">Handbook</span></a>
+      <a class="ds-item" data-ds-tab="faculty" data-ds-target="panel-faculty"><span class="ds-item__dot"></span><span class="ds-item__label">All Faculty</span></a>
+      <a class="ds-item" data-ds-tab="academics" data-ds-target="syll-pdfs"><span class="ds-item__dot"></span><span class="ds-item__label">Syllabus PDFs</span></a>
+      <a class="ds-item" data-ds-tab="academics" data-ds-target="catalog-section"><span class="ds-item__dot"></span><span class="ds-item__label">Course Catalog</span></a>
+      <a class="ds-item" data-ds-tab="academics" data-ds-target="syll-explorer"><span class="ds-item__dot"></span><span class="ds-item__label">Syllabus Explorer</span></a>
+      <a class="ds-item" data-ds-tab="achievements" data-ds-target="achieve-section"><span class="ds-item__dot"></span><span class="ds-item__label">Achievements</span></a>
+      <a class="ds-item" data-ds-tab="achievements" data-ds-target="honour-section"><span class="ds-item__dot"></span><span class="ds-item__label">Roll of Honour</span></a>
+      <a class="ds-item" data-ds-tab="achievements" data-ds-target="placement-section"><span class="ds-item__dot"></span><span class="ds-item__label">Placements</span></a>
+      <a class="ds-item" data-ds-tab="achievements" data-ds-target="intern-section"><span class="ds-item__dot"></span><span class="ds-item__label">Internships</span></a>
+      <a class="ds-item" data-ds-tab="achievements" data-ds-target="pub-section"><span class="ds-item__dot"></span><span class="ds-item__label">Publications</span></a>
+      <a class="ds-item" data-ds-tab="committees" data-ds-target="pac-section"><span class="ds-item__dot"></span><span class="ds-item__label">PAC</span></a>
+      <a class="ds-item" data-ds-tab="committees" data-ds-target="dac-section"><span class="ds-item__dot"></span><span class="ds-item__label">DAC</span></a>
+    </aside>
+
+    <div class="dept-body__panels">
+
+      <!-- ═══ TAB 1: Overview ═══ -->
+      <div class="dept-panel is-active" id="panel-overview">
+        <h2 class="panel-heading">About the Department</h2>
+        <div style="background:#F1F8E9;border:1px solid #AED581;border-left:4px solid #1F6B24;padding:12px 16px;border-radius:8px;margin:0 0 20px;font-size:0.84rem;color:#33691E;">Overview, vision/mission, PEOs, HOD details, and the full faculty roster (with photos) have been ingested from mlrit.ac.in. Lab inventory, publications, and the syllabus subject details are still pending — they will be added once the source data is available.</div>
+
+
+        <div id="hod-msg" class="hod-msg">
+          <div class="hod-msg__photo">
+            <img src="https://mlrit.ac.in/wp-content/uploads/2021/06/raja-sekhar-reddy.jpg" alt="Dr. N V Raja Sekhar Reddy" onerror="this.style.display='none'" />
+          </div>
+          <div class="hod-msg__content">
+            <div class="hod-msg__label">From the HOD's Desk</div>
+            <p class="hod-msg__text">"The IT department has produced quality engineers since 2005. Our pedagogy combines rigorous theoretical foundations with applied skills, in-house training programmes, and personality development — so graduates step into IT industry roles confident, well-rounded, and industry-ready from day one."</p>
+            <div class="hod-msg__name">— Dr. N V Raja Sekhar Reddy, Professor and HOD, Information Technology</div>
+          </div>
+        </div>
+
+        <p>The Department of Information Technology was established in 2005 with an initial intake of 60, expanded to 180 students per year. The department offers a 4-year B.Tech programme designed to produce industry-ready software engineers through creative teaching, structured in-house training, and a deliberate focus on personality development — combining theoretical depth, applied skills, and the general competencies required to thrive in the IT industry.</p>
+
+        <div class="panel-sub" id="vm-section">Vision and Mission</div>
+        <div class="two-col">
+          <div class="card card--accent">
+            <h3>Vision</h3>
+            <p>To build an IT department committed to continuous improvement that adapts swiftly to 21st-century challenges by developing professionals with robust technical and research backgrounds.</p>
+          </div>
+          <div class="card card--accent">
+            <h3>Mission</h3>
+            <p><strong>M1.</strong> Provide a quality teaching-learning environment that builds proficiency in theoretical and applied IT foundations.</p>
+                        <p><strong>M2.</strong> Create skilled IT engineers capable of research and developing solutions for national betterment.</p>
+                        <p><strong>M3.</strong> Instil professional and ethical values and a sense of social responsibility among students.</p>
+                        <p><strong>M4.</strong> Develop entrepreneurial skills and motivate the pursuit of higher studies and lifelong learning.</p>
+          </div>
+        </div>
+
+        <div class="panel-sub" id="teaching-method">Innovative Teaching Methodology</div>
+        <p>The IT department combines lecture-based theory with structured in-house training, creative teaching techniques, and continuous evaluation. Students benefit from skill-building workshops, certification programmes, and personality-development modules embedded across the curriculum — preparing them not only for technical interviews but for long-term success in industry roles.</p>
+
+        <div style="margin-top:32px;">
+          <div id="history-section" class="sub-accordion">
+            <div class="sub-accordion__header">History of the Department <span class="sub-accordion__chevron">&#9660;</span></div>
+            <div class="sub-accordion__body"><div class="sub-accordion__content">
+              <p>The Department of Information Technology was established in 2005 with an intake of 60, growing over the years to its current intake of 180 students per year. Two decades of consistent investment in faculty, labs, and industry tie-ups have produced thousands of alumni serving across software engineering, systems, and emerging IT roles globally.</p>
+            </div></div>
+          </div>
+
+          <div class="sub-accordion">
+            <div class="sub-accordion__header">NBA Accreditation and Recognitions <span class="sub-accordion__chevron">&#9660;</span></div>
+            <div class="sub-accordion__body"><div class="sub-accordion__content">
+              <p>The B.Tech Information Technology programme follows the institute's autonomous regulations and operates within the institute's established AICTE / UGC / NAAC accreditations. The programme is supported by the institute's Centres of Excellence and active industry partnerships in software engineering, networks, and emerging IT domains.</p>
+            </div></div>
+          </div>
+
+          <div id="labs-section" class="sub-accordion">
+            <div class="sub-accordion__header">Academic Laboratories (pending) <span class="sub-accordion__chevron">&#9660;</span></div>
+            <div class="sub-accordion__body"><div class="sub-accordion__content">
+              <p style="font-style:italic;color:#666;margin:8px 0;">The lab inventory for this department has not yet been ingested from mlrit.ac.in. It will be added in Phase&nbsp;C alongside faculty profiles.</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ TAB 2: Objectives ═══ -->
+      <div class="dept-panel" id="panel-objectives">
+        <h2 class="panel-heading" id="peo-section">Programme Educational Objectives</h2>
+        <div class="three-col">
+          <div class="card card--accent" style="text-align:center;"><div class="peo-num">PEO 1</div><p>Be successfully employed as software engineers in the IT industry, applying knowledge of computing and engineering principles to deliver real-world software solutions.</p></div>
+          <div class="card card--accent" style="text-align:center;"><div class="peo-num">PEO 2</div><p>Become successful entrepreneurs, project leaders, and team members who assume leadership positions and contribute to the IT industry and society.</p></div>
+          <div class="card card--accent" style="text-align:center;"><div class="peo-num">PEO 3</div><p>Progress through advanced degree or certificate programmes in engineering and related fields, demonstrating commitment to lifelong learning.</p></div>
+        </div>
+
+        <div class="panel-sub" id="obe-section">Outcome Based Education (OBE)</div>
+        <div class="obe-grid">
+          <div class="obe-col">
+            <h4>B.Tech</h4>
+            <ul class="obe-list">
+              <li><a href="obe/educational-objectives.html">Educational Objectives and Outcomes</a></li>
+              <li><a href="obe/obe-process-manual.html">OBE Process Manual</a></li>
+              <li><a href="obe/course-outcomes.html">Course Outcomes Description Booklets</a></li>
+              <li><a href="obe/co-attainment.html">Course Outcomes (COs) Attainment</a></li>
+              <li><a href="obe/co-attainment.html#po-attainment">Program Outcomes (POs) Attainment</a></li>
+            </ul>
+          </div>
+          <div class="obe-col">
+            <h4>Programme Outcomes</h4>
+            <ul class="obe-list">
+              <li>Engineering Knowledge</li>
+              <li>Problem Analysis</li>
+              <li>Design / Development of Solutions</li>
+              <li>Conduct Investigations of Complex Problems</li>
+              <li>Modern Tool Usage</li>
+              <li>The Engineer and Society</li>
+              <li>Environment and Sustainability</li>
+              <li>Ethics</li>
+              <li>Individual and Team Work</li>
+              <li>Communication</li>
+              <li>Project Management and Finance</li>
+              <li>Life-long Learning</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel-sub">OBE Portal</div>
+        <div class="card" style="max-width:500px;">
+          <h3>OBE Assessment System</h3>
+          <p>Access the OBE portal for CO/PO attainment data, course mapping, and continuous improvement records.</p>
+          <a href="http://103.15.62.235/ioncudos_mlrit_tier1/" target="_blank" style="font-family:Raleway;font-size:0.78rem;font-weight:700;color:#E85D1F;text-decoration:none;">Open OBE Portal &rarr;</a>
+        </div>
+
+        <div class="panel-sub" id="handbook-section">Handbook</div>
+        <div class="card" style="max-width:500px;">
+          <h3>IT Department Handbook</h3>
+          <p>Department of Information Technology &mdash; Academic Year 2025-26</p>
+        </div>
+      </div>
+
+      <!-- ═══ TAB 3: Faculty ═══ -->
+      <div class="dept-panel" id="panel-faculty">
+        <h2 class="panel-heading" id="panel-faculty-heading">Faculty Profiles</h2>
+        <p>Hover for details. Click "View Research" for full profile.</p>
+        <div id="faculty-grid-section" class="fcard-grid">
+          <div class="fcard" data-author="Dr. N V Raja Sekhar Reddy" style="position:relative;">
+              <img src="images/it/n-v-raja-sekhar-reddy.jpg" alt="Dr. N V Raja Sekhar Reddy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">NR</div>
+              <div style="position:absolute;top:10px;left:10px;z-index:6;font-family:'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:#1F6B24;padding:3px 8px;border-radius:4px;">HOD</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. N V Raja Sekhar Reddy</div>
+                <div class="fcard__role">Professor and HOD</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. N V Raja Sekhar Reddy</div>
+                <div class="fcard__hover-role">Professor and HOD</div>
+                <div class="fcard__hover-spec">Wireless Networks, Cloud Computing</div>
+                <a href="faculty-profile.html?name=Dr.%20N%20V%20Raja%20Sekhar%20Reddy&role=Professor%20%26%20HOD&photo=images/it/n-v-raja-sekhar-reddy.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Dr. Dhilli Rao Gorja">
+              <img src="images/it/dhilli-rao-gorja.jpg" alt="Dr. Dhilli Rao Gorja" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">DG</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Dhilli Rao Gorja</div>
+                <div class="fcard__role">Associate Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Dhilli Rao Gorja</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">Organic Synthesis, Chemical Biology, Cancer Research</div>
+                <a href="faculty-profile.html?name=Dr.%20Dhilli%20Rao%20Gorja&role=Associate%20Professor&photo=images/it/dhilli-rao-gorja.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mrs. K. Neeraja">
+              <img src="images/it/k-neeraja.jpg" alt="Mrs. K. Neeraja" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">KN</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mrs. K. Neeraja</div>
+                <div class="fcard__role">Associate Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mrs. K. Neeraja</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mrs.%20K.%20Neeraja&role=Associate%20Professor&photo=images/it/k-neeraja.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mr. Vikram Raju">
+              <img src="images/it/vikram-raju.jpg" alt="Mr. Vikram Raju" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">VR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mr. Vikram Raju</div>
+                <div class="fcard__role">Associate Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mr. Vikram Raju</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mr.%20Vikram%20Raju&role=Associate%20Professor&photo=images/it/vikram-raju.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Dr. Mopur Vijaya Bhaskar Reddy">
+              <img src="images/it/mopur-vijaya-bhaskar-reddy.jpg" alt="Dr. Mopur Vijaya Bhaskar Reddy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MR</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Dr. Mopur Vijaya Bhaskar Reddy</div>
+                <div class="fcard__role">Associate Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Dr. Mopur Vijaya Bhaskar Reddy</div>
+                <div class="fcard__hover-role">Associate Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Dr.%20Mopur%20Vijaya%20Bhaskar%20Reddy&role=Associate%20Professor&photo=images/it/mopur-vijaya-bhaskar-reddy.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mrs. IVS. Haritha">
+              <img src="images/it/ivs-haritha.jpg" alt="Mrs. IVS. Haritha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">IH</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mrs. IVS. Haritha</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mrs. IVS. Haritha</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mrs.%20IVS.%20Haritha&role=Assistant%20Professor&photo=images/it/ivs-haritha.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mrs. G. Anitha">
+              <img src="images/it/g-anitha.jpg" alt="Mrs. G. Anitha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">GA</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mrs. G. Anitha</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mrs. G. Anitha</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mrs.%20G.%20Anitha&role=Assistant%20Professor&photo=images/it/g-anitha.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Vemuri Nitin">
+              <img src="images/it/vemuri-nitin.jpg" alt="Vemuri Nitin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">VN</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Vemuri Nitin</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Vemuri Nitin</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Data Mining</div>
+                <a href="faculty-profile.html?name=Vemuri%20Nitin&role=Assistant%20Professor&photo=images/it/vemuri-nitin.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mrs. Shruthi Patel">
+              <img src="images/it/shruthi-patel.jpg" alt="Mrs. Shruthi Patel" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">SP</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mrs. Shruthi Patel</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mrs. Shruthi Patel</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mrs.%20Shruthi%20Patel&role=Assistant%20Professor&photo=images/it/shruthi-patel.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mr. D. Sandeep">
+              <img src="images/it/d-sandeep.jpg" alt="Mr. D. Sandeep" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">DS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mr. D. Sandeep</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mr. D. Sandeep</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mr.%20D.%20Sandeep&role=Assistant%20Professor&photo=images/it/d-sandeep.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="J. Adilakshmi">
+              <img src="images/it/j-adilakshmi.jpg" alt="J. Adilakshmi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">JA</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">J. Adilakshmi</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">J. Adilakshmi</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=J.%20Adilakshmi&role=Assistant%20Professor&photo=images/it/j-adilakshmi.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Bhasker Boddu">
+              <img src="images/it/bhasker-boddu.jpg" alt="Bhasker Boddu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">BB</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Bhasker Boddu</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Bhasker Boddu</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">Computer Science and Engineering</div>
+                <a href="faculty-profile.html?name=Bhasker%20Boddu&role=Assistant%20Professor&photo=images/it/bhasker-boddu.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="P. Laxmaiah">
+              <img src="images/it/p-laxmaiah.jpg" alt="P. Laxmaiah" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">PL</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">P. Laxmaiah</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">P. Laxmaiah</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=P.%20Laxmaiah&role=Assistant%20Professor&photo=images/it/p-laxmaiah.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="B. Varija">
+              <img src="images/it/b-varija.jpg" alt="B. Varija" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">BV</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">B. Varija</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">B. Varija</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=B.%20Varija&role=Assistant%20Professor&photo=images/it/b-varija.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Ms. B. Sushma">
+              <img src="images/it/b-sushma.jpg" alt="Ms. B. Sushma" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">BS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Ms. B. Sushma</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Ms. B. Sushma</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Ms.%20B.%20Sushma&role=Assistant%20Professor&photo=images/it/b-sushma.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="G. Sathyanarayan">
+              <img src="images/it/g-sathyanarayan.jpg" alt="G. Sathyanarayan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">GS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">G. Sathyanarayan</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">G. Sathyanarayan</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=G.%20Sathyanarayan&role=Assistant%20Professor&photo=images/it/g-sathyanarayan.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Mr. Mohd Anwar Ali">
+              <img src="images/it/mohd-anwar-ali.jpg" alt="Mr. Mohd Anwar Ali" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MA</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Mr. Mohd Anwar Ali</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Mr. Mohd Anwar Ali</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Mr.%20Mohd%20Anwar%20Ali&role=Assistant%20Professor&photo=images/it/mohd-anwar-ali.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="M. Harshini">
+              <img src="images/it/m-harshini.jpg" alt="M. Harshini" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">MH</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">M. Harshini</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">M. Harshini</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=M.%20Harshini&role=Assistant%20Professor&photo=images/it/m-harshini.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="J. Shubangi">
+              <img src="images/it/j-shubangi.jpg" alt="J. Shubangi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">JS</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">J. Shubangi</div>
+                <div class="fcard__role">Assistant Professor</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">J. Shubangi</div>
+                <div class="fcard__hover-role">Assistant Professor</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=J.%20Shubangi&role=Assistant%20Professor&photo=images/it/j-shubangi.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Agosh M C">
+              <img src="images/it/agosh-m-c.jpg" alt="Agosh M C" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">AC</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Agosh M C</div>
+                <div class="fcard__role">Faculty</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Agosh M C</div>
+                <div class="fcard__hover-role">Faculty</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Agosh%20M%20C&role=Faculty&photo=images/it/agosh-m-c.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Venkatesh G">
+              <img src="images/it/venkatesh-g.jpg" alt="Venkatesh G" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">VG</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Venkatesh G</div>
+                <div class="fcard__role">Faculty</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Venkatesh G</div>
+                <div class="fcard__hover-role">Faculty</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Venkatesh%20G&role=Faculty&photo=images/it/venkatesh-g.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+
+          <div class="fcard" data-author="Hm Lijo Mon">
+              <img src="images/it/lijo-mon.jpg" alt="Hm Lijo Mon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="fcard__ini" style="display:none">LM</div>
+              <div class="fcard__overlay">
+                <div class="fcard__name">Hm Lijo Mon</div>
+                <div class="fcard__role">Faculty</div>
+              </div>
+              <div class="fcard__hover-info">
+                <div class="fcard__hover-name">Hm Lijo Mon</div>
+                <div class="fcard__hover-role">Faculty</div>
+                <div class="fcard__hover-spec">—</div>
+                <a href="faculty-profile.html?name=Hm%20Lijo%20Mon&role=Faculty&photo=images/it/lijo-mon.jpg" class="fcard__hover-btn">View Research</a>
+              </div>
+          </div>
+        
+        </div>
+      </div>
+
+      <!-- ═══ TAB 4: Academics ═══ -->
+      <div class="dept-panel" id="panel-academics">
+        <h2 class="panel-heading">Academics</h2>
+
+        <div class="panel-sub" id="syll-pdfs">Syllabus PDFs</div>
+        <div class="catalog-grid">
+          <a href="syllabus/it/r25/year1/sem1.html" class="catalog-item">
+            <span style="font-size:1.4rem;">&#128196;</span>
+            <div><span class="catalog-item__text">R25 — Year 1, Sem 1</span><span class="catalog-item__sub">Information Technology &middot; Regulation 2025</span></div>
+          </a>
+          <a href="syllabus/it/r25/year1/sem2.html" class="catalog-item">
+            <span style="font-size:1.4rem;">&#128196;</span>
+            <div><span class="catalog-item__text">R25 — Year 1, Sem 2</span><span class="catalog-item__sub">Information Technology &middot; Regulation 2025</span></div>
+          </a>
+          <a href="syllabus/it/r25/year2/sem1.html" class="catalog-item">
+            <span style="font-size:1.4rem;">&#128196;</span>
+            <div><span class="catalog-item__text">R25 — Year 2, Sem 1</span><span class="catalog-item__sub">Information Technology &middot; Regulation 2025</span></div>
+          </a>
+          <a href="syllabus/it/r25/year2/sem2.html" class="catalog-item">
+            <span style="font-size:1.4rem;">&#128196;</span>
+            <div><span class="catalog-item__text">R25 — Year 2, Sem 2</span><span class="catalog-item__sub">Information Technology &middot; Regulation 2025</span></div>
+          </a>
+          <a href="syllabus/it/r25/year3/sem1.html" class="catalog-item">
+            <span style="font-size:1.4rem;">&#128196;</span>
+            <div><span class="catalog-item__text">R25 — Year 3, Sem 1</span><span class="catalog-item__sub">Information Technology &middot; Regulation 2025</span></div>
+          </a>
+          <a href="syllabus/it/r25/year3/sem2.html" class="catalog-item">
+            <span style="font-size:1.4rem;">&#128196;</span>
+            <div><span class="catalog-item__text">R25 — Year 3, Sem 2</span><span class="catalog-item__sub">Information Technology &middot; Regulation 2025</span></div>
+          </a>
+          <a href="syllabus/it/r25/year4/sem1.html" class="catalog-item">
+            <span style="font-size:1.4rem;">&#128196;</span>
+            <div><span class="catalog-item__text">R25 — Year 4, Sem 1</span><span class="catalog-item__sub">Information Technology &middot; Regulation 2025</span></div>
+          </a>
+          <a href="syllabus/it/r25/year4/sem2.html" class="catalog-item">
+            <span style="font-size:1.4rem;">&#128196;</span>
+            <div><span class="catalog-item__text">R25 — Year 4, Sem 2</span><span class="catalog-item__sub">Information Technology &middot; Regulation 2025</span></div>
+          </a>
+        </div>
+
+        <div class="panel-sub" id="catalog-section">Course Catalog</div>
+        <p>The four-year B.Tech Information Technology programme progressively builds students from foundational mathematics and programming through to applied IT topics including software engineering, databases, networks, web technologies, and emerging stacks — preparing graduates for diverse software-engineering roles in industry.</p>
+
+        <div class="panel-sub" id="syll-explorer">Syllabus Explorer</div>
+        <div class="pill-row" id="regPills">
+          <button class="pill is-active" data-reg="r25">R25</button>
+        </div>
+        <div class="pill-row" id="yearPills"></div>
+        <div class="pill-row" id="semPills" style="display:none;"></div>
+        <div class="subject-list" id="subjectList"></div>
+        <div id="fullSyllabusBtn" style="margin-top:20px;display:none;"></div>
+      </div>
+
+      <!-- ═══ TAB 5: Achievements ═══ -->
+      <div class="dept-panel" id="panel-achievements">
+        <h2 class="panel-heading">Achievements</h2>
+
+        <div id="achieve-section" class="achieve-grid">
+          <div class="card achieve-card" data-achieve>
+            <h4>Queen of Neural Hack — Virtusa Coding Competition</h4>
+            <p>Ms. CHNV Punya Keerthi (IV B.Tech IT) excelled in the "Neural Hack" coding competition organised by Virtusa, winning the title "The Queen of Neural Hack".</p>
+          </div>
+          <div class="card achieve-card" data-achieve>
+            <h4>Developer Student Clubs — Community Lead</h4>
+            <p>Ms. Sreemukhi (III B.Tech IT) was appointed as the community lead for Developer Student Clubs at MLRIT — Google's developer-community programme for university students.</p>
+          </div>
+          <div class="card achieve-card" data-achieve>
+            <h4>UpGrad Internship Selection</h4>
+            <p>Ms. Uma Naveena (III B.Tech IT) was selected for the UpGrad Internship Programme.</p>
+          </div>
+          <div class="card achieve-card" data-achieve>
+            <h4>Maa Saraswathi Award 2020 — Faculty Recognition</h4>
+            <p>Mrs. IVS Haritha and Mrs. G. Anitha (Asst. Professors) were both conferred the Maa Saraswathi Award 2020 for their contributions to teaching and student mentorship.</p>
+          </div>
+          <div class="card achieve-card" data-achieve>
+            <h4>Faculty PhD Completions — 2020</h4>
+            <p>Mrs. K. Neeraja (Assoc. Professor) received her PhD from JNTUH in 2020 and Mr. Vikram Raju (Assoc. Professor) received his PhD from Manipal University in 2020.</p>
+          </div>
+          <div class="card achieve-card" data-achieve>
+            <h4>Coursera Certifications — Department-Wide</h4>
+            <p>All faculty members of the IT department have been certified on multiple Coursera courses across software engineering, data, networks, and cloud — sustaining a culture of continuous learning.</p>
+          </div>
+        </div>
+
+        <div class="panel-sub" id="honour-section">Roll of Honour</div>
+        <p>Top performers and university rank holders from the IT department will be listed here as the department publishes annual results.</p>
+
+        <div class="panel-sub" id="placement-section">Placement Highlights</div>
+        <p>Placement statistics for IT will be added here in coordination with the Training and Placement Cell.</p>
+
+        <div class="panel-sub" id="intern-section">Internships</div>
+        <ul class="achieve-list">
+          <li>Ms. Uma Naveena (III B.Tech IT) — selected for the UpGrad Internship Programme.</li>
+          <li>Aggregate internship outcomes for the IT department will be added as data becomes available.</li>
+        </ul>
+
+        <div class="panel-sub" id="pub-section">Faculty Publications</div>
+<p>Faculty publications for this department are listed on each individual faculty profile page on <a href="https://mlrit.ac.in/" style="color:#E85D1F;text-decoration:none;">mlrit.ac.in</a>. A consolidated departmental publications list is pending ingestion.</p>
+      </div>
+
+      <!-- ═══ TAB 6: Committees ═══ -->
+      <div class="dept-panel" id="panel-committees">
+        <h2 class="panel-heading">Departmental Committees</h2>
+        <p>The department operates through several key committees that ensure quality education, curriculum relevance, and continuous improvement in line with NBA and autonomous regulations. These committees comprise senior faculty, industry experts, and academic leaders who guide the department's strategic direction.</p>
+
+        <div class="panel-sub">Departmental Advisory Committee (DAC)</div>
+        <div class="card" style="margin-bottom:20px;">
+          <h3>DAC</h3>
+          <p>The Departmental Advisory Committee advises on curriculum design, infrastructure development, and academic policies. It includes senior faculty, the HOD, and external industry representatives who meet periodically to review and recommend improvements to the programme.</p>
+          <a href="assets/DAC formation.docx" download style="font-family:'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;font-size:0.75rem;font-weight:700;color:#E85D1F;text-decoration:none;padding:6px 14px;border:1px solid rgba(232,93,31,0.3);border-radius:6px;display:inline-flex;align-items:center;gap:6px;margin-top:12px;">&#8595; DAC Formation Document</a>
+        </div>
+
+        <div class="panel-sub">Programme Assessment Committee (PAC)</div>
+        <div class="card" style="margin-bottom:20px;">
+          <h3>PAC</h3>
+          <p>The Programme Assessment and Quality Improvement Committee monitors course outcomes, programme outcomes, and attainment levels. It drives the OBE process, reviews CO-PO mapping, and recommends corrective actions to improve educational quality.</p>
+          <a href="assets/PAC Member formation.docx" download style="font-family:'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;font-size:0.75rem;font-weight:700;color:#E85D1F;text-decoration:none;padding:6px 14px;border:1px solid rgba(232,93,31,0.3);border-radius:6px;display:inline-flex;align-items:center;gap:6px;margin-top:12px;">&#8595; PAC Member Formation Document</a>
+        </div>
+
+        <div class="panel-sub">Course Expert Team</div>
+        <div class="card" style="margin-bottom:20px;">
+          <h3>Domain Experts</h3>
+          <p>The Course Expert Team comprises domain specialists from industry and academia who review and validate the curriculum content, ensuring alignment with current technology trends and industry requirements.</p>
+          <a href="assets/Domain experts formation-CSE.docx" download style="font-family:'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;font-size:0.75rem;font-weight:700;color:#E85D1F;text-decoration:none;padding:6px 14px;border:1px solid rgba(232,93,31,0.3);border-radius:6px;display:inline-flex;align-items:center;gap:6px;margin-top:12px;">&#8595; Domain Experts Formation Document</a>
+        </div>
+
+        <div class="panel-sub">Vision and Mission Process</div>
+        <div class="card" style="margin-bottom:20px;">
+          <h3>Vision and Mission Committee</h3>
+          <p>This committee is responsible for defining, reviewing, and periodically updating the department's vision and mission statements in consultation with all stakeholders &mdash; faculty, students, alumni, parents, and industry partners.</p>
+          <a href="assets/1.1&1.1.2- Vision Mission Process.docx" download style="font-family:'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;font-size:0.75rem;font-weight:700;color:#E85D1F;text-decoration:none;padding:6px 14px;border:1px solid rgba(232,93,31,0.3);border-radius:6px;display:inline-flex;align-items:center;gap:6px;margin-top:12px;">&#8595; Vision Mission Process Document</a>
+        </div>
+      </div>
+
+    </div><!-- /.dept-body__panels -->
+  </div><!-- /.dept-body -->
+
+  <script src="../js/navbar.js" defer></script>
+  <script>
+    var __activeTab = 'overview';
+
+    // Syllabus explorer data
+    (function () {
+      var programs = {
+        btech: {
+          1: {
+            1: ['Mathematics-I (Calculus and Linear Algebra)', 'Engineering Physics', 'Programming for Problem Solving (C)', 'Basic Electrical Engineering', 'English Communication', 'Programming Lab', 'Engineering Workshop'],
+            2: ['Mathematics-II (Differential Equations and Vector Calculus)', 'Engineering Chemistry', 'Data Structures', 'Electronic Devices and Circuits', 'Environmental Science', 'Data Structures Lab', 'Chemistry Lab']
+          },
+          2: {
+            3: ['Probability and Statistics', 'Discrete Mathematics', 'Object Oriented Programming through Java', 'Database Management Systems', 'Computer Organization and Architecture', 'Java Lab', 'DBMS Lab'],
+            4: ['Operating Systems', 'Design and Analysis of Algorithms', 'Computer Networks', 'Software Engineering', 'Web Technologies', 'OS Lab', 'CN Lab']
+          },
+          3: {
+            5: ['Machine Learning', 'Compiler Design', 'Cloud Computing', 'Information Security', 'Professional Elective-I', 'ML Lab', 'Mini Project'],
+            6: ['Artificial Intelligence', 'Big Data Analytics', 'Mobile Application Development', 'Internet of Things', 'Professional Elective-II', 'Open Elective-I', 'Seminar']
+          },
+          4: {
+            7: ['Deep Learning', 'Professional Elective-III', 'Professional Elective-IV', 'Open Elective-II', 'Project Phase-I', 'Industry Internship'],
+            8: ['Professional Elective-V', 'Professional Elective-VI', 'Project Phase-II', 'Comprehensive Viva']
+          }
+        }
+      };
+
+      var regulations = {
+        "r25": { label: "R25", pdf: "syllabus/it/r25/it-r25-syllabus.pdf", data: programs.btech }
+      };
+
+      var subjectDetails = {};
+
+      var regPills    = document.getElementById('regPills');
+      var yearPills   = document.getElementById('yearPills');
+      var semPillsRow = document.getElementById('semPills');
+      var subjectList = document.getElementById('subjectList');
+      var fullSyllabusBtn = document.getElementById('fullSyllabusBtn');
+      var currentReg  = 'r25';
+      var selectedYear = null;
+
+      function buildYearPills() {
+        var regData = regulations[currentReg].data;
+        yearPills.innerHTML = '';
+        Object.keys(regData).forEach(function (y) {
+          var p = document.createElement('button');
+          p.className = 'pill'; p.setAttribute('data-year', y);
+          p.textContent = 'Year ' + y; yearPills.appendChild(p);
+        });
+        semPillsRow.innerHTML = ''; semPillsRow.style.display = 'none';
+        subjectList.classList.remove('is-visible'); subjectList.innerHTML = '';
+        if (fullSyllabusBtn) fullSyllabusBtn.style.display = 'none';
+        selectedYear = null;
+      }
+      buildYearPills();
+
+      regPills.addEventListener('click', function (e) {
+        var btn = e.target.closest('.pill'); if (!btn) return;
+        currentReg = btn.getAttribute('data-reg');
+        regPills.querySelectorAll('.pill').forEach(function (p) { p.classList.remove('is-active'); });
+        btn.classList.add('is-active'); buildYearPills();
+      });
+
+      yearPills.addEventListener('click', function (e) {
+        var btn = e.target.closest('.pill'); if (!btn) return;
+        var year = parseInt(btn.getAttribute('data-year')); selectedYear = year;
+        yearPills.querySelectorAll('.pill').forEach(function (p) { p.classList.remove('is-active'); }); btn.classList.add('is-active');
+        var sems = Object.keys(regulations[currentReg].data[year]);
+        semPillsRow.innerHTML = '';
+        sems.forEach(function (s) {
+          var p = document.createElement('button'); p.className = 'pill';
+          p.setAttribute('data-sem', s); p.textContent = 'Sem ' + s; semPillsRow.appendChild(p);
+        });
+        semPillsRow.style.display = 'flex'; subjectList.classList.remove('is-visible'); subjectList.innerHTML = '';
+        if (fullSyllabusBtn) fullSyllabusBtn.style.display = 'none';
+      });
+
+      semPillsRow.addEventListener('click', function (e) {
+        var btn = e.target.closest('.pill'); if (!btn || !selectedYear) return;
+        var sem = parseInt(btn.getAttribute('data-sem'));
+        semPillsRow.querySelectorAll('.pill').forEach(function (p) { p.classList.remove('is-active'); }); btn.classList.add('is-active');
+        var subjects = regulations[currentReg].data[selectedYear][sem]; if (!subjects) return;
+        var pdfUrl = regulations[currentReg].pdf;
+        var html = '';
+        subjects.forEach(function (name, i) {
+          var subName = typeof name === 'object' ? name[1] : name;
+          var subCode = typeof name === 'object' ? name[0] : '';
+          var units = subjectDetails[subName]; var uh = '';
+          if (units && units.length) { uh = '<div class="subject-units"><ol>'; units.forEach(function (u) { uh += '<li>' + u + '</li>'; }); uh += '</ol></div>'; }
+          var codeHtml = subCode ? '<span class="subject-code">' + subCode + '</span>' : '<span class="subject-num">' + (i+1) + '.</span>';
+          html += '<div class="subject-row" onclick="this.classList.toggle(\'is-expanded\')">' + codeHtml + '<span class="subject-name">' + subName + '</span><span class="subject-toggle">&#9654;</span><a href="' + pdfUrl + '" target="_blank" class="subject-pdf" onclick="event.stopPropagation()">PDF</a></div>' + uh;
+        });
+        subjectList.innerHTML = html; subjectList.classList.remove('is-visible'); void subjectList.offsetWidth; subjectList.classList.add('is-visible');
+        if (fullSyllabusBtn) {
+          fullSyllabusBtn.innerHTML = '<a href="' + pdfUrl + '" target="_blank" class="full-syllabus-btn">Download Full ' + regulations[currentReg].label + ' Syllabus &rarr;</a>';
+          fullSyllabusBtn.style.display = 'block';
+        }
+      });
+    })();
+
+    // Publication filter
+    (function(){
+      var f = document.getElementById('pubFilters');
+      var c = document.querySelectorAll('.pub-card');
+      if (!f || !c.length) return;
+      f.addEventListener('click', function (e) {
+        var b = e.target.closest('.pub-filter'); if (!b) return;
+        var y = b.getAttribute('data-year');
+        f.querySelectorAll('.pub-filter').forEach(function (x) { x.classList.remove('is-active'); });
+        b.classList.add('is-active');
+        c.forEach(function (card) {
+          var m = (y === 'all' || card.getAttribute('data-pub-year') === y);
+          card.style.display = m ? 'flex' : 'none';
+        });
+      });
+    })();
+
+    // Achievement toggle
+    (function(){
+      document.querySelectorAll('[data-achieve]').forEach(function (card) {
+        var toggle = card.querySelector('.achieve-toggle');
+        card.addEventListener('click', function () {
+          var expanded = card.classList.toggle('is-expanded');
+          if (toggle) toggle.textContent = expanded ? 'Read Less' : 'Read More';
+        });
+      });
+    })();
+
+    // Accordion toggle — header clicks only
+    (function () {
+      document.querySelectorAll('.sub-accordion__header').forEach(function (header) {
+        header.style.cursor = 'pointer';
+        header.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var accordion = header.closest('.sub-accordion');
+          if (!accordion) accordion = header.parentElement;
+          if (accordion) {
+            var wasOpen = accordion.classList.contains('is-open');
+            accordion.classList.toggle('is-open');
+            if (!wasOpen) {
+              setTimeout(function () {
+                accordion.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              }, 50);
+            }
+          }
+        });
+      });
+    })();
+
+    // Auto-open accordions when scrolled into view (open only, never force-close)
+    (function () {
+      var accords = document.querySelectorAll('.sub-accordion');
+      if (!accords.length) return;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !entry.target.classList.contains('is-open')) {
+            entry.target.classList.add('is-open');
+          }
+        });
+      }, { threshold: 0.2 });
+      accords.forEach(function (acc) { observer.observe(acc); });
+    })();
+
+    // Dark sidebar — tab switching
+    (function () {
+      var dsItems = document.querySelectorAll('.ds-item');
+      var streak  = document.getElementById('navStreak');
+
+      function fireStreak() {
+        if (!streak) return;
+        streak.classList.remove('is-firing'); void streak.offsetWidth; streak.classList.add('is-firing');
+        setTimeout(function () { streak.classList.remove('is-firing'); }, 600);
+      }
+
+      function updateSidebar(activeTab) {
+        __activeTab = activeTab;
+        dsItems.forEach(function (item) {
+          var show = item.getAttribute('data-ds-tab') === activeTab;
+          item.style.display = show ? 'flex' : 'none';
+          item.classList.remove('is-active');
+        });
+        var first = document.querySelector('.ds-item[data-ds-tab="' + activeTab + '"]');
+        if (first) first.classList.add('is-active');
+        document.querySelectorAll('.dept-panel').forEach(function (p) { p.classList.remove('is-active'); });
+        document.querySelectorAll('.dept-tab').forEach(function (t) { t.classList.remove('is-active'); });
+        var panel = document.getElementById('panel-' + activeTab);
+        if (panel) panel.classList.add('is-active');
+        var tab = document.querySelector('.dept-tab[data-tab="' + activeTab + '"]');
+        if (tab) tab.classList.add('is-active');
+      }
+
+      document.querySelectorAll('.dept-tab').forEach(function (tab) {
+        tab.addEventListener('click', function (e) {
+          e.preventDefault();
+          updateSidebar(tab.getAttribute('data-tab'));
+          fireStreak();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+
+      dsItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+          var tab    = item.getAttribute('data-ds-tab');
+          var target = item.getAttribute('data-ds-target');
+          updateSidebar(tab);
+          var siblings = document.querySelectorAll('.ds-item[data-ds-tab="' + tab + '"]');
+          siblings.forEach(function (s) { s.classList.remove('is-active'); });
+          item.classList.add('is-active');
+          fireStreak();
+          if (target) {
+            setTimeout(function () {
+              var el = document.getElementById(target); if (!el) return;
+              document.querySelectorAll('.sub-accordion.is-open').forEach(function (a) { a.classList.remove('is-open'); });
+              var accordion = el.closest ? el.closest('.sub-accordion') : null;
+              if (accordion) accordion.classList.add('is-open');
+              var tabBar = document.getElementById('deptTabs');
+              var offset = tabBar ? tabBar.offsetHeight + 8 : 52;
+              window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
+            }, 120);
+          }
+        });
+      });
+
+      updateSidebar('overview');
+      window.scrollTo(0, 0);
+    })();
+
+    // Scroll-spy — highlights sidebar item as user scrolls
+    (function () {
+      var targets = [];
+      document.querySelectorAll('.ds-item[data-ds-target]').forEach(function (item) {
+        var id = item.getAttribute('data-ds-target');
+        var el = document.getElementById(id);
+        if (el) targets.push({ el: el, item: item });
+      });
+      if (!targets.length) return;
+      var spyReady = false;
+      setTimeout(function () { spyReady = true; }, 600);
+      var observer = new IntersectionObserver(function (entries) {
+        if (!spyReady) return;
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var matched = targets.find(function (t) { return t.el === entry.target; });
+          if (!matched) return;
+          if (matched.item.getAttribute('data-ds-tab') !== __activeTab) return;
+          if (matched.item.style.display === 'none') return;
+          document.querySelectorAll('.ds-item').forEach(function (i) { i.classList.remove('is-active'); });
+          matched.item.classList.add('is-active');
+        });
+      }, { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' });
+      targets.forEach(function (t) { observer.observe(t.el); });
+    })();
+  </script>
+</body>
+</html>
+
+
