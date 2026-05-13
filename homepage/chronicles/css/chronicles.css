@@ -278,6 +278,19 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
 }
 
+.chron-featured__img-real {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.chron-featured:hover .chron-featured__img-real {
+  transform: scale(1.03);
+}
+
 .chron-featured__img-bg {
   width: 100%;
   height: 100%;
@@ -308,6 +321,18 @@ img { display: block; max-width: 100%; }
   right: 0;
   height: 80px;
   background: linear-gradient(transparent, rgba(0,0,0,0.25));
+}
+
+.chron-featured__img::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.45));
+  pointer-events: none;
+  z-index: 0;
 }
 
 .chron-featured__img-label {
@@ -624,6 +649,17 @@ img { display: block; max-width: 100%; }
   height: 100%;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
+.chron-card__img-real {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.chron-card:hover .chron-card__img-real { transform: scale(1.06); }
 
 .chron-card:hover .chron-card__img-bg { transform: scale(1.06); }
 
