@@ -1,4 +1,11 @@
-/* ===== Hero Section ===== */
+/* =============================================
+   HERO — simple full-viewport video hero
+   ============================================= */
+
+:root {
+  --header-h: 128px;
+}
+
 .hero {
   position: relative;
   width: 100%;
@@ -8,9 +15,10 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  margin-top: var(--header-h);
 }
 
-/* Stacked videos for crossfade */
+/* ── Background video ── */
 .hero__bg {
   position: absolute;
   inset: 0;
@@ -21,25 +29,141 @@
   z-index: 0;
   opacity: 0;
   transition: opacity 1.4s ease-in-out;
-  transform: translateZ(0); /* GPU layer — prevents blur from compositing */
+  transform: translateZ(0);
   will-change: opacity;
-  image-rendering: auto;
   backface-visibility: hidden;
-}
-
-.hero__bg--a {
-  object-position: center center;
-}
-
-.hero__bg--b {
-  object-position: center center;
 }
 
 .hero__bg.is-active {
   opacity: 1;
 }
 
-/* ===== Scroll indicator ===== */
+/* ── Gradient overlay ── */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.0)  0%,
+    rgba(0,0,0,0.10) 45%,
+    rgba(0,0,0,0.55) 75%,
+    rgba(0,0,0,0.75) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Content ── */
+.hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero__headline {
+  padding: 0 var(--page-pad, 2rem) 3.5rem;
+  max-width: 720px;
+}
+
+.hero__headline h1 {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: var(--fs-h1, clamp(2.8rem, 6vw, 4.5rem));
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.0;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 40px rgba(0,0,0,0.45);
+  margin-bottom: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.05em;
+}
+
+/* ── Staggered line animation ── */
+.hero__line {
+  display: block;
+  opacity: 0;
+  transform: translateY(32px);
+  animation: fadeInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero__line--1 { animation-delay: 0.15s; }
+.hero__line--2 { animation-delay: 0.32s; }
+.hero__line--3 { animation-delay: 0.50s; }
+
+/* ── Metallic gold on "Excellence" ── */
+.hero__gold {
+  font-style: normal;
+  background: linear-gradient(
+    105deg,
+    #c8960c 0%,
+    #f5d060 30%,
+    #e8b923 55%,
+    #f5c518 75%,
+    #a87008 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 12px rgba(200,150,12,0.45));
+}
+
+/* ── Subheading ── */
+.hero__sub {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.6);
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.6);
+  text-shadow: 0 2px 16px rgba(0,0,0,1), 0 0px 4px rgba(0,0,0,1);
+  max-width: 460px;
+  line-height: 2.0;
+  letter-spacing: 0.01em;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.72s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── CTA buttons ── */
+.hero__ctas {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
+}
+
+.hero__ctas a {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.hero__ctas a:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: #f5c518;
+  color: #111;
+}
+
+.btn-primary:hover { background: #e0b000; }
+
+/* ── Scroll indicator ── */
 .hero__scroll {
   position: absolute;
   bottom: 2rem;
@@ -77,110 +201,9 @@
   100% { top: 100%;  opacity: 0; }
 }
 
-/* Gradient overlay — lighter so video stays crisp */
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.0)  0%,
-    rgba(0,0,0,0.1)  45%,
-    rgba(0,0,0,0.55) 75%,
-    rgba(0,0,0,0.75) 100%
-  );
-  z-index: 1;
-}
-
-/* Content above overlay */
-.hero__content {
-  position: relative;
-  z-index: 2;
-}
-
-.hero__headline {
-  padding: 0 0 3.5rem;
-  max-width: 680px;
-}
-
-.hero__headline .container {
-  width: 100%;
-  margin: 0;
-  padding: 0 1rem;
-}
-
-.hero__headline h1 {
-  font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  color: #fff;
-  line-height: 0.95;
-  text-transform: uppercase;
-  letter-spacing: -0.03em;
-  text-shadow: 0 2px 32px rgba(0,0,0,0.5);
-  margin-bottom: 1.5rem;
-}
-
-.hero__headline h1 span {
-  display: block;
-  color: #f5c518;
-}
-
-/* "Excellence" italic accent inside the yellow span */
-.hero__headline h1 span em {
-  font-style: normal;
-  color: #fff;
-  -webkit-text-stroke: 1.5px #f5c518;
-  text-shadow: 0 0 40px rgba(245,197,24,0.4);
-}
-
-.hero__headline p {
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  font-size: clamp(1rem, 1.8vw, 1.2rem);
-  font-weight: 400;
-  color: rgba(255,255,255,0.78);
-  max-width: 440px;
-  line-height: 1.8;
-  margin-bottom: 2.2rem;
-}
-
-.hero__ctas {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.hero__ctas a {
-  display: inline-block;
-  padding: 0.7rem 1.6rem;
-  font-size: 0.9rem;
-  font-weight: 700;
-  border-radius: 10px;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.hero__ctas a:hover { transform: translateY(-2px); }
-
-.btn-primary {
-  background: #f5c518;
-  color: #111;
-}
-
-.btn-primary:hover { background: #e0b000; }
-
-.btn-outline {
-  background: transparent;
-  color: #fff;
-  border: 2px solid rgba(255,255,255,0.7);
-}
-
-.btn-outline:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: #fff;
-}
-
-/* ===== Responsive ===== */
+/* ── Responsive ── */
 @media (max-width: 768px) {
+  :root { --header-h: 110px; }
   .hero__headline h1 { font-size: 2.4rem; letter-spacing: -0.02em; }
   .hero__bg { object-position: center center; }
 }
