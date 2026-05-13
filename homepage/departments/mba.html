@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -169,7 +169,7 @@
     .fcard { width: 100%; aspect-ratio: 3/4; border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; background: linear-gradient(135deg, #2A2F40, #3A4050); }
     .fcard img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.4s ease; }
     .fcard:hover img { transform: scale(1.05); }
-    .fcard__ini { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 2rem; color: rgba(255,255,255,0.3); position: absolute; inset: 0; }
+    .fcard__ini { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 2rem; color: rgba(255,255,255,0.75); position: absolute; inset: 0; }
     .fcard__overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 18px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); z-index: 2; transition: opacity 0.3s; }
     .fcard__name { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.85rem; color: #fff; }
     .fcard__role { font-size: 0.68rem; color: rgba(255,255,255,0.6); }
@@ -338,7 +338,9 @@
       <div class="container masthead__inner">
         <a href="../index.html" class="masthead__logo" aria-label="MLRIT Home"><img src="../mlrit-logo-main.png" alt="MLRIT Logo" /></a>
         <div class="masthead__tagline"><span>Marri Laxman Reddy Institute of Technology</span></div>
-        <a href="#" class="masthead__eapcet">EAPCET CODE : MLID</a>
+        <div class="masthead__right">
+          <a href="#" class="eapcet-badge" aria-label="EAPCET Code MLID">EAPCET CODE&nbsp;:&nbsp;MLID</a>
+        </div>
       </div>
     </div>
   </header>

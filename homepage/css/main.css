@@ -11,6 +11,9 @@
   --radius:      14px;
   --heading:     'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   --sans:        'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --serif:       'Playfair Display', Georgia, serif;
+  --display:     'Raleway', 'Montserrat', sans-serif;
+  --navy:        #0d1a2e;
 
   /* ── Side padding — matches utexas.edu feel ── */
   --page-pad: clamp(1.5rem, 5vw, 5rem);
