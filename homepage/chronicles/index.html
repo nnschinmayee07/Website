@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MLRIT Chronicles — Campus News and Notices</title>
+  <title>MLRIT Chronicles — The Digital Newspaper of MLR Institute of Technology</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/chronicles-dropdown.css" />
   <link rel="stylesheet" href="css/chronicles.css" />
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- SITE NAVBAR -->
   <header class="site-header">
     <div class="masthead">
       <div class="container masthead__inner">
@@ -41,42 +41,34 @@
   </header>
 
   <!-- MASTHEAD -->
-  <div class="chron-page__masthead">
-    <div class="chron-page__masthead-inner">
-      <div class="chron-page__brand">
-        <div class="chron-page__brand-icon">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-            <rect x="3" y="5"  width="22" height="3"   rx="1.5" fill="#fff"/>
-            <rect x="3" y="11" width="16" height="2.5" rx="1.25" fill="rgba(255,255,255,0.75)"/>
-            <rect x="3" y="16" width="18" height="2.5" rx="1.25" fill="rgba(255,255,255,0.75)"/>
-            <rect x="3" y="21" width="11" height="2"   rx="1"    fill="rgba(255,255,255,0.5)"/>
-          </svg>
-        </div>
-        <div>
-          <h1 class="chron-page__title">MLRIT Chronicles</h1>
-          <p class="chron-page__sub">News, events and notices from Dundigal</p>
-        </div>
+  <div class="cp-masthead">
+    <div class="cp-masthead__inner">
+      <div class="cp-masthead__meta-top">
+        <span class="cp-masthead__edition">Wednesday Edition</span>
+        <span class="cp-masthead__sep">·</span>
+        <span>May 13, 2026</span>
+        <span class="cp-masthead__sep">·</span>
+        <span>Updated 11:42 AM</span>
       </div>
-      <div class="chron-page__meta">
-        <strong>May 2026 Edition</strong>
-        Marri Laxman Reddy Institute of Technology<br>
-        Survey No. 444, Dundigal, Hyderabad — 500 043
-      </div>
+      <h1 class="cp-masthead__title">MLRIT Chronicles</h1>
+      <p class="cp-masthead__sub">The Digital Newspaper of MLR Institute of Technology, Dundigal</p>
+      <div class="cp-masthead__rule"></div>
     </div>
   </div>
 
-  <!-- TICKER — real placement data from mlrit.ac.in -->
-  <div class="chron-ticker" aria-label="Campus news ticker">
-    <span class="chron-ticker__label">Live</span>
-    <div class="chron-ticker__window">
-      <div class="chron-ticker__track">
+  <!-- TICKER -->
+  <div class="cp-ticker" aria-label="Breaking news ticker">
+    <span class="cp-ticker__label">
+      <span class="cp-ticker__dot"></span>Live
+    </span>
+    <div class="cp-ticker__window">
+      <div class="cp-ticker__track">
         <span>Campus Placements 2026: Cognizant (107) · Infosys (92) · HCL Tech (85) · Virtusa (41) · Deloitte (20) · ITC Infotech (25) · TCS (14)</span>
         <span>Koduri Viplav selected for Viksit Bharat Young Leaders Dialogue 2026</span>
         <span>21st Annual Day Celebrations held on 14 March 2026</span>
         <span>TSFA–UNESCO Workshop hosted at MLRIT — 2 Jan 2026</span>
         <span>II B.Tech II Sem CIE-II Internal Marks now available on Examination Portal</span>
         <span>DataQuest 2026: MLRIT ranked 5th in Hyderabad, 46th among Top T-Schools India</span>
-        <!-- duplicate for seamless loop -->
         <span>Campus Placements 2026: Cognizant (107) · Infosys (92) · HCL Tech (85) · Virtusa (41) · Deloitte (20) · ITC Infotech (25) · TCS (14)</span>
         <span>Koduri Viplav selected for Viksit Bharat Young Leaders Dialogue 2026</span>
         <span>21st Annual Day Celebrations held on 14 March 2026</span>
@@ -87,402 +79,393 @@
     </div>
   </div>
 
-  <main class="chron-page__wrap">
+  <!-- NEWSPAPER BODY -->
+  <div class="cp-body">
 
-    <!-- HERO: FEATURED STORY + SIDEBAR -->
-    <section class="chron-hero-layout">
-
-      <article class="chron-featured">
-        <div class="chron-featured__img">
-          <img src="https://i.ibb.co/MxyG45Hy/overall-placements.jpg" alt="MLRIT Placements 2026" class="chron-featured__img-real" loading="eager" />
-          <div class="chron-featured__img-label">
-            <span class="chron-badge chron-badge--placement">Placements 2026</span>
-          </div>
-        </div>
-        <div class="chron-featured__body">
-          <h2 class="chron-featured__headline">621 placement offers, ₹51 LPA highest — MLRIT closes its strongest season yet</h2>
-          <p class="chron-featured__byline">Campus Placements Desk &nbsp;·&nbsp; April 2026</p>
-          <p class="chron-featured__text">This year's placement season wrapped up with 621 offers from 37 companies — numbers that would have seemed ambitious even three years ago. Cognizant led the count with 107 offers, followed by Infosys (92), HCL Tech (85), Virtusa (41), and Deloitte (20). The highest package of ₹51 LPA went to students in the CSE and CSE (AI/ML) streams.</p>
-          <p class="chron-featured__text">Head of Placements Ravi Chandra P credited the outcome to a shift in how students approach the final year: "The training intensity picked up from second year. By the time companies arrived, students were already interview-ready." The institute has now placed 7,000+ students over two decades, with 400+ recruiters visiting since 2005.</p>
-          <a href="index.html" class="chron-read-more">
-            Full Placement Report
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 4l4 3-4 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </article>
-
-      <aside class="chron-sidebar">
-
-        <!-- Placement numbers -->
-        <div class="chron-sidebar-box">
-          <div class="chron-sidebar-box__head chron-sidebar-box__head--green">
-            <span class="chron-sidebar-box__title">Placements — Year on Year</span>
-          </div>
-          <div class="chron-sidebar-box__body">
-            <div class="chron-placement-grid">
-              <div class="chron-placement-cell"><strong>621</strong><span>Offers 2026</span></div>
-              <div class="chron-placement-cell"><strong>₹51 LPA</strong><span>Highest 2026</span></div>
-              <div class="chron-placement-cell"><strong>734</strong><span>Offers 2023</span></div>
-              <div class="chron-placement-cell"><strong>₹58 LPA</strong><span>Highest 2023</span></div>
-              <div class="chron-placement-cell"><strong>1,236</strong><span>Offers 2022</span></div>
-              <div class="chron-placement-cell"><strong>7,000+</strong><span>Total placed</span></div>
-            </div>
-            <div class="chron-placement-companies">
-              <span>Cognizant</span><span>Infosys</span><span>HCL Tech</span>
-              <span>Virtusa</span><span>Deloitte</span><span>TCS</span>
-              <span>ITC Infotech</span><span>SLK</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Rankings -->
-        <div class="chron-sidebar-box">
-          <div class="chron-sidebar-box__head chron-sidebar-box__head--orange">
-            <span class="chron-sidebar-box__title">Rankings and Recognition</span>
-            <span class="chron-sidebar-box__year">2025–26</span>
-          </div>
-          <div class="chron-sidebar-box__body">
-            <div class="chron-quickfacts">
-              <div class="chron-quickfact">
-                <strong>#6 Telangana</strong><span>Times 2025, Pvt Engineering</span>
-              </div>
-              <div class="chron-quickfact">
-                <strong>#9 Hyderabad</strong><span>The Week 2025</span>
-              </div>
-              <div class="chron-quickfact">
-                <strong>#46 India</strong><span>DataQuest 2026, T-Schools Pvt</span>
-              </div>
-              <div class="chron-quickfact">
-                <strong>NAAC A+</strong><span>Autonomous since 2015</span>
-              </div>
-              <div class="chron-quickfact">
-                <strong>420 Patents</strong><span>Filed since founding</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Upcoming -->
-        <div class="chron-sidebar-box">
-          <div class="chron-sidebar-box__head chron-sidebar-box__head--green">
-            <span class="chron-sidebar-box__title">Recent Events</span>
-          </div>
-          <div class="chron-sidebar-box__body">
-            <ul class="chron-event-list">
-              <li>
-                <span class="chron-event-chip">Apr '26</span>
-                <div>
-                  <span class="chron-event-list__name">Workshop Carnival 2026</span>
-                  <span class="chron-event-list__date">10–11 April 2026</span>
-                </div>
-              </li>
-              <li>
-                <span class="chron-event-chip">Jan '26</span>
-                <div>
-                  <span class="chron-event-list__name">Global Cross Culture Summit</span>
-                  <span class="chron-event-list__date">20 January 2026</span>
-                </div>
-              </li>
-              <li>
-                <span class="chron-event-chip">Dec '25</span>
-                <div>
-                  <span class="chron-event-list__name">Zenith — Annual Tech Fest</span>
-                  <span class="chron-event-list__date">18–20 December 2025</span>
-                </div>
-              </li>
-              <li>
-                <span class="chron-event-chip">Apr '25</span>
-                <div>
-                  <span class="chron-event-list__name">TedX MLRIT</span>
-                  <span class="chron-event-list__date">25 April 2025</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-      </aside>
-    </section>
-
-    <!-- CAMPUS STORIES GRID -->
-    <section>
-      <div class="chron-section-head">
-        <h2>Campus Stories</h2>
-        <div class="chron-section-head__rule"></div>
-        <a href="index.html" class="chron-section-head__more">
-          All stories
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M7 3l3 3-3 3" stroke="#1F6B24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-      <div class="chron-card-grid">
-
-        <article class="chron-card">
-          <div class="chron-card__img">
-            <img src="https://mlrit.ac.in/wp-content/uploads/2026/04/annual-day2.jpeg" alt="21st Annual Day at MLRIT" class="chron-card__img-real" loading="lazy" />
-          </div>
-          <div class="chron-card__body">
-            <span class="chron-badge chron-badge--academic">Annual Day</span>
-            <h3 class="chron-card__title">21st Annual Day — students, faculty, and families fill the auditorium</h3>
-            <p class="chron-card__excerpt">The celebration marked two decades of the institution with performances, awards, and addresses by the Chairman and Principal Dr. P Sridhar.</p>
-            <div class="chron-card__footer">
-              <span class="chron-card__date">14 Mar 2026</span>
-              <a href="index.html" class="chron-card__link">Read
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1.5 5.5h8M6.5 2.5l3 3-3 3" stroke="#1F6B24" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="chron-card">
-          <div class="chron-card__img">
-            <img src="https://mlrit.ac.in/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-06-at-18.34.19.jpeg" alt="Koduri Viplav at Viksit Bharat Young Leaders Dialogue 2026" class="chron-card__img-real" loading="lazy" />
-          </div>
-          <div class="chron-card__body">
-            <span class="chron-badge chron-badge--event">Student</span>
-            <h3 class="chron-card__title">Koduri Viplav chosen for Viksit Bharat Young Leaders Dialogue 2026</h3>
-            <p class="chron-card__excerpt">The national-level forum, held in Delhi, brought together student leaders from across India to engage with policymakers on India's development goals.</p>
-            <div class="chron-card__footer">
-              <span class="chron-card__date">8 Jan 2026</span>
-              <a href="index.html" class="chron-card__link">Read
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1.5 5.5h8M6.5 2.5l3 3-3 3" stroke="#1F6B24" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="chron-card">
-          <div class="chron-card__img">
-            <img src="https://mlrit.ac.in/wp-content/uploads/2026/01/WhatsApp-Image-2025-12-30-at-18.32.07.jpeg" alt="TSFA-UNESCO workshop at MLRIT" class="chron-card__img-real" loading="lazy" />
-          </div>
-          <div class="chron-card__body">
-            <span class="chron-badge chron-badge--event">Workshop</span>
-            <h3 class="chron-card__title">TSFA–UNESCO workshop on sustainable development hosted at MLRIT</h3>
-            <p class="chron-card__excerpt">Students and faculty joined a two-day interdisciplinary workshop in partnership with the Telangana Science Forum and UNESCO's regional office.</p>
-            <div class="chron-card__footer">
-              <span class="chron-card__date">2 Jan 2026</span>
-              <a href="index.html" class="chron-card__link">Read
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1.5 5.5h8M6.5 2.5l3 3-3 3" stroke="#1F6B24" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="chron-card">
-          <div class="chron-card__img">
-            <img src="https://files.mlrit.ac.in/zenith.jpg" alt="Zenith 2025 Tech Fest at MLRIT" class="chron-card__img-real" loading="lazy" />
-          </div>
-          <div class="chron-card__body">
-            <span class="chron-badge chron-badge--event">Tech Fest</span>
-            <h3 class="chron-card__title">Zenith 2025 — three days, dozens of events, one campus fully switched on</h3>
-            <p class="chron-card__excerpt">The annual fest drew participants from colleges across Hyderabad for paper presentations, hackathons, and cultural performances spread over Dec 18–20.</p>
-            <div class="chron-card__footer">
-              <span class="chron-card__date">20 Dec 2025</span>
-              <a href="index.html" class="chron-card__link">Read
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1.5 5.5h8M6.5 2.5l3 3-3 3" stroke="#1F6B24" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="chron-card">
-          <div class="chron-card__img">
-            <img src="https://files.mlrit.ac.in/uploads/awscloudtrek.png" alt="AWS Cloud Trek workshop at MLRIT" class="chron-card__img-real" loading="lazy" />
-          </div>
-          <div class="chron-card__body">
-            <span class="chron-badge chron-badge--academic">Tech</span>
-            <h3 class="chron-card__title">AWS Cloud Trek puts students hands-on with cloud infrastructure</h3>
-            <p class="chron-card__excerpt">A full-day workshop run in partnership with AWS brought practical cloud computing experience to over 200 students from CSE and ECE branches.</p>
-            <div class="chron-card__footer">
-              <span class="chron-card__date">10 Oct 2025</span>
-              <a href="index.html" class="chron-card__link">Read
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1.5 5.5h8M6.5 2.5l3 3-3 3" stroke="#1F6B24" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="chron-card">
-          <div class="chron-card__img">
-            <img src="https://mlrit.ac.in/wp-content/uploads/2022/08/BADMINTON.jpg" alt="MLRIT Women's Badminton state-level winners" class="chron-card__img-real" loading="lazy" />
-          </div>
-          <div class="chron-card__body">
-            <span class="chron-badge chron-badge--sports">Sports</span>
-            <h3 class="chron-card__title">Prashanti Reddy — from MLRIT's badminton court to national-level competition</h3>
-            <p class="chron-card__excerpt">The institute's 26,000 sqft indoor stadium has become more than a facility — it's produced students who compete at state and national level.</p>
-            <div class="chron-card__footer">
-              <span class="chron-card__date">Mar 2025</span>
-              <a href="index.html" class="chron-card__link">Read
-                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1.5 5.5h8M6.5 2.5l3 3-3 3" stroke="#1F6B24" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- NOTICES + SUBSCRIBE -->
-    <section class="chron-notices-wrap">
-
-      <div>
-        <div class="chron-section-head">
-          <h2>Notices and Circulars</h2>
-          <div class="chron-section-head__rule"></div>
-          <a href="index.html" class="chron-section-head__more">
-            All circulars
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M7 3l3 3-3 3" stroke="#1F6B24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-        <div class="chron-notices-board">
-          <div class="chron-notices-board__head">
-            <span class="chron-notices-board__title">Official Bulletins — May 2026</span>
-            <span class="chron-notices-board__count">4 active</span>
-          </div>
-          <ul class="chron-notices-board__list">
-            <li>
-              <span class="chron-notice-tag chron-notice-tag--exam">MARKS</span>
-              <div>
-                <a href="index.html" class="chron-notice-title">II B.Tech II Sem CIE-II Internal Marks available on Examination Portal — report discrepancies by 11 May</a>
-                <span class="chron-notice-date">Issued: 8 May 2026</span>
-              </div>
-            </li>
-            <li>
-              <span class="chron-notice-tag chron-notice-tag--exam">EXAM</span>
-              <div>
-                <a href="index.html" class="chron-notice-title">I B.Tech II Sem R25 Regulation MID-2 Examinations — June 2026 Timetable</a>
-                <span class="chron-notice-date">Issued: 4 May 2026</span>
-              </div>
-            </li>
-            <li>
-              <span class="chron-notice-tag chron-notice-tag--exam">EXAM</span>
-              <div>
-                <a href="index.html" class="chron-notice-title">I B.Tech II Sem R22 Regulation MID-2 Examinations for Re-Registered Students — June 2026 Timetable</a>
-                <span class="chron-notice-date">Issued: 4 May 2026</span>
-              </div>
-            </li>
-            <li>
-              <span class="chron-notice-tag chron-notice-tag--result">SUPP</span>
-              <div>
-                <a href="index.html" class="chron-notice-title">II B.Tech I Sem R22/MLR20/MLR18 Supplementary Examinations — June 2026 Timetable</a>
-                <span class="chron-notice-date">Issued: 4 May 2026</span>
-              </div>
-            </li>
+    <!-- LEFT SIDEBAR NAV -->
+    <aside class="cp-sidebar" aria-label="Chronicle sections">
+      <nav class="cp-sidenav">
+        <div class="cp-sidenav__section">
+          <span class="cp-sidenav__label">Sections</span>
+          <ul>
+            <li><a href="#latest" class="cp-sidenav__link cp-sidenav__link--active">Latest Stories</a></li>
+            <li><a href="#placements" class="cp-sidenav__link">Placements</a></li>
+            <li><a href="#research" class="cp-sidenav__link">Research &amp; Innovation</a></li>
+            <li><a href="#campus" class="cp-sidenav__link">Campus Life</a></li>
+            <li><a href="#tech" class="cp-sidenav__link">Tech Events</a></li>
+            <li><a href="#cultural" class="cp-sidenav__link">Cultural Events</a></li>
           </ul>
         </div>
-      </div>
-
-      <div>
-        <div class="chron-section-head">
-          <h2>Stay in the loop</h2>
-          <div class="chron-section-head__rule"></div>
+        <div class="cp-sidenav__section">
+          <span class="cp-sidenav__label">Notices</span>
+          <ul>
+            <li><a href="#exams" class="cp-sidenav__link">Examinations</a></li>
+            <li><a href="#results" class="cp-sidenav__link">Results</a></li>
+            <li><a href="#circulars" class="cp-sidenav__link">Circulars</a></li>
+          </ul>
         </div>
-        <div class="chron-subscribe">
-          <div class="chron-subscribe__head">
-            <h3>Campus digest, straight to you</h3>
-            <p>Notices, results, and event updates — no noise</p>
-          </div>
-          <div class="chron-subscribe__body">
-            <input type="email" placeholder="Your MLRIT email" class="chron-subscribe__input" />
-            <button type="button" class="chron-subscribe__btn">Subscribe</button>
-            <p class="chron-subscribe__note">Students and faculty only &nbsp;·&nbsp; Unsubscribe anytime</p>
-          </div>
+        <div class="cp-sidenav__section">
+          <span class="cp-sidenav__label">More</span>
+          <ul>
+            <li><a href="#news" class="cp-sidenav__link">In The News</a></li>
+            <li><a href="#archives" class="cp-sidenav__link">Archives</a></li>
+          </ul>
         </div>
 
-        <!-- Research snapshot -->
-        <div class="chron-research-box">
-          <div class="chron-research-box__title">Research and Innovation</div>
-          <div class="chron-research-stats">
-            <div class="chron-research-stat"><strong>420</strong><span>Patents filed</span></div>
-            <div class="chron-research-stat"><strong>58</strong><span>Copyrights</span></div>
-            <div class="chron-research-stat"><strong>3,453</strong><span>Papers published</span></div>
-            <div class="chron-research-stat"><strong>10</strong><span>Startups incubated</span></div>
+        <!-- Sidebar stat strip -->
+        <div class="cp-sidenav__stats">
+          <div class="cp-sidenav__stat">
+            <strong>621</strong>
+            <span>Placements 2026</span>
+          </div>
+          <div class="cp-sidenav__stat">
+            <strong>₹51 LPA</strong>
+            <span>Highest package</span>
+          </div>
+          <div class="cp-sidenav__stat">
+            <strong>NAAC A+</strong>
+            <span>Accredited</span>
+          </div>
+          <div class="cp-sidenav__stat">
+            <strong>#6 TG</strong>
+            <span>Times 2025</span>
           </div>
         </div>
-      </div>
+      </nav>
+    </aside>
 
-    </section>
+    <!-- MAIN CANVAS -->
+    <main class="cp-canvas">
 
-  </main>
+      <!-- ══ SECTION 1: HERO STORY ══ -->
+      <section id="latest" class="cp-hero cp-reveal">
+        <a href="index.html" class="cp-hero__link">
+          <div class="cp-hero__img-wrap">
+            <img src="https://i.ibb.co/MxyG45Hy/overall-placements.jpg" alt="MLRIT Placements 2026" class="cp-hero__img" loading="eager" />
+          </div>
+          <div class="cp-hero__body">
+            <div class="cp-hero__meta">
+              <span class="cp-chip cp-chip--placement">Placements 2026</span>
+              <span class="cp-hero__date">April 2026 · Campus Placements Desk</span>
+            </div>
+            <h2 class="cp-hero__headline">621 placement offers, ₹51 LPA highest — MLRIT closes its strongest recruitment season yet</h2>
+            <p class="cp-hero__deck">This year's placement season wrapped up with 621 offers from 37 companies. Cognizant led with 107 offers, followed by Infosys (92) and HCL Tech (85). The highest package of ₹51 LPA went to CSE and CSE (AI/ML) students.</p>
+          </div>
+        </a>
+      </section>
 
-  <footer class="chron-footer">
-    <div class="chron-footer__inner">
-      <span>MLRIT Chronicles &nbsp;·&nbsp; Marri Laxman Reddy Institute of Technology, Dundigal, Hyderabad 500 043</span>
-      <span><a href="../index.html">← Back to Homepage</a> &nbsp;·&nbsp; <a href="https://www.mlrit.ac.in" target="_blank">mlrit.ac.in ↗</a></span>
+      <div class="cp-divider cp-reveal"></div>
+
+      <!-- ══ SECTION 2: FEATURED STORIES (asymmetric) ══ -->
+      <section id="campus" class="cp-featured cp-reveal">
+        <div class="cp-section-head">
+          <span class="cp-section-head__label">Featured Stories</span>
+          <span class="cp-section-head__rule"></span>
+        </div>
+
+        <div class="cp-featured__grid">
+
+          <!-- Dominant story -->
+          <a href="index.html" class="cp-featured__primary">
+            <div class="cp-featured__primary-img-wrap">
+              <img src="https://mlrit.ac.in/wp-content/uploads/2026/04/annual-day2.jpeg" alt="21st Annual Day" class="cp-featured__primary-img" loading="lazy" />
+            </div>
+            <div class="cp-featured__primary-body">
+              <span class="cp-chip cp-chip--campus">Annual Day</span>
+              <h3 class="cp-featured__primary-headline">21st Annual Day — students, faculty, and families fill the auditorium in a two-decade celebration</h3>
+              <p class="cp-featured__primary-deck">The celebration marked the institution's founding with performances, awards, and addresses by the Chairman and Principal Dr. P Sridhar. Over 3,000 attendees filled the main arena.</p>
+              <span class="cp-featured__primary-date">14 March 2026</span>
+            </div>
+          </a>
+
+          <!-- Secondary stack -->
+          <div class="cp-featured__secondary-stack">
+
+            <a href="index.html" class="cp-featured__secondary">
+              <div class="cp-featured__secondary-img-wrap">
+                <img src="https://mlrit.ac.in/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-06-at-18.34.19.jpeg" alt="Koduri Viplav" class="cp-featured__secondary-img" loading="lazy" />
+              </div>
+              <div class="cp-featured__secondary-body">
+                <span class="cp-chip cp-chip--student">Student</span>
+                <h3 class="cp-featured__secondary-headline">Koduri Viplav chosen for Viksit Bharat Young Leaders Dialogue 2026</h3>
+                <span class="cp-featured__secondary-date">8 Jan 2026</span>
+              </div>
+            </a>
+
+            <a href="index.html" class="cp-featured__secondary">
+              <div class="cp-featured__secondary-img-wrap">
+                <img src="https://mlrit.ac.in/wp-content/uploads/2026/01/WhatsApp-Image-2025-12-30-at-18.32.07.jpeg" alt="TSFA-UNESCO workshop" class="cp-featured__secondary-img" loading="lazy" />
+              </div>
+              <div class="cp-featured__secondary-body">
+                <span class="cp-chip cp-chip--workshop">Workshop</span>
+                <h3 class="cp-featured__secondary-headline">TSFA–UNESCO workshop on sustainable development hosted at MLRIT</h3>
+                <span class="cp-featured__secondary-date">2 Jan 2026</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <div class="cp-divider cp-reveal"></div>
+
+      <!-- ══ SECTION 3: STORY GRID (newspaper rhythm) ══ -->
+      <section id="tech" class="cp-grid-section cp-reveal">
+        <div class="cp-section-head">
+          <span class="cp-section-head__label">Campus Stories</span>
+          <span class="cp-section-head__rule"></span>
+          <a href="index.html" class="cp-section-head__more">All stories →</a>
+        </div>
+
+        <div class="cp-newspaper-grid">
+
+          <!-- Full-width story with image -->
+          <article class="cp-story cp-story--wide">
+            <a href="index.html" class="cp-story__link">
+              <div class="cp-story__img-wrap">
+                <img src="https://files.mlrit.ac.in/zenith.jpg" alt="Zenith 2025" class="cp-story__img" loading="lazy" />
+              </div>
+              <div class="cp-story__body">
+                <span class="cp-chip cp-chip--fest">Tech Fest</span>
+                <h3 class="cp-story__headline">Zenith 2025 — three days, dozens of events, one campus fully switched on</h3>
+                <p class="cp-story__excerpt">The annual fest drew participants from colleges across Hyderabad for paper presentations, hackathons, and cultural performances spread over Dec 18–20. Over 2,400 students participated.</p>
+                <span class="cp-story__date">20 Dec 2025</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Standard story -->
+          <article class="cp-story">
+            <a href="index.html" class="cp-story__link">
+              <div class="cp-story__img-wrap">
+                <img src="https://files.mlrit.ac.in/uploads/awscloudtrek.png" alt="AWS Cloud Trek" class="cp-story__img" loading="lazy" />
+              </div>
+              <div class="cp-story__body">
+                <span class="cp-chip cp-chip--tech">Tech</span>
+                <h3 class="cp-story__headline">AWS Cloud Trek puts students hands-on with cloud infrastructure</h3>
+                <p class="cp-story__excerpt">A full-day workshop in partnership with AWS brought practical cloud experience to 200+ students.</p>
+                <span class="cp-story__date">10 Oct 2025</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Standard story -->
+          <article class="cp-story">
+            <a href="index.html" class="cp-story__link">
+              <div class="cp-story__img-wrap">
+                <img src="https://mlrit.ac.in/wp-content/uploads/2022/08/BADMINTON.jpg" alt="MLRIT Badminton" class="cp-story__img" loading="lazy" />
+              </div>
+              <div class="cp-story__body">
+                <span class="cp-chip cp-chip--sports">Sports</span>
+                <h3 class="cp-story__headline">Prashanti Reddy — from MLRIT's badminton court to national-level competition</h3>
+                <p class="cp-story__excerpt">The institute's 26,000 sqft indoor stadium is producing students who compete at state and national level.</p>
+                <span class="cp-story__date">Mar 2025</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Quote block -->
+          <article class="cp-story cp-story--quote">
+            <blockquote class="cp-quote">
+              <p>"The training intensity picked up from second year. By the time companies arrived, students were already interview-ready."</p>
+              <cite>Ravi Chandra P — Head of Placements, MLRIT</cite>
+            </blockquote>
+          </article>
+
+          <!-- Text-only brief -->
+          <article class="cp-story cp-story--brief">
+            <a href="index.html" class="cp-story__link">
+              <div class="cp-story__body">
+                <span class="cp-chip cp-chip--research">Research</span>
+                <h3 class="cp-story__headline">420 patents filed, 3,453 research papers published — MLRIT's innovation record grows</h3>
+                <p class="cp-story__excerpt">The institute has filed 420 patents and registered 58 copyrights, with 10 startups incubated since founding.</p>
+                <span class="cp-story__date">2025–26</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Standard story -->
+          <article class="cp-story">
+            <a href="index.html" class="cp-story__link">
+              <div class="cp-story__img-wrap">
+                <img src="https://mlrit.ac.in/wp-content/uploads/2026/04/annual-day2.jpeg" alt="Global Cross Culture Summit" class="cp-story__img" loading="lazy" />
+              </div>
+              <div class="cp-story__body">
+                <span class="cp-chip cp-chip--cultural">Cultural</span>
+                <h3 class="cp-story__headline">Global Cross Culture Summit brings international dialogue to Dundigal campus</h3>
+                <p class="cp-story__excerpt">Faculty and students from 12 countries participated in the January 2026 summit on cross-cultural academic exchange.</p>
+                <span class="cp-story__date">20 Jan 2026</span>
+              </div>
+            </a>
+          </article>
+
+        </div>
+      </section>
+
+      <div class="cp-divider cp-reveal"></div>
+
+      <!-- ══ SECTION 4: TODAY AT MLRIT (bulletin rail) ══ -->
+      <section id="exams" class="cp-bulletin cp-reveal">
+        <div class="cp-section-head">
+          <span class="cp-section-head__label">Today at MLRIT</span>
+          <span class="cp-section-head__rule"></span>
+          <span class="cp-bulletin__date">Official Bulletins — May 2026</span>
+        </div>
+
+        <div class="cp-bulletin__rail">
+          <a href="index.html" class="cp-bulletin__item">
+            <span class="cp-bulletin__tag cp-bulletin__tag--marks">MARKS</span>
+            <span class="cp-bulletin__text">II B.Tech II Sem CIE-II Internal Marks available on Examination Portal — report discrepancies by 11 May</span>
+            <span class="cp-bulletin__date-col">8 May 2026</span>
+          </a>
+          <a href="index.html" class="cp-bulletin__item">
+            <span class="cp-bulletin__tag cp-bulletin__tag--exam">EXAM</span>
+            <span class="cp-bulletin__text">I B.Tech II Sem R25 Regulation MID-2 Examinations — June 2026 Timetable released</span>
+            <span class="cp-bulletin__date-col">4 May 2026</span>
+          </a>
+          <a href="index.html" class="cp-bulletin__item">
+            <span class="cp-bulletin__tag cp-bulletin__tag--exam">EXAM</span>
+            <span class="cp-bulletin__text">I B.Tech II Sem R22 Regulation MID-2 Examinations for Re-Registered Students — June 2026</span>
+            <span class="cp-bulletin__date-col">4 May 2026</span>
+          </a>
+          <a href="index.html" class="cp-bulletin__item">
+            <span class="cp-bulletin__tag cp-bulletin__tag--supp">SUPP</span>
+            <span class="cp-bulletin__text">II B.Tech I Sem R22/MLR20/MLR18 Supplementary Examinations — June 2026 Timetable</span>
+            <span class="cp-bulletin__date-col">4 May 2026</span>
+          </a>
+          <a href="index.html" class="cp-bulletin__item">
+            <span class="cp-bulletin__tag cp-bulletin__tag--event">EVENT</span>
+            <span class="cp-bulletin__text">Workshop Carnival 2026 — interdisciplinary workshop series across all departments</span>
+            <span class="cp-bulletin__date-col">10 Apr 2026</span>
+          </a>
+          <a href="index.html" class="cp-bulletin__item">
+            <span class="cp-bulletin__tag cp-bulletin__tag--placement">PLACE</span>
+            <span class="cp-bulletin__text">SIH 2025 Internal Hackathon results declared — 14 teams advance to national round</span>
+            <span class="cp-bulletin__date-col">18 Sep 2025</span>
+          </a>
+        </div>
+      </section>
+
+      <div class="cp-divider cp-reveal"></div>
+
+      <!-- ══ SECTION 5: IN THE NEWS ══ -->
+      <section id="news" class="cp-media cp-reveal">
+        <div class="cp-section-head">
+          <span class="cp-section-head__label">In The News</span>
+          <span class="cp-section-head__rule"></span>
+        </div>
+        <div class="cp-media__list">
+          <a href="index.html" class="cp-media__item">
+            <span class="cp-media__pub">The Hindu</span>
+            <span class="cp-media__sep">·</span>
+            <span class="cp-media__headline">MLRIT ranked among top T-schools in India by DataQuest 2026</span>
+          </a>
+          <a href="index.html" class="cp-media__item">
+            <span class="cp-media__pub">Times of India</span>
+            <span class="cp-media__sep">·</span>
+            <span class="cp-media__headline">Hyderabad college student selected for PM's Viksit Bharat Young Leaders programme</span>
+          </a>
+          <a href="index.html" class="cp-media__item">
+            <span class="cp-media__pub">Economic Times</span>
+            <span class="cp-media__sep">·</span>
+            <span class="cp-media__headline">Engineering college incubates 10 startups — a quiet innovation story from Dundigal</span>
+          </a>
+          <a href="index.html" class="cp-media__item">
+            <span class="cp-media__pub">Eenadu</span>
+            <span class="cp-media__sep">·</span>
+            <span class="cp-media__headline">MLRIT places 621 students in 2026 campus recruitment drive</span>
+          </a>
+        </div>
+      </section>
+
+      <div class="cp-divider cp-reveal"></div>
+
+      <!-- ══ SECTION 6: EDITOR'S PICK ══ -->
+      <section id="research" class="cp-editors-pick cp-reveal">
+        <div class="cp-section-head">
+          <span class="cp-section-head__label">Editor's Pick</span>
+          <span class="cp-section-head__rule"></span>
+        </div>
+        <a href="index.html" class="cp-editors-pick__card">
+          <div class="cp-editors-pick__img-wrap">
+            <img src="https://mlrit.ac.in/wp-content/uploads/2026/01/WhatsApp-Image-2025-12-30-at-18.32.07.jpeg" alt="TSFA-UNESCO Workshop" class="cp-editors-pick__img" loading="lazy" />
+          </div>
+          <div class="cp-editors-pick__body">
+            <div class="cp-editors-pick__eyebrow">
+              <span class="cp-chip cp-chip--workshop">Workshop</span>
+              <span class="cp-editors-pick__note">— Curated by the editorial desk</span>
+            </div>
+            <h2 class="cp-editors-pick__headline">TSFA–UNESCO workshop on sustainable development: how MLRIT entered a global conversation</h2>
+            <p class="cp-editors-pick__deck">Students and faculty joined a two-day interdisciplinary workshop in partnership with the Telangana Science Forum and UNESCO's regional office — the kind of event that quietly changes the trajectory of a campus.</p>
+            <span class="cp-editors-pick__cta">Read the full story →</span>
+          </div>
+        </a>
+      </section>
+
+      <!-- SUBSCRIBE STRIP -->
+      <section class="cp-subscribe cp-reveal">
+        <div class="cp-subscribe__inner">
+          <div class="cp-subscribe__copy">
+            <h3 class="cp-subscribe__heading">Campus digest, straight to you</h3>
+            <p class="cp-subscribe__sub">Notices, results, and stories — no noise. Students and faculty only.</p>
+          </div>
+          <div class="cp-subscribe__form">
+            <input type="email" placeholder="Your MLRIT email address" class="cp-subscribe__input" />
+            <button type="button" class="cp-subscribe__btn">Subscribe</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="cp-footer">
+    <div class="cp-footer__inner">
+      <span class="cp-footer__brand">MLRIT Chronicles</span>
+      <span class="cp-footer__copy">Marri Laxman Reddy Institute of Technology, Survey No. 444, Dundigal, Hyderabad — 500 043</span>
+      <span class="cp-footer__links">
+        <a href="../index.html">← Homepage</a>
+        <a href="https://www.mlrit.ac.in" target="_blank">mlrit.ac.in ↗</a>
+      </span>
     </div>
   </footer>
 
-
-<script>
-(function () {
-  'use strict';
-
-  const TILT   = 10;   // max tilt degrees
-  const LIFT   = 18;   // translateZ px
-  const SCALE  = 1.03;
-
-  function makeTile(el) {
-    /* inject shine layer */
-    const shine = document.createElement('div');
-    shine.className = 'tile__shine';
-    el.appendChild(shine);
-    el.classList.add('tile');
-
-    let raf = null;
-    let inside = false;
-
-    function applyTilt(rx, ry, mx, my) {
-      el.style.transform =
-        `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(${SCALE},${SCALE},${SCALE}) translateZ(${LIFT}px)`;
-      shine.style.setProperty('--mx', mx + '%');
-      shine.style.setProperty('--my', my + '%');
+  <script>
+  /* Scroll-triggered section reveal */
+  (function () {
+    'use strict';
+    var els = document.querySelectorAll('.cp-reveal');
+    if (!els.length) return;
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('cp-reveal--visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      els.forEach(function (el) { io.observe(el); });
+    } else {
+      els.forEach(function (el) { el.classList.add('cp-reveal--visible'); });
     }
 
-    function resetTilt() {
-      el.style.transform = '';
-      el.style.transition = 'transform 0.5s cubic-bezier(0.23,1,0.32,1), box-shadow 0.15s ease';
-    }
-
-    el.addEventListener('mouseenter', () => {
-      inside = true;
-      el.style.transition = 'transform 0.12s ease-out, box-shadow 0.15s ease';
-    });
-
-    el.addEventListener('mousemove', (e) => {
-      if (!inside) return;
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const r  = el.getBoundingClientRect();
-        const x  = e.clientX - r.left;
-        const y  = e.clientY - r.top;
-        const cx = r.width  / 2;
-        const cy = r.height / 2;
-        const rx = ((y - cy) / cy) * -TILT;
-        const ry = ((x - cx) / cx) *  TILT;
-        const mx = (x / r.width)  * 100;
-        const my = (y / r.height) * 100;
-        applyTilt(rx, ry, mx, my);
+    /* Sidebar active section highlight on scroll */
+    var sections = document.querySelectorAll('section[id]');
+    var navLinks = document.querySelectorAll('.cp-sidenav__link');
+    window.addEventListener('scroll', function () {
+      var scrollY = window.scrollY + 120;
+      sections.forEach(function (sec) {
+        if (sec.offsetTop <= scrollY && sec.offsetTop + sec.offsetHeight > scrollY) {
+          navLinks.forEach(function (a) { a.classList.remove('cp-sidenav__link--active'); });
+          var active = document.querySelector('.cp-sidenav__link[href="#' + sec.id + '"]');
+          if (active) active.classList.add('cp-sidenav__link--active');
+        }
       });
-    });
+    }, { passive: true });
+  })();
+  </script>
 
-    el.addEventListener('mouseleave', () => {
-      inside = false;
-      cancelAnimationFrame(raf);
-      resetTilt();
-    });
-  }
-
-  function init() {
-    document.querySelectorAll(
-      '.chron-card, .chron-featured, .chron-sidebar-box, .chron-notices-board, .chron-subscribe, .chron-research-box'
-    ).forEach(makeTile);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
-</script>
 </body>
 </html>
