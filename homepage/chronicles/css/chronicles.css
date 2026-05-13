@@ -879,41 +879,89 @@ img { display: block; max-width: 100%; }
 ══════════════════════════════════════ */
 .cp-bulletin__date {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.65rem;
   color: var(--ink-faint);
   white-space: nowrap;
+}
+
+/* Two-column bulletin layout */
+.cp-bulletin__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.cp-bulletin__col {
+  display: flex;
+  flex-direction: column;
+}
+.cp-bulletin__col:first-child {
+  border-right: 1px solid var(--rule);
+}
+
+.cp-bulletin__col-head {
+  padding: 14px 24px 13px;
+  background: var(--paper-warm);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cp-bulletin__col-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-faint);
+}
+
+.cp-bulletin__col-count {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 600;
+  color: var(--green);
+  background: var(--green-light);
+  border-radius: 20px;
+  padding: 1px 9px;
 }
 
 .cp-bulletin__rail {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--white);
+  flex: 1;
 }
 
 .cp-bulletin__item {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  align-items: baseline;
-  gap: 14px;
-  padding: 14px 20px;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
   border-bottom: 1px solid var(--rule);
-  transition: background 0.15s ease;
+  border-left: 3px solid transparent;
+  transition: background 0.15s ease, border-left-color 0.15s ease;
   text-decoration: none;
 }
 .cp-bulletin__item:last-child { border-bottom: none; }
-.cp-bulletin__item:hover { background: #f8f7f4; }
+.cp-bulletin__item:hover {
+  background: #f9f8f5;
+  border-left-color: var(--orange);
+}
 
 .cp-bulletin__tag {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.48rem;
+  font-size: 0.5rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  border-radius: 3px;
-  padding: 2px 6px;
+  border-radius: 4px;
+  padding: 4px 8px;
   flex-shrink: 0;
   white-space: nowrap;
 }
@@ -925,16 +973,16 @@ img { display: block; max-width: 100%; }
 
 .cp-bulletin__text {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--ink);
-  line-height: 1.45;
+  line-height: 1.5;
   transition: color 0.15s ease;
 }
 .cp-bulletin__item:hover .cp-bulletin__text { color: var(--green); }
 
 .cp-bulletin__date-col {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.64rem;
   color: var(--ink-faint);
   white-space: nowrap;
   text-align: right;
@@ -944,40 +992,85 @@ img { display: block; max-width: 100%; }
    SECTION 5 — IN THE NEWS
 ══════════════════════════════════════ */
 .cp-media__list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 0;
-  border-top: 1px solid var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--white);
 }
 
 .cp-media__item {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
-  padding: 14px 0;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0;
+  border-right: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
-  transition: opacity 0.18s ease;
+  text-decoration: none;
+  transition: background 0.15s ease;
 }
-.cp-media__item:hover { opacity: 0.72; }
+.cp-media__item:hover { background: #f9f8f5; opacity: 1; }
+.cp-media__item:nth-child(2n) { border-right: none; }
+.cp-media__item:nth-last-child(-n+2) { border-bottom: none; }
+
+.cp-media__pub-col {
+  flex-shrink: 0;
+  width: 120px;
+  padding: 22px 20px;
+  border-right: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  background: var(--paper-warm);
+}
 
 .cp-media__pub {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   font-weight: 800;
   color: var(--ink);
-  white-space: nowrap;
-  flex-shrink: 0;
-  min-width: 110px;
+  line-height: 1.3;
 }
 
-.cp-media__sep { color: var(--ink-faint); flex-shrink: 0; }
+.cp-media__content {
+  flex: 1;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cp-media__category {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--orange);
+}
 
 .cp-media__headline {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.8rem;
-  color: var(--ink-mid);
-  line-height: 1.45;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.5;
+  transition: color 0.15s ease;
 }
+.cp-media__item:hover .cp-media__headline { color: var(--green); }
+
+.cp-media__date {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.62rem;
+  color: var(--ink-faint);
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+.cp-media__sep { display: none; }
 
 /* ══════════════════════════════════════
    SECTION 6 — EDITOR'S PICK
